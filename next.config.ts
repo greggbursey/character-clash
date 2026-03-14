@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
     ],
   },
   output: 'export',
-  basePath: '/character-clash',
+  basePath: process.env.NODE_ENV === 'production' ? '/character-clash' : '',
   transpilePackages: ['motion'],
   webpack: (config, {dev}) => {
     // HMR is disabled in AI Studio via DISABLE_HMR env var.
