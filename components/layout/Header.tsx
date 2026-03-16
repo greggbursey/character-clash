@@ -22,12 +22,12 @@ export default function Header({
   setSearchQuery
 }: HeaderProps) {
   return (
-    <header className="flex justify-between items-center mb-8">
-      <h1 className="text-3xl font-bold tracking-tighter uppercase italic text-white/90">
+    <header className="flex flex-col sm:flex-row justify-between items-center gap-6 mb-8">
+      <h1 className="text-3xl md:text-4xl font-black tracking-tighter uppercase italic text-white/90">
         Character Clash
       </h1>
       
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap justify-center items-center gap-4">
         {/* Search Bar */}
         <div className="relative flex items-center">
           <AnimatePresence>
@@ -41,7 +41,7 @@ export default function Header({
                 <input
                   autoFocus
                   type="text"
-                  placeholder="Search character or universe..."
+                  placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full bg-zinc-900/80 backdrop-blur-md border border-zinc-700 rounded-full px-4 py-2 text-sm text-white focus:outline-none focus:border-red-500 transition-colors"
@@ -62,32 +62,32 @@ export default function Header({
           </button>
         </div>
 
-        <div className="flex bg-zinc-900/80 backdrop-blur-md p-1 rounded-full border border-zinc-800">
+        <div className="flex bg-zinc-900/80 backdrop-blur-md p-1 rounded-full border border-zinc-800 overflow-x-auto max-w-[calc(100vw-2rem)] hide-scrollbar">
           <button
             onClick={() => toggleMode('single')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+            className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
               mode === 'single' ? 'bg-white text-black' : 'text-zinc-400 hover:text-white'
             }`}
           >
-            <User size={16} />
+            <User size={14} className="sm:w-4 sm:h-4" />
             Single
           </button>
           <button
             onClick={() => toggleMode('battle')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+            className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
               mode === 'battle' ? 'bg-red-600 text-white' : 'text-zinc-400 hover:text-white'
             }`}
           >
-            <Swords size={16} />
+            <Swords size={14} className="sm:w-4 sm:h-4" />
             Battle
           </button>
           <button
             onClick={() => toggleMode('universe')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+            className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
               mode === 'universe' ? 'bg-blue-600 text-white' : 'text-zinc-400 hover:text-white'
             }`}
           >
-            <Globe size={16} />
+            <Globe size={14} className="sm:w-4 sm:h-4" />
             Universe
           </button>
         </div>

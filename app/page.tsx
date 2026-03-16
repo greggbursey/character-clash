@@ -149,7 +149,7 @@ export default function Home() {
         getUniverseStats={getUniverseStats}
       />
 
-      <div className="relative z-10 flex flex-col h-screen p-6 md:p-12">
+      <div className="relative z-10 flex flex-col min-h-screen p-6 md:p-12">
         <Header 
           mode={mode}
           toggleMode={toggleMode}
@@ -159,7 +159,7 @@ export default function Home() {
           setSearchQuery={setSearchQuery}
         />
 
-        <div className="flex-1 flex flex-col justify-center items-center">
+        <div className="flex-1 flex flex-col justify-center items-center py-8">
           {mode === 'single' && <SingleView char1={char1} setSelectedLoreChar={setSelectedLoreChar} />}
           
           {mode === 'battle' && (

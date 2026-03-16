@@ -158,8 +158,7 @@ export const characters: Character[] = [
     lore: "Peter Parker learned that 'with great power, there must also come great responsibility.' After being bitten by a radioactive spider, he gained superhuman strength, agility, and the ability to cling to walls. He now balances his life as a college student and photographer with his duties as New York's friendly neighborhood hero.",
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/620-spider-man.jpg",
-    backgroundUrl:
-      "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&q=80&w=1920",
+    backgroundUrl: "https://images7.alphacoders.com/971/thumb-1920-971636.jpg",
     color: "#ef4444",
     powerScore: 65,
   },
@@ -171,9 +170,9 @@ export const characters: Character[] = [
       "Genius billionaire Tony Stark fights evil in a high-tech suit of armor of his own design.",
     lore: "Tony Stark is a wealthy industrialist and genius inventor who built a powered suit of armor to escape captivity. He has since refined his technology into a vast array of high-tech suits designed for any scenario. As a founding member of the Avengers, he uses his resources and intellect to protect the world from global threats.",
     previewUrl:
-      "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/346-iron-man.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBAatoEdfVLGvLarMR3Os-mSdVelpQsnOpTA&s",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920",
+      "https://wallpapers.com/images/featured/iron-man-ouqxo5w2b59h0042.jpg",
     color: "#eab308",
     powerScore: 85,
   },
@@ -186,8 +185,7 @@ export const characters: Character[] = [
     lore: "Thor Odinson is the Asgardian God of Thunder, based on the Norse mythological deity. He wields the enchanted hammer Mjolnir, which grants him the power of flight and control over lightning. Having spent centuries protecting the Nine Realms, he is a warrior of unmatched strength and honor.",
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/659-thor.jpg",
-    backgroundUrl:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1920",
+    backgroundUrl: "https://images2.alphacoders.com/674/thumb-1920-674260.jpg",
     color: "#67e8f9",
     powerScore: 95,
   },
@@ -199,9 +197,9 @@ export const characters: Character[] = [
       "Exposed to heavy gamma radiation, Dr. Bruce Banner transforms into a giant, raging green monster when provoked.",
     lore: "Dr. Bruce Banner was a brilliant scientist who was caught in the blast of a gamma bomb he created. Now, whenever his heart rate spikes or he loses his temper, he transforms into the incredible Hulk. He is a force of pure destruction with nearly limitless physical strength, but he often struggles to control the beast within.",
     previewUrl:
-      "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/332-hulk.jpg",
+      "https://comicvine.gamespot.com/a/uploads/scale_medium/14/146991/3393677-2980756038-fotos.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1920",
+      "https://i.pinimg.com/736x/fe/6d/73/fe6d730ad90961deae81bb951674c018.jpg",
     color: "#22c55e",
     powerScore: 96,
   },
@@ -215,7 +213,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/149-captain-america.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&q=80&w=1920",
+      "https://i.pinimg.com/736x/1d/bb/8c/1dbb8c223bba8d37186db10c3388a15a.jpg",
     color: "#3b82f6",
     powerScore: 70,
   },
@@ -227,9 +225,9 @@ export const characters: Character[] = [
       "A mutant with a healing factor, enhanced senses, and adamantium-laced claws.",
     lore: "Born James Howlett, Logan has lived for over a century, fighting in multiple wars and eventually joining the X-Men. He possesses a powerful healing factor that allows him to recover from nearly any injury and retractable bone claws coated in indestructible adamantium. He is a loner by nature but a fierce protector of those he calls family.",
     previewUrl:
-      "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/717-wolverine.jpg",
+      "https://pbs.twimg.com/profile_images/1971501608941821952/QNOpI_xr_400x400.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1920",
+      "https://i.pinimg.com/736x/2b/a8/0b/2ba80b7f366e8a0d8c576331067c3458.jpg",
     color: "#eab308",
     powerScore: 80,
   },
@@ -242,8 +240,7 @@ export const characters: Character[] = [
     lore: "Thanos believes that the universe is overpopulated and seeks the Infinity Stones to wipe out half of all life. Known as the Mad Titan, he possesses immense cosmic power even without his Infinity Gauntlet. His nihilistic philosophy and strategic genius make him one of the most dangerous threats in the Marvel Universe.",
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/655-thanos.jpg",
-    backgroundUrl:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&q=80&w=1920",
+    backgroundUrl: "https://images6.alphacoders.com/917/thumb-1920-917631.png",
     color: "#a855f7",
     powerScore: 99,
   },
@@ -257,7 +254,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/687-venom.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&q=80&w=1920",
+      "https://i.pinimg.com/564x/ff/3f/42/ff3f427b745b2765bd7003f9c12af519.jpg",
     color: "#18181b",
     powerScore: 78,
   },
@@ -268,10 +265,9 @@ export const characters: Character[] = [
     description:
       "A powerful mutant with the ability to generate and control magnetic fields.",
     lore: "A Holocaust survivor, Max Eisenhardt believes that mutants are superior to humans and will do whatever it takes to ensure their survival. He possesses the omega-level ability to control magnetic fields, allowing him to manipulate metal and energy on a massive scale. Despite his extremist methods, his goal is always the preservation of his people.",
-    previewUrl:
-      "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/423-magneto.jpg",
+    previewUrl: "https://www.superherodb.com/pictures2/portraits/10/100/12.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=1920",
+      "https://static0.srcdn.com/wordpress/wp-content/uploads/2020/05/Magneto-Comic-Book-Art-Face.jpg?w=1200&h=675&fit=crop",
     color: "#dc2626",
     powerScore: 92,
   },
@@ -485,8 +481,7 @@ export const characters: Character[] = [
     lore: "Piotr Rasputin is a gentle giant from Russia who uses his powers to protect others as a core member of the X-Men. He can transform his entire body into organic steel, granting him nearly invulnerable defense and massive physical power. Despite his intimidating form, he is an artist at heart who values peace above all else.",
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/185-colossus.jpg",
-    backgroundUrl:
-      "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=1920",
+    backgroundUrl: "https://wallpapercave.com/wp/wp8271138.jpg",
     color: "#94a3b8",
     powerScore: 82,
   },
@@ -500,7 +495,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/490-nightcrawler.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&q=80&w=1920",
+      "https://i.pinimg.com/originals/c8/97/67/c8976775a1e1de22e0cb8da127bc54e6.jpg",
     color: "#3b82f6",
     powerScore: 75,
   },
@@ -526,9 +521,9 @@ export const characters: Character[] = [
       "A feral mutant with a healing factor, razor-sharp claws, and a bloodthirsty nature.",
     lore: "Victor Creed is Wolverine's oldest and deadliest enemy, a brutal killer who embraces his animalistic instincts. He possesses a healing factor and razor-sharp claws similar to Logan's, but he lacks his rival's sense of honor. His life is a trail of blood and violence, driven by a primal urge to prove himself the ultimate predator.",
     previewUrl:
-      "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/570-sabretooth.jpg",
+      "https://static.wikia.nocookie.net/marveldatabase/images/1/13/Wolverine_Vol_7_32_Unknown_Comic_Books_Exclusive_Virgin_Variant.jpg/revision/latest/thumbnail/width/360/height/450?cb=20250708005522",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1920",
+      "https://i.pinimg.com/736x/26/08/41/26084106104c15929af006bec482e14d.jpg",
     color: "#b45309",
     powerScore: 80,
   },
@@ -542,7 +537,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/374-juggernaut.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1920",
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6b9616c3-7094-40cb-9bb0-15d62003d3ff/dcfixnv-87ceba1a-36c4-4897-b072-a6de37b556f8.jpg/v1/fill/w_1024,h_576,q_75,strp/juggernaut_wip_by_uncannyknack_dcfixnv-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6Ii9mLzZiOTYxNmMzLTcwOTQtNDBjYi05YmIwLTE1ZDYyMDAzZDNmZi9kY2ZpeG52LTg3Y2ViYTFhLTM2YzQtNDg5Ny1iMDcyLWE2ZGUzN2I1NTZmOC5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.gO6nt6pD45YusF1V5AiaPyXTCC6TcU6qOJKbaIUpp5A",
     color: "#7f1d1d",
     powerScore: 92,
   },
@@ -556,7 +551,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/106-black-panther.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&q=80&w=1920",
+      "https://c4.wallpaperflare.com/wallpaper/179/330/349/black-panther-marvel-cinematic-universe-mcu-wakanda-t-challa-hd-wallpaper-preview.jpg",
     color: "#18181b",
     powerScore: 85,
   },
@@ -570,7 +565,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/226-doctor-strange.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1519074063912-ad2fe3f51904?auto=format&fit=crop&q=80&w=1920",
+      "https://w0.peakpx.com/wallpaper/180/567/HD-wallpaper-doctor-strange-marvel-cumberbatch-stephen-mystic-magic-sorcerer.jpg",
     color: "#a855f7",
     powerScore: 94,
   },

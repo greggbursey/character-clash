@@ -20,7 +20,7 @@ export default function SingleView({ char1, setSelectedLoreChar }: SingleViewPro
           key={`info-${char1.id}`}
           className="max-w-2xl text-center space-y-4"
         >
-          <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">
+          <h2 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">
             {char1.name}
           </h2>
           <div className="flex items-center justify-center gap-4">
@@ -53,7 +53,7 @@ export default function SingleView({ char1, setSelectedLoreChar }: SingleViewPro
         >
           <div className="relative inline-block">
             <div className="absolute -inset-4 bg-white/5 blur-2xl rounded-full" />
-            <h2 className="relative text-5xl md:text-7xl font-black uppercase tracking-tighter text-white/20">
+            <h2 className="relative text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter text-white/20">
               Choose Your<br />Champion
             </h2>
           </div>

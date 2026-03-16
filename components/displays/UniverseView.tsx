@@ -29,16 +29,16 @@ export default function UniverseView({
   setUniverse2
 }: UniverseViewProps) {
   return (
-    <div className="w-full max-w-5xl flex justify-between items-center">
+    <div className="w-full max-w-5xl flex flex-col md:flex-row justify-between items-center gap-12 md:gap-0">
       {/* Universe 1 Info */}
-      <div className="w-1/3 text-center">
+      <div className="w-full md:w-1/3 text-center order-2 md:order-1">
         {universe1 ? (
           <motion.div
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             className={`space-y-2 transition-opacity duration-1000 ${battleState === 'result' && winner === 2 ? 'opacity-30' : 'opacity-100'}`}
           >
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-white">
               {universe1}
             </h2>
             <div className="flex items-center justify-center gap-2">
@@ -66,7 +66,7 @@ export default function UniverseView({
       </div>
 
       {/* VS / Battle Controls */}
-      <div className="w-1/3 flex flex-col items-center justify-center">
+      <div className="w-full md:w-1/3 flex flex-col items-center justify-center order-1 md:order-2">
         <AnimatePresence mode="wait">
           {battleState === 'idle' ? (
             <motion.div
@@ -93,7 +93,7 @@ export default function UniverseView({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="text-7xl md:text-9xl font-black text-blue-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.8)]"
+              className="text-6xl sm:text-7xl md:text-9xl font-black text-blue-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.8)]"
             >
               {countdown > 0 ? countdown : 'CLASH!'}
             </motion.div>
@@ -117,14 +117,14 @@ export default function UniverseView({
       </div>
 
       {/* Universe 2 Info */}
-      <div className="w-1/3 text-center">
+      <div className="w-full md:w-1/3 text-center order-3 md:order-3">
         {universe2 ? (
           <motion.div
             initial={{ x: 20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             className={`space-y-2 transition-opacity duration-1000 ${battleState === 'result' && winner === 1 ? 'opacity-30' : 'opacity-100'}`}
           >
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-white">
               {universe2}
             </h2>
             <div className="flex items-center justify-center gap-2">
