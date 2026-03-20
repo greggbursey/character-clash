@@ -42,7 +42,7 @@ export default function LoreModal({ character, onClose }: LoreModalProps) {
                 src={character.backgroundUrl}
                 alt={character.name}
                 fill
-                className="object-cover blur-sm scale-105"
+                className="object-cover"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent" />

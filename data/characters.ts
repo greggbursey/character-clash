@@ -280,8 +280,7 @@ export const characters: Character[] = [
     lore: "Born Kal-El on the dying planet Krypton, he was sent to Earth as a baby and raised as Clark Kent in Smallville. Under Earth's yellow sun, he possesses god-like powers including super strength, flight, and heat vision. He serves as a beacon of truth and justice, using his abilities to protect the planet he now calls home.",
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/644-superman.jpg",
-    backgroundUrl:
-      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&q=80&w=1920",
+    backgroundUrl: "https://images4.alphacoders.com/138/thumb-1920-1385846.jpg",
     color: "#3b82f6",
     powerScore: 98,
   },
@@ -295,7 +294,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/70-batman.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&q=80&w=1920",
+      "https://wallpapers.com/images/hd/batman-laptop-6sx5rob9au9bxjjg.jpg",
     color: "#52525b",
     powerScore: 60,
   },
@@ -308,8 +307,7 @@ export const characters: Character[] = [
     lore: "The Joker is a highly intelligent psychopath with a warped, sadistic sense of humor. He seeks to prove that anyone can be pushed into madness with just 'one bad day.' His lack of any superhuman powers is more than made up for by his complete unpredictability and genius for chaotic planning.",
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/370-joker.jpg",
-    backgroundUrl:
-      "https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&q=80&w=1920",
+    backgroundUrl: "https://images.alphacoders.com/235/235883.jpg",
     color: "#a855f7",
     powerScore: 25,
   },
@@ -322,8 +320,7 @@ export const characters: Character[] = [
     lore: "Raised on a sheltered island paradise called Themyscira, Diana leaves her home to fight for justice, love, and peace in the outside world. She is a warrior of incredible strength and skill, wielding the Lasso of Truth and her indestructible bracers. As a demigoddess, she bridge the gap between myth and the modern world.",
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/720-wonder-woman.jpg",
-    backgroundUrl:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1920",
+    backgroundUrl: "https://images4.alphacoders.com/866/thumb-1920-866080.jpg",
     color: "#eab308",
     powerScore: 95,
   },
@@ -337,7 +334,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/265-flash-ii.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1519074063912-ad2fe3f51904?auto=format&fit=crop&q=80&w=1920",
+      "https://i.pinimg.com/736x/d2/7f/e5/d27fe5c60fb3b61cc894406465ea5867.jpg",
     color: "#ef4444",
     powerScore: 88,
   },
@@ -350,8 +347,7 @@ export const characters: Character[] = [
     lore: "Luthor believes Superman is a threat to humanity's potential and uses his vast resources and intellect to try and destroy him. As one of the smartest humans on Earth, he often dons a high-tech warsuit to face the Man of Steel directly. His ego is as vast as his billionaire fortune, driven by a desire for total control.",
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/405-lex-luthor.jpg",
-    backgroundUrl:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920",
+    backgroundUrl: "https://wallpapercave.com/wp/wp7305062.jpg",
     color: "#22c55e",
     powerScore: 40,
   },
@@ -365,7 +361,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/309-harley-quinn.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1527628173875-3c7bfd28ad78?auto=format&fit=crop&q=80&w=1920",
+      "https://i.pinimg.com/474x/47/84/77/478477ddd53a4c38cb8b9bc40d6ea906.jpg",
     color: "#ef4444",
     powerScore: 30,
   },
@@ -379,7 +375,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/204-darkseid.jpg",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&q=80&w=1920",
+      "https://static0.srcdn.com/wordpress/wp-content/uploads/2020/06/Darkseid-Fan-Art.jpg?w=1200&h=900&fit=crop",
     color: "#52525b",
     powerScore: 100,
   },
@@ -392,8 +388,7 @@ export const characters: Character[] = [
     lore: "Hanzo Hasashi was a member of the Shirai Ryu assassin clan until they were wiped out by the rival Lin Kuei. Resurrected as a hellspawn specter, he wields a kunai on a rope and uses hellfire to incinerate his enemies. His life is defined by a quest for vengeance that often blurs the line between man and monster.",
     previewUrl:
       "https://static.wikia.nocookie.net/mkwikia/images/e/e5/Scorpion_MK1_render.webp/revision/latest",
-    backgroundUrl:
-      "https://images.unsplash.com/photo-1498843053639-170ff2122f35?auto=format&fit=crop&q=80&w=1920",
+    backgroundUrl: "https://cdn.wallpapersafari.com/89/82/EqzrGN.jpg",
     color: "#eab308",
     powerScore: 85,
     imagePosition: "top",
@@ -408,7 +403,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://static.wikia.nocookie.net/mkwikia/images/7/77/Sub-Zero_MK1_Render.png/revision/latest",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1517299321609-52687d1bc9e6?auto=format&fit=crop&q=80&w=1920",
+      "https://images.hdqwalls.com/download/sub-zero-mortal-kombat-u2-640x960.jpg",
     color: "#3b82f6",
     powerScore: 84,
     imagePosition: "top",
@@ -423,7 +418,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://static.wikia.nocookie.net/mkwikia/images/0/03/Raiden_MK1_render.webp/revision/latest",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&q=80&w=1920",
+      "https://img.goodfon.com/wallpaper/big/c/1a/molnii-iskry-lightning-raiden-god-of-thunder-mortal-kombat-1.webp",
     color: "#60a5fa",
     powerScore: 95,
     imagePosition: "top",
@@ -438,23 +433,23 @@ export const characters: Character[] = [
     previewUrl:
       "https://upload.wikimedia.org/wikipedia/commons/3/3a/Shang_Tsung_in_Mortal_Kombat_11_%28cropped%29.png",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1519074063912-ad2fe3f51904?auto=format&fit=crop&q=80&w=1920",
+      "https://wallpapers.com/images/hd/mortal-kombat-shang-tsung-1032-x-1200-wallpaper-q5kxa8hiespl7lxk.jpg",
     color: "#22c55e",
     powerScore: 90,
   },
   {
-    id: "kano",
-    name: "Kano",
+    id: "goro",
+    name: "Goro",
     universe: "Mortal Kombat",
     description:
-      "A ruthless mercenary and leader of the Black Dragon cartel, known for his cybernetic eye.",
-    lore: "A cunning opportunist and weapons dealer, Kano is the ruthless leader of the Black Dragon cartel. He is a long-time enemy of Sonya Blade and the Special Forces, always looking for a profit regardless of the stakes. His cybernetic eye grants him laser-vision and enhanced tracking, making him a deadly mercenary.",
+      "A four-armed Shokan warrior and longtime champion of the Mortal Kombat tournament.",
+    lore: "Prince Goro is a member of the four-armed Shokan race and served as the champion of Mortal Kombat for nine consecutive tournaments. He is a brutal warrior of immense strength and serves Outworld emperor Shao Kahn with unwavering loyalty. His massive size and multiple limbs make him one of the most feared combatants in the history of the realms.",
     previewUrl:
-      "https://upload.wikimedia.org/wikipedia/en/f/f5/Kano_%28MK%29.png",
+      "https://static.wikia.nocookie.net/mkwikia/images/6/68/Goro_MK1_Render.png/revision/latest?cb=20231215100554",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1920",
-    color: "#ef4444",
-    powerScore: 75,
+      "https://wallpapers.com/images/hd/mortal-kombat-goro-800-x-1280-wallpaper-4lx1oxfkvg5wcutg.jpg",
+    color: "#ea580c",
+    powerScore: 94,
     imagePosition: "top",
   },
   {
@@ -467,7 +462,7 @@ export const characters: Character[] = [
     previewUrl:
       "https://static.wikia.nocookie.net/mkwikia/images/b/bb/Shao_MK1_render.webp/revision/latest",
     backgroundUrl:
-      "https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&q=80&w=1920",
+      "https://i.pinimg.com/736x/c5/f6/11/c5f611ee7395317edebcae1fe77f5314.jpg",
     color: "#a855f7",
     powerScore: 98,
     imagePosition: "top",
