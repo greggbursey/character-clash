@@ -655,4 +655,85 @@ export const characters: Character[] = [
     color: "#3b82f6",
     powerScore: 80,
   },
+  {
+    id: "godzilla",
+    name: "Godzilla",
+    universe: "Godzilla",
+    description:
+      "The King of the Monsters, a gigantic reptilian Titan with atomic breath.",
+    lore: "Godzilla is an ancient alpha predator that feeds on radiation and serves as a protector of Earth's natural balance. Armed with a devastating atomic breath and nearly impenetrable skin, he stands as the undisputed King of the Monsters.",
+    previewUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6S0Upl3EKLpbIl1D3XMBdh0-3pmlJ-ybSlA&s",
+    backgroundUrl: "https://images7.alphacoders.com/100/thumb-1920-1003272.jpg",
+    color: "#3b82f6",
+    powerScore: 100,
+  },
+  {
+    id: "kingkong",
+    name: "King Kong",
+    universe: "Godzilla",
+    description:
+      "The Eighth Wonder of the World, a colossal ape of immense strength and intelligence.",
+    lore: "The last of his kind on Skull Island, Kong is a highly intelligent and emotionally complex Titan. His sheer physical power and ability to use tools make him one of the few beings capable of challenging Godzilla for the alpha mantle.",
+    previewUrl: "https://64.media.tumblr.com/avatar_bf4247caad78_512.pnj",
+    backgroundUrl:
+      "https://wallpapers.com/images/hd/king-kong-4k-tzmhgunuvz6vp5uj.jpg",
+    color: "#78350f",
+    powerScore: 95,
+  },
+  {
+    id: "mothra",
+    name: "Mothra",
+    universe: "Godzilla",
+    description:
+      "The Queen of the Monsters, a divine moth Titan and protector of Life.",
+    lore: "Mothra is a benevolent and mystical Titan who has protected Earth for millennia. Through a cycle of death and rebirth, she serves as a guardian of the planet, often allying with Godzilla to maintain the natural order.",
+    previewUrl:
+      "https://mir-s3-cdn-cf.behance.net/projects/404/a8d2df229233303.6861687982ed3.png",
+    backgroundUrl:
+      "https://wallpapers.com/images/hd/mothra-3598-x-2000-wallpaper-l0qb0x46av8o26jd.jpg",
+    color: "#facc15",
+    powerScore: 92,
+  },
+  {
+    id: "rodan",
+    name: "Rodan",
+    universe: "Godzilla",
+    description:
+      "The Fire Demon, a massive pterosaur Titan capable of supersonic flight.",
+    lore: "Born in the fires of a volcano, Rodan is a master of the skies. His supersonic flight creates devastating shockwaves, and his body is infused with volcanic energy, making him a terrifying force of nature in the air.",
+    previewUrl: "https://wallpapers.com/images/hd/rodan-pqq03etl5b9j7uu7.jpg",
+    backgroundUrl:
+      "https://i.pinimg.com/736x/28/23/10/2823102d1f15c2f703c66b9fb82365a3.jpg",
+    color: "#dc2626",
+    powerScore: 90,
+  },
+  {
+    id: "mechagodzilla",
+    name: "Mechagodzilla",
+    universe: "Godzilla",
+    description:
+      "A mechanical duplicate of Godzilla, designed as the ultimate anti-Titan weapon.",
+    lore: "Built by humanity to establish dominance over the Titans, Mechagodzilla is a technological marvel armed with Proton Screams and energy-enhanced strikes. However, it often risks being consumed by the very power it seeks to control.",
+    previewUrl:
+      "https://i.pinimg.com/736x/54/1f/8d/541f8dfe94d6b27f9776bdd3bf79c229.jpg",
+    backgroundUrl:
+      "https://i.pinimg.com/736x/f5/d7/30/f5d7307761f809391f4b4a089791e80c.jpg",
+    color: "#94a3b8",
+    powerScore: 98,
+  },
+  {
+    id: "mutos",
+    name: "Mutos",
+    universe: "Godzilla",
+    description:
+      "Parasitic Titans that feed on radiation and hunt alpha predators.",
+    lore: "Massive Unidentified Terrestrial Organisms that evolved to hunt the Gojira species. Using EMP pulses and coordinated attacks, these parasitic Titans are a significant threat to any radiation-based life form.",
+    previewUrl:
+      "https://static.wikia.nocookie.net/godzilla/images/7/72/Female_MUTO_profile_picture.png/revision/latest?cb=20200806053152",
+    backgroundUrl:
+      "https://static.wikia.nocookie.net/godzilla/images/1/15/330px-New_fem_muto.png/revision/latest/scale-to-width/360?cb=20190925130240",
+    color: "#ef4444",
+    powerScore: 88,
+  },
 ];
