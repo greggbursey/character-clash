@@ -53,10 +53,8 @@ export const characters: Character[] = [
     lore: "Donatello is the brains of the operation. He creates all of the Turtles' gadgets, vehicles, and weapons from scavenged parts. His mastery of technology and engineering often provides the team with the edge they need to overcome superior foes.",
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/228-donatello.jpg",
-    // backgroundUrl:
-    //   "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1920",
     backgroundUrl:
-      "https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/911550/donatello-13-scale-statue-pcs_teenage-mutant-ninja-turtles_gallery_63ab3cf7b1888.jpg",
+      "https://www.toyark.com/wp-content/uploads/2023/01/PCS-TMNT-Donatello-Statue-004.jpg",
     color: "#a855f7",
     powerScore: 43,
   },
@@ -563,5 +561,98 @@ export const characters: Character[] = [
       "https://w0.peakpx.com/wallpaper/180/567/HD-wallpaper-doctor-strange-marvel-cumberbatch-stephen-mystic-magic-sorcerer.jpg",
     color: "#a855f7",
     powerScore: 94,
+  },
+  {
+    id: "ryu",
+    name: "Ryu",
+    universe: "Street Fighter",
+    description:
+      "The archetypal wandering martial artist, perpetually training to achieve true strength.",
+    lore: "Ryu is a dedicated student of the Ansatsuken martial art, traveling the globe to face worthy opponents and master his own potential while resisting the dark influence of the Satsui no Hado.",
+    previewUrl:
+      "https://store.playstation.com/store/api/chihiro/00_09_000/container/PT/pt/999/EP0102-NPEB00554_00-AVSTREETFI000015/1550732407000/image?w=400&h=400&bg_color=000000&opacity=100&_version=00_09_000",
+    backgroundUrl:
+      "https://img.redbull.com/images/c_crop,x_894,y_0,h_2400,w_1920/c_fill,w_450,h_600/q_auto,f_auto/redbullcom/2018/11/21/71b24227-49ab-487d-9b01-ca90b311afe9/evolucao-ryu-30-anos-street-fighter-01",
+    color: "#ef4444",
+    powerScore: 88,
+  },
+  {
+    id: "vega",
+    name: "Vega",
+    universe: "Street Fighter",
+    description:
+      "A masked claw fighter from Spain, obsessed with beauty and perfection.",
+    lore: "Combining ninjutsu with Spanish bullfighting, Vega is a narcissistic assassin of Shadaloo who wears a mask to protect his flawless face and uses a deadly claw to strike from any angle.",
+    previewUrl:
+      "https://image.api.playstation.com/cdn/EP0102/CUSA01222_00/nrWIIZ9nUYiHCHxZnRK0C9cBuA41oDfY.png",
+    backgroundUrl:
+      "https://i.pinimg.com/736x/e5/56/34/e55634b9eaeec94a1eea3a9cf0a77d45.jpg",
+    color: "#dc2626",
+    powerScore: 82,
+  },
+  {
+    id: "mbison",
+    name: "M. Bison",
+    universe: "Street Fighter",
+    description: "The ruthless leader of the criminal organization Shadaloo.",
+    lore: "A megalomanical dictator who wields the malevolent Psycho Power, M. Bison seeks world domination through fear and the crushing of any who stand in his way.",
+    previewUrl:
+      "https://game.capcom.com/cfn/sfv/as/common/character/bustup/l/veg.png?h=05940c2c8feafe94aa6ced8003b4b2dc",
+    backgroundUrl:
+      "https://i.pinimg.com/736x/76/63/21/7663217d02b2a1c736e2d70513376f87.jpg",
+    color: "#7f1d1d",
+    powerScore: 95,
+  },
+  {
+    id: "zangief",
+    name: "Zangief",
+    universe: "Street Fighter",
+    description:
+      "The Red Cyclone, a massive professional wrestler from Russia.",
+    lore: "An immensely powerful wrestler who dedicated his life to physical perfection. Zangief trains by wrestling bears and enters tournaments to prove the strength of the Russian spirit.",
+    previewUrl:
+      "https://game.capcom.com/cfn/sfv/as/common/character/bustup/l/zgf.png?h=4ae8ea4293c0db3829278dba98deac8a",
+    backgroundUrl: "https://images7.alphacoders.com/438/thumb-1920-438585.jpg",
+    color: "#ef4444",
+    powerScore: 85,
+  },
+  {
+    id: "dhalsim",
+    name: "Dhalsim",
+    universe: "Street Fighter",
+    description:
+      "A mystical yogi from India who can stretch his body and exhale fire.",
+    lore: "A pacifist at heart, Dhalsim fights to raise money for his village. His mastery over Yoga allows him to manipulate space through teleportation, limb-stretching, and channeling inner flame.",
+    previewUrl:
+      "https://www.streetfighter.com/6/assets/images/character/dhalsim/outfit/outfit01.png",
+    backgroundUrl: "https://wallpapercave.com/wp/wp9491520.jpg",
+    color: "#f97316",
+    powerScore: 80,
+  },
+  {
+    id: "blanka",
+    name: "Blanka",
+    universe: "Street Fighter",
+    description: "A feral, green-skinned warrior from the Amazon jungle.",
+    lore: "Born as Jimmy, he mutated in the wild after a plane crash. Now the ferocious Blanka, he protects his jungle home using animalistic instincts and the ability to generate powerful electrical surges.",
+    previewUrl:
+      "https://static.wikia.nocookie.net/streetfighter/images/4/4a/Blanka_SfxT.png/revision/latest/scale-to-width/360?cb=20120519202850",
+    backgroundUrl:
+      "https://assetsio.gnwcdn.com/heres-blanka-electrifying-street-fighter-5-1518452492545.jpg?width=1200&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp",
+    color: "#22c55e",
+    powerScore: 78,
+  },
+  {
+    id: "ehonda",
+    name: "E. Honda",
+    universe: "Street Fighter",
+    description: "A grandmaster of sumo wrestling from Japan.",
+    lore: "Edmond Honda is a top-tier sumo wrestler determined to show the world that sumo is the ultimate fighting style. He combines incredible strength with surprising speed in his signature Thousand Hand Slap.",
+    previewUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK2TPDfSSVG15otYZ-FlXUjLpbhyHv0npSkg&s",
+    backgroundUrl:
+      "https://www.streetfighter.com/5/en-us/wp-content/uploads/2019/07/Honda-7-R1.jpg",
+    color: "#3b82f6",
+    powerScore: 80,
   },
 ];
