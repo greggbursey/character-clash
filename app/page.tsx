@@ -150,7 +150,7 @@ export default function Home() {
   }, [battleState, countdown, char1, char2, universe1, universe2, mode]);
 
   return (
-    <main className="relative min-h-screen w-full overflow-hidden bg-zinc-950 text-white font-sans">
+    <main className="relative h-[100dvh] w-full overflow-hidden bg-zinc-950 text-white font-sans">
       <BackgroundLayers
         mode={mode}
         battleState={battleState}
@@ -162,7 +162,7 @@ export default function Home() {
         getUniverseStats={getUniverseStats}
       />
 
-      <div className="relative z-10 flex flex-col min-h-screen p-6 md:p-12">
+      <div className="relative z-10 flex flex-col h-[100dvh] p-4 md:p-12 overflow-hidden">
         <Header
           mode={mode}
           toggleMode={toggleMode}
@@ -172,7 +172,7 @@ export default function Home() {
           setSearchQuery={setSearchQuery}
         />
 
-        <div className="flex-1 flex flex-col justify-center items-center py-8">
+          <div className="flex-1 flex flex-col justify-center items-center py-2 md:py-8 min-h-0">
           {mode === "single" && (
             <SingleView
               char1={char1}
@@ -195,6 +195,40 @@ export default function Home() {
             />
           )}
 
+          {/* Battle Result Overlay — anchored to bottom, behind nothing */}
+          {mode === "battle" && battleState === "result" && winner && (
+            <div
+              className="absolute bottom-0 left-0 right-0 z-40 flex flex-col items-center gap-2 pb-6 md:pb-10 pointer-events-none"
+              style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
+            >
+              {/* Soft scrim so text is readable over any background */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
+
+              <div className="relative pointer-events-auto flex flex-col items-center gap-3">
+                {/* Winner badge */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-400/20 border border-yellow-400/60 text-yellow-300 font-black text-sm md:text-base uppercase tracking-widest shadow-[0_0_20px_rgba(250,204,21,0.4)] backdrop-blur-sm">
+                  🏆&nbsp;{winner === 1 ? char1?.name : char2?.name} Wins!
+                </div>
+                {/* Loser name */}
+                <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
+                  {winner === 1 ? char2?.name : char1?.name} &nbsp;·&nbsp; defeated
+                </p>
+                {/* Play Again */}
+                <button
+                  onClick={() => {
+                    setBattleState("idle");
+                    setChar1(null);
+                    setChar2(null);
+                  }}
+                  className="px-8 py-3 bg-white text-black font-bold uppercase tracking-widest rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.3)] text-sm"
+                >
+                  Play Again
+                </button>
+              </div>
+            </div>
+          )}
+
+
           {mode === "universe" && (
             <UniverseView
               universe1={universe1}
@@ -209,12 +243,42 @@ export default function Home() {
               setUniverse2={setUniverse2}
             />
           )}
+
+          {/* Universe Result Overlay — anchored to bottom, never overlaps "DOMINATES" */}
+          {mode === "universe" && battleState === "result" && winner && (
+            <div
+              className="absolute bottom-0 left-0 right-0 z-40 flex flex-col items-center gap-2 pb-6 md:pb-10 pointer-events-none"
+              style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
+              <div className="relative pointer-events-auto flex flex-col items-center gap-3">
+                {/* Dominates badge */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-400/20 border border-blue-400/60 text-blue-300 font-black text-sm md:text-base uppercase tracking-widest shadow-[0_0_20px_rgba(96,165,250,0.4)] backdrop-blur-sm">
+                  ⚡&nbsp;{winner === 1 ? universe1 : universe2} Dominates!
+                </div>
+                <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
+                  {winner === 1 ? universe2 : universe1} &nbsp;·&nbsp; defeated
+                </p>
+                <button
+                  onClick={() => {
+                    setBattleState("idle");
+                    setUniverse1(null);
+                    setUniverse2(null);
+                  }}
+                  className="px-8 py-3 bg-white text-black font-bold uppercase tracking-widest rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.3)] text-sm"
+                >
+                  Play Again
+                </button>
+              </div>
+            </div>
+          )}
+
         </div>
 
         <div
-          className={`mt-auto transition-opacity duration-500 ${battleState !== "idle" ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+          className={`transition-opacity duration-500 flex flex-col min-h-0 flex-shrink ${battleState !== "idle" ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         >
-          <div className="mb-4 text-xs font-mono text-zinc-500 uppercase tracking-widest flex justify-between items-center">
+          <div className="mb-2 md:mb-4 text-xs font-mono text-zinc-500 uppercase tracking-widest flex justify-between items-center flex-shrink-0">
             <span>
               {mode === "universe"
                 ? !universe1

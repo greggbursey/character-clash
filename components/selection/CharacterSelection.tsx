@@ -21,9 +21,9 @@ export default function CharacterSelection({
   selectCharacter
 }: CharacterSelectionProps) {
   return (
-    <div className="flex overflow-x-auto pb-6 pt-2 gap-8 snap-x snap-mandatory hide-scrollbar">
+    <div className="flex overflow-x-auto overflow-y-hidden pb-3 pt-1 gap-6 md:gap-8 snap-x snap-mandatory hide-scrollbar min-h-0">
       {universes.map((universe) => (
-        <div key={universe} className="flex flex-col gap-3">
+        <div key={universe} className="flex flex-col gap-2 md:gap-3 flex-shrink-0">
           <div className="flex items-center gap-2">
             <div className="h-px flex-1 bg-zinc-800" />
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600 whitespace-nowrap">
@@ -32,7 +32,7 @@ export default function CharacterSelection({
             <div className="h-px w-8 bg-zinc-800" />
           </div>
           
-          <div className="flex gap-4">
+          <div className="flex gap-3 md:gap-4">
             {groupedCharacters[universe].map((char) => {
               const isSelected = char.id === char1?.id || char.id === char2?.id;
               const isP1 = char.id === char1?.id;
@@ -47,7 +47,7 @@ export default function CharacterSelection({
                   }`}
                 >
                   <div 
-                    className={`w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 transition-all duration-300 ${
+                    className={`w-16 h-16 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 transition-all duration-300 ${
                       isSelected ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'
                     }`}
                     style={{
@@ -84,8 +84,8 @@ export default function CharacterSelection({
                     </div>
                   )}
 
-                  <div className="mt-2 text-center">
-                    <div className={`text-xs font-bold truncate w-20 md:w-24 ${isSelected ? 'text-white' : 'text-zinc-400 group-hover:text-zinc-200'}`}>
+                  <div className="mt-1 md:mt-2 text-center">
+                    <div className={`text-[10px] md:text-xs font-bold truncate w-16 md:w-24 ${isSelected ? 'text-white' : 'text-zinc-400 group-hover:text-zinc-200'}`}>
                       {char.name}
                     </div>
                   </div>

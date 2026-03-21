@@ -22,8 +22,8 @@ export default function Header({
   setSearchQuery
 }: HeaderProps) {
   return (
-    <header className="flex flex-col sm:flex-row justify-between items-center gap-6 mb-8">
-      <h1 className="text-3xl md:text-4xl font-black tracking-tighter uppercase italic text-white/90">
+    <header className="flex flex-col sm:flex-row justify-between items-center gap-3 md:gap-6 mb-3 md:mb-8 flex-shrink-0">
+      <h1 className="text-2xl md:text-4xl font-black tracking-tighter uppercase italic text-white/90">
         Character Clash
       </h1>
       

@@ -195,14 +195,14 @@ export default function BackgroundLayers({
                   transition={{ type: 'spring', damping: 15, stiffness: 100, delay: 0.2 }}
                   className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none"
                 >
-                  <div className="text-center">
+                  <div className="text-center px-4">
                     <h2 
-                      className="text-7xl md:text-[8rem] font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 drop-shadow-[0_10px_30px_rgba(220,38,38,0.8)]" 
+                      className="text-4xl md:text-[8rem] font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 drop-shadow-[0_10px_30px_rgba(220,38,38,0.8)]" 
                       style={{ WebkitTextStroke: '3px #b91c1c' }}
                     >
                       {winner === 1 ? char1?.name : char2?.name}
                     </h2>
-                    <h3 className="text-5xl md:text-7xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-[-10px]">
+                    <h3 className="text-2xl md:text-7xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-[-6px] md:mt-[-10px]">
                       WINS
                     </h3>
                   </div>
@@ -310,11 +310,11 @@ export default function BackgroundLayers({
                   animate={{ scale: 1, opacity: 1 }}
                   className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none"
                 >
-                  <div className="text-center">
-                    <h2 className="text-7xl md:text-[8rem] font-black uppercase tracking-tighter text-white drop-shadow-[0_10px_30px_rgba(37,99,235,0.8)]">
+                  <div className="text-center px-4">
+                    <h2 className="text-4xl md:text-[8rem] font-black uppercase tracking-tighter text-white drop-shadow-[0_10px_30px_rgba(37,99,235,0.8)]">
                       {winner === 1 ? universe1 : universe2}
                     </h2>
-                    <h3 className="text-5xl md:text-7xl font-black uppercase tracking-widest text-white mt-[-10px]">
+                    <h3 className="text-2xl md:text-7xl font-black uppercase tracking-widest text-white mt-[-6px] md:mt-[-10px]">
                       DOMINATES
                     </h3>
                   </div>
