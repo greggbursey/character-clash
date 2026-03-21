@@ -85,7 +85,7 @@ export default function CharacterSelection({
                   )}
 
                   <div className="mt-1 md:mt-2 text-center">
-                    <div className={`text-[10px] md:text-xs font-bold truncate w-16 md:w-24 ${isSelected ? 'text-white' : 'text-zinc-400 group-hover:text-zinc-200'}`}>
+                    <div className={`text-[10px] md:text-xs font-bold whitespace-normal leading-tight w-16 md:w-24 ${isSelected ? 'text-white' : 'text-zinc-400 group-hover:text-zinc-200'}`}>
                       {char.name}
                     </div>
                   </div>

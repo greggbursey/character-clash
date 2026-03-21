@@ -26,7 +26,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://www.sideshow.com/cdn-cgi/image/height=850,quality=90,f=auto/https://www.sideshow.com/storage/product-images/913038/leonardo_teenage-mutant-ninja-turtles_gallery_659f2d4872969.jpg",
     color: "#3b82f6",
-    powerScore: 45,
+    powerScore: 180,
   },
   {
     id: "mikey",
@@ -42,7 +42,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://secretcompassonline.com/cdn/shop/files/002_PCS_TMNT_Michelangelo_retail_1200x600_crop_center.jpg?v=1732296198",
     color: "#f97316",
-    powerScore: 42,
+    powerScore: 165,
   },
   {
     id: "donnie",
@@ -56,7 +56,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://www.toyark.com/wp-content/uploads/2023/01/PCS-TMNT-Donatello-Statue-004.jpg",
     color: "#a855f7",
-    powerScore: 43,
+    powerScore: 170,
   },
   {
     id: "raph",
@@ -72,7 +72,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://raidshadowlegends.com/wp-content/uploads/2025/08/TMNT-Raphael-scaled.png",
     color: "#ef4444",
-    powerScore: 46,
+    powerScore: 185,
   },
   {
     id: "splinter",
@@ -88,7 +88,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://wallpapercat.com/w/full/7/9/6/459011-1280x2120-samsung-hd-splinter-wallpaper.jpg",
     color: "#78350f",
-    powerScore: 60,
+    powerScore: 240,
   },
   {
     id: "shredder",
@@ -103,7 +103,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://www.specfictionshop.com/cdn/shop/files/001PCS_Shredder__73220_2000x.jpg?v=1683229277",
     color: "#52525b",
-    powerScore: 55,
+    powerScore: 220,
   },
   {
     id: "caseyjones",
@@ -118,7 +118,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://www.sideshow.com/cdn-cgi/image/height=850,quality=90,f=auto/https://www.sideshow.com/storage/product-images/914257/pcs-teenage-mutant-ninja-turtles-casey-jones-1-3-scale-statue-gallery-67c0c291da288.jpg",
     color: "#1e293b",
-    powerScore: 35,
+    powerScore: 95,
   },
   {
     id: "krang",
@@ -132,7 +132,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://www.specfictionshop.com/cdn/shop/products/MAIN-KRANG_2000x.png?v=1669671052",
     color: "#ec4899",
-    powerScore: 65,
+    powerScore: 450,
   },
   {
     id: "bebop",
@@ -145,7 +145,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://www.toyark.com/wp-content/uploads/2022/02/PCS-Bebop-Statue-002.jpg",
     color: "#a21caf",
-    powerScore: 40,
+    powerScore: 140,
   },
   {
     id: "spiderman",
@@ -158,7 +158,7 @@ export const characters: Character[] = [
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/620-spider-man.jpg",
     backgroundUrl: "https://images7.alphacoders.com/971/thumb-1920-971636.jpg",
     color: "#ef4444",
-    powerScore: 65,
+    powerScore: 480,
   },
   {
     id: "ironman",
@@ -172,7 +172,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://wallpapers.com/images/featured/iron-man-ouqxo5w2b59h0042.jpg",
     color: "#eab308",
-    powerScore: 85,
+    powerScore: 720,
   },
   {
     id: "thor",
@@ -183,9 +183,10 @@ export const characters: Character[] = [
     lore: "Thor Odinson is the Asgardian God of Thunder, based on the Norse mythological deity. He wields the enchanted hammer Mjolnir, which grants him the power of flight and control over lightning. Having spent centuries protecting the Nine Realms, he is a warrior of unmatched strength and honor.",
     previewUrl:
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/659-thor.jpg",
-    backgroundUrl: "https://images2.alphacoders.com/674/thumb-1920-674260.jpg",
+    backgroundUrl:
+      "https://img.goodfon.com/wallpaper/big/9/81/thor-tor-kris-khemsvort-chris-hemsworth-molnii-boroda-molot.webp",
     color: "#67e8f9",
-    powerScore: 95,
+    powerScore: 890,
   },
   {
     id: "hulk",
@@ -199,7 +200,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/fe/6d/73/fe6d730ad90961deae81bb951674c018.jpg",
     color: "#22c55e",
-    powerScore: 96,
+    powerScore: 910,
   },
   {
     id: "captainamerica",
@@ -213,7 +214,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/1d/bb/8c/1dbb8c223bba8d37186db10c3388a15a.jpg",
     color: "#3b82f6",
-    powerScore: 70,
+    powerScore: 380,
   },
   {
     id: "wolverine",
@@ -227,7 +228,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/2b/a8/0b/2ba80b7f366e8a0d8c576331067c3458.jpg",
     color: "#eab308",
-    powerScore: 80,
+    powerScore: 450,
   },
   {
     id: "thanos",
@@ -240,7 +241,7 @@ export const characters: Character[] = [
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/655-thanos.jpg",
     backgroundUrl: "https://images6.alphacoders.com/917/thumb-1920-917631.png",
     color: "#a855f7",
-    powerScore: 99,
+    powerScore: 960,
   },
   {
     id: "venom",
@@ -254,7 +255,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/564x/ff/3f/42/ff3f427b745b2765bd7003f9c12af519.jpg",
     color: "#18181b",
-    powerScore: 78,
+    powerScore: 490,
   },
   {
     id: "magneto",
@@ -267,7 +268,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://static0.srcdn.com/wordpress/wp-content/uploads/2020/05/Magneto-Comic-Book-Art-Face.jpg?w=1200&h=675&fit=crop",
     color: "#dc2626",
-    powerScore: 92,
+    powerScore: 820,
   },
   {
     id: "superman",
@@ -280,7 +281,7 @@ export const characters: Character[] = [
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/644-superman.jpg",
     backgroundUrl: "https://images4.alphacoders.com/138/thumb-1920-1385846.jpg",
     color: "#3b82f6",
-    powerScore: 98,
+    powerScore: 950,
   },
   {
     id: "batman",
@@ -294,7 +295,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://wallpapers.com/images/hd/batman-laptop-6sx5rob9au9bxjjg.jpg",
     color: "#52525b",
-    powerScore: 60,
+    powerScore: 210,
   },
   {
     id: "joker",
@@ -307,7 +308,7 @@ export const characters: Character[] = [
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/370-joker.jpg",
     backgroundUrl: "https://images.alphacoders.com/235/235883.jpg",
     color: "#a855f7",
-    powerScore: 25,
+    powerScore: 65,
   },
   {
     id: "wonderwoman",
@@ -320,7 +321,7 @@ export const characters: Character[] = [
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/720-wonder-woman.jpg",
     backgroundUrl: "https://images4.alphacoders.com/866/thumb-1920-866080.jpg",
     color: "#eab308",
-    powerScore: 95,
+    powerScore: 890,
   },
   {
     id: "flash",
@@ -347,7 +348,7 @@ export const characters: Character[] = [
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/405-lex-luthor.jpg",
     backgroundUrl: "https://wallpapercave.com/wp/wp7305062.jpg",
     color: "#22c55e",
-    powerScore: 40,
+    powerScore: 720,
   },
   {
     id: "harleyquinn",
@@ -361,7 +362,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/474x/47/84/77/478477ddd53a4c38cb8b9bc40d6ea906.jpg",
     color: "#ef4444",
-    powerScore: 30,
+    powerScore: 80,
   },
   {
     id: "darkseid",
@@ -375,7 +376,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://static0.srcdn.com/wordpress/wp-content/uploads/2020/06/Darkseid-Fan-Art.jpg?w=1200&h=900&fit=crop",
     color: "#52525b",
-    powerScore: 100,
+    powerScore: 1000,
   },
   {
     id: "scorpion",
@@ -388,7 +389,7 @@ export const characters: Character[] = [
       "https://static.wikia.nocookie.net/mkwikia/images/e/e5/Scorpion_MK1_render.webp/revision/latest",
     backgroundUrl: "https://cdn.wallpapersafari.com/89/82/EqzrGN.jpg",
     color: "#eab308",
-    powerScore: 85,
+    powerScore: 580,
     imagePosition: "top",
   },
   {
@@ -403,7 +404,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://images.hdqwalls.com/download/sub-zero-mortal-kombat-u2-640x960.jpg",
     color: "#3b82f6",
-    powerScore: 84,
+    powerScore: 570,
     imagePosition: "top",
   },
   {
@@ -418,7 +419,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://img.goodfon.com/wallpaper/big/c/1a/molnii-iskry-lightning-raiden-god-of-thunder-mortal-kombat-1.webp",
     color: "#60a5fa",
-    powerScore: 95,
+    powerScore: 880,
     imagePosition: "top",
   },
   {
@@ -433,7 +434,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://wallpapers.com/images/hd/mortal-kombat-shang-tsung-1032-x-1200-wallpaper-q5kxa8hiespl7lxk.jpg",
     color: "#22c55e",
-    powerScore: 90,
+    powerScore: 780,
   },
   {
     id: "goro",
@@ -447,7 +448,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://wallpapers.com/images/hd/mortal-kombat-goro-800-x-1280-wallpaper-4lx1oxfkvg5wcutg.jpg",
     color: "#ea580c",
-    powerScore: 94,
+    powerScore: 840,
     imagePosition: "top",
   },
   {
@@ -462,7 +463,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/c5/f6/11/c5f611ee7395317edebcae1fe77f5314.jpg",
     color: "#a855f7",
-    powerScore: 98,
+    powerScore: 920,
     imagePosition: "top",
   },
   {
@@ -476,7 +477,7 @@ export const characters: Character[] = [
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/185-colossus.jpg",
     backgroundUrl: "https://wallpapercave.com/wp/wp8271138.jpg",
     color: "#94a3b8",
-    powerScore: 82,
+    powerScore: 550,
   },
   {
     id: "nightcrawler",
@@ -490,7 +491,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/originals/c8/97/67/c8976775a1e1de22e0cb8da127bc54e6.jpg",
     color: "#3b82f6",
-    powerScore: 75,
+    powerScore: 460,
   },
   {
     id: "phoenix",
@@ -504,7 +505,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&q=80&w=1920",
     color: "#ef4444",
-    powerScore: 100,
+    powerScore: 1000,
   },
   {
     id: "sabretooth",
@@ -518,7 +519,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/26/08/41/26084106104c15929af006bec482e14d.jpg",
     color: "#b45309",
-    powerScore: 80,
+    powerScore: 540,
   },
   {
     id: "juggernaut",
@@ -532,7 +533,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6b9616c3-7094-40cb-9bb0-15d62003d3ff/dcfixnv-87ceba1a-36c4-4897-b072-a6de37b556f8.jpg/v1/fill/w_1024,h_576,q_75,strp/juggernaut_wip_by_uncannyknack_dcfixnv-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6Ii9mLzZiOTYxNmMzLTcwOTQtNDBjYi05YmIwLTE1ZDYyMDAzZDNmZi9kY2ZpeG52LTg3Y2ViYTFhLTM2YzQtNDg5Ny1iMDcyLWE2ZGUzN2I1NTZmOC5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.gO6nt6pD45YusF1V5AiaPyXTCC6TcU6qOJKbaIUpp5A",
     color: "#7f1d1d",
-    powerScore: 92,
+    powerScore: 680,
   },
   {
     id: "blackpanther",
@@ -542,11 +543,11 @@ export const characters: Character[] = [
       "The king and protector of the technologically advanced African nation of Wakanda.",
     lore: "T'Challa is the king of Wakanda, a technologically advanced nation hidden in Africa. He uses his genius intellect, physical prowess, and a suit woven from vibranium to protect his people as the Black Panther. Having consumed the Heart-Shaped Herb, he possesses enhanced senses and physical abilities that rival any super-soldier.",
     previewUrl:
-      "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/106-black-panther.jpg",
+      "https://www.sideshow.com/cdn-cgi/image/height=850,quality=90,f=auto/https://www.sideshow.com/storage/product-images/910233/black-panther-deluxe_marvel_gallery_61eb5a329c25b.jpg",
     backgroundUrl:
-      "https://c4.wallpaperflare.com/wallpaper/179/330/349/black-panther-marvel-cinematic-universe-mcu-wakanda-t-challa-hd-wallpaper-preview.jpg",
+      "https://wallpapers.com/images/hd/purple-aesthetic-black-panther-wakanda-forever-fnxzgzvq7ldg8xlg.jpg",
     color: "#18181b",
-    powerScore: 85,
+    powerScore: 420,
   },
   {
     id: "doctorstrange",
@@ -556,11 +557,11 @@ export const characters: Character[] = [
       "The Sorcerer Supreme, Earth's primary protector against magical and mystical threats.",
     lore: "Stephen Strange was a brilliant but arrogant surgeon until a car accident ruined his hands, leading him to discover the mystic arts. Now serving as the Sorcerer Supreme, he is Earth's primary protector against magical and mystical threats. He wields the Eye of Agamotto and the Cloak of Levitation to defend our dimension from eldritch horrors.",
     previewUrl:
-      "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/226-doctor-strange.jpg",
+      "https://bustedhalo.com/wp-content/uploads/2026/01/doctor-strange-1.jpg",
     backgroundUrl:
       "https://w0.peakpx.com/wallpaper/180/567/HD-wallpaper-doctor-strange-marvel-cumberbatch-stephen-mystic-magic-sorcerer.jpg",
     color: "#a855f7",
-    powerScore: 94,
+    powerScore: 890,
   },
   {
     id: "ryu",
@@ -572,9 +573,9 @@ export const characters: Character[] = [
     previewUrl:
       "https://store.playstation.com/store/api/chihiro/00_09_000/container/PT/pt/999/EP0102-NPEB00554_00-AVSTREETFI000015/1550732407000/image?w=400&h=400&bg_color=000000&opacity=100&_version=00_09_000",
     backgroundUrl:
-      "https://img.redbull.com/images/c_crop,x_894,y_0,h_2400,w_1920/c_fill,w_450,h_600/q_auto,f_auto/redbullcom/2018/11/21/71b24227-49ab-487d-9b01-ca90b311afe9/evolucao-ryu-30-anos-street-fighter-01",
+      "https://wallpapers-clan.com/wp-content/uploads/2025/06/ryu-street-fighter-desktop-wallpaper-cover.jpg",
     color: "#ef4444",
-    powerScore: 88,
+    powerScore: 520,
   },
   {
     id: "vega",
@@ -588,7 +589,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/e5/56/34/e55634b9eaeec94a1eea3a9cf0a77d45.jpg",
     color: "#dc2626",
-    powerScore: 82,
+    powerScore: 440,
   },
   {
     id: "mbison",
@@ -601,7 +602,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/76/63/21/7663217d02b2a1c736e2d70513376f87.jpg",
     color: "#7f1d1d",
-    powerScore: 95,
+    powerScore: 820,
   },
   {
     id: "zangief",
@@ -614,7 +615,7 @@ export const characters: Character[] = [
       "https://game.capcom.com/cfn/sfv/as/common/character/bustup/l/zgf.png?h=4ae8ea4293c0db3829278dba98deac8a",
     backgroundUrl: "https://images7.alphacoders.com/438/thumb-1920-438585.jpg",
     color: "#ef4444",
-    powerScore: 85,
+    powerScore: 480,
   },
   {
     id: "dhalsim",
@@ -627,7 +628,7 @@ export const characters: Character[] = [
       "https://www.streetfighter.com/6/assets/images/character/dhalsim/outfit/outfit01.png",
     backgroundUrl: "https://wallpapercave.com/wp/wp9491520.jpg",
     color: "#f97316",
-    powerScore: 80,
+    powerScore: 460,
   },
   {
     id: "blanka",
@@ -640,7 +641,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://assetsio.gnwcdn.com/heres-blanka-electrifying-street-fighter-5-1518452492545.jpg?width=1200&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp",
     color: "#22c55e",
-    powerScore: 78,
+    powerScore: 450,
   },
   {
     id: "ehonda",
@@ -653,7 +654,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://www.streetfighter.com/5/en-us/wp-content/uploads/2019/07/Honda-7-R1.jpg",
     color: "#3b82f6",
-    powerScore: 80,
+    powerScore: 440,
   },
   {
     id: "godzilla",
@@ -666,7 +667,7 @@ export const characters: Character[] = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6S0Upl3EKLpbIl1D3XMBdh0-3pmlJ-ybSlA&s",
     backgroundUrl: "https://images7.alphacoders.com/100/thumb-1920-1003272.jpg",
     color: "#3b82f6",
-    powerScore: 100,
+    powerScore: 1000,
   },
   {
     id: "kingkong",
@@ -679,7 +680,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://wallpapers.com/images/hd/king-kong-4k-tzmhgunuvz6vp5uj.jpg",
     color: "#78350f",
-    powerScore: 95,
+    powerScore: 910,
   },
   {
     id: "mothra",
@@ -693,7 +694,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://wallpapers.com/images/hd/mothra-3598-x-2000-wallpaper-l0qb0x46av8o26jd.jpg",
     color: "#facc15",
-    powerScore: 92,
+    powerScore: 850,
   },
   {
     id: "rodan",
@@ -706,7 +707,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/28/23/10/2823102d1f15c2f703c66b9fb82365a3.jpg",
     color: "#dc2626",
-    powerScore: 90,
+    powerScore: 820,
   },
   {
     id: "mechagodzilla",
@@ -720,7 +721,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/f5/d7/30/f5d7307761f809391f4b4a089791e80c.jpg",
     color: "#94a3b8",
-    powerScore: 98,
+    powerScore: 980,
   },
   {
     id: "mutos",
@@ -734,6 +735,6 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://static.wikia.nocookie.net/godzilla/images/1/15/330px-New_fem_muto.png/revision/latest/scale-to-width/360?cb=20190925130240",
     color: "#ef4444",
-    powerScore: 88,
+    powerScore: 780,
   },
 ];

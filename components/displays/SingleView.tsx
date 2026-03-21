@@ -18,9 +18,9 @@ export default function SingleView({ char1, setSelectedLoreChar }: SingleViewPro
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -20, opacity: 0 }}
           key={`info-${char1.id}`}
-          className="max-w-2xl text-center space-y-4"
+          className="w-full text-center space-y-4 px-4 sm:px-12"
         >
-          <h2 className="text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">
+          <h2 className="text-5xl sm:text-7xl md:text-[clamp(3rem,8vw,120px)] font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50 leading-[0.9] break-words text-balance max-w-[90vw] mx-auto">
             {char1.name}
           </h2>
           <div className="flex items-center justify-center gap-4">

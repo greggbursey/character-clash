@@ -252,7 +252,21 @@ export default function BackgroundLayers({
                     <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/80 via-transparent to-zinc-950/80" />
                   </motion.div>
                 ) : (
-                  <div className="absolute inset-0 bg-zinc-900/20" />
+                  <motion.div
+                    key="uni-left-default"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src="https://miro.medium.com/v2/resize:fit:1400/1*A3q00aZNYvh5qoJNiorEeg.jpeg"
+                      alt="Universe Default"
+                      fill
+                      className="object-cover opacity-30 blur-sm brightness-50"
+                      referrerPolicy="no-referrer"
+                    />
+                  </motion.div>
                 )}
               </AnimatePresence>
             </motion.div>
@@ -289,7 +303,21 @@ export default function BackgroundLayers({
                     <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/80 via-transparent to-zinc-950/80" />
                   </motion.div>
                 ) : (
-                  <div className="absolute inset-0 bg-zinc-900/20" />
+                  <motion.div
+                    key="uni-right-default"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src="https://miro.medium.com/v2/resize:fit:1400/1*A3q00aZNYvh5qoJNiorEeg.jpeg"
+                      alt="Universe Default"
+                      fill
+                      className="object-cover opacity-30 blur-sm brightness-50"
+                      referrerPolicy="no-referrer"
+                    />
+                  </motion.div>
                 )}
               </AnimatePresence>
             </motion.div>

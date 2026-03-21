@@ -131,15 +131,17 @@ export default function Home() {
       } else {
         const timer = setTimeout(() => {
           if (mode === "battle" && char1 && char2) {
-            const score1 = char1.powerScore + (Math.random() * 20 - 10);
-            const score2 = char2.powerScore + (Math.random() * 20 - 10);
+            // Power roll: 0.5x to 1.5x of power score
+            const score1 = char1.powerScore * (0.5 + Math.random());
+            const score2 = char2.powerScore * (0.5 + Math.random());
             setWinner(score1 >= score2 ? 1 : 2);
             setBattleState("result");
           } else if (mode === "universe" && universe1 && universe2) {
             const stats1 = getUniverseStats(universe1);
             const stats2 = getUniverseStats(universe2);
-            const score1 = stats1.avgPower + (Math.random() * 15 - 7.5);
-            const score2 = stats2.avgPower + (Math.random() * 15 - 7.5);
+            // Same logic for universes
+            const score1 = stats1.avgPower * (0.5 + Math.random());
+            const score2 = stats2.avgPower * (0.5 + Math.random());
             setWinner(score1 >= score2 ? 1 : 2);
             setBattleState("result");
           }
