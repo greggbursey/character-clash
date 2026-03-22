@@ -311,7 +311,7 @@ export default function BackgroundLayers({
                     className="absolute inset-0"
                   >
                     <Image
-                      src="https://miro.medium.com/v2/resize:fit:1400/1*A3q00aZNYvh5qoJNiorEeg.jpeg"
+                      src="https://lsc.org/a360c87dad4512ce6cb6f84fc5978602.jpg"
                       alt="Universe Default"
                       fill
                       className="object-cover opacity-30 blur-sm brightness-50"

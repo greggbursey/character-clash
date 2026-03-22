@@ -26,7 +26,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://www.sideshow.com/cdn-cgi/image/height=850,quality=90,f=auto/https://www.sideshow.com/storage/product-images/913038/leonardo_teenage-mutant-ninja-turtles_gallery_659f2d4872969.jpg",
     color: "#3b82f6",
-    powerScore: 180,
+    powerScore: 185,
   },
   {
     id: "mikey",
@@ -42,7 +42,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://secretcompassonline.com/cdn/shop/files/002_PCS_TMNT_Michelangelo_retail_1200x600_crop_center.jpg?v=1732296198",
     color: "#f97316",
-    powerScore: 165,
+    powerScore: 170,
   },
   {
     id: "donnie",
@@ -56,7 +56,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://www.toyark.com/wp-content/uploads/2023/01/PCS-TMNT-Donatello-Statue-004.jpg",
     color: "#a855f7",
-    powerScore: 170,
+    powerScore: 175,
   },
   {
     id: "raph",
@@ -72,7 +72,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://raidshadowlegends.com/wp-content/uploads/2025/08/TMNT-Raphael-scaled.png",
     color: "#ef4444",
-    powerScore: 185,
+    powerScore: 180,
   },
   {
     id: "splinter",
@@ -118,7 +118,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://www.sideshow.com/cdn-cgi/image/height=850,quality=90,f=auto/https://www.sideshow.com/storage/product-images/914257/pcs-teenage-mutant-ninja-turtles-casey-jones-1-3-scale-statue-gallery-67c0c291da288.jpg",
     color: "#1e293b",
-    powerScore: 95,
+    powerScore: 90,
   },
   {
     id: "krang",
@@ -132,7 +132,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://www.specfictionshop.com/cdn/shop/products/MAIN-KRANG_2000x.png?v=1669671052",
     color: "#ec4899",
-    powerScore: 450,
+    powerScore: 420,
   },
   {
     id: "bebop",
@@ -172,7 +172,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://wallpapers.com/images/featured/iron-man-ouqxo5w2b59h0042.jpg",
     color: "#eab308",
-    powerScore: 720,
+    powerScore: 710,
   },
   {
     id: "thor",
@@ -200,7 +200,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/fe/6d/73/fe6d730ad90961deae81bb951674c018.jpg",
     color: "#22c55e",
-    powerScore: 910,
+    powerScore: 920,
   },
   {
     id: "captainamerica",
@@ -308,7 +308,7 @@ export const characters: Character[] = [
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/370-joker.jpg",
     backgroundUrl: "https://images.alphacoders.com/235/235883.jpg",
     color: "#a855f7",
-    powerScore: 65,
+    powerScore: 70,
   },
   {
     id: "wonderwoman",
@@ -335,7 +335,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/d2/7f/e5/d27fe5c60fb3b61cc894406465ea5867.jpg",
     color: "#ef4444",
-    powerScore: 88,
+    powerScore: 880,
   },
   {
     id: "lexluthor",
@@ -348,7 +348,7 @@ export const characters: Character[] = [
       "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/405-lex-luthor.jpg",
     backgroundUrl: "https://wallpapercave.com/wp/wp7305062.jpg",
     color: "#22c55e",
-    powerScore: 720,
+    powerScore: 710,
   },
   {
     id: "harleyquinn",
@@ -389,7 +389,7 @@ export const characters: Character[] = [
       "https://static.wikia.nocookie.net/mkwikia/images/e/e5/Scorpion_MK1_render.webp/revision/latest",
     backgroundUrl: "https://cdn.wallpapersafari.com/89/82/EqzrGN.jpg",
     color: "#eab308",
-    powerScore: 580,
+    powerScore: 480,
     imagePosition: "top",
   },
   {
@@ -404,7 +404,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://images.hdqwalls.com/download/sub-zero-mortal-kombat-u2-640x960.jpg",
     color: "#3b82f6",
-    powerScore: 570,
+    powerScore: 470,
     imagePosition: "top",
   },
   {
@@ -419,7 +419,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://img.goodfon.com/wallpaper/big/c/1a/molnii-iskry-lightning-raiden-god-of-thunder-mortal-kombat-1.webp",
     color: "#60a5fa",
-    powerScore: 880,
+    powerScore: 850,
     imagePosition: "top",
   },
   {
@@ -434,7 +434,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://wallpapers.com/images/hd/mortal-kombat-shang-tsung-1032-x-1200-wallpaper-q5kxa8hiespl7lxk.jpg",
     color: "#22c55e",
-    powerScore: 780,
+    powerScore: 750,
   },
   {
     id: "goro",
@@ -448,7 +448,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://wallpapers.com/images/hd/mortal-kombat-goro-800-x-1280-wallpaper-4lx1oxfkvg5wcutg.jpg",
     color: "#ea580c",
-    powerScore: 840,
+    powerScore: 520,
     imagePosition: "top",
   },
   {
@@ -463,7 +463,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/c5/f6/11/c5f611ee7395317edebcae1fe77f5314.jpg",
     color: "#a855f7",
-    powerScore: 920,
+    powerScore: 870,
     imagePosition: "top",
   },
   {
@@ -561,7 +561,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://w0.peakpx.com/wallpaper/180/567/HD-wallpaper-doctor-strange-marvel-cumberbatch-stephen-mystic-magic-sorcerer.jpg",
     color: "#a855f7",
-    powerScore: 890,
+    powerScore: 840,
   },
   {
     id: "ryu",
@@ -575,7 +575,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://wallpapers-clan.com/wp-content/uploads/2025/06/ryu-street-fighter-desktop-wallpaper-cover.jpg",
     color: "#ef4444",
-    powerScore: 520,
+    powerScore: 280,
   },
   {
     id: "vega",
@@ -589,7 +589,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/e5/56/34/e55634b9eaeec94a1eea3a9cf0a77d45.jpg",
     color: "#dc2626",
-    powerScore: 440,
+    powerScore: 210,
   },
   {
     id: "mbison",
@@ -602,7 +602,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://i.pinimg.com/736x/76/63/21/7663217d02b2a1c736e2d70513376f87.jpg",
     color: "#7f1d1d",
-    powerScore: 820,
+    powerScore: 350,
   },
   {
     id: "zangief",
@@ -615,7 +615,7 @@ export const characters: Character[] = [
       "https://game.capcom.com/cfn/sfv/as/common/character/bustup/l/zgf.png?h=4ae8ea4293c0db3829278dba98deac8a",
     backgroundUrl: "https://images7.alphacoders.com/438/thumb-1920-438585.jpg",
     color: "#ef4444",
-    powerScore: 480,
+    powerScore: 220,
   },
   {
     id: "dhalsim",
@@ -628,7 +628,7 @@ export const characters: Character[] = [
       "https://www.streetfighter.com/6/assets/images/character/dhalsim/outfit/outfit01.png",
     backgroundUrl: "https://wallpapercave.com/wp/wp9491520.jpg",
     color: "#f97316",
-    powerScore: 460,
+    powerScore: 230,
   },
   {
     id: "blanka",
@@ -641,7 +641,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://assetsio.gnwcdn.com/heres-blanka-electrifying-street-fighter-5-1518452492545.jpg?width=1200&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp",
     color: "#22c55e",
-    powerScore: 450,
+    powerScore: 215,
   },
   {
     id: "ehonda",
@@ -654,7 +654,7 @@ export const characters: Character[] = [
     backgroundUrl:
       "https://www.streetfighter.com/5/en-us/wp-content/uploads/2019/07/Honda-7-R1.jpg",
     color: "#3b82f6",
-    powerScore: 440,
+    powerScore: 200,
   },
   {
     id: "godzilla",
@@ -736,5 +736,140 @@ export const characters: Character[] = [
       "https://static.wikia.nocookie.net/godzilla/images/1/15/330px-New_fem_muto.png/revision/latest/scale-to-width/360?cb=20190925130240",
     color: "#ef4444",
     powerScore: 780,
+  },
+  {
+    id: "luke",
+    name: "Luke Skywalker",
+    universe: "Star Wars",
+    description:
+      "The farm boy who became a legendary Jedi Master and hero of the Rebellion.",
+    lore: "From the deserts of Tatooine to the rank of Jedi Master, Luke Skywalker's journey changed the galaxy. Wielding his father's lightsaber and later his own green-bladed weapon, he brought hope back to the stars and redeemed Anakin Skywalker.",
+    previewUrl:
+      "https://lumiere-a.akamaihd.net/v1/images/open-uri20150608-27674-1ymefwb_483d5487.jpeg?region=0%2C0%2C1200%2C675",
+    backgroundUrl:
+      "https://universaldork.com/wp-content/uploads/2019/11/fcee21b230b36b4ec564dafa0763cba7.jpg",
+    color: "#22c55e",
+    powerScore: 720,
+  },
+  {
+    id: "hansolo",
+    name: "Han Solo",
+    universe: "Star Wars",
+    description:
+      "The galaxy's most famous smuggler and captain of the Millennium Falcon.",
+    lore: "A scoundrel with a heart of gold, Han Solo is a master pilot and crack shot with his DL-44 blaster. alongside his co-pilot Chewbacca, he went from a cynical smuggler to a general of the Rebel Alliance.",
+    previewUrl:
+      "https://thehistorypress.co.uk/wp-content/uploads/media/4627/14063653395_57a080173a_b-wpv_1020x800_center_center.jpg",
+    backgroundUrl:
+      "https://cdn.mos.cms.futurecdn.net/HHcFEcsgiokdigFsMZyiVo.jpg",
+    color: "#94a3b8",
+    powerScore: 180,
+  },
+  {
+    id: "chewbacca",
+    name: "Chewbacca",
+    universe: "Star Wars",
+    description: "A legendary Wookiee warrior and Han Solo's loyal co-pilot.",
+    lore: "Hailing from Kashyyyk, Chewbacca is a powerful Wookiee who wields a deadly bowcaster. Known for his immense strength and technical skills, he is a fiercely loyal friend and a formidable combatant in any skirmish.",
+    previewUrl:
+      "https://wallpapers.com/images/hd/4k-star-wars-chewbacca-rgxlp098viy1jikt.jpg",
+    backgroundUrl:
+      "https://i.pinimg.com/736x/d4/ee/02/d4ee026587003e7cea23b13021eab62f.jpg",
+    color: "#78350f",
+    powerScore: 230,
+  },
+  {
+    id: "macewindu",
+    name: "Mace Windu",
+    universe: "Star Wars",
+    description:
+      "A Jedi Master of the High Council, master of the Vaapad combat style.",
+    lore: "One of the most powerful Jedi in history, Mace Windu wields a unique amethyst-bladed lightsaber. He developed Vaapad, a combat form that channels his inner darkness into a force for light, making him one of the few capable of matching Sith Lords in open combat.",
+    previewUrl:
+      "https://www.denofgeek.com/wp-content/uploads/2020/12/the-mandalorian-mace-windu.jpg?resize=768%2C432",
+    backgroundUrl:
+      "https://res.cloudinary.com/jerrick/image/upload/v1511281467/eez1tmvgpk8zine0ihpc.jpg",
+    color: "#a855f7",
+    powerScore: 710,
+  },
+  {
+    id: "yoda",
+    name: "Yoda",
+    universe: "Star Wars",
+    description:
+      "The wizened Grand Master of the Jedi Order and a master of the Force.",
+    lore: "Having lived for nine centuries, Yoda has trained generations of Jedi. Despite his small stature, his connection to the Force is nearly unmatched, allowing him to wield incredible power and wisdom that guided the Jedi for eras.",
+    previewUrl:
+      "https://cdn.shopify.com/s/files/1/0817/1657/6536/files/Yoda-Death-08_480x480.jpg?v=1755769538",
+    backgroundUrl:
+      "https://i.pinimg.com/736x/d0/ae/c7/d0aec70078cbc3f3d38d8955db99f9ac.jpg",
+    color: "#22c55e",
+    powerScore: 780,
+  },
+  {
+    id: "palpatine",
+    name: "Emperor Palpatine",
+    universe: "Star Wars",
+    description: "The Dark Lord of the Sith and ruler of the Galactic Empire.",
+    lore: "Darth Sidious, the master of deception and dark side power, orchestrated the fall of the Republic and the Jedi Order. His mastery of Sith lightning and political manipulation made him the most dreaded figure in the galaxy.",
+    previewUrl:
+      "https://i.pinimg.com/736x/7c/2c/af/7c2cafdea569c342e28f5268ab80991a.jpg",
+    backgroundUrl:
+      "https://static.wikia.nocookie.net/starwars/images/f/fc/Palpatine_FandD.png/revision/latest?cb=20150902052433",
+    color: "#ef4444",
+    powerScore: 790,
+  },
+  {
+    id: "vader",
+    name: "Darth Vader",
+    universe: "Star Wars",
+    description: "The feared enforcer of the Empire and a fallen Jedi Knight.",
+    lore: "Once Anakin Skywalker, the Chosen One, he was consumed by the dark side and rebuilt in a life-sustaining suit of armor. As Darth Vader, he became the ultimate symbol of the Empire's might, wielding the dark side with terrifying precision.",
+    previewUrl:
+      "https://c4.wallpaperflare.com/wallpaper/434/593/222/star-wars-darth-vader-sith-wallpaper-preview.jpg",
+    backgroundUrl: "https://images2.alphacoders.com/111/thumb-1920-1118141.jpg",
+    color: "#ef4444",
+    powerScore: 750,
+  },
+  {
+    id: "maul",
+    name: "Darth Maul",
+    universe: "Star Wars",
+    description:
+      "A deadly Sith assassin who wields a double-bladed lightsaber.",
+    lore: "Trained by Darth Sidious, Maul is a master of martial arts and lightsaber combat. After his defeat on Naboo, his sheer hatred allowed him to survive and return as a chaotic force of vengeance throughout the galaxy.",
+    previewUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR9kEy6CEybBwDcIPdSuBstJzaSi6mZ_P-nA&s",
+    backgroundUrl:
+      "https://images.bigbadtoystore.com/images/p/full/2025/01/2949c63e-6d12-42cf-9e54-f7955261b1b0.jpg",
+    color: "#ef4444",
+    powerScore: 620,
+  },
+  {
+    id: "bane",
+    name: "Darth Bane",
+    universe: "Star Wars",
+    description: "The ancient Sith Lord who established the Rule of Two.",
+    lore: "Survivor of the Sith wars, Darth Bane realized that the Sith were destroying themselves. He implemented the Rule of Two: 'One to embody the power, the other to crave it,' ensuring the Sith would eventually conquer the Jedi through cunning and strength.",
+    previewUrl:
+      "https://static.wikia.nocookie.net/starwars/images/d/d1/DarthBane-TEA.jpg/revision/latest?cb=20090903051934",
+    backgroundUrl:
+      "https://images.squarespace-cdn.com/content/v1/5fbc4a62c2150e62cfcb09aa/1613073654685-QAVTOKZTUA1CM3APKBB1/star-wars-darth-bane-tv-series-disney--1159304-1280x0.jpeg",
+    color: "#7f1d1d",
+    powerScore: 680,
+  },
+  {
+    id: "starkiller",
+    name: "Starkiller",
+    universe: "Star Wars",
+    description:
+      "Darth Vader's secret apprentice, possessing raw and untamed Force power.",
+    lore: "Galen Marek, known as Starkiller, was trained in secret to hunt down the remaining Jedi. His Force abilities are exceptionally raw and powerful, allowing him to pull even Star Destroyers from the sky and challenge the masters of both the Light and Dark sides.",
+    previewUrl:
+      "https://origin.giantbomb.com/a/uploads/original/3/34651/1218649-0starkiller.jpg",
+    backgroundUrl:
+      "https://www.denofgeek.com/wp-content/uploads/2022/04/star-wars-the-forced-unleashed-starkiller.jpg?resize=768%2C432",
+    color: "#6366f1",
+    powerScore: 740,
   },
 ];
