@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
 
 interface UniverseSelectionProps {
   allUniverses: string[];
@@ -47,7 +48,7 @@ export default function UniverseSelection({
                 }}
               >
                 <Image
-                  src={stats.background}
+                  src={getAssetPath(stats.background)}
                   alt={uni}
                   fill
                   className="object-cover"

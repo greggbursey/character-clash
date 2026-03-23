@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { Character, Mode } from '@/types';
+import { getAssetPath } from '@/lib/utils';
 
 interface CharacterSelectionProps {
   mode: Mode;
@@ -56,7 +57,7 @@ export default function CharacterSelection({
                     }}
                   >
                     <Image
-                      src={char.previewUrl}
+                      src={getAssetPath(char.previewUrl)}
                       alt={char.name}
                       width={96}
                       height={96}

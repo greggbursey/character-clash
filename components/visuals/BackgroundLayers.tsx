@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'motion/react';
 import Image from 'next/image';
 import { Character, Mode, BattleState } from '@/types';
+import { getAssetPath } from '@/lib/utils';
 
 interface BackgroundLayersProps {
   mode: Mode;
@@ -90,7 +91,7 @@ export default function BackgroundLayers({
             style={{ x: parallaxX, y: parallaxY }}
           >
             <Image
-              src={char1 ? char1.backgroundUrl : "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&q=80&w=1920"}
+              src={char1 ? getAssetPath(char1.backgroundUrl) : "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&q=80&w=1920"}
               alt={char1 ? char1.name : "Superheroes Collage"}
               fill
               className="object-cover opacity-50 blur-sm scale-110"
@@ -134,7 +135,7 @@ export default function BackgroundLayers({
                     style={{ x: parallaxX, y: parallaxY }}
                   >
                     <Image
-                      src={char1.backgroundUrl}
+                      src={getAssetPath(char1.backgroundUrl)}
                       alt={char1.name}
                       fill
                       className="object-cover opacity-60 blur-sm scale-110"
@@ -188,7 +189,7 @@ export default function BackgroundLayers({
                     style={{ x: parallaxX, y: parallaxY }}
                   >
                     <Image
-                      src={char2.backgroundUrl}
+                      src={getAssetPath(char2.backgroundUrl)}
                       alt={char2.name}
                       fill
                       className="object-cover opacity-60 blur-sm scale-110"
@@ -284,7 +285,7 @@ export default function BackgroundLayers({
                     style={{ x: parallaxX, y: parallaxY }}
                   >
                     <Image
-                      src={getUniverseStats(universe1).background}
+                      src={getAssetPath(getUniverseStats(universe1).background)}
                       alt={universe1}
                       fill
                       className="object-cover opacity-60 blur-sm scale-110"
@@ -337,7 +338,7 @@ export default function BackgroundLayers({
                     style={{ x: parallaxX, y: parallaxY }}
                   >
                     <Image
-                      src={getUniverseStats(universe2).background}
+                      src={getAssetPath(getUniverseStats(universe2).background)}
                       alt={universe2}
                       fill
                       className="object-cover opacity-60 blur-sm scale-110"

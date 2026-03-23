@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import { Character } from '@/types';
+import { getAssetPath } from '@/lib/utils';
 
 interface LoreModalProps {
   character: Character | null;
@@ -39,7 +40,7 @@ export default function LoreModal({ character, onClose }: LoreModalProps) {
             
             <div className="relative h-64 w-full">
               <Image
-                src={character.backgroundUrl}
+                src={getAssetPath(character.backgroundUrl)}
                 alt={character.name}
                 fill
                 className="object-cover"
@@ -58,7 +59,7 @@ export default function LoreModal({ character, onClose }: LoreModalProps) {
                 style={{ backgroundColor: character.color }}
               >
                 <Image
-                  src={character.previewUrl}
+                  src={getAssetPath(character.previewUrl)}
                   alt={character.name}
                   width={96}
                   height={96}
