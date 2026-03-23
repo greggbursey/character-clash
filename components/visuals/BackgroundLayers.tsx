@@ -1,6 +1,7 @@
 'use client';
 
-import { motion, AnimatePresence } from 'motion/react';
+import { useEffect } from 'react';
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'motion/react';
 import Image from 'next/image';
 import { Character, Mode, BattleState } from '@/types';
 
@@ -25,8 +26,46 @@ export default function BackgroundLayers({
   universe2,
   getUniverseStats
 }: BackgroundLayersProps) {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth) * 2 - 1;
+      const y = (e.clientY / window.innerHeight) * 2 - 1;
+      mouseX.set(x);
+      mouseY.set(y);
+    };
+
+    const handleDeviceOrientation = (e: DeviceOrientationEvent) => {
+      // gamma is left-to-right (-90 to 90)
+      // beta is front-to-back (-180 to 180)
+      if (e.gamma !== null && e.beta !== null) {
+        const x = Math.min(Math.max(e.gamma / 45, -1), 1);
+        const y = Math.min(Math.max((e.beta - 45) / 45, -1), 1);
+        mouseX.set(x);
+        mouseY.set(y);
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('deviceorientation', handleDeviceOrientation, false);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('deviceorientation', handleDeviceOrientation);
+    };
+  }, [mouseX, mouseY]);
+
+  const springConfig = { damping: 30, stiffness: 100, mass: 1 };
+  const smoothX = useSpring(mouseX, springConfig);
+  const smoothY = useSpring(mouseY, springConfig);
+
+  const parallaxX = useTransform(smoothX, [-1, 1], [-30, 30]);
+  const parallaxY = useTransform(smoothY, [-1, 1], [-30, 30]);
+
   return (
-    <div className="absolute inset-0 z-0 flex">
+    <div className="absolute inset-0 z-0 flex overflow-hidden">
       {/* Lightning Effect */}
       <AnimatePresence>
         {battleState === 'countdown' && (
@@ -47,13 +86,14 @@ export default function BackgroundLayers({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
-            className="absolute inset-0"
+            className="absolute inset-[-5%] overflow-hidden"
+            style={{ x: parallaxX, y: parallaxY }}
           >
             <Image
               src={char1 ? char1.backgroundUrl : "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&q=80&w=1920"}
               alt={char1 ? char1.name : "Superheroes Collage"}
               fill
-              className="object-cover opacity-50 blur-sm scale-105"
+              className="object-cover opacity-50 blur-sm scale-110"
               referrerPolicy="no-referrer"
             />
             <div 
@@ -90,13 +130,14 @@ export default function BackgroundLayers({
                     }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
-                    className="absolute inset-0"
+                    className="absolute inset-[-5%] overflow-hidden"
+                    style={{ x: parallaxX, y: parallaxY }}
                   >
                     <Image
                       src={char1.backgroundUrl}
                       alt={char1.name}
                       fill
-                      className="object-cover opacity-60 blur-sm scale-105"
+                      className="object-cover opacity-60 blur-sm scale-110"
                       referrerPolicy="no-referrer"
                     />
                     <div 
@@ -111,13 +152,14 @@ export default function BackgroundLayers({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="absolute inset-0 bg-zinc-900/20"
+                    className="absolute inset-[-5%] overflow-hidden bg-zinc-900/20"
+                    style={{ x: parallaxX, y: parallaxY }}
                   >
                     <Image
                       src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&q=80&w=1920"
                       alt="Default"
                       fill
-                      className="object-cover opacity-20 blur-md grayscale"
+                      className="object-cover opacity-20 blur-md grayscale scale-110"
                       referrerPolicy="no-referrer"
                     />
                   </motion.div>
@@ -142,13 +184,14 @@ export default function BackgroundLayers({
                     }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
-                    className="absolute inset-0"
+                    className="absolute inset-[-5%] overflow-hidden"
+                    style={{ x: parallaxX, y: parallaxY }}
                   >
                     <Image
                       src={char2.backgroundUrl}
                       alt={char2.name}
                       fill
-                      className="object-cover opacity-60 blur-sm scale-105"
+                      className="object-cover opacity-60 blur-sm scale-110"
                       referrerPolicy="no-referrer"
                     />
                     <div 
@@ -163,13 +206,14 @@ export default function BackgroundLayers({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="absolute inset-0 bg-zinc-900/20"
+                    className="absolute inset-[-5%] overflow-hidden bg-zinc-900/20"
+                    style={{ x: parallaxX, y: parallaxY }}
                   >
                     <Image
                       src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&q=80&w=1920"
                       alt="Default"
                       fill
-                      className="object-cover opacity-20 blur-md grayscale"
+                      className="object-cover opacity-20 blur-md grayscale scale-110"
                       referrerPolicy="no-referrer"
                     />
                   </motion.div>
@@ -236,13 +280,14 @@ export default function BackgroundLayers({
                       filter: battleState === 'result' && winner === 2 ? 'grayscale(100%) brightness(0.2)' : 'grayscale(0%) brightness(1)'
                     }}
                     exit={{ opacity: 0 }}
-                    className="absolute inset-0"
+                    className="absolute inset-[-5%] overflow-hidden"
+                    style={{ x: parallaxX, y: parallaxY }}
                   >
                     <Image
                       src={getUniverseStats(universe1).background}
                       alt={universe1}
                       fill
-                      className="object-cover opacity-60 blur-sm scale-105"
+                      className="object-cover opacity-60 blur-sm scale-110"
                       referrerPolicy="no-referrer"
                     />
                     <div 
@@ -257,13 +302,14 @@ export default function BackgroundLayers({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="absolute inset-0"
+                    className="absolute inset-[-5%] overflow-hidden"
+                    style={{ x: parallaxX, y: parallaxY }}
                   >
                     <Image
                       src="https://miro.medium.com/v2/resize:fit:1400/1*A3q00aZNYvh5qoJNiorEeg.jpeg"
                       alt="Universe Default"
                       fill
-                      className="object-cover opacity-30 blur-sm brightness-50"
+                      className="object-cover opacity-30 blur-sm brightness-50 scale-110"
                       referrerPolicy="no-referrer"
                     />
                   </motion.div>
@@ -287,13 +333,14 @@ export default function BackgroundLayers({
                       filter: battleState === 'result' && winner === 1 ? 'grayscale(100%) brightness(0.2)' : 'grayscale(0%) brightness(1)'
                     }}
                     exit={{ opacity: 0 }}
-                    className="absolute inset-0"
+                    className="absolute inset-[-5%] overflow-hidden"
+                    style={{ x: parallaxX, y: parallaxY }}
                   >
                     <Image
                       src={getUniverseStats(universe2).background}
                       alt={universe2}
                       fill
-                      className="object-cover opacity-60 blur-sm scale-105"
+                      className="object-cover opacity-60 blur-sm scale-110"
                       referrerPolicy="no-referrer"
                     />
                     <div 
@@ -308,13 +355,14 @@ export default function BackgroundLayers({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="absolute inset-0"
+                    className="absolute inset-[-5%] overflow-hidden"
+                    style={{ x: parallaxX, y: parallaxY }}
                   >
                     <Image
                       src="https://lsc.org/a360c87dad4512ce6cb6f84fc5978602.jpg"
                       alt="Universe Default"
                       fill
-                      className="object-cover opacity-30 blur-sm brightness-50"
+                      className="object-cover opacity-30 blur-sm brightness-50 scale-110"
                       referrerPolicy="no-referrer"
                     />
                   </motion.div>

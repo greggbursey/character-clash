@@ -1,0 +1,73 @@
+import { Character } from "../types";
+
+export const godzillaCharacters: Character[] = [
+  {
+    id: "godzilla",
+    name: "Godzilla",
+    universe: "Godzilla",
+    description:
+      "A prehistoric apex predator awakened and empowered by nuclear radiation.",
+    lore: "Godzilla is a prehistoric apex predator whose existence was forgotten until he was awakened and empowered by the dawn of the nuclear age. In his earliest appearances, he was a tragic metaphor for the destructive power of the atomic bomb, a walking nightmare that scorched cities to ash with his atomic breath. Over time, however, his role evolved into that of a planetary guardian, a territorial force of nature that rises from the depths to restore the balance of the ecosystem whenever it is threatened by other ancient 'Titans' or alien invaders.\n\nAs the King of the Monsters, Godzilla possesses immense physical strength and a level of durability that allows him to survive almost any conventional weapon. His most iconic and terrifying power is his atomic breath—a concentrated beam of thermonuclear energy that can melt mountains and vaporize entire fleets. He is not a hero in the traditional sense, but a primal entity whose only loyalty is to himself and the planet he calls home. His presence is a reminder of the power of nature and the consequences of human hubris, a living god who walks the line between destruction and salvation.",
+    previewUrl: "/data/godzilla/assets/godzilla-preview.jpg",
+    backgroundUrl: "/data/godzilla/assets/godzilla-background.jpg",
+    color: "#166534",
+    powerScore: 920,
+  },
+  {
+    id: "kingkong",
+    name: "King Kong",
+    universe: "Godzilla",
+    description: "The giant ape from Skull Island, an apex predator.",
+    lore: "King Kong is the colossal ape who rules over the prehistoric and dangerous Skull Island, an isolated ecosystem where nature has remained untamed for millions of years. He is the last of his kind, a solitary guardian who protects the island's human inhabitants and primitive tribes from the more aggressive predators that dwell in the shadows of the island's cliffs and jungles. Kong possesses incredible physical strength, agility, and a surprisingly high level of intelligence that allows him to use his environment and rudimentary tools as weapons.\n\nHis relationship with humanity is a complex one, often swinging between tragic captive and noble savior. He is a 'god' on his own terms, a being who values family and connection but is capable of terrifying violence when his territory is threatened. During his clashes with Godzilla and other Titans, Kong proved that his sheer tenacity and tactical mind can make him a match for even the most powerful of adversaries. Kong is the ultimate underdog of the monster world, a primal force whose roar echoes the resilience of a species that refuses to fade into extinction.",
+    previewUrl: "/data/godzilla/assets/kingkong-preview.jpg",
+    backgroundUrl: "/data/godzilla/assets/kingkong-background.jpg",
+    color: "#78350f",
+    powerScore: 810,
+  },
+  {
+    id: "mothra",
+    name: "Mothra",
+    universe: "Godzilla",
+    description: "A benevolent giant moth-like creature and guardian of Earth.",
+    lore: "Mothra is a benevolent, god-like entity and one of the most respected of all Earth's ancient 'Titans.' Resembling a massive moth with shimmering, luminescent wings, she is a symbol of life, rebirth, and the enduring connection between the planet and its inhabitants. For centuries, she has been worshipped as a goddess by the people of Infant Island and she remains a staunch protector of both humanity and the natural world, often acting as a mediator in the clashes between more aggressive Titans.\n\nMothra's cycle of life is one of continuous reincarnation—she hatches as a massive larva, eventually spinning a cocoon to emerge in her majestic imago form. She possesses an array of unique abilities, including the power to fire silken threads to ensnare her foes, bioluminescent energy blasts, and a psychic connection to her twin priestesses, the Shobijin. While she is capable of great violence in defense of the planet, she always operates with a sense of purpose and a desire for eventual peace. Mothra is the ultimate guardian, a being who understands that the true measure of power is the wisdom to protect the vulnerable.",
+    previewUrl: "/data/godzilla/assets/mothra-preview.jpg",
+    backgroundUrl: "/data/godzilla/assets/mothra-background.jpg",
+    color: "#67e8f9",
+    powerScore: 820,
+  },
+  {
+    id: "rodan",
+    name: "Rodan",
+    universe: "Godzilla",
+    description:
+      "A giant pteranodon-like creature and a powerful flying Titan.",
+    lore: "Rodan is a massive, pteranodon-like Titan who makes his home within the fiery depths of active volcanoes. A creature of pure speed and aerial dominance, he can generate powerful sonic booms and devastating gusts of wind by simply flapping his massive wings. His skin is composed of volcanic rock and armored scales, making him nearly invulnerable to the intense heat he calls his own and granting him a level of durability that allows him to thrive in the most extreme environments on Earth.\n\nOften a chaotic third party in the clashes between Godzilla and other Titans, Rodan is an opportunistic warrior who respects only the strongest of adversaries. He has served as both a fierce rival and a powerful ally to Godzilla, depending on the situation and the threat to the planet's ecosystem. His roar is a sound of pure geological fury, a warning to any who would dare to challenge his mastery of the skies. Rodan is a force of nature in the most literal sense, a flying volcano whose erratic behavior and immense power make him one of the most unpredictable and dangerous Titans in existence.",
+    previewUrl: "/data/godzilla/assets/rodan-preview.jpg",
+    backgroundUrl: "/data/godzilla/assets/rodan-background.jpg",
+    color: "#ea580c",
+    powerScore: 780,
+  },
+  {
+    id: "mechagodzilla",
+    name: "Mechagodzilla",
+    universe: "Godzilla",
+    description:
+      "A mechanical double of Godzilla, created to defend humanity (or destroy it).",
+    lore: "Mechagodzilla is the ultimate product of human ingenuity and hubris—a mechanical double of Godzilla designed to be the world's primary line of defense against the ancient Titans. Built using the most advanced materials and weaponry known to man, including multi-head missile launchers, concentrated energy beams, and a massive internal power core, it represents the absolute pinnacle of technological warfare. In some iterations, it is a remote-controlled sentinel; in others, it is a sentient AI that eventually turns against its creators, seeking to replace the King of the Monsters.\n\nAs a direct mirror of Godzilla, Mechagodzilla possesses all of its biological counterpart's strength and resilience, but with the added benefits of cold, mechanical precision and an almost limitless arsenal of weapons. It has no pride, no territorial instincts, and no empathy—only a singular directive to destroy its target. The clashing of these two gargantuan entities is always a battle for the very concept of the apex predator, a conflict between the primal power of nature and the cold efficiency of the machine. Mechagodzilla is a chilling reminder of what can happen when man tries to play god using the very monsters they fear.",
+    previewUrl: "/data/godzilla/assets/mechagodzilla-preview.jpg",
+    backgroundUrl: "/data/godzilla/assets/mechagodzilla-background.jpg",
+    color: "#52525b",
+    powerScore: 910,
+  },
+  {
+    id: "muto",
+    name: "Mutos",
+    universe: "Godzilla",
+    description: "Massive Unidentified Terrestrial Organisms.",
+    lore: "The MUTOs (Massive Unidentified Terrestrial Organisms) are a species of ancient parasitic Titans that lived alongside Godzilla's kind in Earth's prehistoric past. These creatures are primarily identified by their bioluminescent eyes, hook-like limbs, and the ability to generate powerful Electromagnetic Pulses (EMPs) that can disable all modern technology in their vicinity. They exist in a complex reproductive cycle that involves the consumption of nuclear radiation to fuel their growth and the eventual laying of thousands of eggs, a process that threatens to consume the world's energy resources.\n\nWhile individually less powerful than Godzilla, the MUTOs are highly coordinated and often hunt in pairs—a larger, flightless female and a smaller, more agile male. This coordination allows them to swarm much larger opponents and overwhelm them through sheer persistence and their ability to disrupt electronic sensors and weaponry. They are motivated by a primal biological imperative to survive and reproduce, viewing the human world as nothing more than a source of nourishment. The presence of a nesting pair of MUTOs is a catastrophic event for any ecosystem, a parasite that can only be removed by the intervention of a true apex predator like Godzilla.",
+    previewUrl: "/data/godzilla/assets/muto-preview.png",
+    backgroundUrl: "/data/godzilla/assets/muto-background.png",
+    color: "#18181b",
+    powerScore: 680,
+  },
+];

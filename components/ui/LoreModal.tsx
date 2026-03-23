@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 import Image from 'next/image';
-import { Character } from '@/data/characters';
+import { Character } from '@/types';
 
 interface LoreModalProps {
   character: Character | null;

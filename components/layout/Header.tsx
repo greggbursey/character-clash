@@ -23,9 +23,19 @@ export default function Header({
 }: HeaderProps) {
   return (
     <header className="flex flex-col sm:flex-row justify-between items-center gap-3 md:gap-6 mb-3 md:mb-8 flex-shrink-0">
-      <h1 className="text-2xl md:text-4xl font-black tracking-tighter uppercase italic text-white/90">
-        Character Clash
-      </h1>
+      <motion.h1 
+        initial={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
+        animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-3xl md:text-5xl font-black tracking-tighter uppercase italic leading-none select-none py-1"
+      >
+        <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-zinc-200 to-zinc-400 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+          Character
+        </span>
+        <span className="bg-clip-text text-transparent bg-gradient-to-b from-red-400 via-red-600 to-red-800 drop-shadow-[0_0_15px_rgba(220,38,38,0.6)] ml-2">
+          Clash
+        </span>
+      </motion.h1>
       
       <div className="flex flex-wrap justify-center items-center gap-4">
         {/* Search Bar */}
