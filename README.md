@@ -18,20 +18,21 @@
 
 ## 🚀 About the Project
 
-**Character Clash** is a high-fidelity web application that brings together legendary heroes and villains from across popular culture—including **Marvel**, **DC**, **TMNT**, **X-Men**, and **Mortal Kombat**.
+**Character Clash** is a high-fidelity web application that brings together legendary heroes and villains from across popular culture—including **Marvel**, **DC**, **TMNT**, **X-Men**, **Mortal Kombat**, **Street Fighter**, **Star Wars**, and **Godzilla**.
 
 Designed with a focus on cinematic aesthetics and fluid user experience, the app allows fans to explore character lore, compare stats, and simulate high-stakes battles between individual fighters or entire universes.
 
 ## ✨ Key Features
 
 - **🎬 Cinematic Interface**: A premium, dark-mode design with dynamic backgrounds tailored to each character and universe.
-- **🥋 Diverse Roster**: Over 50 meticulously detailed characters with unique stats, lore, and visual assets.
+- **🥋 Diverse Roster**: Over 50 meticulously detailed characters across 8 iconic universes, each with unique stats, lore, and visual assets.
 - **🔥 Three Battle Modes**:
   - **Single View**: Deep dive into character backgrounds, lore, and power scores.
   - **Battle Mode**: Pit two legendary fighters against each other in a randomized, power-weighted clash.
-  - **Universe Mode**: Measure the combined strength of entire franchises (e.g., Marvel vs. DC) to see which universe reigns supreme.
+  - **Universe Mode**: Measure the combined strength of entire franchises to see which universe reigns supreme.
 - **🔍 Intelligent Selection**: Fast, searchable character picker organized by universe.
 - **🪄 Fluid Animations**: Powered by **Motion 12** for smooth state transitions and a "living" UI.
+- **⚡ AI Narratives**: Dynamic battle commentary powered by Google Gemini AI for immersive storytelling.
 
 ## 🛠️ Tech Stack
 
@@ -39,7 +40,8 @@ Designed with a focus on cinematic aesthetics and fluid user experience, the app
 - **Library**: [React 19](https://react.dev/)
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
 - **Animations**: [Motion 12](https://motion.dev/) (Framer Motion)
-- **AI Integration**: [Google Gemini AI API](https://ai.google.dev/) (Planned for dynamic battle narratives)
+- **Backend**: [Firebase](https://firebase.google.com/) (Real-time database & hosting)
+- **AI Integration**: [Google Gemini AI API](https://ai.google.dev/) (Dynamic battle narratives & character analysis)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 
 ## 🏁 Getting Started
@@ -65,10 +67,16 @@ Designed with a focus on cinematic aesthetics and fluid user experience, the app
    ```
 
 3. **Configure Environment Variables:**
-   Create a `.env.local` file in the root directory and add your Gemini API key:
+   Create a `.env.local` file in the root directory with your API keys:
 
    ```env
-   GEMINI_API_KEY=your_api_key_here
+   NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_firebase_project_id
+   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+   NEXT_PUBLIC_FIREBASE_APP_ID=your_firebase_app_id
+   GEMINI_API_KEY=your_gemini_api_key
    ```
 
 4. **Run the development server:**
