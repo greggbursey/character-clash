@@ -27,7 +27,7 @@ export default function PortalPage() {
     async function fetchStats() {
       try {
         // Fetch Global Battles
-        const globalRef = doc(db, 'globalStats', 'overview');
+        const globalRef = doc(db, "globalStats", "overview");
         const globalSnap = await getDoc(globalRef);
         if (globalSnap.exists()) {
           setTotalBattles(globalSnap.data()?.totalBattles || 0);
@@ -35,21 +35,20 @@ export default function PortalPage() {
         }
 
         // Fetch All Character Stats
-        const charsRef = collection(db, 'characterStats');
+        const charsRef = collection(db, "characterStats");
         const charsSnap = await getDocs(charsRef);
         const allData: CharStat[] = [];
-        charsSnap.forEach(doc => {
+        charsSnap.forEach((doc) => {
           const data = doc.data();
-          allData.push({ 
-            id: doc.id, 
+          allData.push({
+            id: doc.id,
             ...data,
             wins: data.wins || 0,
             losses: data.losses || 0,
-            universe: data.universe || "Unknown"
+            universe: data.universe || "Unknown",
           } as CharStat);
         });
         setAllCharacters(allData);
-        
       } catch (e) {
         console.error("Portal fetch error:", e);
       }
@@ -60,14 +59,16 @@ export default function PortalPage() {
 
   // Aggregations
   const topWinners = useMemo(() => {
-    return [...allCharacters].sort((a, b) => {
-      const aTotal = Math.max(a.wins + a.losses, 1);
-      const bTotal = Math.max(b.wins + b.losses, 1);
-      const aRate = a.wins / aTotal;
-      const bRate = b.wins / bTotal;
-      if (bRate === aRate) return (b.wins + b.losses) - (a.wins + a.losses);
-      return bRate - aRate;
-    }).slice(0, 5);
+    return [...allCharacters]
+      .sort((a, b) => {
+        const aTotal = Math.max(a.wins + a.losses, 1);
+        const bTotal = Math.max(b.wins + b.losses, 1);
+        const aRate = a.wins / aTotal;
+        const bRate = b.wins / bTotal;
+        if (bRate === aRate) return b.wins + b.losses - (a.wins + a.losses);
+        return bRate - aRate;
+      })
+      .slice(0, 5);
   }, [allCharacters]);
 
   const topLosers = useMemo(() => {
@@ -76,50 +77,61 @@ export default function PortalPage() {
 
   const mostActiveFighter = useMemo(() => {
     if (allCharacters.length === 0) return null;
-    return [...allCharacters].sort((a, b) => (b.wins + b.losses) - (a.wins + a.losses))[0];
+    return [...allCharacters].sort(
+      (a, b) => b.wins + b.losses - (a.wins + a.losses),
+    )[0];
   }, [allCharacters]);
 
   const mostDominantUniverse = useMemo(() => {
     if (allCharacters.length === 0) return null;
     const winsMap: Record<string, number> = {};
-    allCharacters.forEach(c => {
+    allCharacters.forEach((c) => {
       if (c.universe) {
         winsMap[c.universe] = (winsMap[c.universe] || 0) + c.wins;
       }
     });
     const sorted = Object.entries(winsMap).sort((a, b) => b[1] - a[1]);
-    return sorted.length > 0 ? { name: sorted[0][0], wins: sorted[0][1] } : null;
+    return sorted.length > 0
+      ? { name: sorted[0][0], wins: sorted[0][1] }
+      : null;
   }, [allCharacters]);
 
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
-    return allCharacters.filter(c => c.name.toLowerCase().includes(searchQuery.toLowerCase())).slice(0, 5);
+    return allCharacters
+      .filter((c) => c.name.toLowerCase().includes(searchQuery.toLowerCase()))
+      .slice(0, 5);
   }, [allCharacters, searchQuery]);
 
   const filteredUniverses = useMemo(() => {
-    const winsMap: Record<string, { wins: number; losses: number; count: number }> = {};
-    allCharacters.forEach(c => {
+    const winsMap: Record<
+      string,
+      { wins: number; losses: number; count: number }
+    > = {};
+    allCharacters.forEach((c) => {
       const u = c.universe || "Unknown";
       if (!winsMap[u]) winsMap[u] = { wins: 0, losses: 0, count: 0 };
       winsMap[u].wins += c.wins;
       winsMap[u].losses += c.losses;
       winsMap[u].count += 1;
     });
-    
+
     let universes = Object.entries(winsMap).map(([name, stats]) => ({
       name,
-      ...stats
+      ...stats,
     }));
 
     if (universeSearchQuery.trim()) {
-      universes = universes.filter(u => u.name.toLowerCase().includes(universeSearchQuery.toLowerCase()));
+      universes = universes.filter((u) =>
+        u.name.toLowerCase().includes(universeSearchQuery.toLowerCase()),
+      );
     }
-    
+
     return universes.sort((a, b) => {
-       const aRate = a.wins / Math.max(a.wins + a.losses, 1);
-       const bRate = b.wins / Math.max(b.wins + b.losses, 1);
-       if (bRate === aRate) return (b.wins + b.losses) - (a.wins + a.losses);
-       return bRate - aRate;
+      const aRate = a.wins / Math.max(a.wins + a.losses, 1);
+      const bRate = b.wins / Math.max(b.wins + b.losses, 1);
+      if (bRate === aRate) return b.wins + b.losses - (a.wins + a.losses);
+      return bRate - aRate;
     });
   }, [allCharacters, universeSearchQuery]);
 
@@ -127,16 +139,16 @@ export default function PortalPage() {
     <main className="min-h-[100dvh] w-full bg-zinc-950 text-white font-sans p-4 md:p-12 pb-24 overflow-y-auto">
       {/* Portal Header */}
       <header className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6 relative">
-        <Link 
+        <Link
           href="/"
           className="flex items-center gap-2 px-4 py-2 z-10 rounded-full bg-zinc-900/80 border border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all text-sm font-bold tracking-wider uppercase"
         >
           <ArrowLeft size={16} />
           Back to Battles
         </Link>
-        <motion.h1 
-          initial={{ opacity: 0, scale: 0.95, filter: 'blur(10px)' }}
-          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="absolute left-0 right-0 top-12 md:top-auto text-center text-2xl md:text-4xl font-black tracking-tighter uppercase italic select-none pointer-events-none hidden md:block"
         >
@@ -150,37 +162,50 @@ export default function PortalPage() {
 
         {/* Status Pills */}
         <div className="flex gap-3 z-10 w-full md:w-auto justify-center md:justify-end">
-           <div className="group relative">
-             <div className={`flex items-center gap-2 px-3 py-1.5 rounded-full border text-[10px] md:text-xs font-bold tracking-widest uppercase shadow-lg backdrop-blur-sm cursor-help transition-colors ${isFirebaseLive ? 'bg-green-500/10 border-green-500/50 text-green-400 shadow-[0_0_10px_rgba(34,197,94,0.2)] hover:bg-green-500/20' : 'bg-orange-500/10 border-orange-500/50 text-orange-400 hover:bg-orange-500/20'}`}>
-                <div className={`w-2 h-2 rounded-full ${isFirebaseLive ? 'bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,1)]' : 'bg-orange-400'}`} />
-                {isFirebaseLive ? 'Database: On' : 'Database: Wait'}
-             </div>
-             <div className="absolute top-full pt-3 right-0 md:right-auto md:-translate-x-1/2 md:left-1/2 w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
-               <div className={`bg-zinc-900/95 border backdrop-blur-xl p-3 rounded-xl shadow-2xl ${isFirebaseLive ? 'border-green-500/30' : 'border-orange-500/30'}`}>
-                 <div className={`font-bold mb-1 uppercase tracking-wider text-[10px] ${isFirebaseLive ? 'text-green-400' : 'text-orange-400'}`}>
-                   {isFirebaseLive ? 'Live Connection' : 'Connecting...'}
-                 </div>
-                 <p className="text-zinc-400 text-[10px] leading-relaxed">
-                   {isFirebaseLive ? 'Global battle statistics and leaderboards are actively synchronizing in real-time.' : 'Attempting to establish connection with global stats server.'}
-                 </p>
-               </div>
-             </div>
-           </div>
+          <div className="group relative">
+            <div
+              className={`flex items-center gap-2 px-3 py-1.5 rounded-full border text-[10px] md:text-xs font-bold tracking-widest uppercase shadow-lg backdrop-blur-sm cursor-help transition-colors ${isFirebaseLive ? "bg-green-500/10 border-green-500/50 text-green-400 shadow-[0_0_10px_rgba(34,197,94,0.2)] hover:bg-green-500/20" : "bg-orange-500/10 border-orange-500/50 text-orange-400 hover:bg-orange-500/20"}`}
+            >
+              <div
+                className={`w-2 h-2 rounded-full ${isFirebaseLive ? "bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,1)]" : "bg-orange-400"}`}
+              />
+              {isFirebaseLive ? "Database: On" : "Database: Wait"}
+            </div>
+            <div className="absolute top-full pt-3 right-0 md:right-auto md:-translate-x-1/2 md:left-1/2 w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+              <div
+                className={`bg-zinc-900/95 border backdrop-blur-xl p-3 rounded-xl shadow-2xl ${isFirebaseLive ? "border-green-500/30" : "border-orange-500/30"}`}
+              >
+                <div
+                  className={`font-bold mb-1 uppercase tracking-wider text-[10px] ${isFirebaseLive ? "text-green-400" : "text-orange-400"}`}
+                >
+                  {isFirebaseLive ? "Live Connection" : "Connecting..."}
+                </div>
+                <p className="text-zinc-400 text-[10px] leading-relaxed">
+                  {isFirebaseLive
+                    ? "Global battle statistics and leaderboards are actively synchronizing in real-time."
+                    : "Attempting to establish connection with global stats server."}
+                </p>
+              </div>
+            </div>
+          </div>
 
-           <div className="group relative">
-             <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border text-[10px] md:text-xs font-bold tracking-widest uppercase shadow-lg backdrop-blur-sm bg-blue-500/10 border-blue-500/50 text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.2)] cursor-help transition-colors hover:bg-blue-500/20">
-                <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(96,165,250,1)]" />
-                Predictions: Active
-             </div>
-             <div className="absolute top-full pt-3 right-0 w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
-               <div className="bg-zinc-900/95 border backdrop-blur-xl border-blue-500/30 p-3 rounded-xl shadow-2xl">
-                 <div className="font-bold text-blue-400 mb-1 uppercase tracking-wider text-[10px]">Community Input</div>
-                 <p className="text-zinc-400 text-[10px] leading-relaxed">
-                   Live predicting is fully operational. Tap into the multiverse consensus network and sway global odds.
-                 </p>
-               </div>
-             </div>
-           </div>
+          <div className="group relative">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border text-[10px] md:text-xs font-bold tracking-widest uppercase shadow-lg backdrop-blur-sm bg-blue-500/10 border-blue-500/50 text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.2)] cursor-help transition-colors hover:bg-blue-500/20">
+              <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(96,165,250,1)]" />
+              Predictions: Active
+            </div>
+            <div className="absolute top-full pt-3 right-0 w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+              <div className="bg-zinc-900/95 border backdrop-blur-xl border-blue-500/30 p-3 rounded-xl shadow-2xl">
+                <div className="font-bold text-blue-400 mb-1 uppercase tracking-wider text-[10px]">
+                  Community Input
+                </div>
+                <p className="text-zinc-400 text-[10px] leading-relaxed">
+                  Live predicting is fully operational. Tap into the multiverse
+                  consensus network and sway global odds.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -192,13 +217,15 @@ export default function PortalPage() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all" />
             <Globe className="text-blue-500 mb-3 w-8 h-8 md:w-10 md:h-10 opacity-80" />
             <h2 className="text-2xl md:text-3xl font-black mb-1 text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-400 text-center uppercase tracking-tight">
-              {mostDominantUniverse ? mostDominantUniverse.name : '...'}
+              {mostDominantUniverse ? mostDominantUniverse.name : "..."}
             </h2>
-            <p className="text-zinc-500 text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-center mb-2">Most Dominant Universe</p>
+            <p className="text-zinc-500 text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-center mb-2">
+              Most Dominant Universe
+            </p>
             {mostDominantUniverse && (
-               <div className="text-[10px] font-mono text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full uppercase tracking-widest border border-blue-500/30">
-                 {mostDominantUniverse.wins.toLocaleString()} Total Wins
-               </div>
+              <div className="text-[10px] font-mono text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full uppercase tracking-widest border border-blue-500/30">
+                {mostDominantUniverse.wins.toLocaleString()} Total Wins
+              </div>
             )}
           </div>
 
@@ -209,7 +236,9 @@ export default function PortalPage() {
             <h2 className="text-5xl md:text-6xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 to-yellow-600 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               {totalBattles.toLocaleString()}
             </h2>
-            <p className="text-yellow-500/70 text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-center">Total Global Battles</p>
+            <p className="text-yellow-500/70 text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-center">
+              Total Global Battles
+            </p>
           </div>
 
           {/* Most Active Fighter */}
@@ -217,13 +246,18 @@ export default function PortalPage() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl group-hover:bg-red-500/20 transition-all" />
             <Activity className="text-red-500 mb-3 w-8 h-8 md:w-10 md:h-10 opacity-80" />
             <h2 className="text-2xl md:text-3xl font-black mb-1 text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-400 text-center uppercase tracking-tight line-clamp-1">
-              {mostActiveFighter ? mostActiveFighter.name : '...'}
+              {mostActiveFighter ? mostActiveFighter.name : "..."}
             </h2>
-            <p className="text-zinc-500 text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-center mb-2">Most Active Fighter</p>
+            <p className="text-zinc-500 text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-center mb-2">
+              Most Active Fighter
+            </p>
             {mostActiveFighter && (
-               <div className="text-[10px] font-mono text-red-400 bg-red-500/10 px-3 py-1 rounded-full uppercase tracking-widest border border-red-500/30">
-                 {(mostActiveFighter.wins + mostActiveFighter.losses).toLocaleString()} Battles
-               </div>
+              <div className="text-[10px] font-mono text-red-400 bg-red-500/10 px-3 py-1 rounded-full uppercase tracking-widest border border-red-500/30">
+                {(
+                  mostActiveFighter.wins + mostActiveFighter.losses
+                ).toLocaleString()}{" "}
+                Battles
+              </div>
             )}
           </div>
         </section>
@@ -242,7 +276,7 @@ export default function PortalPage() {
               className="w-full bg-zinc-900 border border-zinc-800 focus:border-red-500 focus:bg-zinc-900/90 rounded-full py-5 pl-14 pr-12 text-white font-black tracking-widest placeholder:text-zinc-600 outline-none transition-all shadow-lg focus:shadow-[0_0_30px_rgba(220,38,38,0.15)] text-sm md:text-base uppercase"
             />
             {searchQuery && (
-              <button 
+              <button
                 onClick={() => setSearchQuery("")}
                 className="absolute inset-y-0 right-0 pr-6 flex items-center text-zinc-500 hover:text-white transition-colors"
               >
@@ -253,7 +287,7 @@ export default function PortalPage() {
 
           <AnimatePresence>
             {searchQuery && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
@@ -265,39 +299,55 @@ export default function PortalPage() {
                       const total = Math.max(char.wins + char.losses, 1);
                       const winRate = Math.round((char.wins / total) * 100);
                       return (
-                        <div key={char.id} className="flex flex-col md:flex-row items-start md:items-center justify-between p-4 hover:bg-zinc-800/50 rounded-2xl transition-colors border border-transparent hover:border-zinc-700/50 gap-4">
+                        <div
+                          key={char.id}
+                          className="flex flex-col md:flex-row items-start md:items-center justify-between p-4 hover:bg-zinc-800/50 rounded-2xl transition-colors border border-transparent hover:border-zinc-700/50 gap-4"
+                        >
                           <div>
-                            <div className="font-black text-white text-lg uppercase tracking-tight">{char.name}</div>
-                            <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">{char.universe || "Unknown"}</div>
+                            <div className="font-black text-white text-lg uppercase tracking-tight">
+                              {char.name}
+                            </div>
+                            <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+                              {char.universe || "Unknown"}
+                            </div>
                           </div>
-                          
+
                           <div className="flex items-center gap-6 w-full md:w-auto overflow-hidden">
                             <div className="flex flex-col">
-                              <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">Record</span>
+                              <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">
+                                Record
+                              </span>
                               <div className="flex items-center gap-2 font-mono text-sm">
-                                <span className="text-green-500 font-bold">{char.wins}W</span>
+                                <span className="text-green-500 font-bold">
+                                  {char.wins}W
+                                </span>
                                 <span className="text-zinc-600">-</span>
-                                <span className="text-red-500 font-bold">{char.losses}L</span>
+                                <span className="text-red-500 font-bold">
+                                  {char.losses}L
+                                </span>
                               </div>
                             </div>
-                            
+
                             <div className="flex flex-col flex-1 md:w-32">
                               <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1 flex justify-between">
                                 <span>Win Rate</span>
                                 <span className="text-white">{winRate}%</span>
                               </span>
                               <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
-                                <div className="h-full bg-gradient-to-r from-green-600 to-green-400 rounded-full" style={{ width: `${winRate}%` }} />
+                                <div
+                                  className="h-full bg-gradient-to-r from-green-600 to-green-400 rounded-full"
+                                  style={{ width: `${winRate}%` }}
+                                />
                               </div>
                             </div>
                           </div>
                         </div>
-                      )
+                      );
                     })}
                   </div>
                 ) : (
                   <div className="p-8 text-center text-zinc-500 font-mono text-sm uppercase tracking-widest">
-                    No fighters found matching "{searchQuery}"
+                    No fighters found matching &quot;{searchQuery}&quot;
                   </div>
                 )}
               </motion.div>
@@ -319,16 +369,28 @@ export default function PortalPage() {
                   const total = Math.max(char.wins + char.losses, 1);
                   const winRate = Math.round((char.wins / total) * 100);
                   return (
-                    <div key={char.id} className="flex relative items-center gap-4 bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800 overflow-hidden group hover:border-green-500/30 transition-colors">
+                    <div
+                      key={char.id}
+                      className="flex relative items-center gap-4 bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800 overflow-hidden group hover:border-green-500/30 transition-colors"
+                    >
                       <div className="absolute left-0 bottom-0 top-0 w-1 bg-green-500/50" />
-                      <div className="w-8 flex justify-center text-xl font-black text-zinc-600">#{i + 1}</div>
+                      <div className="w-8 flex justify-center text-xl font-black text-zinc-600">
+                        #{i + 1}
+                      </div>
                       <div className="flex-1 z-10">
-                        <div className="font-black text-white uppercase tracking-tight text-lg">{char.name}</div>
+                        <div className="font-black text-white uppercase tracking-tight text-lg">
+                          {char.name}
+                        </div>
                         <div className="flex items-center gap-4 mt-1 w-full max-w-[200px]">
-                            <div className="flex-1 h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                                <div className="h-full bg-green-500 rounded-full" style={{ width: `${winRate}%` }} />
-                            </div>
-                            <span className="text-[10px] font-mono text-green-400 uppercase tracking-widest font-bold">{winRate}% ({char.wins}W)</span>
+                          <div className="flex-1 h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                            <div
+                              className="h-full bg-green-500 rounded-full"
+                              style={{ width: `${winRate}%` }}
+                            />
+                          </div>
+                          <span className="text-[10px] font-mono text-green-400 uppercase tracking-widest font-bold">
+                            {winRate}% ({char.wins}W)
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -337,11 +399,13 @@ export default function PortalPage() {
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center h-48 text-zinc-600 text-center px-4">
-                <p className="italic font-mono text-sm">Awaiting battle data...</p>
+                <p className="italic font-mono text-sm">
+                  Awaiting battle data...
+                </p>
               </div>
             )}
           </div>
-          
+
           {/* Losers */}
           <div className="bg-zinc-900/30 border border-zinc-800/40 rounded-[2rem] p-6 md:p-10 min-h-[400px]">
             <h3 className="text-xl md:text-2xl font-black uppercase tracking-[0.1em] mb-8 text-zinc-100 flex items-center gap-4">
@@ -354,16 +418,28 @@ export default function PortalPage() {
                   const total = Math.max(char.wins + char.losses, 1);
                   const lossRate = Math.round((char.losses / total) * 100);
                   return (
-                    <div key={char.id} className="flex relative items-center gap-4 bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800 overflow-hidden group hover:border-red-500/30 transition-colors">
+                    <div
+                      key={char.id}
+                      className="flex relative items-center gap-4 bg-zinc-900/80 p-4 rounded-2xl border border-zinc-800 overflow-hidden group hover:border-red-500/30 transition-colors"
+                    >
                       <div className="absolute left-0 bottom-0 top-0 w-1 bg-red-500/50" />
-                      <div className="w-8 flex justify-center text-xl font-black text-zinc-600">#{i + 1}</div>
+                      <div className="w-8 flex justify-center text-xl font-black text-zinc-600">
+                        #{i + 1}
+                      </div>
                       <div className="flex-1 z-10">
-                        <div className="font-black text-white uppercase tracking-tight text-lg">{char.name}</div>
+                        <div className="font-black text-white uppercase tracking-tight text-lg">
+                          {char.name}
+                        </div>
                         <div className="flex items-center gap-4 mt-1 w-full max-w-[200px]">
-                            <div className="flex-1 h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                                <div className="h-full bg-red-500 rounded-full" style={{ width: `${lossRate}%` }} />
-                            </div>
-                            <span className="text-[10px] font-mono text-red-400 uppercase tracking-widest font-bold">{char.losses}L</span>
+                          <div className="flex-1 h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                            <div
+                              className="h-full bg-red-500 rounded-full"
+                              style={{ width: `${lossRate}%` }}
+                            />
+                          </div>
+                          <span className="text-[10px] font-mono text-red-400 uppercase tracking-widest font-bold">
+                            {char.losses}L
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -372,7 +448,9 @@ export default function PortalPage() {
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center h-48 text-zinc-600 text-center px-4">
-                <p className="italic font-mono text-sm">Awaiting battle data...</p>
+                <p className="italic font-mono text-sm">
+                  Awaiting battle data...
+                </p>
               </div>
             )}
           </div>
@@ -385,7 +463,7 @@ export default function PortalPage() {
               <span className="w-3 h-10 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.3)]" />
               Universe Standings
             </h3>
-            
+
             <div className="relative w-full md:w-64 group">
               <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                 <Search className="h-4 w-4 text-zinc-500 group-focus-within:text-blue-500 transition-colors" />
@@ -406,37 +484,58 @@ export default function PortalPage() {
                 const total = Math.max(uni.wins + uni.losses, 1);
                 const winRate = Math.round((uni.wins / total) * 100);
                 return (
-                  <div key={uni.name} className="flex flex-col relative bg-zinc-900/80 p-5 rounded-2xl border border-zinc-800 overflow-hidden group hover:border-blue-500/30 transition-colors">
+                  <div
+                    key={uni.name}
+                    className="flex flex-col relative bg-zinc-900/80 p-5 rounded-2xl border border-zinc-800 overflow-hidden group hover:border-blue-500/30 transition-colors"
+                  >
                     <div className="absolute left-0 bottom-0 top-0 w-1 bg-blue-500/50" />
-                    
+
                     <div className="flex justify-between items-start mb-3">
                       <div className="flex items-center gap-3">
-                        <div className="text-lg font-black text-zinc-600">#{i + 1}</div>
-                        <div className="font-black text-white uppercase tracking-tight text-lg line-clamp-1" title={uni.name}>{uni.name}</div>
-                      </div>
-                      <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest bg-zinc-800 px-2 py-1 rounded-md">{uni.count} Fighters</div>
-                    </div>
-                    
-                    <div className="flex items-center gap-4 w-full">
-                        <div className="flex flex-col gap-1 w-full">
-                          <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-widest">
-                             <span className="text-zinc-500">Record: <span className="text-green-500">{uni.wins}W</span> - <span className="text-red-500">{uni.losses}L</span></span>
-                             <span className="text-blue-400">{winRate}% WIN</span>
-                          </div>
-                          <div className="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                              <div className="h-full bg-blue-500 rounded-full" style={{ width: `${winRate}%` }} />
-                          </div>
+                        <div className="text-lg font-black text-zinc-600">
+                          #{i + 1}
                         </div>
+                        <div
+                          className="font-black text-white uppercase tracking-tight text-lg line-clamp-1"
+                          title={uni.name}
+                        >
+                          {uni.name}
+                        </div>
+                      </div>
+                      <div className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest bg-zinc-800 px-2 py-1 rounded-md">
+                        {uni.count} Fighters
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-4 w-full">
+                      <div className="flex flex-col gap-1 w-full">
+                        <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-widest">
+                          <span className="text-zinc-500">
+                            Record:{" "}
+                            <span className="text-green-500">{uni.wins}W</span>{" "}
+                            -{" "}
+                            <span className="text-red-500">{uni.losses}L</span>
+                          </span>
+                          <span className="text-blue-400">{winRate}% WIN</span>
+                        </div>
+                        <div className="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-blue-500 rounded-full"
+                            style={{ width: `${winRate}%` }}
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 );
               })
             ) : (
-                <div className="col-span-full py-8 text-center text-zinc-600 italic font-mono text-sm">No universes found.</div>
+              <div className="col-span-full py-8 text-center text-zinc-600 italic font-mono text-sm">
+                No universes found.
+              </div>
             )}
           </div>
         </section>
-
       </div>
     </main>
   );
