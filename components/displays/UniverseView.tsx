@@ -2,6 +2,9 @@
 
 import { motion, AnimatePresence } from 'motion/react';
 import { BattleState } from '@/types';
+import { useState } from 'react';
+import { doc, getDoc, setDoc, updateDoc, increment } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
 interface UniverseViewProps {
   universe1: string | null;
@@ -29,6 +32,40 @@ export default function UniverseView({
   setUniverse2
 }: UniverseViewProps) {
   const isResult = battleState === 'result';
+  const [hasVoted, setHasVoted] = useState(false);
+  const [voteStats, setVoteStats] = useState<{u1: number, u2: number} | null>(null);
+
+  const handleVote = async (predictedUniverse: string) => {
+    if (!universe1 || !universe2) return;
+    setHasVoted(true);
+    
+    try {
+      const unis = [universe1, universe2].sort();
+      const matchId = `universe_${unis[0]}_vs_${unis[1]}`.replace(/[^a-zA-Z0-9_]/g, '_');
+      const docRef = doc(db, 'predictions', matchId);
+      
+      const docSnap = await getDoc(docRef);
+      if (!docSnap.exists()) {
+        await setDoc(docRef, { [universe1]: predictedUniverse === universe1 ? 1 : 0, [universe2]: predictedUniverse === universe2 ? 1 : 0 });
+        setVoteStats({ u1: predictedUniverse === universe1 ? 1 : 0, u2: predictedUniverse === universe2 ? 1 : 0 });
+      } else {
+        await updateDoc(docRef, { [predictedUniverse]: increment(1) });
+        const data = docSnap.data();
+        setVoteStats({ 
+          u1: (data[universe1] || 0) + (predictedUniverse === universe1 ? 1 : 0),
+          u2: (data[universe2] || 0) + (predictedUniverse === universe2 ? 1 : 0)
+        });
+      }
+    } catch (e) {
+      console.error("Firebase unavailable or not configured. Proceeding directly.", e);
+    }
+
+    setTimeout(() => {
+      setHasVoted(false);
+      setVoteStats(null);
+      setBattleState('countdown');
+    }, 2500);
+  };
 
   return (
     <div className="w-full max-w-5xl flex flex-row justify-between items-center gap-2 md:gap-0">
@@ -78,6 +115,59 @@ export default function UniverseView({
                 >
                   Clash
                 </button>
+              )}
+            </motion.div>
+          ) : battleState === 'prediction' ? (
+            <motion.div
+              key="prediction"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="flex flex-col items-center gap-3 w-48 md:w-64"
+            >
+              <h3 className="text-zinc-400 font-bold uppercase tracking-widest text-xs md:text-[10px] whitespace-nowrap text-center">
+                {hasVoted ? "Community Consensus" : "Who do you think wins?"}
+              </h3>
+              {!hasVoted ? (
+                <div className="flex gap-2 mt-1 w-full justify-center">
+                  <button
+                    onClick={() => handleVote(universe1 as string)}
+                    className="flex-1 py-3 px-2 bg-zinc-900 border border-zinc-700 hover:border-red-500 rounded-xl text-white font-bold text-[9px] md:text-[10px] uppercase tracking-wider transition-all hover:bg-zinc-800 break-words line-clamp-2 leading-tight"
+                  >
+                    {universe1}
+                  </button>
+                  <button
+                    onClick={() => handleVote(universe2 as string)}
+                    className="flex-1 py-3 px-2 bg-zinc-900 border border-zinc-700 hover:border-blue-500 rounded-xl text-white font-bold text-[9px] md:text-[10px] uppercase tracking-wider transition-all hover:bg-zinc-800 break-words line-clamp-2 leading-tight"
+                  >
+                    {universe2}
+                  </button>
+                </div>
+              ) : (
+                <div className="flex w-full h-8 bg-zinc-900 rounded-full overflow-hidden border border-zinc-700 mt-2">
+                  {voteStats && (voteStats.u1 + voteStats.u2 > 0) ? (
+                    <>
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        animate={{ width: `${(voteStats.u1 / (voteStats.u1 + voteStats.u2)) * 100}%` }}
+                        className="h-full items-center justify-center flex text-[10px] font-black"
+                        style={{ backgroundColor: universe1 ? getUniverseStats(universe1).color : 'red' }}
+                      >
+                         {Math.round((voteStats.u1 / (voteStats.u1 + voteStats.u2)) * 100)}%
+                      </motion.div>
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        animate={{ width: `${(voteStats.u2 / (voteStats.u1 + voteStats.u2)) * 100}%` }}
+                        className="h-full items-center justify-center flex text-[10px] font-black"
+                        style={{ backgroundColor: universe2 ? getUniverseStats(universe2).color : 'blue' }}
+                      >
+                         {Math.round((voteStats.u2 / (voteStats.u1 + voteStats.u2)) * 100)}%
+                      </motion.div>
+                    </>
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-[10px] font-bold text-zinc-500">Calculating...</div>
+                  )}
+                </div>
               )}
             </motion.div>
           ) : battleState === 'countdown' ? (
