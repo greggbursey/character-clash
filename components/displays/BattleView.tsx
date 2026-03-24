@@ -3,6 +3,9 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Info } from 'lucide-react';
 import { Character, BattleState } from '@/types';
+import { useState } from 'react';
+import { doc, getDoc, setDoc, updateDoc, increment } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 
 interface BattleViewProps {
   char1: Character | null;
@@ -24,9 +27,44 @@ export default function BattleView({
   countdown,
   winner,
   startBattle,
+  setBattleState,
   setSelectedLoreChar
 }: BattleViewProps) {
   const isResult = battleState === 'result';
+  const [hasVoted, setHasVoted] = useState(false);
+  const [voteStats, setVoteStats] = useState<{p1: number, p2: number} | null>(null);
+
+  const handleVote = async (predictedCharId: string) => {
+    if (!char1 || !char2) return;
+    setHasVoted(true);
+    
+    try {
+      const ids = [char1.id, char2.id].sort();
+      const matchId = `${ids[0]}_vs_${ids[1]}`;
+      const docRef = doc(db, 'predictions', matchId);
+      
+      const docSnap = await getDoc(docRef);
+      if (!docSnap.exists()) {
+        await setDoc(docRef, { [char1.id]: predictedCharId === char1.id ? 1 : 0, [char2.id]: predictedCharId === char2.id ? 1 : 0 });
+        setVoteStats({ p1: predictedCharId === char1.id ? 1 : 0, p2: predictedCharId === char2.id ? 1 : 0 });
+      } else {
+        await updateDoc(docRef, { [predictedCharId]: increment(1) });
+        const data = docSnap.data();
+        setVoteStats({ 
+          p1: (data[char1.id] || 0) + (predictedCharId === char1.id ? 1 : 0),
+          p2: (data[char2.id] || 0) + (predictedCharId === char2.id ? 1 : 0)
+        });
+      }
+    } catch (e) {
+      console.error("Firebase unavailable or not configured. Proceeding directly.", e);
+    }
+
+    setTimeout(() => {
+      setHasVoted(false);
+      setVoteStats(null);
+      setBattleState('countdown');
+    }, 2500);
+  };
 
   return (
     <div className="w-full max-w-5xl flex flex-row justify-between items-center gap-2 md:gap-0">
@@ -84,6 +122,59 @@ export default function BattleView({
                 >
                   Battle
                 </button>
+              )}
+            </motion.div>
+          ) : battleState === 'prediction' ? (
+            <motion.div
+              key="prediction"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="flex flex-col items-center gap-3 w-48 md:w-64"
+            >
+              <h3 className="text-zinc-400 font-bold uppercase tracking-widest text-xs md:text-[10px] whitespace-nowrap text-center">
+                {hasVoted ? "Community Consensus" : "Who do you think wins?"}
+              </h3>
+              {!hasVoted ? (
+                <div className="flex gap-2 mt-1 w-full justify-center">
+                  <button
+                    onClick={() => handleVote(char1?.id as string)}
+                    className="flex-1 py-3 px-2 bg-zinc-900 border border-zinc-700 hover:border-red-500 rounded-xl text-white font-bold text-[9px] md:text-[10px] uppercase tracking-wider transition-all hover:bg-zinc-800 break-words line-clamp-2 leading-tight"
+                  >
+                    {char1?.name}
+                  </button>
+                  <button
+                    onClick={() => handleVote(char2?.id as string)}
+                    className="flex-1 py-3 px-2 bg-zinc-900 border border-zinc-700 hover:border-blue-500 rounded-xl text-white font-bold text-[9px] md:text-[10px] uppercase tracking-wider transition-all hover:bg-zinc-800 break-words line-clamp-2 leading-tight"
+                  >
+                    {char2?.name}
+                  </button>
+                </div>
+              ) : (
+                <div className="flex w-full h-8 bg-zinc-900 rounded-full overflow-hidden border border-zinc-700 mt-2">
+                  {voteStats && (voteStats.p1 + voteStats.p2 > 0) ? (
+                    <>
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        animate={{ width: `${(voteStats.p1 / (voteStats.p1 + voteStats.p2)) * 100}%` }}
+                        className="h-full items-center justify-center flex text-[10px] font-black"
+                        style={{ backgroundColor: char1?.color || 'red' }}
+                      >
+                         {Math.round((voteStats.p1 / (voteStats.p1 + voteStats.p2)) * 100)}%
+                      </motion.div>
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        animate={{ width: `${(voteStats.p2 / (voteStats.p1 + voteStats.p2)) * 100}%` }}
+                        className="h-full items-center justify-center flex text-[10px] font-black"
+                        style={{ backgroundColor: char2?.color || 'blue' }}
+                      >
+                         {Math.round((voteStats.p2 / (voteStats.p1 + voteStats.p2)) * 100)}%
+                      </motion.div>
+                    </>
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-[10px] font-bold text-zinc-500">Calculating...</div>
+                  )}
+                </div>
               )}
             </motion.div>
           ) : battleState === 'countdown' ? (

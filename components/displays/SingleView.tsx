@@ -20,7 +20,7 @@ export default function SingleView({ char1, setSelectedLoreChar }: SingleViewPro
           key={`info-${char1.id}`}
           className="w-full text-center space-y-4 px-4 sm:px-12"
         >
-          <h2 className="text-5xl sm:text-7xl md:text-[clamp(3rem,8vw,120px)] font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50 leading-[0.9] break-words text-balance max-w-[90vw] mx-auto">
+          <h2 className="text-4xl sm:text-6xl md:text-[clamp(2.5rem,6vw,90px)] font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50 leading-[0.9] break-words text-balance max-w-[90vw] mx-auto pb-1">
             {char1.name}
           </h2>
           <div className="flex items-center justify-center gap-4">

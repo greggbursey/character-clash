@@ -3,6 +3,8 @@
 import { useState, useEffect, useMemo } from "react";
 import { characters } from "@/data/characters";
 import { Mode, BattleState, Character } from "@/types";
+import { doc, setDoc, increment } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 // Components
 import Header from "@/components/layout/Header";
@@ -114,7 +116,7 @@ export default function Home() {
   const startBattle = () => {
     if (mode === "battle" && (!char1 || !char2)) return;
     if (mode === "universe" && (!universe1 || !universe2)) return;
-    setBattleState("countdown");
+    setBattleState("prediction");
     setCountdown(3);
     setWinner(null);
   };
@@ -130,21 +132,49 @@ export default function Home() {
         return () => clearTimeout(timer);
       } else {
         const timer = setTimeout(() => {
-          if (mode === "battle" && char1 && char2) {
-            // Power roll: 0.5x to 1.5x of power score
-            const score1 = char1.powerScore * (0.5 + Math.random());
-            const score2 = char2.powerScore * (0.5 + Math.random());
-            setWinner(score1 >= score2 ? 1 : 2);
-            setBattleState("result");
-          } else if (mode === "universe" && universe1 && universe2) {
-            const stats1 = getUniverseStats(universe1);
-            const stats2 = getUniverseStats(universe2);
-            // Same logic for universes
-            const score1 = stats1.avgPower * (0.5 + Math.random());
-            const score2 = stats2.avgPower * (0.5 + Math.random());
-            setWinner(score1 >= score2 ? 1 : 2);
-            setBattleState("result");
-          }
+          (async () => {
+            if (mode === "battle" && char1 && char2) {
+              // Power roll: 0.5x to 1.5x of power score
+              const score1 = char1.powerScore * (0.5 + Math.random());
+              const score2 = char2.powerScore * (0.5 + Math.random());
+              const win = score1 >= score2 ? 1 : 2;
+              setWinner(win);
+              setBattleState("result");
+
+              try {
+                const winnerChar = win === 1 ? char1 : char2;
+                const loserChar = win === 1 ? char2 : char1;
+                
+                const globalRef = doc(db, 'globalStats', 'overview');
+                await setDoc(globalRef, { totalBattles: increment(1) }, { merge: true });
+
+                const wRef = doc(db, 'characterStats', winnerChar.id);
+                await setDoc(wRef, { wins: increment(1), name: winnerChar.name, universe: winnerChar.universe, color: winnerChar.color }, { merge: true });
+
+                const lRef = doc(db, 'characterStats', loserChar.id);
+                await setDoc(lRef, { losses: increment(1), name: loserChar.name, universe: loserChar.universe, color: loserChar.color }, { merge: true });
+              } catch (e) {
+                console.error("Firebase log error:", e);
+              }
+
+            } else if (mode === "universe" && universe1 && universe2) {
+              const stats1 = getUniverseStats(universe1);
+              const stats2 = getUniverseStats(universe2);
+              // Same logic for universes
+              const score1 = stats1.avgPower * (0.5 + Math.random());
+              const score2 = stats2.avgPower * (0.5 + Math.random());
+              const win = score1 >= score2 ? 1 : 2;
+              setWinner(win);
+              setBattleState("result");
+
+              try {
+                const globalRef = doc(db, 'globalStats', 'overview');
+                await setDoc(globalRef, { totalBattles: increment(1) }, { merge: true });
+              } catch (e) {
+                console.error("Firebase log error:", e);
+              }
+            }
+          })();
         }, 0);
         return () => clearTimeout(timer);
       }
@@ -174,7 +204,7 @@ export default function Home() {
           setSearchQuery={setSearchQuery}
         />
 
-          <div className="flex-1 flex flex-col justify-center items-center py-2 md:py-8 min-h-0">
+          <div className="flex flex-col justify-center items-center py-2 md:py-4 min-h-[min(35vh,250px)] shrink-0 z-20 relative">
           {mode === "single" && (
             <SingleView
               char1={char1}
@@ -278,7 +308,7 @@ export default function Home() {
         </div>
 
         <div
-          className={`transition-opacity duration-500 flex flex-col min-h-0 flex-shrink ${battleState !== "idle" ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+          className={`transition-opacity duration-500 flex-1 flex flex-col min-h-0 z-30 relative ${battleState !== "idle" ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         >
           <div className="mb-2 md:mb-4 text-xs font-mono text-zinc-500 uppercase tracking-widest flex justify-between items-center flex-shrink-0">
             <span>

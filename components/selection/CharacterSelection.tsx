@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import { Character, Mode } from '@/types';
 import { getAssetPath } from '@/lib/utils';
@@ -21,85 +22,176 @@ export default function CharacterSelection({
   char2,
   selectCharacter
 }: CharacterSelectionProps) {
+  const [activeTab, setActiveTab] = useState<string>('All');
+  
+  // Reset tab if active tab gets filtered out by search
+  if (activeTab !== 'All' && !universes.includes(activeTab)) {
+    setActiveTab('All');
+  }
+
+  const renderUniverses = activeTab === 'All' ? universes : [activeTab];
+
   return (
-    <div className="flex overflow-x-auto overflow-y-hidden pb-3 pt-1 gap-6 md:gap-8 snap-x snap-mandatory hide-scrollbar min-h-0">
-      {universes.map((universe) => (
-        <div key={universe} className="flex flex-col gap-2 md:gap-3 flex-shrink-0">
-          <div className="flex items-center gap-2">
-            <div className="h-px flex-1 bg-zinc-800" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600 whitespace-nowrap">
-              {universe}
-            </span>
-            <div className="h-px w-8 bg-zinc-800" />
-          </div>
-          
-          <div className="flex gap-3 md:gap-4">
-            {groupedCharacters[universe].map((char) => {
-              const isSelected = char.id === char1?.id || char.id === char2?.id;
-              const isP1 = char.id === char1?.id;
-              const isP2 = char.id === char2?.id;
+    <div className="flex flex-col h-full min-h-0 relative">
+      {/* Tabs Header */}
+      <div className="flex gap-2 overflow-x-auto hide-scrollbar pb-4 pt-1 px-1 flex-shrink-0 snap-x">
+        <button
+          onClick={() => setActiveTab('All')}
+          className={`flex-shrink-0 px-5 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all shadow-sm snap-start ${
+            activeTab === 'All' 
+              ? 'bg-zinc-100 text-zinc-900 shadow-[0_0_15px_rgba(255,255,255,0.3)]' 
+              : 'bg-zinc-900/80 text-zinc-500 hover:bg-zinc-800 hover:text-zinc-200 border border-zinc-800'
+          }`}
+        >
+          All Universes
+        </button>
+        {universes.map(u => {
+          const uniColor = groupedCharacters[u]?.[0]?.color || '#ffffff';
+          return (
+          <button
+            key={u}
+            onClick={() => setActiveTab(u)}
+            className={`flex-shrink-0 px-5 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all border snap-start uppercase`}
+            style={{
+              backgroundColor: activeTab === u ? uniColor : 'rgba(24, 24, 27, 0.8)',
+              color: activeTab === u ? '#ffffff' : '#a1a1aa',
+              borderColor: activeTab === u ? uniColor : '#27272a',
+              boxShadow: activeTab === u ? `0 0 15px ${uniColor}60` : 'none'
+            }}
+          >
+            {u}
+          </button>
+        )})}
+      </div>
 
-              return (
-                <button
-                  key={char.id}
-                  onClick={() => selectCharacter(char)}
-                  className={`relative flex-shrink-0 snap-center group transition-all duration-300 ${
-                    isSelected ? 'scale-110 z-10' : 'hover:scale-105 hover:z-10'
-                  }`}
-                >
-                  <div 
-                    className={`w-16 h-16 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 transition-all duration-300 ${
-                      isSelected ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'
-                    }`}
-                    style={{
-                      borderColor: char.color,
-                      boxShadow: isSelected ? `0 0 20px ${char.color}` : `0 0 0px transparent`,
-                    }}
+      {/* Grid Container */}
+      <div className="flex-1 overflow-y-auto hide-scrollbar pb-32">
+        <div className="flex flex-col gap-8 md:gap-10">
+          {renderUniverses.map(universe => (
+            <div key={universe} className="flex flex-col gap-4">
+              {/* Universe Header Section */}
+              {activeTab === 'All' && (
+                <div className="flex items-center gap-4">
+                  <h3 
+                    className="text-sm md:text-base font-black uppercase tracking-[0.2em]"
+                    style={{ color: groupedCharacters[universe]?.[0]?.color || '#f4f4f5' }}
                   >
-                    <Image
-                      src={getAssetPath(char.previewUrl)}
-                      alt={char.name}
-                      width={96}
-                      height={96}
-                      className="w-full h-full object-cover"
-                      style={{ objectPosition: char.imagePosition || 'center' }}
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  
-                  {/* Selection Indicators */}
-                  {mode === 'battle' && isP1 && (
-                    <div 
-                      className="absolute -top-2 -left-2 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase z-20"
-                      style={{ backgroundColor: char.color }}
-                    >
-                      P1
-                    </div>
-                  )}
-                  {mode === 'battle' && isP2 && (
-                    <div 
-                      className="absolute -top-2 -right-2 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase z-20"
-                      style={{ backgroundColor: char.color }}
-                    >
-                      P2
-                    </div>
-                  )}
+                    {universe}
+                  </h3>
+                  <div 
+                    className="h-px flex-1" 
+                    style={{ background: `linear-gradient(to right, ${groupedCharacters[universe]?.[0]?.color}60, transparent)` }}
+                  />
+                </div>
+              )}
+              
+              {/* Character Grid */}
+              <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-3 md:gap-4">
+                {groupedCharacters[universe].map(char => {
+                  const isSelected = char.id === char1?.id || char.id === char2?.id;
+                  const isP1 = char.id === char1?.id;
+                  const isP2 = char.id === char2?.id;
 
-                  <div className="mt-1 md:mt-2 text-center">
-                    <div className={`text-[10px] md:text-xs font-bold whitespace-normal leading-tight w-16 md:w-24 ${isSelected ? 'text-white' : 'text-zinc-400 group-hover:text-zinc-200'}`}>
-                      {char.name}
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
+                  return (
+                    <button
+                      key={char.id}
+                      onClick={() => selectCharacter(char)}
+                      className={`relative flex flex-col items-center group transition-all duration-300 w-full ${
+                        isSelected ? 'scale-105 z-10' : 'hover:scale-105 hover:z-10'
+                      }`}
+                    >
+                      <div 
+                        className={`w-full aspect-square rounded-xl md:rounded-2xl overflow-hidden border-2 transition-all duration-300 ${
+                          isSelected ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'
+                        }`}
+                        style={{
+                          borderColor: isSelected ? char.color : 'transparent',
+                          boxShadow: isSelected ? `0 0 20px ${char.color}` : `0 0 0px transparent`,
+                          backgroundColor: 'rgba(0,0,0,0.5)'
+                        }}
+                      >
+                        <Image
+                          src={getAssetPath(char.previewUrl)}
+                          alt={char.name}
+                          width={96}
+                          height={96}
+                          className="w-full h-full object-cover mix-blend-screen"
+                          style={{ objectPosition: char.imagePosition || 'center' }}
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                      
+                      {/* Selection Indicators */}
+                      {mode === 'battle' && (isP1 || isP2) && (
+                        <div 
+                          className="absolute -top-2 -right-2 text-white text-[9px] md:text-[10px] font-black px-2 py-1 rounded-full uppercase z-20 shadow-lg"
+                          style={{ backgroundColor: char.color }}
+                        >
+                          {isP1 ? 'P1' : 'P2'}
+                        </div>
+                      )}
+
+                      <div className="mt-2 text-center w-full px-1">
+                        <div className={`text-[9px] md:text-[10px] font-bold truncate ${isSelected ? 'text-white' : 'text-zinc-500 group-hover:text-zinc-300'}`}>
+                          {char.name.toUpperCase()}
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-      
+      </div>
+
       {universes.length === 0 && (
-        <div className="w-full py-12 text-center text-zinc-600 font-mono text-sm uppercase tracking-widest">
-          No characters found matching search terms
+        <div className="w-full py-20 flex flex-col items-center justify-center text-zinc-600">
+          <span className="text-4xl mb-4">🦇</span>
+          <span className="font-mono text-sm uppercase tracking-widest">No characters found</span>
+        </div>
+      )}
+
+      {/* Sticky Selected Combatants Tray (Battle Mode only) */}
+      {mode === 'battle' && (char1 || char2) && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] md:w-max bg-zinc-950/80 backdrop-blur-xl border border-zinc-800/80 p-3 md:p-4 rounded-3xl flex items-center justify-between md:justify-center gap-4 md:gap-8 shadow-[0_10px_40px_rgba(0,0,0,0.8)] z-50 animate-in slide-in-from-bottom-5">
+          {/* P1 Section */}
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl border border-zinc-700 overflow-hidden bg-zinc-900 shadow-inner flex items-center justify-center relative">
+              {char1 ? (
+                <>
+                  <Image src={getAssetPath(char1.previewUrl)} alt={char1.name} fill className="object-cover opacity-80" />
+                  <div className="absolute inset-0 border-2 rounded-xl" style={{ borderColor: char1.color }} />
+                </>
+              ) : (
+                <span className="text-zinc-700 font-black text-xs">P1</span>
+              )}
+            </div>
+            <div className="hidden sm:block">
+              <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Player 1</div>
+              <div className="text-xs font-black text-zinc-200 truncate max-w-[100px]">{char1 ? char1.name : 'Waiting...'}</div>
+            </div>
+          </div>
+
+          <div className="text-zinc-600 font-black italic text-xl md:text-2xl pt-1">VS</div>
+
+          {/* P2 Section */}
+          <div className="flex items-center gap-3 flex-row-reverse sm:flex-row">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl border border-zinc-700 overflow-hidden bg-zinc-900 shadow-inner flex items-center justify-center relative">
+              {char2 ? (
+                <>
+                  <Image src={getAssetPath(char2.previewUrl)} alt={char2.name} fill className="object-cover opacity-80" />
+                  <div className="absolute inset-0 border-2 rounded-xl" style={{ borderColor: char2.color }} />
+                </>
+              ) : (
+                <span className="text-zinc-700 font-black text-xs">P2</span>
+              )}
+            </div>
+            <div className="hidden sm:block text-right sm:text-left">
+              <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Player 2</div>
+              <div className="text-xs font-black text-zinc-200 truncate max-w-[100px]">{char2 ? char2.name : 'Waiting...'}</div>
+            </div>
+          </div>
         </div>
       )}
     </div>

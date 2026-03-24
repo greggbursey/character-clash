@@ -1,7 +1,8 @@
 'use client';
 
-import { Search, X, User, Swords, Globe } from 'lucide-react';
+import { Search, X, User, Swords, Globe, BarChart3 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import Link from 'next/link';
 import { Mode } from '@/types';
 
 interface HeaderProps {
@@ -101,6 +102,14 @@ export default function Header({
             Universe
           </button>
         </div>
+
+        <Link
+          href="/portal"
+          className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap bg-zinc-900/80 text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-500"
+        >
+          <BarChart3 size={14} className="sm:w-4 sm:h-4" />
+          <span className="hidden sm:inline">Portal</span>
+        </Link>
       </div>
     </header>
   );
