@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { HelpCircle, Brain, RefreshCw } from "lucide-react";
 import { characters as allCharactersData } from "@/data/characters";
+import { getAssetPath } from "@/lib/utils";
 import { Character } from "@/types";
 
 interface TriviaQuestion {
@@ -140,7 +141,7 @@ export function CharacterTrivia() {
                   `}
                >
                  <div className="relative w-8 h-8 flex-shrink-0">
-                   <Image src={opt.previewUrl} alt={opt.name} fill className="rounded-full border border-zinc-700 object-cover bg-zinc-800" />
+                   <Image src={getAssetPath(opt.previewUrl)} alt={opt.name} fill className="rounded-full border border-zinc-700 object-cover bg-zinc-800" />
                  </div>
                  {opt.name}
                </button>

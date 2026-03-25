@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Users, Swords, Shuffle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { characters as allCharactersData } from "@/data/characters";
+import { getAssetPath } from "@/lib/utils";
 import { Character } from "@/types";
 
 export function MatchupSimulator() {
@@ -88,7 +89,7 @@ export function MatchupSimulator() {
                 >
                   {c.previewUrl && (
                     <div className="relative w-6 h-6 flex-shrink-0">
-                      <Image src={c.previewUrl} alt="" fill className="rounded-full object-cover border border-zinc-800" />
+                      <Image src={getAssetPath(c.previewUrl)} alt="" fill className="rounded-full object-cover border border-zinc-800" />
                     </div>
                   )}
                   <span className="text-xs font-bold group-hover:line-through">{c.name} <span className="text-zinc-500 font-normal">[{c.powerScore}]</span></span>
@@ -121,7 +122,7 @@ export function MatchupSimulator() {
                 >
                   {c.previewUrl && (
                     <div className="relative w-6 h-6 flex-shrink-0">
-                      <Image src={c.previewUrl} alt="" fill className="rounded-full object-cover border border-zinc-800" />
+                      <Image src={getAssetPath(c.previewUrl)} alt="" fill className="rounded-full object-cover border border-zinc-800" />
                     </div>
                   )}
                   <span className="text-xs font-bold group-hover:line-through">{c.name} <span className="text-zinc-500 font-normal">[{c.powerScore}]</span></span>
@@ -165,7 +166,7 @@ export function MatchupSimulator() {
                title={`${c.name} [${c.powerScore} PWR]`}
              >
                 <div className="relative w-14 h-14 mx-auto mb-2 flex-shrink-0">
-                  <Image src={c.previewUrl} alt={c.name} fill className={`rounded-full border-2 object-cover ${activeTeam === 1 ? 'group-hover:border-red-500' : 'group-hover:border-blue-500'} border-zinc-800 shadow-lg`} />
+                  <Image src={getAssetPath(c.previewUrl)} alt={c.name} fill className={`rounded-full border-2 object-cover ${activeTeam === 1 ? 'group-hover:border-red-500' : 'group-hover:border-blue-500'} border-zinc-800 shadow-lg`} />
                 </div>
                 <div className="text-[10px] text-center text-zinc-400 font-bold uppercase tracking-tight w-full leading-tight line-clamp-2 px-1 group-hover:text-white transition-colors">{c.name}</div>
              </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { List } from "lucide-react";
 import { characters as allCharactersData } from "@/data/characters";
+import { getAssetPath } from "@/lib/utils";
 import LoreModal from "@/components/ui/LoreModal";
 import { Character } from "@/types";
 
@@ -50,7 +51,7 @@ export function TierListMaker() {
                    >
                      <div className="relative w-12 h-12 flex-shrink-0 group-hover:scale-110 transition-transform">
                        <Image 
-                         src={c.previewUrl} 
+                         src={getAssetPath(c.previewUrl)} 
                          alt={c.name}
                          fill
                          className="rounded-full border-2 border-zinc-800 group-hover:border-white transition-all object-cover shadow-lg bg-zinc-800"

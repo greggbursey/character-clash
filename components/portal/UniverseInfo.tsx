@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { BookOpen, ChevronDown, GitMerge } from "lucide-react";
 import { characters as allCharactersData } from "@/data/characters";
+import { getAssetPath } from "@/lib/utils";
 
 const universeBlurbs: Record<string, string> = {
   "DC": "Home to gods amongst men. The DC Universe is defined by legacy, symbols of hope, and crisis events that shatter reality itself. From the streets of Gotham to the skies of Metropolis, justice is upheld by immensely powerful beings.",
@@ -80,7 +81,7 @@ export function UniverseInfo() {
                           </div>
 
                           <div className="relative w-10 h-10 flex-shrink-0">
-                            <Image src={char.previewUrl} alt={char.name} fill className="rounded-lg object-cover border border-zinc-700 bg-zinc-800" />
+                            <Image src={getAssetPath(char.previewUrl)} alt={char.name} fill className="rounded-lg object-cover border border-zinc-700 bg-zinc-800" />
                           </div>
                           <div className="flex flex-col">
                              <div className="font-black text-white uppercase tracking-tight text-sm">{char.name}</div>
