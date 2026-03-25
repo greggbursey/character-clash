@@ -5,6 +5,7 @@ import { X } from 'lucide-react';
 import Image from 'next/image';
 import { Character } from '@/types';
 import { getAssetPath } from '@/lib/utils';
+import ReactMarkdown from 'react-markdown';
 
 interface LoreModalProps {
   character: Character | null;
@@ -83,13 +84,13 @@ export default function LoreModal({ character, onClose }: LoreModalProps) {
               </div>
               
               <div className="space-y-4">
-                <p className="text-zinc-300 leading-relaxed font-medium">
-                  {character.description}
-                </p>
+                <div className="text-zinc-300 leading-relaxed font-medium [&>p]:mb-4 [&>p:last-child]:mb-0 [&>strong]:text-white">
+                  <ReactMarkdown>{character.description}</ReactMarkdown>
+                </div>
                 <div className="h-px w-full bg-zinc-800" />
-                <p className="text-zinc-400 leading-relaxed text-sm">
-                  {character.lore}
-                </p>
+                <div className="text-zinc-400 leading-relaxed text-sm [&>p]:mb-4 [&>p:last-child]:mb-0 [&>strong]:text-zinc-200">
+                  <ReactMarkdown>{character.lore}</ReactMarkdown>
+                </div>
               </div>
             </div>
           </motion.div>

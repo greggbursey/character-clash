@@ -116,8 +116,8 @@ export default function Home() {
   const startBattle = () => {
     if (mode === "battle" && (!char1 || !char2)) return;
     if (mode === "universe" && (!universe1 || !universe2)) return;
-    setBattleState("prediction");
     setCountdown(3);
+    setBattleState("countdown");
     setWinner(null);
   };
 
@@ -134,16 +134,36 @@ export default function Home() {
         const timer = setTimeout(() => {
           (async () => {
             if (mode === "battle" && char1 && char2) {
-              // Power roll: 0.5x to 1.5x of power score
-              const score1 = char1.powerScore * (0.5 + Math.random());
-              const score2 = char2.powerScore * (0.5 + Math.random());
-              const win = score1 >= score2 ? 1 : 2;
+              const p1 = char1.powerScore;
+              const p2 = char2.powerScore;
+              let win: 1 | 2;
+              
+              if (Math.abs(p1 - p2) >= 500) {
+                win = p1 > p2 ? 1 : 2;
+              } else {
+                const winProb1 = 1 / (1 + Math.pow(10, (p2 - p1) / 200));
+                win = Math.random() <= winProb1 ? 1 : 2;
+              }
               setWinner(win);
               setBattleState("result");
 
               try {
                 const winnerChar = win === 1 ? char1 : char2;
                 const loserChar = win === 1 ? char2 : char1;
+
+                const winProb1 = 1 / (1 + Math.pow(10, (p2 - p1) / 200));
+                const upsetChance = win === 1 ? (1 - winProb1) : winProb1;
+                if (Math.abs(p1 - p2) < 500 && upsetChance < 0.25) {
+                  const anomalyRef = doc(db, 'anomalies', Date.now().toString());
+                  await setDoc(anomalyRef, {
+                    winner: winnerChar.name,
+                    winnerPower: winnerChar.powerScore,
+                    loser: loserChar.name,
+                    loserPower: loserChar.powerScore,
+                    probability: upsetChance,
+                    timestamp: new Date().toISOString()
+                  });
+                }
                 
                 const globalRef = doc(db, 'globalStats', 'overview');
                 await setDoc(globalRef, { totalBattles: increment(1) }, { merge: true });
@@ -160,10 +180,16 @@ export default function Home() {
             } else if (mode === "universe" && universe1 && universe2) {
               const stats1 = getUniverseStats(universe1);
               const stats2 = getUniverseStats(universe2);
-              // Same logic for universes
-              const score1 = stats1.avgPower * (0.5 + Math.random());
-              const score2 = stats2.avgPower * (0.5 + Math.random());
-              const win = score1 >= score2 ? 1 : 2;
+              const p1 = stats1.avgPower;
+              const p2 = stats2.avgPower;
+              let win: 1 | 2;
+              
+              if (Math.abs(p1 - p2) >= 500) {
+                win = p1 > p2 ? 1 : 2;
+              } else {
+                const winProb1 = 1 / (1 + Math.pow(10, (p2 - p1) / 200));
+                win = Math.random() <= winProb1 ? 1 : 2;
+              }
               setWinner(win);
               setBattleState("result");
 

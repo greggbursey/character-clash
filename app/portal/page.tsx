@@ -7,6 +7,17 @@ import { useEffect, useState, useMemo } from "react";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
+import { characters as allCharactersData } from "@/data/characters";
+import { MatchupSimulator } from "@/components/portal/MatchupSimulator";
+import { CharacterTrivia } from "@/components/portal/CharacterTrivia";
+import { AnomaliesLog } from "@/components/portal/AnomaliesLog";
+import { WinStreaks } from "@/components/portal/WinStreaks";
+import { TierListMaker } from "@/components/portal/TierListMaker";
+import { WhatIfScenarios } from "@/components/portal/WhatIfScenarios";
+import { RivalryTracker } from "@/components/portal/RivalryTracker";
+import { UnderdogOfTheWeek } from "@/components/portal/UnderdogOfTheWeek";
+import { UniverseInfo } from "@/components/portal/UniverseInfo";
+
 interface CharStat {
   id: string;
   name: string;
@@ -14,7 +25,10 @@ interface CharStat {
   losses: number;
   color: string;
   universe?: string;
+  powerScore?: number;
 }
+
+type Tab = "Dashboard" | "Universes" | "TierList" | "Simulator" | "Trivia";
 
 export default function PortalPage() {
   const [totalBattles, setTotalBattles] = useState<number>(0);
@@ -22,6 +36,7 @@ export default function PortalPage() {
   const [isFirebaseLive, setIsFirebaseLive] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [universeSearchQuery, setUniverseSearchQuery] = useState("");
+  const [activeTab, setActiveTab] = useState<Tab>("Dashboard");
 
   useEffect(() => {
     async function fetchStats() {
@@ -40,12 +55,14 @@ export default function PortalPage() {
         const allData: CharStat[] = [];
         charsSnap.forEach((doc) => {
           const data = doc.data();
+          const baseChar = allCharactersData.find((c) => c.id === doc.id);
           allData.push({
             id: doc.id,
             ...data,
             wins: data.wins || 0,
             losses: data.losses || 0,
             universe: data.universe || "Unknown",
+            powerScore: baseChar?.powerScore || 500,
           } as CharStat);
         });
         setAllCharacters(allData);
@@ -189,29 +206,30 @@ export default function PortalPage() {
             </div>
           </div>
 
-          <div className="group relative">
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border text-[10px] md:text-xs font-bold tracking-widest uppercase shadow-lg backdrop-blur-sm bg-blue-500/10 border-blue-500/50 text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.2)] cursor-help transition-colors hover:bg-blue-500/20">
-              <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(96,165,250,1)]" />
-              Predictions: Active
-            </div>
-            <div className="absolute top-full pt-3 right-0 w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
-              <div className="bg-zinc-900/95 border backdrop-blur-xl border-blue-500/30 p-3 rounded-xl shadow-2xl">
-                <div className="font-bold text-blue-400 mb-1 uppercase tracking-wider text-[10px]">
-                  Community Input
-                </div>
-                <p className="text-zinc-400 text-[10px] leading-relaxed">
-                  Live predicting is fully operational. Tap into the multiverse
-                  consensus network and sway global odds.
-                </p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </header>
 
-      {/* Hero Stats */}
+      {/* Tabs Navigation */}
+      <div className="max-w-6xl mx-auto mb-8 bg-zinc-900/50 p-2 border border-zinc-800/80 rounded-[2rem] flex flex-wrap gap-2 justify-center shadow-lg relative z-20">
+         {["Dashboard", "Universes", "TierList", "Simulator", "Trivia"].map(tab => (
+           <button
+             key={tab}
+             onClick={() => setActiveTab(tab as Tab)}
+             className={`px-6 py-4 rounded-3xl font-black tracking-widest uppercase text-xs md:text-sm transition-all flex-1 md:flex-none text-center ${activeTab === tab ? 'bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.4)]' : 'bg-transparent text-zinc-500 hover:text-white hover:bg-zinc-800'}`}
+           >
+             {tab === "TierList" ? "Tier List" : tab}
+           </button>
+         ))}
+      </div>
+
       <div className="max-w-6xl mx-auto">
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-12">
+        <AnimatePresence mode="wait">
+        
+        {activeTab === "Dashboard" && (
+        <motion.div key="Dashboard" initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} exit={{opacity:0, y:-20}} className="flex flex-col gap-12">
+        {/* Hero Stats */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {/* Dominant Universe */}
           <div className="bg-zinc-900/50 border border-zinc-800/80 rounded-[2rem] p-8 flex flex-col items-center justify-center min-h-[180px] hover:border-zinc-700 transition-colors relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all" />
@@ -456,7 +474,27 @@ export default function PortalPage() {
           </div>
         </section>
 
-        {/* Universe Leaderboard */}
+        {/* Dashboard Analytics & Anomalies */}
+        <section>
+          <h2 className="text-2xl md:text-3xl font-black uppercase tracking-[0.1em] text-white flex items-center gap-4 mb-2">
+            <span className="w-12 h-1 bg-gradient-to-r from-red-600 to-red-400 rounded-full shadow-[0_0_15px_rgba(220,38,38,0.5)]" />
+            Live Analytics
+          </h2>
+          <p className="text-zinc-500 font-bold uppercase tracking-widest text-sm mb-8">
+            Monitoring Multiverse Disturbances
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(250px,auto)]">
+             <div><AnomaliesLog /></div>
+             <div><WinStreaks characters={allCharacters} /></div>
+             <div><UnderdogOfTheWeek characters={allCharacters} /></div>
+             <div className="lg:col-span-3"><WhatIfScenarios /></div>
+          </div>
+        </section>
+        </motion.div>
+        )}
+
+        {activeTab === "Universes" && (
+        <motion.div key="Universes" initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} exit={{opacity:0, y:-20}} className="flex flex-col gap-12">
         <section className="mt-12 z-10 relative bg-zinc-900/30 border border-zinc-800/40 rounded-[2rem] p-6 md:p-10 overflow-hidden">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <h3 className="text-xl md:text-2xl font-black uppercase tracking-[0.1em] text-zinc-100 flex items-center gap-4">
@@ -483,12 +521,28 @@ export default function PortalPage() {
               filteredUniverses.map((uni, i) => {
                 const total = Math.max(uni.wins + uni.losses, 1);
                 const winRate = Math.round((uni.wins / total) * 100);
+                
+                const getUniverseTheme = (u: string) => {
+                  switch (u) {
+                    case "DC": return { border: "hover:border-blue-500/50", fill: "bg-blue-500", text: "text-blue-400" };
+                    case "Marvel": return { border: "hover:border-red-500/50", fill: "bg-red-500", text: "text-red-400" };
+                    case "Mortal Kombat": return { border: "hover:border-yellow-500/50", fill: "bg-yellow-500", text: "text-yellow-400" };
+                    case "Street Fighter": return { border: "hover:border-orange-500/50", fill: "bg-orange-500", text: "text-orange-400" };
+                    case "TMNT": return { border: "hover:border-emerald-500/50", fill: "bg-emerald-500", text: "text-emerald-400" };
+                    case "Star Wars": return { border: "hover:border-purple-500/50", fill: "bg-purple-500", text: "text-purple-400" };
+                    case "Godzilla": return { border: "hover:border-cyan-500/50", fill: "bg-cyan-500", text: "text-cyan-400" };
+                    case "X-Men": return { border: "hover:border-yellow-400/50", fill: "bg-yellow-400", text: "text-yellow-400" };
+                    default: return { border: "hover:border-zinc-500/50", fill: "bg-zinc-500", text: "text-zinc-400" };
+                  }
+                };
+                const theme = getUniverseTheme(uni.name);
+
                 return (
                   <div
                     key={uni.name}
-                    className="flex flex-col relative bg-zinc-900/80 p-5 rounded-2xl border border-zinc-800 overflow-hidden group hover:border-blue-500/30 transition-colors"
+                    className={`flex flex-col relative bg-zinc-900/80 p-5 rounded-2xl border border-zinc-800 overflow-hidden group transition-colors ${theme.border}`}
                   >
-                    <div className="absolute left-0 bottom-0 top-0 w-1 bg-blue-500/50" />
+                    <div className={`absolute left-0 bottom-0 top-0 w-1 ${theme.fill} opacity-50`} />
 
                     <div className="flex justify-between items-start mb-3">
                       <div className="flex items-center gap-3">
@@ -516,11 +570,11 @@ export default function PortalPage() {
                             -{" "}
                             <span className="text-red-500">{uni.losses}L</span>
                           </span>
-                          <span className="text-blue-400">{winRate}% WIN</span>
+                          <span className={`${theme.text}`}>{winRate}% WIN</span>
                         </div>
                         <div className="w-full h-1.5 bg-zinc-800 rounded-full overflow-hidden">
                           <div
-                            className="h-full bg-blue-500 rounded-full"
+                            className={`h-full rounded-full ${theme.fill}`}
                             style={{ width: `${winRate}%` }}
                           />
                         </div>
@@ -536,6 +590,41 @@ export default function PortalPage() {
             )}
           </div>
         </section>
+
+        {/* UNIVERSE LORE ARCHIVES */}
+        <UniverseInfo />
+
+        {/* IN-UNIVERSE RIVALRIES */}
+        <section>
+          <h2 className="text-2xl font-black uppercase tracking-[0.1em] text-white flex items-center gap-4 mb-6">
+            <span className="w-12 h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" />
+            In-Universe Rivalries
+          </h2>
+          <RivalryTracker />
+        </section>
+
+        </motion.div>
+        )}
+
+        {activeTab === "TierList" && (
+          <motion.div key="TierList" initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} exit={{opacity:0, y:-20}} className="max-w-6xl mx-auto">
+            <TierListMaker />
+          </motion.div>
+        )}
+
+        {activeTab === "Simulator" && (
+          <motion.div key="Simulator" initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} exit={{opacity:0, y:-20}}>
+            <MatchupSimulator />
+          </motion.div>
+        )}
+
+        {activeTab === "Trivia" && (
+          <motion.div key="Trivia" initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} exit={{opacity:0, y:-20}} className="max-w-3xl mx-auto">
+             <CharacterTrivia />
+          </motion.div>
+        )}
+
+        </AnimatePresence>
       </div>
     </main>
   );
