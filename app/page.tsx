@@ -136,12 +136,12 @@ export default function Home() {
             if (mode === "battle" && char1 && char2) {
               const p1 = char1.powerScore;
               const p2 = char2.powerScore;
+              const winProb1 = 1 / (1 + Math.pow(10, (p2 - p1) / 200));
               let win: 1 | 2;
               
               if (Math.abs(p1 - p2) >= 500) {
                 win = p1 > p2 ? 1 : 2;
               } else {
-                const winProb1 = 1 / (1 + Math.pow(10, (p2 - p1) / 200));
                 win = Math.random() <= winProb1 ? 1 : 2;
               }
               setWinner(win);
@@ -151,7 +151,6 @@ export default function Home() {
                 const winnerChar = win === 1 ? char1 : char2;
                 const loserChar = win === 1 ? char2 : char1;
 
-                const winProb1 = 1 / (1 + Math.pow(10, (p2 - p1) / 200));
                 const upsetChance = win === 1 ? (1 - winProb1) : winProb1;
                 if (Math.abs(p1 - p2) < 500 && upsetChance < 0.25) {
                   const anomalyRef = doc(db, 'anomalies', Date.now().toString());

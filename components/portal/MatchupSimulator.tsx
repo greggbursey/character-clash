@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { Users, Swords, Shuffle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -85,7 +86,11 @@ export function MatchupSimulator() {
                   className="bg-zinc-900 border border-zinc-700 p-1.5 pr-3 rounded-full flex items-center gap-2 text-white hover:bg-zinc-800 hover:border-red-500/50 transition-all cursor-pointer group shadow-sm"
                   title="Click to remove"
                 >
-                  {c.previewUrl && <img src={c.previewUrl} alt="" className="w-6 h-6 rounded-full object-cover border border-zinc-800" />}
+                  {c.previewUrl && (
+                    <div className="relative w-6 h-6 flex-shrink-0">
+                      <Image src={c.previewUrl} alt="" fill className="rounded-full object-cover border border-zinc-800" />
+                    </div>
+                  )}
                   <span className="text-xs font-bold group-hover:line-through">{c.name} <span className="text-zinc-500 font-normal">[{c.powerScore}]</span></span>
                 </motion.div>
               ))}
@@ -114,7 +119,11 @@ export function MatchupSimulator() {
                   className="bg-zinc-900 border border-zinc-700 p-1.5 pr-3 rounded-full flex items-center gap-2 text-white hover:bg-zinc-800 hover:border-blue-500/50 transition-all cursor-pointer group shadow-sm"
                   title="Click to remove"
                 >
-                  {c.previewUrl && <img src={c.previewUrl} alt="" className="w-6 h-6 rounded-full object-cover border border-zinc-800" />}
+                  {c.previewUrl && (
+                    <div className="relative w-6 h-6 flex-shrink-0">
+                      <Image src={c.previewUrl} alt="" fill className="rounded-full object-cover border border-zinc-800" />
+                    </div>
+                  )}
                   <span className="text-xs font-bold group-hover:line-through">{c.name} <span className="text-zinc-500 font-normal">[{c.powerScore}]</span></span>
                 </motion.div>
               ))}
@@ -155,7 +164,9 @@ export function MatchupSimulator() {
                className={`flex-shrink-0 w-20 flex flex-col items-center group cursor-pointer ${isDrafted(c.id) ? 'opacity-20 grayscale pointer-events-none' : 'hover:scale-105 transition-transform'}`}
                title={`${c.name} [${c.powerScore} PWR]`}
              >
-                <img src={c.previewUrl} alt={c.name} className={`w-14 h-14 rounded-full border-2 object-cover mx-auto mb-2 ${activeTeam === 1 ? 'group-hover:border-red-500' : 'group-hover:border-blue-500'} border-zinc-800 shadow-lg`} />
+                <div className="relative w-14 h-14 mx-auto mb-2 flex-shrink-0">
+                  <Image src={c.previewUrl} alt={c.name} fill className={`rounded-full border-2 object-cover ${activeTeam === 1 ? 'group-hover:border-red-500' : 'group-hover:border-blue-500'} border-zinc-800 shadow-lg`} />
+                </div>
                 <div className="text-[10px] text-center text-zinc-400 font-bold uppercase tracking-tight w-full leading-tight line-clamp-2 px-1 group-hover:text-white transition-colors">{c.name}</div>
              </div>
            )) : (

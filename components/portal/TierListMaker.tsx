@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { List } from "lucide-react";
 import { characters as allCharactersData } from "@/data/characters";
@@ -47,11 +48,14 @@ export function TierListMaker() {
                      onClick={() => setSelectedLoreChar(c)}
                      className="relative group cursor-pointer"
                    >
-                     <img 
-                       src={c.previewUrl} 
-                       alt={c.name}
-                       className="w-12 h-12 rounded-full border-2 border-zinc-800 group-hover:border-white transition-all object-cover group-hover:scale-110 shadow-lg bg-zinc-800"
-                     />
+                     <div className="relative w-12 h-12 flex-shrink-0 group-hover:scale-110 transition-transform">
+                       <Image 
+                         src={c.previewUrl} 
+                         alt={c.name}
+                         fill
+                         className="rounded-full border-2 border-zinc-800 group-hover:border-white transition-all object-cover shadow-lg bg-zinc-800"
+                       />
+                     </div>
                      <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-black border border-zinc-700 text-white text-[10px] px-2 py-1 rounded whitespace-nowrap z-50 font-bold flex flex-col items-center pointer-events-none shadow-2xl">
                         <span>{c.name}</span>
                         <span className="text-zinc-400 font-mono">[{c.powerScore} PWR]</span>

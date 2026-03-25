@@ -1,7 +1,7 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Flame } from "lucide-react";
-import { motion } from "motion/react";
 
 interface CharStat {
   id: string;
@@ -10,13 +10,16 @@ interface CharStat {
   losses: number;
 }
 
+interface StreakStat extends CharStat {
+  mockStreak: number;
+}
+
 interface Props {
   characters: CharStat[];
 }
 
-export function WinStreaks({ characters }: Props) {
-  // Mock streaks since streak field doesn't exist yet, but let's base it on win-loss diff
-  const streaks = [...characters]
+function computeStreaks(characters: CharStat[]): StreakStat[] {
+  return [...characters]
     .map(c => ({
       ...c,
       mockStreak: Math.max(0, Math.floor((c.wins - c.losses) * 0.5) + Math.floor(Math.random() * 3))
@@ -24,6 +27,14 @@ export function WinStreaks({ characters }: Props) {
     .filter(c => c.mockStreak > 0)
     .sort((a, b) => b.mockStreak - a.mockStreak)
     .slice(0, 5);
+}
+
+export function WinStreaks({ characters }: Props) {
+  const [streaks, setStreaks] = useState<StreakStat[]>([]);
+
+  useEffect(() => {
+    setStreaks(computeStreaks(characters));
+  }, [characters]);
 
   return (
      <div className="bg-zinc-900/30 border border-zinc-800/40 rounded-[2rem] p-6 h-full flex flex-col relative overflow-hidden group">

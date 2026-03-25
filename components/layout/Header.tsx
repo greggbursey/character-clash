@@ -105,6 +105,7 @@ export default function Header({
 
         <Link
           href="/portal"
+          prefetch={true}
           className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap bg-zinc-900/80 text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-500"
         >
           <BarChart3 size={14} className="sm:w-4 sm:h-4" />

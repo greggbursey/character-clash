@@ -1,10 +1,54 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import Image from "next/image";
+import { useState } from "react";
 import { HelpCircle, Brain, RefreshCw } from "lucide-react";
-import { motion } from "motion/react";
 import { characters as allCharactersData } from "@/data/characters";
 import { Character } from "@/types";
+
+interface TriviaQuestion {
+  question: string;
+  options: Character[];
+  answer: Character;
+}
+
+function generateQuestions(): TriviaQuestion[] {
+  if (allCharactersData.length < 4) return [];
+  
+  const shuffledChars = [...allCharactersData].sort(() => 0.5 - Math.random()).slice(0, 10);
+  return shuffledChars.map(correctChar => {
+    
+    const isLoreQuestion = Math.random() > 0.5;
+
+    // Ensure options are from distinct universes to avoid ambiguity if asked about Universe
+    const incorrectOptions: Character[] = [];
+    const distinctChars = allCharactersData.filter(c => c.id !== correctChar.id && c.universe !== correctChar.universe);
+    const shuffledOptions = distinctChars.sort(() => 0.5 - Math.random());
+    
+    for (const char of shuffledOptions) {
+       if (incorrectOptions.length >= 3) break;
+       if (!incorrectOptions.find(c => c.universe === char.universe)) {
+           incorrectOptions.push(char);
+       }
+    }
+      
+    const options = [...incorrectOptions, correctChar].sort(() => 0.5 - Math.random());
+    
+    let questionText = "";
+    if (isLoreQuestion) {
+      // use description snippet to form question
+      questionText = `Whose lore states: "${correctChar.description}"?`;
+    } else {
+      questionText = `Which fighter belongs to the ${correctChar.universe} universe?`;
+    }
+
+    return {
+      question: questionText,
+      options,
+      answer: correctChar,
+    };
+  });
+}
 
 export function CharacterTrivia() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -12,45 +56,12 @@ export function CharacterTrivia() {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState<Character | null>(null);
+  const [questions, setQuestions] = useState<TriviaQuestion[]>([]);
 
-  // Generate a random pool of questions
-  const questions = useMemo(() => {
-    if (allCharactersData.length < 4) return [];
-    
-    const shuffledChars = [...allCharactersData].sort(() => 0.5 - Math.random()).slice(0, 10);
-    return shuffledChars.map(correctChar => {
-      
-      const isLoreQuestion = Math.random() > 0.5;
-
-      // Ensure options are from distinct universes to avoid ambiguity if asked about Universe
-      const incorrectOptions: Character[] = [];
-      const distinctChars = allCharactersData.filter(c => c.id !== correctChar.id && c.universe !== correctChar.universe);
-      const shuffledOptions = distinctChars.sort(() => 0.5 - Math.random());
-      
-      for (const char of shuffledOptions) {
-         if (incorrectOptions.length >= 3) break;
-         if (!incorrectOptions.find(c => c.universe === char.universe)) {
-             incorrectOptions.push(char);
-         }
-      }
-        
-      const options = [...incorrectOptions, correctChar].sort(() => 0.5 - Math.random());
-      
-      let questionText = "";
-      if (isLoreQuestion) {
-        // use description snippet to form question
-        questionText = `Whose lore states: "${correctChar.description}"?`;
-      } else {
-        questionText = `Which fighter belongs to the ${correctChar.universe} universe?`;
-      }
-
-      return {
-        question: questionText,
-        options,
-        answer: correctChar,
-      };
-    });
-  }, [isPlaying]); // Re-roll when isPlaying toggles
+  const startQuiz = () => {
+    setQuestions(generateQuestions());
+    setIsPlaying(true);
+  };
 
   const handleAnswer = (opt: Character) => {
     if (selectedAnswer !== null) return;
@@ -76,6 +87,7 @@ export function CharacterTrivia() {
     setCurrentIdx(0);
     setScore(0);
     setSelectedAnswer(null);
+    setQuestions([]);
   };
 
   return (
@@ -86,7 +98,7 @@ export function CharacterTrivia() {
           <h3 className="text-2xl font-black uppercase tracking-wider text-white mb-2">Character Trivia</h3>
           <p className="text-zinc-500 text-sm mb-6 max-w-[250px]">Test your knowledge of the multiverse fighters.</p>
           <button 
-            onClick={() => setIsPlaying(true)}
+            onClick={startQuiz}
             className="bg-purple-600 hover:bg-purple-500 text-white font-bold px-8 py-3 rounded-full transition-all uppercase tracking-widest text-sm"
           >
             Start Quiz
@@ -113,7 +125,7 @@ export function CharacterTrivia() {
           <h4 className="text-lg font-bold text-white mb-6">
             {questions[currentIdx]?.question}
           </h4>
-
+ 
           <div className="grid grid-cols-1 gap-3">
              {questions[currentIdx]?.options.map((opt) => (
                <button
@@ -127,7 +139,9 @@ export function CharacterTrivia() {
                     ${selectedAnswer !== null && opt.id !== questions[currentIdx].answer.id && selectedAnswer?.id !== opt.id ? 'border-zinc-800 bg-zinc-900 text-zinc-600 opacity-50' : ''}
                   `}
                >
-                 <img src={opt.previewUrl} alt={opt.name} className="w-8 h-8 rounded-full border border-zinc-700 object-cover bg-zinc-800" />
+                 <div className="relative w-8 h-8 flex-shrink-0">
+                   <Image src={opt.previewUrl} alt={opt.name} fill className="rounded-full border border-zinc-700 object-cover bg-zinc-800" />
+                 </div>
                  {opt.name}
                </button>
              ))}
