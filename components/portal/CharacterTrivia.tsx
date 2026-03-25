@@ -51,6 +51,15 @@ function generateQuestions(): TriviaQuestion[] {
   });
 }
 
+function getScoreMessage(score: number, total: number): string {
+  const percentage = (score / total) * 100;
+  if (percentage === 100) return "Perfect! You're a True Multiverse Sage! 🏆";
+  if (percentage >= 80) return "Impressive! You really know your stuff! 🔥";
+  if (percentage >= 50) return "Not bad! You've got a solid grasp of the lore. 👍";
+  if (percentage >= 20) return "Getting there! A little more study and you'll be a pro. 📚";
+  return "Ouch! Time to hit the archives and try again. 😅";
+}
+
 export function CharacterTrivia() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -108,7 +117,10 @@ export function CharacterTrivia() {
       ) : gameOver ? (
          <div className="flex flex-col items-center z-10">
           <h3 className="text-3xl font-black uppercase tracking-wider text-white mb-2">Quiz Complete</h3>
-          <p className="text-purple-400 text-xl font-mono mb-6 pb-6 border-b border-zinc-800 w-full">Score: {score}/{questions.length}</p>
+          <p className="text-purple-400 text-xl font-mono mb-2">Score: {score}/{questions.length}</p>
+          <p className="text-zinc-400 text-sm italic mb-6 pb-6 border-b border-zinc-800 w-full max-w-[280px]">
+            {getScoreMessage(score, questions.length)}
+          </p>
           <button 
             onClick={reset}
             className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-bold px-6 py-2 rounded-full transition-all uppercase tracking-widest text-sm"
@@ -140,8 +152,8 @@ export function CharacterTrivia() {
                     ${selectedAnswer !== null && opt.id !== questions[currentIdx].answer.id && selectedAnswer?.id !== opt.id ? 'border-zinc-800 bg-zinc-900 text-zinc-600 opacity-50' : ''}
                   `}
                >
-                 <div className="relative w-8 h-8 flex-shrink-0">
-                   <Image src={getAssetPath(opt.previewUrl)} alt={opt.name} fill className="rounded-full border border-zinc-700 object-cover bg-zinc-800" />
+                 <div className="relative w-16 h-16 flex-shrink-0">
+                   <Image src={getAssetPath(opt.previewUrl)} alt={opt.name} fill className="rounded-full border-2 border-zinc-700 object-cover bg-zinc-800 shadow-lg" />
                  </div>
                  {opt.name}
                </button>

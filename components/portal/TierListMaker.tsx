@@ -38,18 +38,18 @@ export function TierListMaker() {
       {/* Tier Board */}
       <div className="flex flex-col gap-2 bg-black/50 p-2 rounded-xl">
         {tiers.map((t) => (
-          <div key={t.id} className="flex min-h-[80px] bg-zinc-900 border border-zinc-800 rounded-lg">
-            <div className={`w-16 flex items-center justify-center font-black text-3xl rounded-l-lg ${t.color}`}>
+          <div key={t.id} className="flex min-h-[120px] bg-zinc-900 border border-zinc-800 rounded-lg">
+            <div className={`w-16 md:w-20 flex items-center justify-center font-black text-3xl md:text-4xl rounded-l-lg ${t.color}`}>
               {t.id}
             </div>
-            <div className="flex-1 p-3 flex flex-wrap gap-3 items-center min-h-[80px]">
+            <div className="flex-1 p-4 flex flex-wrap gap-4 items-center min-h-[120px]">
                  {getCharsByTier(t.min, t.max).map(c => (
                    <div
                      key={c.id}
                      onClick={() => setSelectedLoreChar(c)}
                      className="relative group cursor-pointer"
                    >
-                     <div className="relative w-12 h-12 flex-shrink-0 group-hover:scale-110 transition-transform">
+                     <div className="relative w-24 h-24 flex-shrink-0 group-hover:scale-110 transition-transform">
                        <Image 
                          src={getAssetPath(c.previewUrl)} 
                          alt={c.name}

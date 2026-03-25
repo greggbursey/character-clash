@@ -88,8 +88,8 @@ export function MatchupSimulator() {
                   title="Click to remove"
                 >
                   {c.previewUrl && (
-                    <div className="relative w-6 h-6 flex-shrink-0">
-                      <Image src={getAssetPath(c.previewUrl)} alt="" fill className="rounded-full object-cover border border-zinc-800" />
+                    <div className="relative w-12 h-12 flex-shrink-0">
+                      <Image src={getAssetPath(c.previewUrl)} alt="" fill className="rounded-full object-cover border-2 border-zinc-800" />
                     </div>
                   )}
                   <span className="text-xs font-bold group-hover:line-through">{c.name} <span className="text-zinc-500 font-normal">[{c.powerScore}]</span></span>
@@ -121,8 +121,8 @@ export function MatchupSimulator() {
                   title="Click to remove"
                 >
                   {c.previewUrl && (
-                    <div className="relative w-6 h-6 flex-shrink-0">
-                      <Image src={getAssetPath(c.previewUrl)} alt="" fill className="rounded-full object-cover border border-zinc-800" />
+                    <div className="relative w-12 h-12 flex-shrink-0">
+                      <Image src={getAssetPath(c.previewUrl)} alt="" fill className="rounded-full object-cover border-2 border-zinc-800" />
                     </div>
                   )}
                   <span className="text-xs font-bold group-hover:line-through">{c.name} <span className="text-zinc-500 font-normal">[{c.powerScore}]</span></span>
@@ -157,16 +157,16 @@ export function MatchupSimulator() {
           </div>
         </div>
         
-        <div className="flex gap-4 overflow-x-auto pb-4 hide-scrollbar">
+        <div className="flex gap-6 overflow-x-auto pb-6 hide-scrollbar">
            {filtered.length > 0 ? filtered.map(c => (
-             <div 
+            <div 
                key={c.id}
                onClick={() => addToTeam(c)}
-               className={`flex-shrink-0 w-20 flex flex-col items-center group cursor-pointer ${isDrafted(c.id) ? 'opacity-20 grayscale pointer-events-none' : 'hover:scale-105 transition-transform'}`}
+               className={`flex-shrink-0 w-28 flex flex-col items-center group cursor-pointer ${isDrafted(c.id) ? 'opacity-20 grayscale pointer-events-none' : 'hover:scale-105 transition-transform'}`}
                title={`${c.name} [${c.powerScore} PWR]`}
              >
-                <div className="relative w-14 h-14 mx-auto mb-2 flex-shrink-0">
-                  <Image src={getAssetPath(c.previewUrl)} alt={c.name} fill className={`rounded-full border-2 object-cover ${activeTeam === 1 ? 'group-hover:border-red-500' : 'group-hover:border-blue-500'} border-zinc-800 shadow-lg`} />
+                <div className="relative w-28 h-28 mx-auto mb-3 flex-shrink-0">
+                  <Image src={getAssetPath(c.previewUrl)} alt={c.name} fill className={`rounded-full border-4 object-cover ${activeTeam === 1 ? 'group-hover:border-red-500' : 'group-hover:border-blue-500'} border-zinc-800 shadow-2xl`} />
                 </div>
                 <div className="text-[10px] text-center text-zinc-400 font-bold uppercase tracking-tight w-full leading-tight line-clamp-2 px-1 group-hover:text-white transition-colors">{c.name}</div>
              </div>

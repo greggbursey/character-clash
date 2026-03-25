@@ -34,29 +34,43 @@ export default function CharacterSelection({
   return (
     <div className="flex flex-col h-full min-h-0 relative">
       {/* Tabs Header */}
-      <div className="flex gap-2 overflow-x-auto hide-scrollbar pb-4 pt-1 px-1 flex-shrink-0 snap-x">
+      <div className="flex gap-2 overflow-x-auto hide-scrollbar pb-4 pt-1 px-4 flex-shrink-0 snap-x">
         <button
           onClick={() => setActiveTab('All')}
           className={`flex-shrink-0 px-5 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all shadow-sm snap-start ${
             activeTab === 'All' 
               ? 'bg-zinc-100 text-zinc-900 shadow-[0_0_15px_rgba(255,255,255,0.3)]' 
-              : 'bg-zinc-900/80 text-zinc-500 hover:bg-zinc-800 hover:text-zinc-200 border border-zinc-800'
+              : 'bg-zinc-900/80 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200 border border-zinc-800'
           }`}
         >
           All Universes
         </button>
         {universes.map(u => {
           const uniColor = groupedCharacters[u]?.[0]?.color || '#ffffff';
+          const isSelected = activeTab === u;
+          
+          // Helper to check if color is light (for text contrast)
+          const isLight = (color: string) => {
+            const hex = color.replace('#', '');
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+            return brightness > 155;
+          };
+
+          const lightMode = isLight(uniColor);
+
           return (
           <button
             key={u}
             onClick={() => setActiveTab(u)}
-            className={`flex-shrink-0 px-5 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all border snap-start uppercase`}
+            className={`flex-shrink-0 px-5 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all border snap-start`}
             style={{
-              backgroundColor: activeTab === u ? uniColor : 'rgba(24, 24, 27, 0.8)',
-              color: activeTab === u ? '#ffffff' : '#a1a1aa',
-              borderColor: activeTab === u ? uniColor : '#27272a',
-              boxShadow: activeTab === u ? `0 0 15px ${uniColor}60` : 'none'
+              backgroundColor: isSelected ? uniColor : `${uniColor}15`,
+              color: isSelected ? (lightMode ? '#000000' : '#ffffff') : '#a1a1aa',
+              borderColor: isSelected ? uniColor : `${uniColor}30`,
+              boxShadow: isSelected ? `0 0 15px ${uniColor}40` : 'none'
             }}
           >
             {u}
@@ -65,8 +79,8 @@ export default function CharacterSelection({
       </div>
 
       {/* Grid Container */}
-      <div className="flex-1 overflow-y-auto hide-scrollbar pb-32">
-        <div className="flex flex-col gap-8 md:gap-10">
+      <div className="flex-1 overflow-y-auto hide-scrollbar pb-32 px-4 md:px-6">
+        <div className="flex flex-col gap-8 md:gap-12 pt-2">
           {renderUniverses.map(universe => (
             <div key={universe} className="flex flex-col gap-4">
               {/* Universe Header Section */}

@@ -80,8 +80,8 @@ export function UniverseInfo() {
                              {index + 1}
                           </div>
 
-                          <div className="relative w-10 h-10 flex-shrink-0">
-                            <Image src={getAssetPath(char.previewUrl)} alt={char.name} fill className="rounded-lg object-cover border border-zinc-700 bg-zinc-800" />
+                          <div className="relative w-20 h-20 flex-shrink-0">
+                            <Image src={getAssetPath(char.previewUrl)} alt={char.name} fill className="rounded-xl object-cover border-2 border-zinc-700 bg-zinc-800" />
                           </div>
                           <div className="flex flex-col">
                              <div className="font-black text-white uppercase tracking-tight text-sm">{char.name}</div>
