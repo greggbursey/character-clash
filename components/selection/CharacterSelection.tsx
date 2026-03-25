@@ -12,6 +12,7 @@ interface CharacterSelectionProps {
   char1: Character | null;
   char2: Character | null;
   selectCharacter: (char: Character) => void;
+  onUniverseChange?: () => void;
 }
 
 export default function CharacterSelection({
@@ -20,7 +21,8 @@ export default function CharacterSelection({
   groupedCharacters,
   char1,
   char2,
-  selectCharacter
+  selectCharacter,
+  onUniverseChange
 }: CharacterSelectionProps) {
   const [activeTab, setActiveTab] = useState<string>('All');
   
@@ -36,7 +38,12 @@ export default function CharacterSelection({
       {/* Tabs Header */}
       <div className="flex gap-2 overflow-x-auto hide-scrollbar pb-4 pt-1 px-4 flex-shrink-0 snap-x">
         <button
-          onClick={() => setActiveTab('All')}
+          onClick={() => {
+            if (activeTab !== 'All') {
+              setActiveTab('All');
+              onUniverseChange?.();
+            }
+          }}
           className={`flex-shrink-0 px-5 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all shadow-sm snap-start ${
             activeTab === 'All' 
               ? 'bg-zinc-100 text-zinc-900 shadow-[0_0_15px_rgba(255,255,255,0.3)]' 
@@ -64,7 +71,12 @@ export default function CharacterSelection({
           return (
           <button
             key={u}
-            onClick={() => setActiveTab(u)}
+            onClick={() => {
+              if (activeTab !== u) {
+                setActiveTab(u);
+                onUniverseChange?.();
+              }
+            }}
             className={`flex-shrink-0 px-5 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all border snap-start`}
             style={{
               backgroundColor: isSelected ? uniColor : `${uniColor}15`,
@@ -101,7 +113,7 @@ export default function CharacterSelection({
               
               {/* Character Grid */}
               <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-3 md:gap-4">
-                {groupedCharacters[universe].map(char => {
+                {groupedCharacters[universe]?.map(char => {
                   const isSelected = char.id === char1?.id || char.id === char2?.id;
                   const isP1 = char.id === char1?.id;
                   const isP2 = char.id === char2?.id;

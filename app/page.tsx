@@ -381,6 +381,10 @@ export default function Home() {
               char1={char1}
               char2={char2}
               selectCharacter={selectCharacter}
+              onUniverseChange={() => {
+                setChar1(null);
+                setChar2(null);
+              }}
             />
           )}
         </div>
