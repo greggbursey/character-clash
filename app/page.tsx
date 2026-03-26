@@ -151,15 +151,15 @@ export default function Home() {
                 const winnerChar = win === 1 ? char1 : char2;
                 const loserChar = win === 1 ? char2 : char1;
 
-                const upsetChance = win === 1 ? (1 - winProb1) : winProb1;
-                if (Math.abs(p1 - p2) < 500 && upsetChance < 0.25) {
+                const winnerProb = win === 1 ? winProb1 : (1 - winProb1);
+                if (Math.abs(p1 - p2) < 500 && winnerProb < 0.25) {
                   const anomalyRef = doc(db, 'anomalies', Date.now().toString());
                   await setDoc(anomalyRef, {
                     winner: winnerChar.name,
                     winnerPower: winnerChar.powerScore,
                     loser: loserChar.name,
                     loserPower: loserChar.powerScore,
-                    probability: upsetChance,
+                    winProbability: winnerProb,
                     timestamp: new Date().toISOString()
                   });
                 }
