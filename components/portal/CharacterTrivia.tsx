@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { HelpCircle, Brain, RefreshCw } from "lucide-react";
+import { HelpCircle, Brain, RefreshCw, ArrowLeft, Search as SearchIcon } from "lucide-react";
 import { characters as allCharactersData } from "@/data/characters";
 import { getAssetPath } from "@/lib/utils";
 import { Character } from "@/types";
@@ -110,6 +110,8 @@ function getScoreMessage(score: number, total: number): string {
 
 export function CharacterTrivia() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [selectionStep, setSelectionStep] = useState<'mode' | 'universe' | 'character'>('mode');
+  const [charSearchQuery, setCharSearchQuery] = useState("");
   const [category, setCategory] = useState<QuizCategory>('all');
   const [filterValue, setFilterValue] = useState("");
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -166,6 +168,8 @@ export function CharacterTrivia() {
 
   const reset = () => {
     setIsPlaying(false);
+    setSelectionStep('mode');
+    setCharSearchQuery("");
     setGameOver(false);
     setCurrentIdx(0);
     setScore(0);
@@ -186,61 +190,130 @@ export function CharacterTrivia() {
 
   const universes = Array.from(new Set(allCharactersData.map(c => c.universe)));
 
-  return (
-    <div className="bg-zinc-900/30 border border-zinc-800/40 rounded-[2rem] p-6 text-center relative overflow-hidden h-full min-h-[450px] flex flex-col items-center justify-center">
-      {!isPlaying ? (
-        <div className="flex flex-col items-center w-full max-w-md">
-          <Brain className="text-purple-500 mb-4 w-12 h-12 opacity-80" />
-          <h3 className="text-2xl font-black uppercase tracking-wider text-white mb-2">Character Trivia</h3>
-          <p className="text-zinc-500 text-sm mb-6 pb-6 border-b border-zinc-800/50 w-full">Choose your challenge mode.</p>
-          
-          <div className="grid grid-cols-1 gap-3 w-full max-h-[300px] overflow-y-auto no-scrollbar pt-1 px-1">
-            <button 
-              onClick={() => startQuiz('all')}
-              className="group relative overflow-hidden bg-purple-600/10 hover:bg-purple-600/20 border border-purple-500/20 p-4 rounded-2xl transition-all text-left mb-2"
-            >
-              <div className="flex justify-between items-center text-left">
-                <div>
-                  <h4 className="text-purple-400 font-bold uppercase tracking-tight text-sm">The Ultimate Gauntlet</h4>
-                  <p className="text-zinc-500 text-[10px] mt-1">Random characters from all universes.</p>
-                </div>
-                <div className="bg-purple-900/40 p-2 rounded-full text-purple-400 group-hover:scale-110 transition-transform">
-                  <Brain size={16} />
-                </div>
-              </div>
-            </button>
+  const filteredCharacters = allCharactersData.filter(c => 
+    c.name.toLowerCase().includes(charSearchQuery.toLowerCase()) ||
+    c.universe.toLowerCase().includes(charSearchQuery.toLowerCase())
+  ).sort((a, b) => a.name.localeCompare(b.name));
 
-            <div className="flex flex-col gap-2 mt-2">
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600 ml-1 text-left">By Universe</span>
-              <div className="grid grid-cols-3 gap-2">
-                 {universes.map(uni => (
-                   <button 
+  return (
+    <div className="bg-zinc-900/30 border border-zinc-800/40 rounded-[2rem] p-6 text-center relative overflow-hidden h-full min-h-[480px] flex flex-col items-center justify-center">
+      {!isPlaying ? (
+        <div className="flex flex-col items-center w-full max-w-md animate-in fade-in zoom-in duration-300">
+          {selectionStep === 'mode' ? (
+            <>
+              <Brain className="text-purple-500 mb-4 w-12 h-12 opacity-80" />
+              <h3 className="text-2xl font-black uppercase tracking-wider text-white mb-2">Character Trivia</h3>
+              <p className="text-zinc-500 text-sm mb-6 pb-6 border-b border-zinc-800/50 w-full">Choose your challenge mode.</p>
+              
+              <div className="grid grid-cols-1 gap-3 w-full">
+                <button 
+                  onClick={() => startQuiz('all')}
+                  className="group relative overflow-hidden bg-purple-600/10 hover:bg-purple-600/20 border border-purple-500/20 p-5 rounded-2xl transition-all text-left"
+                >
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h4 className="text-purple-400 font-bold uppercase tracking-tight text-sm">The Ultimate Gauntlet</h4>
+                      <p className="text-zinc-500 text-[10px] mt-1">Random characters from all universes.</p>
+                    </div>
+                    <div className="bg-purple-900/40 p-2 rounded-full text-purple-400 group-hover:scale-110 transition-transform">
+                      <Brain size={16} />
+                    </div>
+                  </div>
+                </button>
+
+                <button 
+                  onClick={() => setSelectionStep('universe')}
+                  className="group relative overflow-hidden bg-zinc-800/20 hover:bg-zinc-800/40 border border-zinc-800/50 p-5 rounded-2xl transition-all text-left"
+                >
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h4 className="text-zinc-300 font-bold uppercase tracking-tight text-sm">Universe Mastery</h4>
+                      <p className="text-zinc-500 text-[10px] mt-1">Test your knowledge of a specific world.</p>
+                    </div>
+                    <RefreshCw className="text-zinc-600 group-hover:rotate-180 transition-transform duration-500" size={16} />
+                  </div>
+                </button>
+
+                <button 
+                  onClick={() => setSelectionStep('character')}
+                  className="group relative overflow-hidden bg-zinc-800/20 hover:bg-zinc-800/40 border border-zinc-800/50 p-5 rounded-2xl transition-all text-left"
+                >
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h4 className="text-zinc-300 font-bold uppercase tracking-tight text-sm">Character Specialist</h4>
+                      <p className="text-zinc-500 text-[10px] mt-1">5 elite questions about any fighter.</p>
+                    </div>
+                    <div className="flex -space-x-2">
+                       {allCharactersData.slice(0, 3).map(c => (
+                         <div key={c.id} className="w-6 h-6 rounded-full border border-zinc-900 overflow-hidden relative">
+                           <Image src={getAssetPath(c.previewUrl)} alt="" fill className="object-cover" />
+                         </div>
+                       ))}
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </>
+          ) : selectionStep === 'universe' ? (
+            <div className="w-full flex flex-col h-[350px]">
+              <div className="flex items-center gap-4 mb-4">
+                <button onClick={() => setSelectionStep('mode')} className="p-2 hover:bg-zinc-800 rounded-full transition-colors text-zinc-500 hover:text-white">
+                  <ArrowLeft size={18} />
+                </button>
+                <h4 className="text-white font-bold uppercase tracking-widest text-sm text-left">Select Universe</h4>
+              </div>
+              <div className="grid grid-cols-2 gap-2 overflow-y-auto pr-1 no-scrollbar pb-4">
+                {universes.map(uni => (
+                  <button 
                     key={uni}
                     onClick={() => startQuiz('universe', uni)}
-                    className="bg-zinc-800/30 hover:bg-zinc-700 border border-zinc-800 p-2 rounded-xl text-[10px] font-bold text-zinc-400 hover:text-white transition-all overflow-hidden text-ellipsis whitespace-nowrap"
-                   >
-                     {uni}
-                   </button>
-                 ))}
+                    className="bg-zinc-800/30 hover:bg-zinc-700 border border-zinc-800 p-4 rounded-xl text-xs font-bold text-zinc-400 hover:text-white transition-all text-center"
+                  >
+                    {uni}
+                  </button>
+                ))}
               </div>
             </div>
-
-            <div className="flex flex-col gap-2 mt-4">
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600 ml-1 text-left">Featured Characters</span>
-              <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
-                 {allCharactersData.filter(c => ['mario', 'batman', 'scorpion', 'luke', 'ryu', 'leonardo', 'goku', 'godzilla'].includes(c.id)).map(char => (
-                   <button 
+          ) : (
+            <div className="w-full flex flex-col h-[350px]">
+              <div className="flex items-center gap-4 mb-4">
+                <button onClick={() => setSelectionStep('mode')} className="p-2 hover:bg-zinc-800 rounded-full transition-colors text-zinc-500 hover:text-white">
+                  <ArrowLeft size={18} />
+                </button>
+                <div className="relative flex-1 group">
+                  <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-600 group-focus-within:text-purple-500 transition-colors" size={14} />
+                  <input 
+                    type="text" 
+                    placeholder="Search characters..." 
+                    value={charSearchQuery}
+                    onChange={(e) => setCharSearchQuery(e.target.value)}
+                    className="w-full bg-zinc-900/50 border border-zinc-800 focus:border-purple-500/50 rounded-xl py-2 pl-9 pr-4 text-xs text-white outline-none focus:bg-zinc-900 transition-all font-bold placeholder:text-zinc-700 placeholder:font-normal"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 gap-1.5 overflow-y-auto pr-1 no-scrollbar pb-4">
+                {filteredCharacters.length > 0 ? filteredCharacters.map(char => (
+                  <button 
                     key={char.id}
                     onClick={() => startQuiz('character', char.id)}
-                    className="flex-shrink-0 relative w-12 h-12 rounded-full border border-zinc-700 hover:border-purple-500 transition-all overflow-hidden"
-                    title={char.name}
-                   >
-                     <Image src={getAssetPath(char.previewUrl)} alt={char.name} fill className="object-cover" />
-                   </button>
-                 ))}
+                    className="flex items-center gap-3 bg-zinc-800/10 hover:bg-zinc-800/40 border border-transparent hover:border-zinc-800 p-2 rounded-xl transition-all group"
+                  >
+                    <div className="relative w-8 h-8 rounded-full overflow-hidden border border-zinc-800 group-hover:border-zinc-700 transition-colors">
+                      <Image src={getAssetPath(char.previewUrl)} alt={char.name} fill className="object-cover" />
+                    </div>
+                    <div className="text-left">
+                      <p className="text-xs font-bold text-zinc-300 group-hover:text-white transition-colors">{char.name}</p>
+                      <p className="text-[9px] font-mono text-zinc-600 uppercase tracking-tight">{char.universe}</p>
+                    </div>
+                  </button>
+                )) : (
+                  <div className="flex flex-col items-center justify-center h-full text-zinc-600 italic text-xs">
+                    No characters found
+                  </div>
+                )}
               </div>
             </div>
-          </div>
+          )}
         </div>
        ) : gameOver ? (
          <div className="flex flex-col items-center z-10 w-full animate-in fade-in zoom-in duration-500">

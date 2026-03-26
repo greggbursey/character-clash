@@ -36,7 +36,7 @@ export default function CharacterSelection({
   return (
     <div className="flex flex-col h-full min-h-0 relative">
       {/* Tabs Header */}
-      <div className="flex gap-2 overflow-x-auto hide-scrollbar pb-4 pt-1 px-4 flex-shrink-0 snap-x">
+      <div className="flex flex-wrap gap-2 justify-center md:justify-start pb-4 pt-1 px-4 flex-shrink-0">
         <button
           onClick={() => {
             if (activeTab !== 'All') {
@@ -44,7 +44,7 @@ export default function CharacterSelection({
               onUniverseChange?.();
             }
           }}
-          className={`flex-shrink-0 px-5 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all shadow-sm snap-start ${
+          className={`px-5 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all shadow-sm ${
             activeTab === 'All' 
               ? 'bg-zinc-100 text-zinc-900 shadow-[0_0_15px_rgba(255,255,255,0.3)]' 
               : 'bg-zinc-900/80 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200 border border-zinc-800'
@@ -77,7 +77,7 @@ export default function CharacterSelection({
                 onUniverseChange?.();
               }
             }}
-            className={`flex-shrink-0 px-5 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all border snap-start`}
+            className={`px-5 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-all border`}
             style={{
               backgroundColor: isSelected ? uniColor : `${uniColor}15`,
               color: isSelected ? (lightMode ? '#000000' : '#ffffff') : '#a1a1aa',

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { TrendingUp, Award, Target, Hash, ChevronRight } from "lucide-react";
 import { getTriviaStats } from "@/lib/trivia-service";
 
@@ -8,19 +8,45 @@ export function TriviaStats() {
   const [stats, setStats] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchStats = async () => {
-    setLoading(true);
-    const data = await getTriviaStats();
-    setStats(data);
-    setLoading(false);
-  };
+  const fetchStats = useCallback(async (isInitial = false) => {
+    if (!isInitial) setLoading(true);
+    try {
+      const data = await getTriviaStats();
+      return data;
+    } catch (error) {
+      console.error("Failed to fetch trivia stats:", error);
+      return null;
+    } finally {
+      if (!isInitial) setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    fetchStats();
+    let isMounted = true;
+
+    const loadData = async () => {
+      const data = await fetchStats(true);
+      if (isMounted && data) {
+        setStats(data);
+        setLoading(false);
+      }
+    };
+
+    loadData();
+
     // Refresh stats every 30 seconds if page is active
-    const interval = setInterval(fetchStats, 30000);
-    return () => clearInterval(interval);
-  }, []);
+    const interval = setInterval(async () => {
+      const data = await fetchStats(false);
+      if (isMounted && data) {
+        setStats(data);
+      }
+    }, 30000);
+
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, [fetchStats]);
 
   if (loading && !stats) {
     return (
@@ -106,7 +132,7 @@ export function TriviaStats() {
       </div>
 
       <button 
-        onClick={fetchStats}
+        onClick={() => fetchStats()}
         className="mt-6 flex items-center justify-center gap-1 text-zinc-600 hover:text-white transition-colors py-2"
       >
         <span className="text-[10px] font-black uppercase tracking-widest">Sync Archives</span>
