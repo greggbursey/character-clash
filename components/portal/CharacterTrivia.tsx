@@ -6,49 +6,97 @@ import { HelpCircle, Brain, RefreshCw } from "lucide-react";
 import { characters as allCharactersData } from "@/data/characters";
 import { getAssetPath } from "@/lib/utils";
 import { Character } from "@/types";
+import { saveTriviaSession } from "@/lib/trivia-service";
 
 interface TriviaQuestion {
   question: string;
   options: Character[];
   answer: Character;
+  sourceType: 'origin' | 'battles' | 'abilities' | 'secret' | 'lore' | 'universe';
 }
 
-function generateQuestions(): TriviaQuestion[] {
-  if (allCharactersData.length < 4) return [];
-  
-  const shuffledChars = [...allCharactersData].sort(() => 0.5 - Math.random()).slice(0, 10);
-  return shuffledChars.map(correctChar => {
-    
-    const isLoreQuestion = Math.random() > 0.5;
+type QuizCategory = 'all' | 'universe' | 'character';
 
-    // Ensure options are from distinct universes to avoid ambiguity if asked about Universe
-    const incorrectOptions: Character[] = [];
-    const distinctChars = allCharactersData.filter(c => c.id !== correctChar.id && c.universe !== correctChar.universe);
-    const shuffledOptions = distinctChars.sort(() => 0.5 - Math.random());
+function maskName(text: string, name: string): string {
+  if (!text || !name) return text;
+  
+  // Create a regex that matches the name case-insensitively
+  const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(escapedName, 'gi');
+  
+  return text.replace(regex, "________________");
+}
+
+function generateQuestions(
+  category: QuizCategory, 
+  filterValue: string = ""
+): TriviaQuestion[] {
+  let initialPool = [...allCharactersData];
+  
+  if (category === 'universe' && filterValue) {
+    initialPool = initialPool.filter(c => c.universe === filterValue);
+  } else if (category === 'character' && filterValue) {
+    initialPool = initialPool.filter(c => c.id === filterValue);
+  }
+
+  if (initialPool.length === 0) return [];
+  
+  const questionCount = category === 'character' ? 5 : 10;
+  const selectedChars = initialPool.sort(() => 0.5 - Math.random());
+  const questions: TriviaQuestion[] = [];
+  
+  for (let i = 0; i < questionCount; i++) {
+    const correctChar = selectedChars[i % selectedChars.length];
     
-    for (const char of shuffledOptions) {
-       if (incorrectOptions.length >= 3) break;
-       if (!incorrectOptions.find(c => c.universe === char.universe)) {
-           incorrectOptions.push(char);
-       }
-    }
-      
-    const options = [...incorrectOptions, correctChar].sort(() => 0.5 - Math.random());
+    const types: ('origin' | 'battles' | 'abilities' | 'secret' | 'universe')[] = 
+      ['origin', 'battles', 'abilities', 'secret', 'universe'];
+    const chosenType = types[Math.floor(Math.random() * types.length)];
     
     let questionText = "";
-    if (isLoreQuestion) {
-      // use description snippet to form question
-      questionText = `Whose lore states: "${correctChar.description}"?`;
+    
+    if (chosenType === 'universe') {
+      questionText = `Which universe does ________________ belong to?`;
     } else {
-      questionText = `Which fighter belongs to the ${correctChar.universe} universe?`;
+      const triviaParts = correctChar.triviaInfo?.split('\n\n') || [];
+      const section = triviaParts.find(p => p.toLowerCase().startsWith(chosenType.slice(0, 4)));
+      
+      if (section) {
+        const content = section.split(': ').slice(1).join(': ');
+        questionText = `Whose lore states: "${maskName(content, correctChar.name)}"?`;
+      } else {
+        questionText = `Whose history involves: "${maskName(correctChar.description, correctChar.name)}"?`;
+      }
     }
 
-    return {
+    const incorrectOptions: Character[] = [];
+    const poolForOptions = allCharactersData.filter(c => c.id !== correctChar.id);
+    const shuffledPool = poolForOptions.sort(() => 0.5 - Math.random());
+    
+    for (const char of shuffledPool) {
+      if (incorrectOptions.length >= 3) break;
+      if (category === 'all' && !incorrectOptions.find(c => c.universe === char.universe)) {
+        incorrectOptions.push(char);
+      } else if (category !== 'all') {
+        incorrectOptions.push(char);
+      }
+    }
+    
+    while (incorrectOptions.length < 3 && shuffledPool.length > 0) {
+      const char = shuffledPool.pop()!;
+      if (!incorrectOptions.find(c => c.id === char.id)) {
+        incorrectOptions.push(char);
+      }
+    }
+
+    questions.push({
       question: questionText,
-      options,
+      options: [...incorrectOptions, correctChar].sort(() => 0.5 - Math.random()),
       answer: correctChar,
-    };
-  });
+      sourceType: chosenType === 'universe' ? 'universe' : chosenType as any
+    });
+  }
+
+  return questions;
 }
 
 function getScoreMessage(score: number, total: number): string {
@@ -62,27 +110,52 @@ function getScoreMessage(score: number, total: number): string {
 
 export function CharacterTrivia() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [category, setCategory] = useState<QuizCategory>('all');
+  const [filterValue, setFilterValue] = useState("");
   const [currentIdx, setCurrentIdx] = useState(0);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState<Character | null>(null);
   const [questions, setQuestions] = useState<TriviaQuestion[]>([]);
 
-  const startQuiz = () => {
-    setQuestions(generateQuestions());
+  const startQuiz = (cat: QuizCategory, val: string = "") => {
+    const q = generateQuestions(cat, val);
+    if (q.length === 0) return;
+    setQuestions(q);
+    setCategory(cat);
+    setFilterValue(val);
     setIsPlaying(true);
+    setGameOver(false);
+    setCurrentIdx(0);
+    setScore(0);
+    setSelectedAnswer(null);
   };
 
   const handleAnswer = (opt: Character) => {
     if (selectedAnswer !== null) return;
     setSelectedAnswer(opt);
     
-    if (opt.id === questions[currentIdx].answer.id) {
+    // Check if correct
+    const isCorrect = opt.id === questions[currentIdx].answer.id;
+    if (isCorrect) {
       setScore(s => s + 1);
     }
     
+    const isLastQuestion = currentIdx === questions.length - 1;
+    
+    if (isLastQuestion) {
+      // Calculate final score accurately (React state might not be updated yet)
+      const finalScore = isCorrect ? score + 1 : score;
+      saveTriviaSession({
+        category,
+        filterValue,
+        score: finalScore,
+        total: questions.length
+      });
+    }
+
     setTimeout(() => {
-      if (currentIdx < questions.length - 1) {
+      if (!isLastQuestion) {
         setCurrentIdx(i => i + 1);
         setSelectedAnswer(null);
       } else {
@@ -98,48 +171,121 @@ export function CharacterTrivia() {
     setScore(0);
     setSelectedAnswer(null);
     setQuestions([]);
+    setCategory('all');
+    setFilterValue("");
   };
 
+  const getResultsTitle = () => {
+    if (category === 'universe') return `Master of ${filterValue}`;
+    if (category === 'character') {
+      const char = allCharactersData.find(c => c.id === filterValue);
+      return `${char?.name || 'Specialist'} Fanatic`;
+    }
+    return "Multiverse Sage";
+  };
+
+  const universes = Array.from(new Set(allCharactersData.map(c => c.universe)));
+
   return (
-    <div className="bg-zinc-900/30 border border-zinc-800/40 rounded-[2rem] p-6 text-center relative overflow-hidden h-full min-h-[300px] flex flex-col items-center justify-center">
+    <div className="bg-zinc-900/30 border border-zinc-800/40 rounded-[2rem] p-6 text-center relative overflow-hidden h-full min-h-[450px] flex flex-col items-center justify-center">
       {!isPlaying ? (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center w-full max-w-md">
           <Brain className="text-purple-500 mb-4 w-12 h-12 opacity-80" />
           <h3 className="text-2xl font-black uppercase tracking-wider text-white mb-2">Character Trivia</h3>
-          <p className="text-zinc-500 text-sm mb-6 max-w-[250px]">Test your knowledge of the multiverse fighters.</p>
-          <button 
-            onClick={startQuiz}
-            className="bg-purple-600 hover:bg-purple-500 text-white font-bold px-8 py-3 rounded-full transition-all uppercase tracking-widest text-sm"
-          >
-            Start Quiz
-          </button>
+          <p className="text-zinc-500 text-sm mb-6 pb-6 border-b border-zinc-800/50 w-full">Choose your challenge mode.</p>
+          
+          <div className="grid grid-cols-1 gap-3 w-full max-h-[300px] overflow-y-auto no-scrollbar pt-1 px-1">
+            <button 
+              onClick={() => startQuiz('all')}
+              className="group relative overflow-hidden bg-purple-600/10 hover:bg-purple-600/20 border border-purple-500/20 p-4 rounded-2xl transition-all text-left mb-2"
+            >
+              <div className="flex justify-between items-center text-left">
+                <div>
+                  <h4 className="text-purple-400 font-bold uppercase tracking-tight text-sm">The Ultimate Gauntlet</h4>
+                  <p className="text-zinc-500 text-[10px] mt-1">Random characters from all universes.</p>
+                </div>
+                <div className="bg-purple-900/40 p-2 rounded-full text-purple-400 group-hover:scale-110 transition-transform">
+                  <Brain size={16} />
+                </div>
+              </div>
+            </button>
+
+            <div className="flex flex-col gap-2 mt-2">
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600 ml-1 text-left">By Universe</span>
+              <div className="grid grid-cols-3 gap-2">
+                 {universes.map(uni => (
+                   <button 
+                    key={uni}
+                    onClick={() => startQuiz('universe', uni)}
+                    className="bg-zinc-800/30 hover:bg-zinc-700 border border-zinc-800 p-2 rounded-xl text-[10px] font-bold text-zinc-400 hover:text-white transition-all overflow-hidden text-ellipsis whitespace-nowrap"
+                   >
+                     {uni}
+                   </button>
+                 ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2 mt-4">
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-600 ml-1 text-left">Featured Characters</span>
+              <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+                 {allCharactersData.filter(c => ['mario', 'batman', 'scorpion', 'luke', 'ryu', 'leonardo', 'goku', 'godzilla'].includes(c.id)).map(char => (
+                   <button 
+                    key={char.id}
+                    onClick={() => startQuiz('character', char.id)}
+                    className="flex-shrink-0 relative w-12 h-12 rounded-full border border-zinc-700 hover:border-purple-500 transition-all overflow-hidden"
+                    title={char.name}
+                   >
+                     <Image src={getAssetPath(char.previewUrl)} alt={char.name} fill className="object-cover" />
+                   </button>
+                 ))}
+              </div>
+            </div>
+          </div>
         </div>
-      ) : gameOver ? (
-         <div className="flex flex-col items-center z-10">
-          <h3 className="text-3xl font-black uppercase tracking-wider text-white mb-2">Quiz Complete</h3>
-          <p className="text-purple-400 text-xl font-mono mb-2">Score: {score}/{questions.length}</p>
-          <p className="text-zinc-400 text-sm italic mb-6 pb-6 border-b border-zinc-800 w-full max-w-[280px]">
+       ) : gameOver ? (
+         <div className="flex flex-col items-center z-10 w-full animate-in fade-in zoom-in duration-500">
+          <div className="bg-purple-600/20 p-4 rounded-full mb-4">
+            <Brain className="text-purple-400 w-12 h-12" />
+          </div>
+          <h3 className="text-2xl font-black uppercase tracking-wider text-white mb-1 leading-tight">{getResultsTitle()}</h3>
+          <p className="text-purple-400 text-xl font-mono mb-6">Score: {score}/{questions.length}</p>
+          
+          <div className="text-zinc-400 text-sm italic mb-8 p-4 bg-zinc-800/20 border border-zinc-800/50 rounded-2xl w-full max-w-[320px]">
             {getScoreMessage(score, questions.length)}
-          </p>
-          <button 
-            onClick={reset}
-            className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-bold px-6 py-2 rounded-full transition-all uppercase tracking-widest text-sm"
-          >
-            <RefreshCw size={16} /> Play Again
-          </button>
+          </div>
+
+          <div className="flex flex-col gap-3 w-full max-w-[240px]">
+            <button 
+              onClick={() => startQuiz(category, filterValue)}
+              className="flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 rounded-xl transition-all uppercase tracking-widest text-xs"
+            >
+              <RefreshCw size={14} /> Play Again
+            </button>
+            <button 
+              onClick={reset}
+              className="text-zinc-500 hover:text-white text-[10px] font-black uppercase tracking-widest transition-colors"
+            >
+              Change Mode
+            </button>
+          </div>
         </div>
       ) : (
-        <div className="w-full flex flex-col z-10">
+        <div className="w-full h-full flex flex-col z-10">
           <div className="flex justify-between text-xs font-mono text-zinc-500 mb-4 uppercase tracking-widest">
             <span>Q: {currentIdx + 1}/{questions.length}</span>
             <span>Score: {score}</span>
           </div>
           
-          <h4 className="text-lg font-bold text-white mb-6">
-            {questions[currentIdx]?.question}
-          </h4>
+          <div className="flex flex-col mb-6">
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-purple-500 mb-1">
+              {questions[currentIdx]?.sourceType === 'universe' ? 'Universe Check' : 'Trivia Archive'}
+            </span>
+            <h4 className="text-lg font-bold text-white leading-tight min-h-[4rem] flex items-center justify-center px-4">
+              {questions[currentIdx]?.question}
+            </h4>
+          </div>
  
-          <div className="grid grid-cols-1 gap-3">
+          <div className="grid grid-cols-1 gap-2 overflow-y-auto max-h-[350px] pr-1 no-scrollbar pb-4">
              {questions[currentIdx]?.options.map((opt) => (
                <button
                   key={opt.id}
@@ -152,17 +298,16 @@ export function CharacterTrivia() {
                     ${selectedAnswer !== null && opt.id !== questions[currentIdx].answer.id && selectedAnswer?.id !== opt.id ? 'border-zinc-800 bg-zinc-900 text-zinc-600 opacity-50' : ''}
                   `}
                >
-                 <div className="relative w-16 h-16 flex-shrink-0">
+                 <div className="relative w-10 h-10 flex-shrink-0">
                    <Image src={getAssetPath(opt.previewUrl)} alt={opt.name} fill className="rounded-full border-2 border-zinc-700 object-cover bg-zinc-800 shadow-lg" />
                  </div>
-                 {opt.name}
+                 <span className="flex-1">{opt.name}</span>
                </button>
              ))}
           </div>
         </div>
       )}
       
-      {/* Background decoration */}
       <HelpCircle className="absolute -bottom-10 -right-10 w-48 h-48 text-zinc-800/20 rotate-12 pointer-events-none" />
     </div>
   );

@@ -8,5 +8,6 @@ export type Character = {
   backgroundUrl: string;
   color: string;
   powerScore: number;
+  triviaInfo: string;
   imagePosition?: string;
 };

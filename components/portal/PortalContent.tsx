@@ -19,6 +19,7 @@ const WhatIfScenarios = dynamic(() => import("@/components/portal/WhatIfScenario
 const RivalryTracker = dynamic(() => import("@/components/portal/RivalryTracker").then(m => m.RivalryTracker), { ssr: false });
 const UnderdogOfTheWeek = dynamic(() => import("@/components/portal/UnderdogOfTheWeek").then(m => m.UnderdogOfTheWeek), { ssr: false });
 const UniverseInfo = dynamic(() => import("@/components/portal/UniverseInfo").then(m => m.UniverseInfo), { ssr: false });
+const TriviaStats = dynamic(() => import("@/components/portal/TriviaStats").then(m => m.TriviaStats), { ssr: false });
 
 interface CharStat {
   id: string;
@@ -621,8 +622,9 @@ export function PortalContent() {
         )}
 
         {activeTab === "Trivia" && (
-          <motion.div key="Trivia" initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} exit={{opacity:0, y:-20}} className="max-w-3xl mx-auto">
+          <motion.div key="Trivia" initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} exit={{opacity:0, y:-20}} className="max-w-3xl mx-auto flex flex-col gap-8">
              <CharacterTrivia />
+             <TriviaStats />
           </motion.div>
         )}
 

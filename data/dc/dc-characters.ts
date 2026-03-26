@@ -5,11 +5,10 @@ export const dcCharacters: Character[] = [
     id: "superman",
     name: "Superman",
     universe: "DC",
-    description:
-      "The Last Son of Krypton, possessing immense strength, flight, and heat vision under a yellow sun.",
-    lore: "Born **Kal-El** on the doomed planet Krypton, he was sent to Earth by his scientist parents, Jor-El and Lara, as their world faced certain destruction. Discovered and raised by Jonathan and Martha Kent in the small town of Smallville, he was instilled with the core values of truth, justice, and the American way. Under the radiation of Earth's yellow sun, he developed god-like abilities, including superhuman strength, flight, invulnerability, and heat vision, which he uses to protect his adopted home as the world's most iconic hero, **Superman**.\n\nAs *Clark Kent*, he works as a mild-mannered reporter for the Daily Planet in Metropolis, a role that allows him to stay informed about global crises and maintain his connection to humanity. He is a beacon of hope and a symbol of what the best of us can achieve, often serving as the leader of the **Justice League**. Despite his near-infinite power, his greatest strength is his compassion and his unwavering belief in the inherent goodness of all life. He is a man of two worlds, forever bridging the gap between his alien heritage and his human heart.",
-    previewUrl:
-      "/data/dc/assets/superman-preview.jpg",
+    description: "The Last Son of Krypton, possessing immense strength, flight, and heat vision.",
+    lore: "Born **Kal-El** on the doomed planet Krypton, he was sent to Earth by his parents as their world faced destruction. Raised by the Kents in Smallville, he was instilled with the values of truth and justice. Under Earth's yellow sun, he developed god-like abilities, which he uses to protect his adopted home as the world's most iconic hero, **Superman**.\n\nAs *Clark Kent*, he works as a reporter for the Daily Planet, a role that allows him to stay informed and maintain his connection to humanity. He is a beacon of hope and a symbol of the best we can be, often leading the **Justice League**. Despite his power, his greatest strength is his compassion and his unwavering belief in the inherent goodness of all life. He is a man of two worlds, forever bridging his alien heritage and human heart.",
+    triviaInfo: "Origin: Kal-El was born on Krypton to Jor-El and Lara. He was launched to Earth just before Krypton exploded. He was found by Jonathan and Martha Kent in Smallville. He first appeared in Action Comics #1 (1938).\n\nBattles: His most iconic conflict is the 'Death of Superman' storyline, where he fought the unstoppable Doomsday to a standstill, at the cost of his own life. He has also survived dozens of world-shattering clashes with Darkseid and Brainiac.\n\nSpecial Abilities & Gear: Under a yellow sun, he possesses vast superhuman strength, speed, invulnerability, flight, and heat vision. His primary weakness is Kryptonite, radioactive fragments of his home planet. He also has no special defense against magic.\n\nSecret Trivia: Superman was originally conceived by Jerry Siegel and Joe Shuster as a telepathic villain bent on world domination. The first issue of Action Comics originally sold for 10 cents; a high-quality copy recently sold for over $3 million. He is the first character to ever receive their own self-titled comic book.",
+    previewUrl: "/data/dc/assets/superman-preview.jpg",
     backgroundUrl: "/data/dc/assets/superman-background.jpg",
     color: "#3b82f6",
     powerScore: 950,
@@ -18,25 +17,22 @@ export const dcCharacters: Character[] = [
     id: "batman",
     name: "Batman",
     universe: "DC",
-    description:
-      "Billionaire Bruce Wayne fights crime in Gotham City using his intellect, martial arts skills, and advanced gadgets.",
-    lore: "**Bruce Wayne** was just a child when he witnessed his parents' brutal murder in a Gotham City alleyway, a trauma that defined the rest of his life. Swearing a solemn oath to rid his city of the evil that took his family, he spent years traveling the world, training his body and mind to the peak of human perfection under the guidance of master martial artists and detectives. Upon returning to Gotham, he adopted the persona of the **Batman**, a creature of the night designed to strike terror into the hearts of criminals, utilizing his vast fortune to develop an arsenal of high-tech gadgets and vehicles.\n\nOperating from the shadows of the Batcave, Batman is the world's greatest detective and a master tactician, often staying several steps ahead of his many enemies. He is a man of immense discipline and a rigid moral code, refusing to take a life even in the face of absolute chaos. His dual life as the billionaire philanthropic Bruce Wayne and the Dark Knight of Gotham is a constant struggle, but he remains the city's silent guardian, a watchful protector who proves that one man with enough will can change the world. Through his allies in the Bat-family and the **Justice League**, he continues to fight a never-ending war against the darkness.",
-    previewUrl:
-      "/data/dc/assets/batman-preview.jpg",
-    backgroundUrl:
-      "/data/dc/assets/batman-background.jpg",
+    description: "Billionaire Bruce Wayne fights crime in Gotham City using his intellect and gadgets.",
+    lore: "**Bruce Wayne** witnessed his parents' murder as a child, an event that defined his life. Swearing to rid Gotham of evil, he trained his body and mind to peak human perfection. He adopted the persona of the **Batman**, a creature of the night designed to strike terror into criminals, utilizing his vast fortune to develop an arsenal of high-tech gadgets.\n\nOperating from the Batcave, Batman is a master detective and tactician. He is a man of immense discipline and a rigid moral code, refusing to take a life. His dual life as Bruce Wayne and the Dark Knight is a constant struggle, but he remains Gotham's silent guardian, a watchful protector who proves that one man with enough will can change the world. Through the **Justice League**, he continues to fight the darkness.",
+    triviaInfo: "Origin: Bruce Wayne was the only son of Dr. Thomas and Martha Wayne. After they were killed by Joe Chill, he dedicated his life to perfection. He chose the bat as his symbol after a bat crashed through his window, reflecting his desire to share his own childhood fear with criminals. He first appeared in Detective Comics #27 (1939).\n\nBattles: His most significant rivalries include the Joker, Bane (who once broke his back), and the Court of Owls. He has famously defeated entire teams of superhumans through pre-planning and tactical brilliance, most notably in 'JLA: Tower of Babel'.\n\nSpecial Abilities & Gear: He has no innate superpowers but has peak human physical and mental condition. His gear includes the Batarang, Grappling Gun, and the high-tech Batsuit. He is widely considered the 'World's Greatest Detective'.\n\nSecret Trivia: Batman's original design included a red suit and stiff, wing-like attachments instead of a cape. He originally carried a gun and occasionally killed criminals in his earliest appearances. The Batcave was not introduced until the 1940s Batman TV serial.",
+    previewUrl: "/data/dc/assets/batman-preview.jpg",
+    backgroundUrl: "/data/dc/assets/batman-background.jpg",
     color: "#52525b",
-    powerScore: 280,
+    powerScore: 180,
   },
   {
     id: "joker",
     name: "Joker",
     universe: "DC",
-    description:
-      "The Clown Prince of Crime, Batman's arch-nemesis, known for his chaotic and unpredictable nature.",
-    lore: "The true identity and origins of the **Joker** remain a mystery, a void that he fills with a chaotic and terrifying persona. He is the *Clown Prince of Crime*, a psychopathic mastermind whose goal is not wealth or power, but the absolute deconstruction of order and the descent of Gotham City into madness. With his permanent grin and high-pitched laugh, he serves as the ultimate antithesis to Batman, representing the random and senseless nature of the world that Bruce Wayne strives to control.\n\nThe Joker treats life as a cruel joke and sees himself as the only one who truly understands the punchline. He uses a variety of lethal 'toys,' including Joker Venom which leaves his victims with a hideous death-grin, to spread his particular brand of terror. He has no superpowers, but his complete lack of empathy and his genius for chaotic planning make him one of the most dangerous beings on Earth. For the Joker, every explosion, every murder, and every tragedy is just another act in a performance designed to prove that *'one bad day'* is all it takes to turn anyone into him.",
-    previewUrl:
-      "/data/dc/assets/joker-preview.jpg",
+    description: "The Clown Prince of Crime, Batman's chaotic and unpredictable arch-nemesis.",
+    lore: "The true identity of the **Joker** remains a mystery. He is the *Clown Prince of Crime*, a psychopathic mastermind whose goal is the absolute deconstruction of order. With his permanent grin, he serves as the antithesis to Batman, representing the random and senseless nature of the world.\n\nThe Joker treats life as a cruel joke and sees himself as the only one who truly understands the punchline. He uses lethal 'toys,' including Joker Venom, to spread terror. He has no superpowers, but his complete lack of empathy and genius for chaotic planning make him one of the most dangerous beings on Earth. For him, every tragedy is just another act in a performance designed to prove that *'one bad day'* can change anyone.",
+    triviaInfo: "Origin: Although his origin is 'multiple choice', the most accepted story is that he was a failed comedian who fell into a vat of chemicals at the Ace Chemical Plant while disguised as the Red Hood. He first appeared in Batman #1 (1940).\n\nBattles: His most devastating acts include the paralysis of Barbara Gordon in 'The Killing Joke' and the murder of Jason Todd (Robin) in 'A Death in the Family'. He views his relationship with Batman as a game of 'cat and mouse' that should never end.\n\nSpecial Abilities & Gear: He is a chemical genius, creator of the 'Joker Venom' which causes victims to die laughing. He has a high tolerance for pain and a degree of unpredictability that makes him nearly impossible to prepare for.\n\nSecret Trivia: The Joker was originally intended to be killed off in his very first appearance (Batman #1), but an editor, Whitney Ellsworth, saw the character's potential and insisted he be spared. His visual design was heavily inspired by actor Conrad Veidt's performance in the 1928 film 'The Man Who Laughs'.",
+    previewUrl: "/data/dc/assets/joker-preview.jpg",
     backgroundUrl: "/data/dc/assets/joker-background.jpg",
     color: "#a855f7",
     powerScore: 70,
@@ -45,68 +41,60 @@ export const dcCharacters: Character[] = [
     id: "wonderwoman",
     name: "Wonder Woman",
     universe: "DC",
-    description:
-      "Diana, Princess of the Amazons, trained to be an unconquerable warrior.",
-    lore: "**Diana**, Princess of the Amazons, was sculpted from clay and brought to life by the gods themselves on the hidden island of Themyscira. Raised in a society of warrior women, she was trained to be an unconquerable fighter, possessing the strength of the earth, the speed of Hermes, and the wisdom of Athena. When a pilot named Steve Trevor crashed near her home, Diana chose to leave her paradise to serve as an ambassador for peace and a champion for justice in the *'Man's World.'*\n\nAs **Wonder Woman**, she wields the Lasso of Truth, which forces anyone in its grip to speak the absolute truth, and her indestructible bracers which can deflect any projectile. She is a founding member of the **Justice League** and a demigoddess who bridges the gap between ancient mythology and the modern era. Her mission is one of love and equality, but she will not hesitate to use her immense warrior skills against those who would perpetrate tyranny and war. Diana stands as a symbol of strength and compassion, a hero who believes that the true measure of a warrior is the peace they bring.",
-    previewUrl:
-      "/data/dc/assets/wonderwoman-preview.jpg",
+    description: "Diana, Princess of the Amazons, trained to be an unconquerable warrior.",
+    lore: "**Diana**, Princess of the Amazons, was brought to life by the gods on the hidden island of Themyscira. Trained to be a warrior, she possesses the strength of the earth and the wisdom of Athena. She left her paradise to serve as an ambassador for peace in 'Man's World.'\n\nAs **Wonder Woman**, she wields the Lasso of Truth and indestructible bracers. She is a founding member of the **Justice League** and a demigoddess who bridges mythology and the modern era. Her mission is one of love and equality, but she will not hesitate to use her skills against tyranny. Diana stands as a symbol of strength and compassion.",
+    triviaInfo: "Origin: Diana was sculpted from clay by her mother, Queen Hippolyta, and given life by the Greek Gods. She won a tournament to become the Amazons' emissary to the outside world. She first appeared in All Star Comics #8 (1941).\n\nBattles: She has battled gods like Ares and Cheetah across millennia. In 'Infinite Crisis', she made the difficult choice to kill Maxwell Lord to save Superman from mind control, a decision that fractured her relationship with the Justice League for years.\n\nSpecial Abilities & Gear: She has superhuman strength, speed, and flight. Her gear includes the Lasso of Truth (compels honesty), the Bracelets of Submission (deflect any attack), and the Tiara of Athena (can be used as a throwing weapon).\n\nSecret Trivia: Wonder Woman was created by William Moulton Marston, the same psychologist who invented the systolic blood pressure test, a precursor to the polygraph (lie detector)—explaining the inspiration for the Lasso of Truth. She was once the Secretary of the Justice Society of America, as female characters were often relegated to support roles in the 1940s.",
+    previewUrl: "/data/dc/assets/wonderwoman-preview.jpg",
     backgroundUrl: "/data/dc/assets/wonderwoman-background.jpg",
     color: "#eab308",
-    powerScore: 820,
+    powerScore: 480,
   },
   {
     id: "flash",
     name: "The Flash",
     universe: "DC",
-    description:
-      "The Fastest Man Alive, able to tap into the Speed Force to run at superhuman speeds.",
-    lore: "**Barry Allen** was a forensic scientist for the Central City Police Department when a freak accident involving a bolt of lightning and a shelf of chemicals granted him the ability to move at superhuman speeds. Tapping into the **Speed Force**—a mysterious energy field that powers all movement in the universe—he became the **Flash**, the Fastest Man Alive. His powers go beyond mere running; he can vibrate his molecules to pass through solid objects, generate powerful whirlwinds, and even travel through time and across the multiverse.\n\nDespite his incredible speed, Barry remains a humble and optimistic hero, driven by a deep sense of justice and a desire to help others. As a vital member of the **Justice League**, he often serves as the team's heart, using his scientific mind to solve complex problems and his speed to save countless lives in the blink of an eye. His life is a constant race against time, but he never loses sight of the importance of the moments in between. The Flash is a reminder that even in a world of gods and monsters, hope can move faster than light.",
-    previewUrl:
-      "/data/dc/assets/flash-preview.jpg",
-    backgroundUrl:
-      "/data/dc/assets/flash-background.jpg",
+    description: "The Fastest Man Alive, able to tap into the Speed Force for superhuman speeds.",
+    lore: "**Barry Allen** was a forensic scientist when a freak accident granted him the ability to move at superhuman speeds. Tapping into the **Speed Force**, he became the **Flash**, the Fastest Man Alive. He can vibrate through solid objects, generate whirlwinds, and even travel through time.\n\nDespite his speed, Barry remains a humble hero, driven by justice. As a member of the **Justice League**, he often serves as the team's heart, using his scientific mind to solve problems and his speed to save lives. His life is a race against time, but he never loses sight of the importance of the moments in between. The Flash is a reminder that hope can move faster than light.",
+    triviaInfo: "Origin: Barry Allen was working late in his crime lab when a lightning bolt struck a cabinet of chemicals, drenching him. He discovered he could run so fast that the world seemed to stand still. He first appeared in Showcase #4 (1956).\n\nBattles: His most significant conflict is 'Flashpoint', where he traveled back in time to save his mother, inadvertently creating a dystopian alternate reality. He has also fought countless battles against the Rogues and his arch-nemesis, Eobard Thawne (Reverse-Flash).\n\nSpecial Abilities & Gear: He has total mastery over his speed, allowing for molecular phasing, time travel, and infinite mass punches. He wears a pressurized ring that stores his friction-proof costume, allowing for instant changes.\n\nSecret Trivia: The introduction of Barry Allen as the Flash is widely considered the beginning of the 'Silver Age' of comic books. He was the first character to explicitly travel to a parallel Earth (Earth-Two), establishing the DC Comics Multiverse. Barry Allen was actually the second character to use the name Flash; the first was Jay Garrick in the 1940s.",
+    previewUrl: "/data/dc/assets/flash-preview.jpg",
+    backgroundUrl: "/data/dc/assets/flash-background.jpg",
     color: "#ef4444",
-    powerScore: 850,
+    powerScore: 250,
   },
   {
     id: "lexluthor",
     name: "Lex Luthor",
     universe: "DC",
-    description:
-      "A brilliant billionaire industrialist and Superman's greatest enemy.",
+    description: "A brilliant billionaire industrialist and Superman's greatest enemy.",
     lore: "**Lex Luthor** is a brilliant billionaire industrialist and one of the most intelligent men on Earth, whose vast ego is surpassed only by his immense hatred for Superman. He views the Man of Steel not as a savior, but as a dangerous alien deity who robs humanity of its own potential and agency. Driven by a narcissistic desire for power and control, Luthor uses his corporation, LexCorp, and his political influence to manipulate world events and attempt to destroy the hero he sees as his only true rival.\n\nWhile he lacks superpowers, Luthor's genius and resources make him a threat that can challenge even the **Justice League**. He frequently dons a high-tech warsuit of his own design, allowing him to face Superman directly in physical combat, but his most dangerous weapons are his cunning and his ability to manipulate public perception. He has served as both the President of the United States and the leader of various villainous alliances, always seeking to prove that human ingenuity—specifically his own—is superior to any alien power. Lex Luthor is the ultimate strategist, a man who believes that the universe is a game that only he is clever enough to win.",
-    previewUrl:
-      "/data/dc/assets/lexluthor-preview.jpg",
+    triviaInfo: "Origin: Lex Luthor was born in Metropolis and used his scientific genius and business acumen to build LexCorp into a global empire. His hatred for Superman began during a childhood encounter where he blamed the hero for a lab accident that cost him his hair. He first appeared in Action Comics #23 (1940).\n\nBattles: Luthor has attempted to kill Superman through countless schemes involving Kryptonite, red sun radiation, and elaborate traps. He has also battled for control of the world as the President of the United States and as the founder of the Injustice League.\n\nSpecial Abilities & Gear: He is an 11th-level intellect, making him one of the smartest beings in the universe. His primary gear is a Kryptonite-powered Warsuit that grants him flight, strength, and various energy weapons capable of harming Superman.\n\nSecret Trivia: In early appearances, Lex Luthor was depicted with a full head of red hair. His iconic bald look was originally the result of an artist's mistake in a newspaper strip. He was also once assigned to be a member of the Justice League during the 'Forever Evil' storyline, where he briefly served as a hero out of necessity.",
+    previewUrl: "/data/dc/assets/lexluthor-preview.jpg",
     backgroundUrl: "/data/dc/assets/lexluthor-background.jpg",
     color: "#22c55e",
-    powerScore: 500,
+    powerScore: 320,
   },
   {
     id: "harleyquinn",
     name: "Harley Quinn",
     universe: "DC",
-    description:
-      "A former psychiatrist who fell in love with the Joker and became his chaotic accomplice.",
-    lore: "**Dr. Harleen Quinzel** was once a promising psychiatrist at Arkham Asylum, tasked with treating the prison's most dangerous inmates. Her life changed forever when she was assigned to the **Joker**, whose manipulative charm and tragic (though likely fabricated) stories led her to fall madly in love with the psychopath. Shedding her professional life, she became **Harley Quinn**, the Joker's chaotic and gymnast accomplices, embarking on a spree of crimes across Gotham City.\n\nOver time, Harley's relationship with the Joker became increasingly toxic and abusive, eventually leading her to break free and forge her own path. She has since transformed from a simple sidekick into a formidable anti-hero and a member of the **Suicide Squad**, often finding her own brand of justice through chaos and unpredictable violence. Armed with her trademark giant mallet and her incredible acrobatic skills, Harley Quinn is a wild card in the DC Universe—someone who can be a terrifying force of destruction one moment and a surprising ally the next. Her journey is one of reclaiming her identity from the shadows of madness.",
-    previewUrl:
-      "/data/dc/assets/harleyquinn-preview.jpg",
-    backgroundUrl:
-      "/data/dc/assets/harleyquinn-background.jpg",
+    description: "A former psychiatrist who fell in love with the Joker and became his chaotic accomplice.",
+    lore: "**Dr. Harleen Quinzel** was once a promising psychiatrist at Arkham Asylum, tasked with treating the prison's most dangerous inmates. Her life changed forever when she was assigned to the **Joker**, whose manipulative charm and tragic stories led her to fall madly in love with the psychopath. Shedding her professional life, she became **Harley Quinn**, embarking on a spree of crimes across Gotham City.\n\nOver time, Harley's relationship with the Joker became increasingly toxic and abusive, eventually leading her to break free. She has since transformed from a sidekick into a formidable anti-hero and a member of the **Suicide Squad**, often finding her own brand of justice through chaos and unpredictable violence. Armed with her giant mallet and her incredible acrobatic skills, Harley Quinn is a wild card—someone who can be a terrifying force of destruction one moment and a surprising ally the next. Her journey is one of reclaiming her identity from the shadows of madness.",
+    triviaInfo: "Origin: Harleen Quinzel was a gymnast who won a scholarship to Gotham City University. She became a psychiatrist at Arkham Asylum, where she met the Joker. He manipulated her into helping him escape, and she eventually became his partner in crime. She first appeared in Batman: The Animated Series (1992).\n\nBattles: Harley has been a staple member of the Suicide Squad, participating in covert operations for the government under Amanda Waller. She has also had frequent run-ins with Batman and has developed a close, though often complicated, friendship with Poison Ivy.\n\nSpecial Abilities & Gear: She is an Olympic-level gymnast and a skilled martial artist. Her primary weapons include a custom oversized mallet, various prank-themed explosives, and a baseball bat. She is also immune to most toxins thanks to an injection from Poison Ivy.\n\nSecret Trivia: Harley Quinn is one of the few major DC characters who was created for a television show (Batman: The Animated Series) before being introduced into the comic books. Her look was originally inspired by actress Arleen Sorkin, who also provided her original voice. She has since become one of DC's most popular and profitable characters.",
+    previewUrl: "/data/dc/assets/harleyquinn-preview.jpg",
+    backgroundUrl: "/data/dc/assets/harleyquinn-background.jpg",
     color: "#ef4444",
-    powerScore: 85,
+    powerScore: 120,
   },
   {
     id: "darkseid",
     name: "Darkseid",
     universe: "DC",
-    description:
-      "The tyrannical ruler of Apokolips, seeking the Anti-Life Equation to control all free will.",
-    lore: "**Darkseid** is the tyrannical ruler of the hellish planet **Apokolips**, a being of immense cosmic power and the ultimate personification of evil in the DC Universe. He seeks nothing less than the total subjugation of all sentient life through the *Anti-Life Equation*, a mathematical formula that would grant him control over the free will of every being in existence. His physical strength is nearly unparalleled, and he can fire the devastating Omega Beams from his eyes—beams that can track their targets and erase them from existence or teleport them to the furthest Reaches of the multiverse.\n\nAs a New God, Darkseid views the inhabitants of Earth and even the **Justice League** as insignificant obstacles in his eternal quest for dominance. He is a cold, calculating strategist who operates on a level that spans multiple dimensions and eras, often manipulating entire civilizations into their own destruction. His presence alone is a harbinger of doom, forcing the world's greatest heroes to set aside their differences and fight for the very concept of freedom. Darkseid is not just a conqueror; he is the end of all things, an ultimate darkness that can only be held back by the combined light of every soul willing to resist.",
-    previewUrl:
-      "/data/dc/assets/darkseid-preview.jpg",
-    backgroundUrl:
-      "/data/dc/assets/darkseid-background.jpg",
+    description: "The tyrannical ruler of Apokolips, seeking the Anti-Life Equation.",
+    lore: "**Darkseid** is the tyrannical ruler of the hellish planet **Apokolips**, a being of immense cosmic power and the personification of evil. He seeks nothing less than the total subjugation of all sentient life through the *Anti-Life Equation*, a formula that would grant him control over the free will of every being in existence. His physical strength is nearly unparalleled, and he can fire the devastating Omega Beams from his eyes.\n\nAs a New God, Darkseid views the inhabitants of Earth and even the **Justice League** as insignificant obstacles. He is a cold, calculating strategist who operates on a level that spans multiple dimensions, often manipulating entire civilizations into their own destruction. His presence alone is a harbinger of doom, forcing the world's greatest heroes to set aside their differences and fight for the very concept of freedom. Darkseid is not just a conqueror; he is the end of all things, an ultimate darkness that can only be held back by the combined light of every soul willing to resist.",
+    triviaInfo: "Origin: Born Prince Uxas on the planet Apokolips, he murdered his brother Drax to claim the Omega Effect, transforming himself into the stony-skinned Darkseid. He turned his planet into a living hell of fire pits and factories. He first appeared in Superman's Pal Jimmy Olsen #134 (1970).\n\nBattles: His most legendary conflict is with the Highfather of New Genesis, a war that has lasted for eons. He has also been the primary antagonist in many Justice League events, including 'Final Crisis', where he successfully took over Earth for a time.\n\nSpecial Abilities & Gear: As a New God, he has vast superhuman strength, durability, and immortality. His primary weapon is the Omega Effect, which manifests as Omega Beams—energy blasts that can track targets, disintegrate matter, or resurrect the dead. He also possesses the Mother Box, a sentient supercomputer.\n\nSecret Trivia: Darkseid was originally created by Jack Kirby as part of his 'Fourth World' saga, which moved the focus of comic books into a more mythic and philosophical direction. His visual design and characterization were partially inspired by various real-world dictators and the concept of absolute nihilism.",
+    previewUrl: "/data/dc/assets/darkseid-preview.jpg",
+    backgroundUrl: "/data/dc/assets/darkseid-background.jpg",
     color: "#52525b",
-    powerScore: 1000,
+    powerScore: 980,
   },
 ];

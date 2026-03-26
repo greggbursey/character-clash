@@ -8,6 +8,7 @@ import { mkCharacters } from "./mortal-kombat/mk-characters";
 import { sfCharacters } from "./street-fighter/sf-characters";
 import { godzillaCharacters } from "./godzilla/godzilla-characters";
 import { swCharacters } from "./star-wars/sw-characters";
+import { marioCharacters } from "./mario/mario-characters";
 
 export const characters: Character[] = [
   ...tmntCharacters,
@@ -18,4 +19,5 @@ export const characters: Character[] = [
   ...sfCharacters,
   ...godzillaCharacters,
   ...swCharacters,
+  ...marioCharacters,
 ];

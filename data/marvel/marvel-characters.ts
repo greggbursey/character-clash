@@ -5,124 +5,108 @@ export const marvelCharacters: Character[] = [
     id: "spiderman",
     name: "Spider-Man",
     universe: "Marvel",
-    description:
-      "Bitten by a radioactive spider, Peter Parker gained arachnid-like abilities and uses them to protect New York City.",
-    lore: "**Peter Parker** was an ordinary high school student until a bite from a radioactive spider granted him extraordinary abilities. Overnight, he gained superhuman strength, agility, and the uncanny ability to cling to walls, along with a *'spider-sense'* that warns him of impending danger. Initially seeking fame and fortune, Peter's life was forever changed by the tragic death of his Uncle Ben, a loss that taught him the enduring lesson that *'with great power, there must also come great responsibility.'*\n\nNow, as the friendly neighborhood **Spider-Man**, Peter balances the struggles of a young adult with the immense burden of protecting New York City. He uses his scientific genius to create his iconic web-shooters and various technological suits, often facing off against a gallery of rogue villains like the Green Goblin and Doctor Octopus. Despite the personal sacrifices and the constant struggle to manage his dual identity, Spider-Man remains a beacon of hope and a symbol of the everyman hero who never gives up, no matter the odds.",
-    previewUrl:
-      "/data/marvel/assets/spiderman-preview.jpg",
+    description: "Your friendly neighborhood Spider-Man, with the proportionate strength and agility of a spider.",
+    lore: "**Spider-Man**, also known as **Peter Parker**, is one of the most iconic heroes in the **Marvel Universe**. After being bitten by a radioactive spider during a high school field trip, Peter gained incredible abilities, including superhuman strength, the ability to cling to walls, and a precognitive 'spider-sense' that warns him of danger. His journey from a shy, orphaned teenager to a world-renowned hero is defined by the tragic loss of his **Uncle Ben**, which taught him the core tenet of his life: 'With great power comes great responsibility.'\n\nOperating primarily in New York City, Spider-Man balances his life as a crime-fighter with the everyday struggles of being a student, a photographer, and a friend. He is known for his quick wit and constant banter during battles, which he often uses to hide his own nerves and distract his opponents. Over the years, he has faced a vast gallery of colorful villains, from the **Green Goblin** to **Doctor Octopus**, and has become a core member of the **Avengers**, proving that even a kid from Queens can stand among legends.",
+    triviaInfo: "Origin: Peter Parker was a 15-year-old student from Queens who was bitten by a radioactive spider at a Science General exhibition. The death of his Uncle Ben, which he could have prevented, fueled his lifelong commitment to justice. He first appeared in Amazing Fantasy #15 (1962).\n\nBattles: His first true supervillain encounter was with The Chameleon, who impersonated him to commit a series of robberies. He has also survived dozens of clashes with the Sinister Six and played a critical role in the defeat of Thanos in the Infinity Gauntlet saga.\n\nSpecial Abilities & Gear: Beyond his physical prowess, Peter is a genius-level inventor. He created his own 'web-shooters' and the chemical formula for his high-tensile artificial webbing. His 'Spider-Sense' is a semi-precognitive sixth sense that warns him of immediate danger.\n\nSecret Trivia: Spider-Man was a radical departure for comics at the time, as he was the first teenage hero who wasn't a sidekick. Creator Stan Lee's publisher initially hated the idea, thinking people were disgusted by spiders and that a teenager couldn't be a lead hero.",
+    previewUrl: "/data/marvel/assets/spiderman-preview.jpg",
     backgroundUrl: "/data/marvel/assets/spiderman-background.jpg",
     color: "#ef4444",
-    powerScore: 450,
+    powerScore: 180,
   },
   {
     id: "ironman",
     name: "Iron Man",
     universe: "Marvel",
-    description:
-      "Genius billionaire Tony Stark fights evil in a high-tech suit of armor of his own design.",
-    lore: "**Anthony 'Tony' Stark** is a genius, billionaire, playboy, and philanthropist who famously built a powered suit of armor to escape from captivity in a war-torn region. Realizing that his technology was being used for harm, he pivoted from weapons manufacturing to global heroism, refining his Mark 1 armor into a series of highly advanced, flight-capable suits powered by the Arc Reactor in his chest. As **Iron Man**, he became a founding member of the **Avengers**, using his resources and intellect to defend Earth from terrestrial and extraterrestrial threats.\n\nBeyond the suit, Tony's greatest weapon is his mind. He is a master of robotics, artificial intelligence, and energy systems, constantly iterating on his designs to prepare for the *'endgame'* he fears is coming. Despite his occasionally arrogant exterior, Tony is driven by a deep-seated need to protect the world he once profited from. His journey is one of redemption and sacrifice, proving that the man is just as important as the machine, and that even the most armored heart can be moved by the need to do what is right.",
-    previewUrl:
-      "/data/marvel/assets/ironman-preview.jpg",
-    backgroundUrl:
-      "/data/marvel/assets/ironman-background.jpg",
+    description: "Genius, billionaire, playboy, philanthropist in a high-tech suit of armor.",
+    lore: "**Tony Stark**, the genius inventor and billionaire CEO of **Stark Industries**, transformed his life after being captured and forced to build a weapon of mass destruction. Instead, he created the first **Iron Man** armor to save his own life and escape captivity. This experience shifted his focus from war-profiteering to global protection, leading him to refine his technology into the most advanced suits of armor on the planet.\n\nAs a founding member of the **Avengers**, Iron Man provides the team with technological superiority and strategic brilliance. His suits are equipped with repulsor blasts, flight capabilities, and sophisticated artificial intelligence systems like **JARVIS** or **FRIDAY**. Despite his immense power, Tony often struggles with the consequences of his own inventions and the burden of his fame, constantly seeking to stay one step ahead of the next global threat. His journey is one of redemption, turning a legacy of destruction into a shield for all humanity.",
+    triviaInfo: "Origin: Anthony 'Tony' Stark is a child prodigy who inherited his father's weapons company. After being injured by a booby trap and captured by terrorists, he built a crude suit of armor (Mark I) to sustain his damaged heart and escape. He first appeared in Tales of Suspense #39 (1963).\n\nBattles: High-stakes conflicts include the 'Armor Wars', where he fought to reclaim his stolen technology from other armored villains, and his frequent clashes with the Mandarin. He also notably faced off against his own creations, like the sentient AI Ultron.\n\nSpecial Abilities & Gear: His armors are modular marvels, featuring Repulsor Rays, Unibeams, and advanced flight systems. He has created specialized armors for almost every scenario, including the 'Hulkbuster' for physical powerhouses and the 'Deep Space' armor for cosmic travel.\n\nSecret Trivia: In early comics, the Iron Man armor was so energy-intensive that Tony had to plug his chest plate into a wall outlet to recharge. The original suit was gray, but it was changed to gold in just the second issue to look less frightening to the public.",
+    previewUrl: "/data/marvel/assets/ironman-preview.jpg",
+    backgroundUrl: "/data/marvel/assets/ironman-background.jpg",
     color: "#eab308",
-    powerScore: 500,
+    powerScore: 190,
   },
   {
     id: "thor",
     name: "Thor",
     universe: "Marvel",
-    description:
-      "The Asgardian God of Thunder, wielding the enchanted hammer Mjolnir to protect the Nine Realms.",
-    lore: "**Thor Odinson** is the Asgardian God of Thunder, a warrior of immense power and the rightful heir to the throne of **Asgard**. For centuries, he has wielded the enchanted hammer **Mjolnir**, which grants him the ability to fly and command the devastating power of lightning and storms. Initially arrogant and impulsive, Thor was banished to Earth by his father Odin to learn humility, an experience that forged him into one of the Nine Realms' greatest protectors.\n\nAs a core member of the **Avengers**, Thor bridges the gap between the cosmic and the terrestrial. He has faced off against his mischievous brother Loki, the dark elf Malekith, and even the planet-consuming power of Hela. Despite the loss of his home and many of his people, Thor's resolve remains unshakable. He is a god who understands the value of mortality, fighting not just for glory, but for the safety of all sentient life across the cosmos. Whether on the battlefields of Midgard or the halls of Valhalla, the name Thor remains synonymous with thunderous justice.",
-    previewUrl:
-      "/data/marvel/assets/thor-preview.jpg",
-    backgroundUrl:
-      "/data/marvel/assets/thor-background.webp",
-    color: "#67e8f9",
-    powerScore: 890,
+    description: "The God of Thunder, prince of Asgard, and wielder of the mighty hammer Mjolnir.",
+    lore: "**Thor Odinson** is the God of Thunder and the rightful heir to the throne of **Asgard**, one of the Nine Realms. Known for his immense strength and control over the elements, he wields the enchanted hammer **Mjolnir**, which allows him to fly and channel massive lightning strikes. Though once arrogant and reckless, Thor was cast out to Earth by his father, **Odin**, to learn humility, eventually becoming one of humanity's greatest defenders.\n\nAs a core member of the **Avengers**, Thor brings the power of a god to the battlefield. He has faced cosmic threats that would tremble the stars, from his mischievous brother **Loki** to the world-devouring **Galactus**. Despite his divine heritage, he has developed a deep affection for Earth and its people, often finding himself torn between his duties to Asgard and his commitment to his mortal friends. His journey is one of worthiness, proving continually that he is a hero not by birth, but by his actions and his heart.",
+    triviaInfo: "Origin: Thor is the son of Odin and Gaea (the Earth Goddess). To teach him humility, Odin stripped him of his memory and powers, sending him to Earth in the body of a lame doctor named Donald Blake. He rediscovered his divinity after finding Mjolnir in a cave. He first appeared in Journey into Mystery #83 (1962).\n\nBattles: His first battle in the silver age was against the Stone Men from Saturn. He has famously fought the Midgard Serpent, a beast prophesied to kill him during Ragnarok, and has survived dozens of world-shattering duels with his brother Loki.\n\nSpecial Abilities & Gear: He possesses god-like strength and near-invulnerability. His hammer, Mjolnir, is forged from Uru metal in the heart of a dying star and carries an enchantment that only the worthy may lift it.\n\nSecret Trivia: Thor once spent several issues transformed into a frog by Loki, leading an army of frogs against a clan of rats in New York's Central Park. This event led to the creation of 'Throg', a frog who possesses a shard of Thor's power.",
+    previewUrl: "/data/marvel/assets/thor-preview.jpg",
+    backgroundUrl: "/data/marvel/assets/thor-background.jpg",
+    color: "#60a5fa",
+    powerScore: 450,
   },
   {
     id: "hulk",
     name: "Hulk",
     universe: "Marvel",
-    description:
-      "Exposed to heavy gamma radiation, Dr. Bruce Banner transforms into a giant, raging green monster when provoked.",
-    lore: "**Dr. Bruce Banner** was a brilliant nuclear physicist who was transformed into the **Incredible Hulk** after being caught in the blast of a gamma bomb he designed. Now, whenever Bruce experiences extreme stress or anger, he undergoes a painful and terrifying metamorphosis into a giant, green-skinned behemoth of near-limitless physical strength. The Hulk is a creature of pure instinct and raw emotion, often driven by a desire to be left alone but frequently forced into conflict by those who seek to use or destroy him.\n\nThe relationship between Banner and the Hulk is one of the most complex in the Marvel Universe—a modern-day Jekyll and Hyde. Bruce views the Hulk as a curse and a threat to those he loves, while the Hulk often resents Bruce's attempts to suppress him. However, despite the destruction he can cause, the Hulk has saved the world countless times as a member of the **Avengers**. When *'Hulk Smashes,'* he does so with a strength that can shatter mountains and repel alien invasions, proving that even the most inner darkness can be harnessed for the greater good.",
-    previewUrl:
-      "/data/marvel/assets/hulk-preview.jpg",
-    backgroundUrl:
-      "/data/marvel/assets/hulk-background.jpg",
+    description: "The Incredible Hulk, a raging monster of pure strength fueled by anger.",
+    lore: "**Dr. Bruce Banner** was a brilliant physicist whose life was transformed when he was caught in the blast of a gamma bomb. Now, whenever he is overwhelmed by rage or stress, he transforms into the **Hulk**, a massive green-skinned behemoth with near-limitless physical power. The Hulk is a creature of raw emotion, often wanting nothing more than to be left alone, but frequently finding himself at the center of world-shattering conflicts.\n\nAs one of the strongest beings on Earth, the Hulk is both a protector and a threat. He has fought alongside the **Avengers** to repel alien invasions and defeat cosmic tyrants, but he also possesses a destructive potential that few can control. Bruce Banner spent years trying to find a cure for his condition before eventually learning to coexist with the 'Other Guy.' The Hulk's power is tied directly to his anger—the madder he gets, the stronger he gets—making him an unstoppable force of nature when pushed to the edge.",
+    triviaInfo: "Origin: Dr. Robert Bruce Banner was saving a teenager named Rick Jones from a gamma bomb test site when he was hit by the radiation. Initially, he only transformed into a Gray Hulk at night, but he soon became the iconic Green Hulk triggered by adrenaline. He first appeared in The Incredible Hulk #1 (1962).\n\nBattles: Hulk has fought virtually every hero and villain in the Marvel Universe. His most notable clashes include his countless brawls with the Abomination, his war against the Illuminati in 'World War Hulk', and his legendary fights with Thor to prove who is the 'Strongest Avenger'.\n\nSpecial Abilities & Gear: He possesses limitless physical strength that increases with his rage. He has an incredible healing factor, can leap miles in a single bound, and is immune to most forms of terrestrial and mystical damage.\n\nSecret Trivia: The Hulk was originally meant to be gray, but the printer had trouble keeping the color consistent across issues, often making him look green. Stan Lee decided to lean into the error and made him green starting with the second issue.",
+    previewUrl: "/data/marvel/assets/hulk-preview.jpg",
+    backgroundUrl: "/data/marvel/assets/hulk-background.jpg",
     color: "#22c55e",
-    powerScore: 920,
+    powerScore: 480,
   },
   {
     id: "captainamerica",
     name: "Captain America",
     universe: "Marvel",
-    description:
-      "Enhanced to the peak of human perfection by an experimental serum, Steve Rogers is the First Avenger.",
-    lore: "**Steve Rogers** was a scrawny but courageous young man who volunteered for an experimental *'Super-Soldier'* program during World War II. Injected with the Super-Soldier Serum and treated with 'Vita-Rays,' he was transformed into the peak of human physical perfection, gaining extraordinary strength, speed, and endurance. As **Captain America**, he became a symbol of hope and freedom, leading the fight against Hydra and the Red Skull until he was lost in the icy waters of the Atlantic in a heroic final act.\n\nAwakened decades later in the modern world, Rogers found himself a man out of time, yet his moral compass remained as steadfast as ever. As the leader of the **Avengers**, he serves as the team's conscience and master tactician, wielding an indestructible vibranium shield that has become as much a defensive tool as a formidable weapon. Steve Rogers believes in the American dream of equality and justice for all, and he will stand against any threat—whether it be alien invaders or internal corruption—to ensure that liberty remains a reality for everyone.",
-    previewUrl:
-      "/data/marvel/assets/captainamerica-preview.jpg",
-    backgroundUrl:
-      "/data/marvel/assets/captainamerica-background.jpg",
+    description: "The first Avenger, a world war II hero with enhanced strength and a vibranium shield.",
+    lore: "**Steve Rogers** was a scrawny but courageous young man who was transformed into a super-soldier through an experimental serum during World War II. As **Captain America**, he became a symbol of hope and freedom, leading the charge against the forces of Hydra and the Red Skull. After being frozen in ice for decades, he was awakened in the modern world, where he now leads the **Avengers** with the same unwavering moral compass he had in the 1940s.\n\nWielding his iconic **Vibranium Shield**, Captain America is a master tactician and hand-to-hand combatant. He is defined not by his physical enhancements, but by his indomitable spirit and his refusal to back down from what is right, regardless of the odds. Even in a world that has grown increasingly complex and cynical, he remains a pillar of integrity and leadership, proving that the values of courage and sacrifice are timeless. He is the heart of the team, the one who inspires everyone around him to be their best selves.",
+    triviaInfo: "Origin: Steve Rogers was a frail Brooklyn native who was rejected from the army multiple times. He was finally selected for 'Project: Rebirth', where he was injected with the Super-Soldier Serum. He first appeared in Captain America Comics #1 (1941).\n\nBattles: During WWII, he fought countless battles against the Red Skull and the Baron Zemo. In the modern era, his most significant conflicts include the 'Civil War' against Iron Man over the Superhero Registration Act and the final stand against Thanos.\n\nSpecial Abilities & Gear: He possesses peak human strength, speed, and endurance. His primary tool is a circular shield made of a unique Vibranium-steel alloy, which is virtually indestructible and can be thrown with pinpoint accuracy.\n\nSecret Trivia: Captain America's first shield was actually triangular, but it was changed to a circle to avoid legal conflict with another publisher's character, The Shield. On the cover of his first issue, he was famously depicted punching Adolf Hitler, which led to real-life death threats against creators Joe Simon and Jack Kirby.",
+    previewUrl: "/data/marvel/assets/captainamerica-preview.jpg",
+    backgroundUrl: "/data/marvel/assets/captainamerica-background.jpg",
     color: "#3b82f6",
-    powerScore: 360,
+    powerScore: 170,
   },
   {
     id: "thanos",
     name: "Thanos",
     universe: "Marvel",
-    description:
-      "The Mad Titan, a powerful cosmic warlord who seeks to bring balance to the universe.",
-    lore: "**Thanos** is the Mad Titan, a cosmic warlord of immense power and a philosophical nihilist who believes that the only way to save the universe from overpopulation is to erase half of all life. Born on the doomed planet **Titan**, he witnessed the collapse of his society and dedicated his life to preventing a similar fate for the rest of the cosmos, no matter the cost. His physical strength is legendary, and his strategic genius has allowed him to command vast armies and outmaneuver the greatest heroes of the galaxy.\n\nHis quest for the **Infinity Stones**—six ancient entities each controlling a fundamental aspect of existence—is the driving force behind his most devastating campaigns. When wielding the Infinity Gauntlet, Thanos becomes a being of god-like proportions, capable of rewriting reality with a snap of his fingers. Yet, beneath his terrifying power lies a complex and tragic figure, driven by a warped sense of duty and a lonely burden of knowledge. He is the ultimate obstacle for the **Avengers** and all who value life, a force of nature that forces even the strongest heroes to confront the limits of their own will.",
-    previewUrl:
-      "/data/marvel/assets/thanos-preview.jpg",
+    description: "The Mad Titan, a powerful cosmic warlord seeking to bring balance to the universe.",
+    lore: "**Thanos** is a cosmic warlord of immense power and a philosophical nihilist. Born on the planet Titan, he witnessed the collapse of his society and became obsessed with preventing a similar fate for the rest of the cosmos. He believes that the only way to save the universe from overpopulation is to erase half of all life, a goal he pursues with terrifying determination and a cold, strategic brilliance.\n\nHis quest for the **Infinity Stones**—six ancient gems that control fundamental aspects of existence—has made him the greatest threat the universe has ever known. Wielding the Infinity Gauntlet, Thanos is capable of rewriting reality at will. Despite his cruelty, he views himself as a necessary savior, a being of 'destiny' who has the will to do what others cannot. To the **Avengers**, he is the ultimate obstacle, a force of nature that forces them to confront their own limitations and the true cost of heroism.",
+    triviaInfo: "Origin: Born to the Eternals A'Lars and Sui-San on Titan, Thanos carried the Deviant Gene, giving him his purple, hide-like skin and massive frame. He was an intellectual pacifist as a child before becoming obsessed with nihilism and the physical manifestation of Death. He first appeared in Iron Man #55 (1973).\n\nBattles: His most legendary conflict is the 'Infinity Gauntlet' saga, where he successfully wiped out half of all life with a snap. He has also battled virtually every cosmic entity in the Marvel Universe, including Galactus, the Silver Surfer, and the Elders of the Universe.\n\nSpecial Abilities & Gear: Naturally, he possesses vast superhuman strength, durability, and energy manipulation. His primary 'gear' is the Infinity Gauntlet, which grants him dominion over Time, Space, Mind, Soul, Reality, and Power. He also commands a massive space fleet and the elite group known as the Black Order.\n\nSecret Trivia: Thanos was originally inspired by the DC character Metron, though his visual design evolved to more closely resemble Darkseid. In the comics, his motivation is not 'balance' but a romantic obsession with the personification of Death, who he sought to impress through cosmic genocide.",
+    previewUrl: "/data/marvel/assets/thanos-preview.jpg",
     backgroundUrl: "/data/marvel/assets/thanos-background.png",
     color: "#a855f7",
-    powerScore: 960,
+    powerScore: 950,
   },
   {
     id: "venom",
     name: "Venom",
     universe: "Marvel",
-    description:
-      "A sentient alien symbiote that bonds with a human host to survive, granting them immense power.",
-    lore: "**Venom** is the Result of a bond between a sentient alien symbiote and **Eddie Brock**, a disgraced journalist with a personal grudge against Peter Parker. Originally discarded by Spider-Man, the symbiote found a perfect host in Brock's shared anger and resentment. Together, they form a symbiotic entity that possesses all of Spider-Man's abilities—including wall-crawling and webbing—but with significantly greater strength and an immunity to Peter's spider-sense, making them one of the Wall-Crawler's deadliest and most personal foes.\n\nDespite their origins as a villain, the relationship between Eddie and the symbiote is one of mutual survival and complex morality. While the symbiote can be bloodthirsty and chaotic, Eddie often struggles to channel its dark impulses toward more altruistic ends, leading them to operate as a *'Lethal Protector'* in San Francisco. This internal conflict makes Venom a wild card in the Marvel Universe, capable of immense cruelty or surprising heroism. Whether fighting alongside or against the world's heroes, the sight of the white spider on a black chest remains a chilling reminder of the darkness that can dwell within.",
-    previewUrl:
-      "/data/marvel/assets/venom-preview.jpg",
-    backgroundUrl:
-      "/data/marvel/assets/venom-background.jpg",
+    description: "A sentient alien symbiote bonded with Eddie Brock, forming a lethal protector.",
+    lore: "**Venom** is the dangerous fusion of a disgraced journalist, **Eddie Brock**, and a sentient alien symbiote that once bonded with Spider-Man. Fueled by a shared hatred for the wall-crawler, the two formed a dark bond that granted them all of Peter Parker's abilities, but with a more brutal, predatory edge. Now operating as a 'Lethal Protector,' Venom occupies the thin line between villainy and heroism, often doing the right thing through the most violent means possible.\n\nThe symbiote provides Eddie with immense physical strength, shape-shifting abilities, and the power to generate organic webbing. However, the connection is a volatile one, with the alien's bloodthirsty instincts constantly clashing with Eddie's remaining humanity. Together, they have faced off against cosmic horrors, other symbiotes like **Carnage**, and the very heroes they formerly sought to destroy. The white spider on their black chest remains one of the most feared symbols in the Marvel Universe, a reminder of the darkness that can be channeled for good.",
+    triviaInfo: "Origin: The symbiote was found by Spider-Man on the planet Battleworld during the Secret Wars. After Peter rejected it, it bonded with Eddie Brock, who blamed Peter for his ruined career. They first appeared together as Venom in The Amazing Spider-Man #300 (1988).\n\nBattles: Venom's early career was defined by a relentless hunt for Spider-Man. Later, they became the primary antagonist to Carnage, the symbiote's chaotic offspring. Venom has also been a member of the Thunderbolts and a 'Space Knight' for the Guardians of the Galaxy.\n\nSpecial Abilities & Gear: The symbiote grants superhuman strength, agility, wall-crawling, and the ability to camoflauge itself. It is also immune to Spider-Man's Spider-Sense. Its primary weaknesses are intense sound and fire.\n\nSecret Trivia: The idea for a black-costumed Spider-Man was originally submitted by a fan named Randy Schueller, who sold the idea to Marvel for $220. The symbiote wasn't originally intended to be a sentient alien, just a 'self-repairing' technological suit.",
+    previewUrl: "/data/marvel/assets/venom-preview.jpg",
+    backgroundUrl: "/data/marvel/assets/venom-background.jpg",
     color: "#18181b",
-    powerScore: 550,
+    powerScore: 240,
   },
   {
     id: "blackpanther",
     name: "Black Panther",
     universe: "Marvel",
-    description:
-      "The king and protector of the technologically advanced African nation of Wakanda.",
-    lore: "**T'Challa** is the **Black Panther**, the king and ceremonial protector of **Wakanda**, a technologically advanced African nation that remained hidden from the world for centuries. Following the death of his father, T'Chaka, T'Challa inherited the mantle of the Panther and the responsibility of leading his people while safeguarding their vast reserves of Vibranium. By consuming the Heart-Shaped Herb and undergoing rigorous physical training, he gained enhanced senses, agility, and strength that allow him to stand toe-to-toe with the world's most powerful beings.\n\nAs a leader, Black Panther must balance his duties to his nation with his responsibilities as a global hero and a member of the **Avengers**. He uses his incredible wealth and scientific mind to develop advanced technologies, including his iconic Vibranium-weave suit which can absorb and redistribute kinetic energy. T'Challa is a master of multiple martial arts and a brilliant strategist, often thinking several steps ahead of both his political and physical opponents. His journey is one of bridging the gap between Wakandan isolationism and international cooperation, proving that true strength lies in the wisdom to lead as much as the power to fight.",
-    previewUrl:
-      "/data/marvel/assets/blackpanther-preview.jpg",
-    backgroundUrl:
-      "/data/marvel/assets/blackpanther-background.jpg",
+    description: "The King of Wakanda and its protector, wielding the power of the Panther God.",
+    lore: "**T'Challa** is the king of **Wakanda**, a technologically advanced nation hidden in the heart of Africa. As the **Black Panther**, he serves as both a sovereign leader and a formidable warrior, charged with protecting his people and their vast reserves of Vibranium. Having consumed the sacred heart-shaped herb, he possesses enhanced senses, strength, and agility that allow him to fight among the world's greatest legends.\n\nHis suit, a masterpiece of Wakandan engineering, is woven from Vibranium threads, allowing it to absorb kinetic energy and redistribute it in powerful bursts. As a member of the **Avengers**, T'Challa brings a unique blend of royal authority, strategic brilliance, and unparalleled martial arts mastery to the team. He is a man of honor who must constantly balance his duties to his kingdom with his responsibilities to the global community, proving that a true king is one who serves his people with both wisdom and strength.",
+    triviaInfo: "Origin: T'Challa is the son of King T'Chaka. After his father was assassinated, he returned to Wakanda to claim the throne and the mantle of the Black Panther. He first appeared in Fantastic Four #52 (1966).\n\nBattles: Notable conflicts include his defensive battles against Ulysses Klaue and his complex power struggle with Erik Killmonger. He also famously led the Wakandan army against the forces of Thanos in the Battle of Wakanda.\n\nSpecial Abilities & Gear: He is an expert in virtually every form of hand-to-hand combat. His suit is made of a Vibranium-weave that is bulletproof and can discharge stored energy. He also uses 'energy daggers' and advanced Wakandan cloaking technology.\n\nSecret Trivia: Black Panther was the first Black superhero in mainstream American comics, debuting several years before the Falcon and Luke Cage. His home nation, Wakanda, is an afrofuturist utopia that has never been conquered by a foreign power.",
+    previewUrl: "/data/marvel/assets/blackpanther-preview.jpg",
+    backgroundUrl: "/data/marvel/assets/blackpanther-background.jpg",
     color: "#18181b",
-    powerScore: 380,
+    powerScore: 195,
   },
   {
     id: "doctorstrange",
     name: "Doctor Strange",
     universe: "Marvel",
-    description:
-      "The Sorcerer Supreme, Earth's primary protector against magical and mystical threats.",
-    lore: "**Dr. Stephen Strange** was once a world-renowned but arrogant neurosurgeon whose life was shattered when a car accident permanently damaged his hands, ending his medical career. In a desperate search for a cure, he traveled to **Kamar-Taj** and discovered the Ancient One, who introduced him to the hidden world of the mystic arts. Strange eventually abandoned his quest for a physical cure and instead dedicated himself to protecting reality from supernatural threats, eventually becoming the **Sorcerer Supreme** and Earth's primary line of defense against eldritch horrors.\n\nOperating out of the Sanctum Sanctorum in New York City, Doctor Strange wields an array of powerful relics, most notably the *Eye of Agamotto*—which allows him to manipulate time—and the sentient *Cloak of Levitation*. His mastery of spells, incantations, and dimensional travel makes him one of the most versatile and powerful heroes in existence. No longer driven by ego, Strange understands that he is a guardian of the entire multiverse, often making difficult choices that prioritize the survival of existence itself over individual lives. His transformation from a man of science to a master of magic is a testament to the potential of the human spirit.",
-    previewUrl:
-      "/data/marvel/assets/doctorstrange-preview.jpg",
-    backgroundUrl:
-      "/data/marvel/assets/doctorstrange-background.jpg",
+    description: "The Sorcerer Supreme, protecting reality against mystical and extra-dimensional threats.",
+    lore: "**Dr. Stephen Strange** was a world-class neurosurgeon whose career ended after a horrific car accident damaged his hands. His search for a cure led him to the hidden world of magic and the tutelage of the Ancient One. Now, as the **Sorcerer Supreme**, he uses his mastery of the mystic arts to defend Earth from eldritch horrors and reality-warping entities from other dimensions.\n\nWielding the **Cloak of Levitation** and the **Eye of Agamotto**, Doctor Strange can manipulate time, travel through dimensions, and cast spells that defy the laws of physics. No longer driven by ego, he has become a selfless guardian of the multiverse, often making the difficult choices that others cannot. Based in the Sanctum Sanctorum, he stands as the primary line of defense against threats that the Avengers' physical might cannot stop, bridging the gap between the known world and the infinite mysteries of the beyond.",
+    triviaInfo: "Origin: Stephen Strange was a brilliant but arrogant surgeon. After his accident, he traveled to the Himalayas and found Kamar-Taj. He first appeared in Strange Tales #110 (1963).\n\nBattles: His defining rivalry is with the dread-lord Dormammu of the Dark Dimension. He also famously used the Time Stone to view 14,000,605 possible futures in the war against Thanos, finding the one path to victory.\n\nSpecial Abilities & Gear: He is a master of the mystic arts, capable of astral projection, teleportation, and energy manipulation. His Cloak of Levitation has its own personality, and the Eye of Agamotto allows him to see through illusions and control time.\n\nSecret Trivia: Doctor Strange's look and early stories were heavily influenced by the surreal and psychedelic art of Steve Ditko. His primary residence, the Sanctum Sanctorum, is located at 177A Bleecker Street in Greenwich Village, New York City.",
+    previewUrl: "/data/marvel/assets/doctorstrange-preview.jpg",
+    backgroundUrl: "/data/marvel/assets/doctorstrange-background.jpg",
     color: "#a855f7",
-    powerScore: 800,
+    powerScore: 420,
   },
 ];

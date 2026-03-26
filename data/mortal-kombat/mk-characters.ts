@@ -5,11 +5,10 @@ export const mkCharacters: Character[] = [
     id: "scorpion",
     name: "Scorpion",
     universe: "Mortal Kombat",
-    description:
-      "A resurrected ninja specter seeking vengeance for the death of his family and clan.",
-    lore: "**Hanzo Hasashi** was once a noble warrior and a devoted family man, a leading member of the **Shirai Ryu** ninja clan. His life was shattered when his clan and family were massacred by the rival Lin Kuei, leading to his own death at the hands of the cryomancer **Bi-Han**. Resurrected by the sorcerer Quan Chi as a hellspawn specter, he was consumed by a singular, burning desire for vengeance, becoming the entity known as **Scorpion**. Wielding his signature kunai on a chain and empowered by the fires of the Netherrealm, he crossed the boundaries of life and death to hunt down those responsible for his tragedy.\n\nScorpion is a being of complex honor and tragic rage. While he initially served as a pawn for the Netherrealm's dark interests, he eventually sought to reclaim his humanity and rebuild the Shirai Ryu. His mastery over hellfire allows him to incinerate his foes, teleport through shadows, and summon the damned to aid him in battle. His iconic cry of *'Get over here!'* has become a harbinger of doom for his enemies. Whether fighting for vengeance, redemption, or the protection of Earthrealm, Scorpion remains one of Mortal Kombat's most formidable and iconic combatants, a reminder that even the deepest fire can be tempered by a warrior's soul.",
-    previewUrl:
-      "/data/mortal-kombat/assets/scorpion-preview.jpg",
+    description: "A resurrected ninja specter seeking vengeance for the death of his family and clan.",
+    lore: "**Hanzo Hasashi** was once a noble warrior and a leading member of the **Shirai Ryu** ninja clan. His life was shattered when his clan and family were massacred by the rival Lin Kuei, leading to his own death at the hands of the cryomancer **Bi-Han**. Resurrected by the sorcerer Quan Chi as a hellspawn specter, he was consumed by a singular, burning desire for vengeance, becoming the entity known as **Scorpion**. Wielding his signature kunai on a chain and empowered by the fires of the Netherrealm, he crossed the boundaries of life and death to hunt down those responsible for his tragedy.\n\nScorpion is a being of complex honor and tragic rage. While he initially served as a pawn for the Netherrealm's dark interests, he eventually sought to reclaim his humanity and rebuild the Shirai Ryu. His mastery over hellfire allows him to incinerate his foes, teleport through shadows, and summon the damned to aid him in battle. His iconic cry of *'Get over here!'* has become a harbinger of doom for his enemies. Whether fighting for vengeance, redemption, or the protection of Earthrealm, Scorpion remains one of Mortal Kombat's most formidable and iconic combatants, a reminder that even the deepest fire can be tempered by a warrior's soul.",
+    triviaInfo: "Origin: Hanzo Hasashi was a member of the Shirai Ryu clan until they were exterminated by the Lin Kuei. He was murdered by Bi-Han (the original Sub-Zero) and reborn in the Netherrealm as a specter. He first appeared in Mortal Kombat (1992).\n\nBattles: His most significant battle was his revenge against Bi-Han, whom he killed in the first tournament. He later discovered that the sorcerer Quan Chi was the one who actually orchestrated the massacre of his clan, leading to a new quest for vengeance.\n\nSpecial Abilities & Gear: He wields a kunai on a chain (the 'Spear') and has mastery over hellfire, allowing him to teleport and summon fire. His Fatality 'Toasty!' is one of the most famous in video game history.\n\nSecret Trivia: Scorpion's iconic voice line 'Get over here!' was recorded by Mortal Kombat co-creator Ed Boon. He is the mascot of NetherRealm Studios and has appeared in every Mortal Kombat fighting game to date. His real name, Hanzo Hasashi, was not revealed until much later in the series.",
+    previewUrl: "/data/mortal-kombat/assets/scorpion-preview.jpg",
     backgroundUrl: "/data/mortal-kombat/assets/scorpion-background.jpg",
     color: "#eab308",
     powerScore: 500,
@@ -19,13 +18,11 @@ export const mkCharacters: Character[] = [
     id: "subzero",
     name: "Sub-Zero",
     universe: "Mortal Kombat",
-    description:
-      "A grandmaster of the Lin Kuei clan with the ability to control ice in all its forms.",
+    description: "A grandmaster of the Lin Kuei clan with the ability to control ice in all its forms.",
     lore: "**Kuai Liang** is the younger brother of the original Sub-Zero, Bi-Han, and the current Grandmaster of the **Lin Kuei** clan. Following the death of his brother during the first Mortal Kombat tournament, Kuai Liang assumed the mantle of Sub-Zero to restore honor to his clan and seek justice for his sibling's demise. Unlike the cold-hearted assassins of the Lin Kuei's past, he led a reformation that turned the clan into a force for good, dedicated to the protection of Earthrealm.\n\nAs a cryomancer of exceptional skill, Sub-Zero can manipulate water and moisture in the air to create solid ice in an instant. He can freeze his opponents mid-stride, craft intricate weapons and shields from thin air, and even slide across the battlefield on paths of frost. His mastery over ice is not just a tool for combat, but a reflection of his disciplined and stoic nature. Over the years, he has forged an uneasy but respected alliance with his former rival, **Scorpion**, proving that even the bitterest of enemies can find common ground in the defense of their world. Sub-Zero stands as a pillar of strength and honor, a warrior who proves that one's legacy is defined by their choices, not their origins.",
-    previewUrl:
-      "/data/mortal-kombat/assets/subzero-preview.jpg",
-    backgroundUrl:
-      "/data/mortal-kombat/assets/subzero-background.jpg",
+    triviaInfo: "Origin: Born in Earthrealm to a cryomancer father and human mother, Kuai Liang and his brother Bi-Han were abducted by the Lin Kuei clan. He took over the mantle of Sub-Zero after his brother's death. He first appeared in Mortal Kombat II (1993).\n\nBattles: One of his most important battles was the 'Cyber Initiative' within his own clan, where he fought to prevent the Lin Kuei from turning its members into soulless cyborgs. He was himself turned into a cyborg (Cyber Sub-Zero) for a time before regaining his humanity.\n\nSpecial Abilities & Gear: As a cryomancer, he can freeze enemies and create weapons made of ice. He later gained a powerful artifact called the Dragon Medallion, which significantly increased his powers.\n\nSecret Trivia: Sub-Zero is the only character to have a spin-off action-adventure game (Mortal Kombat Mythologies: Sub-Zero), though it starred his brother Bi-Han. There are actually two Sub-Zeros: Bi-Han (who became Noob Saibot) and Kuai Liang (the current hero).",
+    previewUrl: "/data/mortal-kombat/assets/subzero-preview.jpg",
+    backgroundUrl: "/data/mortal-kombat/assets/subzero-background.jpg",
     color: "#3b82f6",
     powerScore: 490,
     imagePosition: "top",
@@ -34,28 +31,24 @@ export const mkCharacters: Character[] = [
     id: "raiden",
     name: "Raiden",
     universe: "Mortal Kombat",
-    description:
-      "The God of Thunder and protector of Earthrealm, wielding lightning with divine precision.",
+    description: "The God of Thunder and protector of Earthrealm, wielding lightning with divine precision.",
     lore: "**Raiden** is the Eternal God of Thunder and the long-time protector of **Earthrealm**. For eons, he has guided the realm's champions through the brutal tournament known as Mortal Kombat, ensuring that the forces of Outworld and other dark dimensions do not tip the scales of existence in their favor. Possessing divine control over lightning and storms, Raiden is a being of immense wisdom and power, capable of teleporting across dimensions and striking down his foes with celestial fury.\n\nDespite his status as a god, Raiden is not immune to the burdens of leadership and the consequences of his actions. He has often had to make agonizingly difficult choices, sometimes sacrificing individuals or even entire generations to ensure the long-term survival of Earthrealm. This weight of responsibility has occasionally pushed him toward a darker, more ruthless path in his desperation to save his world. However, his core remains dedicated to the principles of justice and the guidance of those who would stand against tyranny. Raiden is the ultimate mentor and guardian, a divine warrior whose commitment to Earthrealm is as eternal as the thunder he commands.",
-    previewUrl:
-      "/data/mortal-kombat/assets/raiden-preview.jpg",
-    backgroundUrl:
-      "/data/mortal-kombat/assets/raiden-background.webp",
+    triviaInfo: "Origin: Raiden is an Eternal God who has protected Earthrealm since its inception. He is a member of the Elder Gods in some timelines. He first appeared in Mortal Kombat (1992).\n\nBattles: His most significant conflict involves his eternal struggle against Shinnok, a fallen Elder God. In 'Mortal Kombat (2011)', he sent a message to his past self to prevent the ultimate victory of Shao Kahn, effectively resetting the entire timeline.\n\nSpecial Abilities & Gear: He has total mastery over electricity and weather. He can fly, teleport, and project lightning from his hands. He often carries a staff or a katana in battle.\n\nSecret Trivia: Raiden's character was partially inspired by the Japanese lightning god Raijin and the character 'Lightning' from the film 'Big Trouble in Little China'. He is one of the few characters who cannot die permanently, as he simply reforms in his home realm.",
+    previewUrl: "/data/mortal-kombat/assets/raiden-preview.jpg",
+    backgroundUrl: "/data/mortal-kombat/assets/raiden-background.webp",
     color: "#60a5fa",
-    powerScore: 680,
+    powerScore: 780,
     imagePosition: "top",
   },
   {
     id: "shangtsung",
     name: "Shang Tsung",
     universe: "Mortal Kombat",
-    description:
-      "A powerful, soul-stealing sorcerer and host of the Mortal Kombat tournament.",
+    description: "A powerful, soul-stealing sorcerer and host of the Mortal Kombat tournament.",
     lore: "**Shang Tsung** is a powerful, soul-stealing sorcerer whose existence is a continuous cycle of deception and manipulation. Cursed by the Elder Gods to consume the souls of his victims to maintain his youth and arcane power, he has served as the host of the Mortal Kombat tournament and a high priest to the emperor **Shao Kahn**. His most terrifying ability is shape-shifting, allowing him to take on the appearance and gain the memories and powers of any combatant he has encountered, making him an exceptionally unpredictable and dangerous foe.\n\nShang Tsung's ultimate goal is always the accumulation of more power and the preservation of his own life at any cost. He is a master of dark magic and psychological warfare, often pitting allies against each other and weaving intricate webs of betrayal that span centuries. He has built massive island strongholds, raised armies of the dead, and manipulated the destiny of entire realms just to satisfy his insatiable hunger for souls. In the world of Mortal Kombat, Shang Tsung is the ultimate snake, a manipulator whose every word is a trap and whose every victory is built on the stolen lives of those unfortunate enough to cross his path.",
-    previewUrl:
-      "/data/mortal-kombat/assets/shangtsung-preview.png",
-    backgroundUrl:
-      "/data/mortal-kombat/assets/shangtsung-background.jpg",
+    triviaInfo: "Origin: Shang Tsung was born in Earthrealm but was discovered by Shao Kahn after he committed a murder during a tournament. He was taken to Outworld and taught dark sorcery. He first appeared in Mortal Kombat (1992) as the final boss.\n\nBattles: He has fought countless champions in the Mortal Kombat tournament to claim their souls. His most humiliating defeat came at the hands of Liu Kang, which ended his 500-year control over the tournament.\n\nSpecial Abilities & Gear: He can steal the souls of those he defeats, granting him their memories and the ability to shape-shift into them perfectly. He also uses flaming skull projectiles and dark sorcery.\n\nSecret Trivia: In the 1995 Mortal Kombat movie, Shang Tsung was played by Cary-Hiroyuki Tagawa, whose performance was so iconic that his likeness and voice were used for the character in later games. His catchphrase is 'Your soul is mine!'",
+    previewUrl: "/data/mortal-kombat/assets/shangtsung-preview.png",
+    backgroundUrl: "/data/mortal-kombat/assets/shangtsung-background.jpg",
     color: "#22c55e",
     powerScore: 650,
   },
@@ -63,13 +56,11 @@ export const mkCharacters: Character[] = [
     id: "goro",
     name: "Goro",
     universe: "Mortal Kombat",
-    description:
-      "A four-armed Shokan warrior and longtime champion of the Mortal Kombat tournament.",
+    description: "A four-armed Shokan warrior and longtime champion of the Mortal Kombat tournament.",
     lore: "**Prince Goro** is a legendary four-armed warrior from the Shokan race, serving as the reigning champion of Mortal Kombat for nine consecutive tournaments over five hundred years. He is the prince of the Shokan underground kingdom of Kuatan and a loyal general in the service of Outworld's emperor, **Shao Kahn**. His massive size, incredible brute strength, and ability to fire energy blasts from his multiple hands make him one of the most feared and physically imposing combatants in the history of the realms.\n\nGoro is a warrior of immense pride and traditional Shokan honor, viewing his long reign as champion as a testament to his race's superiority. He has crushed countless champions from Earthrealm and other worlds with the sheer force of his four-armed strikes and his relentless, earth-shaking stomps. While he is often portrayed as a brutal enforcer, he possesses a warrior's respect for a worthy opponent and a deep loyalty to his people. His presence on the battlefield is a symbol of Outworld's early dominance over the Mortal Kombat tournament, a four-armed powerhouse who forces even the most skilled heroes to reconsider their chances against the strength of a Shokan prince.",
-    previewUrl:
-      "/data/mortal-kombat/assets/goro-preview.jpg",
-    backgroundUrl:
-      "/data/mortal-kombat/assets/goro-background.jpg",
+    triviaInfo: "Origin: Goro is the Prince of the Shokan, a half-human, half-dragon race from Outworld. He was the personal champion of Shao Kahn. He first appeared in Mortal Kombat (1992) as the sub-boss.\n\nBattles: He remained undefeated for 500 years until he was defeated by Liu Kang. This loss brought great shame to the Shokan race and began a long rivalry between Goro and the champions of Earthrealm.\n\nSpecial Abilities & Gear: His most obvious trait is his four arms, which allow him to grab and crush opponents with immense power. He can also project fireballs from his hands and execute a massive 'Sheeva Stomp'.\n\nSecret Trivia: In the original Mortal Kombat game, Goro was a stop-motion clay model rather than a digitized actor, which gave him a unique and terrifying appearance compared to the other fighters. He was actually inspired by various mythological giants and multi-armed deities.",
+    previewUrl: "/data/mortal-kombat/assets/goro-preview.jpg",
+    backgroundUrl: "/data/mortal-kombat/assets/goro-background.jpg",
     color: "#ea580c",
     powerScore: 520,
     imagePosition: "top",
@@ -78,15 +69,13 @@ export const mkCharacters: Character[] = [
     id: "shaokahn",
     name: "Shao Kahn",
     universe: "Mortal Kombat",
-    description:
-      "The tyrannical emperor of Outworld, seeking to conquer all realms.",
+    description: "The tyrannical emperor of Outworld, seeking to conquer all realms.",
     lore: "**Shao Kahn** is the tyrannical and seemingly immortal emperor of **Outworld**, a brutal warlord whose singular goal is the absolute conquest and assimilation of every realm in existence. Wielding a massive Wrath Hammer and empowered by dark sorcery, he has conquered thousands of worlds over eons, personally absorbing the souls of their fallen champions to increase his own already god-like power. He is a strategist of ruthless efficiency, often using the Mortal Kombat tournaments as a legalistic framework for his invasions.\n\nShao Kahn's physical strength is matched only by his overwhelming presence and his complete lack of mercy. He rules Outworld with an iron fist, demanding total submission from his subjects and viewing all other life as either tools to be used or obstacles to be eradicated. His tactical mind allows him to anticipate the moves of the Elder Gods and the champions of Earthrealm, often weaving complex traps that take centuries to unfold. Whether crushing his enemies on the battlefield or manipulating the political landscape of the realms, Shao Kahn is the ultimate conqueror, a being of absolute will who believes that the entire universe is his to claim, one world at a time.",
-    previewUrl:
-      "/data/mortal-kombat/assets/shaokahn-preview.jpg",
-    backgroundUrl:
-      "/data/mortal-kombat/assets/shaokahn-background.jpg",
+    triviaInfo: "Origin: Shao Kahn was originally the advisor to the former emperor of Outworld, Onaga the Dragon King. He poisoned Onaga and claimed the throne for himself. He first appeared in Mortal Kombat II (1993).\n\nBattles: His most significant conflict is his persistent attempt to merge Earthrealm with Outworld. He has successfully merged thousands of other realms, including Edenia, where he murdered King Jerrod and claimed Queen Sindel as his own.\n\nSpecial Abilities & Gear: He possesses god-like strength and mastery over dark magic. His signature weapon is the 'Wrath Hammer', a massive bludgeon that can stun even the strongest warriors. He can also project energy spears and create shields.\n\nSecret Trivia: Shao Kahn's face was kept hidden behind his iconic skull mask for decades. It was only in 'Mortal Kombat 11' that his true, slightly reptilian features were revealed. He is known for mocking his opponents with lines like 'You suck!' and 'It's official, you suck!'",
+    previewUrl: "/data/mortal-kombat/assets/shaokahn-preview.jpg",
+    backgroundUrl: "/data/mortal-kombat/assets/shaokahn-background.jpg",
     color: "#a855f7",
-    powerScore: 700,
+    powerScore: 750,
     imagePosition: "top",
   },
 ];
