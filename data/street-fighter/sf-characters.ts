@@ -11,7 +11,11 @@ export const sfCharacters: Character[] = [
     previewUrl: "/data/street-fighter/assets/ryu-preview.png",
     backgroundUrl: "/data/street-fighter/assets/ryu-background.jpg",
     color: "#ffffff",
-    powerScore: 300,
+    powerScore: 250,
+    gearBonus: 10,
+    prepBonus: 80, // Focus/meditation
+    gearDescription: "### Ansatsuken Attire\n- **Dojo Gi**: Built for maximum range of motion and durability.\n- **Red Headband**: A gift from Ken, representing their eternal bond and focus.",
+    prepDescription: "### Spiritual Meditation\nRyu spends hours in deep meditation, centering his Ki to resist the Satsui no Hado and mastering the 'Power of Nothingness'.",
   },
   {
     id: "vega",
@@ -23,7 +27,11 @@ export const sfCharacters: Character[] = [
     previewUrl: "/data/street-fighter/assets/vega-preview.jpg",
     backgroundUrl: "/data/street-fighter/assets/vega-background.jpg",
     color: "#dc2626",
-    powerScore: 310,
+    powerScore: 230,
+    gearBonus: 40, // Claw
+    prepBonus: 30,
+    gearDescription: "### Spanish Ninja Tools\n- **Three-Pronged Claw**: A razor-sharp extension of his arm for lethal reach.\n- **Protecting Mask**: Specifically designed to shield his face from blood and scarring.",
+    prepDescription: "### Acrobatic Planning\nVega scouts the arena for walls, fences, and high-ground vantage points to maximize his 'Flying Barcelona' trajectory.",
   },
   {
     id: "mbison",
@@ -35,7 +43,11 @@ export const sfCharacters: Character[] = [
     previewUrl: "/data/street-fighter/assets/m-bison-preview.jpg",
     backgroundUrl: "/data/street-fighter/assets/m-bison-background.png",
     color: "#ef4444",
-    powerScore: 600,
+    powerScore: 350,
+    gearBonus: 120, // Shadaloo Tech
+    prepBonus: 150, // Psycho Power mastery
+    gearDescription: "### Shadaloo Dictator Gear\n- **Psycho-Infused Uniform**: Stabilizes and amplifies his raw dark energy.\n- **Teleportation Bracelets**: For instantaneous tactical repositioning.",
+    prepDescription: "### Cognitive Subjugation\nBison uses the Shadaloo satellite network to mentally 'pressure' his opponent, draining their willpower before the physical fight begins.",
   },
   {
     id: "zangief",
@@ -47,7 +59,11 @@ export const sfCharacters: Character[] = [
     previewUrl: "/data/street-fighter/assets/zangief-preview.jpg",
     backgroundUrl: "/data/street-fighter/assets/zangief-background.jpg",
     color: "#ef4444",
-    powerScore: 320,
+    powerScore: 240,
+    gearBonus: 5,
+    prepBonus: 20,
+    gearDescription: "### Wrestler's Kit\n- **Reinforced Wrestling Boots**: Provides maximum traction for massive grapples.\n- **Body Oil**: Red Cyclone's secret for slipping out of holds and minimizing friction damage.",
+    prepDescription: "### Bear Wrestling Drill\nZangief engages in a high-intensity warm-up, often against actual wildlife, to ensure his muscles are at their peak explosive density.",
   },
   {
     id: "dhalsim",
@@ -59,7 +75,11 @@ export const sfCharacters: Character[] = [
     previewUrl: "/data/street-fighter/assets/dhalsim-preview.jpg",
     backgroundUrl: "/data/street-fighter/assets/dhalsim-background.jpg",
     color: "#ea580c",
-    powerScore: 310,
+    powerScore: 260,
+    gearBonus: 10,
+    prepBonus: 100, // Yoga mastery
+    gearDescription: "### Ascetic Accessories\n- **Sacred Skulls**: Belonging to village children, honoring their memory and focusing his purpose.\n- **Fire-Breath Catalyst**: Sacred oils that enhance the intensity of his 'Yoga Flame'.",
+    prepDescription: "### Transcendent Yoga\nDhalsim achieves a state of extreme mind-body harmony, allowing him to stretch his physical limits and access the element of fire.",
   },
   {
     id: "blanka",
@@ -71,7 +91,11 @@ export const sfCharacters: Character[] = [
     previewUrl: "/data/street-fighter/assets/blanka-preview.png",
     backgroundUrl: "/data/street-fighter/assets/blanka-background.jpg",
     color: "#22c55e",
-    powerScore: 290,
+    powerScore: 220,
+    gearBonus: 10,
+    prepBonus: 20,
+    gearDescription: "### Jungle Adaptation\n- **Ankle Shackles**: Remnants of his past used as makeshift blunt weights.\n- **Camouflage Hide**: Skin rich in chlorophyll for blending into verdant environments.",
+    prepDescription: "### Primal Instincts\nBlanka hides in the undergrowth, accumulating static electricity from his surroundings to prepare for a sudden, high-voltage ambush.",
   },
   {
     id: "ehonda",
@@ -83,6 +107,31 @@ export const sfCharacters: Character[] = [
     previewUrl: "/data/street-fighter/assets/ehonda-preview.png",
     backgroundUrl: "/data/street-fighter/assets/ehonda-background.jpg",
     color: "#dc2626",
-    powerScore: 300,
+    powerScore: 235,
+    gearBonus: 5,
+    prepBonus: 15,
+    gearDescription: "### Sumo Tradition\n- **Mawashi**: Traditional belt providing core stability and grip points.\n- **Salt**: Used for purification of the arena and distracting opponents' vision.",
   },
+/*
+  {
+    id: "ken",
+...
+    prepDescription: "### Competitive Fire\nKen watches tapes of his opponent and visualizes a flashy comeback, ensuring his spirit is as 'hot' as his Shoryuken before the match.",
+  },
+  {
+    id: "chunli",
+...
+    prepDescription: "### Investigative Analysis\nChun-Li uses Interpol's database to identify her opponent's criminal history and fighting weaknesses, creating a precise tactical takedown plan.",
+  },
+  {
+    id: "guile",
+...
+    prepDescription: "### Military Briefing\nGuile conducts a systematic 'S.W.O.T.' analysis of the battlefield, identifying defensive perimeters and 'flash-kick' zones to minimize risk.",
+  },
+  {
+    id: "akuma",
+...
+    prepDescription: "### Killer's Focus\nAkuma ignores all physical distractions, focusing entirely on the opponent's 'inner death', waiting for the split-second window to unleash the Raging Demon.",
+  },
+*/
 ];

@@ -9,6 +9,7 @@ import { db } from "@/lib/firebase";
 // Components
 import Header from "@/components/layout/Header";
 import LoreModal from "@/components/ui/LoreModal";
+import ModifierModal from "@/components/ui/ModifierModal";
 import BackgroundLayers from "@/components/visuals/BackgroundLayers";
 import CharacterSelection from "@/components/selection/CharacterSelection";
 import UniverseSelection from "@/components/selection/UniverseSelection";
@@ -29,8 +30,16 @@ export default function Home() {
   const [selectedLoreChar, setSelectedLoreChar] = useState<Character | null>(
     null,
   );
+  const [selectedModifier, setSelectedModifier] = useState<{
+    char: Character;
+    type: "gear" | "prep";
+  } | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [withGear1, setWithGear1] = useState(false);
+  const [withPrep1, setWithPrep1] = useState(false);
+  const [withGear2, setWithGear2] = useState(false);
+  const [withPrep2, setWithPrep2] = useState(false);
 
   // Memoized Data
   const filteredCharacters = useMemo(() => {
@@ -62,17 +71,17 @@ export default function Home() {
   }, []);
 
   // Helpers
-  const getUniverseStats = (universeName: string) => {
+  const getUniverseStats = useMemo(() => (universeName: string) => {
     const chars = characters.filter((c) => c.universe === universeName);
     const avgPower =
-      chars.reduce((acc, c) => acc + c.powerScore, 0) / chars.length;
+      chars.reduce((acc, c) => acc + c.powerScore, 0) / (chars.length || 1);
     return {
       count: chars.length,
       avgPower: Math.round(avgPower),
       color: chars[0]?.color || "#3f3f46",
       background: chars[0]?.backgroundUrl || "",
     };
-  };
+  }, []);
 
   // Handlers
   const selectCharacter = (char: Character) => {
@@ -111,6 +120,10 @@ export default function Home() {
     setUniverse2(null);
     setBattleState("idle");
     setWinner(null);
+    setWithGear1(false);
+    setWithPrep1(false);
+    setWithGear2(false);
+    setWithPrep2(false);
   };
 
   const startBattle = () => {
@@ -134,8 +147,8 @@ export default function Home() {
         const timer = setTimeout(() => {
           (async () => {
             if (mode === "battle" && char1 && char2) {
-              const p1 = char1.powerScore;
-              const p2 = char2.powerScore;
+              const p1 = char1.powerScore + (withGear1 ? (char1.gearBonus || 0) : 0) + (withPrep1 ? (char1.prepBonus || 0) : 0);
+              const p2 = char2.powerScore + (withGear2 ? (char2.gearBonus || 0) : 0) + (withPrep2 ? (char2.prepBonus || 0) : 0);
               const winProb1 = 1 / (1 + Math.pow(10, (p2 - p1) / 200));
               let win: 1 | 2;
               
@@ -179,8 +192,8 @@ export default function Home() {
             } else if (mode === "universe" && universe1 && universe2) {
               const stats1 = getUniverseStats(universe1);
               const stats2 = getUniverseStats(universe2);
-              const p1 = stats1.avgPower;
-              const p2 = stats2.avgPower;
+              const p1 = stats1.avgPower + (withGear1 ? 50 : 0) + (withPrep1 ? 70 : 0); // Base bonus for universe-wide prep/gear
+              const p2 = stats2.avgPower + (withGear2 ? 50 : 0) + (withPrep2 ? 70 : 0);
               let win: 1 | 2;
               
               if (Math.abs(p1 - p2) >= 500) {
@@ -204,7 +217,7 @@ export default function Home() {
         return () => clearTimeout(timer);
       }
     }
-  }, [battleState, countdown, char1, char2, universe1, universe2, mode]);
+  }, [battleState, countdown, char1, char2, universe1, universe2, mode, withGear1, withGear2, withPrep1, withPrep2, getUniverseStats]);
 
   return (
     <main className="relative h-[100dvh] w-full overflow-hidden bg-zinc-950 text-white font-sans">
@@ -234,6 +247,11 @@ export default function Home() {
             <SingleView
               char1={char1}
               setSelectedLoreChar={setSelectedLoreChar}
+              setSelectedModifier={setSelectedModifier}
+              withGear={withGear1}
+              setWithGear={setWithGear1}
+              withPrep={withPrep1}
+              setWithPrep={setWithPrep1}
             />
           )}
 
@@ -249,6 +267,15 @@ export default function Home() {
               setChar1={setChar1}
               setChar2={setChar2}
               setSelectedLoreChar={setSelectedLoreChar}
+              setSelectedModifier={setSelectedModifier}
+              withGear1={withGear1}
+              setWithGear1={setWithGear1}
+              withPrep1={withPrep1}
+              setWithPrep1={setWithPrep1}
+              withGear2={withGear2}
+              setWithGear2={setWithGear2}
+              withPrep2={withPrep2}
+              setWithPrep2={setWithPrep2}
             />
           )}
 
@@ -298,6 +325,14 @@ export default function Home() {
               setBattleState={setBattleState}
               setUniverse1={setUniverse1}
               setUniverse2={setUniverse2}
+              withGear1={withGear1}
+              setWithGear1={setWithGear1}
+              withPrep1={withPrep1}
+              setWithPrep1={setWithPrep1}
+              withGear2={withGear2}
+              setWithGear2={setWithGear2}
+              withPrep2={withPrep2}
+              setWithPrep2={setWithPrep2}
             />
           )}
 
@@ -382,8 +417,9 @@ export default function Home() {
               char2={char2}
               selectCharacter={selectCharacter}
               onUniverseChange={() => {
-                setChar1(null);
-                setChar2(null);
+                if (mode === "single") {
+                  setChar1(null);
+                }
               }}
             />
           )}
@@ -393,6 +429,12 @@ export default function Home() {
       <LoreModal
         character={selectedLoreChar}
         onClose={() => setSelectedLoreChar(null)}
+      />
+
+      <ModifierModal
+        character={selectedModifier?.char || null}
+        type={selectedModifier?.type || null}
+        onClose={() => setSelectedModifier(null)}
       />
 
       <style jsx global>{`

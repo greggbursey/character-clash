@@ -12,6 +12,10 @@ export const swCharacters: Character[] = [
     backgroundUrl: "/data/star-wars/assets/luke-background.jpg",
     color: "#3b82f6",
     powerScore: 650,
+    gearBonus: 50, // Lightsaber
+    prepBonus: 150, // Force focus
+    gearDescription: "### Jedi Master Arsenal\n- **Green Lightsaber**: A weapon built by Luke himself, symbolizing his path to mastery.\n- **X-Wing Flight Suit**: Provides life support and G-force protection for high-speed dogfights.",
+    prepDescription: "### Force Attunement\nLuke connects with the living Force and receives guidance from Force Ghosts, allowing him to perceive the 'Shatterpoint' of any conflict.",
   },
   {
     id: "hansolo",
@@ -24,6 +28,10 @@ export const swCharacters: Character[] = [
     backgroundUrl: "/data/star-wars/assets/hansolo-background.jpg",
     color: "#64748b",
     powerScore: 120,
+    gearBonus: 80, // Millennium Falcon/Blaster
+    prepBonus: 90, // Smuggler's luck/planning
+    gearDescription: "### Smuggler's Kit\n- **DL-44 Blaster Pistol**: Modified for extra punch and faster draw.\n- **Millennium Falcon Co-Pilot Link**: Direct communication with Chewie and the ship's defensive systems.",
+    prepDescription: "### Calculating the Odds\nHan 'never tells the odds' but secretly calculates a bold, high-risk maneuver that catches more disciplined opponents off-guard.",
   },
   {
     id: "chewbacca",
@@ -36,6 +44,10 @@ export const swCharacters: Character[] = [
     backgroundUrl: "/data/star-wars/assets/chewbacca-background.jpg",
     color: "#78350f",
     powerScore: 180,
+    gearBonus: 40, // Bowcaster
+    prepBonus: 30,
+    gearDescription: "### Wookiee Tradition\n- **Bowcaster**: A specialized weapon firing explosive energy-wrapped bolts with massive kinetic impact.\n- **Bandolier**: Contains high-grade starship repair tools and extra bowcaster ammo.",
+    prepDescription: "### Life-Debt Focus\nChewie spends time calibrating his bowcaster's energy cells and preparing himself to take a hit for his companions, fueled by his fierce loyalty.",
   },
   {
     id: "macewindu",
@@ -47,7 +59,11 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/macewindu-preview.jpg",
     backgroundUrl: "/data/star-wars/assets/macewindu-background.jpg",
     color: "#a855f7",
-    powerScore: 480,
+    powerScore: 600,
+    gearBonus: 50,
+    prepBonus: 120,
+    gearDescription: "### Unique Jedi Gear\n- **Purple Lightsaber**: Imbued with a rare crystal, allowing for his unique Vaapad style.\n- **Jedi Council Robes**: Reinforced with light armor weave for the Clone Wars.",
+    prepDescription: "### Shatterpoint Analysis\nMace uses the Force to identify the precise 'Shatterpoint' in his opponent's style—the one moment or flaw where he can strike for a definitive win.",
   },
   {
     id: "yoda",
@@ -59,7 +75,11 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/yoda-preview.jpg",
     backgroundUrl: "/data/star-wars/assets/yoda-background.jpg",
     color: "#22c55e",
-    powerScore: 920,
+    powerScore: 800,
+    gearBonus: 20,
+    prepBonus: 250, // 900 years of experience
+    gearDescription: "### Grand Master's Tools\n- **Shoto Lightsaber**: A shorter blade designed for his height and extreme agility.\n- **Gimer Stick**: A simple wooden cane that masks his true physical speed.",
+    prepDescription: "### Nine Centuries of Wisdom\nYoda enters a state of deep Battle Meditation, aligning the cosmic Force to guide his every movement with precognitive precision.",
   },
   {
     id: "palpatine",
@@ -71,7 +91,11 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/palpatine-preview.jpg",
     backgroundUrl: "/data/star-wars/assets/palpatine-background.jpg",
     color: "#ef4444",
-    powerScore: 950,
+    powerScore: 850,
+    gearBonus: 150, // Death Star/Empire resources
+    prepBonus: 300, // Mastermind of the Sith
+    gearDescription: "### Sith Lord Attire\n- **Sith Robes**: Woven with dark-side energy that hums with a malevolent aura.\n- **Hidden Lightsaber**: Concealed within his sleeve for a sudden, lethal strike.",
+    prepDescription: "### Galactic Grand Strategy\nPalpatine has already won before the fight starts—he has manipulated the environment, the politics, and the opponent's very mind to ensure their fall.",
   },
   {
     id: "vader",
@@ -83,7 +107,11 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/vader-preview.jpg",
     backgroundUrl: "/data/star-wars/assets/vader-background.jpg",
     color: "#ef4444",
-    powerScore: 820,
+    powerScore: 750,
+    gearBonus: 100, // Suit/Lightsaber
+    prepBonus: 120,
+    gearDescription: "### Sith Enforcer Tech\n- **Life-Support Armor**: Grants superhuman strength and durability at the cost of mobility.\n- **Crimson Lightsaber**: A bled-crystal blade that hums with the pain of the dark side.",
+    prepDescription: "### Intimidation Protocol\nVader focuses his hatred, projecting a suffocating field of dark-side energy that drains the physical and mental stamina of his foes.",
   },
   {
     id: "maul",
@@ -96,6 +124,10 @@ export const swCharacters: Character[] = [
     backgroundUrl: "/data/star-wars/assets/maul-background.jpg",
     color: "#ef4444",
     powerScore: 550,
+    gearBonus: 60,
+    prepBonus: 80,
+    gearDescription: "### Sith Assassin Arsenal\n- **Double-Bladed Lightsaber**: Designed for high-speed, multi-angle chaotic strikes.\n- **Dathomirian Leg-Cybernetics**: Specifically tuned for extreme jumping and speed.",
+    prepDescription: "### Vengeful Shadow\nMaul stalks his opponent from the dark, identifying their emotional weaknesses and preparing a blindingly fast first-strike ambush.",
   },
   {
     id: "bane",
@@ -107,7 +139,11 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/bane-preview.jpg",
     backgroundUrl: "/data/star-wars/assets/bane-background.jpeg",
     color: "#7f1d1d",
-    powerScore: 650,
+    powerScore: 700,
+    gearBonus: 120, // Orbalisk armor
+    prepBonus: 200, // Rule of Two planning
+    gearDescription: "### Orbalisk Armor\n- **Living Parasite Suit**: Grants near-invulnerability and constant pain, which fuels his dark-side channeling.\n- **Curved-Hilt Lightsaber**: Designed for the precise, brutal Form II Makashi style.",
+    prepDescription: "### Concentration of Will\nBane focuses his entire existence into a singular point of dark-side power, ensuring his power is absolutely concentrated and overwhelming.",
   },
   {
     id: "starkiller",
@@ -119,6 +155,28 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/starkiller-preview.jpg",
     backgroundUrl: "/data/star-wars/assets/starkiller-background.jpg",
     color: "#6366f1",
-    powerScore: 700,
+    powerScore: 750,
+    gearBonus: 50,
+    prepBonus: 100,
+    gearDescription: "### Secret Apprentice Gear\n- **Reverse-Grip Lightsabers**: Dual blades configured for his unique, aggressive Shien style.\n- **Tactical Flight Suit**: Lightweight and durable for high-impact Force missions.",
+    prepDescription: "### Raw Unfiltered Power\nStarkiller gathers the raw energy of the environment, pushing his Force potential to its absolute breaking point to unleash 'The Force Unleashed'.",
   },
+/*
+  {
+    id: "obiwan",
+    name: "Obi-Wan Kenobi",
+    universe: "Star Wars",
+    description: "The 'Negotiator' and a master of the Soresu defensive lightsaber style.",
+    lore: "A wise and legendary Jedi Master, Obi-Wan trained both Anakin and Luke Skywalker. He is known for his calm, patient approach to combat and his legendary skill in the defensive form Soresu.",
+    triviaInfo: "Origin: Born on Stewjon, Obi-Wan was the apprentice of Qui-Gon Jinn. He was the first Jedi in a millennium to defeat a Sith Lord in combat.\n\nBattles: He defeated Darth Maul on Naboo and Anakin Skywalker on Mustafar. He eventually sacrificed himself to allow Luke and the Rebels to escape the first Death Star.\n\nSpecial Abilities & Gear: He is the absolute master of Form III Soresu, making him almost impossible to hit. He uses the Force for mind tricks and precognition.\n\nSecret Trivia: Alec Guinness was the first actor to play Obi-Wan, followed by Ewan McGregor for the prequels. His name 'Ben' was a survival pseudonym during his exile on Tatooine.",
+    previewUrl: "/data/star-wars/assets/obiwan-preview.jpg",
+    backgroundUrl: "/data/star-wars/assets/obiwan-background.jpg",
+    color: "#3b82f6",
+    powerScore: 680,
+    gearBonus: 40,
+    prepBonus: 120,
+    gearDescription: "### Master's Focus\n- **Signature Blue Lightsaber**: A masterfully balanced blade designed for precision parrying.\n- **Jedi Meditation Cloak**: Helps regulate his connection to the Force during high-intensity stress.",
+    prepDescription: "### The Negotiator's Patience\nObi-Wan centers himself, entering a defensive flow-state. He waits for the opponent to make a single mistake, ensuring his defense is absolute until then.",
+  },
+  */
 ];

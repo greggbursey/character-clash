@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
+import { Brain } from 'lucide-react';
 import { getAssetPath } from '@/lib/utils';
 
 interface UniverseSelectionProps {
@@ -21,7 +23,8 @@ export default function UniverseSelection({
   selectUniverse
 }: UniverseSelectionProps) {
   return (
-    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-4 pb-32 px-4 md:px-6 pt-2">
+    <div className="flex-1 overflow-y-auto hide-scrollbar pb-32 px-4 md:px-6">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-4 pt-2">
       {allUniverses
         .filter(u => u.toLowerCase().includes(searchQuery.toLowerCase()))
         .map((uni) => {
@@ -56,6 +59,16 @@ export default function UniverseSelection({
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
+                <div className="absolute inset-x-0 bottom-0 p-2 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity">
+                   <Link 
+                     href={`/portal?tab=Trivia&category=universe&value=${encodeURIComponent(uni)}`}
+                     className="p-1.5 bg-black/60 rounded-lg hover:bg-purple-600/60 transition-colors border border-white/20"
+                     onClick={(e) => e.stopPropagation()}
+                     title="Play Universe Trivia"
+                   >
+                     <Brain size={12} className="text-purple-300" />
+                   </Link>
+                </div>
                 <div className="absolute inset-0 flex items-center justify-center p-2">
                   <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-center leading-tight drop-shadow-lg">
                     {uni}
@@ -81,6 +94,7 @@ export default function UniverseSelection({
             </button>
           );
         })}
+      </div>
     </div>
   );
 }

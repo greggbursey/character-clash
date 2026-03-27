@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { HelpCircle, Brain, RefreshCw, ArrowLeft, Search as SearchIcon } from "lucide-react";
 import { characters as allCharactersData } from "@/data/characters";
 import { getAssetPath } from "@/lib/utils";
@@ -10,9 +10,10 @@ import { saveTriviaSession } from "@/lib/trivia-service";
 
 interface TriviaQuestion {
   question: string;
-  options: Character[];
-  answer: Character;
+  options: (Character | string)[];
+  answer: Character | string;
   sourceType: 'origin' | 'battles' | 'abilities' | 'secret' | 'lore' | 'universe';
+  isFactQuiz?: boolean;
 }
 
 type QuizCategory = 'all' | 'universe' | 'character';
@@ -32,67 +33,143 @@ function generateQuestions(
   filterValue: string = ""
 ): TriviaQuestion[] {
   let initialPool = [...allCharactersData];
+  let primaryChar: Character | null = null;
   
   if (category === 'universe' && filterValue) {
     initialPool = initialPool.filter(c => c.universe === filterValue);
   } else if (category === 'character' && filterValue) {
-    initialPool = initialPool.filter(c => c.id === filterValue);
+    primaryChar = allCharactersData.find(c => c.id === filterValue) || null;
+    if (primaryChar) {
+      initialPool = [primaryChar];
+    }
   }
 
   if (initialPool.length === 0) return [];
   
   const questionCount = category === 'character' ? 5 : 10;
-  const selectedChars = initialPool.sort(() => 0.5 - Math.random());
   const questions: TriviaQuestion[] = [];
   
   for (let i = 0; i < questionCount; i++) {
-    const correctChar = selectedChars[i % selectedChars.length];
+    // For character mode, we always use the primary character but different trivia sections
+    const correctChar = category === 'character' ? primaryChar! : initialPool[Math.floor(Math.random() * initialPool.length)];
     
     const types: ('origin' | 'battles' | 'abilities' | 'secret' | 'universe')[] = 
       ['origin', 'battles', 'abilities', 'secret', 'universe'];
-    const chosenType = types[Math.floor(Math.random() * types.length)];
     
+    // Filter out 'universe' for specific modes
+    const validTypes = category !== 'all' 
+      ? types.filter(t => t !== 'universe') 
+      : types;
+      
+    // For character mode, cycle through the 4 lore types
+    const chosenType = category === 'character' 
+      ? ['origin', 'battles', 'abilities', 'secret'][i % 4] as any
+      : validTypes[Math.floor(Math.random() * validTypes.length)];
+    
+    const isFactQuiz = category === 'character';
     let questionText = "";
+    let answerText = "";
     
     if (chosenType === 'universe') {
       questionText = `Which universe does ________________ belong to?`;
+      answerText = correctChar.universe;
     } else {
       const triviaParts = correctChar.triviaInfo?.split('\n\n') || [];
       const section = triviaParts.find(p => p.toLowerCase().startsWith(chosenType.slice(0, 4)));
       
-      if (section) {
-        const content = section.split(': ').slice(1).join(': ');
-        questionText = `Whose lore states: "${maskName(content, correctChar.name)}"?`;
+      const content = section 
+        ? section.split(': ').slice(1).join(': ')
+        : correctChar.description;
+
+      const maskedContent = maskName(content, correctChar.name);
+      
+      if (isFactQuiz) {
+        // Questions about the character's facts
+        const typeLabels: Record<string, string> = {
+          origin: "origin and backstory",
+          battles: "legendary battles",
+          abilities: "special abilities and gear",
+          secret: "hidden secrets or trivia"
+        };
+        questionText = `Which of these is the correct ${typeLabels[chosenType] || chosenType} for ${correctChar.name}?`;
+        answerText = content;
       } else {
-        questionText = `Whose history involves: "${maskName(correctChar.description, correctChar.name)}"?`;
+        // Traditional "Who is this?" questions
+        const templates = [
+          `Which ${correctChar.universe} legend is described here: "${maskedContent}"?`,
+          `Based on these logs, identify the character: "${maskedContent}"`,
+          `In the ${correctChar.universe} archives, who is associated with: "${maskedContent}"?`,
+          `Which ${correctChar.universe} warrior matches this file: "${maskedContent}"?`
+        ];
+        questionText = templates[Math.floor(Math.random() * templates.length)];
       }
     }
 
-    const incorrectOptions: Character[] = [];
-    const poolForOptions = allCharactersData.filter(c => c.id !== correctChar.id);
-    const shuffledPool = poolForOptions.sort(() => 0.5 - Math.random());
+    // Options generation
+    const options: (Character | string)[] = [];
     
-    for (const char of shuffledPool) {
-      if (incorrectOptions.length >= 3) break;
-      if (category === 'all' && !incorrectOptions.find(c => c.universe === char.universe)) {
-        incorrectOptions.push(char);
-      } else if (category !== 'all') {
-        incorrectOptions.push(char);
+    if (isFactQuiz) {
+      // Fact-based distractors (take same section from other characters in the same universe)
+      options.push(answerText);
+      const distractors = allCharactersData
+        .filter(c => c.id !== correctChar.id && c.universe === correctChar.universe)
+        .sort(() => 0.5 - Math.random());
+      
+      for (const dist of distractors) {
+        if (options.length >= 4) break;
+        const dParts = dist.triviaInfo?.split('\n\n') || [];
+        const dSection = dParts.find(p => p.toLowerCase().startsWith(chosenType.slice(0, 4)));
+        const dContent = dSection ? dSection.split(': ').slice(1).join(': ') : dist.description;
+        if (dContent && !options.includes(dContent)) {
+          options.push(dContent);
+        }
       }
-    }
-    
-    while (incorrectOptions.length < 3 && shuffledPool.length > 0) {
-      const char = shuffledPool.pop()!;
-      if (!incorrectOptions.find(c => c.id === char.id)) {
-        incorrectOptions.push(char);
+      
+      // Fallback for small universes
+      if (options.length < 4) {
+        const globalDistractors = allCharactersData
+          .filter(c => c.id !== correctChar.id && !distractors.find(d => d.id === c.id))
+          .sort(() => 0.5 - Math.random());
+        for (const dist of globalDistractors) {
+          if (options.length >= 4) break;
+          const dParts = dist.triviaInfo?.split('\n\n') || [];
+          const dSection = dParts.find(p => p.toLowerCase().startsWith(chosenType.slice(0, 4)));
+          const dContent = dSection ? dSection.split(': ').slice(1).join(': ') : dist.description;
+          if (dContent && !options.includes(dContent)) {
+            options.push(dContent);
+          }
+        }
       }
+    } else if (chosenType === 'universe') {
+      const otherUniverses = Array.from(new Set(allCharactersData.map(c => c.universe)))
+        .filter(u => u !== correctChar.universe)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3);
+      options.push(correctChar); // Correct character
+      // Wait, if it's universe question, options are characters? 
+      // Current UI expects opt.name for character options.
+      // But for universe questions, it's "Which universe does X belong to?". 
+      // We need it to be consistent. Let's stick to characters as options for non-fact-quiz.
+      const shuffledUnis = otherUniverses.sort(() => 0.5 - Math.random()).slice(0, 3);
+      for (const uni of shuffledUnis) {
+         options.push(allCharactersData.find(c => c.universe === uni)!);
+      }
+    } else {
+      let poolForDistractors = allCharactersData.filter(c => c.id !== correctChar.id);
+      if (category !== 'all') {
+        const sameUniPool = poolForDistractors.filter(c => c.universe === correctChar.universe);
+        if (sameUniPool.length >= 3) poolForDistractors = sameUniPool;
+      }
+      const shuffledPool = poolForDistractors.sort(() => 0.5 - Math.random()).slice(0, 3);
+      options.push(correctChar, ...shuffledPool);
     }
 
     questions.push({
       question: questionText,
-      options: [...incorrectOptions, correctChar].sort(() => 0.5 - Math.random()),
-      answer: correctChar,
-      sourceType: chosenType === 'universe' ? 'universe' : chosenType as any
+      options: options.sort(() => 0.5 - Math.random()),
+      answer: isFactQuiz ? answerText : correctChar,
+      sourceType: chosenType,
+      isFactQuiz
     });
   }
 
@@ -108,19 +185,32 @@ function getScoreMessage(score: number, total: number): string {
   return "Ouch! Time to hit the archives and try again. 😅";
 }
 
-export function CharacterTrivia() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [selectionStep, setSelectionStep] = useState<'mode' | 'universe' | 'character'>('mode');
+interface CharacterTriviaProps {
+  initialCategory?: QuizCategory;
+  initialValue?: string;
+}
+
+export function CharacterTrivia({ initialCategory, initialValue }: CharacterTriviaProps) {
+  const [isPlaying, setIsPlaying] = useState(!!(initialCategory && initialValue));
+  const [selectionStep, setSelectionStep] = useState<'mode' | 'universe' | 'character'>(
+    initialCategory === 'universe' ? 'universe' : 
+    initialCategory === 'character' ? 'character' : 'mode'
+  );
   const [charSearchQuery, setCharSearchQuery] = useState("");
-  const [category, setCategory] = useState<QuizCategory>('all');
-  const [filterValue, setFilterValue] = useState("");
+  const [category, setCategory] = useState<QuizCategory>(initialCategory || 'all');
+  const [filterValue, setFilterValue] = useState(initialValue || "");
   const [currentIdx, setCurrentIdx] = useState(0);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
-  const [selectedAnswer, setSelectedAnswer] = useState<Character | null>(null);
-  const [questions, setQuestions] = useState<TriviaQuestion[]>([]);
+  const [selectedAnswer, setSelectedAnswer] = useState<Character | string | null>(null);
+  const [questions, setQuestions] = useState<TriviaQuestion[]>(() => {
+    if (initialCategory && initialValue) {
+      return generateQuestions(initialCategory, initialValue);
+    }
+    return [];
+  });
 
-  const startQuiz = (cat: QuizCategory, val: string = "") => {
+  const startQuiz = useCallback((cat: QuizCategory, val: string = "") => {
     const q = generateQuestions(cat, val);
     if (q.length === 0) return;
     setQuestions(q);
@@ -131,17 +221,22 @@ export function CharacterTrivia() {
     setCurrentIdx(0);
     setScore(0);
     setSelectedAnswer(null);
-  };
+  }, []);
 
-  const handleAnswer = (opt: Character) => {
+  const handleAnswer = (opt: Character | string) => {
     if (selectedAnswer !== null) return;
     setSelectedAnswer(opt);
     
     // Check if correct
-    const isCorrect = opt.id === questions[currentIdx].answer.id;
+    const currentQuestion = questions[currentIdx];
+    const isCorrect = typeof opt === 'string' 
+      ? opt === currentQuestion.answer 
+      : opt.id === (currentQuestion.answer as Character).id;
+
     if (isCorrect) {
       setScore(s => s + 1);
     }
+
     
     const isLastQuestion = currentIdx === questions.length - 1;
     
@@ -359,24 +454,37 @@ export function CharacterTrivia() {
           </div>
  
           <div className="grid grid-cols-1 gap-2 overflow-y-auto max-h-[350px] pr-1 no-scrollbar pb-4">
-             {questions[currentIdx]?.options.map((opt) => (
-               <button
-                  key={opt.id}
-                  onClick={() => handleAnswer(opt)}
-                  disabled={selectedAnswer !== null}
-                  className={`p-3 rounded-xl border text-sm font-bold transition-all flex items-center gap-4 text-left
-                    ${selectedAnswer === null ? 'border-zinc-800 bg-zinc-800/50 hover:bg-zinc-700 text-zinc-300 hover:text-white' : ''}
-                    ${selectedAnswer !== null && opt.id === questions[currentIdx].answer.id ? 'border-green-500 bg-green-500/20 text-green-400' : ''}
-                    ${selectedAnswer?.id === opt.id && opt.id !== questions[currentIdx].answer.id ? 'border-red-500 bg-red-500/20 text-red-400' : ''}
-                    ${selectedAnswer !== null && opt.id !== questions[currentIdx].answer.id && selectedAnswer?.id !== opt.id ? 'border-zinc-800 bg-zinc-900 text-zinc-600 opacity-50' : ''}
-                  `}
-               >
-                 <div className="relative w-10 h-10 flex-shrink-0">
-                   <Image src={getAssetPath(opt.previewUrl)} alt={opt.name} fill className="rounded-full border-2 border-zinc-700 object-cover bg-zinc-800 shadow-lg" />
-                 </div>
-                 <span className="flex-1">{opt.name}</span>
-               </button>
-             ))}
+             {questions[currentIdx]?.options.map((opt, idx) => {
+               const isString = typeof opt === 'string';
+               const currentQuestion = questions[currentIdx];
+               const isCorrect = isString 
+                 ? opt === currentQuestion.answer 
+                 : opt.id === (currentQuestion.answer as Character).id;
+               const isSelected = isString
+                 ? selectedAnswer === opt
+                 : selectedAnswer && typeof selectedAnswer !== 'string' && selectedAnswer.id === opt.id;
+
+               return (
+                 <button
+                    key={isString ? `${idx}-${opt.slice(0, 10)}` : opt.id}
+                    onClick={() => handleAnswer(opt)}
+                    disabled={selectedAnswer !== null}
+                    className={`p-3 rounded-xl border text-sm font-bold transition-all flex items-center gap-4 text-left
+                      ${selectedAnswer === null ? 'border-zinc-800 bg-zinc-800/50 hover:bg-zinc-700 text-zinc-300 hover:text-white' : ''}
+                      ${selectedAnswer !== null && isCorrect ? 'border-green-500 bg-green-500/20 text-green-400' : ''}
+                      ${isSelected && !isCorrect ? 'border-red-500 bg-red-500/20 text-red-400' : ''}
+                      ${selectedAnswer !== null && !isCorrect && !isSelected ? 'border-zinc-800 bg-zinc-900 text-zinc-600 opacity-50' : ''}
+                    `}
+                 >
+                   {!isString && (
+                     <div className="relative w-10 h-10 flex-shrink-0">
+                       <Image src={getAssetPath(opt.previewUrl)} alt={opt.name} fill className="rounded-full border-2 border-zinc-700 object-cover bg-zinc-800 shadow-lg" />
+                     </div>
+                   )}
+                   <span className="flex-1">{isString ? opt : opt.name}</span>
+                 </button>
+               );
+             })}
           </div>
         </div>
       )}

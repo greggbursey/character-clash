@@ -11,7 +11,11 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/spiderman-preview.jpg",
     backgroundUrl: "/data/marvel/assets/spiderman-background.jpg",
     color: "#ef4444",
-    powerScore: 180,
+    powerScore: 320,
+    gearBonus: 80, // Web-shooters/Tech
+    prepBonus: 120, // Science genius
+    gearDescription: "### Web-Slinger Prototype\n- **Fluid Dispersion Web-Shooters**: Custom-built wrist devices for high-tensile artificial webbing.\n- **Spider-Tracer Network**: Miniaturized tracking devices linked to his spider-sense.",
+    prepDescription: "### Scientific Field Analysis\nPeter uses his genius-level intellect to analyze the chemical and structural weaknesses of his opponent's gear, often crafting a specialized web-formula on the fly.",
   },
   {
     id: "ironman",
@@ -23,7 +27,11 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/ironman-preview.jpg",
     backgroundUrl: "/data/marvel/assets/ironman-background.jpg",
     color: "#eab308",
-    powerScore: 190,
+    powerScore: 350,
+    gearBonus: 400, // Iron Man Suits
+    prepBonus: 300, // Engineering genius
+    gearDescription: "### Bleeding Edge Armor\n- **Nanotech Suit**: Capable of forming any weapon or tool Tony can imagine in real-time.\n- **Repulsor Cannons**: High-intensity muon-beam projectors for precise long-range destruction.",
+    prepDescription: "### AI Battle Simulation\nTony's onboard AI (F.R.I.D.A.Y.) runs millions of combat scenarios, identifying the optimal counter-strategy and suit configuration for the specific opponent.",
   },
   {
     id: "thor",
@@ -35,7 +43,11 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/thor-preview.jpg",
     backgroundUrl: "/data/marvel/assets/thor-background.jpg",
     color: "#60a5fa",
-    powerScore: 450,
+    powerScore: 850,
+    gearBonus: 100, // Mjolnir
+    prepBonus: 50,
+    gearDescription: "### Asgardian Relics\n- **Mjolnir**: An enchanted Uru hammer that grants flight and weather manipulation to the worthy.\n- **Megingjord**: The Belt of Strength, which doubles his already god-like physical prowess.",
+    prepDescription: "### Warrior's Prayer\nThor centers his spirit, calling upon the Odinforce to imbue his body with the raw, primordial energy of the Nine Realms.",
   },
   {
     id: "hulk",
@@ -47,7 +59,11 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/hulk-preview.jpg",
     backgroundUrl: "/data/marvel/assets/hulk-background.jpg",
     color: "#22c55e",
-    powerScore: 480,
+    powerScore: 900,
+    gearBonus: 20,
+    prepBonus: 30, // Rage management
+    gearDescription: "### Indestructible Gear\n- **Stark-Tech Nano-Pants**: Specifically designed to expand with his mass and resist extreme physical stress.\n- **Gamma-Radiation Siphon**: (Rarely used) temporarily boosts his power by absorbing ambient energy.",
+    prepDescription: "### Suppressed Rage\nBanner spends time mentally 'boxing in' his trauma, building a reservoir of repressed anger that can be unleashed in a single, devastating 'Worldbreaker' burst.",
   },
   {
     id: "captainamerica",
@@ -59,7 +75,11 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/captainamerica-preview.jpg",
     backgroundUrl: "/data/marvel/assets/captainamerica-background.jpg",
     color: "#3b82f6",
-    powerScore: 170,
+    powerScore: 300,
+    gearBonus: 50, // Shield
+    prepBonus: 100, // Tactical leader
+    gearDescription: "### Symbol of Freedom\n- **Vibranium Shield**: A perfectly balanced, indestructible disc that absorbs and redistributes kinetic energy.\n- **Utility Harness**: Contains tactical communication gear and battlefield medical supplies.",
+    prepDescription: "### Battlefield Reconnaissance\nCap studies the topography and enemy formations, formulating a multi-layered tactical plan that accounts for every variable and inspires his allies.",
   },
   {
     id: "thanos",
@@ -72,6 +92,10 @@ export const marvelCharacters: Character[] = [
     backgroundUrl: "/data/marvel/assets/thanos-background.png",
     color: "#a855f7",
     powerScore: 950,
+    gearBonus: 200, // Infinity Gauntlet
+    prepBonus: 250, // Cosmic strategist
+    gearDescription: "### Titan Sovereign Gear\n- **Infinity Gauntlet**: A gold focal point for the six Infinity Stones, granting dominion over existence.\n- **Double-Bladed Sword**: A massive Uru blade capable of parrying even Mjolnir.",
+    prepDescription: "### Nihilist Logic\nThanos calculates the 'necessary' sacrifices and structural weaknesses of the universe, ensuring his victory is the only logical conclusion for reality.",
   },
   {
     id: "venom",
@@ -83,7 +107,11 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/venom-preview.jpg",
     backgroundUrl: "/data/marvel/assets/venom-background.jpg",
     color: "#18181b",
-    powerScore: 240,
+    powerScore: 360,
+    gearBonus: 60, // Symbiote adaptations
+    prepBonus: 40,
+    gearDescription: "### Klyntar Biology\n- **Symbiote Tendrils**: Shifting organic matter that can form blades, shields, or entrapment webs.\n- **Adaptive Camouflage**: Allows the symbiote to perfectly mimic the wearer's surroundings or clothing.",
+    prepDescription: "### Symbiotic Synchrony\nEddie and the symbiote spend time in 'The Hive,' aligning their disparate consciousnesses to operate as a single, lethal, and focused mind.",
   },
   {
     id: "blackpanther",
@@ -95,7 +123,11 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/blackpanther-preview.jpg",
     backgroundUrl: "/data/marvel/assets/blackpanther-background.jpg",
     color: "#18181b",
-    powerScore: 195,
+    powerScore: 340,
+    gearBonus: 150, // Vibranium Tech
+    prepBonus: 110, // King's resources
+    gearDescription: "### King's Panther Habit\n- **Kinetic-Absorption Weave**: Woven from Vibranium, it stores physical impact and releases it in outward bursts.\n- **Kimoyo Beads**: Multifunctional advanced Wakandan tech for communication and hacking.",
+    prepDescription: "### Wakandan Intelligence Network\nT'Challa utilizes his global network of spies and Wakanda's superior technology to gather every possible detail on his opponent's background.",
   },
   {
     id: "doctorstrange",
@@ -107,6 +139,60 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/doctorstrange-preview.jpg",
     backgroundUrl: "/data/marvel/assets/doctorstrange-background.jpg",
     color: "#a855f7",
-    powerScore: 420,
+    powerScore: 500,
+    gearBonus: 180, // Mystic artifacts
+    prepBonus: 200, // Master of mystic arts
+    gearDescription: "### Sanctum Relics\n- **Cloak of Levitation**: A sentient garment that allows for flight and can act independently in combat.\n- **Eye of Agamotto**: A powerful conduit for the Time Stone and mystical truth-seeking.",
+    prepDescription: "### Astral Projection Meditation\nStrange travels through the multiverse in his astral form, witnessing millions of possible outcomes to find the single sequence of spells that ensures victory.",
   },
+/*
+  {
+    id: "blackwidow",
+    name: "Black Widow",
+    universe: "Marvel",
+    description: "A world-class spy and former assassin with elite martial arts and espionage skills.",
+    lore: "Natasha Romanoff was trained in the infamous Red Room as a lethal weapon. She eventually defected to S.H.I.E.L.D. and became a core member of the Avengers, using her unique skill set to handle the world's most sensitive and dangerous missions.",
+    triviaInfo: "Origin: Born in the Soviet Union, Natasha was part of the 'Black Widow Program'. She first appeared in Tales of Suspense #52 (1964).\n\nBattles: She has fought against and alongside the world's greatest heroes and villains, proving that skill and bravery can match any superpower.\n\nSpecial Abilities & Gear: She uses 'Widow's Bite' gauntlets, batons, and a variety of specialized spy tech.\n\nSecret Trivia: Natasha was originally a villain and an antagonist to Iron Man before becoming a hero.",
+    previewUrl: "/data/marvel/assets/blackwidow-preview.jpg",
+    backgroundUrl: "/data/marvel/assets/blackwidow-background.jpg",
+    color: "#dc2626",
+    powerScore: 280,
+    gearBonus: 60,
+    prepBonus: 140,
+    gearDescription: "### Red Room Arsenal\n- **Widow's Bite**: Gauntlets that deliver high-voltage electrical shocks and fire grappling hooks.\n- **Stealth Suit**: Built with light-bending fabric and silenced tactical gear.",
+    prepDescription: "### Deep-Cover Infiltration\nNatasha infiltrates the opponent's background, identifying their secrets and psychological pressure points to finish the fight before it gets physical.",
+  },
+  {
+    id: "hawkeye",
+    name: "Hawkeye",
+    universe: "Marvel",
+    description: "The world's greatest marksman, wielding a custom bow and trick arrows.",
+    lore: "Clint Barton is a circus-trained archer who turned his life around to become an Avenger. Despite having no superpowers, his accuracy and resourcefulness make him one of the most reliable heroes on the team.",
+    triviaInfo: "Origin: An orphan who joined the circus, he was trained as a master archer. He first appeared in Tales of Suspense #57 (1964).\n\nBattles: He has consistently proven that a well-placed arrow can take down gods and monsters.\n\nSpecial Abilities & Gear: He uses a custom bow and a vast array of 'trick arrows,' including explosive, sonic, and EMP variants.\n\nSecret Trivia: Clint was once the hero 'Ronin' and also briefly used the identity of 'Goliath' after using experimental Pym particles.",
+    previewUrl: "/data/marvel/assets/hawkeye-preview.jpg",
+    backgroundUrl: "/data/marvel/assets/hawkeye-background.jpg",
+    color: "#a855f7",
+    powerScore: 260,
+    gearBonus: 120, // Trick arrows
+    prepBonus: 90,
+    gearDescription: "### Advanced Archery Kit\n- **Trick Arrowheads**: A specialized quiver containing explosive, EMP, sonic, and acid arrows.\n- **High-Tension Bow**: Custom-engineered for ranges exceeding traditional archery limits.",
+    prepDescription: "### Nesting & Sight Lines\nClint identifies the highest vantage point in the arena and sets up a series of trip-wire arrows to control the flow of the battlefield.",
+  },
+  {
+    id: "captainmarvel",
+    name: "Captain Marvel",
+    universe: "Marvel",
+    description: "An incredibly powerful cosmic hero with the ability to manipulate energy on a massive scale.",
+    lore: "Carol Danvers was an Air Force pilot whose DNA was fused with that of a Kree warrior. She possesses incredible strength, flight, and the ability to absorb and discharge cosmic energy.",
+    triviaInfo: "Origin: Carol Danvers was a pilot who was caught in the blast of a Kree device. She first appeared as Carol in Marvel Super-Heroes #13 (1968) and as Ms. Marvel in Ms. Marvel #1 (1977).\n\nBattles: She has fought in interstellar wars and served as a bridge between Earth and the stars.\n\nSpecial Abilities & Gear: She can fly through space and fire powerful photon blasts.\n\nSecret Trivia: Before becoming Captain Marvel, Carol used the names Ms. Marvel, Binary, and Warbird.",
+    previewUrl: "/data/marvel/assets/captainmarvel-preview.jpg",
+    backgroundUrl: "/data/marvel/assets/captainmarvel-background.jpg",
+    color: "#eab308",
+    powerScore: 880,
+    gearBonus: 60,
+    prepBonus: 80,
+    gearDescription: "### Kree Starforce Gear\n- **Adaptive Flight Suit**: Constructed from resilient Kree fabrics that withstand atmospheric reentry and cosmic radiation.\n- **Photon Bracers**: Focus and amplify her natural energy projection for more precise 'Binary' strikes.",
+    prepDescription: "### Galactic Beacon Calibration\nCarol enters a high-altitude state, absorbing cosmic rays to recharge her energy reserves to their peak 'Binary' potential.",
+  },
+*/
 ];

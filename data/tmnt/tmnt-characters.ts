@@ -11,7 +11,11 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/leo-preview.jpg",
     backgroundUrl: "/data/tmnt/assets/leo-background.jpg",
     color: "#3b82f6",
-    powerScore: 150,
+    powerScore: 125,
+    gearBonus: 40,
+    prepBonus: 60,
+    gearDescription: "### Tactical Arsenal\n- **Twin Katanas**: Masterfully forged carbon-steel blades.\n- **Shuriken**: Balanced throwing stars for ranged distraction.\n- **Grappling Hook**: Hidden in the belt for rapid vertical movement.",
+    prepDescription: "### The Strategist's Plan\nLeo studies the opponent's fighting rhythm, identifying predictable patterns and coordinating his brothers for a synchronized multi-angle strike.",
   },
   {
     id: "mikey",
@@ -23,7 +27,11 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/mikey-preview.jpg",
     backgroundUrl: "/data/tmnt/assets/mikey-background.jpg",
     color: "#f97316",
-    powerScore: 130,
+    powerScore: 110,
+    gearBonus: 30,
+    prepBonus: 40,
+    gearDescription: "### Freestyle Gear\n- **Nunchaku**: High-speed kinetic weapons used for unpredictable attack angles.\n- **Skateboard**: Custom-built for combat-speed sewer and street mobility.\n- **Kusarigama**: A hooked chain for long-range snagging.",
+    prepDescription: "### Creative Chaos\nMikey sets up distracting traps around the arena—and ensures there's a pizza stash nearby to keep his energy (and morale) at peak levels.",
   },
   {
     id: "donnie",
@@ -35,7 +43,11 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/donnie-preview.jpg",
     backgroundUrl: "/data/tmnt/assets/donnie-background.jpg",
     color: "#a855f7",
-    powerScore: 140,
+    powerScore: 115,
+    gearBonus: 80, // Tech and gadgets
+    prepBonus: 70,
+    gearDescription: "### Tech Genius Gadgets\n- **Reinforced Bo Staff**: Enhanced with hidden shock-emitters and scanners.\n- **T-Phone**: Provides real-time analysis of enemy vitals and tech weaknesses.\n- **Portable Turret**: Deployable mini-defense unit.",
+    prepDescription: "### Machine Calibration\nDonnie builds specialized tech-counters to the opponent and hacks local security feeds to control the battlefield's environment.",
   },
   {
     id: "raph",
@@ -47,7 +59,11 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/raph-preview.jpg",
     backgroundUrl: "/data/tmnt/assets/raph-background.png",
     color: "#ef4444",
-    powerScore: 160,
+    powerScore: 130,
+    gearBonus: 35,
+    prepBonus: 45,
+    gearDescription: "### Brutal CQC Gear\n- **Twin Sai**: Close-quarters weapons designed for trapping blades and striking pressure points.\n- **Heavy Hand-Wraps**: Provides extra impact for his raw physical punches.",
+    prepDescription: "### Channeled Rage\nRaph focuses his anger into a high-intensity drill, identifying the shortest path to a physical confrontation where he can overwhelm his foe.",
   },
   {
     id: "splinter",
@@ -59,7 +75,11 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/splinter-preview.png",
     backgroundUrl: "/data/tmnt/assets/splinter-background.jpg",
     color: "#78350f",
-    powerScore: 200,
+    powerScore: 155,
+    gearBonus: 20,
+    prepBonus: 100, // Master of prep/wisdom
+    gearDescription: "### Master's Tools\n- **Walking Cane**: A simple wooden staff that hides a deadly secret blade.\n- **Herbal Remedies**: Natural salves used for rapid focus and pain management.",
+    prepDescription: "### Spiritual Fortitude\nSplinter meditates to reach a state of 'Mushin' (no-mind), allowing him to react to attacks before the opponent has even initiated them.",
   },
   {
     id: "shredder",
@@ -71,7 +91,11 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/shredder-preview.png",
     backgroundUrl: "/data/tmnt/assets/shredder-background.jpg",
     color: "#52525b",
-    powerScore: 200,
+    powerScore: 160,
+    gearBonus: 60, // Bladed armor
+    prepBonus: 90,
+    gearDescription: "### Kuroi Yoroi Armor\n- **Bladed Gauntlets**: Retractable steel claws for shredding armor.\n- **Spiked Plates**: Offensive-defensive gear that punishes close-range brawlers.",
+    prepDescription: "### Foot Clan Mobilization\nShredder deploys a network of hidden ninjas for ambushes and ensuring his armor's micro-blades are sharpened to a molecular edge.",
   },
   {
     id: "caseyjones",
@@ -83,7 +107,11 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/caseyjones-preview.jpg",
     backgroundUrl: "/data/tmnt/assets/caseyjones-background.jpg",
     color: "#1e293b",
-    powerScore: 30,
+    powerScore: 40,
+    gearBonus: 50, // Sports equipment
+    prepBonus: 30,
+    gearDescription: "### Sports Equipment Bag\n- **Hockey Mask**: Heavy-duty protection for his identity and face.\n- **Baseball Bats & Golf Clubs**: Self-taught weapons used for maximum kinetic impact.",
+    prepDescription: "### Street Vigilance\nCasey patrols the alleyways beforehand, identifying escape routes and stashing extra gear to ensure he never runs out of wood to swing.",
   },
   {
     id: "krang",
@@ -95,7 +123,11 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/krang-preview.png",
     backgroundUrl: "/data/tmnt/assets/krang-background.png",
     color: "#ec4899",
-    powerScore: 350,
+    powerScore: 180, // Android body
+    gearBonus: 100, // Technodrome tech
+    prepBonus: 120,
+    gearDescription: "### Android Body\n- **Shapeshifting Limbs**: Can transform into axes, shields, and morning stars.\n- **Dimension X Tech**: Incorporated laser systems and reality-warping energy cells.",
+    prepDescription: "### Technological Subversion\nKrang uses the Technodrome's sensors to map the molecular structure of the arena, looking for ways to warp reality to his favor.",
   },
   {
     id: "bebop",
@@ -107,6 +139,28 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/bebop-preview.png",
     backgroundUrl: "/data/tmnt/assets/bebop-background.jpg",
     color: "#a21caf",
-    powerScore: 120,
+    powerScore: 90,
+    gearBonus: 30,
+    prepBonus: 10,
+    gearDescription: "### Foot Clan Thug Kit\n- **Laser Drill**: High-powered beam weapon provided by Krang.\n- **Iron Knuckles**: Enhances his mutant warthog strength for brutal punches.",
+    prepDescription: "### Brutish Planning\nBebop mostly focus on getting 'pumped up' and ensuring his laser drill has a fresh battery pack before charging blindly into the fray.",
   },
+/*
+  {
+    id: "rocksteady",
+    name: "Rocksteady",
+    universe: "TMNT",
+    description: "A mutant rhinoceros and the muscle of Shredder's henchmen duo. Wears a grey mask and carries heavy weaponry.",
+    lore: "Once a human street thug, Rocksteady was mutated with rhinoceros DNA to become a powerhouse for the Foot Clan. He and Bebop are nearly inseparable, often sharing the same bumbling failures and brutal successes.",
+    triviaInfo: "Origin: Mutated alongside Bebop. His name comes from 'Rocksteady', a genre of Jamaican music that was a precursor to Reggae.\n\nBattles: Like Bebop, he has fought the Turtles countless times, often using his rhino horn for devastating ramming attacks.\n\nSpecial Abilities & Gear: Superhuman strength and durability. He frequently uses M-60 machine guns and grenades.\n\nSecret Trivia: In some versions, he is portrayed as slightly more competent than Bebop, though both are generally outsmarted by the Turtles.",
+    previewUrl: "/data/tmnt/assets/rocksteady-preview.png",
+    backgroundUrl: "/data/tmnt/assets/rocksteady-background.jpg",
+    color: "#64748b",
+    powerScore: 95,
+    gearBonus: 30,
+    prepBonus: 10,
+    gearDescription: "### Heavy Weaponry\n- **Modified M-60**: High-caliber machine gun for suppressive fire.\n- **Frag Grenades**: Standard Foot Clan explosives for area denial.",
+    prepDescription: "### Rhino Charge\nRocksteady spends his prep time sharpening his horn and ensuring his ammo belts are untangled, ready to ram through any obstacle.",
+  },
+  */
 ];

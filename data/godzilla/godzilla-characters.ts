@@ -12,6 +12,10 @@ export const godzillaCharacters: Character[] = [
     backgroundUrl: "/data/godzilla/assets/godzilla-background.jpg",
     color: "#166534",
     powerScore: 1000,
+    gearBonus: 200, // Radiation absorption/Evolutions
+    prepBonus: 50,
+    gearDescription: "### Dormant Radiation\n- **Nuclear Core**: Constantly absorbs ambient radiation, fueling his atomic breath.\n- **Dorsal Fins**: Act as energy conductors and heat sinks for his thermonuclear pulses.",
+    prepDescription: "### Deep-Sea Hibernation\nGodzilla rests in highly radioactive ocean trenches, saturating his cells with energy to prepare for a multi-day planetary defense.",
   },
   {
     id: "kingkong",
@@ -24,6 +28,10 @@ export const godzillaCharacters: Character[] = [
     backgroundUrl: "/data/godzilla/assets/kingkong-background.jpg",
     color: "#78350f",
     powerScore: 850,
+    gearBonus: 120, // Axe (Godzilla fin)
+    prepBonus: 100, // Tool use/Smart fighter
+    gearDescription: "### Primal Titan Tools\n- **Titan Battle Axe**: Crafted from a Godzilla dorsal fin, capable of absorbing and discharging atomic energy.\n- **Heavily Braided Vines**: Used as makeshift restraints or climbing aids.",
+    prepDescription: "### Skull Island Scouting\nKong studies the terrain, identifying environmental hazards and traps to use his superior mobility and intelligence against heavier foes.",
   },
   {
     id: "mothra",
@@ -36,6 +44,10 @@ export const godzillaCharacters: Character[] = [
     backgroundUrl: "/data/godzilla/assets/mothra-background.jpg",
     color: "#67e8f9",
     powerScore: 850,
+    gearBonus: 150, // Silk/Energy transfer
+    prepBonus: 200, // Ancient wisdom/Rebirth
+    gearDescription: "### Divine Bioluminescence\n- **Antennae Rays**: Project focused beams of 'god-light' for navigation and combat.\n- **Poisonous Scales**: Released from her wings to disorient and weaken more aggressive Titans.",
+    prepDescription: "### Eternal Rebirth Ritual\nMothra synchronizes her spirit with the Earth's life force, preparing to sacrifice her current form to empower her allies through soul-transfer.",
   },
   {
     id: "rodan",
@@ -48,6 +60,10 @@ export const godzillaCharacters: Character[] = [
     backgroundUrl: "/data/godzilla/assets/rodan-background.jpg",
     color: "#ea580c",
     powerScore: 800,
+    gearBonus: 80, // Volcanic armor
+    prepBonus: 40,
+    gearDescription: "### Volcanic Exoskeleton\n- **Magma-Infused Wings**: Coated in cooling lava that provides extreme heat resistance.\n- **Uranium Breath**: A secondary radioactive heat beam developed through volcanic mutation.",
+    prepDescription: "### High-Altitude Thermals\nRodan circles the stratosphere, using volcanic vents to superheat his wings and prepare for a devastating 'Fire Demon' dive-bomb.",
   },
   {
     id: "mechagodzilla",
@@ -60,6 +76,10 @@ export const godzillaCharacters: Character[] = [
     backgroundUrl: "/data/godzilla/assets/mechagodzilla-background.jpg",
     color: "#52525b",
     powerScore: 920,
+    gearBonus: 300, // Limitless arsenal
+    prepBonus: 150, // Targeting systems
+    gearDescription: "### Apex Cybernetic Arsenal\n- **Proton Scream**: A mechanical replica of the atomic breath with 100% targeting accuracy.\n- **Missile Batteries**: Hundreds of 'Finger Missiles' for area-of-effect destruction.",
+    prepDescription: "### AI Combat Simulation\nMechagodzilla's onboard computer runs millions of battle simulations against its target, identifying the most efficient sub-second killing blow.",
   },
   {
     id: "muto",
@@ -72,5 +92,27 @@ export const godzillaCharacters: Character[] = [
     backgroundUrl: "/data/godzilla/assets/muto-background.png",
     color: "#18181b",
     powerScore: 680,
+    gearBonus: 100, // EMP/Coordination
+    prepBonus: 40,
+    gearDescription: "### Parasitic Biology\n- **EMP Gland**: Emits a massive electromagnetic pulse that disables all modern electrical systems.\n- **Climbing Limbs**: Specifically evolved to scale skyscrapers and Titan carcasses.",
+    prepDescription: "### Nesting Coordination\nThe Muto pair communicates through low-frequency pulses, coordinating a pincer attack to swarm and overwhelm a single, larger target.",
   },
+/*
+  {
+    id: "ghidorah",
+    name: "King Ghidorah",
+    universe: "Godzilla",
+    description: "A three-headed alien dragon and Godzilla's ultimate rival.",
+    lore: "Monster Zero, the 'One Who is Many,' is an ancient alien terror that arrived on Earth in a meteor. With three heads that can think independently and a massive wingspan that generates hurricanes, he is a world-destroying entity.",
+    triviaInfo: "Origin: An extraterrestrial Titan from the stars. He first appeared in 'Ghidorah, the Three-Headed Monster' (1964).\n\nBattles: His primary conflict is with Godzilla for the title of Alpha. He has nearly destroyed the Earth's ecosystem multiple times.\n\nSpecial Abilities & Gear: He can fire 'Gravity Beams' from his three mouths and create category-6 hurricanes with his wings.\n\nSecret Trivia: Ghidorah is often portrayed as an invasive species that disrupts the natural order of the Titans. He can regenerate entire heads in a matter of hours.",
+    previewUrl: "/data/godzilla/assets/ghidorah-preview.jpg",
+    backgroundUrl: "/data/godzilla/assets/ghidorah-background.jpg",
+    color: "#eab308",
+    powerScore: 1050,
+    gearBonus: 250,
+    prepBonus: 100,
+    gearDescription: "### Cosmic Bio-Electrical Aura\n- **Gravity Beams**: Concentrated golden lightning released from all three mouths simultaneously.\n- **Hurricane Wings**: Massive structures that can generate localized category-6 storms on command.",
+    prepDescription: "### Global Storm Generation\nGhidorah terraforms the planet's atmosphere, creating a massive electrical storm network that feeds his energy and weakens his biological opponents.",
+  },
+  */
 ];

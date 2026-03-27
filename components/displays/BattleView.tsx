@@ -16,6 +16,15 @@ interface BattleViewProps {
   setChar1: (char: Character | null) => void;
   setChar2: (char: Character | null) => void;
   setSelectedLoreChar: (char: Character) => void;
+  setSelectedModifier: (val: { char: Character; type: 'gear' | 'prep' } | null) => void;
+  withGear1: boolean;
+  setWithGear1: (val: boolean) => void;
+  withPrep1: boolean;
+  setWithPrep1: (val: boolean) => void;
+  withGear2: boolean;
+  setWithGear2: (val: boolean) => void;
+  withPrep2: boolean;
+  setWithPrep2: (val: boolean) => void;
 }
 
 export default function BattleView({
@@ -26,7 +35,16 @@ export default function BattleView({
   winner,
   startBattle,
   setBattleState,
-  setSelectedLoreChar
+  setSelectedLoreChar,
+  setSelectedModifier,
+  withGear1,
+  setWithGear1,
+  withPrep1,
+  setWithPrep1,
+  withGear2,
+  setWithGear2,
+  withPrep2,
+  setWithPrep2
 }: BattleViewProps) {
   const isResult = battleState === 'result';
 
@@ -51,7 +69,7 @@ export default function BattleView({
               </p>
               <div className="h-3 w-px bg-zinc-700 hidden sm:block" />
               <p className="text-[10px] md:text-xs font-mono text-yellow-500 uppercase tracking-widest font-bold hidden sm:block">
-                PWR: {char1.powerScore}
+                PWR: {char1.powerScore + (withGear1 ? (char1.gearBonus || 0) : 0) + (withPrep1 ? (char1.prepBonus || 0) : 0)}
               </p>
             </div>
             <button
@@ -62,6 +80,48 @@ export default function BattleView({
               <span className="hidden sm:inline">Background</span>
               <span className="sm:hidden">Info</span>
             </button>
+
+            {/* Modifiers P1 */}
+            <div className="flex flex-col items-center gap-2 mt-4">
+              <div className="flex items-center gap-1 w-full max-w-[140px]">
+                <button
+                  onClick={() => setWithGear1(!withGear1)}
+                  className={`flex-1 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border ${
+                    withGear1 
+                      ? 'bg-blue-500/20 border-blue-500 text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.3)]' 
+                      : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
+                  }`}
+                >
+                  Gear {withGear1 && <span className="ml-1 text-[8px] opacity-70">+{char1.gearBonus || 0}</span>}
+                </button>
+                <button 
+                  onClick={() => setSelectedModifier({ char: char1, type: 'gear' })}
+                  className="p-1.5 rounded-lg border border-zinc-800 text-zinc-500 hover:text-blue-400 hover:border-blue-500/50 transition-colors bg-zinc-900/50"
+                  title="Gear Info"
+                >
+                  <Info size={12} />
+                </button>
+              </div>
+              <div className="flex items-center gap-1 w-full max-w-[140px]">
+                <button
+                  onClick={() => setWithPrep1(!withPrep1)}
+                  className={`flex-1 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border ${
+                    withPrep1 
+                      ? 'bg-purple-500/20 border-purple-500 text-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.3)]' 
+                      : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
+                  }`}
+                >
+                  Prep {withPrep1 && <span className="ml-1 text-[8px] opacity-70">+{char1.prepBonus || 0}</span>}
+                </button>
+                <button 
+                  onClick={() => setSelectedModifier({ char: char1, type: 'prep' })}
+                  className="p-1.5 rounded-lg border border-zinc-800 text-zinc-500 hover:text-purple-400 hover:border-purple-500/50 transition-colors bg-zinc-900/50"
+                  title="Prep Info"
+                >
+                  <Info size={12} />
+                </button>
+              </div>
+            </div>
           </motion.div>
         ) : (
           <div className="text-zinc-500 font-mono text-xs md:text-sm uppercase tracking-widest">Select P1</div>
@@ -124,7 +184,7 @@ export default function BattleView({
               </p>
               <div className="h-3 w-px bg-zinc-700 hidden sm:block" />
               <p className="text-[10px] md:text-xs font-mono text-yellow-500 uppercase tracking-widest font-bold hidden sm:block">
-                PWR: {char2.powerScore}
+                PWR: {char2.powerScore + (withGear2 ? (char2.gearBonus || 0) : 0) + (withPrep2 ? (char2.prepBonus || 0) : 0)}
               </p>
             </div>
             <button
@@ -135,6 +195,48 @@ export default function BattleView({
               <span className="hidden sm:inline">Background</span>
               <span className="sm:hidden">Info</span>
             </button>
+
+            {/* Modifiers P2 */}
+            <div className="flex flex-col items-center gap-2 mt-4 flex-row-reverse sm:flex-row">
+              <div className="flex items-center gap-1 w-full max-w-[140px]">
+                <button
+                  onClick={() => setWithGear2(!withGear2)}
+                  className={`flex-1 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border ${
+                    withGear2 
+                      ? 'bg-blue-500/20 border-blue-500 text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.3)]' 
+                      : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
+                  }`}
+                >
+                  Gear {withGear2 && <span className="ml-1 text-[8px] opacity-70">+{char2.gearBonus || 0}</span>}
+                </button>
+                <button 
+                  onClick={() => setSelectedModifier({ char: char2, type: 'gear' })}
+                  className="p-1.5 rounded-lg border border-zinc-800 text-zinc-500 hover:text-blue-400 hover:border-blue-500/50 transition-colors bg-zinc-900/50"
+                  title="Gear Info"
+                >
+                  <Info size={12} />
+                </button>
+              </div>
+              <div className="flex items-center gap-1 w-full max-w-[140px]">
+                <button
+                  onClick={() => setWithPrep2(!withPrep2)}
+                  className={`flex-1 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all border ${
+                    withPrep2 
+                      ? 'bg-purple-500/20 border-purple-500 text-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.3)]' 
+                      : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
+                  }`}
+                >
+                  Prep {withPrep2 && <span className="ml-1 text-[8px] opacity-70">+{char2.prepBonus || 0}</span>}
+                </button>
+                <button 
+                  onClick={() => setSelectedModifier({ char: char2, type: 'prep' })}
+                  className="p-1.5 rounded-lg border border-zinc-800 text-zinc-500 hover:text-purple-400 hover:border-purple-500/50 transition-colors bg-zinc-900/50"
+                  title="Prep Info"
+                >
+                  <Info size={12} />
+                </button>
+              </div>
+            </div>
           </motion.div>
         ) : (
           <div className="text-zinc-500 font-mono text-xs md:text-sm uppercase tracking-widest">Select P2</div>

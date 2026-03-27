@@ -22,3 +22,7 @@ coverage/
 
 # Scripts
 /scripts/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts

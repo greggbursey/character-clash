@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Trophy, Globe, Activity, Search, X } from "lucide-react";
+import { ArrowLeft, Trophy, Globe, Activity, Search, X, Brain } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { useEffect, useState, useMemo } from "react";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useEffect, useState, useMemo, Suspense, useCallback } from "react";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
@@ -34,12 +35,47 @@ interface CharStat {
 type Tab = "Dashboard" | "Universes" | "TierList" | "Simulator" | "Trivia";
 
 export function PortalContent() {
+  return (
+    <Suspense fallback={<div>Loading Portal...</div>}>
+      <PortalInternal />
+    </Suspense>
+  );
+}
+
+function PortalInternal() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const tabParam = searchParams.get("tab") as Tab;
+  const activeTab = useMemo(() => {
+    if (tabParam && ["Dashboard", "Universes", "TierList", "Simulator", "Trivia"].includes(tabParam)) {
+      return tabParam;
+    }
+    return "Dashboard";
+  }, [tabParam]);
+
+  const catParam = searchParams.get("category");
+  const valParam = searchParams.get("value");
+
   const [totalBattles, setTotalBattles] = useState<number>(0);
   const [allCharacters, setAllCharacters] = useState<CharStat[]>([]);
   const [isFirebaseLive, setIsFirebaseLive] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [universeSearchQuery, setUniverseSearchQuery] = useState("");
-  const [activeTab, setActiveTab] = useState<Tab>("Dashboard");
+
+  const setActiveTab = useCallback((tab: Tab, category?: string, value?: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("tab", tab);
+    if (category && value) {
+      params.set("category", category);
+      params.set("value", value);
+    } else {
+      params.delete("category");
+      params.delete("value");
+    }
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+  }, [router, pathname, searchParams]);
 
   useEffect(() => {
     async function fetchStats() {
@@ -333,7 +369,18 @@ export function PortalContent() {
                             </div>
                           </div>
 
-                          <div className="flex items-center gap-6 w-full md:w-auto overflow-hidden">
+                          <div className="flex items-center gap-6 w-full md:w-auto">
+                            <button
+                              onClick={() => {
+                                setActiveTab("Trivia", 'character', char.id);
+                                setSearchQuery("");
+                              }}
+                              className="p-2 bg-purple-600/20 text-purple-400 hover:bg-purple-600/40 border border-purple-500/30 rounded-full transition-all group"
+                              title="Play Character Trivia"
+                            >
+                              <Brain size={16} className="group-hover:scale-110 transition-transform" />
+                            </button>
+
                             <div className="flex flex-col">
                               <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest mb-1">
                                 Record
@@ -565,7 +612,7 @@ export function PortalContent() {
                     </div>
 
                     <div className="flex items-center gap-4 w-full">
-                      <div className="flex flex-col gap-1 w-full">
+                      <div className="flex flex-col gap-1 flex-1">
                         <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-widest">
                           <span className="text-zinc-500">
                             Record:{" "}
@@ -582,6 +629,16 @@ export function PortalContent() {
                           />
                         </div>
                       </div>
+                      
+                      <button
+                        onClick={() => {
+                          setActiveTab("Trivia", 'universe', uni.name);
+                        }}
+                        className={`p-2 rounded-full border border-zinc-700/50 bg-zinc-800/50 ${theme.text} hover:scale-110 transition-transform`}
+                        title="Play Universe Trivia"
+                      >
+                        <Brain size={16} />
+                      </button>
                     </div>
                   </div>
                 );
@@ -623,7 +680,11 @@ export function PortalContent() {
 
         {activeTab === "Trivia" && (
           <motion.div key="Trivia" initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} exit={{opacity:0, y:-20}} className="max-w-3xl mx-auto flex flex-col gap-8">
-             <CharacterTrivia />
+             <CharacterTrivia 
+               key={`${catParam}-${valParam}`}
+               initialCategory={(catParam as any) || undefined} 
+               initialValue={valParam || undefined} 
+             />
              <TriviaStats />
           </motion.div>
         )}

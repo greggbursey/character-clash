@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Brain } from 'lucide-react';
 import { Character, Mode } from '@/types';
 import { getAssetPath } from '@/lib/utils';
 
@@ -136,6 +138,16 @@ export default function CharacterSelection({
                           backgroundColor: 'rgba(0,0,0,0.5)'
                         }}
                       >
+                        <div className="absolute inset-x-0 bottom-0 p-2 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                          <Link 
+                            href={`/portal?tab=Trivia&category=character&value=${char.id}`}
+                            className="p-1.5 bg-black/60 rounded-lg hover:bg-purple-600/60 transition-colors border border-white/20"
+                            onClick={(e) => e.stopPropagation()}
+                            title="Play Character Trivia"
+                          >
+                            <Brain size={12} className="text-purple-300" />
+                          </Link>
+                        </div>
                         <Image
                           src={getAssetPath(char.previewUrl)}
                           alt={char.name}
