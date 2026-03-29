@@ -9,7 +9,17 @@ export const trivia: Record<string, string[]> = {
     "Aquaman was a founding member of the Justice League of America in 1960.",
     "The Joker was supposed to die in his first appearance, but an editor spared him.",
     "Flash's speed allows him to vibrate through solid objects by matching their molecular frequency.",
-    "Lex Luthor was originally a redhead before an artist mistake made him permanently bald."
+    "Lex Luthor was originally a redhead before an artist mistake made him permanently bald.",
+    "Batman's first appearance was in Detective Comics #27 in May 1939.",
+    "The 'Earth-One' and 'Earth-Two' multiverse concept was introduced in 1961's 'Flash of Two Worlds'.",
+    "The Joker's real name is often a mystery, but 'Jack Napier' is his most famous civilian identity.",
+    "Green Arrow was originally a Batman clone with an Arrowmobile and Arrowcave.",
+    "Smallville was the first DC-related TV show to successfully run for 10 seasons.",
+    "The Teen Titans were originally formed by Robin, Kid Flash, and Aqualad in 1964.",
+    "Brainiac is responsible for shrinking and stealing the city of Kandor from Krypton.",
+    "Darkseid's 'Anti-Life Equation' is a mathematical proof that life is fundamentally meaningless.",
+    "Crisis on Infinite Earths (1985) was the first major 'reboot' crossover in comic history.",
+    "Nightwing's name was inspired by a Kryptonian legend told to Dick Grayson by Superman."
   ],
   "Marvel": [
     "Wolverine's first appearance wasn't in X-Men, but as an adversary in The Incredible Hulk #180.",
@@ -21,7 +31,17 @@ export const trivia: Record<string, string[]> = {
     "Captain America was not a founding member of the Avengers; he joined in issue #4.",
     "Stan Lee created the X-Men because he wanted a shortcut for explaining superhero origins.",
     "Thor's hammer, Mjolnir, is made of 'Uru' metal and was forged in the heart of a dying star.",
-    "Black Panther was the first black superhero in mainstream American comic books (1966)."
+    "Black Panther was the first black superhero in mainstream American comic books (1966).",
+    "The Human Torch (Jim Hammond) was Marvel's first superhero, appearing in 1939.",
+    "The Hulk was originally grey, but became green due to ink consistency issues in printing.",
+    "Spider-Man's web-shooters are mechanical devices he built himself, not a biological power.",
+    "Deadpool was originally created as a parody of DC's Deathstroke (Slade vs. Wade).",
+    "The 'Infinity Gauntlet' comic story was published in 1991, decades before the MCU version.",
+    "S.H.I.E.L.D. stands for 'Strategic Hazard Intervention Espionage Logistics Directorate'.",
+    "Black Panther once defeated the entire Fantastic Four single-handedly in his debut issue.",
+    "The 'Fastball Special' is a move where Colossus throws Wolverine at an opponent.",
+    "Kamala Khan (Ms. Marvel) was the first Muslim character to headline her own Marvel series.",
+    "The X-Men's 'Danger Room' uses holographic technology to simulate combat scenarios."
   ],
   "Mortal Kombat": [
     "Mortal Kombat was originally supposed to be a fighting game starring Jean-Claude Van Damme.",
@@ -33,7 +53,17 @@ export const trivia: Record<string, string[]> = {
     "Noob Saibot's name is the last names of creators Ed Boon and John Tobias spelled backward.",
     "Rain was originally a 'red herring' character added as a joke to the UMK3 attract mode.",
     "Reptile was the first 'secret character' in fighting game history.",
-    "Sonya Blade was added to the first game at the last minute because the team wanted a female fighter."
+    "Sonya Blade was added to the first game at the last minute because the team wanted a female fighter.",
+    "Johnny Cage's 'Nut Punch' is a reference to Van Damme's move in the movie Bloodsport.",
+    "Mortal Kombat II introduced the 'Friendship' and 'Babality' finishing moves.",
+    "The character Skarlet began as a rumored 'glitch' before being officially added in MK9.",
+    "Goro remained the Shokan champion for 500 years before his defeat by Liu Kang.",
+    "The game's title was almost 'Fatality', 'Kombat', or 'The Dragon Attack'.",
+    "Sindel's Banshee scream is powerful enough to strip the flesh from an opponent's bones.",
+    "The 'Toasty!' shout is voiced by Dan Forden and appears during high-damage combos.",
+    "Kano's iconic cybernetic eye was directly inspired by the Terminator.",
+    "Mortal Kombat (2011) served as a 'soft reboot' to reset the entire series timeline.",
+    "Liu Kang's physical design and fighting style were inspired by Bruce Lee."
   ],
   "Star Wars": [
     "Darth Vader's breathing sound was created using a scuba regulator.",
@@ -45,7 +75,17 @@ export const trivia: Record<string, string[]> = {
     "Ewan McGregor made his own lightsaber sounds during filming, which had to be edited out.",
     "Han Solo's iconic 'I know' response to Leia was an ad-lib by Harrison Ford.",
     "R2-D2's 'voice' was created using a synthesizer and the processed sound of a baby's cooing.",
-    "The Millennium Falcon's design was inspired by a hamburger with an olive on the side."
+    "The Millennium Falcon's design was inspired by a hamburger with an olive on the side.",
+    "The 'Force' was originally called 'The Force of Others' in George Lucas's early drafts.",
+    "Anthony Daniels (C-3PO) is the only actor to appear in all nine Skywalker Saga films.",
+    "TIE Fighter sounds were made by combining an elephant's bellow with a car on wet pavement.",
+    "General Grievous's cough was actually George Lucas's recorded cough while he had a cold.",
+    "The 'Wilhelm Scream' is a sound effect used in almost every Star Wars movie.",
+    "Darth Maul's double-bladed lightsaber was inspired by a prop from 'The Ten Commandments'.",
+    "The Ewok language is a combination of Tibetan and Nepalese.",
+    "Padmé Amidala's elaborate costumes were inspired by traditional Mongolian royalty.",
+    "Peter Cushing (Tarkin) wore slippers during filming because the boots were too small.",
+    "The 'Holochess' game played on the Millennium Falcon is officially called Dejarik."
   ],
   "Street Fighter": [
     "Ryu's red headband actually belonged to Ken, who gave it to him to remind him to stay focused.",
@@ -57,7 +97,17 @@ export const trivia: Record<string, string[]> = {
     "Akuma's name translates to 'Great Demon' or 'Devil' in Japanese.",
     "Blanka's green skin was originally explained as a side-effect of eating too much chlorophyll.",
     "Zangief's design was inspired by the real-life professional wrestler Victor Zangiev.",
-    "Street Fighter II popularized the 'combo' system after a bug was discovered during programming."
+    "Street Fighter II popularized the 'combo' system after a bug was discovered during programming.",
+    "Street Fighter I featured two giant pressure-sensitive buttons for attack strength.",
+    "M. Bison, Vega, and Balrog have their names rotated between Japan and the West.",
+    "The character 'Sheng Long' was born from a mistranslation of Ryu's Shoryuken.",
+    "Cammy was only the second female character introduced to the series (SSF2).",
+    "The 'Satsui no Hado' is the dark energy that Akuma and Evil Ryu tap into.",
+    "Dhalsim's fighting style is based on Yoga, allowing him to stretch his limbs and teleport.",
+    "Characters from 'Final Fight' (like Guy and Cody) frequently cross over into Street Fighter.",
+    "Dan Hibiki was created as a parody of characters from rival company SNK.",
+    "R. Mika is a professional wrestler who idolizes Zangief and seeks his mentorship.",
+    "Street Fighter IV pioneered the '2.5D' style (3D graphics on a 2D plane)."
   ],
   "Harry Potter": [
     "J.K. Rowling first wrote the names of the Hogwarts houses on the back of an airplane sick bag.",
@@ -69,7 +119,17 @@ export const trivia: Record<string, string[]> = {
     "The driver and conductor of the Knight Bus are named after Rowling's grandfathers.",
     "Hogwarts' motto, 'Draco Dormiens Nunquam Titillandus,' means 'Never Tickle a Sleeping Dragon.'",
     "Expecto Patronum translates from Latin to mean 'I await a guardian.'",
-    "Maggie Smith (Professor McGonagall) battled cancer while filming the final movies."
+    "Maggie Smith (Professor McGonagall) battled cancer while filming the final movies.",
+    "The 'Elder Wand' core is Thestral tail hair, visible only to those who have seen death.",
+    "Voldemort's name translates to 'Flight of Death' or 'Steal from Death' in French.",
+    "Dumbledore's Patronus is a Phoenix, mirroring his loyal companion Fawkes.",
+    "The Leaky Cauldron is invisible to Muggles and located on Charing Cross Road in London.",
+    "Hermione's Patronus is an Otter, which is J.K. Rowling's favorite animal.",
+    "The 'Room of Requirement' only appears on the seventh floor when someone is in great need.",
+    "Avada Kedavra is derived from an Aramaic phrase meaning 'let the thing be destroyed'.",
+    "Moony, Wormtail, and Prongs were all illegal Animagi who transformed to support Lupin.",
+    "Gillyweed allows a wizard to breathe underwater and grow webbing between their toes.",
+    "The Ministry of Magic's visitor entrance is a broken red telephone booth in London."
   ],
   "Godzilla": [
     "Godzilla's name, 'Gojira,' is a portmanteau of the Japanese words for gorilla and whale.",
@@ -81,7 +141,17 @@ export const trivia: Record<string, string[]> = {
     "In 'Godzilla vs. King Ghidorah,' it's revealed Godzilla was originally a dinosaur.",
     "The original Godzilla suit weighed over 200 pounds and was extremely difficult to move in.",
     "Godzilla's atomic breath was originally going to be actual fire before being changed to blue.",
-    "Godzilla was once named 'Official Cultural Ambassador' for a district in Tokyo."
+    "Godzilla was once named 'Official Cultural Ambassador' for a district in Tokyo.",
+    "Godzilla's signature attack is officially known as 'Atomic Breath' (Housha Nessen).",
+    "Mothra is one of the few kaiju consistently portrayed as a protector of Earth.",
+    "The 'Oxygen Destroyer' is the only weapon known to have successfully killed Godzilla.",
+    "King Ghidorah's design was inspired by the eight-headed dragon of Japanese myth.",
+    "Godzilla's height has grown from 50 meters in 1954 to nearly 120 meters in recent films.",
+    "The 1998 American Godzilla is officially recognized as a separate character named 'Zilla'.",
+    "Jet Jaguar was the result of a fan-design contest for a new robotic hero.",
+    "Godzilla is one of the longest-running film franchises, with over 35 movies since 1954.",
+    "Mechagodzilla first appeared in 1974, disguised as the real Godzilla to infiltrate Earth.",
+    "Minilla is the official name of Godzilla's first adopted son, debuting in 1967."
   ],
   "Mario": [
     "Before he was a plumber, Mario was a carpenter in the 1981 game Donkey Kong.",
@@ -93,7 +163,17 @@ export const trivia: Record<string, string[]> = {
     "Wario's name is a combination of 'Mario' and 'warui,' the Japanese word for 'bad.'",
     "Super Mario Bros. was the first video game to ever be made into a live-action movie.",
     "Mario has a mustache to help players distinguish his nose from the rest of his face.",
-    "Bowser was originally supposed to be an ox, but the drawings looked more like a turtle."
+    "Bowser was originally supposed to be an ox, but the drawings looked more like a turtle.",
+    "Mario was known simply as 'Jumpman' in his debut appearance in Donkey Kong.",
+    "The Chain Chomp was inspired by Miyamoto's childhood memory of being chased by a dog.",
+    "The US Super Mario Bros. 2 was originally a different game called 'Doki Doki Panic'.",
+    "Yoshi's full name is officially 'T. Yoshisaur Munchakoopas'.",
+    "Kamek the Magikoopa was the primary villain in Yoshi's Island, not Bowser.",
+    "Mario's red and blue colors were chosen to contrast with dark backgrounds in arcades.",
+    "Bowser Jr. made his debut in Super Mario Sunshine, disguised as Shadow Mario.",
+    "The 'Warp Zone' in World 1-2 was the first hidden stage selection ever seen in gaming.",
+    "Professor E. Gadd is the eccentric inventor who created Luigi's Poltergust vacuum.",
+    "Nintendo celebrates March 10th (Mar. 10) as 'Mario Day' every year."
   ],
   "TMNT": [
     "The TMNT origin story parodies Marvel's Daredevil, involving the same toxic canister.",
@@ -105,7 +185,17 @@ export const trivia: Record<string, string[]> = {
     "Leonardo is the oldest of the four brothers and serves as the team's tactical leader.",
     "In the 1990 movie, the animatronic heads were controlled by puppeteers with joystick rigs.",
     "April O'Neil was originally a computer programmer, not a news reporter.",
-    "The Foot Clan is a parody of the 'Hand' ninja clan from Marvel Comics."
+    "The Foot Clan is a parody of the 'Hand' ninja clan from Marvel Comics.",
+    "The Shredder's real name is Oroku Saki, and he led the Foot Clan in Japan.",
+    "Casey Jones uses a hockey mask to hide his identity and uses sports gear as weapons.",
+    "Bebop and Rocksteady were created for the 1987 cartoon to expand the toy line.",
+    "The movie 'TMNT II' created Tokka and Rahzar because they couldn't use Bebop or Rocksteady.",
+    "Dimension X is the home of Krang and the site of the mobile fortress, the Technodrome.",
+    "The Turtles' pizza obsession started in the 1987 cartoon; comics had more varied food.",
+    "Usagi Yojimbo, a samurai rabbit, is a frequent ally in TMNT crossover stories.",
+    "The 'Turtle Van' was originally a civilian vehicle owned by villain Baxter Stockman.",
+    "Slash is the powerful 'Evil Turtle' from Dimension X, often portrayed as an antagonist.",
+    "Master Splinter's origin varies between being a pet rat or the human Hamato Yoshi."
   ],
   "X-Men": [
     "The word 'Mutant' was used because Stan Lee was tired of creating new origin stories.",
@@ -117,8 +207,18 @@ export const trivia: Record<string, string[]> = {
     "Rogue's real name, Anna Marie, wasn't revealed for almost 20 years after her debut.",
     "The X-Men's 'Cerebro' device was originally a simple room full of computers.",
     "Mystique is the biological mother of Nightcrawler and the adoptive mother of Rogue.",
-    "The 'X' in X-Men stands for the 'extra power' that humans don't have, the X-Gene."
-  ]
+    "The 'X' in X-Men stands for the 'extra power' that humans don't have, the X-Gene.",
+    "Wolverine's unbreakable Adamantium skeleton is the result of the Weapon X project.",
+    "Jean Grey has died and been resurrected multiple times, often tied to the Phoenix Force.",
+    "The 'M-Day' event saw the mutant population reduced to just 200 worldwide.",
+    "Gambit (Remy LeBeau) was raised by the Thieves Guild after being abandoned at birth.",
+    "The Sentinels are giant mutant-hunting robots created by scientist Bolivar Trask.",
+    "Apocalypse (En Sabah Nur) is considered the first mutant, born in Ancient Egypt.",
+    "Kitty Pryde possesses a small purple dragon companion named Lockheed.",
+    "Psylocke has had her consciousness transferred between multiple bodies throughout history.",
+    "The 'Morlocks' are an underground society of mutants who cannot pass as human.",
+    "Forge is a Cheyenne mutant with the power of 'Intuitive Genius' for technology."
+  ],
 };
 
 export const generalTrivia: string[] = [

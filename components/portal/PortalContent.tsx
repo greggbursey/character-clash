@@ -19,7 +19,9 @@ const TierListMaker = dynamic(() => import("@/components/portal/TierListMaker").
 const WhatIfScenarios = dynamic(() => import("@/components/portal/WhatIfScenarios").then(m => m.WhatIfScenarios), { ssr: false });
 const RivalryTracker = dynamic(() => import("@/components/portal/RivalryTracker").then(m => m.RivalryTracker), { ssr: false });
 const UnderdogOfTheWeek = dynamic(() => import("@/components/portal/UnderdogOfTheWeek").then(m => m.UnderdogOfTheWeek), { ssr: false });
-const UniverseInfo = dynamic(() => import("@/components/portal/UniverseInfo").then(m => m.UniverseInfo), { ssr: false });
+const UniverseArchivesHeader = dynamic(() => import("@/components/portal/UniverseInfo").then(m => m.UniverseArchivesHeader), { ssr: false });
+const UniverseLore = dynamic(() => import("@/components/portal/UniverseInfo").then(m => m.UniverseLore), { ssr: false });
+const UniverseHierarchy = dynamic(() => import("@/components/portal/UniverseInfo").then(m => m.UniverseHierarchy), { ssr: false });
 const TriviaStats = dynamic(() => import("@/components/portal/TriviaStats").then(m => m.TriviaStats), { ssr: false });
 
 interface CharStat {
@@ -63,6 +65,7 @@ function PortalInternal() {
   const [isFirebaseLive, setIsFirebaseLive] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [universeSearchQuery, setUniverseSearchQuery] = useState("");
+  const [selectedUniverse, setSelectedUniverse] = useState<string>("DC");
 
   const setActiveTab = useCallback((tab: Tab, category?: string, value?: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -540,11 +543,8 @@ function PortalInternal() {
              <div className="lg:col-span-3"><WhatIfScenarios /></div>
           </div>
         </section>
-        </motion.div>
-        )}
 
-        {activeTab === "Universes" && (
-        <motion.div key="Universes" initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} exit={{opacity:0, y:-20}} className="flex flex-col gap-12">
+        {/* Global Universe Standings - MOVED FROM UNIVERSES TAB */}
         <section className="mt-12 z-10 relative bg-zinc-900/30 border border-zinc-800/40 rounded-[2rem] p-6 md:p-10 overflow-hidden">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <h3 className="text-xl md:text-2xl font-black uppercase tracking-[0.1em] text-zinc-100 flex items-center gap-4">
@@ -582,6 +582,8 @@ function PortalInternal() {
                     case "Star Wars": return { border: "hover:border-purple-500/50", fill: "bg-purple-500", text: "text-purple-400" };
                     case "Godzilla": return { border: "hover:border-cyan-500/50", fill: "bg-cyan-500", text: "text-cyan-400" };
                     case "X-Men": return { border: "hover:border-yellow-400/50", fill: "bg-yellow-400", text: "text-yellow-400" };
+                    case "Mario": return { border: "hover:border-red-500/50", fill: "bg-red-500", text: "text-red-400" };
+                    case "Harry Potter": return { border: "hover:border-blue-400/50", fill: "bg-blue-400", text: "text-blue-400" };
                     default: return { border: "hover:border-zinc-500/50", fill: "bg-zinc-500", text: "text-zinc-400" };
                   }
                 };
@@ -650,19 +652,32 @@ function PortalInternal() {
             )}
           </div>
         </section>
+        </motion.div>
+        )}
 
-        {/* UNIVERSE LORE ARCHIVES */}
-        <UniverseInfo />
+        {activeTab === "Universes" && (
+        <motion.div key="Universes" initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} exit={{opacity:0, y:-20}} className="flex flex-col gap-8 mt-4">
+          <UniverseArchivesHeader selectedUniverse={selectedUniverse} onUniverseChange={setSelectedUniverse} />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start relative">
+             {/* Left Column: Lore & Rivalries (Span 2) */}
+             <div className="lg:col-span-2 flex flex-col gap-12 order-2 lg:order-1">
+                <UniverseLore selectedUniverse={selectedUniverse} />
+                
+                <section>
+                  <h2 className="text-2xl font-black uppercase tracking-[0.1em] text-white flex items-center gap-4 mb-6">
+                    <span className="w-12 h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" />
+                    In-Universe Rivalries
+                  </h2>
+                  <RivalryTracker selectedUniverse={selectedUniverse} />
+                </section>
+             </div>
 
-        {/* IN-UNIVERSE RIVALRIES */}
-        <section>
-          <h2 className="text-2xl font-black uppercase tracking-[0.1em] text-white flex items-center gap-4 mb-6">
-            <span className="w-12 h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" />
-            In-Universe Rivalries
-          </h2>
-          <RivalryTracker />
-        </section>
-
+             {/* Right Column: Sticky Hierarchy (Span 1) */}
+             <div className="lg:col-span-1 lg:sticky lg:top-24 self-start order-1 lg:order-2">
+                <UniverseHierarchy selectedUniverse={selectedUniverse} />
+             </div>
+          </div>
         </motion.div>
         )}
 
