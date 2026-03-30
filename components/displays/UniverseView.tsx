@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'motion/react';
 import { BattleState } from '@/types';
+import { Zap, BarChart2 } from 'lucide-react';
 
 
 interface UniverseViewProps {
@@ -10,7 +11,7 @@ interface UniverseViewProps {
   battleState: BattleState;
   countdown: number;
   winner: 1 | 2 | null;
-  getUniverseStats: (uni: string) => { count: number; avgPower: number; color: string; background: string };
+  getUniverseStats: (uni: string) => { count: number; totalPower: number; avgPower: number; color: string; background: string };
   startBattle: () => void;
   setBattleState: (state: BattleState) => void;
   setUniverse1: (uni: string | null) => void;
@@ -61,14 +62,25 @@ export default function UniverseView({
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white break-words leading-none">
               {universe1}
             </h2>
-            <div className="flex items-center justify-center gap-2">
-              <p className="text-[10px] md:text-xs font-mono text-zinc-400 uppercase tracking-widest">
+            <div className="flex flex-col items-center gap-1 md:gap-2">
+              <p className="text-[10px] md:text-xs font-mono text-zinc-500 uppercase tracking-widest">
                 {getUniverseStats(universe1).count} Fighters
               </p>
-              <div className="h-3 w-px bg-zinc-700 hidden sm:block" />
-              <p className="text-[10px] md:text-xs font-mono text-blue-400 uppercase tracking-widest font-bold hidden sm:block">
-                AVG PWR: {getUniverseStats(universe1).avgPower + (withGear1 ? 50 : 0) + (withPrep1 ? 70 : 0)}
-              </p>
+              
+              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+                <div className="flex items-center gap-1.5" title="Total Universe Power">
+                  <Zap size={12} className="text-yellow-500" />
+                  <p className="text-[10px] md:text-xs font-mono text-yellow-500/90 uppercase tracking-widest font-bold">
+                    TOT: {getUniverseStats(universe1).totalPower + (withGear1 ? (getUniverseStats(universe1).count * 50) : 0) + (withPrep1 ? (getUniverseStats(universe1).count * 70) : 0)}
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5" title="Average Fighter Power">
+                  <BarChart2 size={12} className="text-blue-400" />
+                  <p className="text-[10px] md:text-xs font-mono text-blue-400 uppercase tracking-widest font-bold">
+                    AVG: {getUniverseStats(universe1).avgPower + (withGear1 ? 50 : 0) + (withPrep1 ? 70 : 0)}
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Modifiers U1 */}
@@ -150,14 +162,25 @@ export default function UniverseView({
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white break-words leading-none">
               {universe2}
             </h2>
-            <div className="flex items-center justify-center gap-2">
-              <p className="text-[10px] md:text-xs font-mono text-zinc-400 uppercase tracking-widest">
+            <div className="flex flex-col items-center gap-1 md:gap-2">
+              <p className="text-[10px] md:text-xs font-mono text-zinc-500 uppercase tracking-widest">
                 {getUniverseStats(universe2).count} Fighters
               </p>
-              <div className="h-3 w-px bg-zinc-700 hidden sm:block" />
-              <p className="text-[10px] md:text-xs font-mono text-blue-400 uppercase tracking-widest font-bold hidden sm:block">
-                AVG PWR: {getUniverseStats(universe2).avgPower + (withGear2 ? 50 : 0) + (withPrep2 ? 70 : 0)}
-              </p>
+              
+              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+                <div className="flex items-center gap-1.5" title="Total Universe Power">
+                  <Zap size={12} className="text-yellow-500" />
+                  <p className="text-[10px] md:text-xs font-mono text-yellow-500/90 uppercase tracking-widest font-bold">
+                    TOT: {getUniverseStats(universe2).totalPower + (withGear2 ? (getUniverseStats(universe2).count * 50) : 0) + (withPrep2 ? (getUniverseStats(universe2).count * 70) : 0)}
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5" title="Average Fighter Power">
+                  <BarChart2 size={12} className="text-blue-400" />
+                  <p className="text-[10px] md:text-xs font-mono text-blue-400 uppercase tracking-widest font-bold">
+                    AVG: {getUniverseStats(universe2).avgPower + (withGear2 ? 50 : 0) + (withPrep2 ? 70 : 0)}
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Modifiers U2 */}

@@ -4,7 +4,7 @@ export const marioCharacters: Character[] = [
   {
     id: "mario",
     name: "Mario",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "The legendary hero of the Mushroom Kingdom, known for his jumping prowess and red cap.",
     lore: "Mario is a plumber who has spent decades protecting the Mushroom Kingdom from the villainous Bowser. With his trusty red hat and iconic mustache, he has traveled through countless worlds, from the pipes of Brooklyn to the furthest reaches of the galaxy.",
     triviaInfo: "Origin: Mario first appeared in the 1981 arcade game Donkey Kong as 'Jumpman'. He was later renamed Mario after Nintendo of America's landlord, Mario Segale. Originally a carpenter, he became a plumber in the 1983 game Mario Bros. to fit the setting of underground pipes.\n\nBattles: His most significant rival is Bowser, the King of the Koopas. Their battles have spanned decades, from the linear 2D obstacles of the original Super Mario Bros. to the open-world 3D environments of Super Mario Odyssey. He has also notably defeated the alien warlord Tatanga and the mischievous Wario.\n\nSpecial Abilities & Gear: Known for his immense jumping ability, Mario also utilizes power-ups like the Super Mushroom, Fire Flower, and Super Star. In Super Mario Odyssey, he gained the ability to 'capture' enemies and objects using Cappy, a magical sentient hat.\n\nSecret Trivia: Shigeru Miyamoto originally wanted to use Popeye for Donkey Kong but couldn't get the rights. Mario's design—hat, mustache, and overalls—was chosen because it was easier to animate under the hardware limitations of the 1980s.",
@@ -20,7 +20,7 @@ export const marioCharacters: Character[] = [
   {
     id: "luigi",
     name: "Luigi",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "Mario's younger, taller twin brother, often hesitant but incredibly brave when it counts.",
     lore: "Luigi is often overshadowed by his brother, but he has carved out his own legend as a ghost-hunter and hero in his own right. Though he is more prone to fear, his heart is pure and his jumping ability actually exceeds Mario's.",
     triviaInfo: "Origin: Luigi debuted in the 1983 arcade game Mario Bros. as a palette-swapped version of Mario. His name is a pun on the Japanese word 'Ruiji', which means 'similar'. Over time, he was given a taller, slimmer build to distinguish him from his brother.\n\nBattles: Luigi's defining battles took place in the Luigi's Mansion series, where he used the Poltergust 3000 to capture ghosts and rescue his brother from King Boo. He has also fought alongside Mario in every major conflict against the Koopa Troop.\n\nSpecial Abilities & Gear: Luigi is famous for his 'Scuttle Jump', which allows him to stay in the air slightly longer than Mario. He is an expert in ghost-hunting technology, frequently using inventions from Professor E. Gadd.\n\nSecret Trivia: luigi's green color scheme was reportedly chosen because of the limited color palette of the original arcade hardware, specifically re-using the green from the Koopa Troopa. The 'Year of Luigi' in 2013 was a year-long celebration by Nintendo to honor his 30th anniversary.",
@@ -36,7 +36,7 @@ export const marioCharacters: Character[] = [
   {
     id: "peach",
     name: "Princess Peach",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "The beloved ruler of the Mushroom Kingdom and a powerful leader in her own right.",
     lore: "Princess Peach Toadstool is the sovereign of the Mushroom Kingdom. While often the target of Bowser's kidnapping schemes, she has proven herself to be a capable adventurer, using her umbrella and magical parasol to navigate dangerous lands.",
     triviaInfo: "Origin: Princess Peach debuted in Super Mario Bros. (1985). In the West, she was originally known as Princess Toadstool, a name that stuck for over a decade until Super Mario 64 popularized her Japanese name, Peach.\n\nBattles: While frequently kidnapped, Peach took center stage in Super Princess Peach, where she used her emotions (Joy, Rage, Gloom, Calm) as weapons to rescue Mario and Luigi. She is also a veteran competitor in the Mario Kart and Smash Bros. series.\n\nSpecial Abilities & Gear: Her most iconic ability is her 'Float', allowing her to hover in the air for a short duration. She often uses her parasol, Perry, for both defense and gliding.\n\nSecret Trivia: Early designs for Peach depicted her with a white dress and reddish-brown hair. She is one of the few characters who has appeared in more games than almost any other female lead in video game history.",
@@ -52,7 +52,7 @@ export const marioCharacters: Character[] = [
   {
     id: "bowser",
     name: "Bowser",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "The King of the Koopas and the perennial antagonist of the Mushroom Kingdom.",
     lore: "Bowser is the powerful leader of the Koopa Troop. Driven by an obsession with conquering the Mushroom Kingdom and marrying Princess Peach, he has built massive airships, castles, and fortresses to stop Mario's progress.",
     triviaInfo: "Origin: Bowser first appeared as the 'Great Demon King Koopa' in Super Mario Bros. (1985). Shigeru Miyamoto initially envisioned him as an ox, influenced by the Ox-King from Alakazam the Great, but he was later redesigned as a turtle.\n\nBattles: Bowser has faced Mario in countless final showdowns. Notable forms include Giga Bowser from Super Smash Bros. and the colossal Fury Bowser from Bowser's Fury. He has also occasionally allied with Mario to face even greater threats like Smithy or the Shroobs.\n\nSpecial Abilities & Gear: He possesses immense strength, fire-breathing capabilities, and a near-indestructible spiked shell. He frequently commands a vast army of Koopas, Goombas, and Magikoopas.\n\nSecret Trivia: Bowser's Japanese name, 'Kuppa', comes from a Korean dish called gukbap. While the Koopalings were originally considered his children, it was later confirmed that Bowser Jr. is his only biological son.",
@@ -68,7 +68,7 @@ export const marioCharacters: Character[] = [
   {
     id: "yoshi",
     name: "Yoshi",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "A friendly dinosaur from Yoshi's Island who often serves as Mario's companion.",
     lore: "Yoshi is a loyal ally who first met Mario when he was just a baby. He is known for his long tongue, his ability to turn enemies into eggs, and his incredible appetite for berries and fruit.",
     triviaInfo: "Origin: Yoshi debuted in Super Mario World (1990). Miyamoto had wanted a dinosaur companion for Mario since the original NES game, but technical limitations delayed his arrival until the SNES. His full name is legally 'T. Yoshisaur Munchakoopas'.\n\nBattles: In the Yoshi's Island series, he protected Baby Mario from Kamek and Baby Bowser, carrying him across dangerous terrain. He is also a staple in the Mario Party and Mario Kart series.\n\nSpecial Abilities & Gear: Yoshi's most famous move is the 'Flutter Jump', which allows him to gain extra height. He can swallow almost any enemy, instantly transforming them into a projectile egg.\n\nSecret Trivia: Yoshi's design was at one point meant to be a horse, but the designers felt a dinosaur fit the Jurassic-environment of Dinosaur Land better. The species 'Yoshi' comes in many colors, including red, blue, and yellow, each with unique abilities in early games.",
@@ -84,7 +84,7 @@ export const marioCharacters: Character[] = [
   {
     id: "toad",
     name: "Toad",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "The loyal attendant of Princess Peach and a resident of the Mushroom Kingdom.",
     lore: "Toads are the most common inhabitants of the Mushroom Kingdom. While often portrayed as helpless, individual Toads like Captain Toad have proven to be brave explorers and defenders of their land.",
     triviaInfo: "Origin: Toad debuted in Super Mario Bros. (1985) as one of the 'Mushroom Retainers'. He was first playable in the North American version of Super Mario Bros. 2, where he was the fastest character at pulling vegetables.\n\nBattles: Toad has participated in many adventures, but Captain Toad: Treasure Tracker highlights his solo bravery, where he navigates complex puzzles without the ability to jump due to his heavy backpack.\n\nSpecial Abilities & Gear: Toads are known for their speed and strength relative to their size. Captain Toad uses a headlamp and a heavy backpack filled with tools for his expeditions.\n\nSecret Trivia: The Japanese name for Toad is 'Kinopio', which is a combination of 'kinoko' (mushroom) and 'Pinocchio'. The spots on a Toad's head are part of their mushroom cap, not a hat, according to Nintendo producers.",
@@ -100,7 +100,7 @@ export const marioCharacters: Character[] = [
   {
     id: "donkeykong",
     name: "Donkey Kong",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "The powerful leader of the Kong Clan, known for his strength and red tie.",
     lore: "Donkey Kong was once Mario's rival, but he has since become a hero in his own territory, Donkey Kong Island. He spends most of his time protecting his banana hoard from the Kremling Krew.",
     triviaInfo: "Origin: The original Donkey Kong debuted in 1981. The current Donkey Kong is actually the grandson of the original (who is now Cranky Kong). The character was redesigned by Rare for Donkey Kong Country in 1994, giving him his iconic red tie.\n\nBattles: He has faced off against King K. Rool in numerous battles to reclaim his golden banana hoard. He is also a heavy-hitter in the Super Smash Bros. series, famous for his 'Cargo Carry' throw.\n\nSpecial Abilities & Gear: DK possesses enormous physical strength, capable of causing earthquakes with his 'Ground Slap'. He often uses barrels as both armor and projectiles.\n\nSecret Trivia: Shigeru Miyamoto chose the name 'Donkey' to mean 'stubborn' and 'Kong' to signify an ape. Rare's 1994 game was one of the first to use pre-rendered 3D graphics on a 16-bit console.",
@@ -116,7 +116,7 @@ export const marioCharacters: Character[] = [
   {
     id: "wario",
     name: "Wario",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "Mario's greedy, muscled rival who loves garlic and gold.",
     lore: "Wario is the polar opposite of Mario. Where Mario is selfless, Wario is entirely motivated by wealth. He has his own microgame company and frequently goes on treasure-hunting adventures to line his pockets.",
     triviaInfo: "Origin: Wario debuted as the main antagonist in Super Mario Land 2: 6 Golden Coins (1992). His name is a portmanteau of 'Mario' and the Japanese word 'warui', meaning 'bad'.\n\nBattles: After his initial defeat by Mario, Wario became a protagonist in the Wario Land series. He has fought various villains like Captain Syrup and the Shake King, often being completely immortal in early games.\n\nSpecial Abilities & Gear: Wario is known for his 'Shoulder Bash' and his incredible strength. In the WarioWare series, he often wears a biker outfit and rides a customized motorcycle.\n\nSecret Trivia: Wario was created by the team at Nintendo R&D1 because they were tired of making games for Mario, who they didn't design, and wanted their own character to express their creative freedom.",
@@ -132,7 +132,7 @@ export const marioCharacters: Character[] = [
   {
     id: "waluigi",
     name: "Waluigi",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "Luigi's lanky, mischievous rival who is often found on the tennis courts.",
     lore: "Waluigi is a mysterious and eccentric character who carries a deep grudge against the Mario Bros. He is often seen partnering with Wario, though their actual relationship remains unclear.",
     triviaInfo: "Origin: Waluigi debuted in Mario Tennis (2000) for the Nintendo 64. He was created by Camelot Software Planning because Wario needed a doubles partner for tennis. His name follows the 'Warui' pun used for Wario.\n\nBattles: While he hasn't had his own main series game, Waluigi is a fierce competitor in every Mario sports and party title. His lanky limbs give him incredible reach in sports like Tennis and Soccer.\n\nSpecial Abilities & Gear: He is known for his strange, almost supernatural movements and his ability to summon thorny vines in some sports manifestations. He often uses a tennis racket as his primary 'weapon'.\n\nSecret Trivia: Waluigi's voice actor, Charles Martinet, once described him as someone who believes everyone is cheating, so he's only doing what he has to do to keep up. He is the only major Mario character to have never appeared in a main-line platformer.",
@@ -148,7 +148,7 @@ export const marioCharacters: Character[] = [
   {
     id: "goomba",
     name: "Goomba",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "The most common foot soldier of Bowser's army, despite being a former ally of the Mushroom Kingdom.",
     lore: "Goombas were once peace-loving citizens of the Mushroom Kingdom who betrayed their home to join Bowser's Koopa Troop. They are now the first line of defense in almost every Koopa stronghold.",
     triviaInfo: "Origin: Goombas debuted in Super Mario Bros. (1985). They were the last enemy added to the game because playtesters found the Koopa Troopa too hard for the very first encounter.\n\nBattles: While they are usually defeated with a single stomp, variants like Paragoombas, Grand Goombas, and Goomba Towers provide more significant challenges for Mario. In Mario & Luigi, they exhibit surprising tactical coordination.\n\nSpecial Abilities & Gear: Their main 'ability' is walking forward in a rhythmic pattern. Some Goombas wear hats or crowns to indicate their rank, and they have been known to pilot small mechanical ships.\n\nSecret Trivia: The Japanese name for Goomba is 'Kuribo', which means 'chestnut person', though Miyamoto has stated they were actually intended to be shiitake mushrooms. They are one of the few enemies to appear in almost every single Mario game.",
@@ -164,7 +164,7 @@ export const marioCharacters: Character[] = [
   {
     id: "koopa",
     name: "Koopa Troopa",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "A turtle-like soldier in Bowser's army, known for the useful shells they leave behind.",
     lore: "Koopa Troopas are the backbone of Bowser's military. They come in many varieties, with the most common being green (who walk off edges) and red (who turn around). Their shells are both their armor and a weapon that can be used against them.",
     triviaInfo: "Origin: Koopa Troopas debuted in Super Mario Bros. (1985). Their predecessors were the 'Shellcreepers' from the 1983 arcade game Mario Bros., which had to be hit from below before being kicked.\n\nBattles: Koopas have served as enemies in almost every Mario game, but some have become heroes, such as Kooper and Koops in the Paper Mario series. They are also famous for the 'Koopa Paratroopa' variant that can fly.\n\nSpecial Abilities & Gear: Their primary defense is their shell, which can withstand significant pressure. When jumping on a Koopa, they retreat into their shell, which can then be kicked to defeat other enemies in a chain reaction.\n\nSecret Trivia: The red-shelled Koopas were given higher artificial intelligence in the original game, as they were programmed to detect pits and turn around, whereas green-shelled Koopas would simply walk forward to their doom.",
@@ -180,7 +180,7 @@ export const marioCharacters: Character[] = [
   {
     id: "bowserjr",
     name: "Bowser Jr.",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "Bowser's only son and a mischievous prince who often aids his father's schemes.",
     lore: "Bowser Jr. is the heir to the Koopa throne. He is a technical genius who often uses advanced machinery like the Junior Clown Car to cause trouble. He admires his father and wants nothing more than to make him proud.",
     triviaInfo: "Origin: Bowser Jr. debuted in Super Mario Sunshine (2002). He famously impersonated Mario as 'Shadow Mario' using a magic paintbrush given to him by Professor E. Gadd.\n\nBattles: He has fought Mario in many boss encounters, usually from within a mechanical vehicle. In Super Mario 3D World + Bowser's Fury, he actually teams up with Mario to stop his father's insane rampage.\n\nSpecial Abilities & Gear: His primary gear is the 'Junior Clown Car', an aerial vehicle equipped with boxing gloves, cannons, and drills. He also uses a large bandana with a drawn-on mouth to appear more intimidating.\n\nSecret Trivia: For years, it was debated whether the Koopalings were Bowser's children. In 2012, Shigeru Miyamoto finally clarified that Bowser Jr. is his only biological son, and the others are just high-ranking minions.",
@@ -196,7 +196,7 @@ export const marioCharacters: Character[] = [
   {
     id: "rosalina",
     name: "Rosalina",
-    universe: "Super Mario Bros",
+    universe: "Mario",
     description: "The motherly protector of the Lumas and the watcher of the cosmos.",
     lore: "Rosalina resides in the Comet Observatory, traveling the universe with her adopted children, the Lumas. She possesses incredible cosmic power and a deep wisdom born from eons of observing the stars.",
     triviaInfo: "Origin: Rosalina debuted in Super Mario Galaxy (2007). She was originally planned to be an older, more 'Amazonian' version of Peach. Her storybook provides one of the most emotional backstories in any Mario game.\n\nBattles: While she rarely fights directly, her presence in Mario Kart and Smash Bros. showcases her ability to manipulate gravity and deploy Lumas as projectile weapons.\n\nSpecial Abilities & Gear: She can hover, create force fields, and channel energy through her Star Wand. Her Lumas provide both offensive and defensive coverage.\n\nSecret Trivia: In her early designs, she had a more space-suit oriented look. She is arguably one of the most powerful beings in the Mario multiverse, capable of resetting the universe entire.",

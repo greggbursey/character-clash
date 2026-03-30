@@ -73,10 +73,11 @@ export default function Home() {
   // Helpers
   const getUniverseStats = useMemo(() => (universeName: string) => {
     const chars = characters.filter((c) => c.universe === universeName);
-    const avgPower =
-      chars.reduce((acc, c) => acc + c.powerScore, 0) / (chars.length || 1);
+    const totalPower = chars.reduce((acc, c) => acc + c.powerScore, 0);
+    const avgPower = totalPower / (chars.length || 1);
     return {
       count: chars.length,
+      totalPower,
       avgPower: Math.round(avgPower),
       color: chars[0]?.color || "#3f3f46",
       background: chars[0]?.backgroundUrl || "",
@@ -220,7 +221,7 @@ export default function Home() {
   }, [battleState, countdown, char1, char2, universe1, universe2, mode, withGear1, withGear2, withPrep1, withPrep2, getUniverseStats]);
 
   return (
-    <main className="relative h-[100dvh] w-full overflow-hidden bg-zinc-950 text-white font-sans">
+    <main className="relative min-h-[100dvh] md:h-screen w-full overflow-y-auto md:overflow-hidden bg-zinc-950 text-white font-sans hide-scrollbar">
       <BackgroundLayers
         mode={mode}
         battleState={battleState}
@@ -232,7 +233,7 @@ export default function Home() {
         getUniverseStats={getUniverseStats}
       />
 
-      <div className="relative z-10 flex flex-col h-[100dvh] p-4 md:p-12 overflow-hidden">
+      <div className="relative z-10 flex flex-col min-h-[100dvh] md:h-full p-4 md:p-12">
         <Header
           mode={mode}
           toggleMode={toggleMode}

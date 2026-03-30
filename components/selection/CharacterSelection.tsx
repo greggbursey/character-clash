@@ -36,7 +36,7 @@ export default function CharacterSelection({
   const renderUniverses = activeTab === 'All' ? universes : [activeTab];
 
   return (
-    <div className="flex flex-col h-full min-h-0 relative">
+    <div className="flex flex-col md:h-full min-h-0 relative">
       {/* Tabs Header */}
       <div className="flex flex-wrap gap-2 justify-center md:justify-start pb-4 pt-1 px-4 flex-shrink-0">
         <button
@@ -93,22 +93,22 @@ export default function CharacterSelection({
       </div>
 
       {/* Grid Container */}
-      <div className="flex-1 overflow-y-auto hide-scrollbar pb-32 px-4 md:px-6">
+      <div className="flex-1 md:overflow-y-auto hide-scrollbar pb-32 px-4 md:px-6">
         <div className="flex flex-col gap-8 md:gap-12 pt-2">
           {renderUniverses.map(universe => (
             <div key={universe} className="flex flex-col gap-4">
               {/* Universe Header Section */}
               {activeTab === 'All' && (
-                <div className="flex items-center gap-4">
+                <div className="sticky top-0 z-20 -mx-4 md:-mx-6 px-4 md:px-6 py-2 bg-gradient-to-b from-zinc-950 via-zinc-950/90 to-zinc-950/20 backdrop-blur-md flex items-center gap-4 mb-4 border-b border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
                   <h3 
-                    className="text-sm md:text-base font-black uppercase tracking-[0.2em]"
+                    className="text-xs md:text-sm font-black uppercase tracking-[0.3em]"
                     style={{ color: groupedCharacters[universe]?.[0]?.color || '#f4f4f5' }}
                   >
                     {universe}
                   </h3>
                   <div 
-                    className="h-px flex-1" 
-                    style={{ background: `linear-gradient(to right, ${groupedCharacters[universe]?.[0]?.color}60, transparent)` }}
+                    className="h-[2px] flex-1 rounded-full" 
+                    style={{ background: `linear-gradient(to right, ${groupedCharacters[universe]?.[0]?.color}80, transparent)` }}
                   />
                 </div>
               )}

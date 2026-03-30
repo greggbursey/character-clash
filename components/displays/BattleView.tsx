@@ -68,7 +68,7 @@ export default function BattleView({
                 {char1.universe}
               </p>
               <div className="h-3 w-px bg-zinc-700 hidden sm:block" />
-              <p className="text-[10px] md:text-xs font-mono text-yellow-500 uppercase tracking-widest font-bold hidden sm:block">
+              <p className="text-[10px] md:text-xs font-mono text-yellow-500 uppercase tracking-widest font-bold">
                 PWR: {char1.powerScore + (withGear1 ? (char1.gearBonus || 0) : 0) + (withPrep1 ? (char1.prepBonus || 0) : 0)}
               </p>
             </div>
@@ -183,7 +183,7 @@ export default function BattleView({
                 {char2.universe}
               </p>
               <div className="h-3 w-px bg-zinc-700 hidden sm:block" />
-              <p className="text-[10px] md:text-xs font-mono text-yellow-500 uppercase tracking-widest font-bold hidden sm:block">
+              <p className="text-[10px] md:text-xs font-mono text-yellow-500 uppercase tracking-widest font-bold">
                 PWR: {char2.powerScore + (withGear2 ? (char2.gearBonus || 0) : 0) + (withPrep2 ? (char2.prepBonus || 0) : 0)}
               </p>
             </div>
@@ -197,7 +197,7 @@ export default function BattleView({
             </button>
 
             {/* Modifiers P2 */}
-            <div className="flex flex-col items-center gap-2 mt-4 flex-row-reverse sm:flex-row">
+            <div className="flex flex-col items-center gap-2 mt-4">
               <div className="flex items-center gap-1 w-full max-w-[140px]">
                 <button
                   onClick={() => setWithGear2(!withGear2)}

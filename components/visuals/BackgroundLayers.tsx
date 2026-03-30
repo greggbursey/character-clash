@@ -66,7 +66,7 @@ export default function BackgroundLayers({
   const parallaxY = useTransform(smoothY, [-1, 1], [-30, 30]);
 
   return (
-    <div className="absolute inset-0 z-0 flex overflow-hidden">
+    <div className="fixed inset-0 z-0 flex overflow-hidden">
       {/* Lightning Effect */}
       <AnimatePresence>
         {battleState === 'countdown' && (
