@@ -155,7 +155,7 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/caseyjones-preview.jpg",
     backgroundUrl: "/data/tmnt/assets/caseyjones-background.jpg",
     color: "#1e293b",
-    powerScore: 40,
+    powerScore: 75,
     gearBonus: 50, // Sports equipment
     prepBonus: 30,
     gearDescription: "### Sports Equipment Bag\n- **Hockey Mask**: Heavy-duty protection for his identity and face.\n- **Baseball Bats & Golf Clubs**: Self-taught weapons used for maximum kinetic impact.",

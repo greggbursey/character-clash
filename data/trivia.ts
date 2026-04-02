@@ -26,7 +26,6 @@ export const trivia: Record<string, string[]> = {
     "Spider-Man was almost rejected because publisher Martin Goodman thought people hated spiders.",
     "Venom was originally a fan idea bought by Marvel for just $220 in 1982.",
     "The official Marvel Universe designation for the main continuity is Earth-616.",
-    "Black Widow's 'Red Room' training makes her biologically resistant to aging and disease.",
     "Iron Man's first armor was grey; it was changed to gold to look less 'frightening' to the public.",
     "Captain America was not a founding member of the Avengers; he joined in issue #4.",
     "Stan Lee created the X-Men because he wanted a shortcut for explaining superhero origins.",

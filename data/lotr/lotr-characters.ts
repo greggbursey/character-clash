@@ -11,9 +11,9 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/frodo-preview.png",
     backgroundUrl: "/data/lotr/assets/frodo-background.png",
     color: "#166534", // Hobbit Green
-    powerScore: 250,
-    gearBonus: 150, // Mithril/Sting/Phial
-    prepBonus: 80,
+    powerScore: 65,
+    gearBonus: 120, // Mithril/Sting/Phial
+    prepBonus: 70,
     gearDescription: "### Hobbit's Resilience\n- **Sting**: An Elven blade that detects Orcs, providing an early warning system.\n- **Mithril Vest**: Light but indestructible armor capable of absorbing fatal impacts.",
     prepDescription: "### Undying Will\nFrodo enters a state of deep focus, drawing on the memory of the Shire to resist mental attacks and pain, allowing him to push through impossible odds.",
     triviaPool: [
@@ -35,9 +35,9 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/samwise-preview.png",
     backgroundUrl: "/data/lotr/assets/samwise-background.png",
     color: "#713f12", // Earthy Brown
-    powerScore: 260,
-    gearBonus: 90,
-    prepBonus: 120, // Dedication/Spirit
+    powerScore: 70,
+    gearBonus: 80,
+    prepBonus: 100, // Dedication/Spirit
     gearDescription: "### Gardener's Utility\n- **Elven Rope & Pans**: Versatile tools that can entangle foes or deliver unexpected physical impact.\n- **Lembas Bread**: Restores stamina and vitality in the midst of a long encounter.",
     prepDescription: "### Unyielding Loyalty\nSam focuses on protecting his companion (or his cause), gaining a massive defensive surge that makes him nearly impossible to stagger.",
     triviaPool: [
@@ -323,9 +323,9 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/gollum-preview.png",
     backgroundUrl: "/data/lotr/assets/gollum-background.png",
     color: "#52525b", // Cave Grey
-    powerScore: 200,
+    powerScore: 55,
     gearBonus: 0,
-    prepBonus: 200, // Stealth/Ambush
+    prepBonus: 150, // Stealth/Ambush
     gearDescription: "### Twisted Survivalist\n- **Climbing Claws**: Allows him to move across any vertical surface at full speed and strike from unexpected angles.\n- **Precious-Seeking Eyes**: Can see perfectly in absolute darkness, negating any concealment based on light.",
     prepDescription: "### Sneaking and Skulking\nGollum vanishes into the shadows, becoming untargetable for a brief duration before reappearing for a high-damage critical strike to the opponent's back.",
     triviaPool: [
