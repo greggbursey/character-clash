@@ -16,6 +16,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 120, // Science genius
     gearDescription: "### Web-Slinger Prototype\n- **Fluid Dispersion Web-Shooters**: Custom-built wrist devices for high-tensile artificial webbing.\n- **Spider-Tracer Network**: Miniaturized tracking devices linked to his spider-sense.",
     prepDescription: "### Scientific Field Analysis\nPeter uses his genius-level intellect to analyze the chemical and structural weaknesses of his opponent's gear, often crafting a specialized web-formula on the fly.",
+    triviaPool: [
+      "Spider-Man was the first teenage superhero who wasn't a sidekick to an adult hero.",
+      "Stan Lee added the hyphen to 'Spider-Man' specifically so people wouldn't confuse him with 'Superman'.",
+      "Marvel's publisher initially hated the character idea, believing that readers were disgusted by spiders.",
+      "Peter Parker's IQ is estimated to be over 250, putting him on par with some of the world's greatest scientists.",
+      "In the original comics, Peter's web-fluid was so strong it could even restrain the Hulk for a short time.",
+      "Spider-Man has been a member of the Fantastic Four (as the Future Foundation) and the X-Men (as a teacher)."
+    ],
   },
   {
     id: "ironman",
@@ -32,6 +40,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 300, // Engineering genius
     gearDescription: "### Bleeding Edge Armor\n- **Nanotech Suit**: Capable of forming any weapon or tool Tony can imagine in real-time.\n- **Repulsor Cannons**: High-intensity muon-beam projectors for precise long-range destruction.",
     prepDescription: "### AI Battle Simulation\nTony's onboard AI (F.R.I.D.A.Y.) runs millions of combat scenarios, identifying the optimal counter-strategy and suit configuration for the specific opponent.",
+    triviaPool: [
+      "Stan Lee created Iron Man as a challenge to make an unlikable, wealthy capitalist into a beloved hero.",
+      "Tony Stark graduated from MIT with two master's degrees in engineering by the age of 19.",
+      "The Iron Man armor's iconic red-and-gold color scheme was first introduced in 'Tales of Suspense #48'.",
+      "In the comics, Tony Stark was once the Director of S.H.I.E.L.D. after the events of Civil War.",
+      "His arc reactor was originally powered by palladium, but he later discovered a new element to fuel it.",
+      "Tony has built specialized armors for almost every Avenger, including a 'Hulkbuster' and a 'Thorbuster'."
+    ],
   },
   {
     id: "thor",
@@ -48,6 +64,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 50,
     gearDescription: "### Asgardian Relics\n- **Mjolnir**: An enchanted Uru hammer that grants flight and weather manipulation to the worthy.\n- **Megingjord**: The Belt of Strength, which doubles his already god-like physical prowess.",
     prepDescription: "### Warrior's Prayer\nThor centers his spirit, calling upon the Odinforce to imbue his body with the raw, primordial energy of the Nine Realms.",
+    triviaPool: [
+      "Thor's hammer, Mjolnir, was forged in the heart of a dying star by the Dwarven smiths of Nidavellir.",
+      "He was once transformed into a frog by Loki, leading to a legendary story known as 'Pet Avengers'.",
+      "Thor's strength is so immense that he once pulled the World Serpent of Midgard with a fishing rod.",
+      "His name in the language of the giants means 'The Thunderer' or 'The Red God'.",
+      "Thor's birthday is celebrated in Asgard with a feast that lasts for three days and nights.",
+      "He is one of the few beings who can survive the vacuum of space without any suit or equipment."
+    ],
   },
   {
     id: "hulk",
@@ -64,6 +88,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 30, // Rage management
     gearDescription: "### Indestructible Gear\n- **Stark-Tech Nano-Pants**: Specifically designed to expand with his mass and resist extreme physical stress.\n- **Gamma-Radiation Siphon**: (Rarely used) temporarily boosts his power by absorbing ambient energy.",
     prepDescription: "### Suppressed Rage\nBanner spends time mentally 'boxing in' his trauma, building a reservoir of repressed anger that can be unleashed in a single, devastating 'Worldbreaker' burst.",
+    triviaPool: [
+      "The Hulk was originally gray in his first comic appearance, but was changed to green due to printing issues.",
+      "Hulk's physical strength has no upper limit; it increases exponentially as he becomes angrier.",
+      "Bruce Banner once tried to commit suicide by shooting himself, but the Hulk 'spat out the bullet'.",
+      "The Hulk has developed several personalities over the years, including the intelligent 'Professor' Hulk.",
+      "He has a near-perfect internal compass, allowing him to find the exact location where he was 'born'.",
+      "During the 'Planet Hulk' saga, he became the King of the planet Sakaar after winning in the gladiator pits."
+    ],
   },
   {
     id: "captainamerica",
@@ -80,6 +112,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 100, // Tactical leader
     gearDescription: "### Symbol of Freedom\n- **Vibranium Shield**: A perfectly balanced, indestructible disc that absorbs and redistributes kinetic energy.\n- **Utility Harness**: Contains tactical communication gear and battlefield medical supplies.",
     prepDescription: "### Battlefield Reconnaissance\nCap studies the topography and enemy formations, formulating a multi-layered tactical plan that accounts for every variable and inspires his allies.",
+    triviaPool: [
+      "Steve Rogers was a frail Brooklyn native who was rejected from the army multiple times before Project: Rebirth.",
+      "Captain America's first shield was triangular, but was changed to a circle due to legal disputes with Archie Comics.",
+      "On the cover of 'Captain America Comics #1', he was depicted punching Adolf Hitler in the face.",
+      "Cap is one of the few individuals who is 'worthy' of lifting Thor's hammer, Mjolnir.",
+      "He was frozen in the North Atlantic for nearly 20 years before being found by the Avengers.",
+      "Captain America has served as the leader of both the Avengers and S.H.I.E.L.D. at various points."
+    ],
   },
   {
     id: "thanos",
@@ -96,6 +136,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 250, // Cosmic strategist
     gearDescription: "### Titan Sovereign Gear\n- **Infinity Gauntlet**: A gold focal point for the six Infinity Stones, granting dominion over existence.\n- **Double-Bladed Sword**: A massive Uru blade capable of parrying even Mjolnir.",
     prepDescription: "### Nihilist Logic\nThanos calculates the 'necessary' sacrifices and structural weaknesses of the universe, ensuring his victory is the only logical conclusion for reality.",
+    triviaPool: [
+      "In the original comics, Thanos' primary motivation for the Snap was to impress the physical embodiment of Death.",
+      "Thanos was born with the Deviant Gene, giving him his unique purple skin and hulking frame unlike other Titans.",
+      "He was the first being to ever collect all six Infinity Stones and successfully use them together.",
+      "Thanos has a near-genius level intellect in almost every field of science and philosophy.",
+      "The actor Josh Brolin modeled Thanos' movements and personality on the fictional character of Colonel Kurtz.",
+      "Thanos is so physically powerful that he once defeated the Hulk in a purely physical fistfight."
+    ],
   },
   {
     id: "venom",
@@ -112,6 +160,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 40,
     gearDescription: "### Klyntar Biology\n- **Symbiote Tendrils**: Shifting organic matter that can form blades, shields, or entrapment webs.\n- **Adaptive Camouflage**: Allows the symbiote to perfectly mimic the wearer's surroundings or clothing.",
     prepDescription: "### Symbiotic Synchrony\nEddie and the symbiote spend time in 'The Hive,' aligning their disparate consciousnesses to operate as a single, lethal, and focused mind.",
+    triviaPool: [
+      "The idea for a black-costumed Spider-Man was originally bought from a fan for just $220.",
+      "The Venom symbiote was bonded with Spider-Man for months before Peter realized it was a sentient being.",
+      "Eddie Brock was a disgraced reporter who worked for the 'Daily Globe' before becoming Venom.",
+      "The name 'Venom' was chosen because Eddie felt his career was poisoned when Spider-Man exposed his mistakes.",
+      "Symbiotes are naturally vulnerable to high-frequency sounds and intense heat.",
+      "Venom's characteristic long tongue and green slime were added later by artists to make him look more monstrous."
+    ],
   },
   {
     id: "blackpanther",
@@ -128,6 +184,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 110, // King's resources
     gearDescription: "### King's Panther Habit\n- **Kinetic-Absorption Weave**: Woven from Vibranium, it stores physical impact and releases it in outward bursts.\n- **Kimoyo Beads**: Multifunctional advanced Wakandan tech for communication and hacking.",
     prepDescription: "### Wakandan Intelligence Network\nT'Challa utilizes his global network of spies and Wakanda's superior technology to gather every possible detail on his opponent's background.",
+    triviaPool: [
+      "Black Panther was the first black superhero to appear in mainstream American comic books.",
+      "The nation of Wakanda is hidden from the rest of the world and uses its deep deposits of Vibranium for tech.",
+      "T'Challa has been a member of both the Avengers and the secret council known as the Illuminati.",
+      "The 'Heart-Shaped Herb' that grants the Black Panther his powers is only found in Wakanda.",
+      "In the comics, T'Challa once successfully stripped the Silver Surfer of his cosmic power temporarily.",
+      "T'Challa's sister, Shuri, has also served as both the Black Panther and the Queen of Wakanda."
+    ],
   },
   {
     id: "doctorstrange",
@@ -144,6 +208,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 200, // Master of mystic arts
     gearDescription: "### Sanctum Relics\n- **Cloak of Levitation**: A sentient garment that allows for flight and can act independently in combat.\n- **Eye of Agamotto**: A powerful conduit for the Time Stone and mystical truth-seeking.",
     prepDescription: "### Astral Projection Meditation\nStrange travels through the multiverse in his astral form, witnessing millions of possible outcomes to find the single sequence of spells that ensures victory.",
+    triviaPool: [
+      "Stephen Strange was once one of the world's leading neurosurgeons before his car accident.",
+      "His primary home, the Sanctum Sanctorum, is located at 177A Bleecker Street in New York.",
+      "Doctor Strange's look and stories were inspired by the psychedelic art of the 1960s.",
+      "The Cloak of Levitation is a sentient artifact that 'chose' Strange to be its master.",
+      "In the MCU, Doctor Strange was the only one to see the 14,000,605 possible futures in 'Infinity War'.",
+      "He was originally trained by the Ancient One, a mystic who lived for over 500 years."
+    ],
   },
   {
     id: "deadpool",
@@ -160,6 +232,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 100,
     gearDescription: "### Mercenary's Toys\n- **Dual Carbon-Steel Katanas**: Masterfully crafted blades capable of slicing through most conventional armor.\n- **Personal Teleporter**: A belt-mounted device for short-range tactical 'BAMFs'.",
     prepDescription: "### Fourth-Wall Reconnaissance\nDeadpool 'reads ahead' in the script, identifying the opponent's upcoming moves and writing a series of nonsensical counter-tactics that somehow work.",
+    triviaPool: [
+      "Deadpool has a near-total awareness that he is a character in a comic book or movie.",
+      "His real name, Wade Wilson, is a direct reference to DC's Deathstroke (Slade Wilson).",
+      "Deadpool's healing factor is so powerful that he once grew his entire head back after it was crushed.",
+      "In the comics, Deadpool's first appearance was as a villain in the 'New Mutants'.",
+      "Wade Wilson has a pathological fear of cows, a trait that has persisted across many writers.",
+      "The 'Merc with a Mouth' was cursed by Thanos to be immortal, so he could never be with Death."
+    ],
   },
   {
     id: "carnage",
@@ -176,6 +256,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 20,
     gearDescription: "### Bloodstream Symbiote\n- **Biomass Blades**: The symbiote can transform any limb into a razor-sharp axe, spear, or tendril.\n- **Viscous Projectiles**: Carnage can fire hardened shards of his own body like high-velocity darts.",
     prepDescription: "### Chaotic Synchrony\nKasady and the symbiote revel in their shared madness, entering a state of 'Maximum Carnage' where their unpredictable movements defy all tactical analysis.",
+    triviaPool: [
+      "Carnage is the 'offspring' of the Venom symbiote, which was left behind in a prison cell.",
+      "Unlike Venom, the Carnage symbiote is bonded to Cletus Kasady through his actual bloodstream.",
+      "Carnage is significantly more powerful than Venom, often requiring a team-up to defeat him.",
+      "His characteristic red color is due to the symbiote's integration with Kasady's vascular system.",
+      "Cletus Kasady was a notorious serial killer before he ever encountered the symbiote.",
+      "Carnage's first major storyline was 'Maximum Carnage', a massive crossover event in the 1990s."
+    ],
   },
   {
     id: "groot",
@@ -192,6 +280,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 50,
     gearDescription: "### Sentient Timber\n- **Dendronic Thorns**: Sharp wooden protrusions that can be ejected or used for defensive spiking.\n- **Bioluminescent Spores**: Naturally occurring nodes that provide light and can act as confusing distractions.",
     prepDescription: "### Deep-Root Meditation\nGroot draws nutrients and cosmic energy from the soil, accelerating his cellular regeneration and preparing to expand his mass to its maximum limit.",
+    triviaPool: [
+      "In his very first comic appearance (1960), Groot was a highly articulate space conqueror who wanted to kidnap humans.",
+      "Every 'I am Groot' spoken by Vin Diesel in the MCU was recorded with a specialized 'Groot script'.",
+      "Groot's species, the 'Flora colossus', from Planet X, are generally considered extinct.",
+      "He can regrow his entire body from a single splinter or twig as long as it is replanted.",
+      "Rocket Raccoon and Groot have been a team for years before they ever met the other Guardians.",
+      "According to comics lore, Groot is actually a highly educated scientist on his own planet."
+    ],
   },
   {
     id: "starlord",
@@ -208,6 +304,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 100,
     gearDescription: "### Star-Hopper Tech\n- **Twin Element Guns**: Specialized blasters capable of projecting fire, water, air, or earth-based concussive force.\n- **Jet-Boots**: Boot-integrated thrusters providing high-speed aerial maneuvering and evasive hovering.",
     prepDescription: "### Tactical Dance-Off\nStar-Lord sets his 'Awesome Mix' to max volume, using the rhythmic distraction and his own erratic movements to bait the opponent into a reckless error.",
+    triviaPool: [
+      "Peter Quill's ship, the 'Milano', is named after his childhood crush, the actress Alyssa Milano.",
+      "His father in the comics is J'Son, the King of the Spartoi Empire, but in the MCU it is Ego.",
+      "Lord-Star's signature Element Guns can harness the primal powers of fire, water, earth, and air.",
+      "His collection of '70s and '80s pop music is his most prized and guarded possession.",
+      "Quill was originally a NASA astronaut in training before he was taken to space.",
+      "Star-Lord's mask was designed by the Kree to allow for long-duration operation in the vacuum of space."
+    ],
   },
   {
     id: "drax",
@@ -224,6 +328,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 20,
     gearDescription: "### Destroyer's Blades\n- **Dual Daggers**: Custom-weighted knives forged from high-density alloys capable of piercing Titan skin.\n- **Literal-Minded Focus**: High mental resistance against deception and psychological manipulation.",
     prepDescription: "### Warrior's Stillness\nDrax stands perfectly still for hours, slowing his heart rate to near-zero to become an invisible, immovable shadow before striking from the blind spot.",
+    triviaPool: [
+      "In the comics, Drax was originally a human musician named Arthur Douglas whose spirit was put into a super-body.",
+      "His skin is covered in elaborate tattoos (or scars) that serve as a historical record of all his past battles.",
+      "Drax possesses the unique ability to sense Thanos' presence anywhere in the galaxy.",
+      "He is a master of dual-wielding knives, particularly those forged from durable extraterrestrial alloys.",
+      "Drax was once the only one capable of physically removing Thanos' heart in single combat.",
+      "His literal-mindedness in the MCU is a result of his species having no concept of metaphors."
+    ],
   },
   {
     id: "rocketraccoon",
@@ -240,6 +352,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 200,
     gearDescription: "### Halfworld Arsenal\n- **Hadron Enforcer Prototype**: A massive, shoulder-mounted cannon capable of destroying moon-sized targets.\n- **Rocket-Mine Network**: Specialized traps that can be deployed instantly to control the battlefield.",
     prepDescription: "### Scavenge & Build\nRocket scrapes together spare parts from the environment, assembling a specialized, one-time-use gadget specifically designed to exploit his opponent's greatest weakness.",
+    triviaPool: [
+      "Rocket's design and name were inspired by the Beatles song 'Rocky Raccoon'.",
+      "He was a security officer and 'guardian' of the Keystone Quadrant before meeting Groot.",
+      "Rocket is a biological and cybernetic experiment created by the technicians of Halfworld.",
+      "He is a genius-level mechanical engineer, capable of creating complex weapons in minutes.",
+      "Rocket has an unhealthy obsession with stolen artificial limbs and cybernetic enhancements.",
+      "Despite his aggressive nature, Rocket is the tactical heart of the Guardians of the Galaxy."
+    ],
   },
   {
     id: "drdoom",
@@ -256,6 +376,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 400,
     gearDescription: "### Latverian Sovereign Tech\n- **Titanium-Alloy Armor**: A technological marvel that channels both plasma energy and eldritch spells.\n- **Doom-Bot Network**: Remote-controlled replicas that can distract, bait, or swarm an opponent.",
     prepDescription: "### Scientific Sorcery\nDoom combines the laws of physics with the rituals of the mystic arts, creating an absolute tactical plan that accounts for both physical and metaphysical variables.",
+    triviaPool: [
+      "Victor von Doom is the absolute monarch of the European nation of Latveria.",
+      "Doom's armor was forged in a secret Tibetan monastery and is bonded to his skin in some versions.",
+      "He is a master of both science and magic, being considered a candidate for Sorcerer Supreme.",
+      "The 'Doom-Bots' are so advanced that they often believe they are the real Doctor Doom.",
+      "Doom's face was scarred in a laboratory accident that he blames on Reed Richards.",
+      "He successfully ruled the entire multiverse as 'God Emperor Doom' during the Secret Wars event."
+    ],
   },
   {
     id: "ghostrider",
@@ -272,6 +400,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 50,
     gearDescription: "### Hellfire Relics\n- **Mystical Hell-Chain**: An indestructible, enchanted weapon that can lash out at any speed and burn the target's soul.\n- **Hell-Cycle**: A supernatural motorcycle that can travel over any surface and even through the air.",
     prepDescription: "### Penance Calculation\nThe Ghost Rider 'looks' into the opponent's past, tallying the weight of their sins to ensure his first strike carries the full momentum of the Spirit of Vengeance.",
+    triviaPool: [
+      "Johnny Blaze was a legendary stunt rider who sold his soul to Mephisto to save his father.",
+      "The Spirit of Vengeance inside Johnny Blaze is an ancient being named Zarathos.",
+      "Ghost Rider's Penance Stare makes victims feel all the pain they have ever caused to others.",
+      "He can infuse any vehicle he rides with Hellfire, including planes and historical mammoth horses.",
+      "Ghost Rider is nearly invulnerable to conventional weapons, as he is a supernatural entity.",
+      "His chains are mystical and can be controlled by his will, independent of physical laws."
+    ],
   },
   {
     id: "punisher",
@@ -288,8 +424,15 @@ export const marvelCharacters: Character[] = [
     prepBonus: 220,
     gearDescription: "### Combat Surplus\n- **Kevlar Tactical Vest**: Reinforced with high-density plates and featuring his iconic skull insignia.\n- **Specialized Arsenal**: A rotating inventory of sniper rifles, high-yield explosives, and tactical knives.",
     prepDescription: "### Military Kill-Zone\nFrank spends days scouting the arena, setting up Claymore mines, identifying escape routes, and zeroing his rifle for the perfect, initial long-range execution.",
+    triviaPool: [
+      "Frank Castle was a US Marine captain and a veteran of multiple combat tours before becoming the Punisher.",
+      "His iconic skull logo was originally intended as a way to draw enemy fire towards his armored chest.",
+      "Punisher's first appearance was as a villain hired to assassinate Spider-Man.",
+      "He has no superpowers, relying entirely on his elite military training and massive arsenal.",
+      "Punisher once used stolen Pym Particles to shrink down and infiltrate a high-security base.",
+      "Frank Castle has a strict code of conduct, never intentionally harming innocent civilians."
+    ],
   },
-/*
   {
     id: "blackwidow",
     name: "Black Widow",
@@ -305,6 +448,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 140,
     gearDescription: "### Red Room Arsenal\n- **Widow's Bite**: Gauntlets that deliver high-voltage electrical shocks and fire grappling hooks.\n- **Stealth Suit**: Built with light-bending fabric and silenced tactical gear.",
     prepDescription: "### Deep-Cover Infiltration\nNatasha infiltrates the opponent's background, identifying their secrets and psychological pressure points to finish the fight before it gets physical.",
+    triviaPool: [
+      "In the comics, Natasha Romanoff was enhanced with a version of the Super-Soldier Serum, slowing her aging.",
+      "She was born in Stalingrad and survived a fire before being taken by the Red Room as an infant.",
+      "Black Widow's first appearance in Marvel Comics was as a villain and a spy for the Soviet Union.",
+      "Her signature weapon, the 'Widow's Bite', can deliver electrical shocks of up to 30,000 volts.",
+      "Natasha is an expert in at least 11 different languages, including Russian, English, Chinese, and French.",
+      "She was once the leader of the Avengers during a time when the main founders were missing."
+    ],
   },
   {
     id: "hawkeye",
@@ -321,6 +472,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 90,
     gearDescription: "### Advanced Archery Kit\n- **Trick Arrowheads**: A specialized quiver containing explosive, EMP, sonic, and acid arrows.\n- **High-Tension Bow**: Custom-engineered for ranges exceeding traditional archery limits.",
     prepDescription: "### Nesting & Sight Lines\nClint identifies the highest vantage point in the arena and sets up a series of trip-wire arrows to control the flow of the battlefield.",
+    triviaPool: [
+      "Hawkeye grew up in a traveling circus, where he was trained by a marksman named Swordsman.",
+      "He was once legally deaf in the comics, after an incident that ruptured his eardrums.",
+      "Clint Barton was the first person to ever join the Avengers who wasn't a founding member.",
+      "He has lived under several aliases, including Ronin and the size-changing hero Goliath.",
+      "Hawkeye's vision is so sharp that he can hit a target's bullseye without even looking directly at it.",
+      "In the 'Old Man Logan' future, a blind Hawkeye is one of the last surviving heroes."
+    ],
   },
   {
     id: "captainmarvel",
@@ -337,6 +496,14 @@ export const marvelCharacters: Character[] = [
     prepBonus: 80,
     gearDescription: "### Kree Starforce Gear\n- **Adaptive Flight Suit**: Constructed from resilient Kree fabrics that withstand atmospheric reentry and cosmic radiation.\n- **Photon Bracers**: Focus and amplify her natural energy projection for more precise 'Binary' strikes.",
     prepDescription: "### Galactic Beacon Calibration\nCarol enters a high-altitude state, absorbing cosmic rays to recharge her energy reserves to their peak 'Binary' potential.",
+    triviaPool: [
+      "Carol Danvers was a Major in the US Air Force and a top-tier pilot before gaining her powers.",
+      "Her cosmic powers come from the explosion of a Kree device called the Psyche-Magnitron.",
+      "She has used several superhero names throughout history, including Ms. Marvel, Binary, and Warbird.",
+      "Captain Marvel is so powerful she can absorb the energy of an entire nuclear explosion.",
+      "She has a feline companion named Chewie (or Goose in the MCU) who is actually a deadly Flerken.",
+      "Carol was once the leader of Alpha Flight, Earth's primary space-defense organization."
+    ],
   },
-*/
 ];
+

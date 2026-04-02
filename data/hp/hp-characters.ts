@@ -16,6 +16,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 80,
     gearDescription: "### The Chosen One's Arsenal\n- **The Invisibility Cloak**: A true Deathly Hallow that never fades, allowing him to bypass nearly any detection.\n- **Firebolt Broomstick**: Provides extreme aerial mobility and speed, allowing for hit-and-run tactics.",
     prepDescription: "### Dumbledore's Army Training\nHarry enters a focused state of leadership, recalling the combat spells he taught his friends, which increases his defensive reflexes and spell-casting speed.",
+    triviaPool: [
+      "Daniel Radcliffe went through 160 pairs of glasses and over 60 wands while filming the series.",
+      "The makeup artists applied Harry's iconic lightning bolt scar over 2,000 times in total.",
+      "Harry's parents, James and Lily, were once the Head Boy and Head Girl at Hogwarts.",
+      "He is the only known person to have survived the Killing Curse not once, but twice.",
+      "Harry's first broomstick was actually a toy one given to him by his godfather, Sirius Black.",
+      "In the original draft, J.K. Rowling considered making Harry's name 'Harry Howard'."
+    ],
   },
   {
     id: "dumbledore",
@@ -32,6 +40,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 150,
     gearDescription: "### The Archmage's Tools\n- **The Elder Wand**: An unbeatable wand that amplifies the power of every spell to its absolute limit.\n- **Fawkes the Phoenix**: Provides aerial support and 'Phoenix Tears,' which can heal even the most fatal wounds instantly.",
     prepDescription: "### Strategic Foresight\nDumbledore calculates the 'greater good' of the encounter, setting complex magical traps and protective charms hours before the battle even begins.",
+    triviaPool: [
+      "Albus Dumbledore's name is an Old English word for 'bumblebee', chosen because Rowling imagined him humming.",
+      "He was 115 years old at the time of his death at the hands of Severus Snape.",
+      "Dumbledore's Patronus is a phoenix, a mirror of his loyal companion, Fawkes.",
+      "He was once the owner of all three Deathly Hallows, though never all at the same time.",
+      "His favorite muggle sweet was the Lemon Sherbet (or Lemon Drop).",
+      "Dumbledore could understand Mermish, Gobbledegook, and Parseltongue, though he couldn't speak the latter."
+    ],
   },
   {
     id: "voldemort",
@@ -48,6 +64,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 180,
     gearDescription: "### Dark Art Artifacts\n- **Nagini**: A giant boa constrictor and Horcrux that acts as a deadly scout and physical attacker.\n- **The Horcrux Net**: Grants a 'Second Life' effect, allowing him to survive a fatal blow once per encounter (conceptual balance).",
     prepDescription: "### Terror Presence\nVoldemort uses Legilimency to probe the opponent's mind, dredging up their deepest fears to paralyze them with terror before the first curse is cast.",
+    triviaPool: [
+      "Voldemort's name is derived from the French phrase 'vol de mort', which translates to 'flight of death'.",
+      "He was 71 years old during the final Battle of Hogwarts in 1998.",
+      "Voldemort's greatest fear was his own death, which he viewed as a 'shameful human weakness'.",
+      "He once held a high-level job as a shop assistant at Borgin and Burkes after leaving Hogwarts.",
+      "According to J.K. Rowling, the 't' at the end of Voldemort is actually intended to be silent.",
+      "He is the last living descendant of Salazar Slytherin through the Gaunt family bloodline."
+    ],
   },
   {
     id: "snape",
@@ -64,6 +88,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 250, // Occlumency/Planning
     gearDescription: "### The Prince's Brews\n- **Liquid Death & Healing**: A collection of high-potency vials that can either instantly incapacitate an enemy or restore his own vitality.\n- **Personalized Spellbook**: Contains forbidden charms like Sectumsempra, designed for lethal efficiency.",
     prepDescription: "### Occlumency Barrier\nSnape closes his mind to all outside influence, becoming immune to psychological attacks and predicting his opponent's moves through cold, analytical observation.",
+    triviaPool: [
+      "Severus Snape was the only Death Eater capable of producing a Patronus, a feat he achieved due to his love for Lily.",
+      "The character was partially inspired by J.K. Rowling's real-life high school chemistry teacher.",
+      "Alan Rickman was given a huge spoiler about Snape's true motivations long before the books revealed them.",
+      "He was the first Slytherin Head of House to later serve as the Headmaster of Hogwarts.",
+      "Snape's Patronus is a Doe, which is exactly the same as Lily Potter's.",
+      "He is the inventor of several powerful spells, including Sectumsempra and Langlock."
+    ],
   },
   {
     id: "hagrid",
@@ -80,6 +112,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 50,
     gearDescription: "### Beastmaster's Guard\n- **The Pink Umbrella**: A concealed wand that allows for basic but powerful charms.\n- **Creature Call**: Summons a loyal beast (like Aragog's children or a Hippogriff) to flank the opponent.",
     prepDescription: "### Giant's Resolve\nHagrid braces himself, leaning into his giant heritage to shrug off physical impacts and minor magical projectiles that would stagger a normal wizard.",
+    triviaPool: [
+      "Robbie Coltrane, the actor who played Hagrid, was the very first person cast in the film series.",
+      "Hagrid was expelled in his third year for supposedly opening the Chamber of Secrets, which was a frame-up by Tom Riddle.",
+      "His parents were a human father and a giantess mother named Fridwulfa.",
+      "Hagrid's favorite pet, the three-headed dog Fluffy, was based on Cerberus from Greek mythology.",
+      "His pink umbrella secretly contains the broken pieces of his original oak wand.",
+      "According to J.K. Rowling, Hagrid was never able to produce a Patronus, as it's a very difficult spell."
+    ],
   },
   {
     id: "siriusblack",
@@ -96,6 +136,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 70,
     gearDescription: "### Marauder's Edge\n- **Family Heirloom Wand**: A high-resonance wand capable of aggressive, high-speed combat magic.\n- **The Marauder's Map**: (Conceptual) allows him to anticipate enemy movements through superior environmental awareness.",
     prepDescription: "### Animagus Ambush\nSirius shifts into his massive dog form (Padfoot), closing the distance with animalistic speed before shifting back for a point-blank magical strike.",
+    triviaPool: [
+      "Sirius Black was the first person to ever escape from Azkaban without any outside help.",
+      "He was the one who gifted Harry both his first toy broom and his professional Firebolt.",
+      "His Animagus form is a huge black dog, which is often mistaken for 'The Grim', an omen of death.",
+      "Sirius' name is shared with the brightest star in the night sky, also known as the 'Dog Star'.",
+      "He was only 22 years old when he was wrongfully imprisoned in Azkaban.",
+      "Gary Oldman based the look of Sirius' tattoos on those worn by Russian prison gangs."
+    ],
   },
   {
     id: "remuslupin",
@@ -112,6 +160,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 90,
     gearDescription: "### D.A.D.A. Mastery\n- **Wolfsbane Potion Vials**: (Conceptual) allows him to maintain coordination and intelligence even in high-stress combat.\n- **Silver-Reinforced Wand**: Specifically tuned for defensive and counter-curse magic.",
     prepDescription: "### Moony's Analysis\nLupin identifies the 'Boggart' (the primary fear/weakness) of his opponent, tailoring his spellcasting to exploit their psychological hesitation.",
+    triviaPool: [
+      "Lupin's name 'Remus' is from Roman myth (raised by a wolf), and 'Lupin' comes from the Latin word for 'wolfish'.",
+      "His condition of lycanthropy was intended as a metaphor for the real-world stigma around HIV/AIDS.",
+      "Lupin's Patronus is a wolf, but he prefers not to produce it, finding it a painful reminder of his 'furry little problem'.",
+      "He was the first non-Slytherin or non-Gryffindor to teach Defense Against the Dark Arts in the series.",
+      "Remus is the only member of the original Marauders who died of natural (albeit battle-related) causes, as the others were murdered.",
+      "He was the one who taught Harry how to produce a Patronus Charm in his third year."
+    ],
   },
   {
     id: "bellatrix",
@@ -128,6 +184,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 120,
     gearDescription: "### Death Eater Arsenal\n- **Walnut Death-Wand**: A stiff, powerful wand optimized for the Dark Arts and torture curses.\n- **Poisoned Daggers**: Concealed blades for when magical means are not enough or require a silent finish.",
     prepDescription: "### Cruciatus Focus\nBellatrix enters a state of manic euphoria, ignoring her own pain and focusing solely on the 'fun' of breaking her opponent's spirit.",
+    triviaPool: [
+      "Bellatrix is the elder sister of Narcissa Malfoy and Andromeda Tonks, making her Draco's aunt.",
+      "Her name is Latin for 'female warrior' and she is the brightest star in the constellation Orion.",
+      "Bellatrix was obsessed with Voldemort, viewing him as a romantic figure rather than just a master.",
+      "She was a master of Occlumency and was the one who trained her nephew Draco Malfoy in the art.",
+      "In the books, she is described as having had great beauty once, which was 'eaten away' by her time in Azkaban.",
+      "Bellatrix was responsible for the deaths of Sirius Black, Dobby, and Nymphadora Tonks."
+    ],
   },
   {
     id: "dracomalfoy",
@@ -144,6 +208,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 100,
     gearDescription: "### Malfoy Inheritance\n- **Nimbus 2001**: A high-end racing broom provided by his father, granting superior speed and handling.\n- **Hand of Glory**: A dark artifact that gives light only to the holder, perfect for ambushes in darkness.",
     prepDescription: "### Pure-blood Arrogance\nDraco utilizes his superior social standing to demoralize his opponent, using mocking 'Hexes' that disrupt their concentration and timing.",
+    triviaPool: [
+      "Tom Felton initially auditioned for the roles of Harry Potter and Ron Weasley before being cast as Draco.",
+      "Draco's name 'Malfoy' is French for 'mal foi', which translates to 'bad faith'.",
+      "He was a member of the Slytherin Quidditch team and served as their Seeker for several years.",
+      "Draco's hawthorn wand with a unicorn hair core was eventually won by Harry, who used it as his primary wand for a time.",
+      "J.K. Rowling has expressed concern about the number of fans who find Draco attractive, as she views him as a flawed character.",
+      "After the war, Draco married Astoria Greengrass and had a son named Scorpius."
+    ],
   },
   {
     id: "neville",
@@ -160,6 +232,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 60,
     gearDescription: "### Defender's Gear\n- **The Sword of Gryffindor**: An indestructible silver blade that has absorbed Basilisk venom, capable of destroying Horcruxes and cutting magic.\n- **Mimbulus Mimbletonia**: A plant that can spray 'Stinksap,' heavily obscuring vision and distracting enemies.",
     prepDescription: "### Herbology Trap\nNeville secretly plants Venomous Tentacula seeds or Devil's Snare roots in the arena, which activate mid-battle to entangle his opponent.",
+    triviaPool: [
+      "Neville could have been the 'Chosen One' if Voldemort had chosen to attack him instead of Harry.",
+      "His parents, Frank and Alice Longbottom, were famous Aurors who were tortured to insanity.",
+      "Initially, Neville's grandmother thought he might be a Squib until he survived being dropped out of a window.",
+      "The Sword of Gryffindor appeared to Neville in the Sorting Hat because he showed true bravery.",
+      "Neville eventually became the Professor of Herbology at Hogwarts after many years as an Auror.",
+      "According to J.K. Rowling, Neville's favorite plant is the Mimbulus Mimbletonia."
+    ],
   },
   {
     id: "ginny",
@@ -176,6 +256,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 70,
     gearDescription: "### Chaser's Agility\n- **Professional Grade Broom**: Provides elite-level evasion and speed for aerial-focused combat.\n- **Weasleys' Wizard Wheezes Gadgets**: (Conceptual) utilizes various prank-based distractions to confuse opponents.",
     prepDescription: "### Bat-Bogey Blitz\nGinny fires a rapid succession of Hexes designed to mask a singular, powerful Bat-Bogey Hex that physically blinds and disorients her target.",
+    triviaPool: [
+      "Ginny was the first girl born into the Weasley family for seven generations.",
+      "She was a highly talented Quidditch player, serving as both a Chaser and a substitute Seeker.",
+      "Her Bat-Bogey Hex was so powerful it earned her an invitation to Professor Slughorn's 'Slug Club'.",
+      "Ginny was the one who named Dumbledore's Army when they were first meeting in the Hog's Head.",
+      "After leaving Hogwarts, she played professional Quidditch for the Holyhead Harpies.",
+      "Ginny later became the senior Quidditch correspondent for the Daily Prophet."
+    ],
   },
   {
     id: "hedwig",
@@ -192,6 +280,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 30,
     gearDescription: "### Familiar's Eye\n- **Razor-sharp Talons**: Basic physical defense capable of distracting human-sized opponents.\n- **Silent Flight**: Allows for stealthy approaches and message interception.",
     prepDescription: "### Distraction Swoop\nHedwig dive-bombs the opponent's face at the critical moment of their spell-casting, causing their aim to falter or their concentration to break.",
+    triviaPool: [
+      "J.K. Rowling admitted she made a mistake by describing Hedwig as being active during the day, as snowy owls are mostly nocturnal.",
+      "The actors who played Hedwig in the films were mostly male snowy owls, as they are smaller and whiter than females.",
+      "Hedwig was the very first birthday present Harry ever received, given to him by Hagrid.",
+      "Her name 'Hedwig' was found by Harry in 'A History of Magic' while he was bored over the summer.",
+      "In the books, Hedwig is described as having a very expressive personality, often giving Harry 'reproachful looks'.",
+      "The death of Hedwig in the final book was written to symbolize Harry's loss of innocence."
+    ],
   },
   {
     id: "dobby",
@@ -208,6 +304,14 @@ export const hpCharacters: Character[] = [
     prepBonus: 150, // Elf Magic / Apparition
     gearDescription: "### The Free Elf's Will\n- **Household Chaos**: (Conceptual) utilizes teleported objects and environment manipulation to disrupt opponents.\n- **Socks of Freedom**: (Lore-based) provides a morale/speed boost through the joy of being free.",
     prepDescription: "### Instant Apparition\nDobby constantly teleports around the arena, becoming an impossible-to-hit target while delivering point-blank blasts of raw elven energy.",
+    triviaPool: [
+      "Dobby's first and last words in the entire series were 'Harry Potter'.",
+      "He was a free elf for several years, eventually working in the Hogwarts kitchens for a wage.",
+      "Dobby was known for wearing a mismatched collection of clothes, including several hats stacked on his head.",
+      "House-elf magic is ancient and powerful, allowing Dobby to teleport in places where wizards are blocked.",
+      "He had a deep and lasting friendship with Aberforth Dumbledore, who helped him during his missions.",
+      "Dobby appears in every book of the series except for 'The Prisoner of Azkaban' and 'The Half-Blood Prince'."
+    ],
   },
   {
     id: "willow",
@@ -224,5 +328,13 @@ export const hpCharacters: Character[] = [
     prepBonus: 0,
     gearDescription: "### Ancient Roots\n- **Slamming Branches**: Massive, gnarled limbs that strike with enough force to shatter stone.\n- **Immobile Fortification**: Being rooted to the earth, it cannot be knocked back or moved by any conventional spell.",
     prepDescription: "### Reactive Thrasher\nThe Willow enters a state of heightened sensitivity, thrashing its branches in an unpredictable, recursive pattern that creates a 360-degree 'no-go' zone of physical destruction.",
+    triviaPool: [
+      "The Whomping Willow was planted by Dumbledore specifically to hide the entrance to the Shrieking Shack for Lupin.",
+      "It is a sentient and highly aggressive tree that will attack anything that enters the range of its branches.",
+      "The only way to freeze the Whomping Willow is to press a small knot at the base of its trunk.",
+      "Students used to challenge each other to see who could touch its trunk, until several were severely injured.",
+      "The tree has enough power to completely demolish a flying Ford Anglia and split a Firebolt broomstick in half.",
+      "J.K. Rowling once described it as a 'rare and ancient magical plant' that requires expert care."
+    ],
   },
 ];

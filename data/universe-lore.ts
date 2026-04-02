@@ -76,5 +76,12 @@ export const universeLoreData: Record<string, UniverseLore> = {
     history: "The Wizarding World has existed for centuries, hidden from 'Muggles' by the International Statute of Secrecy (1692). Its recent history was dominated by the two Wizarding Wars sparked by the dark wizard Lord Voldemort, whose quest for immortality and blood purity nearly destroyed both magical and non-magical societies.",
     lore: "Magic in this universe is an innate ability, refined through study, wands, and ancient spells. Lore includes the four founders of Hogwarts, the Three Deathly Hallows, and the complex laws governing magical creatures and hidden locations like Diagon Alley and Hogsmeade.",
     keyLocations: ["Hogwarts", "Diagon Alley", "Ministry of Magic", "The Burrow", "Forbidden Forest"]
+  },
+  "Lord of the Rings": {
+    name: "Lord of the Rings / Middle-earth",
+    blurb: "The high-fantasy foundation of modern myth. A world of ancient elves, sturdy dwarves, and the enduring spirit of Hobbits standing against the literal personification of evil.",
+    history: "Created through the Music of the Ainur, Middle-earth has seen three great ages. From the awakening of the Elves and the theft of the Silmarils to the forging of the Rings of Power and the final defeat of Sauron, its history is a cycle of light and shadow, where even the smallest person can change the course of the future.",
+    lore: "The lore of Middle-earth is deeply rooted in linguistics and mythology. It centers on the concept of 'Eestel' (hope) and the struggle against 'The Shadow.' Magic is inherent in the spirit of beings like the Istari and the Elves, often manifesting as craft, wisdom, or the preservation of the natural world rather than mere flashy spells.",
+    keyLocations: ["The Shire", "Rivendell", "Moria", "Minas Tirith", "Mount Doom"]
   }
 };

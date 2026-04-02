@@ -46,129 +46,148 @@ function generateQuestions(
 
   if (initialPool.length === 0) return [];
   
-  const questionCount = category === 'character' ? 5 : 10;
+  const questionCount = category === 'character' ? 8 : 10;
   const questions: TriviaQuestion[] = [];
   
+  // Track used facts/questions to prevent duplication in a single session
+  const usedFacts = new Set<string>();
+
   for (let i = 0; i < questionCount; i++) {
-    // For character mode, we always use the primary character but different trivia sections
     const correctChar = category === 'character' ? primaryChar! : initialPool[Math.floor(Math.random() * initialPool.length)];
     
-    const types: ('origin' | 'battles' | 'abilities' | 'secret' | 'universe')[] = 
-      ['origin', 'battles', 'abilities', 'secret', 'universe'];
+    // For character mode, we have a specific pool of possible facts
+    let availablePoolFacts = correctChar.triviaPool || [];
+    let availableLoreTypes = ['origin', 'battles', 'abilities', 'secret'];
+
+    // If we're in character mode, we want to exhaust the triviaPool first, then lore
+    // but we should still randomize the order
     
-    // Filter out 'universe' for specific modes
-    const validTypes = category !== 'all' 
-      ? types.filter(t => t !== 'universe') 
-      : types;
-      
-    // For character mode, cycle through the 4 lore types
-    const chosenType = category === 'character' 
-      ? ['origin', 'battles', 'abilities', 'secret'][i % 4] as any
-      : validTypes[Math.floor(Math.random() * validTypes.length)];
-    
-    const isFactQuiz = category === 'character';
     let questionText = "";
     let answerText = "";
+    let finalSourceType: any = 'lore';
+    let isFactQuiz = true;
+
+    // Decide what kind of question to generate
+    // Priority: 1. Unused Pool Fact, 2. Unused Lore Section, 3. Random fallback
     
-    if (chosenType === 'universe') {
-      questionText = `Which universe does ________________ belong to?`;
-      answerText = correctChar.universe;
-    } else {
-      const triviaParts = correctChar.triviaInfo?.split('\n\n') || [];
-      const section = triviaParts.find(p => p.toLowerCase().startsWith(chosenType.slice(0, 4)));
+    const unusedPoolFacts = availablePoolFacts.filter(f => !usedFacts.has(f));
+    const unusedLoreTypes = availableLoreTypes.filter(t => !usedFacts.has(`${correctChar.id}-${t}`));
+
+    if (unusedPoolFacts.length > 0 && (category === 'character' || Math.random() > 0.4)) {
+      // Use a Pool Fact
+      const fact = unusedPoolFacts[Math.floor(Math.random() * unusedPoolFacts.length)];
+      usedFacts.add(fact);
+      answerText = fact;
+      finalSourceType = 'lore';
       
+      if (category === 'character') {
+         questionText = `Which of these is a verified fact regarding the legend of ${correctChar.name}?`;
+      } else {
+         const templates = [
+           `Which ${correctChar.universe} legend matches this record: "${fact}"?`,
+           `Whose history contains this specific detail: "${fact}"?`,
+           `Which character's file lists this entry: "${fact}"?`
+         ];
+         questionText = templates[Math.floor(Math.random() * templates.length)];
+      }
+    } else if (unusedLoreTypes.length > 0) {
+      // Use a Lore Section
+      const type = unusedLoreTypes[Math.floor(Math.random() * unusedLoreTypes.length)];
+      usedFacts.add(`${correctChar.id}-${type}`);
+      finalSourceType = type;
+
+      const triviaParts = correctChar.triviaInfo?.split('\n\n') || [];
+      const section = triviaParts.find(p => p.toLowerCase().startsWith(type.slice(0, 4)));
       const content = section 
         ? section.split(': ').slice(1).join(': ')
         : correctChar.description;
 
       const maskedContent = maskName(content, correctChar.name);
+      answerText = content;
       
-      if (isFactQuiz) {
-        // Questions about the character's facts
+      if (category === 'character') {
         const typeLabels: Record<string, string> = {
           origin: "origin and backstory",
           battles: "legendary battles",
           abilities: "special abilities and gear",
           secret: "hidden secrets or trivia"
         };
-        questionText = `Which of these is the correct ${typeLabels[chosenType] || chosenType} for ${correctChar.name}?`;
-        answerText = content;
+        questionText = `Which of these is the correct ${typeLabels[type] || type} for ${correctChar.name}?`;
       } else {
-        // Traditional "Who is this?" questions
         const templates = [
           `Which ${correctChar.universe} legend is described here: "${maskedContent}"?`,
           `Based on these logs, identify the character: "${maskedContent}"`,
-          `In the ${correctChar.universe} archives, who is associated with: "${maskedContent}"?`,
-          `Which ${correctChar.universe} warrior matches this file: "${maskedContent}"?`
+          `In the ${correctChar.universe} archives, who is associated with: "${maskedContent}"?`
         ];
         questionText = templates[Math.floor(Math.random() * templates.length)];
       }
+    } else if (category !== 'character' && Math.random() > 0.7) {
+      // Universe check fallback (rare)
+      questionText = `Which universe does ________________ belong to?`;
+      answerText = correctChar.universe;
+      finalSourceType = 'universe';
+      isFactQuiz = false;
+    } else {
+      // Emergency random pool fact (repetition allowed if exhausted)
+      const fact = availablePoolFacts.length > 0 
+        ? availablePoolFacts[Math.floor(Math.random() * availablePoolFacts.length)]
+        : correctChar.description;
+      answerText = fact;
+      finalSourceType = 'lore';
+      questionText = category === 'character' 
+        ? `Which of these details is associated with ${correctChar.name}?`
+        : `Which character matches this detail: "${fact}"?`;
     }
 
     // Options generation
     const options: (Character | string)[] = [];
     
     if (isFactQuiz) {
-      // Fact-based distractors (take same section from other characters in the same universe)
       options.push(answerText);
-      const distractors = allCharactersData
-        .filter(c => c.id !== correctChar.id && c.universe === correctChar.universe)
-        .sort(() => 0.5 - Math.random());
       
-      for (const dist of distractors) {
+      // Distractors
+      const distractorPool = allCharactersData.filter(c => c.id !== correctChar.id);
+      const sameUniDistractors = distractorPool.filter(c => c.universe === correctChar.universe).sort(() => 0.5 - Math.random());
+      const otherDistractors = distractorPool.filter(c => c.universe !== correctChar.universe).sort(() => 0.5 - Math.random());
+      const prioritizedDistractors = [...sameUniDistractors, ...otherDistractors];
+
+      for (const dist of prioritizedDistractors) {
         if (options.length >= 4) break;
-        const dParts = dist.triviaInfo?.split('\n\n') || [];
-        const dSection = dParts.find(p => p.toLowerCase().startsWith(chosenType.slice(0, 4)));
-        const dContent = dSection ? dSection.split(': ').slice(1).join(': ') : dist.description;
-        if (dContent && !options.includes(dContent)) {
+        
+        let dContent = "";
+        // Preference for pool facts from distractors
+        if (dist.triviaPool && dist.triviaPool.length > 0) {
+          dContent = dist.triviaPool[Math.floor(Math.random() * dist.triviaPool.length)];
+        } else {
+          dContent = dist.description;
+        }
+
+        if (dContent && !options.includes(dContent) && dContent !== answerText) {
           options.push(dContent);
         }
       }
       
-      // Fallback for small universes
-      if (options.length < 4) {
-        const globalDistractors = allCharactersData
-          .filter(c => c.id !== correctChar.id && !distractors.find(d => d.id === c.id))
-          .sort(() => 0.5 - Math.random());
-        for (const dist of globalDistractors) {
-          if (options.length >= 4) break;
-          const dParts = dist.triviaInfo?.split('\n\n') || [];
-          const dSection = dParts.find(p => p.toLowerCase().startsWith(chosenType.slice(0, 4)));
-          const dContent = dSection ? dSection.split(': ').slice(1).join(': ') : dist.description;
-          if (dContent && !options.includes(dContent)) {
-            options.push(dContent);
-          }
-        }
+      while (options.length < 4) {
+        options.push(`Historical Data Fragment #${Math.floor(Math.random() * 9999)} (Classified)`);
       }
-    } else if (chosenType === 'universe') {
+    } else {
+      // Universe check options
       const otherUniverses = Array.from(new Set(allCharactersData.map(c => c.universe)))
         .filter(u => u !== correctChar.universe)
         .sort(() => 0.5 - Math.random())
         .slice(0, 3);
-      options.push(correctChar); // Correct character
-      // Wait, if it's universe question, options are characters? 
-      // Current UI expects opt.name for character options.
-      // But for universe questions, it's "Which universe does X belong to?". 
-      // We need it to be consistent. Let's stick to characters as options for non-fact-quiz.
-      const shuffledUnis = otherUniverses.sort(() => 0.5 - Math.random()).slice(0, 3);
-      for (const uni of shuffledUnis) {
-         options.push(allCharactersData.find(c => c.universe === uni)!);
+      options.push(correctChar); 
+      for (const uni of otherUniverses) {
+         const charFromUni = allCharactersData.find(c => c.universe === uni);
+         if (charFromUni) options.push(charFromUni);
       }
-    } else {
-      let poolForDistractors = allCharactersData.filter(c => c.id !== correctChar.id);
-      if (category !== 'all') {
-        const sameUniPool = poolForDistractors.filter(c => c.universe === correctChar.universe);
-        if (sameUniPool.length >= 3) poolForDistractors = sameUniPool;
-      }
-      const shuffledPool = poolForDistractors.sort(() => 0.5 - Math.random()).slice(0, 3);
-      options.push(correctChar, ...shuffledPool);
     }
 
     questions.push({
       question: questionText,
       options: options.sort(() => 0.5 - Math.random()),
       answer: isFactQuiz ? answerText : correctChar,
-      sourceType: chosenType,
+      sourceType: finalSourceType,
       isFactQuiz
     });
   }

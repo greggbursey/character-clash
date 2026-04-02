@@ -16,6 +16,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 50,
     gearDescription: "### Kryptonian Heritage\n- **Phantom Zone Projector**: A device that can exile extremely dangerous threats to a timeless dimension.\n- **Solar Suit**: Specifically designed to maximize his absorption of yellow sun radiation.",
     prepDescription: "### Fortress Training\nSuperman utilizes the advanced Kryptonian technology of his Fortress of Solitude to run simulations and gain the knowledge of a thousand civilizations.",
+    triviaPool: [
+      "In early comics, Superman could not fly; he was only able to 'leap tall buildings in a single bound'.",
+      "Kryptonite was first introduced in a 1943 radio show primarily so the voice actor could take a vacation.",
+      "Superman's favorite food is beef bourguignon with ketchup, a detail often mentioned in the comics.",
+      "Gotham City and Metropolis are frequently depicted as being just across a bay from each other.",
+      "Superman's co-creator, Joe Shuster, was born in Toronto, and early Metropolis was inspired by his hometown.",
+      "The first copy of 'Action Comics #1' sold for 10 cents, but high-quality copies are now worth millions."
+    ],
   },
   {
     id: "batman",
@@ -32,6 +40,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 650, // World's Greatest Detective/Planner
     gearDescription: "### The Bat-Arsenal\n- **Hellbat Armor**: A suit designed for cosmic threats, forged by the Justice League to allow Bruce to fight gods.\n- **Universal Batarangs**: Hundreds of specialized variants (Kryptonite-tipped, EMP, sonic, explosive).",
     prepDescription: "### 'Prep Time' Legend\n**Batman has a plan for everyone.** He has cataloged the weaknesses of every hero and villain, preparing specific contingency protocols and specialized equipment for any encounter.",
+    triviaPool: [
+      "Batman's original design included a red suit and stiff, wing-like attachments instead of a cape.",
+      "He chose the bat as his symbol after a bat crashed through his window, reflecting his desire to share his fear.",
+      "The Batcave was not introduced until the 1940s Batman TV serial; it wasn't in the original comics.",
+      "Batman's 'no-kill' rule and 'no-guns' policy were not present in his very first appearances.",
+      "Gotham City was originally located in New York before being moved to its own fictional location.",
+      "The character of Alfred Pennyworth was originally a bumbling, overweight detective before being reimagined as a butler."
+    ],
   },
   {
     id: "joker",
@@ -48,6 +64,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 200, // Unpredictable planning
     gearDescription: "### Clown Prince's Toys\n- **Joker Venom**: A specialized neurotoxin that causes uncontrollable laughter followed by total paralysis.\n- **Acid Flower & Joy Buzzer**: Lethal versions of traditional prank shop items.",
     prepDescription: "### Chaotic Mastermind\nThe Joker's plans are so irrational and senseless that even the 'World's Greatest Detective' struggles to track his next move until it's too late.",
+    triviaPool: [
+      "The Joker was originally intended to be killed off in his very first appearance (Batman #1) in 1940.",
+      "His visual design was heavily inspired by actor Conrad Veidt's performance in 'The Man Who Laughs'.",
+      "Heath Ledger's Joker was the first comic book character to win an Academy Award (posthumously).",
+      "The Joker's 'origin' is famously described as 'multiple choice' by the character himself.",
+      "He once successfully turned Superman into a murderer by tricking him into killing a pregnant Lois Lane.",
+      "For decades, the name of the Joker's real identity remained a mystery (it was once hinted to be Jack Napier)."
+    ],
   },
   {
     id: "wonderwoman",
@@ -64,6 +88,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 50,
     gearDescription: "### Gifts of the Gods\n- **Lasso of Truth**: An indestructible golden rope that compels anyone in its grasp to tell the absolute truth.\n- **Bracers of Submission**: Forged from Zeus's aegis, capable of deflecting any projectile or energy beam.",
     prepDescription: "### Amazonian Battle Rite\nDiana enters a focused state of ancient warrior meditation, aligning her spirit with her sisters on Themyscira to gain the combat experience of ten thousand years.",
+    triviaPool: [
+      "Wonder Woman's creator, William Moulton Marston, also helped invent the systolic blood pressure test for the lie detector.",
+      "In the 1940s, Wonder Woman was once the Secretary of the Justice Society of America, not a field member.",
+      "Her Lasso of Truth is indestructible and can be used to compel anyone to tell the absolute truth.",
+      "Diana was originally described as being sculpted from clay and given life by the Greek Gods.",
+      "Her Bracelets of Submission were forged from the aegis of Zeus himself, making them virtually indestructible.",
+      "Wonder Woman is over 5,000 years old in the modern DC Universe, having been around for many major historical events."
+    ],
   },
   {
     id: "flash",
@@ -80,6 +112,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 40,
     gearDescription: "### Speed Force Tech\n- **Friction-Proof Suit**: Specifically engineered to withstand the extreme heat and air pressure of near-light-speed travel.\n- **Cosmic Treadmill Integration**: (In some versions) allows him to precisely calculate time-travel jumps.",
     prepDescription: "### Speed Force Attunement\nBarry stretches a single second into a lifetime of subjective time, analyzing every possible physical move his opponent can make before they can even blink.",
+    triviaPool: [
+      "The Flash's speed is derived from the Speed Force, an extra-dimensional energy source.",
+      "Barry Allen was the character who established the DC Multiverse after meeting Jay Garrick in Earth-Two.",
+      "His metabolism is so high that he must consume thousands of calories every day just to function.",
+      "The Flash can vibrate his molecules so fast that he can pass through solid objects (phasing).",
+      "By running at near-light speeds, Barry Allen can actually travel through time.",
+      "The 'Comic Treadmill' is a device Barry built to precisely control his trips through time."
+    ],
   },
   {
     id: "lexluthor",
@@ -96,6 +136,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 350, // Genius strategist
     gearDescription: "### LexCorp Power Suit\n- **Kryptonite Core**: Powered by the one substance capable of weakening the Man of Steel.\n- **Collapsible Shield Generator**: Advanced energy field protecting him from high-velocity physical impacts.",
     prepDescription: "### Corporate Sovereignty\nLuthor uses his immense wealth and legal influence to drain his opponent's resources and public standing, winning the 'battle' before the physical fight begins.",
+    triviaPool: [
+      "Lex Luthor's hatred for Superman began in a childhood lab accident where he lost his hair.",
+      "In early comics, Lex Luthor was actually depicted with a full head of red hair.",
+      "He was once the President of the United States in the DC Universe (Metropolis was his stronghold).",
+      "Lex considers himself the 'real' hero of Earth, believing that Superman makes humans weak.",
+      "His 12th-level intellect is so high that he can understand alien technology in seconds.",
+      "Lex Luthor was once invited to be a member of the Justice League for a brief period."
+    ],
   },
   {
     id: "harleyquinn",
@@ -112,6 +160,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 30,
     gearDescription: "### Chaotic Toolkit\n- **Oversized Mallet**: A custom-weighted bludgeon capable of cracking concrete or super-human armor.\n- **Prank Explosives**: Glitter-filled grenades and pop-guns modified with actual high explosives.",
     prepDescription: "### Roller Derby Rush\nHarley scouts the environment for 'fun' opportunities, planning an erratic, high-speed movement path that defies standard tactical logic.",
+    triviaPool: [
+      "Harley Quinn did not originate in comics; she was created for 'Batman: The Animated Series'.",
+      "Dr. Harleen Quinzel was an Olympic-level gymnast before becoming a psychiatrist.",
+      "Her signature oversized mallet is a custom-made weapon that she handles with surprising skill.",
+      "Harley is immune to most poisons and toxins, a 'gift' from her close friend Poison Ivy.",
+      "She has a pair of pet hyenas named Bud and Lou who are fiercely loyal to her.",
+      "In some versions of her story, she was the one who broke the Joker out of Arkham more than once."
+    ],
   },
   {
     id: "darkseid",
@@ -128,6 +184,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 300,
     gearDescription: "### New God Artifacts\n- **Mother Box**: A sentient supercomputer that can manipulate time, space, and living matter.\n- **Omega Sanction**: A trap of infinite lifetimes of suffering used for targets too powerful for simple death.",
     prepDescription: "### Anti-Life Calculation\nDarkseid has already deduced the mathematical proof that resistance is futile, crushing his opponent's very desire to fight through pure logic.",
+    triviaPool: [
+      "Darkseid's Omega Beams are sentient and can track a target across entire universes.",
+      "He rules the planet Apokolips, a fiery world that is the antithesis of the peaceful New Genesis.",
+      "The 'Anti-Life Equation' is a mathematical proof that existence is meaningless without Darkseid.",
+      "Darkseid's true form is a cosmic entity, and the one we see is just an avatar of his power.",
+      "He is the lord and master of the Parademons, an army of resurrected and brainwashed soldiers.",
+      "Each of Darkseid's family members, including his son Orion, has a unique and terrible power."
+    ],
   },
   {
     id: "aquaman",
@@ -144,6 +208,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 80,
     gearDescription: "### Atlantean Royal Relics\n- **Trident of Poseidon**: A mystical weapon that can manipulate water, create whirlpools, and fire focused energy bolts.\n- **Scale Armor**: Forged from Atlantean metals, making him nearly invulnerable to standard weapons.",
     prepDescription: "### Seven Seas Coordination\nArthur communicates with the nearest bodies of water, identifying underwater vents or nearby aquatic life to provide a tactical advantage in various environments.",
+    triviaPool: [
+      "In some comics, Aquaman lost his left hand and replaced it with a cybernetic harpoon or a water-hand.",
+      "His telepathic ability is not just 'talking to fish' but rather influencing the primitive parts of their brains.",
+      "Aquaman's favorite food is clam chowder, a detail from his life at Amnesty Bay.",
+      "Atlantis once floated above ground as a high-tech city before it was sunk by a magical event.",
+      "Arthur Curry's half-brother, Orm (Ocean Master), is his primary rival for the throne of Atlantis.",
+      "The Trident of Neptune is one of the seven artifacts that represent the royal heritage of the seas."
+    ],
   },
   {
     id: "greenlantern",
@@ -160,6 +232,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 70,
     gearDescription: "### Green Lantern Power Ring\n- **Construct Engine**: Creates near-indestructible solid light objects limited only by Hal's imagination.\n- **Aura Shielding**: A constant layer of protective energy that allows for survival in the vacuum of space.",
     prepDescription: "### Willpower Recharge\nHal recites the Green Lantern Oath, focusing his absolute will and recharging his ring from his portable power battery to ensure peak construct stability.",
+    triviaPool: [
+      "The Green Lantern Corps was founded by the Guardians of the Universe on the planet Oa.",
+      "Hal Jordan's ring was once famously powerless against anything colored yellow due to a 'fear impurity'.",
+      "Each Green Lantern ring is a sentient computer, capable of translating any language in the universe.",
+      "Hal Jordan was once possessed by Parallax, the embodiment of fear, and nearly destroyed the entire Corps.",
+      "The Green Lantern Oath is a sacred promise that must be recited to fully recharge the power ring.",
+      "Hal Jordan's ring choice (military construct vs. creative construct) reflects his background as a test pilot."
+    ],
   },
   {
     id: "cyborg",
@@ -176,6 +256,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 100,
     gearDescription: "### Father's Technical Mastery\n- **Sonic Cannon**: An arm-integrated projector that can fire localized shockwaves or high-intensity sound beams.\n- **Technopathic Interface**: Allows for instantaneous hacking and control of any electronic system.",
     prepDescription: "### Global System Diagnostic\nVictor runs a wide-spectrum scan of the available digital environment, identifying any exploitable hardware or satellite links that can be used against his opponent.",
+    triviaPool: [
+      "Victor Stone was an All-American football player before the laboratory accident that changed his life.",
+      "His cybernetic parts are powered by a Mother Box, a sentient and nearly omniscient alien supercomputer.",
+      "Cyborg's 'Boom Tubes' allow him to teleport himself and the Justice League anywhere as long as he has the coordinates.",
+      "Victor's technopathic ability lets him download the entire internet into his neural network in seconds.",
+      "In the original 'Teen Titans' animated series, Cyborg's signature catchphrase is 'Booyah!'.",
+      "Victor's father, Silas Stone, was a brilliant but often distant scientist for S.T.A.R. Labs."
+    ],
   },
   {
     id: "shazam",
@@ -192,6 +280,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 120,
     gearDescription: "### Wizard's Champion Regalia\n- **Mystical Cape of Shazam**: A magically reinforced garment that allows for stable, high-speed flight.\n- **Infinite Courage**: While not 'gear,' the spirit of Achilles provides him with near-unbreakable mental fortitude.",
     prepDescription: "### Wisdom of Solomon\nBilly reaches into the collective knowledge granted by Solomon, receiving instant tactical advice on how to handle opponents who may be far older and more experienced than he is.",
+    triviaPool: [
+      "Billy Batson was chosen by the wizard Shazam to be his champion because of his pure heart.",
+      "The name 'SHAZAM' is an acronym for Solomon, Hercules, Atlas, Zeus, Achilles, and Mercury.",
+      "In the 1940s, the character (as Captain Marvel) was the most popular and highest-selling comic book hero.",
+      "Shazam's power is magical in nature, which makes him one of the few heroes who can truly hurt Superman.",
+      "The wizard Shazam lives in a hidden place called the 'Rock of Eternity', where he guards the Seven Deadly Sins.",
+      "Billy's foster siblings can also share in his power, forming a team of heroes known as the Shazam Family."
+    ],
   },
   {
     id: "bane",
@@ -208,6 +304,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 300,
     gearDescription: "### Venom Delivery System\n- **Sub-Dermal Injectors**: Rapidly pumps the super-steroid Venom into his bloodstream, providing a critical burst of superhuman strength.\n- **Reinforced Bracers**: Built-in controls for Venom dosage and protection for his primary injection lines.",
     prepDescription: "### Psychological Breakdown\nBane meticulously studies the opponent's daily routine and past traumas, orchestrating a series of seemingly random crises to deplete their mental and physical reserves before the final strike.",
+    triviaPool: [
+      "Bane was born in a prison and served his father's life sentence from birth.",
+      "His name was given to him by the prison guards, who called him the 'Bane' of their existence.",
+      "Bane's intellect is so high that he deduced Batman's identity just by observing him.",
+      "The super-steroid Venom is delivered directly into Bane's brain via a series of tubes.",
+      "Bane has actually defeated Batman in single combat more than once, most notably in 'Knightfall'.",
+      "During his early years, Bane's only true friend in prison was a teddy bear named Osito."
+    ],
   },
   {
     id: "deathstroke",
@@ -224,6 +328,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 280,
     gearDescription: "### Promethium Arsenal\n- **Promethium Broadsword**: A masterfully forged blade that can slice through most super-human armor and magical shielding.\n- **Energy Bo Staff**: A versatile weapon capable of concussive energy projection and high-impact defensive blocking.",
     prepDescription: "### 90% Brain Capacity Planning\nSlade analyzes the opponent's heartbeat, muscle twitches, and environmental variables, predicting their actions several steps ahead to execute an inescapable tactical trap.",
+    triviaPool: [
+      "Slade Wilson lied about his age to join the army, becoming a decorated colonel at a young age.",
+      "Deathstroke's 90% brain capacity allows him to be a master of tactical calculation and strategy.",
+      "His signature orange-and-black suit is colored that way to reflect his status as an assassin who doesn't hide.",
+      "Deathstroke has three children, all of whom have complex relationships with him and his 'work'.",
+      "He has survived a gunshot wound to the head, thanks to his enhanced regenerative healing.",
+      "Deathstroke's Promethium sword is one of the few weapons capable of cutting Kryptonian skin."
+    ],
   },
   {
     id: "doomsday",
@@ -240,6 +352,14 @@ export const dcCharacters: Character[] = [
     prepBonus: 0,
     gearDescription: "### Reactive Bone Spikes\n- **Evolutionary Calcification**: His very skin protrudes with razor-sharp bone shards that can bypass the invulnerability of gods.\n- **Unstoppable Kinetic Force**: His physical momentum is absolute, making him a living juggernaut once he begins his charge.",
     prepDescription: "### Primal Adaptation\nDoomsday does not 'plan'; instead, his cells instantly mutate upon contact with the opponent's attacks, ensuring that every subsequent strike becomes less effective.",
+    triviaPool: [
+      "Doomsday was the only creature to ever truly kill Superman in a physical fight.",
+      "He was created on prehistoric Krypton by a series of cruel evolutionary experiments.",
+      "If Doomsday is killed, he returns with an immunity to the exact method that killed him.",
+      "Doomsday possesses no internal organs; he is a solid mass of muscle and bone-like matter.",
+      "His first arrival on Earth decimated the Justice League International in minutes.",
+      "Doomsday's presence is purely driven by an instinctual hatred for all Kryptonian life."
+    ],
   },
 
 ];

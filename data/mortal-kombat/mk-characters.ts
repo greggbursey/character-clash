@@ -17,6 +17,14 @@ export const mkCharacters: Character[] = [
     gearDescription: "### Netherrealm Arsenal\n- **Kunai Spear**: A signature weapon on a retractable chain for long-range 'retrieval'.\n- **Mugai Ryu Katana**: A masterfully crafted blade for close-quarters incineration.",
     prepDescription: "### Hellfire Attunement\nScorpion meditates in the Netherrealm, saturating his core with hellfire to ensure he can manifest his specter-powers at peak intensity.",
     imagePosition: "top",
+    triviaPool: [
+      "Scorpion's iconic catchphrase 'Get over here!' was voiced by MK co-creator Ed Boon.",
+      "His real name is Hanzo Hasashi, and he was a leader of the Shirai Ryu ninja clan.",
+      "Scorpion is the official mascot of NetherRealm Studios and appears on their logo.",
+      "He was the first-ever character to have a 'hidden' move in the original arcade games.",
+      "His 'Toasty!' Fatality is one of the most famous and recurring finishers in the series.",
+      "In the original MK, Scorpion and Sub-Zero used the same character model with different colors."
+    ],
   },
   {
     id: "subzero",
@@ -34,6 +42,14 @@ export const mkCharacters: Character[] = [
     gearDescription: "### Cryomancer Gear\n- **Dragon Medallion**: Amplifies his natural cold-generation to a molecular level.\n- **Kori Blade**: A physical sword manifested from absolute-zero ice.",
     prepDescription: "### Absolute Zero Focus\nSub-Zero uses the Lin Kuei's ancient breathing techniques to lower his body temperature, creating a lethal aura of frost before the battle.",
     imagePosition: "top",
+    triviaPool: [
+      "There are actually two Sub-Zeros: the original Bi-Han and his younger brother Kuai Liang.",
+      "Bi-Han eventually became the shadow-wraith Noob Saibot after being killed by Scorpion.",
+      "Kuai Liang took over the mantle of Sub-Zero to restore the honor of the Lin Kuei clan.",
+      "Sub-Zero is the only character to appear in every single Mortal Kombat fighting game.",
+      "He has his own spin-off adventure game called 'Mortal Kombat Mythologies: Sub-Zero'.",
+      "Sub-Zero's scar over his eye was originally given to him as a mark of his exile from the Lin Kuei."
+    ],
   },
   {
     id: "raiden",
@@ -51,6 +67,14 @@ export const mkCharacters: Character[] = [
     gearDescription: "### Divine Artifacts\n- **Staff of the Gods**: A conduit for celestial lightning and inter-dimensional teleportation.\n- **Dojo Robes**: Magically reinforced to withstand the friction of lightning-travel.",
     prepDescription: "### Temporal Foresight\nAs a God, Raiden consults the Elder Gods and peer into the timeline to anticipate his opponent's moves, ensuring Earthrealm's survival.",
     imagePosition: "top",
+    triviaPool: [
+      "Raiden was partially inspired by the lightning god Raijin from Japanese mythology.",
+      "His character design was influenced by the 'Lightning' character in 'Big Trouble in Little China'.",
+      "As a God, Raiden is functionally immortal and will reform in the heavens if his body is destroyed.",
+      "Raiden famously rebooted the entire MK timeline by sending a message to his past self.",
+      "In the 1995 film, Raiden was portrayed by Christopher Lambert, who didn't return for the sequel.",
+      "Raiden has occasionally become 'Dark Raiden', a more ruthless protector willing to kill for Earthrealm."
+    ],
   },
   {
     id: "shangtsung",
@@ -67,6 +91,14 @@ export const mkCharacters: Character[] = [
     prepBonus: 150, // Master manipulator
     gearDescription: "### Soul-Stealing Arcana\n- **Scepter of Souls**: Focuses dark magic and accelerates soul-extraction.\n- **Ancient Grimoire**: Contains forbidden shape-shifting rituals and memory-theft spells.",
     prepDescription: "### Psychological Manipulation\nShang Tsung studies the opponent's past and trauma, preparing to shape-shift into their most feared or loved acquaintance for a mental advantage.",
+    triviaPool: [
+      "Shang Tsung was the final boss of the original 1982 Mortal Kombat arcade game.",
+      "His iconic line 'Your soul is mine!' became a staple of the franchise after the 1995 movie.",
+      "Shang Tsung is a sorcerer from Earthrealm who betrayed his home to serve Shao Kahn.",
+      "He can shape-shift into any other character, gaining their moves and special abilities.",
+      "Cary-Hiroyuki Tagawa's movie performance was so popular he returned to play the character in MK11.",
+      "Shang Tsung once ruled over the island where the first Mortal Kombat tournament was held."
+    ],
   },
   {
     id: "goro",
@@ -84,6 +116,14 @@ export const mkCharacters: Character[] = [
     gearDescription: "### Shokan Prince Gear\n- **Dragon-Forged Gauntlets**: Enhances the power of his four-armed strikes.\n- **Kuatan Armor**: Heavy plates capable of withstanding Earthrealm's modern firearms.",
     prepDescription: "### Bloodlust Ritual\nGoro engages in the ancient Shokan battle-dance, working himself into a rhythmic frenzy that increases his speed and pain tolerance.",
     imagePosition: "top",
+    triviaPool: [
+      "Goro was the reigning champion of Mortal Kombat for 500 years before being beaten by Liu Kang.",
+      "In the original game, Goro was a stop-motion clay figure because he couldn't be played by an actor.",
+      "He is the Prince of the Shokan, a half-human, half-dragon race with four powerful arms.",
+      "Goro has defeated several legendary Earthrealm champions, including the Great Kung Lao.",
+      "He was originally going to be a six-armed warrior before his design was simplified to four.",
+      "Goro's lair in the first game is filled with the bones of his past victims from previous tournaments."
+    ],
   },
   {
     id: "shaokahn",
@@ -101,6 +141,14 @@ export const mkCharacters: Character[] = [
     gearDescription: "### Emperor's Regalia\n- **Wrath Hammer**: A divine-grade bludgeon that can stun entire armies.\n- **Shattered Skull Mask**: Imbued with the souls of conquered kings, providing a mental shield.",
     prepDescription: "### Soul Harvest\nShao Kahn consumes a fresh pool of souls from the Outworld pits, temporarily boosting his already god-like strength to planet-conquering levels.",
     imagePosition: "top",
+    triviaPool: [
+      "Shao Kahn's face was kept a secret for nearly 30 years before being fully revealed in MK11.",
+      "His signature 'Wrath Hammer' is a powerful artifact that can crush the souls of his enemies.",
+      "Shao Kahn is known for frequently breaking the 'fourth wall' to mock the player with insults.",
+      "He was originally the royal advisor to the Dragon King, Onaga, before poisoning him for the throne.",
+      "Shao Kahn has conquered and merged thousands of different realms into his empire of Outworld.",
+      "His laughter is one of the most recognizable sound effects in the entire Mortal Kombat series."
+    ],
   },
   {
     id: "liukang",
@@ -118,6 +166,14 @@ export const mkCharacters: Character[] = [
     gearDescription: "### Shaolin Tradition\n- **Firebracers**: Magic-imbued gauntlets that focus his inner fire into physical strikes.\n- **Nunchaku**: Used for high-speed kinetic redirection and defensive parrying.",
     prepDescription: "### Dragon Meditation\nLiu Kang centers his 'Chi', aligning his spirit with the protectors of Earthrealm to unleash the Dragon within during the heat of battle.",
     imagePosition: "top",
+    triviaPool: [
+      "Liu Kang's fighting style and appearance were heavily inspired by martial arts legend Bruce Lee.",
+      "He is the champion of the White Lotus Society and Earthrealm's greatest defender.",
+      "Liu Kang's 'Fatality' in the first game was the only one that didn't involve killing the opponent.",
+      "He has been the main protagonist of the series for most of its 30-year history.",
+      "In later timelines, Liu Kang ascends to godhood, becoming the God of Fire and Lightning.",
+      "He was once murdered by the Deadly Alliance of Shang Tsung and Quan Chi, returning as a zombie."
+    ],
   },
   {
     id: "kitana",
@@ -135,6 +191,14 @@ export const mkCharacters: Character[] = [
     gearDescription: "### Edenian Royal Steel\n- **Bladed Fans**: Sharp-edged steel fans that can be used for slicing or creating powerful gusts of wind.\n- **Sai**: Occasionally uses secondary stabbing weapons for close-range punctures.",
     prepDescription: "### Princess's Grace\nKitana uses her centuries of tactical experience to identify the political and structural weaknesses in her opponent's stance, striking where it hurts most.",
     imagePosition: "top",
+    triviaPool: [
+      "Kitana is over 10,000 years old, though she appears as a young woman due to her Edenian blood.",
+      "She was raised to believe she was Shao Kahn's daughter before discovering the truth of her heritage.",
+      "Her signature steel-bladed fans were inspired by traditional Japanese war fans (tessen).",
+      "Kitana's 'evil' clone, Mileena, was created in Shang Tsung's Flesh Pits to replace her.",
+      "She eventually becomes the Khan of Outworld, leading the realm into a more peaceful era.",
+      "Kitana has been a playable character in every Mortal Kombat game since her debut in MK2."
+    ],
   },
   {
     id: "reptile",
@@ -152,6 +216,14 @@ export const mkCharacters: Character[] = [
     gearDescription: "### Zaterran Survival Gear\n- **Corrosive Catalyst**: A specialized sac that allows for higher-pressure acid spitting.\n- **Camouflage Hide**: Naturally occurring scales that can bend light, allowing for near-perfect invisibility.",
     prepDescription: "### Ambush Pheromones\nReptile marks the arena with territorial scents, slowing his own heart rate to become as cold as the environment before striking from total invisibility.",
     imagePosition: "top",
+    triviaPool: [
+      "Reptile was the first-ever secret character in the history of fighting games (1992).",
+      "His real name, Syzoth, was only revealed much later in the Mortal Kombat lore.",
+      "Reptile is a Saurian, and his primary motivation is to find a way to bring his extinct race back.",
+      "In the original game, he used a combination of both Scorpion and Sub-Zero's special moves.",
+      "His human appearance is just a disguise; his truest form is a scaly, reptilian monster.",
+      "To find Reptile in MK1, players had to win two flawless victories on the Pit stage without blocking."
+    ],
   },
   {
     id: "baraka",
@@ -169,6 +241,14 @@ export const mkCharacters: Character[] = [
     gearDescription: "### Tarkatan Blade-Steel\n- **Dual Bone Blades**: Naturally occurring, retractable arm-blades sharpened to a molecular edge.\n- **Wasteland War-Paint**: Symbolic markings that work themselves into a psychological intimidation factor.",
     prepDescription: "### Predator's Hunger\nBaraka enters a state of controlled Tarkatan rage, sharpening his senses and accelerating his adrenaline flow for a high-intensity initial assault.",
     imagePosition: "top",
+    triviaPool: [
+      "Baraka is the leader of the Tarkatans, a nomadic race of mutants from the Outworld wastelands.",
+      "His arm blades are naturally occurring bone protrusions that he can retract at will.",
+      "The Tarkatan race is a hybrid of human and Netherealm demon, known for their sharp, multiple teeth.",
+      "Baraka's design was inspired by classic fantasy Orcs and the character Nosferatu.",
+      "Despite his monstrous look, Baraka is a master of several forms of weaponry and hand-to-hand combat.",
+      "In the movie 'Mortal Kombat: Annihilation', his blades were actually part of his costume's mechanism."
+    ],
   },
   {
     id: "mileena",
@@ -186,6 +266,14 @@ export const mkCharacters: Character[] = [
     gearDescription: "### Lethal Symmetry\n- **Dual Sai**: Twin stabbing weapons used for rapid punctures and long-range projectile throws.\n- **Silver-Fanged Veil**: A custom mask designed to hide her Tarkatan mouth while providing psychological advantage when removed.",
     prepDescription: "### Cannibalistic Instinct\nMileena enters a state of 'Flesh Pit' hunger, accelerating her regeneration and sharpening her primal reflexes to ensure she gets the first, bloody taste of the fight.",
     imagePosition: "top",
+    triviaPool: [
+      "Mileena was created by Shang Tsung as a genetic hybrid of Kitana and a Tarkatan warrior.",
+      "She wears a veil to hide her Tarkatan mouth, which is filled with rows of razor-sharp fangs.",
+      "Mileena was originally a 'palette swap' of Kitana to save memory on arcade hardware.",
+      "She has served as the Empress of Outworld, ruling with a mix of elegance and extreme brutality.",
+      "Her dual Sai are her signature weapons, often used for both stabbing and high-speed projectile throws.",
+      "Mileena's jealousy of Kitana is her primary motivation for almost all of her murderous actions."
+    ],
   },
   {
     id: "cyrax",
@@ -203,6 +291,14 @@ export const mkCharacters: Character[] = [
     gearDescription: "### Cyber-Link Arsenal\n- **Green Energy Net**: A chest-mounted projector that fires a disabling energy field to trap opponents.\n- **Internal Bomb Dispenser**: Sophisticated dispensers for high-yield, remote-detonated explosives.",
     prepDescription: "### Tactical HUD Scan\nCyrax runs a real-time diagnostic of the arena's structural integrity and the opponent's heat signature, calculating the most efficient trap-sequence to ensure a non-lethal capture.",
     imagePosition: "top",
+    triviaPool: [
+      "Cyrax's development code name during the creation of MK3 was 'Mustard'.",
+      "He was a member of the Lin Kuei clan before being turned into unit LK-4D4.",
+      "Unlike Sektor, Cyrax eventually regained his human soul and worked to dismantle the Lin Kuei.",
+      "His signature 'Green Energy Net' can trap and disable any organic or mechanical enemy.",
+      "Cyrax is an expert in explosives, frequently deploying high-yield bombs from his chest cavity.",
+      "He is one of the few cyborgs to have successfully reverted to his human form in some timelines."
+    ],
   },
   {
     id: "sektor",
@@ -220,5 +316,13 @@ export const mkCharacters: Character[] = [
     gearDescription: "### Tekunin War-Frame\n- **Heat-Seeking Missiles**: Shoulder-mounted launchers that fire tracking, high-explosive projectiles.\n- **Pulse Flamethrowers**: Chest-integrated burners capable of incinerating a target in seconds.",
     prepDescription: "### Systematic Execution Protocol\nSektor uploads a series of lethal combat algorithms into his primary processor, identifying the most direct path to the opponent's vital components for a total structural termination.",
     imagePosition: "top",
+    triviaPool: [
+      "Sektor's development code name during the creation of MK3 was 'Ketchup'.",
+      "He is the son of the Lin Kuei Grandmaster and was the first to volunteer for cyberization.",
+      "Unlike Cyrax, Sektor completely embraced his machine identity and rejected his humanity.",
+      "Sektor eventually murdered his father to take control of the Lin Kuei clan for himself.",
+      "His 'Tekunin' clan is a specialized sub-faction of the Lin Kuei consisting only of cyborgs.",
+      "Sektor's chest-mounted flamethrower is capable of melting the most advanced military armor."
+    ],
   },
 ];

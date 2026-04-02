@@ -16,6 +16,14 @@ export const godzillaCharacters: Character[] = [
     prepBonus: 50,
     gearDescription: "### Dormant Radiation\n- **Nuclear Core**: Constantly absorbs ambient radiation, fueling his atomic breath.\n- **Dorsal Fins**: Act as energy conductors and heat sinks for his thermonuclear pulses.",
     prepDescription: "### Deep-Sea Hibernation\nGodzilla rests in highly radioactive ocean trenches, saturating his cells with energy to prepare for a multi-day planetary defense.",
+    triviaPool: [
+      "Godzilla's Japanese name, 'Gojira', is a portmanteau of the Japanese words for 'Gorilla' and 'Whale'.",
+      "In the original 1954 film, Godzilla was played by an actor in a latex suit that weighed over 200 pounds.",
+      "Godzilla has been awarded a star on the Hollywood Walk of Fame in recognition of his cinematic legacy.",
+      "His iconic roar was created by rubbing a resin-coated leather glove across the strings of a double bass.",
+      "Godzilla has officially held the title of 'Cultural Ambassador' for the Shinjuku ward of Tokyo since 2015.",
+      "The character has appeared in over 35 films, making him one of the most prolific movie stars in history."
+    ],
   },
   {
     id: "kingkong",
@@ -32,6 +40,14 @@ export const godzillaCharacters: Character[] = [
     prepBonus: 100, // Tool use/Smart fighter
     gearDescription: "### Primal Titan Tools\n- **Titan Battle Axe**: Crafted from a Godzilla dorsal fin, capable of absorbing and discharging atomic energy.\n- **Heavily Braided Vines**: Used as makeshift restraints or climbing aids.",
     prepDescription: "### Skull Island Scouting\nKong studies the terrain, identifying environmental hazards and traps to use his superior mobility and intelligence against heavier foes.",
+    triviaPool: [
+      "King Kong's height has varied from 24 feet in the 1933 original to over 330 feet in the MonsterVerse.",
+      "The stop-motion animation for the 1933 film was a groundbreaking feat created by Willis O'Brien.",
+      "Kong was originally conceived as a 'prehistoric beast' that would fight a 'giant Komodo dragon'.",
+      "In the 1962 'King Kong vs. Godzilla', Kong was given electrical powers to make him a more even match.",
+      "King Kong is considered one of the first truly sympathetic movie monsters in cinema history.",
+      "His home, Skull Island, is often depicted as a place where evolution took a completely different path."
+    ],
   },
   {
     id: "mothra",
@@ -48,6 +64,14 @@ export const godzillaCharacters: Character[] = [
     prepBonus: 200, // Ancient wisdom/Rebirth
     gearDescription: "### Divine Bioluminescence\n- **Antennae Rays**: Project focused beams of 'god-light' for navigation and combat.\n- **Poisonous Scales**: Released from her wings to disorient and weaken more aggressive Titans.",
     prepDescription: "### Eternal Rebirth Ritual\nMothra synchronizes her spirit with the Earth's life force, preparing to sacrifice her current form to empower her allies through soul-transfer.",
+    triviaPool: [
+      "Mothra is the only female monster in the Godzilla franchise to have her own successful spin-off series.",
+      "She is almost always accompanied by the Shobijin, two tiny twin priestesses who sing her theme song.",
+      "Mothra's design change in every film usually reflects the specific era's artistic style and technology.",
+      "She is one of the few Titans who can successfully fight while still in her larval (caterpillar) stage.",
+      "Mothra's first appearance in 1961 was in her own standalone movie before she joined the Godzilla series.",
+      "The concept of Mothra was inspired by the Japanese giant silk moth and ancient folklore."
+    ],
   },
   {
     id: "rodan",
@@ -64,6 +88,14 @@ export const godzillaCharacters: Character[] = [
     prepBonus: 40,
     gearDescription: "### Volcanic Exoskeleton\n- **Magma-Infused Wings**: Coated in cooling lava that provides extreme heat resistance.\n- **Uranium Breath**: A secondary radioactive heat beam developed through volcanic mutation.",
     prepDescription: "### High-Altitude Thermals\nRodan circles the stratosphere, using volcanic vents to superheat his wings and prepare for a devastating 'Fire Demon' dive-bomb.",
+    triviaPool: [
+      "Rodan's name in Japan is actually 'Radon', but it was changed to Rodan in English to avoid confusion with the element.",
+      "In his debut film from 1956, there were actually two Rodans—a male and a female pair.",
+      "Rodan's wing-flaps can generate sonic booms powerful enough to shatter glass and level buildings.",
+      "He is considered part of the 'Big Three' of the Godzilla universe, along with Mothra and King Ghidorah.",
+      "Rodan is one of the fastest Titans, capable of reaching Mach 1.5 in atmospheric flight.",
+      "His skin is often described as volcanic sediment, making him nearly immune to heat and lava."
+    ],
   },
   {
     id: "mechagodzilla",
@@ -80,6 +112,14 @@ export const godzillaCharacters: Character[] = [
     prepBonus: 150, // Targeting systems
     gearDescription: "### Apex Cybernetic Arsenal\n- **Proton Scream**: A mechanical replica of the atomic breath with 100% targeting accuracy.\n- **Missile Batteries**: Hundreds of 'Finger Missiles' for area-of-effect destruction.",
     prepDescription: "### AI Combat Simulation\nMechagodzilla's onboard computer runs millions of battle simulations against its target, identifying the most efficient sub-second killing blow.",
+    triviaPool: [
+      "The 'Kiryu' version of Mechagodzilla was built using the actual skeleton of the original 1954 Godzilla.",
+      "Mechagodzilla's 'Space Titanium' was originally said to be ten times stronger than any material on Earth.",
+      "In some versions, Mechagodzilla is controlled by a human pilot, while in others, it is a rogue AI.",
+      "Mechagodzilla was originally an alien weapon sent by the 'Third Planet from the Black Hole' civilization.",
+      "The robot's design was intended to be a direct mechanical mirror of Godzilla's primal biology.",
+      "In 'Godzilla vs. Kong', Mechagodzilla was powered by a hollow-earth energy source and a Ghidorah brain."
+    ],
   },
   {
     id: "muto",
@@ -96,6 +136,14 @@ export const godzillaCharacters: Character[] = [
     prepBonus: 40,
     gearDescription: "### Parasitic Biology\n- **EMP Gland**: Emits a massive electromagnetic pulse that disables all modern electrical systems.\n- **Climbing Limbs**: Specifically evolved to scale skyscrapers and Titan carcasses.",
     prepDescription: "### Nesting Coordination\nThe Muto pair communicates through low-frequency pulses, coordinating a pincer attack to swarm and overwhelm a single, larger target.",
+    triviaPool: [
+      "The term 'MUTO' was originally a generic acronym for 'Massive Unidentified Terrestrial Organism'.",
+      "The male MUTO is smaller and has wings, while the female is much larger and lacks flight.",
+      "MUTOs feed on nuclear radiation, which is why they were drawn to urban power plants.",
+      "Their EMP ability was evolved specifically to disable the neurological 'spider-sense' of Godzilla's species.",
+      "The MUTO design was meant to look like a fusion of insects, bats, and futuristic stealth aircraft.",
+      "They are parasitic by nature, laying their eggs inside the bodies of other dead Titans."
+    ],
   },
   {
     id: "ghidorah",
@@ -112,6 +160,14 @@ export const godzillaCharacters: Character[] = [
     prepBonus: 100,
     gearDescription: "### Cosmic Bio-Electrical Aura\n- **Gravity Beams**: Concentrated golden lightning released from all three mouths simultaneously.\n- **Hurricane Wings**: Massive structures that can generate localized category-6 storms on command.",
     prepDescription: "### Global Storm Generation\nGhidorah terraforms the planet's atmosphere, creating a massive electrical storm network that feeds his energy and weakens his biological opponents.",
+    triviaPool: [
+      "King Ghidorah's three heads each have their own personality and level of intelligence.",
+      "His middle head is considered the alpha, often bossing around the left and right heads.",
+      "Ghidorah is the only recurring villain in the series that is confirmed to be of extraterrestrial origin.",
+      "In the 2019 film, the right head (nicknamed 'Kevin') became a fan favorite for being distracted and curious.",
+      "His 'Gravity Beams' are powerful golden lightning bolts that can manipulate regional gravity fields.",
+      "King Ghidorah has no internal organs; he is a bio-electrical conduit for cosmic energy."
+    ],
   },
   {
     id: "ebirah",
@@ -128,6 +184,14 @@ export const godzillaCharacters: Character[] = [
     prepBonus: 10,
     gearDescription: "### Marine Exoskeleton\n- **Crushing Pincers**: Asymmetrical claws specialized for both bone-shattering pressure and precise impalement.\n- **Reinforced Carapace**: A thick, calcified shell that provides natural defense against depth charges and physical strikes.",
     prepDescription: "### Rocky Shallows Ambush\nEbirah settles into the silt of the ocean floor, using his coloring to blend into the rocks and wait for the vibrations of a passing target before striking from below.",
+    triviaPool: [
+      "Ebirah is the only monster in the series whose primary weakness is a specific yellow liquid plant extract.",
+      "The 1966 film 'Ebirah, Horror of the Deep' was originally written as a King Kong movie.",
+      "Ebirah is one of the few Titans who has absolutely no energy-based or beam attacks.",
+      "His right claw is significantly larger than his left, used for crushing rocks and hulls.",
+      "Despite being a 'giant lobster', Ebirah is often shown to be highly territorial and aggressive.",
+      "Ebirah made a cameo in 'Godzilla: Final Wars', where he was quickly defeated by human special forces."
+    ],
   },
   {
     id: "kumonga",
@@ -144,6 +208,14 @@ export const godzillaCharacters: Character[] = [
     prepBonus: 120,
     gearDescription: "### High-Tensile Spinnerets\n- **Steel-Hard Silk**: Webbing that can withstand the weight of multiple Titans and is resistant to most physical attacks.\n- **Neurotoxic Venom**: Delivers a paralyzing toxin through her massive, articulated mandibles.",
     prepDescription: "### Forest Web-Netting\nKumonga meticulously strings the nearby terrain with nearly invisible trip-wires of silk, ensuring that any movement from her opponent will trigger a cascade of restraining webs.",
+    triviaPool: [
+      "Kumonga's movement was achieved using over 20 marionette strings to animate her eight legs.",
+      "Her high-tensile webbing is so strong it can trap even Godzilla in a cocoon within minutes.",
+      "Kumonga's venom is powerful enough to kill a human instantly and paralyze a Titan.",
+      "She is one of the few monsters that Godzilla appears to genuinely dislike fighting due to the webbing.",
+      "In some Western releases, Kumonga was known as 'Spiga' to avoid confusion with other spider monsters.",
+      "Kumonga later became an ally of Godzilla, helping him fight off King Ghidorah's alien army."
+    ],
   },
   {
     id: "monsterx",
@@ -160,6 +232,14 @@ export const godzillaCharacters: Character[] = [
     prepBonus: 50,
     gearDescription: "### Keizer Transformation Core\n- **Destroyed Gravity Bolts**: Dark energy beams fired from the eyes of Monster X or the mouths of Keizer Ghidorah.\n- **Bio-Siphon Jaws**: Allows for the direct extraction of raw atomic or biological energy from an opponent's body.",
     prepDescription: "### Extraterrestrial Staging\nMonster X remains encased in his 'Gorath' meteor, absorbing the background radiation of space to ensure he arrives on the battlefield at 100% Keizer-energy capacity.",
+    triviaPool: [
+      "Monster X was created specifically for the 50th-anniversary film, 'Godzilla: Final Wars'.",
+      "He is a 'Keizer' class Titan, meaning he belongs to the highest and most powerful tier of alien monsters.",
+      "His design was influenced by the Grim Reaper and skeletal anatomical models.",
+      "Monster X is one of the few movie monsters capable of performing martial arts-style combat moves.",
+      "He eventually transforms into Keizer Ghidorah, a four-legged version of King Ghidorah.",
+      "Monster X survived a direct meteor impact with Earth that leveled half of Tokyo."
+    ],
   },
   {
     id: "hedorah",
@@ -176,6 +256,14 @@ export const godzillaCharacters: Character[] = [
     prepBonus: 30,
     gearDescription: "### Toxic Effluent Composition\n- **Hedrium Beams**: Concentrated streams of radioactive, toxic light fired from his primary sensory organs.\n- **Corrosive Sludge**: A body composed of pure, pH-negative muck that eats through any known material on contact.",
     prepDescription: "### Smog Siphoning\nHedorah enters the planet's most polluted industrial zones, absorbing concentrated toxins and greenhouse gases to expand his mass and the density of his acidic clouds.",
+    triviaPool: [
+      "Hedorah's name is derived from 'hedoro', the Japanese word for slime or muck.",
+      "He is a sentient being from space that feeds on the pollution produced by human factories.",
+      "Hedorah possesses five distinct forms: aquatic, land-based, flying, perfect, and super-smog.",
+      "His presence is so toxic that his smog can melt the flesh off of humans in seconds.",
+      "Hedorah is one of the only monsters that Godzilla was unable to defeat with physical force alone.",
+      "He is essentially a living mass of acid, making it nearly impossible for other Titans to touch him."
+    ],
   },
 ];
 

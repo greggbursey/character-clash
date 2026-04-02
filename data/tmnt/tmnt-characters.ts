@@ -16,6 +16,14 @@ export const tmntCharacters: Character[] = [
     prepBonus: 60,
     gearDescription: "### Tactical Arsenal\n- **Twin Katanas**: Masterfully forged carbon-steel blades.\n- **Shuriken**: Balanced throwing stars for ranged distraction.\n- **Grappling Hook**: Hidden in the belt for rapid vertical movement.",
     prepDescription: "### The Strategist's Plan\nLeo studies the opponent's fighting rhythm, identifying predictable patterns and coordinating his brothers for a synchronized multi-angle strike.",
+    triviaPool: [
+      "Leonardo was the only turtle to actually kill the Shredder in their very first comic appearance.",
+      "His blue mask was only introduced in the 1987 cartoon; originally, all turtles wore red.",
+      "Leonardo is named after the famous Renaissance artist Leonardo da Vinci.",
+      "His primary weapon is the katana, but he is also a master of the tanto (short blade).",
+      "Leo once trained with a blind master named Ancient One to improve his spiritual focus.",
+      "In some versions, Leonardo is the most skilled and has actually defeated his brothers in sparring."
+    ],
   },
   {
     id: "mikey",
@@ -32,6 +40,14 @@ export const tmntCharacters: Character[] = [
     prepBonus: 40,
     gearDescription: "### Freestyle Gear\n- **Nunchaku**: High-speed kinetic weapons used for unpredictable attack angles.\n- **Skateboard**: Custom-built for combat-speed sewer and street mobility.\n- **Kusarigama**: A hooked chain for long-range snagging.",
     prepDescription: "### Creative Chaos\nMikey sets up distracting traps around the arena—and ensures there's a pizza stash nearby to keep his energy (and morale) at peak levels.",
+    triviaPool: [
+      "Michelangelo was the first turtle to be drafted by creators Kevin Eastman and Peter Laird.",
+      "The iconic catchphrase 'Cowabunga!' was borrowed from 1950s surf culture by Mikey.",
+      "In the original 'The Last Ronin' comic, Michelangelo is the sole survivor of his family.",
+      "Mikey's favorite pizza is notoriously strange, once including jelly beans and pepperoni.",
+      "He won the 'Battle Nexus' tournament, a multi-dimensional fighting contest.",
+      "Michelangelo is known for his incredible raw agility, even compared to his brothers."
+    ],
   },
   {
     id: "donnie",
@@ -48,6 +64,14 @@ export const tmntCharacters: Character[] = [
     prepBonus: 70,
     gearDescription: "### Tech Genius Gadgets\n- **Reinforced Bo Staff**: Enhanced with hidden shock-emitters and scanners.\n- **T-Phone**: Provides real-time analysis of enemy vitals and tech weaknesses.\n- **Portable Turret**: Deployable mini-defense unit.",
     prepDescription: "### Machine Calibration\nDonnie builds specialized tech-counters to the opponent and hacks local security feeds to control the battlefield's environment.",
+    triviaPool: [
+      "Donatello's IQ is estimated to be over 200 in several iterations of the series.",
+      "He is the creator of the 'Turtle Van' and the team's advanced communication shells.",
+      "Donnie is named after the Italian sculptor Donato di Niccolò di Betto Bardi.",
+      "In the 2012 series, he has a massive crush on April O'Neil, which is a major plot point.",
+      "Donatello once used a 'retro-mutagen' to turn Splinter back into a human briefly.",
+      "His bo staff is occasionally depicted as being made of high-tech metal rather than wood."
+    ],
   },
   {
     id: "raph",
@@ -64,6 +88,14 @@ export const tmntCharacters: Character[] = [
     prepBonus: 45,
     gearDescription: "### Brutal CQC Gear\n- **Twin Sai**: Close-quarters weapons designed for trapping blades and striking pressure points.\n- **Heavy Hand-Wraps**: Provides extra impact for his raw physical punches.",
     prepDescription: "### Channeled Rage\nRaph focuses his anger into a high-intensity drill, identifying the shortest path to a physical confrontation where he can overwhelm his foe.",
+    triviaPool: [
+      "Raphael is often depicted as the strongest and most physically aggressive of the brothers.",
+      "He had a secret pet turtle named Spike, who later mutated into the powerful Slash.",
+      "Raph's primary weapon, the sai, is actually a traditional Okinawan parrying tool.",
+      "In the 2007 film, Raphael fought crime alone under the alias 'The Nightwatcher'.",
+      "He is the only turtle who consistently challenges Leonardo's authority as leader.",
+      "Raphael was the first turtle to meet and fight Casey Jones on a New York rooftop."
+    ],
   },
   {
     id: "splinter",
@@ -80,6 +112,14 @@ export const tmntCharacters: Character[] = [
     prepBonus: 100, // Master of prep/wisdom
     gearDescription: "### Master's Tools\n- **Walking Cane**: A simple wooden staff that hides a deadly secret blade.\n- **Herbal Remedies**: Natural salves used for rapid focus and pain management.",
     prepDescription: "### Spiritual Fortitude\nSplinter meditates to reach a state of 'Mushin' (no-mind), allowing him to react to attacks before the opponent has even initiated them.",
+    triviaPool: [
+      "In the original Mirage comics, Splinter was a pet rat who learned ninja moves by watching his master.",
+      "Splinter's name is a tribute to 'Stick,' the mentor of Marvel's Daredevil.",
+      "He was once a human named Hamato Yoshi before being mutated by the green ooze.",
+      "Splinter has successfully defeated all four of his sons at once in training sessions.",
+      "He is a master of all forms of Ninjutsu, but he is especially skilled with a wooden staff.",
+      "Master Splinter's favorite food is often depicted as being simple tea and rice."
+    ],
   },
   {
     id: "shredder",
@@ -96,6 +136,14 @@ export const tmntCharacters: Character[] = [
     prepBonus: 90,
     gearDescription: "### Kuroi Yoroi Armor\n- **Bladed Gauntlets**: Retractable steel claws for shredding armor.\n- **Spiked Plates**: Offensive-defensive gear that punishes close-range brawlers.",
     prepDescription: "### Foot Clan Mobilization\nShredder deploys a network of hidden ninjas for ambushes and ensuring his armor's micro-blades are sharpened to a molecular edge.",
+    triviaPool: [
+      "The Shredder's design was inspired by a metal cheese grater that creator Kevin Eastman was using.",
+      "His real name, Oroku Saki, means 'great spirit' in Japanese.",
+      "Shredder's armor is known as the 'Kuroi Yoroi' (Black Armor) and is traditionally forged for Foot leaders.",
+      "He has been resurrected multiple times, sometimes as a demon or an alien clone.",
+      "In the 1987 cartoon, he was often seen as a bumbling villain, unlike his darker comic counterpart.",
+      "The Shredder's goal is the total destruction of the Hamato Clan and his rival, Splinter."
+    ],
   },
   {
     id: "caseyjones",
@@ -112,6 +160,14 @@ export const tmntCharacters: Character[] = [
     prepBonus: 30,
     gearDescription: "### Sports Equipment Bag\n- **Hockey Mask**: Heavy-duty protection for his identity and face.\n- **Baseball Bats & Golf Clubs**: Self-taught weapons used for maximum kinetic impact.",
     prepDescription: "### Street Vigilance\nCasey patrols the alleyways beforehand, identifying escape routes and stashing extra gear to ensure he never runs out of wood to swing.",
+    triviaPool: [
+      "Casey Jones' signature hockey mask was inspired by the slasher movie villain Jason Voorhees (initially).",
+      "He is a self-taught vigilante who uses sports equipment as weapons to clean up the streets.",
+      "Casey was once married to April O'Neil in the original Mirage comic series.",
+      "His first encounter with the Turtles was a rooftop brawl with Raphael.",
+      "Casey's catchphrase is 'Goongala!', a nonsense word he yells during a fight.",
+      "Despite having no formal training, he is a formidable brawler who can hold his own against ninjas."
+    ],
   },
   {
     id: "krang",
@@ -128,6 +184,14 @@ export const tmntCharacters: Character[] = [
     prepBonus: 120,
     gearDescription: "### Android Body\n- **Shapeshifting Limbs**: Can transform into axes, shields, and morning stars.\n- **Dimension X Tech**: Incorporated laser systems and reality-warping energy cells.",
     prepDescription: "### Technological Subversion\nKrang uses the Technodrome's sensors to map the molecular structure of the arena, looking for ways to warp reality to his favor.",
+    triviaPool: [
+      "Krang is an Utrom from Dimension X who was stripped of his body and exiled to Earth.",
+      "His android body was built for him by the Shredder in exchange for alien technology.",
+      "Krang rules from the 'Technodrome', a massive, world-destroying fortress on wheels.",
+      "In some versions, he is depicted as a comedic villain who constantly bickers with Shredder.",
+      "The 'Krang' species in the 2012 series are called the Kraang and share a hive mind.",
+      "He is a scientific genius capable of creating inter-dimensional portals and mutagenic serums."
+    ],
   },
   {
     id: "bebop",
@@ -144,8 +208,15 @@ export const tmntCharacters: Character[] = [
     prepBonus: 10,
     gearDescription: "### Foot Clan Thug Kit\n- **Laser Drill**: High-powered beam weapon provided by Krang.\n- **Iron Knuckles**: Enhances his mutant warthog strength for brutal punches.",
     prepDescription: "### Brutish Planning\nBebop mostly focus on getting 'pumped up' and ensuring his laser drill has a fresh battery pack before charging blindly into the fray.",
+    triviaPool: [
+      "Bebop was a human street thug and member of a gang before being mutated into a warthog.",
+      "His name comes from a subgenre of jazz music, a choice made by the 1987 series creators.",
+      "Bebop is rarely seen without his partner-in-crime, Rocksteady.",
+      "He is known for his purple mohawk and signature sunglasses, even in mutant form.",
+      "Despite his strength, Bebop is notoriously slow-witted and easily tricked by the Turtles.",
+      "He once successfully destroyed the Turtles' first apartment lair using a Foot Clan laser drill."
+    ],
   },
-/*
   {
     id: "rocksteady",
     name: "Rocksteady",
@@ -161,6 +232,13 @@ export const tmntCharacters: Character[] = [
     prepBonus: 10,
     gearDescription: "### Heavy Weaponry\n- **Modified M-60**: High-caliber machine gun for suppressive fire.\n- **Frag Grenades**: Standard Foot Clan explosives for area denial.",
     prepDescription: "### Rhino Charge\nRocksteady spends his prep time sharpening his horn and ensuring his ammo belts are untangled, ready to ram through any obstacle.",
+    triviaPool: [
+      "Rocksteady was originally a human gang member who worked for the Shredder.",
+      "His name refers to a genre of Jamaican music that came before reggae.",
+      "As a mutant rhinoceros, he has incredible thick skin that makes him nearly bulletproof.",
+      "Rocksteady's signature weapon is often an M-60 machine gun or a large lead pipe.",
+      "He and Bebop are such good friends that they often have their own bickering subplots.",
+      "In some versions, Rocksteady's rhino horn is sharp enough to gash through turtle shells."
+    ],
   },
-  */
 ];

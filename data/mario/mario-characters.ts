@@ -16,6 +16,14 @@ export const marioCharacters: Character[] = [
     prepBonus: 20,
     gearDescription: "### Power-Up Arsenal\n- **Super Mushroom**: Increases size and strength.\n- **Fire Flower**: Grants ability to throw fireballs.\n- **Super Star**: Temporary invincibility and enhanced speed.",
     prepDescription: "### Course Mastery\nMario uses preparation time to scout the level, identifying hidden blocks and power-up locations to ensure he has the right tool for the job.",
+    triviaPool: [
+      "Mario first appeared in the 1981 arcade game Donkey Kong as 'Jumpman'.",
+      "He was named after Mario Segale, the landlord of Nintendo of America's office.",
+      "Mario's iconic hat and mustache were chosen because they were easier to animate in 8-bit.",
+      "In the original Donkey Kong, Mario was a carpenter, not a plumber.",
+      "Charles Martinet has been the voice of Mario since the mid-1990s.",
+      "Mario has appeared in over 200 different video games across several decades."
+    ],
   },
   {
     id: "luigi",
@@ -32,6 +40,14 @@ export const marioCharacters: Character[] = [
     prepBonus: 20,
     gearDescription: "### Poltergust G-00\n- **Strobeshot**: Stuns ghosts and enemies.\n- **Suction Shot**: Pulls objects or shields.\n- **Gooigi**: Deploys a gelatinous double for puzzles and distraction.",
     prepDescription: "### Ghost Hunting Setup\nLuigi ensures his vacuum is fully charged and clear of debris, often setting up specialized traps for spectral or physical threats.",
+    triviaPool: [
+      "Luigi's name is a pun on the Japanese word 'Ruiji', which means 'similar'.",
+      "He first appeared in the 1983 arcade game Mario Bros. as a palette swap of Mario.",
+      "Luigi is officially taller and thinner than Mario, giving him a higher jump in most games.",
+      "Nintendo declared 2013 the 'Year of Luigi' to celebrate his 30th anniversary.",
+      "Luigi's green color was originally chosen because it matched the Koopa Troopa's green.",
+      "In Luigi's Mansion, it's revealed that Luigi is actually quite wealthy after his ghost-hunting trips."
+    ],
   },
   {
     id: "peach",
@@ -48,6 +64,14 @@ export const marioCharacters: Character[] = [
     prepBonus: 10,
     gearDescription: "### Royal Parasol\n- **Gliding**: Slows descents significantly.\n- **Vibe Powers**: Channels emotions into raw energy for offense or healing.\n- **Perry the Parasol**: A sentient weapon for blunt attacks and protection.",
     prepDescription: "### Tactical Diplomacy\nPeach coordinates with her Toad guards and uses her expertise in Mushroom Kingdom geography to identify escape routes and defensive positions.",
+    triviaPool: [
+      "Princess Peach was known as Princess Toadstool in Western countries until 1996.",
+      "She has her own castle, but is frequently kidnapped and taken to Bowser's fortresses.",
+      "Peach can hover in the air for several seconds, a move popularized in Super Mario Bros. 2.",
+      "In the game 'Super Princess Peach', her primary weapons are her changing emotions.",
+      "Peach has appeared in more games than any other female character in video game history.",
+      "Her favorite hobby is baking cakes, which she often does to thank Mario for rescuing her."
+    ],
   },
   {
     id: "bowser",
@@ -64,6 +88,14 @@ export const marioCharacters: Character[] = [
     prepBonus: 30,
     gearDescription: "### Koopa King's Arsenal\n- **Spiked Shell**: Natural heavy armor.\n- **Koopa Clown Car**: Aerial platform with mechanical arms and cannonballs.\n- **Fire Breath**: Continuous stream of high-intensity flames.",
     prepDescription: "### Legion Command\nBowser gathers his Koopa Troop and rigs the battlefield with traps, fires, and lava pools to overwhelm his opponent with environmental hazards.",
+    triviaPool: [
+      "Bowser's Japanese name, 'Kuppa', is taken from the Korean dish gukbap.",
+      "Shigeru Miyamoto originally envisioned Bowser as an ox before he was redesigned as a turtle.",
+      "While the Koopalings were once thought to be his children, only Bowser Jr. is his biological son.",
+      "Bowser has been the main antagonist of the series for over 35 years.",
+      "In some games, like 'Super Mario RPG', Bowser actually teams up with Mario to fight a common foe.",
+      "Bowser's shell is nearly indestructible and can withstand massive amounts of damage."
+    ],
   },
   {
     id: "yoshi",
@@ -80,6 +112,14 @@ export const marioCharacters: Character[] = [
     prepBonus: 10,
     gearDescription: "### Egg Supply\n- **Elemental Eggs**: Fire, Ice, and Spike eggs for varied damage.\n- **Saddle**: Designed for maximum rider stability during high-speed maneuvers.",
     prepDescription: "### Foraging & Fortification\nYoshi consumes local flora and fauna to stock up on a variety of elemental eggs and identifies optimal 'flutter-paths' for mobility.",
+    triviaPool: [
+      "Yoshi's full name is 'T. Yoshisaur Munchakoopas', as revealed in a 1993 character guide.",
+      "Miyamoto wanted Mario to have a horse companion since the NES, but technical limits delayed Yoshi.",
+      "Yoshis come in many colors, including red, yellow, and blue, each with distinct powers.",
+      "Every time Yoshi eats an enemy, he can instantly produce a projectile egg from his shell.",
+      "Yoshi is a separate species, though 'Yoshi' is also the name of the main green individual.",
+      "He stayed with Baby Mario and Baby Luigi to protect them in Yoshi's Island."
+    ],
   },
   {
     id: "toad",
@@ -96,6 +136,14 @@ export const marioCharacters: Character[] = [
     prepBonus: 5,
     gearDescription: "### Adventurer's Kit\n- **Headlamp**: For exploration and stunning enemies.\n- **Heavy Backpack**: Contains various mining and survival tools.",
     prepDescription: "### Resource Scavenging\nToad digs for power-ups and gems, ensuring a steady supply of buffs for himself or his allies while setting up minor defensive perimeters.",
+    triviaPool: [
+      "Toad's head is actually his natural mushroom-shaped cap, not a hat he's wearing.",
+      "The Japanese name for Toad is 'Kinopio', a mix of 'kinoko' (mushroom) and 'Pinocchio'.",
+      "Toad was once the strongest character in Super Mario Bros. 2 for pulling items from the ground.",
+      "Captain Toad is a specific Toad who leads the Toad Brigade and can't jump due to his heavy pack.",
+      "Toads are the most common residents of the Mushroom Kingdom and serve as Peach's guards.",
+      "A Toad once famously told Mario: 'Thank you Mario! But our princess is in another castle!'"
+    ],
   },
   {
     id: "donkeykong",
@@ -112,6 +160,14 @@ export const marioCharacters: Character[] = [
     prepBonus: 10,
     gearDescription: "### Primate Might\n- **Barrels**: Standard throwables and TNT varieties for massive impact.\n- **Coconut Cannon**: High-velocity projectile launcher.",
     prepDescription: "### Island Defense\nDK identifies high-ground positions for boulder-rolling and marks several 'Banana Stash' locations for quick energy recovery.",
+    triviaPool: [
+      "The current Donkey Kong is actually the grandson of the original 1981 arcade character.",
+      "Donkey Kong's iconic red tie was first introduced in the 1994 game Donkey Kong Country.",
+      "His name was chosen to signify he is 'stubborn' (Donkey) and an 'ape' (Kong).",
+      "DK's favorite food is bananas, which he stores in a massive hidden hoard on his island.",
+      "Diddy Kong is his best friend and trusted partner on many treasure-hunting adventures.",
+      "He was originally Mario's first rival, but they have since become more like friendly competitors."
+    ],
   },
   {
     id: "wario",
@@ -128,6 +184,14 @@ export const marioCharacters: Character[] = [
     prepBonus: 15,
     gearDescription: "### Greedy Gadgets\n- **Wario Bike**: Heavy-duty chopper for ramming and high-speed escape.\n- **Garlic Potency**: Consumption triggers a temporary 'Wario-Man' transformation.",
     prepDescription: "### Scheming and Greed\nWario analyzes the opponent's 'valuables' to find psychological weak points and rigs the arena with stolen Koopa-tech traps.",
+    triviaPool: [
+      "Wario's name is a combination of Mario's name and the Japanese word 'warui' (bad).",
+      "He first appeared as the villain of Super Mario Land 2: 6 Golden Coins.",
+      "Wario's favorite food is garlic, which he often eats to gain temporary super-powers.",
+      "In early 'Wario Land' games, Wario was literally immortal and couldn't be killed by enemies.",
+      "He owns a microgame company in Diamond City called WarioWare, Inc.",
+      "Wario's 'M' on his hat is actually a 'W' turned upside down (or vice versa)."
+    ],
   },
   {
     id: "waluigi",
@@ -144,6 +208,14 @@ export const marioCharacters: Character[] = [
     prepBonus: 15,
     gearDescription: "### Sporting Gear\n- **Tennis Racket**: Primary weapon used for precise deflected attacks.\n- **Potted Piranha Plants**: Deployed as environmental hazards to trap enemies.",
     prepDescription: "### Cheat Codes\nWaluigi rigs the arena with thorny vines and specialized traps designed to ensure he has an unfair advantage from the start.",
+    triviaPool: [
+      "Waluigi was created by Camelot Software specifically to be Wario's tennis partner in 2000.",
+      "He is the only major Mario character to have never appeared in a main-line platforming game.",
+      "Waluigi's lanky frame gives him unparalleled reach and agility in sports like Soccer and Tennis.",
+      "His voice actor, Charles Martinet, once said Waluigi feels like a victim of constant cheating.",
+      "The 'inverted L' on his hat represents his mirrored rivalry with Luigi's 'L'.",
+      "Despite his popularity among fans, he is often excluded from the main Super Smash Bros. roster."
+    ],
   },
   {
     id: "goomba",
@@ -160,6 +232,14 @@ export const marioCharacters: Character[] = [
     prepBonus: 2,
     gearDescription: "### Minion Kit\n- **Small Head-Cap**: Provides minimal protection from glancing blows.\n- **Hidden Spikes**: Some variants are equipped with head-spikes to puncture foolish jumpers.",
     prepDescription: "### Group Formation\nGoombas coordinate to form 'Goomba Towers', increasing their reach and mass for overwhelming physical pressure.",
+    triviaPool: [
+      "Goombas were the last enemy added to the original Super Mario Bros. game in 1985.",
+      "The Japanese name for Goomba, 'Kuribo', literally translates to 'chestnut person'.",
+      "A standard Goomba can be defeated by a single stomp from Mario or Luigi.",
+      "In early concept art, Goombas were originally meant to be a type of sentient brown mushroom.",
+      "Despite being basic enemies, some Goombas have evolved into flight-capable Paragoombas.",
+      "They were once allies of the Mushroom Kingdom until they defected to join Bowser's army."
+    ],
   },
   {
     id: "koopa",
@@ -176,6 +256,14 @@ export const marioCharacters: Character[] = [
     prepBonus: 5,
     gearDescription: "### Shell Armor\n- **Reinforced Shell**: Provides near-total protection when retreated into.\n- **Parawing Attachment**: Some troops are equipped with temporary wings for aerial maneuvers.",
     prepDescription: "### Patrol Mapping\nKoopas survey the terrain to identify strategic patrol routes and 'ledge-turning' points to minimize environmental deaths.",
+    triviaPool: [
+      "Koopa Troopas were originally called Shellcreepers in the 1983 arcade game Mario Bros.",
+      "Green Koopas always walk off ledges, while Red Koopas are smart enough to turn around.",
+      "A Koopa's shell can be kicked by Mario to clear out a long line of incoming enemies.",
+      "The Paratroopa is a specialized variant that has wings for limited flight and hovering.",
+      "In 'Paper Mario', several Koopas are depicted as peaceful citizens and helpful teammates.",
+      "Their shells are highly durable and are frequently used as hulls for small racing karts."
+    ],
   },
   {
     id: "bowserjr",
@@ -192,6 +280,14 @@ export const marioCharacters: Character[] = [
     prepBonus: 40,
     gearDescription: "### Junior Clown Car\n- **Extendable Boxing Gloves**: For rapid-fire physical attacks.\n- **Magic Paintbrush**: Created by E. Gadd, it allows for corrupting terrain and creating shadow-constructs.",
     prepDescription: "### Technical Calibration\nJunior cleans the various mechanisms of his Clown Car and mixes fresh 'Shadow Paint' to ensure maximum graffiti impact during the clash.",
+    triviaPool: [
+      "Bowser Jr. made his debut in Super Mario Sunshine, where he impersonated Shadow Mario.",
+      "He uses a Magic Paintbrush given to him by the scientist Professor E. Gadd.",
+      "Unlike the Koopalings, Bowser Jr. is confirmed to be Bowser's only biological child.",
+      "His primary vehicle, the Junior Clown Car, is packed with mechanical boxing gloves and cannons.",
+      "Junior often teams up with Mario in 'Bowser's Fury' to stop his father's rampaging form.",
+      "He wears a bib with a toothy grin drawn on it to make himself look more like his father."
+    ],
   },
   {
     id: "rosalina",
@@ -208,5 +304,13 @@ export const marioCharacters: Character[] = [
     prepBonus: 40,
     gearDescription: "### Cosmic Artifacts\n- **Star Wand**: Channels celestial energy for gravity manipulation.\n- **Comet Observatory**: Provides a boundless source of power from the stars.",
     prepDescription: "### Star Mapping\nRosalina observes celestial alignments to maximize her connection to the cosmos, often arriving with a pre-charged pool of Starbits for her Lumas.",
+    triviaPool: [
+      "Rosalina is the adoptive mother of the Lumas and protector of the Comet Observatory.",
+      "Her backstory is found in a hidden storybook in the game 'Super Mario Galaxy'.",
+      "Rosalina is one of the most powerful beings in the Mario series, having overseen the reset of the universe.",
+      "She was originally planned to be related to Princess Peach, but this was later changed.",
+      "Rosalina uses a Star Wand to channel gravity and cosmic energy in her battles.",
+      "In her early concept art, she was much taller and had more of an 'Amazonian' appearance."
+    ],
   },
 ];

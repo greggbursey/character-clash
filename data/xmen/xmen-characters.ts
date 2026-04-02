@@ -16,6 +16,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 40,
     gearDescription: "### Adamantium Augmentation\n- **Indestructible Claws**: Six retractable blades bonded with the strongest metal known to science.\n- **Weapon X Tactical Suit**: Reinforced with Kevlar and tailored for extreme mobility and stealth.",
     prepDescription: "### Survival Instincts\nLogan tracks his prey from the shadows, identifying their scent and habitual patterns for a sudden, high-intensity 'berserker' ambush.",
+    triviaPool: [
+      "Wolverine was originally going to be a mutated actual wolverine animal, but this was later scrapped.",
+      "His first-ever appearance was at the very end of 'The Incredible Hulk' #180 in 1974.",
+      "The 'fins' on his mask were an accidental addition by an artist that became a permanent icon.",
+      "Logan's healing factor is so strong he has survived being at the ground zero of a nuclear blast.",
+      "Despite his gruff nature, he is actually a master of multiple languages and classical literature.",
+      "His claws are naturally made of bone; the Adamantium is a permanent coating from the Weapon X program."
+    ],
   },
   {
     id: "magneto",
@@ -32,6 +40,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 150, // Tactical genius
     gearDescription: "### Master of Magnetism Regalia\n- **Lead-Lined Helmet**: Shields his mind from all forms of telepathic intrusion and manipulation.\n- **Magnetic Harness**: Allows for precise, effortless manipulation of metallic objects on a planetary scale.",
     prepDescription: "### Strategic Revolution\nMagneto identifies the metallic composition of the environment, preparing to weaponize the very ground and structures the opponent stands upon.",
+    triviaPool: [
+      "For many years, Magneto's name was thought to be Erik Lehnsherr, but his birth name is Max Eisenhardt.",
+      "His iconic helmet is partially lined with a unique alloy that creates a complete block for telepathy.",
+      "Magneto is one of the few mutants whose power level is officially categorized as 'Omega Level'.",
+      "He was once the ruler of Genosha, an island nation that served as a safe haven for mutants.",
+      "Despite being an enemy, Magneto was actually one of Charles Xavier's oldest and closest friends.",
+      "In some continuities, he is the biological father of both Quicksilver and the Scarlet Witch."
+    ],
   },
   {
     id: "colossus",
@@ -48,6 +64,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 20,
     gearDescription: "### Organic Steel Body\n- **Unbreakable Skin**: His entire physical form is transformed into a dense, impact-resistant living metal.\n- **X-Men Training Suit**: Specifically designed to expand and contract with his metallic transformation.",
     prepDescription: "### Gentle Giant's Resolve\nColossus prepares his mind for the violence he detests, focusing his spirit into an immovable wall of defensive and offensive steel.",
+    triviaPool: [
+      "Colossus's sister, Illyana Rasputin, is the powerful mutant sorceress known as Magik.",
+      "In his armored form, Colossus's skin is made of 'organic steel' that requires no oxygen to survive.",
+      "He is a highly talented painter and often uses art to find peace from the X-Men's battles.",
+      "Piotr once sacrificed his life to release a cure for the Legacy Virus, which was killing mutants.",
+      "He is one of the strongest beings on Earth, often able to go toe-to-toe with the Juggernaut.",
+      "Colossus was recruited for the X-Men after he saved his sister from a runaway farming tractor."
+    ],
   },
   {
     id: "nightcrawler",
@@ -64,6 +88,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 35,
     gearDescription: "### Swashbuckler's Gear\n- **Image Inducer**: Hidden technology that allows for temporary holographic disguises.\n- **Dual Sabers**: Masterfully wielded in close-quarters combat while teleporting.",
     prepDescription: "### Acrobatic Evasion\nKurt scouts the arena for shadows and 'blind spots', planning a series of rapid 'BAMFs' to confuse and disorient his opponent.",
+    triviaPool: [
+      "Nightcrawler's 'BAMF' sound is actually the sound of air rushing to fill the void he leaves behind.",
+      "His parents are the shapeshifter Mystique and the demonic mutant Azazel.",
+      "Kurt is a devout Catholic and has even studied to become a priest in certain comic runs.",
+      "His teleportation power draws from a dimension filled with sulfurous, brimstone-like smoke.",
+      "He was raised in a traveling circus in Germany, where he was a star trapeze artist.",
+      "Nightcrawler's tail is prehensile and strong enough to support his entire body weight."
+    ],
   },
   {
     id: "phoenix",
@@ -80,6 +112,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 100,
     gearDescription: "### Cosmic Phoenix Force\n- **Phoenix Aura**: A constant field of celestial fire that can incinerate entire star systems.\n- **Telepathic Link**: Instantaneous connection to the collective consciousness of the universe.",
     prepDescription: "### Mental Harmonization\nJean focuses her willpower to keep the vast, world-burning hunger of the Phoenix in check, channeling its raw power with surgical precision.",
+    triviaPool: [
+      "Jean Grey was the first female member and the mental heart of the original five X-Men.",
+      "The Phoenix Force is an ancient cosmic entity that represents the life and fire of the universe.",
+      "As the Dark Phoenix, Jean once consumed a whole star, accidentally killing billions on a nearby planet.",
+      "She has died and been resurrected more times than almost any other character in Marvel history.",
+      "Jean's telepathic powers were first triggered when she witnessed her best friend die in a car accident.",
+      "She was given the codename 'Marvel Girl' when she first joined Xavier's school for mutants."
+    ],
   },
   {
     id: "sabretooth",
@@ -96,6 +136,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 20,
     gearDescription: "### Feral Predatory Gear\n- **Retractable Adamantium Claws**: Inundated with the same metal as Wolverine for extra lethality.\n- **Enhanced Senses Tracking Bag**: Contains specialized scents to prime his animalistic tracking.",
     prepDescription: "### Single-Minded Hunt\nVictor stalks his prey for days, identifying their loved ones and safe zones to destroy their morale before the physical confrontation begins.",
+    triviaPool: [
+      "Sabretooth was originally created as a villain for Iron Fist, not the X-Men.",
+      "He has a tradition of hunting down Wolverine every year on Logan's birthday to torment him.",
+      "For a long time, it was rumored Victor was Logan's father, but this was eventually proven false.",
+      "He was a member of 'Team X', a CIA black-ops unit, alongside Wolverine and Silver Fox.",
+      "Victor's healing factor is nearly as fast as Wolverine's, though he is often more physically savage.",
+      "He once joined a version of the Avengers during a time when his morality was magically inverted."
+    ],
   },
   {
     id: "juggernaut",
@@ -112,6 +160,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 30,
     gearDescription: "### Avatar of Cyttorak Regalia\n- **Mystical Dome Helmet**: Blocks all telepathic probes and protects his identity.\n- **Gem-Fueled Armor**: Grants infinite momentum and physical invulnerability once in motion.",
     prepDescription: "### Unstoppable Momentum\nCain builds up a rhythmic internal 'charge' of mystical energy, ensuring that nothing short of a cosmic force can stop his first charge.",
+    triviaPool: [
+      "Juggernaut is not actually a mutant; his powers are mystical, granted by the Gem of Cyttorak.",
+      "He is the stepbrother of Charles Xavier, and their childhood rivalry spans their entire lives.",
+      "Once he starts moving, Juggernaut is physically unstoppable by any known earthly force.",
+      "His helmet is specially designed to block telepathic attacks, his only real weakness.",
+      "Cain Marko was a soldier in the same military unit as Charles Xavier in the Korean War.",
+      "He has occasionally served as a hero, joining both the X-Men and the British team Excalibur."
+    ],
   },
   {
     id: "cyclops",
@@ -128,6 +184,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 100,
     gearDescription: "### Ruby-Quartz Visor\n- **Optic Control Lens**: Allows for precise regulation of his constant, concussive optic blasts.\n- **Tactical X-Suit**: Lightweight and durable, designed for command-level coordination.",
     prepDescription: "### Geometric Tactical Planning\nCyclops calculates the precise angles and ricochet points of the arena, preparing a series of optic 'trick shots' to overwhelm the opponent's defenses.",
+    triviaPool: [
+      "Cyclops's optic blasts are not heat beams; they are pure concussive kinetic force from another dimension.",
+      "He was the very first mutant recruited by Charles Xavier for the X-Men.",
+      "Due to a childhood head injury, he lost the ability to shut off his optic blasts without his visor.",
+      "Scott is a master of spatial geometry, allowing him to pull off incredible 'bank shots' with his eyes.",
+      "He has two brothers who are also mutants: Havok (Alex Summers) and Vulcan (Gabriel Summers).",
+      "The ruby-quartz in his visor is the only material known to accurately block his energy beams."
+    ],
   },
   {
     id: "storm",
@@ -144,6 +208,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 90,
     gearDescription: "### High-Altitude Gear\n- **Weather-Reactive Cloak**: Billows with the wind to allow for graceful, silent flight.\n- **Goddess Headdress**: Imbued with tribal history and focusing her connection to the biosphere.",
     prepDescription: "### Atmospheric Calibration\nStorm communicates with the local elements, sensing the pressure and moisture levels to prepare a massive, arena-wide elemental lockdown.",
+    triviaPool: [
+      "Storm was once married to T'Challa (Black Panther) and served as the Queen of Wakanda.",
+      "She was worshipped as a literal weather goddess in Kenya before being recruited by Xavier.",
+      "Ororo suffers from severe claustrophobia, a result of being trapped under rubble as a child.",
+      "She once defeated Cyclops in a duel for the leadership of the X-Men while she had no powers.",
+      "Storm's eyes turn glowing white whenever she is actively using her weather-manipulating abilities.",
+      "She is an Omega-level mutant, meaning her power is theoretically without an upper limit."
+    ],
   },
   {
     id: "professorx",
@@ -160,6 +232,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 200,
     gearDescription: "### Telepathic Amplification\n- **Cerebro Link Interface**: Extends his mental reach to global levels, allowing for precise tracking of all sentient minds.\n- **Hoverchair**: Advanced Shi'ar technology providing mobility and defensive shielding.",
     prepDescription: "### Infinite Mind Projection\nProfessor X projects his consciousness into the opponent's mind, cataloging their every thought and intent before the physical fight even begins.",
+    triviaPool: [
+      "Charles Xavier lost the use of his legs in a battle with an alien named Lucifer.",
+      "He used Cerebro to amplify his brainwaves to track mutants anywhere on the planet.",
+      "Before becoming a teacher, Charles was a decorated soldier and a brilliant scholar.",
+      "He is the stepbrother of the Juggernaut, though their relationship has always been hostile.",
+      "Xavier has a secret 'back-up' of his mind stored inside a specialized Shi'ar AI system.",
+      "He was one of the founding members of the 'Illuminati', a secret council of world leaders."
+    ],
   },
   {
     id: "beast",
@@ -176,6 +256,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 150,
     gearDescription: "### Laboratory Surplus\n- **Medical Nanites**: Self-deploying medical kits for rapid battlefield stabilization.\n- **Scanning Visor**: Advanced biometric analyzer identifying the biological weaknesses of his opponents.",
     prepDescription: "### Scientific Hypothesis\nHank conducts a rapid biometric scan of the environment and the opponent, formulating a multi-layered plan to exploit their specific physiological limitations.",
+    triviaPool: [
+      "Beast was originally a normal-looking human with oversized hands and feet.",
+      "His blue-furred form was the result of a scientific experiment he performed on himself.",
+      "Despite his appearance, Hank McCoy holds multiple PhDs and is a world-class scientist.",
+      "He is a founding member of both the X-Men and the superhero team The Defenders.",
+      "Beast's feet are prehensile, meaning he can use them like a second pair of hands.",
+      "He is well known for his love of poetry and frequently quotes Shakespeare during combat."
+    ],
   },
   {
     id: "gambit",
@@ -192,6 +280,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 40,
     gearDescription: "### The Thief's Hand\n- **Kinetic-Charged Cards**: A deck of playing cards specifically treated to hold a maximum kinetic charge.\n- **Telescopic Bo Staff**: A collapsible Adamantium-reinforced staff used for high-impact kinetic strikes.",
     prepDescription: "### The Long Game\nRemy carefully 'seeds' the arena with minor kinetic charges, creating a network of explosive traps that he can trigger with a single card throw.",
+    triviaPool: [
+      "Gambit is a master thief and was once the leader of the New Orleans Thieves Guild.",
+      "His eyes are naturally black with red pupils, a trait that often alarms those who see him.",
+      "Gambit was once one of the Four Horsemen of Apocalypse, serving as 'Death'.",
+      "He was hired by Mr. Sinister to lead the Marauders, a past he spent years trying to redeem.",
+      "His power is to charge inorganic matter with kinetic energy, causing it to explode on impact.",
+      "Remy's signature weapon is a collapsible bo staff made of Adamantium-reinforced steel."
+    ],
   },
   {
     id: "mystique",
@@ -208,6 +304,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 120,
     gearDescription: "### Infiltration Arsenal\n- **Adaptive Tactical Gear**: Lightweight armor that can shift its texture and color alongside its wearer.\n- **Dual Sub-Compact Pistols**: Customized for silent, high-precision takedowns.",
     prepDescription: "### Perfect Mimicry\nRaven spends time deeply studying the opponent's biology and manorisms, preparing to 'become' their most trusted ally at the most critical moment of the fight.",
+    triviaPool: [
+      "Mystique's real age is unknown, but she is hinted to be over a hundred years old.",
+      "She is the biological mother of Nightcrawler and the adoptive mother of Rogue.",
+      "Raven's physical transformation is so perfect it can even deceive biometric scanners.",
+      "She led a version of the Brotherhood of Mutants that once attempted to kill Senator Kelly.",
+      "Mystique has worked as a mercenary, a terrorist, and even a secret government agent.",
+      "Her blue skin and yellow eyes are her natural form, but she almost always stays disguised."
+    ],
   },
   {
     id: "banshee",
@@ -224,6 +328,14 @@ export const xmenCharacters: Character[] = [
     prepBonus: 40,
     gearDescription: "### Interpol Tactical Gear\n- **Vocal-Feedback Resonators**: Specialized throat-mounted devices that stabilize and focus his sonic blasts.\n- **Sonic Glide Suit**: Featuring underarm membranes that utilize sonic vibrations for silent, high-speed flight.",
     prepDescription: "### Frequency Calibration\nSean 'shouts' into the environment, using sonic echoes to map the arena's resonant frequencies to identify structural weak points.",
+    triviaPool: [
+      "Banshee's sonic screams can reach frequencies that allow him to fly through the air.",
+      "His voice is so powerful it can shatter high-grade steel and level entire buildings.",
+      "Sean Cassidy was an inspector for Interpol before he joined the X-Men.",
+      "He inherited a massive castle in Ireland known as Cassidy Keep.",
+      "Banshee is the father of the mutant Siryn, who inherited her father's sonic powers.",
+      "He and his cousin Black Tom Cassidy have a legendary, violent family rivalry."
+    ],
   },
 
 ];

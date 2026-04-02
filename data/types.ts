@@ -13,5 +13,6 @@ export type Character = {
   gearDescription?: string;
   prepDescription?: string;
   triviaInfo: string;
+  triviaPool?: string[];
   imagePosition?: string;
 };

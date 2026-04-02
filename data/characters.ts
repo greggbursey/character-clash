@@ -10,6 +10,7 @@ import { godzillaCharacters } from "./godzilla/godzilla-characters";
 import { swCharacters } from "./star-wars/sw-characters";
 import { marioCharacters } from "./mario/mario-characters";
 import { hpCharacters } from "./hp/hp-characters";
+import { lotrCharacters } from "./lotr/lotr-characters";
 
 export const characters: Character[] = [
   ...tmntCharacters,
@@ -22,4 +23,5 @@ export const characters: Character[] = [
   ...swCharacters,
   ...marioCharacters,
   ...hpCharacters,
+  ...lotrCharacters,
 ];

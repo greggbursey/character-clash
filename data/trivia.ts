@@ -219,6 +219,23 @@ export const trivia: Record<string, string[]> = {
     "The 'Morlocks' are an underground society of mutants who cannot pass as human.",
     "Forge is a Cheyenne mutant with the power of 'Intuitive Genius' for technology."
   ],
+  "Lord of the Rings": [
+    "J.R.R. Tolkien wrote the entire story as a 'history' for England, complete with its own mythology.",
+    "The One Ring can only be destroyed in the fires of Mount Doom where it was forged.",
+    "The 'Ensemble' of the Fellowship was designed to represent all the free races of Middle-earth.",
+    "Tolkien invented entire finished languages for the elves before he even finished the plot.",
+    "The Balrog is a fallen angel-class spirit, the same order as Gandalf and Sauron.",
+    "Aragorn was 87 years old during the War of the Ring, appearing young due to his bloodline.",
+    "The elven-smiths who forged the Rings of Power were deceived by Sauron in a fair disguise.",
+    "Galadriel was one of the few elves remaining in Middle-earth who had seen the Light of the Two Trees.",
+    "The Ents, guardians of the forest, were created by Yavanna to protect the trees from dwarves.",
+    "Bilbo Baggins found the One Ring in 'The Hobbit' while playing a game of riddles with Gollum.",
+    "The 'Nine Kings of Men' became the Nazgûl after their Rings of Power consumed their mortal lives.",
+    "Wizards in Middle-earth are actually sent by the Valar (gods) as guides, not just humans with magic.",
+    "The sword Andúril was reforged from the shards of Narsil, which cut the Ring from Sauron's hand.",
+    "Gimli was given three strands of Galadriel's hair—a gift she had refused to the elven-king Fëanor.",
+    "The 'Wilhelm Scream' is famously replaced in Tolkien's works by original, guttural orc-screams."
+  ]
 };
 
 export const generalTrivia: string[] = [

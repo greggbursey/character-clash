@@ -16,6 +16,14 @@ export const swCharacters: Character[] = [
     prepBonus: 150, // Force focus
     gearDescription: "### Jedi Master Arsenal\n- **Green Lightsaber**: A weapon built by Luke himself, symbolizing his path to mastery.\n- **X-Wing Flight Suit**: Provides life support and G-force protection for high-speed dogfights.",
     prepDescription: "### Force Attunement\nLuke connects with the living Force and receives guidance from Force Ghosts, allowing him to perceive the 'Shatterpoint' of any conflict.",
+    triviaPool: [
+      "Luke Skywalker's last name was originally 'Starkiller' in the early drafts of Star Wars.",
+      "Luke's green lightsaber was built using a synthetic kyber crystal he found in Ben Kenobi's hut.",
+      "Mark Hamill was actually in a serious car accident before the filming of 'The Empire Strikes Back'.",
+      "Luke was born in a medical facility on Polis Massa to Padmé Amidala and Anakin Skywalker.",
+      "His first flight in an X-wing at the Battle of Yavin was successfully guided by the voice of Obi-Wan.",
+      "Luke is one of the few Jedi to have successfully redeemed a Sith Lord back to the light side."
+    ],
   },
   {
     id: "hansolo",
@@ -32,6 +40,14 @@ export const swCharacters: Character[] = [
     prepBonus: 90, // Smuggler's luck/planning
     gearDescription: "### Smuggler's Kit\n- **DL-44 Blaster Pistol**: Modified for extra punch and faster draw.\n- **Millennium Falcon Co-Pilot Link**: Direct communication with Chewie and the ship's defensive systems.",
     prepDescription: "### Calculating the Odds\nHan 'never tells the odds' but secretly calculates a bold, high-risk maneuver that catches more disciplined opponents off-guard.",
+    triviaPool: [
+      "Harrison Ford was originally hired as a carpenter to read lines during auditions for other actors.",
+      "Han Solo's iconic response 'I know' to Leia's 'I love you' was an ad-lib by Harrison Ford.",
+      "The Millennium Falcon was originally designed as a 'hamburger-shaped' ship with a cockpit on the side.",
+      "Han Solo was expelled from the Imperial Academy for saving Chewbacca from a life of slavery.",
+      "His signature DL-44 blaster pistol is a modified version of the real-world Mauser C96.",
+      "Han successfully made the Kessel Run in less than 12 parsecs (a measure of distance, not time)."
+    ],
   },
   {
     id: "chewbacca",
@@ -48,6 +64,14 @@ export const swCharacters: Character[] = [
     prepBonus: 30,
     gearDescription: "### Wookiee Tradition\n- **Bowcaster**: A specialized weapon firing explosive energy-wrapped bolts with massive kinetic impact.\n- **Bandolier**: Contains high-grade starship repair tools and extra bowcaster ammo.",
     prepDescription: "### Life-Debt Focus\nChewie spends time calibrating his bowcaster's energy cells and preparing himself to take a hit for his companions, fueled by his fierce loyalty.",
+    triviaPool: [
+      "Chewbacca's appearance was inspired by George Lucas's dog, an Alaskan Malamute named Indiana.",
+      "Wookiees are known to live for centuries; Chewie is over 200 years old in the original trilogy.",
+      "The Wookiee language, Shyriiwook, was created from a mix of bear, walrus, and lion sounds.",
+      "Chewbacca was a decorated warrior who fought alongside Master Yoda during the Clone Wars.",
+      "His bowcaster is a traditional Wookiee weapon that fires 'quarrels' wrapped in pure energy.",
+      "Chewie's bandolier contains essential starship repair tools and high-grade explosives."
+    ],
   },
   {
     id: "macewindu",
@@ -64,6 +88,14 @@ export const swCharacters: Character[] = [
     prepBonus: 120,
     gearDescription: "### Unique Jedi Gear\n- **Purple Lightsaber**: Imbued with a rare crystal, allowing for his unique Vaapad style.\n- **Jedi Council Robes**: Reinforced with light armor weave for the Clone Wars.",
     prepDescription: "### Shatterpoint Analysis\nMace uses the Force to identify the precise 'Shatterpoint' in his opponent's style—the one moment or flaw where he can strike for a definitive win.",
+    triviaPool: [
+      "Samuel L. Jackson requested a purple lightsaber so he could spot himself in large battle scenes.",
+      "Mace Windu is the creator of lightsaber Form VII (Vaapad), which uses the user's inner darkness.",
+      "He was the only Jedi to ever truly defeat Darth Sidious in a fair lightsaber duel.",
+      "Mace's unique Force power, Shatterpoint, allows him to see the fault lines in reality itself.",
+      "In the very first Star Wars draft, the protagonist's name was 'Mace Windy'.",
+      "Mace Windu served as the Master of the Order, the second-highest rank in the Jedi High Council."
+    ],
   },
   {
     id: "yoda",
@@ -80,6 +112,14 @@ export const swCharacters: Character[] = [
     prepBonus: 250, // 900 years of experience
     gearDescription: "### Grand Master's Tools\n- **Shoto Lightsaber**: A shorter blade designed for his height and extreme agility.\n- **Gimer Stick**: A simple wooden cane that masks his true physical speed.",
     prepDescription: "### Nine Centuries of Wisdom\nYoda enters a state of deep Battle Meditation, aligning the cosmic Force to guide his every movement with precognitive precision.",
+    triviaPool: [
+      "Yoda was a Jedi for nearly 900 years, training almost every Jedi in the Order during that time.",
+      "His design was partially based on Albert Einstein, particularly the eyes and facial features.",
+      "Yoda speaks in an Object-Subject-Verb word order, which is a rare linguistic pattern on Earth.",
+      "The puppet for Yoda was originally designed and operated by legendary Muppeteer Frank Oz.",
+      "Yoda's home planet and species name have never been revealed in any Star Wars media.",
+      "In the original drafts of 'The Empire Strikes Back', Yoda was actually named 'Buffy'."
+    ],
   },
   {
     id: "palpatine",
@@ -96,6 +136,14 @@ export const swCharacters: Character[] = [
     prepBonus: 300, // Mastermind of the Sith
     gearDescription: "### Sith Lord Attire\n- **Sith Robes**: Woven with dark-side energy that hums with a malevolent aura.\n- **Hidden Lightsaber**: Concealed within his sleeve for a sudden, lethal strike.",
     prepDescription: "### Galactic Grand Strategy\nPalpatine has already won before the fight starts—he has manipulated the environment, the politics, and the opponent's very mind to ensure their fall.",
+    triviaPool: [
+      "Palpatine was the first Sith in a thousand years to successfully destroy the Jedi Order.",
+      "His birth name is Sheev Palpatine, a detail first revealed in the 2014 novel 'Tarkin'.",
+      "Actor Ian McDiarmid was only 37 when he was first cast as the elderly Emperor in 1983.",
+      "Palpatine's master was Darth Plagueis the Wise, whom he killed in his sleep.",
+      "The Emperor's favorite form of execution was the use of Force Lightning to prolong the victim's pain.",
+      "He had many clones of himself made on the planet Exegol as a contingency against his death."
+    ],
   },
   {
     id: "vader",
@@ -112,6 +160,14 @@ export const swCharacters: Character[] = [
     prepBonus: 120,
     gearDescription: "### Sith Enforcer Tech\n- **Life-Support Armor**: Grants superhuman strength and durability at the cost of mobility.\n- **Crimson Lightsaber**: A bled-crystal blade that hums with the pain of the dark side.",
     prepDescription: "### Intimidation Protocol\nVader focuses his hatred, projecting a suffocating field of dark-side energy that drains the physical and mental stamina of his foes.",
+    triviaPool: [
+      "James Earl Jones provided the iconic voice of Darth Vader, but David Prowse was the body actor.",
+      "Vader's breathing sound was created using a scuba regulator and a microphone.",
+      "The heavy armor Vader wears was designed to be uncomfortable to keep him in a state of constant pain and rage.",
+      "Vader's meditation chamber is the only place he can remove his helmet and still breathe.",
+      "He once pulled a massive starship from the sky using the Force alone in the 'Force Unleashed' series.",
+      "Darth Vader's design was inspired by Samurai armor and German trench helmets from WWI."
+    ],
   },
   {
     id: "maul",
@@ -128,6 +184,14 @@ export const swCharacters: Character[] = [
     prepBonus: 80,
     gearDescription: "### Sith Assassin Arsenal\n- **Double-Bladed Lightsaber**: Designed for high-speed, multi-angle chaotic strikes.\n- **Dathomirian Leg-Cybernetics**: Specifically tuned for extreme jumping and speed.",
     prepDescription: "### Vengeful Shadow\nMaul stalks his opponent from the dark, identifying their emotional weaknesses and preparing a blindingly fast first-strike ambush.",
+    triviaPool: [
+      "Darth Maul's red and black markings are part of his Dathomirian Zabrak heritage, used for intimidation.",
+      "He survived being cut in half on Naboo by channeling his sheer hatred into the Force.",
+      "Maul's double-bladed lightsaber, or saberstaff, was the first of its kind seen in a Star Wars film.",
+      "He was once the ruler of Mandalore after defeating Pre Vizsla in ritual combat.",
+      "Maul had very little dialogue in his first film, with only a few menacing lines spoken by Peter Serafinowicz.",
+      "After his return, he led a criminal empire called the Shadow Collective from the shadows."
+    ],
   },
   {
     id: "bane",
@@ -144,6 +208,14 @@ export const swCharacters: Character[] = [
     prepBonus: 200, // Rule of Two planning
     gearDescription: "### Orbalisk Armor\n- **Living Parasite Suit**: Grants near-invulnerability and constant pain, which fuels his dark-side channeling.\n- **Curved-Hilt Lightsaber**: Designed for the precise, brutal Form II Makashi style.",
     prepDescription: "### Concentration of Will\nBane focuses his entire existence into a singular point of dark-side power, ensuring his power is absolutely concentrated and overwhelming.",
+    triviaPool: [
+      "Darth Bane created the 'Rule of Two,' which stated there could only be two Sith at any given time.",
+      "His orbalisk armor was made of living parasites that fed on his dark side energy to remain hard as stone.",
+      "Bane was a former miner who found his way into the Sith Academy through his raw Force potential.",
+      "He once used a 'Thought Bomb' to wipe out almost every Jedi and Sith on the planet Ruusan.",
+      "Bane's primary lightsaber style was Form V (Djem So), but he was also a master of Form II (Makashi).",
+      "He believed that the Sith's greatest weakness was their own infighting among multiple masters."
+    ],
   },
   {
     id: "starkiller",
@@ -160,6 +232,14 @@ export const swCharacters: Character[] = [
     prepBonus: 100,
     gearDescription: "### Secret Apprentice Gear\n- **Reverse-Grip Lightsabers**: Dual blades configured for his unique, aggressive Shien style.\n- **Tactical Flight Suit**: Lightweight and durable for high-impact Force missions.",
     prepDescription: "### Raw Unfiltered Power\nStarkiller gathers the raw energy of the environment, pushing his Force potential to its absolute breaking point to unleash 'The Force Unleashed'.",
+    triviaPool: [
+      "Starkiller was the secret apprentice of Darth Vader, raised from childhood to kill Jedi.",
+      "His real name, Galen Marek, was only discovered much later in his journey away from the Sith.",
+      "One of Starkiller's most famous feats is pulling an entire Imperial Star Destroyer from the sky.",
+      "His character model and voice were based on actor Sam Witwer, who also voiced Darth Maul.",
+      "Starkiller was originally meant to be a canonical founder of the Rebellion before the Disney merger.",
+      "He famously uses a reverse-grip lightsaber style, which is both extremely defensive and unpredictable."
+    ],
   },
   {
     id: "obiwan",
@@ -176,6 +256,14 @@ export const swCharacters: Character[] = [
     prepBonus: 120,
     gearDescription: "### Master's Focus\n- **Signature Blue Lightsaber**: A masterfully balanced blade designed for precision parrying.\n- **Jedi Meditation Cloak**: Helps regulate his connection to the Force during high-intensity stress.",
     prepDescription: "### The Negotiator's Patience\nObi-Wan centers himself, entering a defensive flow-state. He waits for the opponent to make a single mistake, ensuring his defense is absolute until then.",
+    triviaPool: [
+      "Obi-Wan Kenobi was the first Jedi in 1,000 years to defeat a Sith Lord in single combat (Darth Maul).",
+      "His nickname among the Republic's leaders was 'The Negotiator' for his skill in avoiding war.",
+      "Obi-Wan is the only Jedi to have defeated both Anakin Skywalker and his son, Luke (in training).",
+      "Ewan McGregor was so into his role that he often made his own 'lightsaber sounds' during filming.",
+      "Obi-Wan's master, Qui-Gon Jinn, was the one who discovered the secret of becoming a Force Ghost.",
+      "He chose the name 'Ben' while in exile on Tatooine, a name that Luke would later give to his own son."
+    ],
     imagePosition: "top",
   },
   {
@@ -193,6 +281,14 @@ export const swCharacters: Character[] = [
     prepBonus: 150,
     gearDescription: "### Master's Insight\n- **Green Lightsaber**: A weapon that hums with the energy of the Living Force.\n- **Breath Mask**: A specialized A99 rebreather for missions in hostile environments.",
     prepDescription: "### Attunement to the Living Force\nQui-Gon ignores the grand scale of the conflict, focusing entirely on the immediate flow of energy in his surroundings to anticipate any physical or metaphysical shift in the battle.",
+    triviaPool: [
+      "Qui-Gon Jinn's name comes from 'Qigong,' a system of body-posture, breathing, and meditation.",
+      "He was a student of Count Dooku before Dooku fell to the dark side and left the Jedi Order.",
+      "Qui-Gon's commlink in 'The Phantom Menace' was actually a modified women's razor.",
+      "He was the first Jedi to realize that the 'Living Force' was more important than rigid prophecy.",
+      "Qui-Gon is the one who ultimately discovered how to retain consciousness after death.",
+      "His death at the hands of Darth Maul was seen by many as the moment Anakin Skywalker's fate was sealed."
+    ],
     imagePosition: "top",
   },
   {
@@ -210,6 +306,14 @@ export const swCharacters: Character[] = [
     prepBonus: 60,
     gearDescription: "### Unstable Sith Gear\n- **Crossguard Lightsaber**: Features quillons to vent the raw, unstable energy of its cracked crystal.\n- **Kylo Ren's Mask**: A psychological tool designed to intimidate and focus his rage.",
     prepDescription: "### Focused Turmoil\nKylo Ren embraces his internal conflict, channeling his pain and anger into a concentrated Burst of Force energy that enhances his physical speed and striking power.",
+    triviaPool: [
+      "Kylo Ren's crossguard lightsaber uses a cracked kyber crystal, which is why the blade looks unstable.",
+      "Adam Driver, the actor who plays Kylo, is a former U.S. Marine, which influenced his physical performance.",
+      "His birth name is Ben Solo, given to him by his parents, Han Solo and Princess Leia.",
+      "Kylo's helmet was not required for survival, but rather designed to emulate his grandfather, Darth Vader.",
+      "He is the Supreme Leader of the First Order, a position he took after killing Snoke.",
+      "His unique lightsaber hum was created using a malfunctioning generator and a kitchen toaster."
+    ],
     imagePosition: "top",
   },
   {
@@ -227,6 +331,14 @@ export const swCharacters: Character[] = [
     prepBonus: 200,
     gearDescription: "### Ancient Duelist Kit\n- **Dual Lightsabers**: One violet (Light) and one crimson (Dark), representing his balanced mastery.\n- **Revan's Mask**: A Mandalorian relic that serves as his signature icon and tactical HUD.",
     prepDescription: "### Balance of the Force\nRevan enters a state of absolute neutrality, centering himself between the Light and Dark sides to access the full spectrum of Force potential without succumbing to either.",
+    triviaPool: [
+      "Darth Revan's identity was part of one of the most famous plot twists in video game history.",
+      "His signature mask was actually taken from a Mandalorian soldier who tried to save a group of innocents.",
+      "Revan is known as the 'Prodigal Knight' for his journey from Jedi to Sith and back to Jedi.",
+      "He wields two lightsabers, one violet and one crimson, representing his experience with both sides of the Force.",
+      "Revan was the primary protagonist and later antagonist of the Old Republic era's most famous conflicts.",
+      "His tactical genius was so great that the Mandalorians themselves came to respect him as a warrior."
+    ],
     imagePosition: "top",
   },
   {
@@ -244,6 +356,14 @@ export const swCharacters: Character[] = [
     prepBonus: 70,
     gearDescription: "### Mandalorian Armory\n- **Full Beskar Plating**: Nearly indestructible armor that can deflect both blaster bolts and lightsaber strikes.\n- **Whistling Birds**: Small, heat-seeking missiles fired from his gauntlet for multi-target neutralizations.",
     prepDescription: "### Tactical HUD Calibration\nDin Djarin runs a full diagnostic of his armor's systems, from thermals to vibration sensors, ensuring every gadget is primed for the specific weaknesses of his bounty.",
+    triviaPool: [
+      "Din Djarin's face is rarely seen because his specific Mandalorian creed (The Watch) forbids helmet removal.",
+      "His armor is made of pure Beskar, one of the rarest and most durable metals in the Star Wars galaxy.",
+      "Din was a 'Foundling,' rescued and raised by Mandalorian warriors after his home was destroyed by droids.",
+      "His ship, the Razor Crest, was a pre-Empire assault craft that he used for bounty hunting.",
+      "The 'Whistling Birds' in his gauntlet are tiny heat-seeking missiles made of precious Beskar.",
+      "Din Djarin is the legal owner of the Darksaber, the legendary blade that signifies the ruler of Mandalore."
+    ],
     imagePosition: "top",
   },
   {
@@ -261,6 +381,14 @@ export const swCharacters: Character[] = [
     prepBonus: 100,
     gearDescription: "### Hunter's Legacy\n- **Z-6 Jetpack**: Provides high-speed aerial mobility and is equipped with a high-explosive anti-vehicle rocket.\n- **EE-3 Carbine Rifle**: A precision blaster optimized for both long-range sniping and close-range bursts.",
     prepDescription: "### Underworld Intelligence\nBoba Fett leverages his vast network of informants and centuries-old tactical logs to identify the most likely escape routes and environmental hazards for his target.",
+    triviaPool: [
+      "Boba Fett is an unaltered clone of Jango Fett, whom he saw beheaded by Mace Windu.",
+      "His first-ever appearance was in the animated segment of the 'Star Wars Holiday Special'.",
+      "Boba Fett only has four lines of dialogue in the entire original Star Wars trilogy.",
+      "The 'Fett' family name is highly respected—and feared—among Mandalorian clans.",
+      "He escaped the Sarlacc pit by using his jetpack and flamethrower to blast his way out.",
+      "His ship, the Slave I, is a Firespray-31-class interceptor with numerous illegal modifications."
+    ],
     imagePosition: "top",
   },
   {
@@ -278,6 +406,14 @@ export const swCharacters: Character[] = [
     prepBonus: 80,
     gearDescription: "### Astromech Toolkit\n- **Scomp Link**: Specialized arm for slicing into computers and controlling starship systems.\n- **Holoprojector**: Can store and display large-scale 3D tactical maps and messages.",
     prepDescription: "### Systematic Schematic Scan\nR2 downloads the full structural blueprints of the arena and any nearby machines, identifying precisely which wires to cut and which panels to open to create maximum chaos.",
+    triviaPool: [
+      "R2-D2 has never had his memory wiped, meaning he remembers everything from the prequel era.",
+      "His design was inspired by the bickering peasants in Akira Kurosawa's 'The Hidden Fortress'.",
+      "Actor Kenny Baker was inside the R2 shell for many scenes in the original trilogy.",
+      "R2's whistles and beeps were created by sound designer Ben Burtt using a synthesizer.",
+      "He was originally part of the Royal House of Naboo's starship maintenance crew.",
+      "R2-D2 is one of the only characters to appear in every single main Star Wars saga film."
+    ],
     imagePosition: "top",
   },
   {
@@ -295,6 +431,14 @@ export const swCharacters: Character[] = [
     prepBonus: 100,
     gearDescription: "### Protocol Database\n- **Transterm 2000**: A sophisticated linguistic processor capable of real-time translation for over 6 million languages.\n- **Photoreceptor Array**: Specifically tuned to detect subtle shifts in biological body language.",
     prepDescription: "### Diplomatic Analysis\nC-3PO researches the specific cultural taboos and linguistic nuances of his opponent, identifying exactly which phrase or gesture will cause the most significant psychological or social disruption.",
+    triviaPool: [
+      "C-3PO was built from scrap parts by a young Anakin Skywalker on Tatooine.",
+      "He is fluent in over six million forms of communication, including binary and ancient Sith.",
+      "The character was inspired by the 'Maschinenmensch' from the 1927 classic film 'Metropolis'.",
+      "Anthony Daniels is the only actor to have appeared in every single Star Wars movie.",
+      "In 'The Force Awakens', C-3PO has a red arm, which he got after a tragic droid mission.",
+      "He was famously worshipped as a golden god by the Ewoks on the forest moon of Endor."
+    ],
     imagePosition: "top",
   },
   {
@@ -312,6 +456,14 @@ export const swCharacters: Character[] = [
     prepBonus: 90,
     gearDescription: "### Modular Lightsaber\n- **Split Saber**: Can be used as a traditional single blade, a double-bladed staff, or dual-wielded for different tactical needs.\n- **BD-1 Link**: A specialized HUD provided by his droid companion for real-time terrain and hazard sensing.",
     prepDescription: "### Psychometric Echoes\nCal touches objects in the arena, tapping into 'Force Echoes' of past battles to identify where previous warriors failed and where the terrain can be most effectively exploited.",
+    triviaPool: [
+      "Cal Kestis is a survivor of Order 66, having been hidden as a rigger on the planet Bracca.",
+      "His unique Force power, Psychometry, allows him to see the history of objects by touching them.",
+      "Cal's lightsaber was originally his master's (Jaro Tapal), which he repaired and modified.",
+      "He is modeled after actor Cameron Monaghan, who provided both his voice and facial motion capture.",
+      "Cal is one of the few Jedi to have successfully infiltrated the Inquisitorius headquarters.",
+      "He can use the Force to 'Slow' or even 'Freeze' objects and enemies in mid-motion."
+    ],
     imagePosition: "top",
   },
   {
@@ -328,6 +480,14 @@ export const swCharacters: Character[] = [
     gearBonus: 120,
     prepDescription: "### Tactical Scan Overlay\nBD-1 scans the entire combat zone, uploading a real-time 'heat map' of environmental hazards directly to his companion's HUD before the fight begins.",
     gearDescription: "### Explorer's Toolkit\n- **Medical Stim Dispenser**: Houses high-grade bacta canisters for rapid wound stabilization.\n- **Multi-Spectrum Scanner**: Capable of identifying structural weaknesses and biological signatures at a distance.",
+    triviaPool: [
+      "BD-1 stands for 'Buddy Droid 1,' a unit designed to assist explorers and researchers.",
+      "He was originally the companion droid of Jedi Master Eno Cordova before meeting Cal.",
+      "BD-1's small legs allow him to cling to Cal's shoulder, acting as a live tactical HUD.",
+      "His personality beeps and boops were designed to be as expressive as a human companion's.",
+      "BD-1 carries medical 'stims' that can near-instantly heal serious combat wounds.",
+      "He has a specialized slicing arm that can hack into almost any Imperial or ancient system."
+    ],
     imagePosition: "top",
   },
   {
@@ -345,6 +505,14 @@ export const swCharacters: Character[] = [
     prepBonus: 120,
     gearDescription: "### Sith Juggernaut Armor\n- **Integrated Respirator Suit**: Provides life support and enhanced durability in vacuum or toxic environments.\n- **Heavy Sith Lightsaber**: A massive, weighted blade designed for bone-shattering physical impact strikes.",
     prepDescription: "### War-Council Logistics\nMalgus studies the historical failures of past Sith expeditions to the region, identifying exactly how to crush his opponent's structural and political support systems alongside their physical form.",
+    triviaPool: [
+      "Darth Malgus led the 'Sacking of Coruscant,' where he personally destroyed the Jedi Temple.",
+      "His birth name was Veradun, and he was raised within the Sith Empire on Dromund Kaas.",
+      "Malgus killed his own master, Darth Vindican, after they successfully retook Korriban.",
+      "He was forced to wear a respirator after being severely injured in a battle with Satele Shan.",
+      "Malgus once tried to establish a 'New Empire' that was open to non-humans and aliens.",
+      "His secondary weapon is his raw physical strength, often using his armor to crush enemies."
+    ],
     imagePosition: "top",
   },
 ];

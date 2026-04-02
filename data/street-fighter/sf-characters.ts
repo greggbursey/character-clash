@@ -16,6 +16,14 @@ export const sfCharacters: Character[] = [
     prepBonus: 80, // Focus/meditation
     gearDescription: "### Ansatsuken Attire\n- **Dojo Gi**: Built for maximum range of motion and durability.\n- **Red Headband**: A gift from Ken, representing their eternal bond and focus.",
     prepDescription: "### Spiritual Meditation\nRyu spends hours in deep meditation, centering his Ki to resist the Satsui no Hado and mastering the 'Power of Nothingness'.",
+    triviaPool: [
+      "Ryu's name means 'Prosperity' or 'Dragon' depending on the kanji used.",
+      "His iconic red headband was a gift from his best friend and rival, Ken Masters.",
+      "In the original Street Fighter arcade game, Ryu wore red shoes instead of being barefoot.",
+      "He was once able to survive a direct blow from Akuma's Raging Demon due to his pure focus.",
+      "Ryu travels the world with almost no money, relying on his skills to earn food and shelter.",
+      "He is the only character to have appeared in every single Street Fighter game and spin-off."
+    ],
   },
   {
     id: "vega",
@@ -32,6 +40,14 @@ export const sfCharacters: Character[] = [
     prepBonus: 30,
     gearDescription: "### Spanish Ninja Tools\n- **Three-Pronged Claw**: A razor-sharp extension of his arm for lethal reach.\n- **Protecting Mask**: Specifically designed to shield his face from blood and scarring.",
     prepDescription: "### Acrobatic Planning\nVega scouts the arena for walls, fences, and high-ground vantage points to maximize his 'Flying Barcelona' trajectory.",
+    triviaPool: [
+      "In Japan, Vega is actually named Balrog, which was changed to avoid legal issues with Mike Tyson.",
+      "Vega is one of the few characters who can actually lose his primary weapon (his claw) mid-fight.",
+      "He wears his mask solely out of vanity, to prevent his 'perfect' face from being scarred during combat.",
+      "Vega's fighting style is a unique blend of Spanish Ninjutsu and bullfighting (Girella).",
+      "He is a high-ranking member of Shadaloo, known as one of the 'Four Heavenly Kings'.",
+      "Despite his noble birth, Vega became a serial killer obsessed with culling anyone he deemed 'ugly'."
+    ],
   },
   {
     id: "mbison",
@@ -48,6 +64,14 @@ export const sfCharacters: Character[] = [
     prepBonus: 150, // Psycho Power mastery
     gearDescription: "### Shadaloo Dictator Gear\n- **Psycho-Infused Uniform**: Stabilizes and amplifies his raw dark energy.\n- **Teleportation Bracelets**: For instantaneous tactical repositioning.",
     prepDescription: "### Cognitive Subjugation\nBison uses the Shadaloo satellite network to mentally 'pressure' his opponent, draining their willpower before the physical fight begins.",
+    triviaPool: [
+      "M. Bison expelled all the goodness from his soul to master the dark 'Psycho Power'.",
+      "In Japan, his name is Vega, but was changed to M. Bison (originally Mike Bison) in the West.",
+      "The 'M' in his name officially stands for nothing, though it was originally meant to stand for Mike.",
+      "Bison has several backup clone bodies (including Cammy) to use if his primary body is destroyed.",
+      "He is the founder and leader of Shadaloo, an international crime syndicate and military power.",
+      "His signature 'Psycho Crusher' move wraps his entire body in blue, damaging psychic flames."
+    ],
   },
   {
     id: "zangief",
@@ -64,6 +88,14 @@ export const sfCharacters: Character[] = [
     prepBonus: 20,
     gearDescription: "### Wrestler's Kit\n- **Reinforced Wrestling Boots**: Provides maximum traction for massive grapples.\n- **Body Oil**: Red Cyclone's secret for slipping out of holds and minimizing friction damage.",
     prepDescription: "### Bear Wrestling Drill\nZangief engages in a high-intensity warm-up, often against actual wildlife, to ensure his muscles are at their peak explosive density.",
+    triviaPool: [
+      "Zangief trained by wrestling wild bears in the snowy mountains of his native Russia.",
+      "He appears as a member of the 'Bad-Anon' group in the movie 'Wreck-It Ralph'.",
+      "His massive chest scars are said to have been intentionally caused by his wrestling partners (the bears).",
+      "Zangief's real-life namesake is Victor Zangiev, a professional wrestler from the Soviet Union.",
+      "His 'Spinning Piledriver' is one of the most mechanically demanding moves to perform in the series.",
+      "Despite his scary look, Zangief is known for being friendly and honorable to his opponents."
+    ],
   },
   {
     id: "dhalsim",
@@ -80,6 +112,14 @@ export const sfCharacters: Character[] = [
     prepBonus: 100, // Yoga mastery
     gearDescription: "### Ascetic Accessories\n- **Sacred Skulls**: Belonging to village children, honoring their memory and focusing his purpose.\n- **Fire-Breath Catalyst**: Sacred oils that enhance the intensity of his 'Yoga Flame'.",
     prepDescription: "### Transcendent Yoga\nDhalsim achieves a state of extreme mind-body harmony, allowing him to stretch his physical limits and access the element of fire.",
+    triviaPool: [
+      "The skulls Dhalsim wears represent children from his village who died during a severe famine.",
+      "He mastered the ability to breathe fire by gaining the favor of the Hindu god of fire, Agni.",
+      "Dhalsim enters tournaments primarily to raise money to buy food and medicine for his people.",
+      "He is a dedicated family man, often appearing with his wife Sally and son Datta.",
+      "His stretching ability is attributed to his supreme mastery over his physical or 'Yoga' body.",
+      "Dhalsim is one of the few characters who can levitate and teleport through sheer spiritual focus."
+    ],
   },
   {
     id: "blanka",
@@ -96,6 +136,14 @@ export const sfCharacters: Character[] = [
     prepBonus: 20,
     gearDescription: "### Jungle Adaptation\n- **Ankle Shackles**: Remnants of his past used as makeshift blunt weights.\n- **Camouflage Hide**: Skin rich in chlorophyll for blending into verdant environments.",
     prepDescription: "### Primal Instincts\nBlanka hides in the undergrowth, accumulating static electricity from his surroundings to prepare for a sudden, high-voltage ambush.",
+    triviaPool: [
+      "Blanka's real human name is Jimmy, and he was lost in a plane crash as a young child.",
+      "His skin turned green supposedly due to constant exposure to jungle chlorophyll for camouflage.",
+      "He generates electricity by clenching his muscles, a technique he learned from watching eels.",
+      "Blanka's favorite fruit is the tropical açaí berry, which he often shares with his mother.",
+      "He is surprisingly good friends with Dan Hibiki and Sakura, often visiting them in Japan.",
+      "His distinctive orange hair is actually his natural hair color, which never changed in the wild."
+    ],
   },
   {
     id: "ehonda",
@@ -111,27 +159,110 @@ export const sfCharacters: Character[] = [
     gearBonus: 5,
     prepBonus: 15,
     gearDescription: "### Sumo Tradition\n- **Mawashi**: Traditional belt providing core stability and grip points.\n- **Salt**: Used for purification of the arena and distracting opponents' vision.",
+    prepDescription: "### Sumo Ritual\nE. Honda prepares by scattering purification salt and performing his focused 'Shiko' leg stomps to ground himself.",
+    triviaPool: [
+      "E. Honda's full name is Edmond Honda, though he is almost exclusively called E. Honda.",
+      "His signature 'Hundred Hand Slap' is technically based on a legitimate sumo palm strike.",
+      "He is a massive fan of 'chanko nabe', a traditional high-calorie stew eaten by sumo wrestlers.",
+      "Honda's face paint is known as Kumadori, a style traditionally used in Kabuki theater.",
+      "He dreams of making Sumo a world-renowned sport equal in popularity to Olympic events.",
+      "In the Street Fighter movie, E. Honda was portrayed as a Hawaiian-Japanese camera operator."
+    ],
   },
-/*
   {
     id: "ken",
-...
+    name: "Ken Masters",
+    universe: "Street Fighter",
+    description: "The flamboyant American rival of Ryu, known for his flashy style and flaming dragon punches.",
+    lore: "**Ken Masters** is the son of a wealthy hotel tycoon, sent to Japan to learn discipline under Master Gouken. It was there he met Ryu, sparking a lifelong rivalry and friendship that would define both their lives. While Ryu sought perfection in isolation, Ken embraced his life as a celebrity martial artist, marrying Eliza and raising a son, Mel. He balances his roles as a family man and a business mogul with his status as one of the world's most elite fighters.\n\nKen's fighting style is a more expressive and explosive variation of the Ansatsuken he learned alongside Ryu. While Ryu focuses on the Hadoken, Ken has perfected the *Shoryuken*, often imbuing his dragon punches with actual flames. He is a high-speed, offensive powerhouse who relies on flair and heavy-hitting combos to overwhelm his foes. Despite his seemingly arrogant exterior, Ken possesses a heart of gold and an unshakeable sense of loyalty. He is the 'flaming' counterpart to Ryu's calm, a warrior who proves that one can find true strength in the heat of passion.",
+    triviaInfo: "Origin: Born into the wealthy Masters family in the USA. He was sent to training in Japan to curb his rebellious nature. He first appeared in Street Fighter (1987).\n\nBattles: Ken has competed in every major World Warrior tournament, often finishing near the top. He has a notable rivalry with the Muay Thai legend Sagat and has helped Ryu resist the Satsui no Hado on several occasions.\n\nSpecial Abilities & Gear: He uses the flaming 'Shinryuken' and 'Guren Enjinkyaku'. He is faster than Ryu and specializes in multi-hit Shoryukens. He often carries his signature red gi and a family photo for motivation.\n\nSecret Trivia: Ken was the first character in the series to be officially given a last name (Masters). He is also the only character to have the same voice actor for nearly two decades (Reuben Langdon). In his earliest appearance, he was literally just a red-colored Ryu with different hair.",
+    previewUrl: "/data/street-fighter/assets/ken-preview.png",
+    backgroundUrl: "/data/street-fighter/assets/ken-background.jpg",
+    color: "#ef4444",
+    powerScore: 245,
+    gearBonus: 15,
+    prepBonus: 30,
+    gearDescription: "### Champion's Attire\n- **Red Gi**: A premium, custom-tailored fighting uniform that allows for maximum heat dissipation.\n- **Black Belt**: Representing his status as a master of the Ansatsuken style.",
     prepDescription: "### Competitive Fire\nKen watches tapes of his opponent and visualizes a flashy comeback, ensuring his spirit is as 'hot' as his Shoryuken before the match.",
+    triviaPool: [
+      "Ken was the very first character in the Street Fighter series to be given a last name: Masters.",
+      "He was originally sent to Japan by his father because he was a spoiled and rebellious teenager.",
+      "Ken is much wealthier than Ryu, being the heir to a massive international hotel empire.",
+      "His 'Shoryuken' is officially more powerful and 'flaming' compared to Ryu's more stable version.",
+      "He is the only character to have won the US National Martial Arts Championship multiple times.",
+      "Ken's signature red gi was originally just a palette swap of Ryu's white gi in the 1987 classic."
+    ],
   },
   {
     id: "chunli",
-...
+    name: "Chun-Li",
+    universe: "Street Fighter",
+    description: "The 'Strongest Woman in the World', an Interpol agent seeking justice for her father.",
+    lore: "**Chun-Li** is a highly skilled investigator for Interpol and a master of Chinese martial arts. Her life took a turn for the tragic when her father, an inspector investigating the criminal syndicate Shadaloo, was murdered by its leader, **M. Bison**. Driven by a dual sense of duty and a burning need for justice, Chun-Li joined the force to bring Bison and his organization to justice, proving to the world that her spirit is as unbreakable as her powerful kicks.\n\nKnown for her incredible leg strength and near-inhuman speed, Chun-Li's *Hyakuretsu Kyaku* (Lightning Legs) is a legend in the fighting world. She balances her investigative brilliance with a physical prowess that has earned her the title of 'The Strongest Woman in the World.' Despite her professional demeanor, she is a kind and caring individual, often acting as a mentor to younger fighters. Chun-Li is the quintessential hero, a woman who has dedicated her life to the protection of the innocent and the dismantling of global tyranny, one kick at a time.",
+    triviaInfo: "Origin: A native of China, she studied various martial arts from a young age under her father's guidance. She joined Interpol to find M. Bison. She first appeared in Street Fighter II (1991).\n\nBattles: Her primary conflict is her life-long quest to take down Shadaloo. She has been instrumental in every major operation against M. Bison and has faced off against almost every one of his 'Four Heavenly Kings'.\n\nSpecial Abilities & Gear: She is famous for her 'Lightning Legs' and 'Spinning Bird Kick'. She can also project a 'Kikosho' (a palm-based energy blast). She often wears weighted bracelets to train her arms while she focuses on her legs.\n\nSecret Trivia: Chun-Li was the first female playable character in a one-on-one fighting game. Her name means 'Beautiful Spring' in Chinese. In early drafts, she was going to be a secret character, but the developers decided she was too important to the roster.",
+    previewUrl: "/data/street-fighter/assets/chunli-preview.png",
+    backgroundUrl: "/data/street-fighter/assets/chunli-background.jpg",
+    color: "#3b82f6",
+    powerScore: 240,
+    gearBonus: 20,
+    prepBonus: 60,
+    gearDescription: "### Qipao Combat Suit\n- **Weighted Spiked Bracelets**: Used for balancing her center of gravity and providing minor defensive protection.\n- **Reinforced Combat Boots**: Specifically designed to withstand the G-force of her high-speed lightning kicks.",
     prepDescription: "### Investigative Analysis\nChun-Li uses Interpol's database to identify her opponent's criminal history and fighting weaknesses, creating a precise tactical takedown plan.",
+    triviaPool: [
+      "Chun-Li was the first female playable character in a one-on-one fighting game history.",
+      "Her name translates to 'Beautiful Spring' (春麗) in Mandarin Chinese.",
+      "She is a high-ranking agent for Interpol, specializing in taking down the Shadaloo crime group.",
+      "The spiked bracelets she wears are actually weights used to train and balance her upper body.",
+      "Chun-Li is over 5 feet 5 inches tall, but her legs are said to be almost entirely pure muscle.",
+      "She joined the second World Warrior tournament specifically to avenge her father's death."
+    ],
   },
   {
     id: "guile",
-...
+    name: "Guile",
+    universe: "Street Fighter",
+    description: "A Major in the US Air Force whose life is dedicated to avenging his fallen friend, Charlie Nash.",
+    lore: "**Guile** is a man of few words and absolute military precision. A high-ranking officer in the U.S. Air Force, his life was forever changed when his best friend and mentor, Charlie Nash, was killed during a mission to take down M. Bison. Guile has since made it his life's mission to destroy Shadaloo and bring Bison to justice, balancing his duty to his country with a personal quest for vengeance that often pushes him to the edge of his discipline.\n\nWielding a unique 'charge' fighting style that relies on patience and explosive counter-attacks, Guile is a master of zoning and area denial. His *Sonic Boom* and *Flash Kick* are iconic markers of his tactical brilliance. Despite his stoic and often cold exterior, he is a dedicated family man who fights to ensure a safe future for his wife and daughter. Guile is the 'Iron Shield' of the Street Fighter world, a warrior whose commitment to his comrades and his mission is as unwavering as the American flag he carries with him into every battle.",
+    triviaInfo: "Origin: A native of the USA and a high-flying pilot in the Air Force. He was trained by Charlie Nash. He first appeared in Street Fighter II (1991).\n\nBattles: His primary target is always M. Bison, but he has also had several tense encounters with other Shadaloo operatives. He is a key member of the international team of heroes that fights against Global terrorism.\n\nSpecial Abilities & Gear: He uses the 'Sonic Boom' (a projectile created by pure hand-speed and air pressure) and the 'Flash Kick'. He is a master of the 'Sonic Hurricane' super move. He almost always wears his military dog tags for focus.\n\nSecret Trivia: Guile's theme song is one of the most famous in gaming history, often memed as 'Guile's Theme goes with everything'. His iconic haircut was inspired by a character from the JoJo's Bizarre Adventure manga.",
+    previewUrl: "/data/street-fighter/assets/guile-preview.png",
+    backgroundUrl: "/data/street-fighter/assets/guile-background.jpg",
+    color: "#166534",
+    powerScore: 245,
+    gearBonus: 30,
+    prepBonus: 70,
+    gearDescription: "### Air Force Standard\n- **Military Dog Tags**: Belonging to himself and Charlie Nash, providing focus during intense combat.\n- **Combat Fatigues**: Standard-issue, multi-pocketed uniform for tactical versatility.",
     prepDescription: "### Military Briefing\nGuile conducts a systematic 'S.W.O.T.' analysis of the battlefield, identifying defensive perimeters and 'flash-kick' zones to minimize risk.",
+    triviaPool: [
+      "Guile's iconic haircut was originally inspired by the character Stroheim from JoJo's Bizarre Adventure.",
+      "His famous 'Sonic Boom' is created by moves so fast they break the sound barrier with air pressure.",
+      "Guile's theme song is a massive internet meme, often titled 'Guile's Theme Goes with Everything'.",
+      "He wears two sets of dog tags: one for himself and one for his fallen friend, Charlie Nash.",
+      "Despite his military toughness, Guile is a devoted family man with a wife named Jane and a daughter, Amy.",
+      "He is a Colonel in the United States Air Force and often fights on his home base's runway."
+    ],
   },
   {
     id: "akuma",
-...
+    name: "Akuma",
+    universe: "Street Fighter",
+    description: "The 'Master of the Fist', a man who embraced the dark Satsui no Hado to achieve ultimate power.",
+    lore: "**Akuma** (known as **Gouki** in Japan) is the dark shadow of the Ansatsuken style. The brother of Ryu and Ken's master, Gouken, Akuma chose a different path—one that required the total rejection of his humanity in favor of the *Satsui no Hado* (Surge of Murderous Intent). He murdered his own master, Goutetsu, and has since wandered the world as a 'demon' of the martial arts, seeking out only the strongest fighters for life-or-death matches to test his absolute power.\n\nWielding a far more lethal and dark variation of the Hadoken and Shoryuken, Akuma is the ultimate predator. His most terrifying technique is the *Shun Goku Satsu* (Raging Demon), a move that destroys an opponent's soul by forcing them to suffer the weight of their own sins. Akuma is not a villain in the traditional sense; he has no interest in world domination or wealth. He exists only for the perfection of the fist, a being of pure, destructive will who believes that anything less than total victory is a failure. He is the 'God of the Fight', a reminder of the terrible price of absolute strength.",
+    triviaInfo: "Origin: Brother of Gouken, he embraced the dark side of their martial art to reach a higher level of power. He first appeared in Super Street Fighter II Turbo (1994) as a hidden boss.\n\nBattles: He has 'killed' his brother Gouken (who later returned) and has a long-standing desire to see Ryu fully embrace the Satsui no Hado. He has also had a legendary crossover battle with Jin Kazama from Tekken.\n\nSpecial Abilities & Gear: He uses the 'Zanku Hadoken' (air fireball) and the 'Shun Goku Satsu'. He can transform into 'Shin Akuma' or 'Oni' when he fully taps into his dark energy. He carries a set of prayer beads taken from his master's corpse.\n\nSecret Trivia: Akuma's name means 'Demon' in Japanese. He was the first secret character in the series to have a unique move-set that intentionally overpowered the rest of the cast. The kanji on his back when he performs the Raging Demon is 'Ten', meaning 'Heaven' (or sky).",
+    previewUrl: "/data/street-fighter/assets/akuma-preview.png",
+    backgroundUrl: "/data/street-fighter/assets/akuma-background.jpg",
+    color: "#7f1d1d",
+    powerScore: 500,
+    gearBonus: 150,
+    prepBonus: 50,
+    gearDescription: "### Demon's Relics\n- **Master's Prayer Beads**: Taken from the corpse of Goutetsu, focusing his dark Satsui no Hado.\n- **Darkened Gi**: A tattered uniform that has been stained by the aura of his murderous intent.",
     prepDescription: "### Killer's Focus\nAkuma ignores all physical distractions, focusing entirely on the opponent's 'inner death', waiting for the split-second window to unleash the Raging Demon.",
+    triviaPool: [
+      "Akuma's name translates to 'Demon' (悪魔) in Japanese; his Japanese name Gouki means 'Great Spirit'.",
+      "He was the first hidden secret character in Street Fighter, appearing as a boss in the 1994 update.",
+      "The kanji symbol that appears on his back after a Raging Demon is 'Ten' (天), meaning Heaven.",
+      "Akuma once destroyed an entire island with a single punch to prove his power to Ryu.",
+      "He carries a set of large Buddhist prayer beads that he took from his master after killing him.",
+      "Despite his demonic nature, Akuma has a strict code of honor and only fights those he deems worthy."
+    ],
   },
-*/
 ];
