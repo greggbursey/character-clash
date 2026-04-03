@@ -126,6 +126,7 @@ export default function Home() {
   };
 
   const toggleMode = (newMode: Mode) => {
+    stopBattleMusic(true);
     setMode(newMode);
     setChar1(null);
     setChar2(null);
@@ -317,7 +318,7 @@ export default function Home() {
                 {/* Play Again */}
                 <button
                   onClick={() => {
-                    stopBattleMusic();
+                    stopBattleMusic(true);
                     setBattleState("idle");
                     setChar1(null);
                     setChar2(null);
@@ -371,7 +372,7 @@ export default function Home() {
                 </p>
                 <button
                   onClick={() => {
-                    stopBattleMusic();
+                    stopBattleMusic(true);
                     setBattleState("idle");
                     setUniverse1(null);
                     setUniverse2(null);

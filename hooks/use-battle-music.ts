@@ -10,16 +10,19 @@ interface UseBattleMusicOptions {
 }
 
 export function useBattleMusic(options: UseBattleMusicOptions = {}) {
-  const { volume = 0.5, fadeDuration = 2_000 } = options;
+  const { volume = 0.25, fadeDuration = 2_000 } = options;
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fadeIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const start = useCallback(() => {
-    // Clear any existing fade-out intervals
+  const clearFade = () => {
     if (fadeIntervalRef.current) {
       clearInterval(fadeIntervalRef.current);
       fadeIntervalRef.current = null;
     }
+  };
+
+  const start = useCallback(() => {
+    clearFade();
 
     // Pick a random track
     const randomTrack = BATTLE_TRACKS[Math.floor(Math.random() * BATTLE_TRACKS.length)];
@@ -31,48 +34,71 @@ export function useBattleMusic(options: UseBattleMusicOptions = {}) {
       audioRef.current.src = trackPath;
     }
 
-    audioRef.current.volume = volume;
+    audioRef.current.volume = 0; // Start at 0 for fade in
     audioRef.current.loop = true;
-    audioRef.current.play().catch(err => console.log("Audio play blocked by browser:", err));
-  }, [volume]);
+    
+    audioRef.current.play().then(() => {
+      // Fade in logic
+      const fadeIntervalTime = 50;
+      const steps = Math.ceil(fadeDuration / fadeIntervalTime);
+      const stepAmount = volume / steps;
 
-  const stop = useCallback(() => {
+      fadeIntervalRef.current = setInterval(() => {
+        if (!audioRef.current) {
+          clearFade();
+          return;
+        }
+
+        if (audioRef.current.volume + stepAmount < volume) {
+          audioRef.current.volume += stepAmount;
+        } else {
+          audioRef.current.volume = volume;
+          clearFade();
+        }
+      }, fadeIntervalTime);
+    }).catch(err => console.log("Audio play blocked by browser:", err));
+  }, [volume, fadeDuration]);
+
+  const stop = useCallback((immediate = false) => {
     if (!audioRef.current) return;
 
-    // Smooth fade out
-    const fadeIntervalTime = 100; // ms
-    const fadeSteps = Math.ceil(fadeDuration / fadeIntervalTime);
-    const fadeStepAmount = audioRef.current.volume / fadeSteps;
+    clearFade();
 
-    if (fadeIntervalRef.current) {
-      clearInterval(fadeIntervalRef.current);
+    if (immediate) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      return;
     }
 
+    // Smooth fade out
+    const fadeIntervalTime = 50;
+    const steps = Math.ceil(fadeDuration / fadeIntervalTime);
+    const stepAmount = audioRef.current.volume / steps;
+
     fadeIntervalRef.current = setInterval(() => {
-      if (audioRef.current && audioRef.current.volume > fadeStepAmount) {
-        audioRef.current.volume -= fadeStepAmount;
+      if (!audioRef.current) {
+        clearFade();
+        return;
+      }
+
+      if (audioRef.current.volume - stepAmount > 0) {
+        audioRef.current.volume -= stepAmount;
       } else {
-        if (audioRef.current) {
-          audioRef.current.pause();
-          audioRef.current.currentTime = 0;
-          audioRef.current.volume = volume; // Reset for next play
-        }
-        if (fadeIntervalRef.current) {
-          clearInterval(fadeIntervalRef.current);
-          fadeIntervalRef.current = null;
-        }
+        audioRef.current.volume = 0;
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+        clearFade();
       }
     }, fadeIntervalTime);
-  }, [volume, fadeDuration]);
+  }, [fadeDuration]);
 
   // Cleanup on unmount
   useEffect(() => {
     return () => {
-      if (fadeIntervalRef.current) {
-        clearInterval(fadeIntervalRef.current);
-      }
+      clearFade();
       if (audioRef.current) {
         audioRef.current.pause();
+        audioRef.current = null;
       }
     };
   }, []);
