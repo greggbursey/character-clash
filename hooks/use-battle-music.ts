@@ -2,6 +2,7 @@
 
 import { useRef, useCallback, useEffect } from "react";
 import { BATTLE_TRACKS } from "@/data/audio";
+import { getAssetPath } from "@/lib/utils";
 
 interface UseBattleMusicOptions {
   volume?: number;
@@ -22,11 +23,12 @@ export function useBattleMusic(options: UseBattleMusicOptions = {}) {
 
     // Pick a random track
     const randomTrack = BATTLE_TRACKS[Math.floor(Math.random() * BATTLE_TRACKS.length)];
+    const trackPath = getAssetPath(randomTrack);
     
     if (!audioRef.current) {
-      audioRef.current = new Audio(randomTrack);
+      audioRef.current = new Audio(trackPath);
     } else {
-      audioRef.current.src = randomTrack;
+      audioRef.current.src = trackPath;
     }
 
     audioRef.current.volume = volume;
