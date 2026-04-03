@@ -49,7 +49,6 @@ export const trivia: Record<string, string[]> = {
     "Mortal Kombat was the primary reason the ESRB rating system was created for video games.",
     "Sub-Zero is the only character to appear in every single Mortal Kombat fighting game.",
     "The 'Fatality' was originally called a 'Finishing Move' in early design documents.",
-    "Noob Saibot's name is the last names of creators Ed Boon and John Tobias spelled backward.",
     "Rain was originally a 'red herring' character added as a joke to the UMK3 attract mode.",
     "Reptile was the first 'secret character' in fighting game history.",
     "Sonya Blade was added to the first game at the last minute because the team wanted a female fighter.",
@@ -62,7 +61,8 @@ export const trivia: Record<string, string[]> = {
     "The 'Toasty!' shout is voiced by Dan Forden and appears during high-damage combos.",
     "Kano's iconic cybernetic eye was directly inspired by the Terminator.",
     "Mortal Kombat (2011) served as a 'soft reboot' to reset the entire series timeline.",
-    "Liu Kang's physical design and fighting style were inspired by Bruce Lee."
+    "Liu Kang's physical design and fighting style were inspired by Bruce Lee.",
+    "Jax Briggs was the first African-American character in the series, debuting in Mortal Kombat II."
   ],
   "Star Wars": [
     "Darth Vader's breathing sound was created using a scuba regulator.",
