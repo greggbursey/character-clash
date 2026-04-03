@@ -16,6 +16,7 @@ import UniverseSelection from "@/components/selection/UniverseSelection";
 import SingleView from "@/components/displays/SingleView";
 import BattleView from "@/components/displays/BattleView";
 import UniverseView from "@/components/displays/UniverseView";
+import { useBattleMusic } from "@/hooks/use-battle-music";
 
 export default function Home() {
   // State
@@ -40,6 +41,9 @@ export default function Home() {
   const [withPrep1, setWithPrep1] = useState(false);
   const [withGear2, setWithGear2] = useState(false);
   const [withPrep2, setWithPrep2] = useState(false);
+
+  // Audio hook
+  const { start: startBattleMusic, stop: stopBattleMusic } = useBattleMusic();
 
   // Memoized Data
   const filteredCharacters = useMemo(() => {
@@ -138,6 +142,10 @@ export default function Home() {
   const startBattle = () => {
     if (mode === "battle" && (!char1 || !char2)) return;
     if (mode === "universe" && (!universe1 || !universe2)) return;
+    
+    // Start music
+    startBattleMusic();
+
     setCountdown(3);
     setBattleState("countdown");
     setWinner(null);
@@ -309,6 +317,7 @@ export default function Home() {
                 {/* Play Again */}
                 <button
                   onClick={() => {
+                    stopBattleMusic();
                     setBattleState("idle");
                     setChar1(null);
                     setChar2(null);
@@ -362,6 +371,7 @@ export default function Home() {
                 </p>
                 <button
                   onClick={() => {
+                    stopBattleMusic();
                     setBattleState("idle");
                     setUniverse1(null);
                     setUniverse2(null);
