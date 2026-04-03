@@ -11,7 +11,7 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/luke-preview.jpeg",
     backgroundUrl: "/data/star-wars/assets/luke-background.jpg",
     color: "#3b82f6",
-    powerScore: 650,
+    powerScore: 720,
     gearBonus: 50, // Lightsaber
     prepBonus: 150, // Force focus
     gearDescription: "### Jedi Master Arsenal\n- **Green Lightsaber**: A weapon built by Luke himself, symbolizing his path to mastery.\n- **X-Wing Flight Suit**: Provides life support and G-force protection for high-speed dogfights.",

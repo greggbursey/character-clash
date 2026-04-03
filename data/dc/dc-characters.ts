@@ -12,8 +12,8 @@ export const dcCharacters: Character[] = [
     backgroundUrl: "/data/dc/assets/superman-background.jpg",
     color: "#3b82f6",
     powerScore: 950,
-    gearBonus: 50,
-    prepBonus: 50,
+    gearBonus: 150,
+    prepBonus: 100,
     gearDescription: "### Kryptonian Heritage\n- **Phantom Zone Projector**: A device that can exile extremely dangerous threats to a timeless dimension.\n- **Solar Suit**: Specifically designed to maximize his absorption of yellow sun radiation.",
     prepDescription: "### Fortress Training\nSuperman utilizes the advanced Kryptonian technology of his Fortress of Solitude to run simulations and gain the knowledge of a thousand civilizations.",
     triviaPool: [
@@ -83,8 +83,8 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/wonderwoman-preview.jpg",
     backgroundUrl: "/data/dc/assets/wonderwoman-background.jpg",
     color: "#eab308",
-    powerScore: 850,
-    gearBonus: 60, // Lasso/Bracers
+    powerScore: 880,
+    gearBonus: 120, // Lasso/Bracers
     prepBonus: 50,
     gearDescription: "### Gifts of the Gods\n- **Lasso of Truth**: An indestructible golden rope that compels anyone in its grasp to tell the absolute truth.\n- **Bracers of Submission**: Forged from Zeus's aegis, capable of deflecting any projectile or energy beam.",
     prepDescription: "### Amazonian Battle Rite\nDiana enters a focused state of ancient warrior meditation, aligning her spirit with her sisters on Themyscira to gain the combat experience of ten thousand years.",

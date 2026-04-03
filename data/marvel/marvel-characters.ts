@@ -59,7 +59,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/thor-preview.jpg",
     backgroundUrl: "/data/marvel/assets/thor-background.jpg",
     color: "#60a5fa",
-    powerScore: 850,
+    powerScore: 920,
     gearBonus: 100, // Mjolnir
     prepBonus: 50,
     gearDescription: "### Asgardian Relics\n- **Mjolnir**: An enchanted Uru hammer that grants flight and weather manipulation to the worthy.\n- **Megingjord**: The Belt of Strength, which doubles his already god-like physical prowess.",
@@ -83,7 +83,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/hulk-preview.jpg",
     backgroundUrl: "/data/marvel/assets/hulk-background.jpg",
     color: "#22c55e",
-    powerScore: 800,
+    powerScore: 880,
     gearBonus: 20,
     prepBonus: 30, // Rage management
     gearDescription: "### Indestructible Gear\n- **Stark-Tech Nano-Pants**: Specifically designed to expand with his mass and resist extreme physical stress.\n- **Gamma-Radiation Siphon**: (Rarely used) temporarily boosts his power by absorbing ambient energy.",
@@ -107,7 +107,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/captainamerica-preview.jpg",
     backgroundUrl: "/data/marvel/assets/captainamerica-background.jpg",
     color: "#3b82f6",
-    powerScore: 300,
+    powerScore: 380,
     gearBonus: 50, // Shield
     prepBonus: 100, // Tactical leader
     gearDescription: "### Symbol of Freedom\n- **Vibranium Shield**: A perfectly balanced, indestructible disc that absorbs and redistributes kinetic energy.\n- **Utility Harness**: Contains tactical communication gear and battlefield medical supplies.",
@@ -179,7 +179,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/blackpanther-preview.jpg",
     backgroundUrl: "/data/marvel/assets/blackpanther-background.jpg",
     color: "#18181b",
-    powerScore: 340,
+    powerScore: 450,
     gearBonus: 150, // Vibranium Tech
     prepBonus: 110, // King's resources
     gearDescription: "### King's Panther Habit\n- **Kinetic-Absorption Weave**: Woven from Vibranium, it stores physical impact and releases it in outward bursts.\n- **Kimoyo Beads**: Multifunctional advanced Wakandan tech for communication and hacking.",

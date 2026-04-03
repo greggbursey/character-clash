@@ -83,5 +83,12 @@ export const universeLoreData: Record<string, UniverseLore> = {
     history: "Created through the Music of the Ainur, Middle-earth has seen three great ages. From the awakening of the Elves and the theft of the Silmarils to the forging of the Rings of Power and the final defeat of Sauron, its history is a cycle of light and shadow, where even the smallest person can change the course of the future.",
     lore: "The lore of Middle-earth is deeply rooted in linguistics and mythology. It centers on the concept of 'Eestel' (hope) and the struggle against 'The Shadow.' Magic is inherent in the spirit of beings like the Istari and the Elves, often manifesting as craft, wisdom, or the preservation of the natural world rather than mere flashy spells.",
     keyLocations: ["The Shire", "Rivendell", "Moria", "Minas Tirith", "Mount Doom"]
+  },
+  "Transformers": {
+    name: "Transformers",
+    blurb: "A world of sentient, modular robotic organisms from the planet Cybertron, capable of changing their form to survive and protect.",
+    history: "The Transformers' history spans millions of years, beginning with their creation by Primus. A brutal civil war between the Autobots and the Decepticons devastated their home planet, Cybertron, forcing many to seek refuge on Earth. This 'Great War' has spanned galaxies, defining the fate of countless worlds.",
+    lore: "Transformers lore centers on the life-force known as a 'Spark' and the ancient artifacts like the Matrix of Leadership. Characters possess the unique ability to 'transform' their bodies into vehicles, weapons, or beasts. The eternal struggle between Optimus Prime's ideals of freedom and Megatron's 'Peace through Tyranny' drives their conflict.",
+    keyLocations: ["Cybertron", "Iacon", "Kaon", "The Ark", "Mission City"]
   }
 };

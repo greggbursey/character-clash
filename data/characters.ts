@@ -11,6 +11,7 @@ import { swCharacters } from "./star-wars/sw-characters";
 import { marioCharacters } from "./mario/mario-characters";
 import { hpCharacters } from "./hp/hp-characters";
 import { lotrCharacters } from "./lotr/lotr-characters";
+import { transformersCharacters } from "./transformers/transformers-characters";
 
 export const characters: Character[] = [
   ...tmntCharacters,
@@ -24,4 +25,5 @@ export const characters: Character[] = [
   ...marioCharacters,
   ...hpCharacters,
   ...lotrCharacters,
+  ...transformersCharacters,
 ];
