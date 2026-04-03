@@ -83,9 +83,9 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/legolas-preview.png",
     backgroundUrl: "/data/lotr/assets/legolas-background.png",
     color: "#4ade80", // Elf Green
-    powerScore: 450,
-    gearBonus: 80,
-    prepBonus: 50,
+    powerScore: 170,
+    gearBonus: 60,
+    prepBonus: 60,
     gearDescription: "### Elven Arsenal\n- **Galadhrim Bow**: A long-range weapon of immense power that never misses its mark at medium range.\n- **White Knives**: Used for rapid, close-quarters combat where arrows are impractical.",
     prepDescription: "### Elf-Senses\nLegolas enters a heightened state of awareness, allowing him to track heat signatures and subtle movements through walls or cover.",
     triviaPool: [
@@ -107,8 +107,8 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/gimli-preview.png",
     backgroundUrl: "/data/lotr/assets/gimli-background.png",
     color: "#991b1b", // Dwarf Red/Iron
-    powerScore: 440,
-    gearBonus: 100,
+    powerScore: 155,
+    gearBonus: 40,
     prepBonus: 40,
     gearDescription: "### Khazâd Armory\n- **Bearded Battle-Axe**: A heavy weapon designed to shatter shields and cleave through the toughest hides.\n- **Dwarven Chainmail**: Exceptionally dense armor that provides high resistance to physical damage.",
     prepDescription: "### Baruk Khazâd!\nGimli lets out a thunderous war cry, boosting his physical strength and morale, making him immune to fear-based debuffs.",
@@ -227,9 +227,9 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/aragorn-preview.png",
     backgroundUrl: "/data/lotr/assets/aragorn-background.png",
     color: "#475569", // Ranger Grey/King Blue
-    powerScore: 500,
-    gearBonus: 150, // Andúril / Elven Cloak
-    prepBonus: 100,
+    powerScore: 160,
+    gearBonus: 60,
+    prepBonus: 60,
     gearDescription: "### Heir of Isildur\n- **Andúril**: A holy blade reforged from the shards of Narsil, which glows with the light of the sun and moon.\n- **Star of Elendil**: A jewel that enhances his natural leadership and clarity of vision.",
     prepDescription: "### Ranger's Focus\nAragorn uses the terrain to his advantage, setting snares or finding a superior tactical position that increases his chances of a critical strike.",
     triviaPool: [

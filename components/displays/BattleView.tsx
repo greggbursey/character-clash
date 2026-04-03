@@ -69,7 +69,7 @@ export default function BattleView({
               </p>
               <div className="h-3 w-px bg-zinc-700 hidden sm:block" />
               <p className="text-[10px] md:text-xs font-mono text-yellow-500 uppercase tracking-widest font-bold">
-                PWR: {char1.powerScore + (withGear1 ? (char1.gearBonus || 0) : 0) + (withPrep1 ? (char1.prepBonus || 0) : 0)}
+                PWR: {(char1.powerScore + (withGear1 ? (char1.gearBonus || 0) : 0) + (withPrep1 ? (char1.prepBonus || 0) : 0)).toLocaleString()}
               </p>
             </div>
             <button
@@ -92,7 +92,7 @@ export default function BattleView({
                       : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
                   }`}
                 >
-                  Gear {withGear1 && <span className="ml-1 text-[8px] opacity-70">+{char1.gearBonus || 0}</span>}
+                  Gear {withGear1 && <span className="ml-1 text-[8px] opacity-70">+{(char1.gearBonus || 0).toLocaleString()}</span>}
                 </button>
                 <button 
                   onClick={() => setSelectedModifier({ char: char1, type: 'gear' })}
@@ -111,7 +111,7 @@ export default function BattleView({
                       : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
                   }`}
                 >
-                  Prep {withPrep1 && <span className="ml-1 text-[8px] opacity-70">+{char1.prepBonus || 0}</span>}
+                  Prep {withPrep1 && <span className="ml-1 text-[8px] opacity-70">+{(char1.prepBonus || 0).toLocaleString()}</span>}
                 </button>
                 <button 
                   onClick={() => setSelectedModifier({ char: char1, type: 'prep' })}
@@ -184,7 +184,7 @@ export default function BattleView({
               </p>
               <div className="h-3 w-px bg-zinc-700 hidden sm:block" />
               <p className="text-[10px] md:text-xs font-mono text-yellow-500 uppercase tracking-widest font-bold">
-                PWR: {char2.powerScore + (withGear2 ? (char2.gearBonus || 0) : 0) + (withPrep2 ? (char2.prepBonus || 0) : 0)}
+                PWR: {(char2.powerScore + (withGear2 ? (char2.gearBonus || 0) : 0) + (withPrep2 ? (char2.prepBonus || 0) : 0)).toLocaleString()}
               </p>
             </div>
             <button
@@ -207,7 +207,7 @@ export default function BattleView({
                       : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
                   }`}
                 >
-                  Gear {withGear2 && <span className="ml-1 text-[8px] opacity-70">+{char2.gearBonus || 0}</span>}
+                  Gear {withGear2 && <span className="ml-1 text-[8px] opacity-70">+{(char2.gearBonus || 0).toLocaleString()}</span>}
                 </button>
                 <button 
                   onClick={() => setSelectedModifier({ char: char2, type: 'gear' })}
@@ -226,7 +226,7 @@ export default function BattleView({
                       : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
                   }`}
                 >
-                  Prep {withPrep2 && <span className="ml-1 text-[8px] opacity-70">+{char2.prepBonus || 0}</span>}
+                  Prep {withPrep2 && <span className="ml-1 text-[8px] opacity-70">+{(char2.prepBonus || 0).toLocaleString()}</span>}
                 </button>
                 <button 
                   onClick={() => setSelectedModifier({ char: char2, type: 'prep' })}

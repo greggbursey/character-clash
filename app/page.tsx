@@ -74,11 +74,19 @@ export default function Home() {
   const getUniverseStats = useMemo(() => (universeName: string) => {
     const chars = characters.filter((c) => c.universe === universeName);
     const totalPower = chars.reduce((acc, c) => acc + c.powerScore, 0);
+    const totalGear = chars.reduce((acc, c) => acc + (c.gearBonus || 0), 0);
+    const totalPrep = chars.reduce((acc, c) => acc + (c.prepBonus || 0), 0);
     const avgPower = totalPower / (chars.length || 1);
+    const avgGear = totalGear / (chars.length || 1);
+    const avgPrep = totalPrep / (chars.length || 1);
     return {
       count: chars.length,
       totalPower,
+      totalGear,
+      totalPrep,
       avgPower: Math.round(avgPower),
+      avgGear: Math.round(avgGear),
+      avgPrep: Math.round(avgPrep),
       color: chars[0]?.color || "#3f3f46",
       background: chars[0]?.backgroundUrl || "",
     };
@@ -193,8 +201,8 @@ export default function Home() {
             } else if (mode === "universe" && universe1 && universe2) {
               const stats1 = getUniverseStats(universe1);
               const stats2 = getUniverseStats(universe2);
-              const p1 = stats1.avgPower + (withGear1 ? 50 : 0) + (withPrep1 ? 70 : 0); // Base bonus for universe-wide prep/gear
-              const p2 = stats2.avgPower + (withGear2 ? 50 : 0) + (withPrep2 ? 70 : 0);
+              const p1 = stats1.avgPower + (withGear1 ? (stats1.avgGear || 0) : 0) + (withPrep1 ? (stats1.avgPrep || 0) : 0);
+              const p2 = stats2.avgPower + (withGear2 ? (stats2.avgGear || 0) : 0) + (withPrep2 ? (stats2.avgPrep || 0) : 0);
               let win: 1 | 2;
               
               if (Math.abs(p1 - p2) >= 500) {
@@ -233,7 +241,7 @@ export default function Home() {
         getUniverseStats={getUniverseStats}
       />
 
-      <div className="relative z-10 flex flex-col min-h-[100dvh] md:h-full p-4 md:p-12">
+      <div className="relative z-10 flex flex-col min-h-[100dvh] md:h-full p-4 md:p-8 lg:p-12 lg:pt-6">
         <Header
           mode={mode}
           toggleMode={toggleMode}
@@ -243,7 +251,7 @@ export default function Home() {
           setSearchQuery={setSearchQuery}
         />
 
-          <div className="flex flex-col justify-center items-center py-2 md:py-4 min-h-[min(35vh,250px)] shrink-0 z-20 relative">
+          <div className="flex flex-col justify-center items-center py-2 md:py-2 lg:py-4 min-h-[min(30vh,220px)] shrink-0 z-20 relative">
           {mode === "single" && (
             <SingleView
               char1={char1}

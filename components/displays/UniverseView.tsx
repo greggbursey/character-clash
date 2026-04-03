@@ -11,7 +11,17 @@ interface UniverseViewProps {
   battleState: BattleState;
   countdown: number;
   winner: 1 | 2 | null;
-  getUniverseStats: (uni: string) => { count: number; totalPower: number; avgPower: number; color: string; background: string };
+  getUniverseStats: (uni: string) => { 
+    count: number; 
+    totalPower: number; 
+    totalGear: number;
+    totalPrep: number;
+    avgPower: number; 
+    avgGear: number;
+    avgPrep: number;
+    color: string; 
+    background: string 
+  };
   startBattle: () => void;
   setBattleState: (state: BattleState) => void;
   setUniverse1: (uni: string | null) => void;
@@ -71,13 +81,13 @@ export default function UniverseView({
                 <div className="flex items-center gap-1.5" title="Total Universe Power">
                   <Zap size={12} className="text-yellow-500" />
                   <p className="text-[10px] md:text-xs font-mono text-yellow-500/90 uppercase tracking-widest font-bold">
-                    TOT: {getUniverseStats(universe1).totalPower + (withGear1 ? (getUniverseStats(universe1).count * 50) : 0) + (withPrep1 ? (getUniverseStats(universe1).count * 70) : 0)}
+                    TOT: {(getUniverseStats(universe1).totalPower + (withGear1 ? getUniverseStats(universe1).totalGear : 0) + (withPrep1 ? getUniverseStats(universe1).totalPrep : 0)).toLocaleString()}
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5" title="Average Fighter Power">
                   <BarChart2 size={12} className="text-blue-400" />
                   <p className="text-[10px] md:text-xs font-mono text-blue-400 uppercase tracking-widest font-bold">
-                    AVG: {getUniverseStats(universe1).avgPower + (withGear1 ? 50 : 0) + (withPrep1 ? 70 : 0)}
+                    AVG: {(getUniverseStats(universe1).avgPower + (withGear1 ? getUniverseStats(universe1).avgGear : 0) + (withPrep1 ? getUniverseStats(universe1).avgPrep : 0)).toLocaleString()}
                   </p>
                 </div>
               </div>
@@ -93,7 +103,7 @@ export default function UniverseView({
                     : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
                 }`}
               >
-                With Gear {withGear1 && <span className="ml-1 text-[8px] opacity-70">+50</span>}
+                With Gear {withGear1 && <span className="ml-1 text-[8px] opacity-70">+{getUniverseStats(universe1).avgGear.toLocaleString()}</span>}
               </button>
               <button
                 onClick={() => setWithPrep1(!withPrep1)}
@@ -103,7 +113,7 @@ export default function UniverseView({
                     : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
                 }`}
               >
-                With Prep {withPrep1 && <span className="ml-1 text-[8px] opacity-70">+70</span>}
+                With Prep {withPrep1 && <span className="ml-1 text-[8px] opacity-70">+{getUniverseStats(universe1).avgPrep.toLocaleString()}</span>}
               </button>
             </div>
           </motion.div>
@@ -171,13 +181,13 @@ export default function UniverseView({
                 <div className="flex items-center gap-1.5" title="Total Universe Power">
                   <Zap size={12} className="text-yellow-500" />
                   <p className="text-[10px] md:text-xs font-mono text-yellow-500/90 uppercase tracking-widest font-bold">
-                    TOT: {getUniverseStats(universe2).totalPower + (withGear2 ? (getUniverseStats(universe2).count * 50) : 0) + (withPrep2 ? (getUniverseStats(universe2).count * 70) : 0)}
+                    TOT: {(getUniverseStats(universe2).totalPower + (withGear2 ? getUniverseStats(universe2).totalGear : 0) + (withPrep2 ? getUniverseStats(universe2).totalPrep : 0)).toLocaleString()}
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5" title="Average Fighter Power">
                   <BarChart2 size={12} className="text-blue-400" />
                   <p className="text-[10px] md:text-xs font-mono text-blue-400 uppercase tracking-widest font-bold">
-                    AVG: {getUniverseStats(universe2).avgPower + (withGear2 ? 50 : 0) + (withPrep2 ? 70 : 0)}
+                    AVG: {(getUniverseStats(universe2).avgPower + (withGear2 ? getUniverseStats(universe2).avgGear : 0) + (withPrep2 ? getUniverseStats(universe2).avgPrep : 0)).toLocaleString()}
                   </p>
                 </div>
               </div>
@@ -193,7 +203,7 @@ export default function UniverseView({
                     : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
                 }`}
               >
-                With Gear {withGear2 && <span className="ml-1 text-[8px] opacity-70">+50</span>}
+                With Gear {withGear2 && <span className="ml-1 text-[8px] opacity-70">+{getUniverseStats(universe2).avgGear.toLocaleString()}</span>}
               </button>
               <button
                 onClick={() => setWithPrep2(!withPrep2)}
@@ -203,7 +213,7 @@ export default function UniverseView({
                     : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
                 }`}
               >
-                With Prep {withPrep2 && <span className="ml-1 text-[8px] opacity-70">+70</span>}
+                With Prep {withPrep2 && <span className="ml-1 text-[8px] opacity-70">+{getUniverseStats(universe2).avgPrep.toLocaleString()}</span>}
               </button>
             </div>
           </motion.div>

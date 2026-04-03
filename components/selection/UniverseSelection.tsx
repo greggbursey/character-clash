@@ -24,7 +24,7 @@ export default function UniverseSelection({
 }: UniverseSelectionProps) {
   return (
     <div className="flex-1 overflow-y-auto hide-scrollbar pb-32 px-4 md:px-6">
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-4 pt-2">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-10 gap-3 md:gap-4 pt-2">
       {allUniverses
         .filter(u => u.toLowerCase().includes(searchQuery.toLowerCase()))
         .map((uni) => {

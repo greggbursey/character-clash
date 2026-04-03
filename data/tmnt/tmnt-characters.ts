@@ -225,7 +225,7 @@ export const tmntCharacters: Character[] = [
     lore: "Once a human street thug, Rocksteady was mutated with rhinoceros DNA to become a powerhouse for the Foot Clan. He and Bebop are nearly inseparable, often sharing the same bumbling failures and brutal successes.",
     triviaInfo: "Origin: Mutated alongside Bebop. His name comes from 'Rocksteady', a genre of Jamaican music that was a precursor to Reggae.\n\nBattles: Like Bebop, he has fought the Turtles countless times, often using his rhino horn for devastating ramming attacks.\n\nSpecial Abilities & Gear: Superhuman strength and durability. He frequently uses M-60 machine guns and grenades.\n\nSecret Trivia: In some versions, he is portrayed as slightly more competent than Bebop, though both are generally outsmarted by the Turtles.",
     previewUrl: "/data/tmnt/assets/rocksteady-preview.png",
-    backgroundUrl: "/data/tmnt/assets/rocksteady-background.jpg",
+    backgroundUrl: "/data/tmnt/assets/rocksteady-background.png",
     color: "#64748b",
     powerScore: 95,
     gearBonus: 30,

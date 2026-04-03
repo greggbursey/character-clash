@@ -35,9 +35,9 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/ironman-preview.jpg",
     backgroundUrl: "/data/marvel/assets/ironman-background.jpg",
     color: "#eab308",
-    powerScore: 350,
-    gearBonus: 400, // Iron Man Suits
-    prepBonus: 300, // Engineering genius
+    powerScore: 400,
+    gearBonus: 450,
+    prepBonus: 350,
     gearDescription: "### Bleeding Edge Armor\n- **Nanotech Suit**: Capable of forming any weapon or tool Tony can imagine in real-time.\n- **Repulsor Cannons**: High-intensity muon-beam projectors for precise long-range destruction.",
     prepDescription: "### AI Battle Simulation\nTony's onboard AI (F.R.I.D.A.Y.) runs millions of combat scenarios, identifying the optimal counter-strategy and suit configuration for the specific opponent.",
     triviaPool: [
@@ -83,7 +83,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/hulk-preview.jpg",
     backgroundUrl: "/data/marvel/assets/hulk-background.jpg",
     color: "#22c55e",
-    powerScore: 900,
+    powerScore: 800,
     gearBonus: 20,
     prepBonus: 30, // Rage management
     gearDescription: "### Indestructible Gear\n- **Stark-Tech Nano-Pants**: Specifically designed to expand with his mass and resist extreme physical stress.\n- **Gamma-Radiation Siphon**: (Rarely used) temporarily boosts his power by absorbing ambient energy.",

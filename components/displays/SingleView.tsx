@@ -43,7 +43,7 @@ export default function SingleView({
             </p>
             <div className="h-4 w-px bg-zinc-700" />
             <p className="text-sm font-mono text-yellow-500 uppercase tracking-widest font-bold">
-              Power: {char1.powerScore + (withGear ? (char1.gearBonus || 0) : 0) + (withPrep ? (char1.prepBonus || 0) : 0)}
+              Power: {(char1.powerScore + (withGear ? (char1.gearBonus || 0) : 0) + (withPrep ? (char1.prepBonus || 0) : 0)).toLocaleString()}
             </p>
           </div>
 
@@ -58,7 +58,7 @@ export default function SingleView({
                     : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
                 }`}
               >
-                With Gear {withGear && <span className="ml-2 text-[10px] opacity-70">+{char1.gearBonus || 0}</span>}
+                With Gear {withGear && <span className="ml-2 text-[10px] opacity-70">+{(char1.gearBonus || 0).toLocaleString()}</span>}
               </button>
               <button 
                 onClick={() => setSelectedModifier({ char: char1, type: 'gear' })}
@@ -77,7 +77,7 @@ export default function SingleView({
                     : 'bg-zinc-900/50 border-zinc-800 text-zinc-500 hover:border-zinc-700'
                 }`}
               >
-                With Prep {withPrep && <span className="ml-2 text-[10px] opacity-70">+{char1.prepBonus || 0}</span>}
+                With Prep {withPrep && <span className="ml-2 text-[10px] opacity-70">+{(char1.prepBonus || 0).toLocaleString()}</span>}
               </button>
               <button 
                 onClick={() => setSelectedModifier({ char: char1, type: 'prep' })}
