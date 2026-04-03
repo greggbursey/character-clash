@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Brain } from 'lucide-react';
 import { getAssetPath } from '@/lib/utils';
+import { universeLoreData } from '@/data/universe-lore';
 
 interface UniverseSelectionProps {
   allUniverses: string[];
@@ -69,7 +70,10 @@ export default function UniverseSelection({
                      <Brain size={12} className="text-purple-300" />
                    </Link>
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center p-2">
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-2 gap-1">
+                  <span className="text-xl md:text-2xl drop-shadow-md">
+                    {universeLoreData[uni]?.emoji || '🎭'}
+                  </span>
                   <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-center leading-tight drop-shadow-lg">
                     {uni}
                   </span>
@@ -88,7 +92,7 @@ export default function UniverseSelection({
 
               <div className="mt-2 text-center w-full px-1">
                 <div className={`text-[9px] md:text-[10px] font-bold truncate ${isSelected ? 'text-white' : 'text-zinc-500 group-hover:text-zinc-300'}`}>
-                  {uni.toUpperCase()}
+                  {universeLoreData[uni]?.emoji} {uni.toUpperCase()}
                 </div>
               </div>
             </button>

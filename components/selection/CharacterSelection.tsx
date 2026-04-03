@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Brain } from 'lucide-react';
 import { Character, Mode } from '@/types';
 import { getAssetPath } from '@/lib/utils';
+import { universeLoreData } from '@/data/universe-lore';
 
 interface CharacterSelectionProps {
   mode: Mode;
@@ -52,7 +53,7 @@ export default function CharacterSelection({
               : 'bg-zinc-900/80 text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200 border border-zinc-800'
           }`}
         >
-          All Universes
+          <span className="mr-2">🌍</span> All Universes
         </button>
         {universes.map(u => {
           const uniColor = groupedCharacters[u]?.[0]?.color || '#ffffff';
@@ -87,6 +88,7 @@ export default function CharacterSelection({
               boxShadow: isSelected ? `0 0 15px ${uniColor}40` : 'none'
             }}
           >
+            <span className="mr-2">{universeLoreData[u]?.emoji || '🎭'}</span>
             {u}
           </button>
         )})}
@@ -101,9 +103,10 @@ export default function CharacterSelection({
               {activeTab === 'All' && (
                 <div className="sticky top-0 z-20 -mx-4 md:-mx-6 px-4 md:px-6 py-1 bg-gradient-to-b from-zinc-950 via-zinc-950/90 to-zinc-950/20 backdrop-blur-md flex items-center gap-4 mb-2 border-b border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
                   <h3 
-                    className="text-xs md:text-sm font-black uppercase tracking-[0.3em]"
+                    className="text-xs md:text-sm font-black uppercase tracking-[0.3em] flex items-center gap-3"
                     style={{ color: groupedCharacters[universe]?.[0]?.color || '#f4f4f5' }}
                   >
+                    <span className="text-lg md:text-xl">{universeLoreData[universe]?.emoji || '🎭'}</span>
                     {universe}
                   </h3>
                   <div 
