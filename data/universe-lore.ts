@@ -103,5 +103,13 @@ export const universeLoreData: Record<string, UniverseLore> = {
     history: "The Transformers' history spans millions of years, beginning with their creation by Primus. A brutal civil war between the Autobots and the Decepticons devastated their home planet, Cybertron, forcing many to seek refuge on Earth. This 'Great War' has spanned galaxies, defining the fate of countless worlds.",
     lore: "Transformers lore centers on the life-force known as a 'Spark' and the ancient artifacts like the Matrix of Leadership. Characters possess the unique ability to 'transform' their bodies into vehicles, weapons, or beasts. The eternal struggle between Optimus Prime's ideals of freedom and Megatron's 'Peace through Tyranny' drives their conflict.",
     keyLocations: ["Cybertron", "Iacon", "Kaon", "The Ark", "Mission City"]
+  },
+  "Power Rangers": {
+    name: "Power Rangers",
+    emoji: "⚡️",
+    blurb: "A team of teenagers with attitude granted extraordinary powers by the sage Zordon to defend Earth from intergalactic threats.",
+    history: "The Power Rangers began when the sage Zordon, trapped in a time warp, sensed the return of the evil space witch Rita Repulsa. He recruited five 'teenagers with attitude' and provided them with power coins and prehistoric-themed giant robots known as Dinozords. This marked the beginning of a legacy that has seen countless teams across different generations and dimensions, all linked by the Morphin Grid.",
+    lore: "The Power Rangers lore centers on the 'Morphin Grid,' a multidimensional energy field that fuels their transformations and weapons. It explores themes of teamwork, heroism, and the eternal struggle between the 'Light of Goodness' and the 'Emperors of Evil.' The giant robots known as Zords, which combine into the colossal Megazord, are iconic symbols of their combined strength.",
+    keyLocations: ["Angel Grove", "The Command Center", "Moon Palace", "Desert Quarry", "Youth Center"]
   }
 };

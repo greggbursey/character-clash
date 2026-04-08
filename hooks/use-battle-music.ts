@@ -10,7 +10,7 @@ interface UseBattleMusicOptions {
 }
 
 export function useBattleMusic(options: UseBattleMusicOptions = {}) {
-  const { volume = 0.25, fadeDuration = 2_000 } = options;
+  const { volume = 0.15, fadeDuration = 2_000 } = options;
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fadeIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -27,7 +27,7 @@ export function useBattleMusic(options: UseBattleMusicOptions = {}) {
     // Pick a random track
     const randomTrack = BATTLE_TRACKS[Math.floor(Math.random() * BATTLE_TRACKS.length)];
     const trackPath = getAssetPath(randomTrack);
-    
+
     if (!audioRef.current) {
       audioRef.current = new Audio(trackPath);
     } else {
@@ -36,7 +36,7 @@ export function useBattleMusic(options: UseBattleMusicOptions = {}) {
 
     audioRef.current.volume = 0; // Start at 0 for fade in
     audioRef.current.loop = true;
-    
+
     audioRef.current.play().then(() => {
       // Fade in logic
       const fadeIntervalTime = 50;
