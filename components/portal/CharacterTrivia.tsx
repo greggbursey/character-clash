@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useCallback } from "react";
 import { HelpCircle, Brain, RefreshCw, ArrowLeft, Search as SearchIcon } from "lucide-react";
 import { characters as allCharactersData } from "@/data/characters";
+import { universeLoreData } from "@/data/universe-lore";
 import { getAssetPath } from "@/lib/utils";
 import { Character } from "@/types";
 import { saveTriviaSession } from "@/lib/trivia-service";
@@ -32,7 +33,7 @@ function generateQuestions(
   category: QuizCategory, 
   filterValue: string = ""
 ): TriviaQuestion[] {
-  let initialPool = [...allCharactersData];
+  let initialPool = allCharactersData.filter(c => universeLoreData[c.universe]?.active !== false);
   let primaryChar: Character | null = null;
   
   if (category === 'universe' && filterValue) {
@@ -302,11 +303,13 @@ export function CharacterTrivia({ initialCategory, initialValue }: CharacterTriv
     return "Multiverse Sage";
   };
 
-  const universes = Array.from(new Set(allCharactersData.map(c => c.universe)));
+  const universes = Array.from(new Set(allCharactersData.map(c => c.universe)))
+    .filter(u => universeLoreData[u]?.active !== false);
 
   const filteredCharacters = allCharactersData.filter(c => 
-    c.name.toLowerCase().includes(charSearchQuery.toLowerCase()) ||
-    c.universe.toLowerCase().includes(charSearchQuery.toLowerCase())
+    (universeLoreData[c.universe]?.active !== false) &&
+    (c.name.toLowerCase().includes(charSearchQuery.toLowerCase()) ||
+     c.universe.toLowerCase().includes(charSearchQuery.toLowerCase()))
   ).sort((a, b) => a.name.localeCompare(b.name));
 
   return (

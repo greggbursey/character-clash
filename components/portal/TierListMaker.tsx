@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { List } from "lucide-react";
 import { characters as allCharactersData } from "@/data/characters";
+import { universeLoreData } from "@/data/universe-lore";
 import { getAssetPath } from "@/lib/utils";
 import LoreModal from "@/components/ui/LoreModal";
 import { Character } from "@/types";
@@ -21,7 +22,7 @@ export function TierListMaker() {
 
   const getCharsByTier = (min: number, max: number) => {
     return allCharactersData
-      .filter(c => c.powerScore >= min && c.powerScore <= max)
+      .filter(c => (universeLoreData[c.universe]?.active !== false) && c.powerScore >= min && c.powerScore <= max)
       .sort((a, b) => b.powerScore - a.powerScore);
   };
 

@@ -17,6 +17,7 @@ import SingleView from "@/components/displays/SingleView";
 import BattleView from "@/components/displays/BattleView";
 import UniverseView from "@/components/displays/UniverseView";
 import { useBattleMusic } from "@/hooks/use-battle-music";
+import { universeLoreData } from "@/data/universe-lore";
 
 export default function Home() {
   // State
@@ -49,8 +50,9 @@ export default function Home() {
   const filteredCharacters = useMemo(() => {
     return characters.filter(
       (char) =>
-        char.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        char.universe.toLowerCase().includes(searchQuery.toLowerCase()),
+        (universeLoreData[char.universe]?.active !== false) &&
+        (char.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+         char.universe.toLowerCase().includes(searchQuery.toLowerCase())),
     );
   }, [searchQuery]);
 
@@ -70,7 +72,11 @@ export default function Home() {
 
   const allUniverses = useMemo(() => {
     const unis = new Set<string>();
-    characters.forEach((c) => unis.add(c.universe));
+    characters.forEach((c) => {
+      if (universeLoreData[c.universe]?.active !== false) {
+        unis.add(c.universe);
+      }
+    });
     return Array.from(unis).sort();
   }, []);
 
@@ -238,7 +244,7 @@ export default function Home() {
   }, [battleState, countdown, char1, char2, universe1, universe2, mode, withGear1, withGear2, withPrep1, withPrep2, getUniverseStats]);
 
   return (
-    <main className="relative min-h-[100dvh] md:h-screen w-full overflow-y-auto md:overflow-hidden bg-zinc-950 text-white font-sans hide-scrollbar">
+    <main className="relative min-h-[100dvh] w-full bg-zinc-950 text-white font-sans hide-scrollbar selection:bg-white/10">
       <BackgroundLayers
         mode={mode}
         battleState={battleState}
@@ -250,7 +256,7 @@ export default function Home() {
         getUniverseStats={getUniverseStats}
       />
 
-      <div className="relative z-10 flex flex-col min-h-[100dvh] md:h-full p-4 md:p-8 lg:p-12 lg:pt-6">
+      <div className="relative z-10 flex flex-col min-h-[100dvh] p-4 md:p-8 lg:p-12 lg:pt-6 max-w-[1920px] mx-auto">
         <Header
           mode={mode}
           toggleMode={toggleMode}
@@ -260,135 +266,126 @@ export default function Home() {
           setSearchQuery={setSearchQuery}
         />
 
-          <div className="flex flex-col justify-center items-center py-2 md:py-2 lg:py-4 min-h-[min(30vh,220px)] shrink-0 z-20 relative">
-          {mode === "single" && (
-            <SingleView
-              char1={char1}
-              setSelectedLoreChar={setSelectedLoreChar}
-              setSelectedModifier={setSelectedModifier}
-              withGear={withGear1}
-              setWithGear={setWithGear1}
-              withPrep={withPrep1}
-              setWithPrep={setWithPrep1}
-            />
-          )}
+          <div className="flex flex-col justify-center items-center py-4 md:py-8 lg:py-12 min-h-[30vh] md:min-h-[40vh] shrink-0 z-20 relative">
+            {mode === "single" && (
+              <SingleView
+                char1={char1}
+                setSelectedLoreChar={setSelectedLoreChar}
+                setSelectedModifier={setSelectedModifier}
+                withGear={withGear1}
+                setWithGear={setWithGear1}
+                withPrep={withPrep1}
+                setWithPrep={setWithPrep1}
+              />
+            )}
 
-          {mode === "battle" && (
-            <BattleView
-              char1={char1}
-              char2={char2}
-              battleState={battleState}
-              countdown={countdown}
-              winner={winner}
-              startBattle={startBattle}
-              setBattleState={setBattleState}
-              setChar1={setChar1}
-              setChar2={setChar2}
-              setSelectedLoreChar={setSelectedLoreChar}
-              setSelectedModifier={setSelectedModifier}
-              withGear1={withGear1}
-              setWithGear1={setWithGear1}
-              withPrep1={withPrep1}
-              setWithPrep1={setWithPrep1}
-              withGear2={withGear2}
-              setWithGear2={setWithGear2}
-              withPrep2={withPrep2}
-              setWithPrep2={setWithPrep2}
-            />
-          )}
+            {mode === "battle" && (
+              <BattleView
+                char1={char1}
+                char2={char2}
+                battleState={battleState}
+                countdown={countdown}
+                winner={winner}
+                startBattle={startBattle}
+                setBattleState={setBattleState}
+                setChar1={setChar1}
+                setChar2={setChar2}
+                setSelectedLoreChar={setSelectedLoreChar}
+                setSelectedModifier={setSelectedModifier}
+                withGear1={withGear1}
+                setWithGear1={setWithGear1}
+                withPrep1={withPrep1}
+                setWithPrep1={setWithPrep1}
+                withGear2={withGear2}
+                setWithGear2={setWithGear2}
+                withPrep2={withPrep2}
+                setWithPrep2={setWithPrep2}
+              />
+            )}
 
-          {/* Battle Result Overlay — anchored to bottom, behind nothing */}
-          {mode === "battle" && battleState === "result" && winner && (
-            <div
-              className="absolute bottom-0 left-0 right-0 z-40 flex flex-col items-center gap-2 pb-6 md:pb-10 pointer-events-none"
-              style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
-            >
-              {/* Soft scrim so text is readable over any background */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
-
-              <div className="relative pointer-events-auto flex flex-col items-center gap-3">
-                {/* Winner badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-400/20 border border-yellow-400/60 text-yellow-300 font-black text-sm md:text-base uppercase tracking-widest shadow-[0_0_20px_rgba(250,204,21,0.4)] backdrop-blur-sm">
-                  🏆&nbsp;{winner === 1 ? char1?.name : char2?.name} Wins!
+            {/* ... result overlays ... */}
+            {mode === "battle" && battleState === "result" && winner && (
+              <div
+                className="absolute bottom-[-100px] left-0 right-0 z-40 flex flex-col items-center gap-2 pb-6 md:pb-10 pointer-events-none"
+                style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
+                <div className="relative pointer-events-auto flex flex-col items-center gap-3">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-400/20 border border-yellow-400/60 text-yellow-300 font-black text-sm md:text-base uppercase tracking-widest shadow-[0_0_20px_rgba(250,204,21,0.4)] backdrop-blur-sm">
+                    🏆&nbsp;{winner === 1 ? char1?.name : char2?.name} Wins!
+                  </div>
+                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
+                    {winner === 1 ? char2?.name : char1?.name} &nbsp;·&nbsp; defeated
+                  </p>
+                  <button
+                    onClick={() => {
+                      stopBattleMusic(true);
+                      setBattleState("idle");
+                      setChar1(null);
+                      setChar2(null);
+                    }}
+                    className="px-8 py-3 bg-white text-black font-bold uppercase tracking-widest rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.3)] text-sm"
+                  >
+                    Play Again
+                  </button>
                 </div>
-                {/* Loser name */}
-                <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
-                  {winner === 1 ? char2?.name : char1?.name} &nbsp;·&nbsp; defeated
-                </p>
-                {/* Play Again */}
-                <button
-                  onClick={() => {
-                    stopBattleMusic(true);
-                    setBattleState("idle");
-                    setChar1(null);
-                    setChar2(null);
-                  }}
-                  className="px-8 py-3 bg-white text-black font-bold uppercase tracking-widest rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.3)] text-sm"
-                >
-                  Play Again
-                </button>
               </div>
-            </div>
-          )}
+            )}
 
+            {mode === "universe" && (
+              <UniverseView
+                universe1={universe1}
+                universe2={universe2}
+                battleState={battleState}
+                countdown={countdown}
+                winner={winner}
+                getUniverseStats={getUniverseStats}
+                startBattle={startBattle}
+                setBattleState={setBattleState}
+                setUniverse1={setUniverse1}
+                setUniverse2={setUniverse2}
+                withGear1={withGear1}
+                setWithGear1={setWithGear1}
+                withPrep1={withPrep1}
+                setWithPrep1={setWithPrep1}
+                withGear2={withGear2}
+                setWithGear2={setWithGear2}
+                withPrep2={withPrep2}
+                setWithPrep2={setWithPrep2}
+              />
+            )}
 
-          {mode === "universe" && (
-            <UniverseView
-              universe1={universe1}
-              universe2={universe2}
-              battleState={battleState}
-              countdown={countdown}
-              winner={winner}
-              getUniverseStats={getUniverseStats}
-              startBattle={startBattle}
-              setBattleState={setBattleState}
-              setUniverse1={setUniverse1}
-              setUniverse2={setUniverse2}
-              withGear1={withGear1}
-              setWithGear1={setWithGear1}
-              withPrep1={withPrep1}
-              setWithPrep1={setWithPrep1}
-              withGear2={withGear2}
-              setWithGear2={setWithGear2}
-              withPrep2={withPrep2}
-              setWithPrep2={setWithPrep2}
-            />
-          )}
-
-          {/* Universe Result Overlay — anchored to bottom, never overlaps "DOMINATES" */}
-          {mode === "universe" && battleState === "result" && winner && (
-            <div
-              className="absolute bottom-0 left-0 right-0 z-40 flex flex-col items-center gap-2 pb-6 md:pb-10 pointer-events-none"
-              style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
-              <div className="relative pointer-events-auto flex flex-col items-center gap-3">
-                {/* Dominates badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-400/20 border border-blue-400/60 text-blue-300 font-black text-sm md:text-base uppercase tracking-widest shadow-[0_0_20px_rgba(96,165,250,0.4)] backdrop-blur-sm">
-                  ⚡&nbsp;{winner === 1 ? universe1 : universe2} Dominates!
+            {mode === "universe" && battleState === "result" && winner && (
+              <div
+                className="absolute bottom-[-100px] left-0 right-0 z-40 flex flex-col items-center gap-2 pb-6 md:pb-10 pointer-events-none"
+                style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
+                <div className="relative pointer-events-auto flex flex-col items-center gap-3">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-400/20 border border-blue-400/60 text-blue-300 font-black text-sm md:text-base uppercase tracking-widest shadow-[0_0_20px_rgba(96,165,250,0.4)] backdrop-blur-sm">
+                    ⚡&nbsp;{winner === 1 ? universe1 : universe2} Dominates!
+                  </div>
+                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
+                    {winner === 1 ? universe2 : universe1} &nbsp;·&nbsp; defeated
+                  </p>
+                  <button
+                    onClick={() => {
+                      stopBattleMusic(true);
+                      setBattleState("idle");
+                      setUniverse1(null);
+                      setUniverse2(null);
+                    }}
+                    className="px-8 py-3 bg-white text-black font-bold uppercase tracking-widest rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.3)] text-sm"
+                  >
+                    Play Again
+                  </button>
                 </div>
-                <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
-                  {winner === 1 ? universe2 : universe1} &nbsp;·&nbsp; defeated
-                </p>
-                <button
-                  onClick={() => {
-                    stopBattleMusic(true);
-                    setBattleState("idle");
-                    setUniverse1(null);
-                    setUniverse2(null);
-                  }}
-                  className="px-8 py-3 bg-white text-black font-bold uppercase tracking-widest rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.3)] text-sm"
-                >
-                  Play Again
-                </button>
               </div>
-            </div>
-          )}
-
-        </div>
+            )}
+          </div>
 
         <div
-          className={`transition-opacity duration-500 flex-1 flex flex-col min-h-0 z-30 relative ${battleState !== "idle" ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+          className={`transition-opacity duration-500 relative z-30 ${battleState !== "idle" ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         >
           <div className="mb-2 md:mb-4 text-xs font-mono text-zinc-500 uppercase tracking-widest flex justify-between items-center flex-shrink-0">
             <span>

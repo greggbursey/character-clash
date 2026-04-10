@@ -9,6 +9,7 @@ import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
 import { characters as allCharactersData } from "@/data/characters";
+import { universeLoreData } from "@/data/universe-lore";
 import dynamic from "next/dynamic";
 
 const MatchupSimulator = dynamic(() => import("@/components/portal/MatchupSimulator").then(m => m.MatchupSimulator), { ssr: false });
@@ -98,6 +99,8 @@ function PortalInternal() {
         charsSnap.forEach((doc) => {
           const data = doc.data();
           const baseChar = allCharactersData.find((c) => c.id === doc.id);
+          if (baseChar && universeLoreData[baseChar.universe]?.active === false) return;
+          
           allData.push({
             id: doc.id,
             ...data,
@@ -175,10 +178,12 @@ function PortalInternal() {
       winsMap[u].count += 1;
     });
 
-    let universes = Object.entries(winsMap).map(([name, stats]) => ({
-      name,
-      ...stats,
-    }));
+    let universes = Object.entries(winsMap)
+      .filter(([name]) => universeLoreData[name]?.active !== false)
+      .map(([name, stats]) => ({
+        name,
+        ...stats,
+      }));
 
     if (universeSearchQuery.trim()) {
       universes = universes.filter((u) =>

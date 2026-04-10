@@ -12,7 +12,9 @@ interface UniverseInfoProps {
 }
 
 export function UniverseArchivesHeader({ selectedUniverse, onUniverseChange }: UniverseInfoProps) {
-  const universes = Object.keys(universeLoreData).sort();
+  const universes = Object.keys(universeLoreData)
+    .filter(u => universeLoreData[u].active !== false)
+    .sort();
   
   return (
     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 z-10 relative px-4 md:px-0">

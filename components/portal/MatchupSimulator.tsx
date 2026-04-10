@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Users, Swords, Shuffle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { characters as allCharactersData } from "@/data/characters";
+import { universeLoreData } from "@/data/universe-lore";
 import { getAssetPath } from "@/lib/utils";
 import { Character } from "@/types";
 
@@ -16,7 +17,7 @@ export function MatchupSimulator() {
   const [result, setResult] = useState<string | null>(null);
 
   const filtered = allCharactersData
-    .filter((c) => c.name.toLowerCase().includes(searchQuery.toLowerCase()));
+    .filter((c) => (universeLoreData[c.universe]?.active !== false) && c.name.toLowerCase().includes(searchQuery.toLowerCase()));
 
   const isDrafted = (charId: string) => {
     return team1.some(c => c.id === charId) || team2.some(c => c.id === charId);
@@ -33,7 +34,7 @@ export function MatchupSimulator() {
   };
 
   const addRandomToTeam = () => {
-    const available = allCharactersData.filter(c => !isDrafted(c.id));
+    const available = allCharactersData.filter(c => (universeLoreData[c.universe]?.active !== false) && !isDrafted(c.id));
     if (available.length === 0) return;
     
     const randomChar = available[Math.floor(Math.random() * available.length)];
