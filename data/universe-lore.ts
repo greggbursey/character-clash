@@ -133,6 +133,6 @@ export const universeLoreData: Record<string, UniverseLore> = {
     history: "The Pokemon universe began with the awakening of Arceus, the 'Original One,' who shaped the world and its regions. Over millennia, legendary creatures like Rayquaza and Mewtwo established their domains, while humanity developed the Poke Ball technology to foster a unique partnership with these pocket monsters. The modern era is defined by the quest to 'Catch 'Em All' and the prestige of the Pokemon League championships.",
     lore: "The core of Pokemon lore is the elemental affinity system, where creatures harness the power of Fire, Water, Electric, and other types to perform extraordinary feats. Lore also explores the mysteries of Mega Evolution—a temporary, powerful transformation triggered by a strong bond—and the presence of Mythical and Legendary beings that maintain the balance of nature. The world emphasizes growth, strategy, and the indomitable spirit of both trainer and Pokemon.",
     keyLocations: ["Pallet Town", "Indigo Plateau", "Mt. Silver", "Luminous City", "Spear Pillar"],
-    active: false
+    active: true
   }
 };
