@@ -14,6 +14,9 @@ import { lotrCharacters } from "./lotr/lotr-characters";
 import { transformersCharacters } from "./transformers/transformers-characters";
 import { powerRangersCharacters } from "./power-rangers/power-rangers-characters";
 import { pokemonCharacters } from "./pokemon/pokemon-characters";
+import { dbzCharacters } from "./dbz/dbz-characters";
+import { greekCharacters } from "./greek-monsters/greek-characters";
+import { httydCharacters } from "./httyd/httyd-characters";
 
 export const characters: Character[] = [
   ...tmntCharacters,
@@ -30,4 +33,7 @@ export const characters: Character[] = [
   ...transformersCharacters,
   ...powerRangersCharacters,
   ...pokemonCharacters,
+  ...dbzCharacters,
+  ...greekCharacters,
+  ...httydCharacters,
 ];

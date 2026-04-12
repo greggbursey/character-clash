@@ -134,5 +134,32 @@ export const universeLoreData: Record<string, UniverseLore> = {
     lore: "The core of Pokemon lore is the elemental affinity system, where creatures harness the power of Fire, Water, Electric, and other types to perform extraordinary feats. Lore also explores the mysteries of Mega Evolution—a temporary, powerful transformation triggered by a strong bond—and the presence of Mythical and Legendary beings that maintain the balance of nature. The world emphasizes growth, strategy, and the indomitable spirit of both trainer and Pokemon.",
     keyLocations: ["Pallet Town", "Indigo Plateau", "Mt. Silver", "Luminous City", "Spear Pillar"],
     active: true
+  },
+  "Dragon Ball Z": {
+    name: "Dragon Ball Z",
+    emoji: "🐉",
+    blurb: "A high-octane universe where martial arts, alien warriors, and ancient dragons collide in battles that shatter planets.",
+    history: "Spanning from the early days of Earth to the depths of space, the history of DBZ is marked by the Saiyan invasion, the tyranny of Frieza, and the awakening of ancient monsters like Majin Buu. It is a chronicle of constant evolution and the search for the legendary Dragon Balls, which can grant any wish to those who gather them.",
+    lore: "Power is measured in 'Ki'—a spiritual energy that can be focused into devastating beams or used to augment physical strikes. The Saiyan race, known for their Zenkai boosts and golden transformations, stands at the center of the universe's greatest conflicts. From the pursuit of immortality to the struggle against cosmic gods, DBZ lore is built on the philosophy of exceeding one's limits through sheer will and training.",
+    keyLocations: ["Planet Namek", "Kami's Lookout", "Hyperbolic Time Chamber", "World Martial Arts Tournament", "King Kai's Planet"],
+    active: false
+  },
+  "Ancient Greek Monsters": {
+    name: "Ancient Greek Monsters",
+    emoji: "🏛️",
+    blurb: "A world of myth and legend where gods and monsters duel for the fate of civilization.",
+    history: "The history of the Greek Monsters is a chronicle of divine conflict and the untamed forces of nature. Many of the most terrifying beasts were born to Typhon and Echidna, designed to challenge the Olympian gods or serve as guardians of the boundaries between worlds. Their stories are woven into the very fabric of Greek mythology, representing the chaos that heroes must overcome to establish order.",
+    lore: "Greek monster lore is defined by the intersection of beauty and horror, wisdom and brute force. From the petrifying gaze of Medusa to the reality-shaking strength of Typhon, these beings possess unique, often cursed abilities. They frequently serve as protectors of secret paths or as punishments sent by the gods, making them some of the most enduring symbols of the ancient world.",
+    keyLocations: ["The Labyrinth", "Strait of Messina", "Mount Etna", "The Underworld Gates", "Lerna Swamps"],
+    active: false
+  },
+  "How to Train Your Dragon": {
+    name: "How to Train Your Dragon",
+    emoji: "🐲",
+    blurb: "A soaring adventure where the bond between man and dragon can change the world.",
+    history: "The history of the Archipelago was once a saga of endless war between the Vikings of Berk and the dragons that raided their shores. This cycle of violence was broken by Hiccup Haddock III, who befriended a Night Fury and proved that dragons could be partners instead of enemies. Today, the world remembers the Dragon Riders of Berk as the pioneers of a new age of discovery and empathy.",
+    lore: "Dragon lore is built on the diversity of species—from the swift Strike-class Night Furies to the massive, ice-breathing Tidal-class Alphas. The core of this universe is the 'Bond'—a deep, mutual trust that allows a rider and dragon to move as one. While raw power is common, the true strength of this universe lies in tactical innovation, species-specific abilities, and the indomitable spirit of those who dare to fly.",
+    keyLocations: ["The Isle of Berk", "The Hidden World", "Dragon Island", "Drago's Sanctuary", "Itchy Armpit"],
+    active: false
   }
 };
