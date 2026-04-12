@@ -576,6 +576,28 @@ export const trivia: Record<string, string[]> = {
     "Ho-Oh is a phoenix-like Pokémon said to bring eternal happiness to those who see it.",
     "Rayquaza ended the ancient feud between the legendary titans Groudon and Kyogre.",
     "The mystery of 'MissingNo.' was a famous glitch in the original games that could duplicate items."
+  ],
+  "Spongebob": [
+    "Spongebob's address is 124 Conch Street, Bikini Bottom.",
+    "The Krusty Krab is actually a lobster trap, which explains its unique shape.",
+    "Stephen Hillenburg was a marine biologist before he created Spongebob Squarepants.",
+    "Spongebob's voice actor, Tom Kenny, also voices Gary the Snail and the French Narrator.",
+    "Squidward has only 6 tentacles even though he is an octopus, because it was easier to animate.",
+    "The character of Patrick Star was almost written as an angry, mean-spirited bartender.",
+    "Bikini Bottom is located directly beneath Bikini Atoll in the Marshall Islands.",
+    "Mr. Krabs' middle name is Harold.",
+    "Sandy Cheeks was originally designed to be Spongebob's love interest, but the idea was dropped.",
+    "Every main character in Spongebob is modeled after one of the Seven Deadly Sins, according to a popular fan theory.",
+    "The voice of Karen, Plankton's computer wife, is actually married to Tom Kenny (Spongebob's voice actor) in real life.",
+    "Spongebob's license shows his birthday as July 14, 1986.",
+    "The Alaskan Bull Worm is actually 10,000 feet tall, according to show lore.",
+    "Bubble Bass's order in 'Pickles' contains approximately 10,000 calories.",
+    "Patrick Star was once a genius for an episode after getting a brain coral head.",
+    "Plankton's first name, Sheldon, was revealed in 'The Algae's Always Greener'.",
+    "The Flying Dutchman hasn't been to a dentist in 300 years.",
+    "Spongebob is ambidextrous, but mostly uses his left hand for writing.",
+    "The 'My Leg!' guy is actually named Fred, and he is a recurring background character.",
+    "Squidward's house is an Easter Island head (Moai), reflecting his isolated personality."
   ]
 };
 

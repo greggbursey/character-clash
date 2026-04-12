@@ -115,7 +115,7 @@ export const httydCharacters: Character[] = [
     triviaPool: [
       "Stoick's dragon, Skullcrusher, is a Rumblehorn.",
       "He was voiced by Gerard Butler in all three movies.",
-      "Stoick's helmet and Hiccup's breastplate are made from the same piece of metal (Valka's old armor).",
+      "Stoick's helmet and Hiccup's breastplate are made from the same piece of metal.",
       "He is the only character shown to be able to wrestle a dragon to the ground with his bare hands.",
       "Stoick was Chief of Berk for over 20 years.",
       "He was known as the 'Dragon-Slayer' before becoming a Dragon Rider."
@@ -145,7 +145,6 @@ export const httydCharacters: Character[] = [
       "The Red Death has a club-like tail that it uses as a massive bludgeoning weapon."
     ],
   },
-/*
   {
     id: "bewilderbeast",
     name: "The Bewilderbeast",
@@ -171,62 +170,14 @@ export const httydCharacters: Character[] = [
     ],
   },
   {
-    id: "valka",
-    name: "Valka",
-    universe: "How to Train Your Dragon",
-    description: "Hiccup's mother and the ultimate master of dragon behavior.",
-    lore: "**Valka** spent twenty years living in isolation among dragons, becoming more like them than a human. Believed to have been lost at sea during a dragon raid on Berk, she actually found a secret sanctuary within a massive ice-mountain, ruled by a benevolent Bewilderbeast. In her time away from civilization, she learned the secrets of every dragon species—how to soothe them, how to fight with them, and how to unlock their hidden potential.\n\nValka is a 'Dragon Whisperer' of unmatched skill. She rides **Cloudjumper**, a four-winged Stormcutter, and uses her knowledge of dragon biology to outmaneuver even the most experienced hunters. She doesn't see dragons as tools or pets, but as equals who have been wronged by humanity. Her return to Berk brought with it a wealth of knowledge that helped Hiccup lead the tribe into a new age of understanding. She is the wild hart of the Haddock family, a protector of the sanctuary and the secrets of the sky.",
-    triviaInfo: "Origin: A native of Berk and wife of Stoick. She first appeared in 'How to Train Your Dragon 2' (2014).\n\nBattles: She led the defense of the Dragon Sanctuary against Drago's fleet and helped Hiccup reclaim Berk.\n\nSpecial Abilities & Gear: Expert dragon behaviorist, high-level acrobatics, and mastery of the staff. She knows 'pressure points' on dragons that can induce sleep or calm.\n\nSecret Trivia: Valka's flight suit is made from dragon scales and designed to mimic the movements of a dragon in flight. She was originally supposed to be the villain of the second movie, but the writers eventually decided she was more compelling as an ally.",
-    previewUrl: "/data/httyd/assets/valka-preview.png",
-    backgroundUrl: "/data/httyd/assets/valka-background.png",
-    color: "#064e3b",
-    powerScore: 90,
-    gearBonus: 110,
-    prepBonus: 70,
-    gearDescription: "### Dragon-Empathy Suit\n- **Stormcutter Mask**: A ceremonial mask that allows her to look for 'heat signatures' and movement in high-altitude clouds.\n- **Extendable Staff**: A wooden staff used for defense and to guide her dragon's movements mid-flight.",
-    prepDescription: "### Species-Specific Soothing\nValka identifies the exact stressors of a dragon or opponent, using a combination of sound, movement, and physical touch to neutralize their aggression without the need for violence.",
-    triviaPool: [
-      "Valka lived with dragons for 20 years before reuniting with her family.",
-      "She rides a Stormcutter dragon named Cloudjumper.",
-      "Valka knows more about dragon biology than any other human alive.",
-      "She was voiced by Cate Blanchett.",
-      "Her staff is often used to signal to her dragon without the need for spoken words.",
-      "Valka was the one who taught Hiccup that there are many secrets to dragons that humans don't yet know."
-    ],
-  },
-  {
-    id: "cloudjumper",
-    name: "Cloudjumper",
-    universe: "How to Train Your Dragon",
-    description: "Valka's majestic Stormcutter, possessing four wings and incredible precision.",
-    lore: "**Cloudjumper** is a Stormcutter, a large and rare Owl-like dragon distinguished by his two pairs of wings arranged in an 'X' shape. This unique anatomy grants him a level of maneuverability and stability that few other dragons can match—he can hover, change direction instantly, and fly through tight spaces with surgical precision. Cloudjumper was the dragon who originally 'kidnapped' Valka from Berk, but he did so not as a hunter, but as a guardian who sensed she belonged in the sky.\n\nCloudjumper is highly intelligent and stoic, often acting as a second-in-command to the Alpha in Valka's sanctuary. His fire breath is a massive, swirling tornado of flame, and his front claws are as sharp as scythes. He and Valka share a bond that is almost telepathic; they move as one, a four-winged blur of grace and power that guards the sanctuary from those who would exploit its peace.",
-    triviaInfo: "Origin: A male Stormcutter from the Dragon Sanctuary. \n\nBattles: Participated in the defense of the Sanctuary and the final battle for Berk. He famously protected Valka for two decades.\n\nSpecial Abilities & Gear: Four wings for extreme flight precision, fire-tornado breath, and a neck that can rotate 280 degrees like an owl. \n\nSecret Trivia: Cloudjumper was named for his ability to appear and disappear in the clouds. He was the dragon that accidentally scarred Hiccup's chin when he was an infant.",
-    previewUrl: "/data/httyd/assets/cloudjumper-preview.png",
-    backgroundUrl: "/data/httyd/assets/cloudjumper-background.png",
-    color: "#831843",
-    powerScore: 650,
-    gearBonus: 50,
-    prepBonus: 50,
-    gearDescription: "### Stormcutter Attributes\n- **Scythe Talons**: Huge, hooked claws that can cleave through dragon-proof chains and ship masts.\n- **Thermal Sensory Horns**: Horns that can detect changes in localized air pressure and temperature.",
-    prepDescription: "### Aerial Acrobatics\nCloudjumper utilizes his four wings to perform a series of high-speed spirals and stalls that make him impossible to target with projectiles, closing the distance before the opponent can reload.",
-    triviaPool: [
-      "Cloudjumper has four wings, granting him unmatched maneuverability.",
-      "He is a Stormcutter dragon.",
-      "Cloudjumper can rotate his head 280 degrees, much like an owl.",
-      "He was the dragon who took Valka away from Berk when Hiccup was a baby.",
-      "His fire breath comes out as a massive, swirling vortex of flame.",
-      "Cloudjumper's design was inspired by owls and great cats."
-    ],
-  },
-  {
     id: "drago",
     name: "Drago Bludvist",
     universe: "How to Train Your Dragon",
     description: "A brutal warlord who seeks to conquer dragonkind through fear.",
     lore: "**Drago Bludvist** is the antithesis of Hiccup. A man who lost his family to dragons and responded by dedicating his life to enslaving them, Drago believes that power is the only true language. He lost his left arm in a dragon attack and replaced it with a heavy prosthetic, but his real weapon is his will. He rules a massive armada of dragon-proof ships and commands an army of dragons that have been broken and tortured into submission.\n\nDrago possesses a unique ability—or perhaps just a terrifying level of confidence—to intimidate individual dragons with his voice and his cape made of dragon scales. He believes that the only way to control dragons is to make them more afraid of you than they are of anything else. His conquest was only halted when he encountered the bond between Hiccup and Toothless, a force of love that proved stronger than all the chains in his fleet.",
     triviaInfo: "Origin: A foreign warlord with a mysterious past. He first appeared in 'How to Train Your Dragon 2' (2014).\n\nBattles: The siege of the Dragon Sanctuary and the invasion of Berk. He was defeated when his Bewilderbeast was overthrown by Toothless.\n\nSpecial Abilities & Gear: Extreme physical resilience, high-level intimidation, and mastery of dragon-trapping artillery. He wields a heavy bull-hook as a staff.\n\nSecret Trivia: Drago's skin is covered in scars from various dragon encounters. His dragon-skin cape is said to be fireproof and serves as a symbol of his 'dominance' over the species.",
-    previewUrl: "/data/httyd/assets/drago-preview.png",
-    backgroundUrl: "/data/httyd/assets/drago-background.png",
+    previewUrl: "/data/httyd/assets/dragobludvist-preview.png",
+    backgroundUrl: "/data/httyd/assets/dragobludvistbackground.png",
     color: "#27272a",
     powerScore: 130,
     gearBonus: 70,
@@ -249,8 +200,8 @@ export const httydCharacters: Character[] = [
     description: "A rare, shimmering subspecies of the Night Fury with the power of invisibility.",
     lore: "**The Light Fury** is a shimmering, white subspecies of the Night Fury, evolved for high-altitude stealth and daytime camouflage. While she lacks the raw destructive power of the Night Fury, she possesses a unique ability: by flying through her own plasma blast, she can create a mirrored refraction that makes her nearly invisible in the bright sky. She is a creature of the 'Hidden World,' the ancestral home of all dragons, and is much more feral and untrusting of humans than Toothless.\n\nHer relationship with Toothless was the final catalyst for the dragons leaving Berk. She represents the 'wild' side of dragonkind—a beauty that cannot be truly tamed or kept in a stable. In combat, she is a ghost, attacking with the same precision plasma blasts as a Night Fury but vanishing before a counterattack can be mounted. She is the guardian of the horizon, a reminder that some creatures are meant to remain free.",
     triviaInfo: "Origin: A female Light Fury from the Hidden World. \n\nBattles: She fought alongside Toothless against Grimmel's Deathgrippers and helped lead the final exodus to the Hidden World.\n\nSpecial Abilities & Gear: Cloaking invisibility (via plasma refraction), high-speed flight, and ionizing plasma blasts. She is smaller and more graceful than a Night Fury.\n\nSecret Trivia: The Light Fury's design was based on cats, axolotls, and snowy owls. She is technically a different species from the Night Fury, though they are capable of interbreeding (resulting in 'Night Lights').",
-    previewUrl: "/data/httyd/assets/light_fury-preview.png",
-    backgroundUrl: "/data/httyd/assets/light_fury-background.png",
+    previewUrl: "/data/httyd/assets/lightfury-preview.png",
+    backgroundUrl: "/data/httyd/assets/lightfury-background.png",
     color: "#f1f5f9",
     powerScore: 600,
     gearBonus: 0,
@@ -290,5 +241,4 @@ export const httydCharacters: Character[] = [
       "Rumblehorns are often used as 'bloodhounds' to find lost Vikings or dragons."
     ],
   },
-*/
 ];

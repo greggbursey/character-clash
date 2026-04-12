@@ -17,6 +17,7 @@ import { pokemonCharacters } from "./pokemon/pokemon-characters";
 import { dbzCharacters } from "./dbz/dbz-characters";
 import { greekCharacters } from "./greek-monsters/greek-characters";
 import { httydCharacters } from "./httyd/httyd-characters";
+import { spongebobCharacters } from "./spongebob/spongebob-characters";
 
 export const characters: Character[] = [
   ...tmntCharacters,
@@ -36,4 +37,5 @@ export const characters: Character[] = [
   ...dbzCharacters,
   ...greekCharacters,
   ...httydCharacters,
+  ...spongebobCharacters,
 ];

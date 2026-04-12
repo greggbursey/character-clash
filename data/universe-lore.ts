@@ -161,5 +161,14 @@ export const universeLoreData: Record<string, UniverseLore> = {
     lore: "Dragon lore is built on the diversity of species—from the swift Strike-class Night Furies to the massive, ice-breathing Tidal-class Alphas. The core of this universe is the 'Bond'—a deep, mutual trust that allows a rider and dragon to move as one. While raw power is common, the true strength of this universe lies in tactical innovation, species-specific abilities, and the indomitable spirit of those who dare to fly.",
     keyLocations: ["The Isle of Berk", "The Hidden World", "Dragon Island", "Drago's Sanctuary", "Itchy Armpit"],
     active: true
+  },
+  "Spongebob": {
+    name: "Spongebob Squarepants",
+    emoji: "🧽",
+    blurb: "A whimsical underwater world where optimism and nautical nonsense reign supreme.",
+    history: "Bikini Bottom's history is as colorful as its residents. From the legendary era of the prehistoric 'SpongeGar' and 'Patar' to the modern development of the Krusty Krab, the town has survived giant bubbles, Alaskan Bull Worms, and literal out-of-water experiences. It is a place where the logic of the surface world is replaced by the rules of 'Nautical Nonsense.'",
+    lore: "The lore of the Spongebob universe is built on 'Toon Logic' and the incredible resilience of its inhabitants. Characterized by environmental absurdity (like fire underwater), the world is governed by the pursuit of happiness and the occasional scheme for a burger recipe. The 'Secret Formula' and the 'Magic of Bubbles' are the primary drivers of conflict and wonder in this oceanic paradise.",
+    keyLocations: ["Bikini Bottom", "Pineapple House", "Krusty Krab", "Jellyfish Fields", "Rock Bottom"],
+    active: false
   }
 };
