@@ -160,6 +160,6 @@ export const universeLoreData: Record<string, UniverseLore> = {
     history: "The history of the Archipelago was once a saga of endless war between the Vikings of Berk and the dragons that raided their shores. This cycle of violence was broken by Hiccup Haddock III, who befriended a Night Fury and proved that dragons could be partners instead of enemies. Today, the world remembers the Dragon Riders of Berk as the pioneers of a new age of discovery and empathy.",
     lore: "Dragon lore is built on the diversity of species—from the swift Strike-class Night Furies to the massive, ice-breathing Tidal-class Alphas. The core of this universe is the 'Bond'—a deep, mutual trust that allows a rider and dragon to move as one. While raw power is common, the true strength of this universe lies in tactical innovation, species-specific abilities, and the indomitable spirit of those who dare to fly.",
     keyLocations: ["The Isle of Berk", "The Hidden World", "Dragon Island", "Drago's Sanctuary", "Itchy Armpit"],
-    active: false
+    active: true
   }
 };

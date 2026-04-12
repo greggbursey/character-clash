@@ -11,9 +11,9 @@ export const httydCharacters: Character[] = [
     previewUrl: "/data/httyd/assets/hiccup-preview.png",
     backgroundUrl: "/data/httyd/assets/hiccup-background.png",
     color: "#4d7c0f",
-    powerScore: 200,
-    gearBonus: 350,
-    prepBonus: 250,
+    powerScore: 70,
+    gearBonus: 100,
+    prepBonus: 80,
     gearDescription: "### Berkian Innovation\n- **Inferno (The Dragon Blade)**: A multi-functional sword that can coat itself in flame or emit disorienting Zippleback gas.\n- **Mk II Flight Suit**: A leather wingsuit equipped with specialized fins that allow Hiccup to glide and maneuver at high speeds alongside dragons.",
     prepDescription: "### Strategic Observation\nHiccup identifies the specific species and weaknesses of his opponent, utilizing his 'Dragon Manual' knowledge to deploy specialized traps or evasive flight patterns that equalize the power gap.",
     triviaPool: [
@@ -59,9 +59,9 @@ export const httydCharacters: Character[] = [
     previewUrl: "/data/httyd/assets/astrid-preview.png",
     backgroundUrl: "/data/httyd/assets/astrid-background.png",
     color: "#b91c1c",
-    powerScore: 400,
-    gearBonus: 100,
-    prepBonus: 100,
+    powerScore: 115,
+    gearBonus: 45,
+    prepBonus: 40,
     gearDescription: "### Hofferson Battle-Axe\n- **Double-Headed Steel Axe**: A perfectly balanced weapon capable of cleaving through dragon-proof iron and bone.\n- **Spiked Flight Armor**: Lightweight leather armor reinforced with metallic studs to protect against glancing blows during high-speed aerial combat.",
     prepDescription: "### Tactical Flanking\nAstrid coordinates a multi-vector assault, using her dragon to herd the opponent into a vulnerable position before delivering a decisive physical strike with her axe.",
     triviaPool: [
@@ -107,9 +107,9 @@ export const httydCharacters: Character[] = [
     previewUrl: "/data/httyd/assets/stoick-preview.png",
     backgroundUrl: "/data/httyd/assets/stoick-background.png",
     color: "#92400e",
-    powerScore: 500,
-    gearBonus: 100,
-    prepBonus: 50,
+    powerScore: 140,
+    gearBonus: 50,
+    prepBonus: 30,
     gearDescription: "### Chieftain's Regalia\n- **Chief's War-Hammer**: A massive, iron-bound hammer that can shatter stone and dent dragon-proof metal.\n- **Heavy Viking Plate**: Traditional Hooligan armor made from thick leather and iron, designed to withstand the heat of dragon fire.",
     prepDescription: "### Chieftain's Charge\nStoick unleashes a terrifying Viking war-cry, boosting his own adrenaline and intimidation factor to temporarily overlook physical pain and deliver a devastating overhead strike.",
     triviaPool: [
@@ -145,6 +145,7 @@ export const httydCharacters: Character[] = [
       "The Red Death has a club-like tail that it uses as a massive bludgeoning weapon."
     ],
   },
+/*
   {
     id: "bewilderbeast",
     name: "The Bewilderbeast",
@@ -179,9 +180,9 @@ export const httydCharacters: Character[] = [
     previewUrl: "/data/httyd/assets/valka-preview.png",
     backgroundUrl: "/data/httyd/assets/valka-background.png",
     color: "#064e3b",
-    powerScore: 450,
-    gearBonus: 200,
-    prepBonus: 150,
+    powerScore: 90,
+    gearBonus: 110,
+    prepBonus: 70,
     gearDescription: "### Dragon-Empathy Suit\n- **Stormcutter Mask**: A ceremonial mask that allows her to look for 'heat signatures' and movement in high-altitude clouds.\n- **Extendable Staff**: A wooden staff used for defense and to guide her dragon's movements mid-flight.",
     prepDescription: "### Species-Specific Soothing\nValka identifies the exact stressors of a dragon or opponent, using a combination of sound, movement, and physical touch to neutralize their aggression without the need for violence.",
     triviaPool: [
@@ -227,9 +228,9 @@ export const httydCharacters: Character[] = [
     previewUrl: "/data/httyd/assets/drago-preview.png",
     backgroundUrl: "/data/httyd/assets/drago-background.png",
     color: "#27272a",
-    powerScore: 400,
-    gearBonus: 150,
-    prepBonus: 100,
+    powerScore: 130,
+    gearBonus: 70,
+    prepBonus: 50,
     gearDescription: "### Warlord's Arsenal\n- **Dragon-Proof Cape**: A thick, multi-layered hide that can deflect direct plasma blasts and sustain immense heat without burning.\n- **Iron Bull-Hook**: A heavy, hooked staff used for both combat and to physically dominate his dragon subordinates.",
     prepDescription: "### Intimidation Presence\nDrago unleashes a primal, guttural roar that strikes fear into dragons and humans alike, temporarily lowering the opponent's 'Flinch' threshold and focus.",
     triviaPool: [
@@ -289,4 +290,5 @@ export const httydCharacters: Character[] = [
       "Rumblehorns are often used as 'bloodhounds' to find lost Vikings or dragons."
     ],
   },
+*/
 ];
