@@ -169,6 +169,6 @@ export const universeLoreData: Record<string, UniverseLore> = {
     history: "Bikini Bottom's history is as colorful as its residents. From the legendary era of the prehistoric 'SpongeGar' and 'Patar' to the modern development of the Krusty Krab, the town has survived giant bubbles, Alaskan Bull Worms, and literal out-of-water experiences. It is a place where the logic of the surface world is replaced by the rules of 'Nautical Nonsense.'",
     lore: "The lore of the Spongebob universe is built on 'Toon Logic' and the incredible resilience of its inhabitants. Characterized by environmental absurdity (like fire underwater), the world is governed by the pursuit of happiness and the occasional scheme for a burger recipe. The 'Secret Formula' and the 'Magic of Bubbles' are the primary drivers of conflict and wonder in this oceanic paradise.",
     keyLocations: ["Bikini Bottom", "Pineapple House", "Krusty Krab", "Jellyfish Fields", "Rock Bottom"],
-    active: false
+    active: true
   }
 };
