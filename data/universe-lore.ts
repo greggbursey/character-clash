@@ -142,7 +142,7 @@ export const universeLoreData: Record<string, UniverseLore> = {
     history: "Spanning from the early days of Earth to the depths of space, the history of DBZ is marked by the Saiyan invasion, the tyranny of Frieza, and the awakening of ancient monsters like Majin Buu. It is a chronicle of constant evolution and the search for the legendary Dragon Balls, which can grant any wish to those who gather them.",
     lore: "Power is measured in 'Ki'—a spiritual energy that can be focused into devastating beams or used to augment physical strikes. The Saiyan race, known for their Zenkai boosts and golden transformations, stands at the center of the universe's greatest conflicts. From the pursuit of immortality to the struggle against cosmic gods, DBZ lore is built on the philosophy of exceeding one's limits through sheer will and training.",
     keyLocations: ["Planet Namek", "Kami's Lookout", "Hyperbolic Time Chamber", "World Martial Arts Tournament", "King Kai's Planet"],
-    active: false
+    active: true
   },
   "Ancient Greek Monsters": {
     name: "Ancient Greek Monsters",
