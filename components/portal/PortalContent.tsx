@@ -15,6 +15,8 @@ import dynamic from "next/dynamic";
 const MatchupSimulator = dynamic(() => import("@/components/portal/MatchupSimulator").then(m => m.MatchupSimulator), { ssr: false });
 const CharacterTrivia = dynamic(() => import("@/components/portal/CharacterTrivia").then(m => m.CharacterTrivia), { ssr: false });
 const AnomaliesLog = dynamic(() => import("@/components/portal/AnomaliesLog").then(m => m.AnomaliesLog), { ssr: false });
+const PowerMatrix = dynamic(() => import("@/components/portal/PowerMatrix").then(m => m.PowerMatrix), { ssr: false });
+const HallOfFame = dynamic(() => import("@/components/portal/HallOfFame").then(m => m.HallOfFame), { ssr: false });
 const WinStreaks = dynamic(() => import("@/components/portal/WinStreaks").then(m => m.WinStreaks), { ssr: false });
 const TierListMaker = dynamic(() => import("@/components/portal/TierListMaker").then(m => m.TierListMaker), { ssr: false });
 const WhatIfScenarios = dynamic(() => import("@/components/portal/WhatIfScenarios").then(m => m.WhatIfScenarios), { ssr: false });
@@ -542,6 +544,8 @@ function PortalInternal() {
             Monitoring Multiverse Disturbances
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(250px,auto)]">
+             <div className="lg:col-span-3"><HallOfFame characters={allCharacters} /></div>
+             <div className="lg:col-span-3 mt-4"><PowerMatrix characters={allCharacters} /></div>
              <div><AnomaliesLog /></div>
              <div><WinStreaks characters={allCharacters} /></div>
              <div><UnderdogOfTheWeek characters={allCharacters} /></div>

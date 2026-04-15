@@ -8,8 +8,8 @@ export const lotrCharacters: Character[] = [
     description: "The Ring-bearer of the Shire, whose resilience and pure spirit saved Middle-earth.",
     lore: "Frodo Baggins was a quiet, unassuming Hobbit from the Shire who inherited the One Ring from his uncle, Bilbo. Tasked with the impossible burden of reaching Mount Doom to destroy the Ring, Frodo's journey is one of immense physical and mental suffering. He is defined by his iron will, his resistance to the corrupting influence of Sauron, and his deep friendship with Samwise Gamgee.\n\nHis role in the War of the Ring was not as a warrior, but as a silent hero whose survival depended more on stealth and fortitude than on strength. After the Ring's destruction, he left Middle-earth for the Undying Lands, carrying the scars of his journey forever.",
     triviaInfo: "Origin: Born to Drogo Baggins and Primula Brandybuck. He moved to Bag End after his parents' death. He first appeared in 'The Fellowship of the Ring'.\n\nBattles: His primary 'battle' was the long, grueling journey to Mordor. He survived the encounter with the Nazgûl at Weathertop and the venomous bite of Shelob in Cirith Ungol.\n\nSpecial Abilities & Gear: Frodo carries Sting, an Elven dagger that glows blue when Orcs are near, and wears a shirt of Mithril rings, which can turn aside even a troll's spear. He possesses the One Ring (though its use is restricted) and the Phial of Galadriel.\n\nSecret Trivia: Frodo was 50 years old when he left the Shire on his quest—much older than he appeared in the films. His name means 'wise' in Old English (Frōda).",
-    previewUrl: "/data/lotr/assets/frodo-preview.png",
-    backgroundUrl: "/data/lotr/assets/frodo-background.png",
+    previewUrl: "/data/lotr/assets/frodo-preview.webp",
+    backgroundUrl: "/data/lotr/assets/frodo-background.webp",
     color: "#166534", // Hobbit Green
     powerScore: 65,
     gearBonus: 120, // Mithril/Sting/Phial
@@ -32,8 +32,8 @@ export const lotrCharacters: Character[] = [
     description: "Frodo's loyal gardener and the true heart of the Fellowship.",
     lore: "Samwise 'Sam' Gamgee began his journey as Frodo's gardener and ended it as a hero of legend. His loyalty is absolute, his courage unwavering, and his optimism the only light in the darkness of Mordor. He famously 'carried' Frodo up the slopes of Mount Doom when the Ring-bearer's strength finally failed.\n\nSam is a character of hidden depths—a simple Hobbit who can stand against monsters like Shelob and Orc battalions when his friends are in danger. He is the only character to ever return the One Ring of his own free will after having worn it, showcasing his incorruptible spirit.",
     triviaInfo: "Origin: The son of Hamfast 'the Gaffer' Gamgee. He first appeared in 'The Fellowship of the Ring'.\n\nBattles: His most legendary fight was against the ancient spider Shelob, whom he wounded with Sting and the Phial of Galadriel. He also single-handedly rescued Frodo from the Tower of Cirith Ungol.\n\nSpecial Abilities & Gear: He carries a variety of cooking gear (surprisingly useful in a pinch), an Elven rope that unknots on command, and, briefly, Sting and the Phial of Galadriel.\n\nSecret Trivia: Sam is often considered the 'true hero' of the story by J.R.R. Tolkien himself. After the war, he served as the Mayor of the Shire for seven consecutive seven-year terms.",
-    previewUrl: "/data/lotr/assets/samwise-preview.png",
-    backgroundUrl: "/data/lotr/assets/samwise-background.png",
+    previewUrl: "/data/lotr/assets/samwise-preview.webp",
+    backgroundUrl: "/data/lotr/assets/samwise-background.webp",
     color: "#713f12", // Earthy Brown
     powerScore: 70,
     gearBonus: 80,
@@ -56,8 +56,8 @@ export const lotrCharacters: Character[] = [
     description: "A Maia sent to Middle-earth to guide the free peoples. The master of fire and wisdom.",
     lore: "Gandalf, also known as Olórin, is an Istari (Wizard) sent by the Valar to Middle-earth. Originally Gandalf the Grey, he fell in battle against the Balrog of Moria but was sent back as Gandalf the White, higher in power and authority. He is the master of strategy, the wielder of the Ring of Fire (Narya), and the guiding light for the Fellowship.\n\nHis power is not merely in spells, but in inspiration and wisdom. He can command light, fire, and the mind itself, standing as a direct peer to the most powerful beings in Middle-earth. He is a master duelist with his sword, Glamdring, and a powerful user of staff-magic.",
     triviaInfo: "Origin: A Maia created before the world began. He arrived in Middle-earth around the year 1000 of the Third Age. He first appeared in 'The Hobbit'.\n\nBattles: His duel with the Balrog of Moria spanned days and locations, from the depths of the earth to the peak of Celebdil. He led the defenses of Minas Tirith and Helm's Deep.\n\nSpecial Abilities & Gear: Wielder of Glamdring (Foe-hammer) and the Ring Narya. He can manipulate fire, light, and white energy. He rides Shadowfax, the lord of all horses.\n\nSecret Trivia: Gandalf's name means 'Elf-staff' in the language of Men. Despite his elderly appearance, his body is merely a vessel for his celestial spirit, which is immortal and extremely powerful.",
-    previewUrl: "/data/lotr/assets/gandalf-preview.png",
-    backgroundUrl: "/data/lotr/assets/gandalf-background.png",
+    previewUrl: "/data/lotr/assets/gandalf-preview.webp",
+    backgroundUrl: "/data/lotr/assets/gandalf-background.webp",
     color: "#f8fafc", // Pure White
     powerScore: 850,
     gearBonus: 200, // Glamdring / Narya
@@ -80,8 +80,8 @@ export const lotrCharacters: Character[] = [
     description: "The Prince of the Woodland Realm, a master archer with supernatural reflexes.",
     lore: "Legolas is the son of King Thranduil of Mirkwood. A high elf of the Sindar, he possesses the typical elven traits of immortality, enhanced senses, and a deep connection to nature. As a member of the Fellowship, he provided the group's primary long-range firepower and scouting abilities.\n\nIn combat, Legolas is a whirlwind of precision. He can fire arrows with impossible speed and accuracy, even while moving across difficult terrain. His friendship with the dwarf Gimli is legendary, breaking centuries of racial animosity through shared hardship and mutual respect.",
     triviaInfo: "Origin: The Mirkwood Realm. His exact age is unknown, but he is likely hundreds, if not thousands, of years old. He first appeared in 'The Fellowship of the Ring'.\n\nBattles: He fought in the Battle of the Hornburg, the Battle of the Pelennor Fields (famously taking down a Mûmakil single-handedly), and the Battle of the Black Gate.\n\nSpecial Abilities & Gear: Woodland Realm Longbow and Mirkwood daggers. He can walk on snow without sinking and see across vast distances with perfect clarity.\n\nSecret Trivia: Legolas' name means 'Green Leaf' in Sindarin. He is one of the few characters who never seems to tire, needing only to 'dream' while waking to rest his mind.",
-    previewUrl: "/data/lotr/assets/legolas-preview.png",
-    backgroundUrl: "/data/lotr/assets/legolas-background.png",
+    previewUrl: "/data/lotr/assets/legolas-preview.webp",
+    backgroundUrl: "/data/lotr/assets/legolas-background.webp",
     color: "#4ade80", // Elf Green
     powerScore: 170,
     gearBonus: 60,
@@ -104,8 +104,8 @@ export const lotrCharacters: Character[] = [
     description: "A noble dwarf-warrior, a master of the axe and a stalwart companion.",
     lore: "Gimli is the son of Glóin, one of the dwarves who accompanied Bilbo on the quest to Erebor. Representing the Dwarves in the Fellowship, Gimli embodies the strength, endurance, and stubbornness of his people. He is a fierce warrior who relishes the heat of battle, often competing with Legolas for the highest kill count.\n\nDespite his rough exterior, Gimli is a man of deep emotion and appreciation for beauty, particularly the beauty of the Glimmering Caves and the Lady Galadriel. His loyalty to his friends is unshakable, and his endurance allows him to march for days without rest.",
     triviaInfo: "Origin: The Ered Luin (Blue Mountains). He is a descendant of Durin the Deathless. He first appeared in 'The Fellowship of the Ring'.\n\nBattles: He survived the treacherous paths of Moria, the Siege of Helm's Deep, and the final assault on the Black Gate. He is known for his signature 'Leap' and heavy axe strikes.\n\nSpecial Abilities & Gear: He wields a massive double-bitted battle-ax and a smaller walking ax. He wears heavy chainmail of dwarven make.\n\nSecret Trivia: Gimli was given three strands of hair by Galadriel—a gift she had famously refused to the elf-king Fëanor himself. He later became the Lord of the Glimmering Caves.",
-    previewUrl: "/data/lotr/assets/gimli-preview.png",
-    backgroundUrl: "/data/lotr/assets/gimli-background.png",
+    previewUrl: "/data/lotr/assets/gimli-preview.webp",
+    backgroundUrl: "/data/lotr/assets/gimli-background.webp",
     color: "#991b1b", // Dwarf Red/Iron
     powerScore: 155,
     gearBonus: 40,
@@ -128,8 +128,8 @@ export const lotrCharacters: Character[] = [
     description: "A demon of the ancient world, a shadow and flame known as Durin's Bane.",
     lore: "The Balrog, specifically 'Durin's Bane,' is a Maia corrupted by Melkor (Morgoth) in the world's dawn. It is a being of colossal physical power and ancient malice, wielding a whip of fire and a sword of shadow. Having slept in the deep roots of Moria for ages, it was awakened by the greed of the dwarves who delved too deep.\n\nThe Balrog is not merely a monster, but a fallen angel-class entity. It is immune to mundane weapons and can only be challenged by beings of similar spiritual stature, such as Gandalf. Its presence is enough to break the courage of entire armies, and its heat can melt the air itself.",
     triviaInfo: "Origin: A Maia of fire and shadow. It fled the ruin of Morgoth's forces and hid in the deep of Moria. It first appeared in 'The Fellowship of the Ring'.\n\nBattles: Its primary battle was against Gandalf the Grey on the Bridge of Khazad-dûm, and later on the Endless Stair of Celebdil.\n\nSpecial Abilities & Gear: Multi-tailed whip of fire and a massive black sword. It can shroud itself in 'Shadow and Flame,' making it nearly impossible to see or strike accurately.\n\nSecret Trivia: The question of whether Balrogs have wings is one of the most famous debates in Tolkien history. They are described as being 'about the size of two men' but possessing vast spiritual shadows.",
-    previewUrl: "/data/lotr/assets/balrog-preview.png",
-    backgroundUrl: "/data/lotr/assets/balrog-background.png",
+    previewUrl: "/data/lotr/assets/balrog-preview.webp",
+    backgroundUrl: "/data/lotr/assets/balrog-background.webp",
     color: "#450a0a", // Shadow/Flame Crimson
     powerScore: 820,
     gearBonus: 120, // Whip of Fire
@@ -152,8 +152,8 @@ export const lotrCharacters: Character[] = [
     description: "The Dark Lord of Mordor, the master of the One Ring and the forge of power.",
     lore: "Sauron was originally Mairon, a high Maia of Aulë the Smith, before being corrupted by Morgoth. Known as the 'Abhorred,' he is the primary antagonist of the Second and Third Ages. He is a master of deception, shape-shifting, and ancient smith-craft. He forged the **One Ring** to rule over all other Rings of Power, binding the fate of Middle-earth to his own.\n\nIn his physical form at the peak of his power, Sauron is a juggernaut of black iron and malevolence. He wields a massive mace that can shatter entire ranks of warriors with a single swing. However, his greatest power is his ability to dominate the wills of others, twisting monarchs and heroes into his servants through fear and manipulation.",
     triviaInfo: "Origin: A Maia created by Eru before the beginning of time. He served as Morgoth's lieutenant before becoming the second Dark Lord. First appeared by name in 'The Hobbit' (as the Necromancer).\n\nBattles: He led the War of the Elves and Sauron, the Fall of Númenor (as a deceiver), and the War of the Last Alliance, where he was defeated by Isildur at the foot of Mount Doom.\n\nSpecial Abilities & Gear: The One Ring (Master Ring). A massive black mace. Mastery of sorcery, necromancy, and smith-craft. He is 'the lidless eye' who sees all.\n\nSecret Trivia: Sauron once held the shape of a beautiful man named Annatar, 'Lord of Gifts,' to deceive the elven-smiths into forging the Rings of Power. He lost his ability to take a fair form after the destruction of Númenor.",
-    previewUrl: "/data/lotr/assets/sauron-preview.png",
-    backgroundUrl: "/data/lotr/assets/sauron-background.png",
+    previewUrl: "/data/lotr/assets/sauron-preview.webp",
+    backgroundUrl: "/data/lotr/assets/sauron-background.webp",
     color: "#18181b", // Mordor Black/Volcano
     powerScore: 950,
     gearBonus: 300, // The One Ring / Mace
@@ -176,8 +176,8 @@ export const lotrCharacters: Character[] = [
     description: "The first Dark Lord, a fallen Valar and the source of all evil in the world.",
     lore: "Morgoth, originally Melkor, was the most powerful of the Ainur (spirits) created by Eru. He alone amongst the Valar rebelled, seeking to disrupt the Music of the Ainur and claim the world for his own. He is the original source of all shadows, the creator of Orcs, Trolls, and Dragons. He is not just a king, but a god-level entity of pure, primeval malice.\n\nIn the First Age, he ruled from his fortress of Angband, wearing the **Iron Crown** with the three stolen **Silmarils**. His physical form is colossal—a mountain of shadow and armor. He was eventually defeated and cast into the Void, but his influence remains the bedrock upon which all subsequent evil in Middle-earth was built.",
     triviaInfo: "Origin: The first of the Ainur in the Timeless Halls. He arrived in Arda before the beginning of life. He first appeared in 'The Silmarillion'.\n\nBattles: He fought the War for the Sake of the Elves and the War of the Great Jewels. He famously dueled Fingolfin, the High King of the Noldor, at the gates of Angband.\n\nSpecial Abilities & Gear: Grond (The Hammer of the Underworld). The Iron Crown of Angband. Near-absolute command over elemental shadow, ice, and fire.\n\nSecret Trivia: The name 'Morgoth' was given to him by Fëanor after he killed Fëanor's father and stole the Silmarils. It means 'Black Foe of the World'. Before that, he was only called Melkor, 'He Who Arises in Might'.",
-    previewUrl: "/data/lotr/assets/morgoth-preview.png",
-    backgroundUrl: "/data/lotr/assets/morgoth-background.png",
+    previewUrl: "/data/lotr/assets/morgoth-preview.webp",
+    backgroundUrl: "/data/lotr/assets/morgoth-background.webp",
     color: "#09090b", // Abyssal Black
     powerScore: 1000,
     gearBonus: 400, // Grond / Iron Crown
@@ -200,8 +200,8 @@ export const lotrCharacters: Character[] = [
     description: "The Lord of the Nazgûl and the most terrifying servant of Sauron.",
     lore: "The Witch-king was once a mortal king of Men who was corrupted by one of the nine Rings of Power. He became the chief of the **Nazgûl** (Ringwraiths), a being neither dead nor alive, existing primarily in the Wraith-world. He is the master of sorcery and fear, the architect of the fall of Arnor, and the commander of Sauron's armies during the Siege of Minas Tirith.\n\nHe is bound by a prophecy that 'no living man may hinder him,' making him nearly invulnerable to standard weapons. He wields a Morgul-blade, whose tip can break off inside a victim and turn them into a wraith, and a massive black mace that he uses with supernatural strength.",
     triviaInfo: "Origin: A human king of the Second Age. He received his Ring around 2251. He first appeared in 'The Fellowship of the Ring'.\n\nBattles: He led the conquest of the northern kingdoms of Arnor. He famously fought at the Pelennor Fields, where he shattered Eowyn's shield-arm before being defeated by her and Merry.\n\nSpecial Abilities & Gear: Morgul-blade, heavy black mace, and a fell-beast (mount). He can unleash a 'Black Breath' that causes despair and sickness in his enemies.\n\nSecret Trivia: He founded the kingdom of Angmar specifically to destroy the Dúnedain kingdoms of the north while Sauron was still rebuilding his power in secret. His true human name was lost to history.",
-    previewUrl: "/data/lotr/assets/witchking-preview.png",
-    backgroundUrl: "/data/lotr/assets/witchking-background.png",
+    previewUrl: "/data/lotr/assets/witchking-preview.webp",
+    backgroundUrl: "/data/lotr/assets/witchking-background.webp",
     color: "#334155", // Wraith Grey/Iron
     powerScore: 780,
     gearBonus: 180, // Morgul Blade / Mace
@@ -224,8 +224,8 @@ export const lotrCharacters: Character[] = [
     description: "The rightful heir to the throne of Gondor and the greatest human warrior of the Third Age.",
     lore: "Aragorn, son of Arathorn, is the 16th Chieftain of the Dúnedain and the descendant of Isildur. Raised in secret by Elrond in Rivendell, he spent decades as a Ranger of the North, known as **Strider**. He is a polymath, a master tracker, a skilled healer, and a peerless swordsman. His lineage grants him a lifespan and physical vitality far beyond that of normal men.\n\nHe led the Fellowship after Gandalf's fall and eventually accepted his destiny to become King Elessar of the Reunited Kingdom. His journey is one of humility and duty, proving that the strength of Men could still stand against the darkness of Mordor. He wields Andúril, the reforged blade that was once Narsil.",
     triviaInfo: "Origin: Born in the year 2931 of the Third Age. He was raised as 'Estel' (Hope) in Rivendell to keep his bloodline secret from Sauron. He first appeared in 'The Fellowship of the Ring'.\n\nBattles: He fought in countless skirmishes as a Ranger. He led the defense of Helm's Deep and commanded the Host of the West at the Black Gate.\n\nSpecial Abilities & Gear: Andúril, Flame of the West. He is a master of Athelas (kingsfoil) healing. He can command the Army of the Dead due to his heredity.\n\nSecret Trivia: Aragorn was 87 years old during the War of the Ring, appearing like a man in his prime due to his Númenórean blood. He lived to be 210 years old.",
-    previewUrl: "/data/lotr/assets/aragorn-preview.png",
-    backgroundUrl: "/data/lotr/assets/aragorn-background.png",
+    previewUrl: "/data/lotr/assets/aragorn-preview.webp",
+    backgroundUrl: "/data/lotr/assets/aragorn-background.webp",
     color: "#475569", // Ranger Grey/King Blue
     powerScore: 160,
     gearBonus: 60,
@@ -248,8 +248,8 @@ export const lotrCharacters: Character[] = [
     description: "The Lady of Lothlórien, the most powerful and beautiful of the Elves remaining in Middle-earth.",
     lore: "Galadriel is a royal elf of Lothlórien, one of the Noldor who left the Undying Lands in the First Age. She is the bearer of **Nenya**, the Ring of Adamant, which she uses to preserve the beauty and safety of her realm. Her wisdom is legendary, and her power is such that she can see into the minds of others and perceive the movements of the Dark Lord from afar.\n\nIn the Third Age, she was one of the greatest obstacles to Sauron's dominion. She is a master of 'Elven Magic' (which elves simply call an inherent art), capable of creating illusions, healing, and reflecting light that is lethal to the servants of darkness. Her beauty and majesty are so great that many find it difficult to even look upon her.",
     triviaInfo: "Origin: Born in Valinor before the First Age. She is the daughter of Finarfin and Eärwen. She first appeared in 'The Fellowship of the Ring'.\n\nBattles: She was instrumental in the White Council's attack on Dol Guldur, where she personally threw down the walls of the fortress and purified the forest.\n\nSpecial Abilities & Gear: Wielder of Nenya. The Phial of Galadriel (which she gave to Frodo). She can communicate via telepathy and perceive the 'unseen' world.\n\nSecret Trivia: Galadriel was once offered the One Ring by Frodo. She successfully resisted the temptation, an act that finally earned her the right to return to the Undying Lands after thousands of years of exile.",
-    previewUrl: "/data/lotr/assets/galadriel-preview.png",
-    backgroundUrl: "/data/lotr/assets/galadriel-background.png",
+    previewUrl: "/data/lotr/assets/galadriel-preview.webp",
+    backgroundUrl: "/data/lotr/assets/galadriel-background.webp",
     color: "#fef3c7", // Golden Elf Light
     powerScore: 880,
     gearBonus: 150, // Nenya / Mirror
@@ -272,8 +272,8 @@ export const lotrCharacters: Character[] = [
     description: "The head of the White Council who was corrupted by his own desire for power.",
     lore: "Saruman, also known as Curumo, was the leader of the Istari (Wizards) and the most knowledgeable about the Rings of Power. However, his pride and his use of the **Palantír** of Orthanc led him to be corrupted by Sauron. He sought to create his own Ring and raised an army of **Uruk-hai** to take Middle-earth for himself.\n\nSaruman's power lies in his voice—a hypnotic, persuasive force that can bend even the strongest wills to his service. He is a master technician, blending magic with industrial machinery to create devastating weapons. Though he fell from grace, his magical potency remains immense, rivaling Gandalf's.",
     triviaInfo: "Origin: A Maia created before the world. He arrived in Middle-earth as the most powerful of the five Wizards. He first appeared in 'The Fellowship of the Ring'.\n\nBattles: He orchestrated the invasion of Rohan and the Siege of Helm's Deep. His 'battle' was often one of logistics and psychological warfare from his tower of Orthanc.\n\nSpecial Abilities & Gear: The Staff of Saruman. The Palantír of Orthanc. A voice of absolute command. Mastery of 'The Voice' and industrial alchemy.\n\nSecret Trivia: Saruman actually succeeded in forging his own 'Lesser Ring,' which he used to enhance his own power (he calls himself 'Saruman Ring-maker'). His name in the language of the North means 'Man of Skill'.",
-    previewUrl: "/data/lotr/assets/saruman-preview.png",
-    backgroundUrl: "/data/lotr/assets/saruman-background.png",
+    previewUrl: "/data/lotr/assets/saruman-preview.webp",
+    backgroundUrl: "/data/lotr/assets/saruman-background.webp",
     color: "#64748b", // Orthanc Grey/White
     powerScore: 840,
     gearBonus: 180, // Palantír / Staff
@@ -296,8 +296,8 @@ export const lotrCharacters: Character[] = [
     description: "The oldest of the Ents, a shepherd of trees with ancient strength.",
     lore: "Treebeard, or Fangorn, is the oldest living creature in Middle-earth (alongside Tom Bombadil). An Ent, he is a 'Shepherd of the Trees,' tasked with protecting the forests from destruction. He is slow to anger, but when 'roused' by the industrial devastation of Saruman, he led the Ents in a unstoppable assault on Isengard.\n\nTreebeard possesses immense physical strength—he can crush stone like bread and move with a ponderous but inevitable force. He is highly resistant to most humanoid weapons and carries the weight of thousands of years of memory. Being 'hasty' is his greatest dislike; he calculates every move with the patient wisdom of a forest.",
     triviaInfo: "Origin: One of the 'First-born' of the world, created by Yavanna to protect the trees. He first appeared in 'The Two Towers'.\n\nBattles: The Last March of the Ents against Isengard, where his people destroyed the dams and flooded the industrial pits of Saruman.\n\nSpecial Abilities & Gear: Immense height and density. Root-like limbs capable of shattering fortresses. Long-range rock throwing.\n\nSecret Trivia: Treebeard's real name is so long that it contains the entire history of his life and his forest. He is'very old, even for an Ent,' and is one of the few who still remembers the Entwives who were lost ages ago.",
-    previewUrl: "/data/lotr/assets/treebeard-preview.png",
-    backgroundUrl: "/data/lotr/assets/treebeard-background.png",
+    previewUrl: "/data/lotr/assets/treebeard-preview.webp",
+    backgroundUrl: "/data/lotr/assets/treebeard-background.webp",
     color: "#3f6212", // Forest Green/Bark
     powerScore: 700,
     gearBonus: 0,
@@ -320,8 +320,8 @@ export const lotrCharacters: Character[] = [
     description: "A creature twisted by the One Ring, consumed by his obsession with his 'Precious'.",
     lore: "Gollum was once a Hobbit-like creature named Sméagol before he found the One Ring. The Ring's influence extended his life for over 500 years, twisting his body and mind into a pale, skeletal shadow. He possesses a dual personality—the remains of Sméagol and the murderous Gollum—both driven by an insatiable need for the Ring.\n\nGollum is a master of stealth and survival in the harshest environments. He is surprisingly strong for his size and can climb sheer stone walls with ease. In combat, he relies on ambushes, strangulation, and his near-invisible movement in the dark. He is a tragic figure, both a victim and a villain.",
     triviaInfo: "Origin: A Stoor Hobbit from the Gladden Fields. He first appeared in 'The Hobbit'.\n\nBattles: He spent centuries hunting 'the thief' (Bilbo and then Frodo). He fought the orcs of Cirith Ungol and finally battled Frodo at the Crack of Doom.\n\nSpecial Abilities & Gear: Master of stealth and climbing. Extremely resilient to physical hardship. He has no gear but his own 'wicked' teeth and hands.\n\nSecret Trivia: Gollum's name comes from the wet, gurgling sound he makes in his throat. He lived in the roots of the Misty Mountains for nearly 500 years, eating raw fish and the occasional lone goblin.",
-    previewUrl: "/data/lotr/assets/gollum-preview.png",
-    backgroundUrl: "/data/lotr/assets/gollum-background.png",
+    previewUrl: "/data/lotr/assets/gollum-preview.webp",
+    backgroundUrl: "/data/lotr/assets/gollum-background.webp",
     color: "#52525b", // Cave Grey
     powerScore: 55,
     gearBonus: 0,
@@ -344,8 +344,8 @@ export const lotrCharacters: Character[] = [
     description: "The primeval spider-demon of the abyss, who consumed the light of the Two Trees.",
     lore: "Ungoliant is a primordial being of darkness in the shape of a monstrous spider. Her origins are unknown, but she is suggested to have come from the Void itself. She was Morgoth's first and most terrifying ally in the First Age, helping him destroy the **Two Trees of Valinor** and consuming their light to grow to a colossal, world-threatening size.\n\nUngoliant is not just a monster, but a cosmic hunger. She creates 'Unlight,' a supernatural darkness that no light can pierce. She grew so powerful after consuming the light of Valinor that she nearly overpowered Morgoth himself when he refused to give her the Silmarils. She is the mother of all Great Spiders, including Shelob.",
     triviaInfo: "Origin: The Void or the darkness surrounding Arda. She first appeared in 'The Silmarillion'.\n\nBattles: She and Morgoth together devastated Valinor. She later fought Morgoth and his Balrogs when they disputed over the stolen gems.\n\nSpecial Abilities & Gear: Unlight (Darkness that consumes light). Web of Shadow. Nigh-infinite growth based on consumption. She has no gear, being a force of nature.\n\nSecret Trivia: Ungoliant was so eternally hungry that it is said she eventually consumed herself when there was nothing else left to eat. Her name means 'Dark Spider' in Sindarin.",
-    previewUrl: "/data/lotr/assets/ungoliant-preview.png",
-    backgroundUrl: "/data/lotr/assets/ungoliant-background.png",
+    previewUrl: "/data/lotr/assets/ungoliant-preview.webp",
+    backgroundUrl: "/data/lotr/assets/ungoliant-background.webp",
     color: "#0c0a09", // Void Black
     powerScore: 980,
     gearBonus: 0,

@@ -9,8 +9,14 @@ export function getAssetPath(path: string) {
   if (!path) return path;
   if (path.startsWith('http')) return path;
   
+  // Intercept and rewrite image extensions to .webp to match the optimized files on disk
+  let finalPath = path;
+  if (finalPath.match(/\.(png|jpe?g)$/i)) {
+    finalPath = finalPath.replace(/\.(png|jpe?g)$/i, '.webp');
+  }
+  
   const basePath = process.env.NODE_ENV === 'production' ? '/character-clash' : '';
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  const cleanPath = finalPath.startsWith('/') ? finalPath : `/${finalPath}`;
   
   return `${basePath}${cleanPath}`;
 }
