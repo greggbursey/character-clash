@@ -11,7 +11,7 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/leo-preview.webp",
     backgroundUrl: "/data/tmnt/assets/leo-background.webp",
     color: "#3b82f6",
-    powerScore: 125,
+    powerScore: 138,
     gearBonus: 40,
     prepBonus: 60,
     gearDescription: "### Tactical Arsenal\n- **Twin Katanas**: Masterfully forged carbon-steel blades.\n- **Shuriken**: Balanced throwing stars for ranged distraction.\n- **Grappling Hook**: Hidden in the belt for rapid vertical movement.",
@@ -35,7 +35,7 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/mikey-preview.webp",
     backgroundUrl: "/data/tmnt/assets/mikey-background.webp",
     color: "#f97316",
-    powerScore: 110,
+    powerScore: 115,
     gearBonus: 30,
     prepBonus: 40,
     gearDescription: "### Freestyle Gear\n- **Nunchaku**: High-speed kinetic weapons used for unpredictable attack angles.\n- **Skateboard**: Custom-built for combat-speed sewer and street mobility.\n- **Kusarigama**: A hooked chain for long-range snagging.",
@@ -59,7 +59,7 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/donnie-preview.webp",
     backgroundUrl: "/data/tmnt/assets/donnie-background.webp",
     color: "#a855f7",
-    powerScore: 115,
+    powerScore: 123,
     gearBonus: 80, // Tech and gadgets
     prepBonus: 70,
     gearDescription: "### Tech Genius Gadgets\n- **Reinforced Bo Staff**: Enhanced with hidden shock-emitters and scanners.\n- **T-Phone**: Provides real-time analysis of enemy vitals and tech weaknesses.\n- **Portable Turret**: Deployable mini-defense unit.",
@@ -83,7 +83,7 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/raph-preview.webp",
     backgroundUrl: "/data/tmnt/assets/raph-background.webp",
     color: "#ef4444",
-    powerScore: 130,
+    powerScore: 145,
     gearBonus: 35,
     prepBonus: 45,
     gearDescription: "### Brutal CQC Gear\n- **Twin Sai**: Close-quarters weapons designed for trapping blades and striking pressure points.\n- **Heavy Hand-Wraps**: Provides extra impact for his raw physical punches.",
@@ -107,7 +107,7 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/splinter-preview.webp",
     backgroundUrl: "/data/tmnt/assets/splinter-background.webp",
     color: "#78350f",
-    powerScore: 155,
+    powerScore: 183,
     gearBonus: 20,
     prepBonus: 100, // Master of prep/wisdom
     gearDescription: "### Master's Tools\n- **Walking Cane**: A simple wooden staff that hides a deadly secret blade.\n- **Herbal Remedies**: Natural salves used for rapid focus and pain management.",
@@ -131,7 +131,7 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/shredder-preview.webp",
     backgroundUrl: "/data/tmnt/assets/shredder-background.webp",
     color: "#52525b",
-    powerScore: 160,
+    powerScore: 190,
     gearBonus: 60, // Bladed armor
     prepBonus: 90,
     gearDescription: "### Kuroi Yoroi Armor\n- **Bladed Gauntlets**: Retractable steel claws for shredding armor.\n- **Spiked Plates**: Offensive-defensive gear that punishes close-range brawlers.",
@@ -179,9 +179,9 @@ export const tmntCharacters: Character[] = [
     previewUrl: "/data/tmnt/assets/krang-preview.webp",
     backgroundUrl: "/data/tmnt/assets/krang-background.webp",
     color: "#ec4899",
-    powerScore: 180, // Android body
+    powerScore: 220, // Android body
     gearBonus: 100, // Technodrome tech
-    prepBonus: 120,
+    prepBonus: 130,
     gearDescription: "### Android Body\n- **Shapeshifting Limbs**: Can transform into axes, shields, and morning stars.\n- **Dimension X Tech**: Incorporated laser systems and reality-warping energy cells.",
     prepDescription: "### Technological Subversion\nKrang uses the Technodrome's sensors to map the molecular structure of the arena, looking for ways to warp reality to his favor.",
     triviaPool: [

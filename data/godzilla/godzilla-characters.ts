@@ -11,8 +11,8 @@ export const godzillaCharacters: Character[] = [
     previewUrl: "/data/godzilla/assets/godzilla-preview.webp",
     backgroundUrl: "/data/godzilla/assets/godzilla-background.webp",
     color: "#166534",
-    powerScore: 1000,
-    gearBonus: 200, // Radiation absorption/Evolutions
+    powerScore: 8200,
+    gearBonus: 250, // Radiation absorption/Evolutions
     prepBonus: 50,
     gearDescription: "### Dormant Radiation\n- **Nuclear Core**: Constantly absorbs ambient radiation, fueling his atomic breath.\n- **Dorsal Fins**: Act as energy conductors and heat sinks for his thermonuclear pulses.",
     prepDescription: "### Deep-Sea Hibernation\nGodzilla rests in highly radioactive ocean trenches, saturating his cells with energy to prepare for a multi-day planetary defense.",
@@ -35,8 +35,8 @@ export const godzillaCharacters: Character[] = [
     previewUrl: "/data/godzilla/assets/kingkong-preview.webp",
     backgroundUrl: "/data/godzilla/assets/kingkong-background.webp",
     color: "#78350f",
-    powerScore: 850,
-    gearBonus: 120, // Axe (Godzilla fin)
+    powerScore: 5725,
+    gearBonus: 130, // Axe (Godzilla fin)
     prepBonus: 100, // Tool use/Smart fighter
     gearDescription: "### Primal Titan Tools\n- **Titan Battle Axe**: Crafted from a Godzilla dorsal fin, capable of absorbing and discharging atomic energy.\n- **Heavily Braided Vines**: Used as makeshift restraints or climbing aids.",
     prepDescription: "### Skull Island Scouting\nKong studies the terrain, identifying environmental hazards and traps to use his superior mobility and intelligence against heavier foes.",
@@ -59,9 +59,9 @@ export const godzillaCharacters: Character[] = [
     previewUrl: "/data/godzilla/assets/mothra-preview.webp",
     backgroundUrl: "/data/godzilla/assets/mothra-background.webp",
     color: "#67e8f9",
-    powerScore: 850,
-    gearBonus: 150, // Silk/Energy transfer
-    prepBonus: 200, // Ancient wisdom/Rebirth
+    powerScore: 5725,
+    gearBonus: 175, // Silk/Energy transfer
+    prepBonus: 250, // Ancient wisdom/Rebirth
     gearDescription: "### Divine Bioluminescence\n- **Antennae Rays**: Project focused beams of 'god-light' for navigation and combat.\n- **Poisonous Scales**: Released from her wings to disorient and weaken more aggressive Titans.",
     prepDescription: "### Eternal Rebirth Ritual\nMothra synchronizes her spirit with the Earth's life force, preparing to sacrifice her current form to empower her allies through soul-transfer.",
     triviaPool: [
@@ -83,7 +83,7 @@ export const godzillaCharacters: Character[] = [
     previewUrl: "/data/godzilla/assets/rodan-preview.webp",
     backgroundUrl: "/data/godzilla/assets/rodan-background.webp",
     color: "#ea580c",
-    powerScore: 800,
+    powerScore: 4900,
     gearBonus: 80, // Volcanic armor
     prepBonus: 40,
     gearDescription: "### Volcanic Exoskeleton\n- **Magma-Infused Wings**: Coated in cooling lava that provides extreme heat resistance.\n- **Uranium Breath**: A secondary radioactive heat beam developed through volcanic mutation.",
@@ -107,9 +107,9 @@ export const godzillaCharacters: Character[] = [
     previewUrl: "/data/godzilla/assets/mechagodzilla-preview.webp",
     backgroundUrl: "/data/godzilla/assets/mechagodzilla-background.webp",
     color: "#52525b",
-    powerScore: 920,
-    gearBonus: 300, // Limitless arsenal
-    prepBonus: 150, // Targeting systems
+    powerScore: 6880,
+    gearBonus: 400, // Limitless arsenal
+    prepBonus: 175, // Targeting systems
     gearDescription: "### Apex Cybernetic Arsenal\n- **Proton Scream**: A mechanical replica of the atomic breath with 100% targeting accuracy.\n- **Missile Batteries**: Hundreds of 'Finger Missiles' for area-of-effect destruction.",
     prepDescription: "### AI Combat Simulation\nMechagodzilla's onboard computer runs millions of battle simulations against its target, identifying the most efficient sub-second killing blow.",
     triviaPool: [
@@ -131,7 +131,7 @@ export const godzillaCharacters: Character[] = [
     previewUrl: "/data/godzilla/assets/muto-preview.webp",
     backgroundUrl: "/data/godzilla/assets/muto-background.webp",
     color: "#18181b",
-    powerScore: 680,
+    powerScore: 2920,
     gearBonus: 100, // EMP/Coordination
     prepBonus: 40,
     gearDescription: "### Parasitic Biology\n- **EMP Gland**: Emits a massive electromagnetic pulse that disables all modern electrical systems.\n- **Climbing Limbs**: Specifically evolved to scale skyscrapers and Titan carcasses.",
@@ -155,8 +155,8 @@ export const godzillaCharacters: Character[] = [
     previewUrl: "/data/godzilla/assets/kinggidorah-preview.webp",
     backgroundUrl: "/data/godzilla/assets/kinggidorah-background.webp",
     color: "#eab308",
-    powerScore: 1050,
-    gearBonus: 250,
+    powerScore: 8425,
+    gearBonus: 325,
     prepBonus: 100,
     gearDescription: "### Cosmic Bio-Electrical Aura\n- **Gravity Beams**: Concentrated golden lightning released from all three mouths simultaneously.\n- **Hurricane Wings**: Massive structures that can generate localized category-6 storms on command.",
     prepDescription: "### Global Storm Generation\nGhidorah terraforms the planet's atmosphere, creating a massive electrical storm network that feeds his energy and weakens his biological opponents.",
@@ -179,7 +179,7 @@ export const godzillaCharacters: Character[] = [
     previewUrl: "/data/godzilla/assets/ebirah-preview.webp",
     backgroundUrl: "/data/godzilla/assets/ebirah-background.webp",
     color: "#991b1b",
-    powerScore: 450,
+    powerScore: 1000,
     gearBonus: 30,
     prepBonus: 10,
     gearDescription: "### Marine Exoskeleton\n- **Crushing Pincers**: Asymmetrical claws specialized for both bone-shattering pressure and precise impalement.\n- **Reinforced Carapace**: A thick, calcified shell that provides natural defense against depth charges and physical strikes.",
@@ -203,9 +203,9 @@ export const godzillaCharacters: Character[] = [
     previewUrl: "/data/godzilla/assets/kumonga-preview.webp",
     backgroundUrl: "/data/godzilla/assets/kumonga-background.webp",
     color: "#ca8a04",
-    powerScore: 520,
+    powerScore: 1280,
     gearBonus: 60,
-    prepBonus: 120,
+    prepBonus: 130,
     gearDescription: "### High-Tensile Spinnerets\n- **Steel-Hard Silk**: Webbing that can withstand the weight of multiple Titans and is resistant to most physical attacks.\n- **Neurotoxic Venom**: Delivers a paralyzing toxin through her massive, articulated mandibles.",
     prepDescription: "### Forest Web-Netting\nKumonga meticulously strings the nearby terrain with nearly invisible trip-wires of silk, ensuring that any movement from her opponent will trigger a cascade of restraining webs.",
     triviaPool: [
@@ -227,8 +227,8 @@ export const godzillaCharacters: Character[] = [
     previewUrl: "/data/godzilla/assets/monsterx-preview.webp",
     backgroundUrl: "/data/godzilla/assets/monsterx-background.webp",
     color: "#18181b",
-    powerScore: 1100,
-    gearBonus: 300,
+    powerScore: 8650,
+    gearBonus: 400,
     prepBonus: 50,
     gearDescription: "### Keizer Transformation Core\n- **Destroyed Gravity Bolts**: Dark energy beams fired from the eyes of Monster X or the mouths of Keizer Ghidorah.\n- **Bio-Siphon Jaws**: Allows for the direct extraction of raw atomic or biological energy from an opponent's body.",
     prepDescription: "### Extraterrestrial Staging\nMonster X remains encased in his 'Gorath' meteor, absorbing the background radiation of space to ensure he arrives on the battlefield at 100% Keizer-energy capacity.",
@@ -251,7 +251,7 @@ export const godzillaCharacters: Character[] = [
     previewUrl: "/data/godzilla/assets/hedorah-preview.webp",
     backgroundUrl: "/data/godzilla/assets/hedorah-background.webp",
     color: "#57534e",
-    powerScore: 880,
+    powerScore: 6220,
     gearBonus: 100,
     prepBonus: 30,
     gearDescription: "### Toxic Effluent Composition\n- **Hedrium Beams**: Concentrated streams of radioactive, toxic light fired from his primary sensory organs.\n- **Corrosive Sludge**: A body composed of pure, pH-negative muck that eats through any known material on contact.",

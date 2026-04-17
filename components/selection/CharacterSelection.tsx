@@ -181,13 +181,27 @@ export default function CharacterSelection({
                           isSelected ? 'scale-105 z-10' : 'hover:scale-105 hover:z-10'
                         }`}
                       >
-                        <div 
-                          className={`w-full aspect-square rounded-xl md:rounded-2xl overflow-hidden border-2 transition-all duration-300 ${
-                            isSelected ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'
+                        <motion.div 
+                          className={`w-full aspect-square rounded-xl md:rounded-2xl overflow-hidden border-2 transition-all duration-300 relative ${
+                            isSelected ? 'opacity-100 z-10' : 'opacity-60 group-hover:opacity-100'
                           }`}
+                          animate={isSelected ? {
+                            boxShadow: [
+                              `0 0 15px ${char.color}80, inset 0 0 15px ${char.color}80`, 
+                              `0 0 40px ${char.color}, inset 0 0 30px ${char.color}`, 
+                              `0 0 15px ${char.color}80, inset 0 0 15px ${char.color}80`
+                            ],
+                            borderColor: [
+                              char.color, 
+                              '#ffffff', 
+                              char.color
+                            ]
+                          } : {
+                            boxShadow: `0 0 0px transparent, inset 0 0 0px transparent`,
+                            borderColor: 'transparent'
+                          }}
+                          transition={isSelected ? { duration: 2, repeat: Infinity, ease: "easeInOut" } : { duration: 0.3 }}
                           style={{
-                            borderColor: isSelected ? char.color : 'transparent',
-                            boxShadow: isSelected ? `0 0 20px ${char.color}` : `0 0 0px transparent`,
                             backgroundColor: 'rgba(0,0,0,0.5)'
                           }}
                         >
@@ -210,7 +224,7 @@ export default function CharacterSelection({
                             style={{ objectPosition: char.imagePosition || 'center' }}
                             referrerPolicy="no-referrer"
                           />
-                        </div>
+                        </motion.div>
                         
                         {/* Selection Indicators */}
                         {mode === 'battle' && (isP1 || isP2) && (
@@ -249,11 +263,18 @@ export default function CharacterSelection({
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] md:w-max bg-zinc-950/80 backdrop-blur-xl border border-zinc-800/80 p-3 md:p-4 rounded-3xl flex items-center justify-between md:justify-center gap-4 md:gap-8 shadow-[0_10px_40px_rgba(0,0,0,0.8)] z-50 animate-in slide-in-from-bottom-5">
           {/* P1 Section */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl border border-zinc-700 overflow-hidden bg-zinc-900 shadow-inner flex items-center justify-center relative">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl overflow-hidden bg-zinc-900 flex items-center justify-center relative">
               {char1 ? (
                 <>
                   <Image src={getAssetPath(char1.previewUrl)} alt={char1.name} fill className="object-cover opacity-80" />
-                  <div className="absolute inset-0 border-2 rounded-xl" style={{ borderColor: char1.color }} />
+                  <motion.div 
+                    className="absolute inset-0 border-2 rounded-xl z-10" 
+                    animate={{ 
+                      borderColor: [char1.color, '#fff', char1.color],
+                      boxShadow: [`inset 0 0 15px ${char1.color}`, `inset 0 0 2px ${char1.color}00`, `inset 0 0 15px ${char1.color}`]
+                    }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  />
                 </>
               ) : (
                 <span className="text-zinc-700 font-black text-xs">P1</span>
@@ -269,11 +290,18 @@ export default function CharacterSelection({
 
           {/* P2 Section */}
           <div className="flex items-center gap-3 flex-row-reverse sm:flex-row">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl border border-zinc-700 overflow-hidden bg-zinc-900 shadow-inner flex items-center justify-center relative">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl overflow-hidden bg-zinc-900 flex items-center justify-center relative">
               {char2 ? (
                 <>
                   <Image src={getAssetPath(char2.previewUrl)} alt={char2.name} fill className="object-cover opacity-80" />
-                  <div className="absolute inset-0 border-2 rounded-xl" style={{ borderColor: char2.color }} />
+                  <motion.div 
+                    className="absolute inset-0 border-2 rounded-xl z-10" 
+                    animate={{ 
+                      borderColor: [char2.color, '#fff', char2.color],
+                      boxShadow: [`inset 0 0 15px ${char2.color}`, `inset 0 0 2px ${char2.color}00`, `inset 0 0 15px ${char2.color}`]
+                    }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  />
                 </>
               ) : (
                 <span className="text-zinc-700 font-black text-xs">P2</span>

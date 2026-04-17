@@ -11,9 +11,9 @@ export const transformersCharacters: Character[] = [
     previewUrl: "/data/transformers/assets/optimus-preview.webp",
     backgroundUrl: "/data/transformers/assets/optimus-background.webp",
     color: "#ef4444",
-    powerScore: 820,
-    gearBonus: 150, // Matrix of Leadership / Ion Blaster
-    prepBonus: 120, // Tactical Commander
+    powerScore: 5230,
+    gearBonus: 175, // Matrix of Leadership / Ion Blaster
+    prepBonus: 130, // Tactical Commander
     gearDescription: "### Sentinel of Cybertron\r\n- **Matrix of Leadership**: An ancient artifact containing the wisdom of the Primes and a massive reservoir of pure energy.\r\n- **Ion Blaster**: A high-output energy rifle capable of disabling heavy Decepticon plating from extreme range.",
     prepDescription: "### Freedom's Strategy\r\nOptimus coordinates with his Autobot team through the global 'Teletraan-1' network, identifying environmental advantages that allow for the protection of civilian life while neutralizing the threat.",
     triviaPool: [
@@ -36,9 +36,9 @@ export const transformersCharacters: Character[] = [
     previewUrl: "/data/transformers/assets/megatron-preview.webp",
     backgroundUrl: "/data/transformers/assets/megatron-background.webp",
     color: "#52525b",
-    powerScore: 830,
-    gearBonus: 130, // Fusion Cannon / Mace
-    prepBonus: 130, // Gladiator Tactics
+    powerScore: 5395,
+    gearBonus: 145, // Fusion Cannon / Mace
+    prepBonus: 145, // Gladiator Tactics
     gearDescription: "### Tyrant's Arsenal\r\n- **Fusion Cannon**: A devastating long-range projector linked directly to his reactor core for near-infinite destructive potential.\r\n- **Energon Mace**: A flail of pure, unstable energy used to crush Autobot shielding and spark-chambers.",
     prepDescription: "### Gladiator's Logic\r\nMegatron utilizes his experience in the pits of Kaon to identify his opponent's psychological and structural flaws, exploiting them with a single, overwhelming strike of total brutality.",
     triviaPool: [
@@ -61,9 +61,9 @@ export const transformersCharacters: Character[] = [
     previewUrl: "/data/transformers/assets/bumblebee-preview.webp",
     backgroundUrl: "/data/transformers/assets/bumblebee-background.webp",
     color: "#eab308",
-    powerScore: 480,
+    powerScore: 1120,
     gearBonus: 80, 
-    prepBonus: 120, // Scout intelligence
+    prepBonus: 130, // Scout intelligence
     gearDescription: "### Scout's Loadout\r\n- **Plasma 'Stinger' Blaster**: Mid-range energy projectors mounted within his forearms for rapid-response fire.\r\n- **Advanced Sensor Array**: High-fidelity scanners that can detect cloaked Decepticons and structural weaknesses.",
     prepDescription: "### Stealth Reconnaissance\r\nBumblebee utilizes his small size and high-speed alt-mode to scout the arena beforehand, identifying escape routes and supply caches that he can exploit during the battle.",
     triviaPool: [
@@ -86,9 +86,9 @@ export const transformersCharacters: Character[] = [
     previewUrl: "/data/transformers/assets/starscream-preview.webp",
     backgroundUrl: "/data/transformers/assets/starscream-background.webp",
     color: "#94a3b8",
-    powerScore: 680,
+    powerScore: 2920,
     gearBonus: 90, 
-    prepBonus: 150, // Deceptive Mastermind
+    prepBonus: 175, // Deceptive Mastermind
     gearDescription: "### Aerial Supremacy\r\n- **Null-Ray Projectors**: Specialized beams that disrupt the molecular bonds of armored targets and neutralize sentient electronics.\r\n- **Supersonic Thrusters**: Grants extreme altitude and speed, allowing for hit-and-run tactics that few can follow.",
     prepDescription: "### Treacherous Gambit\r\nStarscream identifies the most likely moment of his opponent's weakness, preparing a double-betrayal or a deceptive retreat that lures the target into a pre-arranged kill box.",
     triviaPool: [
@@ -111,9 +111,9 @@ export const transformersCharacters: Character[] = [
     previewUrl: "/data/transformers/assets/soundwave-preview.webp",
     backgroundUrl: "/data/transformers/assets/soundwave-background.webp",
     color: "#2563eb",
-    powerScore: 700,
-    gearBonus: 200, // Mini-cons / Sonic blasters
-    prepBonus: 180, // Master of information
+    powerScore: 3250,
+    gearBonus: 250, // Mini-cons / Sonic blasters
+    prepBonus: 220, // Master of information
     gearDescription: "### Intelligence Hub\r\n- **Mini-Con Deployment**: Can launch Laserbeak (aerial recon) or Ravage (stealth hunter) directly from his frame.\r\n- **Concussion Blaster**: A high-frequency sonic weapon that can vibrate matter to the point of structural failure.",
     prepDescription: "### Signal Jamming\r\nSoundwave intercepts the opponent's tactical communications and sensory data, broadcasting counter-frequencies that blind their HUD and deafen their sensors before the first strike.",
     triviaPool: [
@@ -136,9 +136,9 @@ export const transformersCharacters: Character[] = [
     previewUrl: "/data/transformers/assets/ratchet-preview.webp",
     backgroundUrl: "/data/transformers/assets/ratchet-background.webp",
     color: "#ffffff",
-    powerScore: 450,
-    gearBonus: 140, // Medical tools / Shields
-    prepBonus: 180, // Scientific analysis
+    powerScore: 1000,
+    gearBonus: 160, // Medical tools / Shields
+    prepBonus: 220, // Scientific analysis
     gearDescription: "### Field Medical Kit\r\n- **Molecular Welders**: Precision laser tools for rapid repair of armored plating and critical hydraulics.\r\n- **Diagnostic HUD**: Real-time scanner that identifies the physiological and structural weak points of any being.",
     prepDescription: "### Anatomical Assessment\r\nRatchet analyzes the opponent's biology and physical structure, identifying precisely which joint or circuit to overload to achieve a non-lethal neutralization.",
     triviaPool: [
@@ -161,8 +161,8 @@ export const transformersCharacters: Character[] = [
     previewUrl: "/data/transformers/assets/ironhide-preview.webp",
     backgroundUrl: "/data/transformers/assets/ironhide-background.webp",
     color: "#ef4444",
-    powerScore: 580,
-    gearBonus: 220, // Huge Arsenal
+    powerScore: 1520,
+    gearBonus: 280, // Huge Arsenal
     prepBonus: 50,
     gearDescription: "### Heavy Ordinance Cabinet\r\n- **Liquid Nitrogen Blaster**: Rapidly cools and shatters the structural integrity of Decepticon armor.\r\n- **Trithyllium-Steel Plating**: An exceptionally dense alloy that allows him to tank orbital-level strikes.",
     prepDescription: "### Weapon Calibration\r\nIronhide spends his time pre-filling his weapon banks with the specific thermal or kinetic rounds most effective against his target's known defensive composite.",
@@ -186,9 +186,9 @@ export const transformersCharacters: Character[] = [
     previewUrl: "/data/transformers/assets/jazz-preview.webp",
     backgroundUrl: "/data/transformers/assets/jazz-background.webp",
     color: "#94a3b8",
-    powerScore: 500,
+    powerScore: 1200,
     gearBonus: 100, 
-    prepBonus: 120, // Special Ops planning
+    prepBonus: 130, // Special Ops planning
     gearDescription: "### Special Ops Suite\r\n- **Sonic Blasters**: High-fidelity sound cannons that can disorient targets and shatter silicate-based armor.\r\n- **Hologram Generator**: Creates photorealistic decoys of himself or his teammates to confuse enemy targeting.",
     prepDescription: "### Cultural Infiltration\r\nJazz researches the 'vibe' and environmental rhythm of the battlefield, identifying precisely where a well-placed distraction or rhythmic disruption will have the most impact.",
     triviaPool: [
@@ -211,7 +211,7 @@ export const transformersCharacters: Character[] = [
     previewUrl: "/data/transformers/assets/sideswipe-preview.webp",
     backgroundUrl: "/data/transformers/assets/sideswipe-background.webp",
     color: "#ef4444",
-    powerScore: 520,
+    powerScore: 1280,
     gearBonus: 100, 
     prepBonus: 60,
     gearDescription: "### Duelist's Blades\r\n- **Cybertanium Sabers**: Retractable, high-frequency blades that can slice through even the densest Decepticon alloys.\r\n- **Flare Launcher**: Deploys high-intensity heat-shimmer flares for distracting thermal-guided missiles.",
@@ -236,9 +236,9 @@ export const transformersCharacters: Character[] = [
     previewUrl: "/data/transformers/assets/lockdown-preview.webp",
     backgroundUrl: "/data/transformers/assets/lockdown-background.webp",
     color: "#18181b",
-    powerScore: 620,
-    gearBonus: 280, // Massive Bounty Arsenal
-    prepBonus: 150, // Master Hunter
+    powerScore: 1930,
+    gearBonus: 370, // Massive Bounty Arsenal
+    prepBonus: 175, // Master Hunter
     gearDescription: "### Hunter's Collection\r\n- **Cranial Sniper Cannon**: A massive, long-range energy weapon that deploys from his facial structure for absolute precision.\r\n- **EMP Hook-Grapples**: Stolen technology that can tether a target and disable their internal servos on impact.",
     prepDescription: "### Bounty Analysis\r\nLockdown studies the combat logs and psychological files of his 'mark,' preparing a customized set of disabling traps and specialized ammunition for their specific weaknesses.",
     triviaPool: [
@@ -261,8 +261,8 @@ export const transformersCharacters: Character[] = [
     previewUrl: "/data/transformers/assets/scourge-preview.webp",
     backgroundUrl: "/data/transformers/assets/scourge-background.webp",
     color: "#450a0a",
-    powerScore: 760,
-    gearBonus: 160, // Unicron-tech
+    powerScore: 4240,
+    gearBonus: 190, // Unicron-tech
     prepBonus: 80, 
     gearDescription: "### Terrorcon Dread\r\n- **Spark-Drain Blade**: An arm-mounted weapon that can absorb and neutralize the life-energy of its targets on contact.\r\n- **Dark-Metal Plating**: An ultra-dense, corrupted alloy provided by Unicron that can withstand planetary-scale impacts.",
     prepDescription: "### Heralds' Ritual\r\nScourge channel the dark energy of Unicron, creating a localized field of 'dark-side' radiation that drains the stamina and speed of any biological or mechanical hero.",
@@ -286,7 +286,7 @@ export const transformersCharacters: Character[] = [
     previewUrl: "/data/transformers/assets/bonecrusher-preview.webp",
     backgroundUrl: "/data/transformers/assets/bonecrusher-background.webp",
     color: "#78350f",
-    powerScore: 550,
+    powerScore: 1400,
     gearBonus: 90, 
     prepBonus: 20,
     gearDescription: "### Demolition Kit\r\n- **Hydraulic Claw**: A massive, articulated arm capable of exerting millions of tons of pressure per square inch.\r\n- **Mine-Clearing Fork**: A front-mounted array that can deflect and trigger explosives safely away from his frame.",

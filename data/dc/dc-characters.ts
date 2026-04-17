@@ -11,8 +11,8 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/superman-preview.webp",
     backgroundUrl: "/data/dc/assets/superman-background.webp",
     color: "#3b82f6",
-    powerScore: 950,
-    gearBonus: 150,
+    powerScore: 7375,
+    gearBonus: 175,
     prepBonus: 100,
     gearDescription: "### Kryptonian Heritage\n- **Phantom Zone Projector**: A device that can exile extremely dangerous threats to a timeless dimension.\n- **Solar Suit**: Specifically designed to maximize his absorption of yellow sun radiation.",
     prepDescription: "### Fortress Training\nSuperman utilizes the advanced Kryptonian technology of his Fortress of Solitude to run simulations and gain the knowledge of a thousand civilizations.",
@@ -35,9 +35,9 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/batman-preview.webp",
     backgroundUrl: "/data/dc/assets/batman-background.webp",
     color: "#52525b",
-    powerScore: 200,
-    gearBonus: 450, // Batsuits/Gadgets
-    prepBonus: 650, // World's Greatest Detective/Planner
+    powerScore: 250,
+    gearBonus: 1000, // Batsuits/Gadgets
+    prepBonus: 2425, // World's Greatest Detective/Planner
     gearDescription: "### The Bat-Arsenal\n- **Hellbat Armor**: A suit designed for cosmic threats, forged by the Justice League to allow Bruce to fight gods.\n- **Universal Batarangs**: Hundreds of specialized variants (Kryptonite-tipped, EMP, sonic, explosive).",
     prepDescription: "### 'Prep Time' Legend\n**Batman has a plan for everyone.** He has cataloged the weaknesses of every hero and villain, preparing specific contingency protocols and specialized equipment for any encounter.",
     triviaPool: [
@@ -59,9 +59,9 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/joker-preview.webp",
     backgroundUrl: "/data/dc/assets/joker-background.webp",
     color: "#a855f7",
-    powerScore: 150,
+    powerScore: 175,
     gearBonus: 60, // Chaos toxins
-    prepBonus: 200, // Unpredictable planning
+    prepBonus: 250, // Unpredictable planning
     gearDescription: "### Clown Prince's Toys\n- **Joker Venom**: A specialized neurotoxin that causes uncontrollable laughter followed by total paralysis.\n- **Acid Flower & Joy Buzzer**: Lethal versions of traditional prank shop items.",
     prepDescription: "### Chaotic Mastermind\nThe Joker's plans are so irrational and senseless that even the 'World's Greatest Detective' struggles to track his next move until it's too late.",
     triviaPool: [
@@ -83,8 +83,8 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/wonderwoman-preview.webp",
     backgroundUrl: "/data/dc/assets/wonderwoman-background.webp",
     color: "#eab308",
-    powerScore: 880,
-    gearBonus: 120, // Lasso/Bracers
+    powerScore: 6220,
+    gearBonus: 130, // Lasso/Bracers
     prepBonus: 50,
     gearDescription: "### Gifts of the Gods\n- **Lasso of Truth**: An indestructible golden rope that compels anyone in its grasp to tell the absolute truth.\n- **Bracers of Submission**: Forged from Zeus's aegis, capable of deflecting any projectile or energy beam.",
     prepDescription: "### Amazonian Battle Rite\nDiana enters a focused state of ancient warrior meditation, aligning her spirit with her sisters on Themyscira to gain the combat experience of ten thousand years.",
@@ -107,7 +107,7 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/flash-preview.webp",
     backgroundUrl: "/data/dc/assets/flash-background.webp",
     color: "#ef4444",
-    powerScore: 500,
+    powerScore: 1200,
     gearBonus: 30,
     prepBonus: 40,
     gearDescription: "### Speed Force Tech\n- **Friction-Proof Suit**: Specifically engineered to withstand the extreme heat and air pressure of near-light-speed travel.\n- **Cosmic Treadmill Integration**: (In some versions) allows him to precisely calculate time-travel jumps.",
@@ -131,9 +131,9 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/lexluthor-preview.webp",
     backgroundUrl: "/data/dc/assets/lexluthor-background.webp",
     color: "#22c55e",
-    powerScore: 350,
-    gearBonus: 400, // Warsuit/Kryptonite
-    prepBonus: 350, // Genius strategist
+    powerScore: 600,
+    gearBonus: 800, // Warsuit/Kryptonite
+    prepBonus: 600, // Genius strategist
     gearDescription: "### LexCorp Power Suit\n- **Kryptonite Core**: Powered by the one substance capable of weakening the Man of Steel.\n- **Collapsible Shield Generator**: Advanced energy field protecting him from high-velocity physical impacts.",
     prepDescription: "### Corporate Sovereignty\nLuthor uses his immense wealth and legal influence to drain his opponent's resources and public standing, winning the 'battle' before the physical fight begins.",
     triviaPool: [
@@ -155,7 +155,7 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/harleyquinn-preview.webp",
     backgroundUrl: "/data/dc/assets/harleyquinn-background.webp",
     color: "#ef4444",
-    powerScore: 160,
+    powerScore: 190,
     gearBonus: 40,
     prepBonus: 30,
     gearDescription: "### Chaotic Toolkit\n- **Oversized Mallet**: A custom-weighted bludgeon capable of cracking concrete or super-human armor.\n- **Prank Explosives**: Glitter-filled grenades and pop-guns modified with actual high explosives.",
@@ -179,9 +179,9 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/darkseid-preview.webp",
     backgroundUrl: "/data/dc/assets/darkseid-background.webp",
     color: "#52525b",
-    powerScore: 980,
-    gearBonus: 250, // Anti-Life Equation/Mother Box
-    prepBonus: 300,
+    powerScore: 7870,
+    gearBonus: 325, // Anti-Life Equation/Mother Box
+    prepBonus: 400,
     gearDescription: "### New God Artifacts\n- **Mother Box**: A sentient supercomputer that can manipulate time, space, and living matter.\n- **Omega Sanction**: A trap of infinite lifetimes of suffering used for targets too powerful for simple death.",
     prepDescription: "### Anti-Life Calculation\nDarkseid has already deduced the mathematical proof that resistance is futile, crushing his opponent's very desire to fight through pure logic.",
     triviaPool: [
@@ -203,7 +203,7 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/aquaman-preview.webp",
     backgroundUrl: "/data/dc/assets/aquaman-background.webp",
     color: "#ea580c",
-    powerScore: 780,
+    powerScore: 4570,
     gearBonus: 90,
     prepBonus: 80,
     gearDescription: "### Atlantean Royal Relics\n- **Trident of Poseidon**: A mystical weapon that can manipulate water, create whirlpools, and fire focused energy bolts.\n- **Scale Armor**: Forged from Atlantean metals, making him nearly invulnerable to standard weapons.",
@@ -227,8 +227,8 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/greenlantern-preview.webp",
     backgroundUrl: "/data/dc/assets/greenlantern-background.webp",
     color: "#22c55e",
-    powerScore: 820,
-    gearBonus: 200,
+    powerScore: 5230,
+    gearBonus: 250,
     prepBonus: 70,
     gearDescription: "### Green Lantern Power Ring\n- **Construct Engine**: Creates near-indestructible solid light objects limited only by Hal's imagination.\n- **Aura Shielding**: A constant layer of protective energy that allows for survival in the vacuum of space.",
     prepDescription: "### Willpower Recharge\nHal recites the Green Lantern Oath, focusing his absolute will and recharging his ring from his portable power battery to ensure peak construct stability.",
@@ -251,8 +251,8 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/cyborg-preview.webp",
     backgroundUrl: "/data/dc/assets/cyborg-background.webp",
     color: "#94a3b8",
-    powerScore: 500,
-    gearBonus: 150,
+    powerScore: 1200,
+    gearBonus: 175,
     prepBonus: 100,
     gearDescription: "### Father's Technical Mastery\n- **Sonic Cannon**: An arm-integrated projector that can fire localized shockwaves or high-intensity sound beams.\n- **Technopathic Interface**: Allows for instantaneous hacking and control of any electronic system.",
     prepDescription: "### Global System Diagnostic\nVictor runs a wide-spectrum scan of the available digital environment, identifying any exploitable hardware or satellite links that can be used against his opponent.",
@@ -275,9 +275,9 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/shazzam-preview.webp",
     backgroundUrl: "/data/dc/assets/shazzam-background.webp",
     color: "#ef4444",
-    powerScore: 920,
+    powerScore: 6880,
     gearBonus: 40,
-    prepBonus: 120,
+    prepBonus: 130,
     gearDescription: "### Wizard's Champion Regalia\n- **Mystical Cape of Shazam**: A magically reinforced garment that allows for stable, high-speed flight.\n- **Infinite Courage**: While not 'gear,' the spirit of Achilles provides him with near-unbreakable mental fortitude.",
     prepDescription: "### Wisdom of Solomon\nBilly reaches into the collective knowledge granted by Solomon, receiving instant tactical advice on how to handle opponents who may be far older and more experienced than he is.",
     triviaPool: [
@@ -299,9 +299,9 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/bane-preview.webp",
     backgroundUrl: "/data/dc/assets/bane-background.webp",
     color: "#52525b",
-    powerScore: 280,
-    gearBonus: 120,
-    prepBonus: 300,
+    powerScore: 370,
+    gearBonus: 130,
+    prepBonus: 400,
     gearDescription: "### Venom Delivery System\n- **Sub-Dermal Injectors**: Rapidly pumps the super-steroid Venom into his bloodstream, providing a critical burst of superhuman strength.\n- **Reinforced Bracers**: Built-in controls for Venom dosage and protection for his primary injection lines.",
     prepDescription: "### Psychological Breakdown\nBane meticulously studies the opponent's daily routine and past traumas, orchestrating a series of seemingly random crises to deplete their mental and physical reserves before the final strike.",
     triviaPool: [
@@ -323,9 +323,9 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/deathstroke-preview.webp",
     backgroundUrl: "/data/dc/assets/deathstroke-background.webp",
     color: "#ea580c",
-    powerScore: 350,
-    gearBonus: 180,
-    prepBonus: 280,
+    powerScore: 600,
+    gearBonus: 220,
+    prepBonus: 370,
     gearDescription: "### Promethium Arsenal\n- **Promethium Broadsword**: A masterfully forged blade that can slice through most super-human armor and magical shielding.\n- **Energy Bo Staff**: A versatile weapon capable of concussive energy projection and high-impact defensive blocking.",
     prepDescription: "### 90% Brain Capacity Planning\nSlade analyzes the opponent's heartbeat, muscle twitches, and environmental variables, predicting their actions several steps ahead to execute an inescapable tactical trap.",
     triviaPool: [
@@ -347,7 +347,7 @@ export const dcCharacters: Character[] = [
     previewUrl: "/data/dc/assets/doomsday-preview.webp",
     backgroundUrl: "/data/dc/assets/doomsday-background.webp",
     color: "#52525b",
-    powerScore: 1000,
+    powerScore: 8200,
     gearBonus: 0,
     prepBonus: 0,
     gearDescription: "### Reactive Bone Spikes\n- **Evolutionary Calcification**: His very skin protrudes with razor-sharp bone shards that can bypass the invulnerability of gods.\n- **Unstoppable Kinetic Force**: His physical momentum is absolute, making him a living juggernaut once he begins his charge.",

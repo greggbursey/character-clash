@@ -11,7 +11,7 @@ export const pokemonCharacters: Character[] = [
     previewUrl: "/data/pokemon/assets/pikachu-preview.webp",
     backgroundUrl: "/data/pokemon/assets/pikachu-background.webp",
     color: "#facc15",
-    powerScore: 240,
+    powerScore: 310,
     gearBonus: 80, // Light Ball
     prepBonus: 50,
     gearDescription: "### Pikachu's Power Kit\n- **Light Ball**: A mysterious orb that doubles Pikachu's Attack and Special Attack stats.\n- **Pikashunium Z**: A crystal that allows Pikachu to unleash its ultimate '10,000,000 Volt Thunderbolt' attack.",
@@ -35,8 +35,8 @@ export const pokemonCharacters: Character[] = [
     previewUrl: "/data/pokemon/assets/charizard-preview.webp",
     backgroundUrl: "/data/pokemon/assets/charizard-background.webp",
     color: "#ea580c",
-    powerScore: 330,
-    gearBonus: 120, // Mega Stone
+    powerScore: 520,
+    gearBonus: 130, // Mega Stone
     prepBonus: 40,
     gearDescription: "### Dragon's Arsenal\n- **Charizardite X/Y**: Mega Stones that allow Charizard to transcend its physical limits and tap into ancient dragon energy.\n- **Everlasting Tail Flame**: A constant source of thermal energy that can be intensified for high-output attacks.",
     prepDescription: "### Aerial Scouting\nCharizard flies to the maximum altitude, using its keen 'Dragon's Eye' sights to identify environmental hazards and heat vents to fuel its fire.",
@@ -59,8 +59,8 @@ export const pokemonCharacters: Character[] = [
     previewUrl: "/data/pokemon/assets/mewtwo-preview.webp",
     backgroundUrl: "/data/pokemon/assets/mewtwo-background.webp",
     color: "#7c3aed",
-    powerScore: 490,
-    gearBonus: 150, // Mewtwonite / Psystrike mastery
+    powerScore: 1160,
+    gearBonus: 175, // Mewtwonite / Psystrike mastery
     prepBonus: 100, // Psychic foresight
     gearDescription: "### Psychic Enhancements\n- **Mewtwonite Y**: A stone that streamlines Mewtwo's body for maximum telekinetic output.\n- **Armor of Cinnabar**: (Optional) Cybernetic armor designed to restrain and focus its raw energy.",
     prepDescription: "### Cognitive Pre-emption\nMewtwo uses its psychic mind to look milliseconds into the future, predicting its opponent's exact movements and emotional state before the fight begins.",
@@ -83,7 +83,7 @@ export const pokemonCharacters: Character[] = [
     previewUrl: "/data/pokemon/assets/lucario-preview.webp",
     backgroundUrl: "/data/pokemon/assets/lucario-background.webp",
     color: "#0ea5e9",
-    powerScore: 265,
+    powerScore: 348,
     gearBonus: 40, // Lucarionite
     prepBonus: 80, // Aura sensing
     gearDescription: "### Aura Warrior Gear\n- **Lucarionite**: Allows for the intensification of Aura, lengthening the spikes on its body for added lethality.\n- **Spiked Gauntlets**: Natural steel-hard protrusions on its paws and chest for defensive and offensive utility.",
@@ -107,7 +107,7 @@ export const pokemonCharacters: Character[] = [
     previewUrl: "/data/pokemon/assets/greninja-preview.webp",
     backgroundUrl: "/data/pokemon/assets/greninja-preview.webp", // Missing: greninja-background.png
     color: "#1e3a8a",
-    powerScore: 275,
+    powerScore: 363,
     gearBonus: 60, // Water Shuriken / Battle Bond
     prepBonus: 90, // Stealth/Ninja arts
     gearDescription: "### Shinobi Tools\n- **Compressed Water Shuriken**: Water pressurized into a solid, razor-sharp edge that can be thrown or used as a blade.\n- **Shadow Cloak**: Natural dark fur and skin that blends perfectly into moonlit or watery environments.",
@@ -131,9 +131,9 @@ export const pokemonCharacters: Character[] = [
     previewUrl: "/data/pokemon/assets/gengar-preview.webp",
     backgroundUrl: "/data/pokemon/assets/gengar-background.webp",
     color: "#6b21a8",
-    powerScore: 255,
+    powerScore: 333,
     gearBonus: 30, // Gengarite
-    prepBonus: 110, // Trap setting/Trickery
+    prepBonus: 115, // Trap setting/Trickery
     gearDescription: "### Shadow Relics\n- **Gengarite**: Allows Gengar to Mega Evolve, granting it the ability 'Shadow Tag' to prevent any foe from escaping the battlefield.\n- **Portal Throat**: A Gigantamax trait where its mouth acts as a direct conduit to a dimension of pure shadow energy.",
     prepDescription: "### Psychological Warfare\nGengar hides in the opponent's own shadow, draining their thermal energy and whispering terrifying thoughts to disorient them before the first blow.",
     triviaPool: [
@@ -155,7 +155,7 @@ export const pokemonCharacters: Character[] = [
     previewUrl: "/data/pokemon/assets/blastoise-preview.webp",
     backgroundUrl: "/data/pokemon/assets/blastoise-background.webp",
     color: "#1d4ed8",
-    powerScore: 310,
+    powerScore: 440,
     gearBonus: 100, // Blastoisinite
     prepBonus: 30,
     gearDescription: "### Artillery Shell\n- **Pressurized Hydro-Cannons**: Bio-mechanical structures that can fire water at pressures high enough to cut through diamonds.\n- **Reinforced Carapace**: A shell that can withstand pressures found at the bottom of the deepest ocean trenches.",
@@ -179,7 +179,7 @@ export const pokemonCharacters: Character[] = [
     previewUrl: "/data/pokemon/assets/venusaur-preview.webp",
     backgroundUrl: "/data/pokemon/assets/venusaur-background.webp",
     color: "#059669",
-    powerScore: 305,
+    powerScore: 420,
     gearBonus: 100, // Venusaurite
     prepBonus: 70, // Sunlight dependency/Pollen prep
     gearDescription: "### Floral Arsenal\n- **Giant Solaris Flower**: Acts as a massive solar panel, absorbing energy for its signature 'Solar Beam'.\n- **Prehensile Vines**: Thick, muscular vines hidden beneath its flower that can lift and throw targets ten times its size.",
@@ -203,7 +203,7 @@ export const pokemonCharacters: Character[] = [
     previewUrl: "/data/pokemon/assets/snorlax-preview.webp",
     backgroundUrl: "/data/pokemon/assets/snorlax-preview.webp", // Missing: snorlax-background.png
     color: "#334155",
-    powerScore: 230,
+    powerScore: 295,
     gearBonus: 10, // Leftovers
     prepBonus: 20, // Sleeping/Resting
     gearDescription: "### Glutton's Toolkit\n- **Leftovers**: A small bit of food that Snorlax nibbles on mid-fight to gradually restore its health.\n- **Snorlium Z**: A crystal that allows Snorlax to perform its earth-shattering 'Pulverizing Pancake' move.",
@@ -227,8 +227,8 @@ export const pokemonCharacters: Character[] = [
     previewUrl: "/data/pokemon/assets/rayquaza-preview.webp",
     backgroundUrl: "/data/pokemon/assets/rayquaza-background.webp",
     color: "#166534",
-    powerScore: 600,
-    gearBonus: 200, // Delta Stream/Mega Evolution
+    powerScore: 1600,
+    gearBonus: 250, // Delta Stream/Mega Evolution
     prepBonus: 60, // Atmosphere saturation
     gearDescription: "### Celestial Maw\n- **Glowing Filaments**: Energy conduits that stabilize the atmosphere around Rayquaza during Mega Evolution.\n- **Meteorite Gizzard**: An internal organ that allows Rayquaza to consume meteorites and convert them into Mega Evolution energy.",
     prepDescription: "### Stratospheric Desaturation\nRayquaza circles the planet's ozone layer, absorbing cosmic radiation and purging the air of weather anomalies to ensure a clear 'Dragon Ascent' trajectory.",

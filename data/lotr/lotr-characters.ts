@@ -12,7 +12,7 @@ export const lotrCharacters: Character[] = [
     backgroundUrl: "/data/lotr/assets/frodo-background.webp",
     color: "#166534", // Hobbit Green
     powerScore: 65,
-    gearBonus: 120, // Mithril/Sting/Phial
+    gearBonus: 130, // Mithril/Sting/Phial
     prepBonus: 70,
     gearDescription: "### Hobbit's Resilience\n- **Sting**: An Elven blade that detects Orcs, providing an early warning system.\n- **Mithril Vest**: Light but indestructible armor capable of absorbing fatal impacts.",
     prepDescription: "### Undying Will\nFrodo enters a state of deep focus, drawing on the memory of the Shire to resist mental attacks and pain, allowing him to push through impossible odds.",
@@ -59,9 +59,9 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/gandalf-preview.webp",
     backgroundUrl: "/data/lotr/assets/gandalf-background.webp",
     color: "#f8fafc", // Pure White
-    powerScore: 850,
-    gearBonus: 200, // Glamdring / Narya
-    prepBonus: 180,
+    powerScore: 5725,
+    gearBonus: 250, // Glamdring / Narya
+    prepBonus: 220,
     gearDescription: "### Wizard's Regalia\n- **Glamdring**: An ancient Elven blade that cuts through Orc-armor and echoes with magical resonance.\n- **Staff of the White**: Focuses raw celestial energy into blinding blasts and protective barriers.",
     prepDescription: "### Word of Command\nGandalf speaks a word of power that reshapes the local environment, creating a zone of sanctuary for allies and a barrier of fire for enemies.",
     triviaPool: [
@@ -83,7 +83,7 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/legolas-preview.webp",
     backgroundUrl: "/data/lotr/assets/legolas-background.webp",
     color: "#4ade80", // Elf Green
-    powerScore: 170,
+    powerScore: 205,
     gearBonus: 60,
     prepBonus: 60,
     gearDescription: "### Elven Arsenal\n- **Galadhrim Bow**: A long-range weapon of immense power that never misses its mark at medium range.\n- **White Knives**: Used for rapid, close-quarters combat where arrows are impractical.",
@@ -107,7 +107,7 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/gimli-preview.webp",
     backgroundUrl: "/data/lotr/assets/gimli-background.webp",
     color: "#991b1b", // Dwarf Red/Iron
-    powerScore: 155,
+    powerScore: 183,
     gearBonus: 40,
     prepBonus: 40,
     gearDescription: "### Khazâd Armory\n- **Bearded Battle-Axe**: A heavy weapon designed to shatter shields and cleave through the toughest hides.\n- **Dwarven Chainmail**: Exceptionally dense armor that provides high resistance to physical damage.",
@@ -131,8 +131,8 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/balrog-preview.webp",
     backgroundUrl: "/data/lotr/assets/balrog-background.webp",
     color: "#450a0a", // Shadow/Flame Crimson
-    powerScore: 820,
-    gearBonus: 120, // Whip of Fire
+    powerScore: 5230,
+    gearBonus: 130, // Whip of Fire
     prepBonus: 0,
     gearDescription: "### Demonic Armory\n- **Whip of Fire**: A multi-stranded whip that entangles and incinerates anything it touches.\n- **Shadow Clout**: A natural aura that snuffs out light and makes it difficult for enemies to see or target the Balrog.",
     prepDescription: "### Terror of the Deep\nThe Balrog roars, unleashing a wave of demonic shadow that paralyses non-magical opponents with a primal fear of the ancient dark.",
@@ -155,8 +155,8 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/sauron-preview.webp",
     backgroundUrl: "/data/lotr/assets/sauron-background.webp",
     color: "#18181b", // Mordor Black/Volcano
-    powerScore: 950,
-    gearBonus: 300, // The One Ring / Mace
+    powerScore: 7375,
+    gearBonus: 400, // The One Ring / Mace
     prepBonus: 100,
     gearDescription: "### The Abhorred's Tools\n- **The One Ring**: Grants near-limitless power, invisibility (to mortals), and the ability to dominate the minds of any who wear a Lesser Ring.\n- **Black Iron Mace**: A devastating weapon that shatters bone and armor effortlessly.",
     prepDescription: "### Dominating Presence\nSauron projects his will directly into his opponent's mind, dredging up their deepest desires and twisting them into a paralyzing sense of futility.",
@@ -179,9 +179,9 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/morgoth-preview.webp",
     backgroundUrl: "/data/lotr/assets/morgoth-background.webp",
     color: "#09090b", // Abyssal Black
-    powerScore: 1000,
-    gearBonus: 400, // Grond / Iron Crown
-    prepBonus: 200,
+    powerScore: 8200,
+    gearBonus: 800, // Grond / Iron Crown
+    prepBonus: 250,
     gearDescription: "### Titan of Shadow\n- **Grond**: A hammer so large it leaves craters like lightning strikes, potentially shattering the floor of the arena.\n- **The Iron Crown**: Contains the Silmarils, which burn with a holy light that Morgoth's enemies cannot bear to look upon.",
     prepDescription: "### Melkor's Music\nMorgoth hums a dissonant theme from the beginning of time, warping the laws of physics and magic in the immediate area to favor chaos and destruction.",
     triviaPool: [
@@ -203,8 +203,8 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/witchking-preview.webp",
     backgroundUrl: "/data/lotr/assets/witchking-background.webp",
     color: "#334155", // Wraith Grey/Iron
-    powerScore: 780,
-    gearBonus: 180, // Morgul Blade / Mace
+    powerScore: 4570,
+    gearBonus: 220, // Morgul Blade / Mace
     prepBonus: 90,
     gearDescription: "### Lord of Wraiths\n- **Morgul-blade**: A cursed dagger that inflicts a slowly-corrupting wound, reducing the opponent's max HP over time.\n- **Massive Flail**: A heavy chain-weapon capable of shattering stone and steel with minimal effort.",
     prepDescription: "### Black Breath Unleashed\nThe Witch-king screams a soul-shattering cry that forces his opponent to make a check against their own courage, potentially freezing them in terror.",
@@ -227,7 +227,7 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/aragorn-preview.webp",
     backgroundUrl: "/data/lotr/assets/aragorn-background.webp",
     color: "#475569", // Ranger Grey/King Blue
-    powerScore: 160,
+    powerScore: 190,
     gearBonus: 60,
     prepBonus: 60,
     gearDescription: "### Heir of Isildur\n- **Andúril**: A holy blade reforged from the shards of Narsil, which glows with the light of the sun and moon.\n- **Star of Elendil**: A jewel that enhances his natural leadership and clarity of vision.",
@@ -251,9 +251,9 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/galadriel-preview.webp",
     backgroundUrl: "/data/lotr/assets/galadriel-background.webp",
     color: "#fef3c7", // Golden Elf Light
-    powerScore: 880,
-    gearBonus: 150, // Nenya / Mirror
-    prepBonus: 200,
+    powerScore: 6220,
+    gearBonus: 175, // Nenya / Mirror
+    prepBonus: 250,
     gearDescription: "### Light of Eärendil\n- **Nenya**: A Ring of Power that preserves and protects, making the immediate area highly resistant to dark magic and entropy.\n- **Mirror of Galadriel**: (Conceptual) allows her to see 'things that are, things that were, and some things that have not yet come to pass'.",
     prepDescription: "### Elven Foresight\nGaladriel gazes into the future of the battle, predicting her opponent's every move and adjusting her magical defenses seconds before they are needed.",
     triviaPool: [
@@ -275,9 +275,9 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/saruman-preview.webp",
     backgroundUrl: "/data/lotr/assets/saruman-background.webp",
     color: "#64748b", // Orthanc Grey/White
-    powerScore: 840,
-    gearBonus: 180, // Palantír / Staff
-    prepBonus: 120,
+    powerScore: 5560,
+    gearBonus: 220, // Palantír / Staff
+    prepBonus: 130,
     gearDescription: "### Orthanc Industrialism\n- **The Palantir of Orthanc**: A seeing-stone that grants global awareness and mental pressure on enemies.\n- **Saruman's Ring**: A self-forged ring that amplifies his natural authority and magical focus.",
     prepDescription: "### The Voice of Saruman\nSaruman speaks with a layered, musical voice that slowly erodes the opponent's will to fight, causing them to doubt their own strikes and purpose.",
     triviaPool: [
@@ -299,9 +299,9 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/treebeard-preview.webp",
     backgroundUrl: "/data/lotr/assets/treebeard-background.webp",
     color: "#3f6212", // Forest Green/Bark
-    powerScore: 700,
+    powerScore: 3250,
     gearBonus: 0,
-    prepBonus: 150, // Patient Growth
+    prepBonus: 175, // Patient Growth
     gearDescription: "### Living Fortress\n- **Battering Limbs**: Branches as hard as iron that can smash through any conventional defense.\n- **Ancient Roots**: Grants immunity to knockback and a constant, slow regeneration while standing on soil.",
     prepDescription: "### The Ents' March\nTreebeard begins a slow, rhythmic chant that summons the spirits of the forest, causing the ground to shake and roots to entangle the opponent's feet.",
     triviaPool: [
@@ -325,7 +325,7 @@ export const lotrCharacters: Character[] = [
     color: "#52525b", // Cave Grey
     powerScore: 55,
     gearBonus: 0,
-    prepBonus: 150, // Stealth/Ambush
+    prepBonus: 175, // Stealth/Ambush
     gearDescription: "### Twisted Survivalist\n- **Climbing Claws**: Allows him to move across any vertical surface at full speed and strike from unexpected angles.\n- **Precious-Seeking Eyes**: Can see perfectly in absolute darkness, negating any concealment based on light.",
     prepDescription: "### Sneaking and Skulking\nGollum vanishes into the shadows, becoming untargetable for a brief duration before reappearing for a high-damage critical strike to the opponent's back.",
     triviaPool: [
@@ -347,7 +347,7 @@ export const lotrCharacters: Character[] = [
     previewUrl: "/data/lotr/assets/ungoliant-preview.webp",
     backgroundUrl: "/data/lotr/assets/ungoliant-background.webp",
     color: "#0c0a09", // Void Black
-    powerScore: 980,
+    powerScore: 7870,
     gearBonus: 0,
     prepBonus: 50,
     gearDescription: "### Primeval Hunger\n- **Web of Shadow**: A binding agent that not only traps the body but drains the spiritual light/energy of the victim.\n- **Venom of the Void**: A toxin that causes hallucinations and rapid physical decay.",

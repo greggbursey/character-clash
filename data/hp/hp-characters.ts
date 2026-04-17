@@ -11,8 +11,8 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/harrypotter-preview.webp",
     backgroundUrl: "/data/hp/assets/harrypotter-background.webp",
     color: "#991b1b", // Gryffindor Red
-    powerScore: 450,
-    gearBonus: 200, // Invisibility Cloak/Firebolt/Sword of Gryffindor
+    powerScore: 1000,
+    gearBonus: 250, // Invisibility Cloak/Firebolt/Sword of Gryffindor
     prepBonus: 80,
     gearDescription: "### The Chosen One's Arsenal\n- **The Invisibility Cloak**: A true Deathly Hallow that never fades, allowing him to bypass nearly any detection.\n- **Firebolt Broomstick**: Provides extreme aerial mobility and speed, allowing for hit-and-run tactics.",
     prepDescription: "### Dumbledore's Army Training\nHarry enters a focused state of leadership, recalling the combat spells he taught his friends, which increases his defensive reflexes and spell-casting speed.",
@@ -35,9 +35,9 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/dumbledore-preview.webp",
     backgroundUrl: "/data/hp/assets/dumbledore-background.webp",
     color: "#6b21a8", // Wise Purple
-    powerScore: 750,
-    gearBonus: 250, // Elder Wand / Fawkes
-    prepBonus: 150,
+    powerScore: 4075,
+    gearBonus: 325, // Elder Wand / Fawkes
+    prepBonus: 175,
     gearDescription: "### The Archmage's Tools\n- **The Elder Wand**: An unbeatable wand that amplifies the power of every spell to its absolute limit.\n- **Fawkes the Phoenix**: Provides aerial support and 'Phoenix Tears,' which can heal even the most fatal wounds instantly.",
     prepDescription: "### Strategic Foresight\nDumbledore calculates the 'greater good' of the encounter, setting complex magical traps and protective charms hours before the battle even begins.",
     triviaPool: [
@@ -59,9 +59,9 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/voldemort-preview.webp",
     backgroundUrl: "/data/hp/assets/voldemort-background.webp",
     color: "#166534", // Slytherin Green
-    powerScore: 740,
-    gearBonus: 220, // Horcruxes / Nagini
-    prepBonus: 180,
+    powerScore: 3910,
+    gearBonus: 280, // Horcruxes / Nagini
+    prepBonus: 220,
     gearDescription: "### Dark Art Artifacts\n- **Nagini**: A giant boa constrictor and Horcrux that acts as a deadly scout and physical attacker.\n- **The Horcrux Net**: Grants a 'Second Life' effect, allowing him to survive a fatal blow once per encounter (conceptual balance).",
     prepDescription: "### Terror Presence\nVoldemort uses Legilimency to probe the opponent's mind, dredging up their deepest fears to paralyze them with terror before the first curse is cast.",
     triviaPool: [
@@ -83,9 +83,9 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/snape-preview.webp",
     backgroundUrl: "/data/hp/assets/snape-background.webp",
     color: "#0f172a", // Dark Slytherin
-    powerScore: 500,
+    powerScore: 1200,
     gearBonus: 100, // Advanced Potions
-    prepBonus: 250, // Occlumency/Planning
+    prepBonus: 325, // Occlumency/Planning
     gearDescription: "### The Prince's Brews\n- **Liquid Death & Healing**: A collection of high-potency vials that can either instantly incapacitate an enemy or restore his own vitality.\n- **Personalized Spellbook**: Contains forbidden charms like Sectumsempra, designed for lethal efficiency.",
     prepDescription: "### Occlumency Barrier\nSnape closes his mind to all outside influence, becoming immune to psychological attacks and predicting his opponent's moves through cold, analytical observation.",
     triviaPool: [
@@ -107,8 +107,8 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/hagrid-preview.webp",
     backgroundUrl: "/data/hp/assets/hagrid-background.webp",
     color: "#422006", // Earthy Brown
-    powerScore: 350,
-    gearBonus: 150, // Magical Creatures / Umbrella
+    powerScore: 600,
+    gearBonus: 175, // Magical Creatures / Umbrella
     prepBonus: 50,
     gearDescription: "### Beastmaster's Guard\n- **The Pink Umbrella**: A concealed wand that allows for basic but powerful charms.\n- **Creature Call**: Summons a loyal beast (like Aragog's children or a Hippogriff) to flank the opponent.",
     prepDescription: "### Giant's Resolve\nHagrid braces himself, leaning into his giant heritage to shrug off physical impacts and minor magical projectiles that would stagger a normal wizard.",
@@ -131,7 +131,7 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/siriusblack-preview.webp",
     backgroundUrl: "/data/hp/assets/siriusblack-background.webp",
     color: "#1e293b", // Midnight Blue
-    powerScore: 480,
+    powerScore: 1120,
     gearBonus: 50,
     prepBonus: 70,
     gearDescription: "### Marauder's Edge\n- **Family Heirloom Wand**: A high-resonance wand capable of aggressive, high-speed combat magic.\n- **The Marauder's Map**: (Conceptual) allows him to anticipate enemy movements through superior environmental awareness.",
@@ -155,7 +155,7 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/remuslupin-preview.webp",
     backgroundUrl: "/data/hp/assets/remuslupin-background.webp",
     color: "#713f12", // Wolf Grey/Brown
-    powerScore: 470,
+    powerScore: 1080,
     gearBonus: 60,
     prepBonus: 90,
     gearDescription: "### D.A.D.A. Mastery\n- **Wolfsbane Potion Vials**: (Conceptual) allows him to maintain coordination and intelligence even in high-stress combat.\n- **Silver-Reinforced Wand**: Specifically tuned for defensive and counter-curse magic.",
@@ -179,9 +179,9 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/bellatrixlestrange-preview.webp",
     backgroundUrl: "/data/hp/assets/bellatrixlestrange-background.webp",
     color: "#450a0a", // Blood Crimson/Black
-    powerScore: 550,
+    powerScore: 1400,
     gearBonus: 80,
-    prepBonus: 120,
+    prepBonus: 130,
     gearDescription: "### Death Eater Arsenal\n- **Walnut Death-Wand**: A stiff, powerful wand optimized for the Dark Arts and torture curses.\n- **Poisoned Daggers**: Concealed blades for when magical means are not enough or require a silent finish.",
     prepDescription: "### Cruciatus Focus\nBellatrix enters a state of manic euphoria, ignoring her own pain and focusing solely on the 'fun' of breaking her opponent's spirit.",
     triviaPool: [
@@ -203,8 +203,8 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/draco-preview.webp",
     backgroundUrl: "/data/hp/assets/draco-background.webp",
     color: "#065f46", // Slytherin Emerald
-    powerScore: 380,
-    gearBonus: 120, // Family Money/Gear
+    powerScore: 720,
+    gearBonus: 130, // Family Money/Gear
     prepBonus: 100,
     gearDescription: "### Malfoy Inheritance\n- **Nimbus 2001**: A high-end racing broom provided by his father, granting superior speed and handling.\n- **Hand of Glory**: A dark artifact that gives light only to the holder, perfect for ambushes in darkness.",
     prepDescription: "### Pure-blood Arrogance\nDraco utilizes his superior social standing to demoralize his opponent, using mocking 'Hexes' that disrupt their concentration and timing.",
@@ -227,8 +227,8 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/neville-preview.webp",
     backgroundUrl: "/data/hp/assets/neville-background.webp",
     color: "#854d0e", // Earthy Gold/Red
-    powerScore: 400,
-    gearBonus: 180, // Sword of Gryffindor / Plants
+    powerScore: 800,
+    gearBonus: 220, // Sword of Gryffindor / Plants
     prepBonus: 60,
     gearDescription: "### Defender's Gear\n- **The Sword of Gryffindor**: An indestructible silver blade that has absorbed Basilisk venom, capable of destroying Horcruxes and cutting magic.\n- **Mimbulus Mimbletonia**: A plant that can spray 'Stinksap,' heavily obscuring vision and distracting enemies.",
     prepDescription: "### Herbology Trap\nNeville secretly plants Venomous Tentacula seeds or Devil's Snare roots in the arena, which activate mid-battle to entangle his opponent.",
@@ -251,7 +251,7 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/ginnyweasley-preview.webp",
     backgroundUrl: "/data/hp/assets/ginnyweasley-background.webp",
     color: "#b91c1c", // Weasley Red
-    powerScore: 420,
+    powerScore: 880,
     gearBonus: 50,
     prepBonus: 70,
     gearDescription: "### Chaser's Agility\n- **Professional Grade Broom**: Provides elite-level evasion and speed for aerial-focused combat.\n- **Weasleys' Wizard Wheezes Gadgets**: (Conceptual) utilizes various prank-based distractions to confuse opponents.",
@@ -275,7 +275,7 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/hedwig-preview.webp",
     backgroundUrl: "/data/hp/assets/hedwig-background.webp",
     color: "#f8fafc", // Snow White
-    powerScore: 120,
+    powerScore: 130,
     gearBonus: 20,
     prepBonus: 30,
     gearDescription: "### Familiar's Eye\n- **Razor-sharp Talons**: Basic physical defense capable of distracting human-sized opponents.\n- **Silent Flight**: Allows for stealthy approaches and message interception.",
@@ -299,9 +299,9 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/dobby-preview.webp",
     backgroundUrl: "/data/hp/assets/dobby-background.webp",
     color: "#fbbf24", // Elf Gold
-    powerScore: 400,
+    powerScore: 800,
     gearBonus: 0,
-    prepBonus: 150, // Elf Magic / Apparition
+    prepBonus: 175, // Elf Magic / Apparition
     gearDescription: "### The Free Elf's Will\n- **Household Chaos**: (Conceptual) utilizes teleported objects and environment manipulation to disrupt opponents.\n- **Socks of Freedom**: (Lore-based) provides a morale/speed boost through the joy of being free.",
     prepDescription: "### Instant Apparition\nDobby constantly teleports around the arena, becoming an impossible-to-hit target while delivering point-blank blasts of raw elven energy.",
     triviaPool: [
@@ -323,7 +323,7 @@ export const hpCharacters: Character[] = [
     previewUrl: "/data/hp/assets/whompingwillow-preview.webp",
     backgroundUrl: "/data/hp/assets/whompingwillow-background.webp",
     color: "#27272a", // Gnarled Dark Wood
-    powerScore: 400,
+    powerScore: 800,
     gearBonus: 0,
     prepBonus: 0,
     gearDescription: "### Ancient Roots\n- **Slamming Branches**: Massive, gnarled limbs that strike with enough force to shatter stone.\n- **Immobile Fortification**: Being rooted to the earth, it cannot be knocked back or moved by any conventional spell.",

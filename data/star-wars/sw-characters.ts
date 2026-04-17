@@ -11,9 +11,9 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/luke-preview.webp",
     backgroundUrl: "/data/star-wars/assets/luke-background.webp",
     color: "#3b82f6",
-    powerScore: 720,
+    powerScore: 3580,
     gearBonus: 50, // Lightsaber
-    prepBonus: 150, // Force focus
+    prepBonus: 175, // Force focus
     gearDescription: "### Jedi Master Arsenal\n- **Green Lightsaber**: A weapon built by Luke himself, symbolizing his path to mastery.\n- **X-Wing Flight Suit**: Provides life support and G-force protection for high-speed dogfights.",
     prepDescription: "### Force Attunement\nLuke connects with the living Force and receives guidance from Force Ghosts, allowing him to perceive the 'Shatterpoint' of any conflict.",
     triviaPool: [
@@ -35,7 +35,7 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/hansolo-preview.webp",
     backgroundUrl: "/data/star-wars/assets/hansolo-background.webp",
     color: "#64748b",
-    powerScore: 120,
+    powerScore: 130,
     gearBonus: 80, // Millennium Falcon/Blaster
     prepBonus: 90, // Smuggler's luck/planning
     gearDescription: "### Smuggler's Kit\n- **DL-44 Blaster Pistol**: Modified for extra punch and faster draw.\n- **Millennium Falcon Co-Pilot Link**: Direct communication with Chewie and the ship's defensive systems.",
@@ -59,7 +59,7 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/chewbacca-preview.webp",
     backgroundUrl: "/data/star-wars/assets/chewbacca-background.webp",
     color: "#78350f",
-    powerScore: 180,
+    powerScore: 220,
     gearBonus: 40, // Bowcaster
     prepBonus: 30,
     gearDescription: "### Wookiee Tradition\n- **Bowcaster**: A specialized weapon firing explosive energy-wrapped bolts with massive kinetic impact.\n- **Bandolier**: Contains high-grade starship repair tools and extra bowcaster ammo.",
@@ -83,9 +83,9 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/macewindu-preview.webp",
     backgroundUrl: "/data/star-wars/assets/macewindu-background.webp",
     color: "#a855f7",
-    powerScore: 600,
+    powerScore: 1600,
     gearBonus: 50,
-    prepBonus: 120,
+    prepBonus: 130,
     gearDescription: "### Unique Jedi Gear\n- **Purple Lightsaber**: Imbued with a rare crystal, allowing for his unique Vaapad style.\n- **Jedi Council Robes**: Reinforced with light armor weave for the Clone Wars.",
     prepDescription: "### Shatterpoint Analysis\nMace uses the Force to identify the precise 'Shatterpoint' in his opponent's style—the one moment or flaw where he can strike for a definitive win.",
     triviaPool: [
@@ -107,9 +107,9 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/yoda-preview.webp",
     backgroundUrl: "/data/star-wars/assets/yoda-background.webp",
     color: "#22c55e",
-    powerScore: 800,
+    powerScore: 4900,
     gearBonus: 20,
-    prepBonus: 250, // 900 years of experience
+    prepBonus: 325, // 900 years of experience
     gearDescription: "### Grand Master's Tools\n- **Shoto Lightsaber**: A shorter blade designed for his height and extreme agility.\n- **Gimer Stick**: A simple wooden cane that masks his true physical speed.",
     prepDescription: "### Nine Centuries of Wisdom\nYoda enters a state of deep Battle Meditation, aligning the cosmic Force to guide his every movement with precognitive precision.",
     triviaPool: [
@@ -131,9 +131,9 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/palpatine-preview.webp",
     backgroundUrl: "/data/star-wars/assets/palpatine-background.webp",
     color: "#ef4444",
-    powerScore: 850,
-    gearBonus: 150, // Death Star/Empire resources
-    prepBonus: 300, // Mastermind of the Sith
+    powerScore: 5725,
+    gearBonus: 175, // Death Star/Empire resources
+    prepBonus: 400, // Mastermind of the Sith
     gearDescription: "### Sith Lord Attire\n- **Sith Robes**: Woven with dark-side energy that hums with a malevolent aura.\n- **Hidden Lightsaber**: Concealed within his sleeve for a sudden, lethal strike.",
     prepDescription: "### Galactic Grand Strategy\nPalpatine has already won before the fight starts—he has manipulated the environment, the politics, and the opponent's very mind to ensure their fall.",
     triviaPool: [
@@ -155,9 +155,9 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/vader-preview.webp",
     backgroundUrl: "/data/star-wars/assets/vader-background.webp",
     color: "#ef4444",
-    powerScore: 750,
+    powerScore: 4075,
     gearBonus: 100, // Suit/Lightsaber
-    prepBonus: 120,
+    prepBonus: 130,
     gearDescription: "### Sith Enforcer Tech\n- **Life-Support Armor**: Grants superhuman strength and durability at the cost of mobility.\n- **Crimson Lightsaber**: A bled-crystal blade that hums with the pain of the dark side.",
     prepDescription: "### Intimidation Protocol\nVader focuses his hatred, projecting a suffocating field of dark-side energy that drains the physical and mental stamina of his foes.",
     triviaPool: [
@@ -179,7 +179,7 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/maul-preview.webp",
     backgroundUrl: "/data/star-wars/assets/maul-background.webp",
     color: "#ef4444",
-    powerScore: 550,
+    powerScore: 1400,
     gearBonus: 60,
     prepBonus: 80,
     gearDescription: "### Sith Assassin Arsenal\n- **Double-Bladed Lightsaber**: Designed for high-speed, multi-angle chaotic strikes.\n- **Dathomirian Leg-Cybernetics**: Specifically tuned for extreme jumping and speed.",
@@ -203,9 +203,9 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/bane-preview.webp",
     backgroundUrl: "/data/star-wars/assets/bane-background.webp",
     color: "#7f1d1d",
-    powerScore: 700,
-    gearBonus: 120, // Orbalisk armor
-    prepBonus: 200, // Rule of Two planning
+    powerScore: 3250,
+    gearBonus: 130, // Orbalisk armor
+    prepBonus: 250, // Rule of Two planning
     gearDescription: "### Orbalisk Armor\n- **Living Parasite Suit**: Grants near-invulnerability and constant pain, which fuels his dark-side channeling.\n- **Curved-Hilt Lightsaber**: Designed for the precise, brutal Form II Makashi style.",
     prepDescription: "### Concentration of Will\nBane focuses his entire existence into a singular point of dark-side power, ensuring his power is absolutely concentrated and overwhelming.",
     triviaPool: [
@@ -227,7 +227,7 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/starkiller-preview.webp",
     backgroundUrl: "/data/star-wars/assets/starkiller-background.webp",
     color: "#6366f1",
-    powerScore: 750,
+    powerScore: 4075,
     gearBonus: 50,
     prepBonus: 100,
     gearDescription: "### Secret Apprentice Gear\n- **Reverse-Grip Lightsabers**: Dual blades configured for his unique, aggressive Shien style.\n- **Tactical Flight Suit**: Lightweight and durable for high-impact Force missions.",
@@ -251,9 +251,9 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/obiwankenobi-preview.webp",
     backgroundUrl: "/data/star-wars/assets/obiwankenobi-background.webp",
     color: "#3b82f6",
-    powerScore: 680,
+    powerScore: 2920,
     gearBonus: 40,
-    prepBonus: 120,
+    prepBonus: 130,
     gearDescription: "### Master's Focus\n- **Signature Blue Lightsaber**: A masterfully balanced blade designed for precision parrying.\n- **Jedi Meditation Cloak**: Helps regulate his connection to the Force during high-intensity stress.",
     prepDescription: "### The Negotiator's Patience\nObi-Wan centers himself, entering a defensive flow-state. He waits for the opponent to make a single mistake, ensuring his defense is absolute until then.",
     triviaPool: [
@@ -276,9 +276,9 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/quigonjinn-preview.webp",
     backgroundUrl: "/data/star-wars/assets/quigonjinn-background.webp",
     color: "#22c55e",
-    powerScore: 580,
+    powerScore: 1520,
     gearBonus: 40,
-    prepBonus: 150,
+    prepBonus: 175,
     gearDescription: "### Master's Insight\n- **Green Lightsaber**: A weapon that hums with the energy of the Living Force.\n- **Breath Mask**: A specialized A99 rebreather for missions in hostile environments.",
     prepDescription: "### Attunement to the Living Force\nQui-Gon ignores the grand scale of the conflict, focusing entirely on the immediate flow of energy in his surroundings to anticipate any physical or metaphysical shift in the battle.",
     triviaPool: [
@@ -301,7 +301,7 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/kyloren-preview.webp",
     backgroundUrl: "/data/star-wars/assets/kyloren-background.webp",
     color: "#ef4444",
-    powerScore: 620,
+    powerScore: 1930,
     gearBonus: 80,
     prepBonus: 60,
     gearDescription: "### Unstable Sith Gear\n- **Crossguard Lightsaber**: Features quillons to vent the raw, unstable energy of its cracked crystal.\n- **Kylo Ren's Mask**: A psychological tool designed to intimidate and focus his rage.",
@@ -326,9 +326,9 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/darthrevan-preview.webp",
     backgroundUrl: "/data/star-wars/assets/darthrevan-background.webp",
     color: "#a855f7",
-    powerScore: 820,
+    powerScore: 5230,
     gearBonus: 100,
-    prepBonus: 200,
+    prepBonus: 250,
     gearDescription: "### Ancient Duelist Kit\n- **Dual Lightsabers**: One violet (Light) and one crimson (Dark), representing his balanced mastery.\n- **Revan's Mask**: A Mandalorian relic that serves as his signature icon and tactical HUD.",
     prepDescription: "### Balance of the Force\nRevan enters a state of absolute neutrality, centering himself between the Light and Dark sides to access the full spectrum of Force potential without succumbing to either.",
     triviaPool: [
@@ -351,8 +351,8 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/dindjarin-preview.webp",
     backgroundUrl: "/data/star-wars/assets/dindjarin-background.webp",
     color: "#71717a",
-    powerScore: 320,
-    gearBonus: 180,
+    powerScore: 480,
+    gearBonus: 220,
     prepBonus: 70,
     gearDescription: "### Mandalorian Armory\n- **Full Beskar Plating**: Nearly indestructible armor that can deflect both blaster bolts and lightsaber strikes.\n- **Whistling Birds**: Small, heat-seeking missiles fired from his gauntlet for multi-target neutralizations.",
     prepDescription: "### Tactical HUD Calibration\nDin Djarin runs a full diagnostic of his armor's systems, from thermals to vibration sensors, ensuring every gadget is primed for the specific weaknesses of his bounty.",
@@ -376,8 +376,8 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/bobafett-preview.webp",
     backgroundUrl: "/data/star-wars/assets/bobafett-background.webp",
     color: "#166534",
-    powerScore: 340,
-    gearBonus: 160,
+    powerScore: 560,
+    gearBonus: 190,
     prepBonus: 100,
     gearDescription: "### Hunter's Legacy\n- **Z-6 Jetpack**: Provides high-speed aerial mobility and is equipped with a high-explosive anti-vehicle rocket.\n- **EE-3 Carbine Rifle**: A precision blaster optimized for both long-range sniping and close-range bursts.",
     prepDescription: "### Underworld Intelligence\nBoba Fett leverages his vast network of informants and centuries-old tactical logs to identify the most likely escape routes and environmental hazards for his target.",
@@ -401,8 +401,8 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/r2d2-preview.webp",
     backgroundUrl: "/data/star-wars/assets/r2d2-background.webp",
     color: "#3b82f6",
-    powerScore: 150,
-    gearBonus: 140,
+    powerScore: 175,
+    gearBonus: 160,
     prepBonus: 80,
     gearDescription: "### Astromech Toolkit\n- **Scomp Link**: Specialized arm for slicing into computers and controlling starship systems.\n- **Holoprojector**: Can store and display large-scale 3D tactical maps and messages.",
     prepDescription: "### Systematic Schematic Scan\nR2 downloads the full structural blueprints of the arena and any nearby machines, identifying precisely which wires to cut and which panels to open to create maximum chaos.",
@@ -451,7 +451,7 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/kalkestis-preview.webp",
     backgroundUrl: "/data/star-wars/assets/kalkestis-background.webp",
     color: "#ea580c",
-    powerScore: 480,
+    powerScore: 1120,
     gearBonus: 70,
     prepBonus: 90,
     gearDescription: "### Modular Lightsaber\n- **Split Saber**: Can be used as a traditional single blade, a double-bladed staff, or dual-wielded for different tactical needs.\n- **BD-1 Link**: A specialized HUD provided by his droid companion for real-time terrain and hazard sensing.",
@@ -477,7 +477,7 @@ export const swCharacters: Character[] = [
     backgroundUrl: "/data/star-wars/assets/bd1-background.webp",
     color: "#dc2626",
     powerScore: 100,
-    gearBonus: 120,
+    gearBonus: 130,
     prepDescription: "### Tactical Scan Overlay\nBD-1 scans the entire combat zone, uploading a real-time 'heat map' of environmental hazards directly to his companion's HUD before the fight begins.",
     gearDescription: "### Explorer's Toolkit\n- **Medical Stim Dispenser**: Houses high-grade bacta canisters for rapid wound stabilization.\n- **Multi-Spectrum Scanner**: Capable of identifying structural weaknesses and biological signatures at a distance.",
     triviaPool: [
@@ -500,9 +500,9 @@ export const swCharacters: Character[] = [
     previewUrl: "/data/star-wars/assets/darthmalgus-preview.webp",
     backgroundUrl: "/data/star-wars/assets/darthmalgus-background.webp",
     color: "#ef4444",
-    powerScore: 810,
+    powerScore: 5065,
     gearBonus: 80,
-    prepBonus: 120,
+    prepBonus: 130,
     gearDescription: "### Sith Juggernaut Armor\n- **Integrated Respirator Suit**: Provides life support and enhanced durability in vacuum or toxic environments.\n- **Heavy Sith Lightsaber**: A massive, weighted blade designed for bone-shattering physical impact strikes.",
     prepDescription: "### War-Council Logistics\nMalgus studies the historical failures of past Sith expeditions to the region, identifying exactly how to crush his opponent's structural and political support systems alongside their physical form.",
     triviaPool: [

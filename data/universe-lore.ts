@@ -151,7 +151,7 @@ export const universeLoreData: Record<string, UniverseLore> = {
     history: "The history of the Greek Monsters is a chronicle of divine conflict and the untamed forces of nature. Many of the most terrifying beasts were born to Typhon and Echidna, designed to challenge the Olympian gods or serve as guardians of the boundaries between worlds. Their stories are woven into the very fabric of Greek mythology, representing the chaos that heroes must overcome to establish order.",
     lore: "Greek monster lore is defined by the intersection of beauty and horror, wisdom and brute force. From the petrifying gaze of Medusa to the reality-shaking strength of Typhon, these beings possess unique, often cursed abilities. They frequently serve as protectors of secret paths or as punishments sent by the gods, making them some of the most enduring symbols of the ancient world.",
     keyLocations: ["The Labyrinth", "Strait of Messina", "Mount Etna", "The Underworld Gates", "Lerna Swamps"],
-    active: false
+    active: true
   },
   "How to Train Your Dragon": {
     name: "How to Train Your Dragon",

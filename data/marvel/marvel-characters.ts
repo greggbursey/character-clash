@@ -11,9 +11,9 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/spiderman-preview.webp",
     backgroundUrl: "/data/marvel/assets/spiderman-background.webp",
     color: "#ef4444",
-    powerScore: 320,
+    powerScore: 480,
     gearBonus: 80, // Web-shooters/Tech
-    prepBonus: 120, // Science genius
+    prepBonus: 130, // Science genius
     gearDescription: "### Web-Slinger Prototype\n- **Fluid Dispersion Web-Shooters**: Custom-built wrist devices for high-tensile artificial webbing.\n- **Spider-Tracer Network**: Miniaturized tracking devices linked to his spider-sense.",
     prepDescription: "### Scientific Field Analysis\nPeter uses his genius-level intellect to analyze the chemical and structural weaknesses of his opponent's gear, often crafting a specialized web-formula on the fly.",
     triviaPool: [
@@ -35,9 +35,9 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/ironman-preview.webp",
     backgroundUrl: "/data/marvel/assets/ironman-background.webp",
     color: "#eab308",
-    powerScore: 400,
-    gearBonus: 450,
-    prepBonus: 350,
+    powerScore: 800,
+    gearBonus: 1000,
+    prepBonus: 600,
     gearDescription: "### Bleeding Edge Armor\n- **Nanotech Suit**: Capable of forming any weapon or tool Tony can imagine in real-time.\n- **Repulsor Cannons**: High-intensity muon-beam projectors for precise long-range destruction.",
     prepDescription: "### AI Battle Simulation\nTony's onboard AI (F.R.I.D.A.Y.) runs millions of combat scenarios, identifying the optimal counter-strategy and suit configuration for the specific opponent.",
     triviaPool: [
@@ -59,7 +59,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/thor-preview.webp",
     backgroundUrl: "/data/marvel/assets/thor-background.webp",
     color: "#60a5fa",
-    powerScore: 920,
+    powerScore: 6880,
     gearBonus: 100, // Mjolnir
     prepBonus: 50,
     gearDescription: "### Asgardian Relics\n- **Mjolnir**: An enchanted Uru hammer that grants flight and weather manipulation to the worthy.\n- **Megingjord**: The Belt of Strength, which doubles his already god-like physical prowess.",
@@ -83,7 +83,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/hulk-preview.webp",
     backgroundUrl: "/data/marvel/assets/hulk-background.webp",
     color: "#22c55e",
-    powerScore: 880,
+    powerScore: 6220,
     gearBonus: 20,
     prepBonus: 30, // Rage management
     gearDescription: "### Indestructible Gear\n- **Stark-Tech Nano-Pants**: Specifically designed to expand with his mass and resist extreme physical stress.\n- **Gamma-Radiation Siphon**: (Rarely used) temporarily boosts his power by absorbing ambient energy.",
@@ -107,7 +107,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/captainamerica-preview.webp",
     backgroundUrl: "/data/marvel/assets/captainamerica-background.webp",
     color: "#3b82f6",
-    powerScore: 380,
+    powerScore: 720,
     gearBonus: 50, // Shield
     prepBonus: 100, // Tactical leader
     gearDescription: "### Symbol of Freedom\n- **Vibranium Shield**: A perfectly balanced, indestructible disc that absorbs and redistributes kinetic energy.\n- **Utility Harness**: Contains tactical communication gear and battlefield medical supplies.",
@@ -131,9 +131,9 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/thanos-preview.webp",
     backgroundUrl: "/data/marvel/assets/thanos-background.webp",
     color: "#a855f7",
-    powerScore: 950,
-    gearBonus: 200, // Infinity Gauntlet
-    prepBonus: 250, // Cosmic strategist
+    powerScore: 7375,
+    gearBonus: 250, // Infinity Gauntlet
+    prepBonus: 325, // Cosmic strategist
     gearDescription: "### Titan Sovereign Gear\n- **Infinity Gauntlet**: A gold focal point for the six Infinity Stones, granting dominion over existence.\n- **Double-Bladed Sword**: A massive Uru blade capable of parrying even Mjolnir.",
     prepDescription: "### Nihilist Logic\nThanos calculates the 'necessary' sacrifices and structural weaknesses of the universe, ensuring his victory is the only logical conclusion for reality.",
     triviaPool: [
@@ -155,7 +155,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/venom-preview.webp",
     backgroundUrl: "/data/marvel/assets/venom-background.webp",
     color: "#18181b",
-    powerScore: 360,
+    powerScore: 640,
     gearBonus: 60, // Symbiote adaptations
     prepBonus: 40,
     gearDescription: "### Klyntar Biology\n- **Symbiote Tendrils**: Shifting organic matter that can form blades, shields, or entrapment webs.\n- **Adaptive Camouflage**: Allows the symbiote to perfectly mimic the wearer's surroundings or clothing.",
@@ -179,9 +179,9 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/blackpanther-preview.webp",
     backgroundUrl: "/data/marvel/assets/blackpanther-background.webp",
     color: "#18181b",
-    powerScore: 450,
-    gearBonus: 150, // Vibranium Tech
-    prepBonus: 110, // King's resources
+    powerScore: 1000,
+    gearBonus: 175, // Vibranium Tech
+    prepBonus: 115, // King's resources
     gearDescription: "### King's Panther Habit\n- **Kinetic-Absorption Weave**: Woven from Vibranium, it stores physical impact and releases it in outward bursts.\n- **Kimoyo Beads**: Multifunctional advanced Wakandan tech for communication and hacking.",
     prepDescription: "### Wakandan Intelligence Network\nT'Challa utilizes his global network of spies and Wakanda's superior technology to gather every possible detail on his opponent's background.",
     triviaPool: [
@@ -203,9 +203,9 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/doctorstrange-preview.webp",
     backgroundUrl: "/data/marvel/assets/doctorstrange-background.webp",
     color: "#a855f7",
-    powerScore: 500,
-    gearBonus: 180, // Mystic artifacts
-    prepBonus: 200, // Master of mystic arts
+    powerScore: 1200,
+    gearBonus: 220, // Mystic artifacts
+    prepBonus: 250, // Master of mystic arts
     gearDescription: "### Sanctum Relics\n- **Cloak of Levitation**: A sentient garment that allows for flight and can act independently in combat.\n- **Eye of Agamotto**: A powerful conduit for the Time Stone and mystical truth-seeking.",
     prepDescription: "### Astral Projection Meditation\nStrange travels through the multiverse in his astral form, witnessing millions of possible outcomes to find the single sequence of spells that ensures victory.",
     triviaPool: [
@@ -227,7 +227,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/deadpool-preview.webp",
     backgroundUrl: "/data/marvel/assets/deadpool-background.webp",
     color: "#ef4444",
-    powerScore: 330,
+    powerScore: 520,
     gearBonus: 80,
     prepBonus: 100,
     gearDescription: "### Mercenary's Toys\n- **Dual Carbon-Steel Katanas**: Masterfully crafted blades capable of slicing through most conventional armor.\n- **Personal Teleporter**: A belt-mounted device for short-range tactical 'BAMFs'.",
@@ -251,7 +251,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/carnage-preview.webp",
     backgroundUrl: "/data/marvel/assets/carnage-background.webp",
     color: "#991b1b",
-    powerScore: 450,
+    powerScore: 1000,
     gearBonus: 60,
     prepBonus: 20,
     gearDescription: "### Bloodstream Symbiote\n- **Biomass Blades**: The symbiote can transform any limb into a razor-sharp axe, spear, or tendril.\n- **Viscous Projectiles**: Carnage can fire hardened shards of his own body like high-velocity darts.",
@@ -275,7 +275,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/groot-preview.webp",
     backgroundUrl: "/data/marvel/assets/groot-background.webp",
     color: "#166534",
-    powerScore: 400,
+    powerScore: 800,
     gearBonus: 20,
     prepBonus: 50,
     gearDescription: "### Sentient Timber\n- **Dendronic Thorns**: Sharp wooden protrusions that can be ejected or used for defensive spiking.\n- **Bioluminescent Spores**: Naturally occurring nodes that provide light and can act as confusing distractions.",
@@ -299,8 +299,8 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/starlord-preview.webp",
     backgroundUrl: "/data/marvel/assets/starlord-background.webp",
     color: "#dc2626",
-    powerScore: 280,
-    gearBonus: 130,
+    powerScore: 370,
+    gearBonus: 145,
     prepBonus: 100,
     gearDescription: "### Star-Hopper Tech\n- **Twin Element Guns**: Specialized blasters capable of projecting fire, water, air, or earth-based concussive force.\n- **Jet-Boots**: Boot-integrated thrusters providing high-speed aerial maneuvering and evasive hovering.",
     prepDescription: "### Tactical Dance-Off\nStar-Lord sets his 'Awesome Mix' to max volume, using the rhythmic distraction and his own erratic movements to bait the opponent into a reckless error.",
@@ -323,7 +323,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/drax-preview.webp",
     backgroundUrl: "/data/marvel/assets/drax-background.webp",
     color: "#166534",
-    powerScore: 380,
+    powerScore: 720,
     gearBonus: 40,
     prepBonus: 20,
     gearDescription: "### Destroyer's Blades\n- **Dual Daggers**: Custom-weighted knives forged from high-density alloys capable of piercing Titan skin.\n- **Literal-Minded Focus**: High mental resistance against deception and psychological manipulation.",
@@ -347,9 +347,9 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/rocketraccoon-preview.webp",
     backgroundUrl: "/data/marvel/assets/rocketraccoon-background.webp",
     color: "#78350f",
-    powerScore: 220,
-    gearBonus: 280,
-    prepBonus: 200,
+    powerScore: 280,
+    gearBonus: 370,
+    prepBonus: 250,
     gearDescription: "### Halfworld Arsenal\n- **Hadron Enforcer Prototype**: A massive, shoulder-mounted cannon capable of destroying moon-sized targets.\n- **Rocket-Mine Network**: Specialized traps that can be deployed instantly to control the battlefield.",
     prepDescription: "### Scavenge & Build\nRocket scrapes together spare parts from the environment, assembling a specialized, one-time-use gadget specifically designed to exploit his opponent's greatest weakness.",
     triviaPool: [
@@ -371,9 +371,9 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/drdoom-preview.webp",
     backgroundUrl: "/data/marvel/assets/drdoom-background.webp",
     color: "#166534",
-    powerScore: 650,
-    gearBonus: 350,
-    prepBonus: 400,
+    powerScore: 2425,
+    gearBonus: 600,
+    prepBonus: 800,
     gearDescription: "### Latverian Sovereign Tech\n- **Titanium-Alloy Armor**: A technological marvel that channels both plasma energy and eldritch spells.\n- **Doom-Bot Network**: Remote-controlled replicas that can distract, bait, or swarm an opponent.",
     prepDescription: "### Scientific Sorcery\nDoom combines the laws of physics with the rituals of the mystic arts, creating an absolute tactical plan that accounts for both physical and metaphysical variables.",
     triviaPool: [
@@ -395,7 +395,7 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/ghostrider-preview.webp",
     backgroundUrl: "/data/marvel/assets/ghostrider-background.webp",
     color: "#ea580c",
-    powerScore: 820,
+    powerScore: 5230,
     gearBonus: 100,
     prepBonus: 50,
     gearDescription: "### Hellfire Relics\n- **Mystical Hell-Chain**: An indestructible, enchanted weapon that can lash out at any speed and burn the target's soul.\n- **Hell-Cycle**: A supernatural motorcycle that can travel over any surface and even through the air.",
@@ -419,9 +419,9 @@ export const marvelCharacters: Character[] = [
     previewUrl: "/data/marvel/assets/punisher-preview.webp",
     backgroundUrl: "/data/marvel/assets/punisher-background.webp",
     color: "#18181b",
-    powerScore: 270,
-    gearBonus: 200,
-    prepBonus: 220,
+    powerScore: 355,
+    gearBonus: 250,
+    prepBonus: 280,
     gearDescription: "### Combat Surplus\n- **Kevlar Tactical Vest**: Reinforced with high-density plates and featuring his iconic skull insignia.\n- **Specialized Arsenal**: A rotating inventory of sniper rifles, high-yield explosives, and tactical knives.",
     prepDescription: "### Military Kill-Zone\nFrank spends days scouting the arena, setting up Claymore mines, identifying escape routes, and zeroing his rifle for the perfect, initial long-range execution.",
     triviaPool: [
