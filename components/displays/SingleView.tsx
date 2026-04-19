@@ -88,7 +88,7 @@ export default function SingleView({
               </button>
             </div>
           </div>
-          <p className="text-lg text-zinc-300 leading-relaxed max-w-xl mx-auto">
+          <p className="text-sm md:text-base lg:text-lg text-zinc-300 leading-relaxed max-w-xl mx-auto line-clamp-3 md:line-clamp-none">
             {char1.description}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6">

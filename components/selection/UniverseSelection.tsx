@@ -31,6 +31,7 @@ export default function UniverseSelection({
         .map((uni) => {
           const stats = getUniverseStats(uni);
           const isSelected = uni === universe1 || uni === universe2;
+          const hasSelection = universe1 !== null || universe2 !== null;
           const isU1 = uni === universe1;
           const isU2 = uni === universe2;
 
@@ -38,17 +39,17 @@ export default function UniverseSelection({
             <button
               key={uni}
               onClick={() => selectUniverse(uni)}
-              className={`relative flex flex-col items-center group transition-all duration-300 w-full ${
-                isSelected ? 'scale-105 z-10' : 'hover:scale-105 hover:z-10'
+              className={`relative flex flex-col items-center group transition-all duration-500 w-full ${
+                isSelected ? 'scale-110 z-20 -translate-y-2' : hasSelection ? 'opacity-30 scale-95 hover:opacity-80 hover:scale-100' : 'hover:scale-105 hover:z-10'
               }`}
             >
               <div 
-                className={`w-full aspect-square rounded-xl md:rounded-2xl overflow-hidden border-2 transition-all duration-300 relative ${
+                className={`w-full aspect-square rounded-xl md:rounded-2xl overflow-hidden border-4 transition-all duration-500 relative ${
                   isSelected ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'
                 }`}
                 style={{
                   borderColor: isSelected ? stats.color : 'transparent',
-                  boxShadow: isSelected ? `0 0 20px ${stats.color}` : `0 0 0px transparent`,
+                  boxShadow: isSelected ? `0 0 40px ${stats.color}` : `0 0 0px transparent`,
                   backgroundColor: 'rgba(0,0,0,0.5)'
                 }}
               >
@@ -83,7 +84,7 @@ export default function UniverseSelection({
               {/* Selection Indicators */}
               {(isU1 || isU2) && (
                 <div 
-                  className="absolute -top-2 -right-2 text-white text-[9px] md:text-[10px] font-black px-2 py-1 rounded-full uppercase z-20 shadow-lg"
+                  className="absolute -top-3 -right-3 text-white text-[10px] md:text-xs font-black px-3 py-1.5 rounded-full uppercase z-30 shadow-[0_5px_15px_rgba(0,0,0,0.5)] border border-white/20"
                   style={{ backgroundColor: stats.color || '#3b82f6' }}
                 >
                   {isU1 ? 'U1' : 'U2'}

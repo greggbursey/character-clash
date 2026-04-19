@@ -12,6 +12,9 @@ interface HeaderProps {
   setIsSearchOpen: (open: boolean) => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
+  activeUniverse?: string;
+  isUniverseFilterOpen?: boolean;
+  setIsUniverseFilterOpen?: (open: boolean) => void;
 }
 
 export default function Header({
@@ -20,7 +23,10 @@ export default function Header({
   isSearchOpen,
   setIsSearchOpen,
   searchQuery,
-  setSearchQuery
+  setSearchQuery,
+  activeUniverse,
+  isUniverseFilterOpen,
+  setIsUniverseFilterOpen
 }: HeaderProps) {
   return (
     <header className="flex flex-col sm:flex-row justify-between items-center gap-3 md:gap-6 mb-3 md:mb-8 flex-shrink-0">
@@ -72,6 +78,25 @@ export default function Header({
             {isSearchOpen ? <X size={20} /> : <Search size={20} />}
           </button>
         </div>
+
+        {/* Universe Filter Button - Dynamic display based on selection */}
+        {activeUniverse && setIsUniverseFilterOpen && mode !== 'universe' && (
+          <button
+            onClick={() => setIsUniverseFilterOpen(true)}
+            className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors border ${
+              activeUniverse === 'All' 
+                ? 'bg-zinc-900/80 text-zinc-400 hover:text-white border-zinc-800' 
+                : 'bg-white/10 text-white border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.1)]'
+            }`}
+          >
+            <span className="text-base leading-none relative top-[-1px]">
+              {activeUniverse === 'All' ? '🌍' : '🎭'}
+            </span>
+            <span className="hidden sm:inline-block max-w-[100px] truncate">
+              {activeUniverse === 'All' ? 'Universes' : activeUniverse}
+            </span>
+          </button>
+        )}
 
         <div className="flex bg-zinc-900/80 backdrop-blur-md p-1 rounded-full border border-zinc-800 overflow-x-auto max-w-[calc(100vw-2rem)] hide-scrollbar">
           <button

@@ -138,11 +138,11 @@ export default function BackgroundLayers({
                       src={getAssetPath(char1.backgroundUrl)}
                       alt={char1.name}
                       fill
-                      className="object-cover opacity-60 blur-sm scale-110"
+                      className={`object-cover ${battleState === 'result' && winner === 1 ? 'opacity-100 blur-none scale-100' : 'opacity-60 blur-sm scale-110'}`}
                       referrerPolicy="no-referrer"
                     />
                     <div 
-                      className="absolute inset-0 mix-blend-overlay opacity-60" 
+                      className={`absolute inset-0 mix-blend-overlay ${battleState === 'result' && winner === 1 ? 'opacity-30' : 'opacity-60'}`}
                       style={{ backgroundColor: char1.color }} 
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/80 via-transparent to-zinc-950/80" />
@@ -192,11 +192,11 @@ export default function BackgroundLayers({
                       src={getAssetPath(char2.backgroundUrl)}
                       alt={char2.name}
                       fill
-                      className="object-cover opacity-60 blur-sm scale-110"
+                      className={`object-cover ${battleState === 'result' && winner === 2 ? 'opacity-100 blur-none scale-100' : 'opacity-60 blur-sm scale-110'}`}
                       referrerPolicy="no-referrer"
                     />
                     <div 
-                      className="absolute inset-0 mix-blend-overlay opacity-60" 
+                      className={`absolute inset-0 mix-blend-overlay ${battleState === 'result' && winner === 2 ? 'opacity-30' : 'opacity-60'}`}
                       style={{ backgroundColor: char2.color }} 
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/80 via-transparent to-zinc-950/80" />
@@ -231,29 +231,7 @@ export default function BackgroundLayers({
               className="absolute inset-y-0 w-1 -translate-x-1/2 bg-gradient-to-b from-transparent via-red-500/50 to-transparent z-10" 
             />
             
-            {/* Massive Victory Overlay */}
-            <AnimatePresence>
-              {battleState === 'result' && (
-                <motion.div
-                  initial={{ scale: 3, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ type: 'spring', damping: 15, stiffness: 100, delay: 0.2 }}
-                  className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none"
-                >
-                  <div className="text-center px-4">
-                    <h2 
-                      className="text-4xl md:text-[8rem] font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 drop-shadow-[0_10px_30px_rgba(220,38,38,0.8)]" 
-                      style={{ WebkitTextStroke: '3px #b91c1c' }}
-                    >
-                      {winner === 1 ? char1?.name : char2?.name}
-                    </h2>
-                    <h3 className="text-2xl md:text-7xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-[-6px] md:mt-[-10px]">
-                      WINS
-                    </h3>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {/* Victory Overlay moved to page.tsx */}
           </motion.div>
         )}
         {mode === 'universe' && (
@@ -288,11 +266,11 @@ export default function BackgroundLayers({
                       src={getAssetPath(getUniverseStats(universe1).background)}
                       alt={universe1}
                       fill
-                      className="object-cover opacity-60 blur-sm scale-110"
+                      className={`object-cover ${battleState === 'result' && winner === 1 ? 'opacity-100 blur-none scale-100' : 'opacity-60 blur-sm scale-110'}`}
                       referrerPolicy="no-referrer"
                     />
                     <div 
-                      className="absolute inset-0 mix-blend-overlay opacity-60" 
+                      className={`absolute inset-0 mix-blend-overlay ${battleState === 'result' && winner === 1 ? 'opacity-30' : 'opacity-60'}`}
                       style={{ backgroundColor: getUniverseStats(universe1).color }} 
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/80 via-transparent to-zinc-950/80" />
@@ -341,11 +319,11 @@ export default function BackgroundLayers({
                       src={getAssetPath(getUniverseStats(universe2).background)}
                       alt={universe2}
                       fill
-                      className="object-cover opacity-60 blur-sm scale-110"
+                      className={`object-cover ${battleState === 'result' && winner === 2 ? 'opacity-100 blur-none scale-100' : 'opacity-60 blur-sm scale-110'}`}
                       referrerPolicy="no-referrer"
                     />
                     <div 
-                      className="absolute inset-0 mix-blend-overlay opacity-60" 
+                      className={`absolute inset-0 mix-blend-overlay ${battleState === 'result' && winner === 2 ? 'opacity-30' : 'opacity-60'}`}
                       style={{ backgroundColor: getUniverseStats(universe2).color }} 
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/80 via-transparent to-zinc-950/80" />
@@ -379,25 +357,7 @@ export default function BackgroundLayers({
               className="absolute inset-y-0 w-1 -translate-x-1/2 bg-gradient-to-b from-transparent via-blue-500/50 to-transparent z-10" 
             />
 
-            {/* Victory Overlay */}
-            <AnimatePresence>
-              {battleState === 'result' && (
-                <motion.div
-                  initial={{ scale: 3, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  className="absolute inset-0 flex items-center justify-center z-30 pointer-events-none"
-                >
-                  <div className="text-center px-4">
-                    <h2 className="text-4xl md:text-[8rem] font-black uppercase tracking-tighter text-white drop-shadow-[0_10px_30px_rgba(37,99,235,0.8)]">
-                      {winner === 1 ? universe1 : universe2}
-                    </h2>
-                    <h3 className="text-2xl md:text-7xl font-black uppercase tracking-widest text-white mt-[-6px] md:mt-[-10px]">
-                      DOMINATES
-                    </h3>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {/* Victory Overlay moved to page.tsx */}
           </motion.div>
         )}
       </AnimatePresence>

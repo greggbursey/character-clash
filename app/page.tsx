@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import Image from "next/image";
 import { characters } from "@/data/characters";
 import { Mode, BattleState, Character } from "@/types";
 import { doc, setDoc, increment } from "firebase/firestore";
@@ -13,9 +14,9 @@ import ModifierModal from "@/components/ui/ModifierModal";
 import BackgroundLayers from "@/components/visuals/BackgroundLayers";
 import CharacterSelection from "@/components/selection/CharacterSelection";
 import UniverseSelection from "@/components/selection/UniverseSelection";
-import SingleView from "@/components/displays/SingleView";
-import BattleView from "@/components/displays/BattleView";
-import UniverseView from "@/components/displays/UniverseView";
+import UniverseFilterModal from "@/components/ui/UniverseFilterModal";
+import CombatActionBar from "@/components/ui/CombatActionBar";
+import CharacterDetailsDrawer from "@/components/displays/CharacterDetailsDrawer";
 import { useBattleMusic } from "@/hooks/use-battle-music";
 import { universeLoreData } from "@/data/universe-lore";
 
@@ -38,6 +39,9 @@ export default function Home() {
   } | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [activeUniverse, setActiveUniverse] = useState<string>("All");
+  const [isUniverseFilterOpen, setIsUniverseFilterOpen] = useState(false);
+  const [activeDrawerSlot, setActiveDrawerSlot] = useState<1 | 2 | null>(null);
   const [withGear1, setWithGear1] = useState(false);
   const [withPrep1, setWithPrep1] = useState(false);
   const [withGear2, setWithGear2] = useState(false);
@@ -144,6 +148,7 @@ export default function Home() {
     setWithPrep1(false);
     setWithGear2(false);
     setWithPrep2(false);
+    setActiveDrawerSlot(null);
   };
 
   const startBattle = () => {
@@ -243,8 +248,16 @@ export default function Home() {
     }
   }, [battleState, countdown, char1, char2, universe1, universe2, mode, withGear1, withGear2, withPrep1, withPrep2, getUniverseStats]);
 
+  // Drawer Context Bindings
+  const isSlot2 = mode !== 'single' && activeDrawerSlot === 2;
+  const drawerChar = mode === 'single' ? char1 : (activeDrawerSlot === 1 ? char1 : (activeDrawerSlot === 2 ? char2 : null));
+  const drawerWithGear = isSlot2 ? withGear2 : withGear1;
+  const drawerWithPrep = isSlot2 ? withPrep2 : withPrep1;
+  const drawerSetWithGear = isSlot2 ? setWithGear2 : setWithGear1;
+  const drawerSetWithPrep = isSlot2 ? setWithPrep2 : setWithPrep1;
+
   return (
-    <main className="relative min-h-[100dvh] w-full bg-zinc-950 text-white font-sans hide-scrollbar selection:bg-white/10">
+    <main className="relative h-[100dvh] w-full bg-zinc-950 text-white font-sans overflow-hidden selection:bg-white/10">
       <BackgroundLayers
         mode={mode}
         battleState={battleState}
@@ -256,65 +269,51 @@ export default function Home() {
         getUniverseStats={getUniverseStats}
       />
 
-      <div className="relative z-10 flex flex-col min-h-[100dvh] p-4 md:p-8 lg:p-12 lg:pt-6 max-w-[1920px] mx-auto">
-        <Header
-          mode={mode}
-          toggleMode={toggleMode}
-          isSearchOpen={isSearchOpen}
-          setIsSearchOpen={setIsSearchOpen}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-        />
+      <div className="relative z-10 flex flex-col h-[100dvh] max-w-[1920px] mx-auto">
+        <div className="flex-shrink-0 px-4 md:px-8 lg:px-12 pt-4 md:pt-6">
+          <Header
+            mode={mode}
+            toggleMode={toggleMode}
+            isSearchOpen={isSearchOpen}
+            setIsSearchOpen={setIsSearchOpen}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            activeUniverse={activeUniverse}
+            isUniverseFilterOpen={isUniverseFilterOpen}
+            setIsUniverseFilterOpen={setIsUniverseFilterOpen}
+          />
+        </div>
 
-          <div className="flex flex-col justify-center items-center py-4 md:py-8 lg:py-12 min-h-[30vh] md:min-h-[40vh] shrink-0 z-20 relative">
-            {mode === "single" && (
-              <SingleView
-                char1={char1}
-                setSelectedLoreChar={setSelectedLoreChar}
-                setSelectedModifier={setSelectedModifier}
-                withGear={withGear1}
-                setWithGear={setWithGear1}
-                withPrep={withPrep1}
-                setWithPrep={setWithPrep1}
-              />
-            )}
-
-            {mode === "battle" && (
-              <BattleView
-                char1={char1}
-                char2={char2}
-                battleState={battleState}
-                countdown={countdown}
-                winner={winner}
-                startBattle={startBattle}
-                setBattleState={setBattleState}
-                setChar1={setChar1}
-                setChar2={setChar2}
-                setSelectedLoreChar={setSelectedLoreChar}
-                setSelectedModifier={setSelectedModifier}
-                withGear1={withGear1}
-                setWithGear1={setWithGear1}
-                withPrep1={withPrep1}
-                setWithPrep1={setWithPrep1}
-                withGear2={withGear2}
-                setWithGear2={setWithGear2}
-                withPrep2={withPrep2}
-                setWithPrep2={setWithPrep2}
-              />
-            )}
-
-            {/* ... result overlays ... */}
-            {mode === "battle" && battleState === "result" && winner && (
-              <div
-                className="absolute bottom-[-100px] left-0 right-0 z-40 flex flex-col items-center gap-2 pb-6 md:pb-10 pointer-events-none"
-                style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
-                <div className="relative pointer-events-auto flex flex-col items-center gap-3">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-400/20 border border-yellow-400/60 text-yellow-300 font-black text-sm md:text-base uppercase tracking-widest shadow-[0_0_20px_rgba(250,204,21,0.4)] backdrop-blur-sm">
-                    🏆&nbsp;{winner === 1 ? char1?.name : char2?.name} Wins!
+        {/* Result Overlays */}
+        <div className="flex-shrink-0 z-20 relative pointer-events-none">
+          {mode === "battle" && battleState === "result" && winner && (
+            <div className="absolute inset-0 z-50 overflow-y-auto overflow-x-hidden hide-scrollbar pointer-events-auto bg-black/60 backdrop-blur-sm h-[100dvh]">
+              <div className="min-h-full flex flex-col items-center justify-center p-4 py-12 md:py-24">
+                <div 
+                  className="flex flex-col items-center animate-in zoom-in spin-in-2 duration-700 pointer-events-none drop-shadow-2xl z-40"
+                >
+                  <div className="relative w-64 h-64 md:w-96 md:h-96">
+                      <Image 
+                        src={`/data/${winner === 1 ? char1?.universe.toLowerCase().replace(/\s+/g, '-') : char2?.universe.toLowerCase().replace(/\s+/g, '-')}/assets/${winner === 1 ? char1?.id : char2?.id}-preview.webp`}
+                        alt="Winner"
+                        fill
+                        priority
+                        sizes="(max-width: 768px) 256px, 384px"
+                        className="object-contain filter drop-shadow-[0_20px_50px_rgba(250,204,21,0.6)]"
+                      />
                   </div>
-                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
+                </div>
+                <div
+                  className="z-50 flex flex-col items-center gap-4 mt-8"
+                  style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
+                >
+                  <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 drop-shadow-[0_10px_30px_rgba(220,38,38,0.8)] text-center leading-none" style={{ WebkitTextStroke: '2px #b91c1c' }}>
+                    {winner === 1 ? char1?.name : char2?.name}
+                  </h2>
+                  <h3 className="text-3xl md:text-5xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-[-10px] md:mt-[-15px]">
+                     WINS
+                  </h3>
+                  <p className="text-sm font-mono text-zinc-300 uppercase tracking-widest mt-2 bg-black/60 px-4 py-1.5 rounded-full border border-white/10 text-center">
                     {winner === 1 ? char2?.name : char1?.name} &nbsp;·&nbsp; defeated
                   </p>
                   <button
@@ -324,48 +323,36 @@ export default function Home() {
                       setChar1(null);
                       setChar2(null);
                     }}
-                    className="px-8 py-3 bg-white text-black font-bold uppercase tracking-widest rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.3)] text-sm"
+                    className="mt-6 px-10 py-4 bg-white text-black font-black uppercase tracking-widest rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.4)] text-base md:text-lg pointer-events-auto"
                   >
                     Play Again
                   </button>
                 </div>
               </div>
-            )}
+            </div>
+          )}
 
-            {mode === "universe" && (
-              <UniverseView
-                universe1={universe1}
-                universe2={universe2}
-                battleState={battleState}
-                countdown={countdown}
-                winner={winner}
-                getUniverseStats={getUniverseStats}
-                startBattle={startBattle}
-                setBattleState={setBattleState}
-                setUniverse1={setUniverse1}
-                setUniverse2={setUniverse2}
-                withGear1={withGear1}
-                setWithGear1={setWithGear1}
-                withPrep1={withPrep1}
-                setWithPrep1={setWithPrep1}
-                withGear2={withGear2}
-                setWithGear2={setWithGear2}
-                withPrep2={withPrep2}
-                setWithPrep2={setWithPrep2}
-              />
-            )}
-
-            {mode === "universe" && battleState === "result" && winner && (
-              <div
-                className="absolute bottom-[-100px] left-0 right-0 z-40 flex flex-col items-center gap-2 pb-6 md:pb-10 pointer-events-none"
-                style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
-                <div className="relative pointer-events-auto flex flex-col items-center gap-3">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-400/20 border border-blue-400/60 text-blue-300 font-black text-sm md:text-base uppercase tracking-widest shadow-[0_0_20px_rgba(96,165,250,0.4)] backdrop-blur-sm">
-                    ⚡&nbsp;{winner === 1 ? universe1 : universe2} Dominates!
-                  </div>
-                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
+          {mode === "universe" && battleState === "result" && winner && (
+            <div className="absolute inset-0 z-50 overflow-y-auto overflow-x-hidden hide-scrollbar pointer-events-auto bg-black/60 backdrop-blur-sm h-[100dvh]">
+              <div className="min-h-full flex flex-col items-center justify-center p-4 py-12 md:py-24">
+                <div 
+                  className="flex flex-col items-center animate-in zoom-in spin-in-2 duration-700 pointer-events-none drop-shadow-2xl z-40 mb-4 md:mb-8"
+                >
+                  <span className="text-[6rem] md:text-[9rem] filter drop-shadow-[0_20px_50px_rgba(96,165,250,0.6)] leading-none text-center">
+                    {winner === 1 ? universeLoreData[universe1!]?.emoji : universeLoreData[universe2!]?.emoji}
+                  </span>
+                </div>
+                <div
+                  className="z-50 flex flex-col items-center gap-4 mt-2"
+                  style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
+                >
+                  <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-blue-300 to-blue-600 drop-shadow-[0_10px_30px_rgba(37,99,235,0.8)] text-center leading-none" style={{ WebkitTextStroke: '2px #1d4ed8' }}>
+                    {winner === 1 ? universe1 : universe2}
+                  </h2>
+                  <h3 className="text-3xl md:text-5xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-[-10px] md:mt-[-15px]">
+                     DOMINATES
+                  </h3>
+                  <p className="text-sm font-mono text-zinc-300 uppercase tracking-widest mt-2 bg-black/60 px-4 py-1.5 rounded-full border border-white/10 text-center">
                     {winner === 1 ? universe2 : universe1} &nbsp;·&nbsp; defeated
                   </p>
                   <button
@@ -375,19 +362,21 @@ export default function Home() {
                       setUniverse1(null);
                       setUniverse2(null);
                     }}
-                    className="px-8 py-3 bg-white text-black font-bold uppercase tracking-widest rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.3)] text-sm"
+                    className="mt-6 px-10 py-4 bg-white text-black font-black uppercase tracking-widest rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.4)] text-base md:text-lg pointer-events-auto"
                   >
                     Play Again
                   </button>
                 </div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
+        </div>
 
+        {/* Scrollable Selection Section */}
         <div
-          className={`transition-opacity duration-500 relative z-30 ${battleState !== "idle" ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+          className={`flex-grow overflow-y-auto hide-scrollbar relative z-10 px-4 md:px-8 lg:px-12 transition-all duration-500 ${battleState !== "idle" ? "opacity-0 pointer-events-none hidden" : "opacity-100"}`}
         >
-          <div className="mb-2 md:mb-4 text-xs font-mono text-zinc-500 uppercase tracking-widest flex justify-between items-center flex-shrink-0">
+          <div className="mb-2 md:mb-4 pt-4 text-[10px] md:text-xs font-mono text-zinc-500 uppercase tracking-widest flex justify-between items-center">
             <span>
               {mode === "universe"
                 ? !universe1
@@ -428,7 +417,7 @@ export default function Home() {
           ) : (
             <CharacterSelection
               mode={mode}
-              universes={sortedUniverses}
+              universes={activeUniverse === 'All' ? sortedUniverses : [activeUniverse]}
               groupedCharacters={groupedCharacters}
               char1={char1}
               char2={char2}
@@ -442,6 +431,54 @@ export default function Home() {
           )}
         </div>
       </div>
+
+      <CombatActionBar
+        mode={mode}
+        battleState={battleState}
+        countdown={countdown}
+        char1={char1}
+        char2={char2}
+        universe1={universe1}
+        universe2={universe2}
+        withGear1={withGear1}
+        withPrep1={withPrep1}
+        withGear2={withGear2}
+        withPrep2={withPrep2}
+        getUniverseStats={getUniverseStats}
+        startBattle={startBattle}
+        setWithGear1={setWithGear1}
+        setWithPrep1={setWithPrep1}
+        setWithGear2={setWithGear2}
+        setWithPrep2={setWithPrep2}
+        onSlotClick={(slot) => {
+          if ((slot === 1 && char1) || (slot === 2 && char2)) {
+            setActiveDrawerSlot(slot);
+          }
+        }}
+      />
+
+      <CharacterDetailsDrawer
+        char={drawerChar}
+        onClose={() => {
+          if (mode === "single") setChar1(null);
+          else setActiveDrawerSlot(null);
+        }}
+        setSelectedLoreChar={setSelectedLoreChar}
+        setSelectedModifier={setSelectedModifier}
+        withGear={drawerWithGear}
+        setWithGear={drawerSetWithGear}
+        withPrep={drawerWithPrep}
+        setWithPrep={drawerSetWithPrep}
+      />
+
+      <UniverseFilterModal
+        isOpen={isUniverseFilterOpen}
+        onClose={() => setIsUniverseFilterOpen(false)}
+        universes={sortedUniverses}
+        activeUniverse={activeUniverse}
+        setActiveUniverse={setActiveUniverse}
+        groupedCharacters={groupedCharacters}
+      />
 
       <LoreModal
         character={selectedLoreChar}
