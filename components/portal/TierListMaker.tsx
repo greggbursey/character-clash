@@ -6,7 +6,7 @@ import { List } from "lucide-react";
 import { characters as allCharactersData } from "@/data/characters";
 import { universeLoreData } from "@/data/universe-lore";
 import { getAssetPath } from "@/lib/utils";
-import LoreModal from "@/components/ui/LoreModal";
+import CharacterDetailsDrawer from "@/components/displays/CharacterDetailsDrawer";
 import { Character } from "@/types";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -108,9 +108,13 @@ export function TierListMaker() {
         ))}
       </div>
 
-      <LoreModal
-        character={selectedLoreChar}
+      <CharacterDetailsDrawer
+        char={selectedLoreChar}
         onClose={() => setSelectedLoreChar(null)}
+        withGear={withGear}
+        setWithGear={setWithGear}
+        withPrep={withPrep}
+        setWithPrep={setWithPrep}
       />
     </div>
   );

@@ -49,12 +49,43 @@ export default function BackgroundLayers({
       }
     };
 
+    let orientationAdded = false;
+
+    const enableOrientation = async () => {
+      if (typeof (DeviceOrientationEvent as any).requestPermission === 'function') {
+        try {
+          const permission = await (DeviceOrientationEvent as any).requestPermission();
+          if (permission === 'granted' && !orientationAdded) {
+            window.addEventListener('deviceorientation', handleDeviceOrientation, false);
+            orientationAdded = true;
+          }
+        } catch (error) {
+          // Ignore errors
+        }
+      } else if (!orientationAdded) {
+        window.addEventListener('deviceorientation', handleDeviceOrientation, false);
+        orientationAdded = true;
+      }
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('deviceorientation', handleDeviceOrientation, false);
+    
+    // Try immediately for non-iOS
+    if (typeof (DeviceOrientationEvent as any).requestPermission !== 'function') {
+      enableOrientation();
+    }
+
+    // iOS requires user interaction to request permissions
+    window.addEventListener('click', enableOrientation, { once: true });
+    window.addEventListener('touchstart', enableOrientation, { once: true });
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('deviceorientation', handleDeviceOrientation);
+      if (orientationAdded) {
+        window.removeEventListener('deviceorientation', handleDeviceOrientation);
+      }
+      window.removeEventListener('click', enableOrientation);
+      window.removeEventListener('touchstart', enableOrientation);
     };
   }, [mouseX, mouseY]);
 

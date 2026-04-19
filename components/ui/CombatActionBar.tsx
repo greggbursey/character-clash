@@ -19,7 +19,7 @@ interface CombatActionBarProps {
   withPrep1: boolean;
   withGear2: boolean;
   withPrep2: boolean;
-  getUniverseStats: (uni: string) => { avgPower: number; avgGear: number; avgPrep: number; color: string; };
+  getUniverseStats: (uni: string) => { totalPower: number; totalGear: number; totalPrep: number; avgPower: number; avgGear: number; avgPrep: number; color: string; };
   startBattle: () => void;
   onSlotClick?: (slot: 1 | 2) => void;
   setWithGear1: (val: boolean) => void;
@@ -63,7 +63,7 @@ export default function CombatActionBar({
       return char1.powerScore + (withGear1 ? (char1.gearBonus || 0) : 0) + (withPrep1 ? (char1.prepBonus || 0) : 0);
     } else if (!isBattle && universe1) {
       const stats = getUniverseStats(universe1);
-      return stats.avgPower + (withGear1 ? stats.avgGear : 0) + (withPrep1 ? stats.avgPrep : 0);
+      return stats.totalPower + (withGear1 ? stats.totalGear : 0) + (withPrep1 ? stats.totalPrep : 0);
     }
     return 0;
   };
@@ -73,7 +73,7 @@ export default function CombatActionBar({
       return char2.powerScore + (withGear2 ? (char2.gearBonus || 0) : 0) + (withPrep2 ? (char2.prepBonus || 0) : 0);
     } else if (!isBattle && universe2) {
       const stats = getUniverseStats(universe2);
-      return stats.avgPower + (withGear2 ? stats.avgGear : 0) + (withPrep2 ? stats.avgPrep : 0);
+      return stats.totalPower + (withGear2 ? stats.totalGear : 0) + (withPrep2 ? stats.totalPrep : 0);
     }
     return 0;
   };
@@ -117,20 +117,24 @@ export default function CombatActionBar({
             <span className="text-[10px] md:text-xs font-black uppercase text-zinc-500 tracking-widest text-center py-[2px]">{isBattle ? 'Select P1' : 'Universe 1'}</span>
           )}
           </button>
-          {!isBattle && p1Ready && (
+          {p1Ready && (
             <div className="flex gap-2 mt-2 w-full justify-center">
-              <button 
-                onClick={(e) => { e.stopPropagation(); setWithGear1(!withGear1); }}
-                className={`text-[8px] md:text-[9px] px-2 py-0.5 rounded uppercase font-black border transition-colors ${withGear1 ? 'bg-blue-500/20 text-blue-400 border-blue-500/50' : 'bg-zinc-900/50 text-zinc-500 border-zinc-800 hover:text-zinc-300'}`}
-              >
-                +Gear
-              </button>
-              <button 
-                onClick={(e) => { e.stopPropagation(); setWithPrep1(!withPrep1); }}
-                className={`text-[8px] md:text-[9px] px-2 py-0.5 rounded uppercase font-black border transition-colors ${withPrep1 ? 'bg-purple-500/20 text-purple-400 border-purple-500/50' : 'bg-zinc-900/50 text-zinc-500 border-zinc-800 hover:text-zinc-300'}`}
-              >
-                +Prep
-              </button>
+              {(!isBattle || (isBattle && !!char1?.gearBonus)) && (
+                <button 
+                  onClick={(e) => { e.stopPropagation(); setWithGear1(!withGear1); }}
+                  className={`text-[8px] md:text-[9px] px-2 py-0.5 rounded uppercase font-black border transition-colors shadow-sm ${withGear1 ? 'bg-blue-500/20 text-blue-400 border-blue-500/50 shadow-[0_0_10px_rgba(59,130,246,0.2)]' : 'bg-zinc-900/50 text-zinc-500 border-zinc-800 hover:text-zinc-300'}`}
+                >
+                  +Gear
+                </button>
+              )}
+              {(!isBattle || (isBattle && !!char1?.prepBonus)) && (
+                <button 
+                  onClick={(e) => { e.stopPropagation(); setWithPrep1(!withPrep1); }}
+                  className={`text-[8px] md:text-[9px] px-2 py-0.5 rounded uppercase font-black border transition-colors shadow-sm ${withPrep1 ? 'bg-purple-500/20 text-purple-400 border-purple-500/50 shadow-[0_0_10px_rgba(168,85,247,0.2)]' : 'bg-zinc-900/50 text-zinc-500 border-zinc-800 hover:text-zinc-300'}`}
+                >
+                  +Prep
+                </button>
+              )}
             </div>
           )}
         </div>
@@ -205,20 +209,24 @@ export default function CombatActionBar({
             <span className="text-[10px] md:text-xs font-black uppercase text-zinc-500 tracking-widest text-center py-[2px]">{isBattle ? 'Select P2' : 'Universe 2'}</span>
           )}
           </button>
-          {!isBattle && p2Ready && (
+          {p2Ready && (
             <div className="flex gap-2 mt-2 w-full justify-center">
-              <button 
-                onClick={(e) => { e.stopPropagation(); setWithGear2(!withGear2); }}
-                className={`text-[8px] md:text-[9px] px-2 py-0.5 rounded uppercase font-black border transition-colors ${withGear2 ? 'bg-blue-500/20 text-blue-400 border-blue-500/50' : 'bg-zinc-900/50 text-zinc-500 border-zinc-800 hover:text-zinc-300'}`}
-              >
-                +Gear
-              </button>
-              <button 
-                onClick={(e) => { e.stopPropagation(); setWithPrep2(!withPrep2); }}
-                className={`text-[8px] md:text-[9px] px-2 py-0.5 rounded uppercase font-black border transition-colors ${withPrep2 ? 'bg-purple-500/20 text-purple-400 border-purple-500/50' : 'bg-zinc-900/50 text-zinc-500 border-zinc-800 hover:text-zinc-300'}`}
-              >
-                +Prep
-              </button>
+              {(!isBattle || (isBattle && !!char2?.gearBonus)) && (
+                <button 
+                  onClick={(e) => { e.stopPropagation(); setWithGear2(!withGear2); }}
+                  className={`text-[8px] md:text-[9px] px-2 py-0.5 rounded uppercase font-black border transition-colors shadow-sm ${withGear2 ? 'bg-blue-500/20 text-blue-400 border-blue-500/50 shadow-[0_0_10px_rgba(59,130,246,0.2)]' : 'bg-zinc-900/50 text-zinc-500 border-zinc-800 hover:text-zinc-300'}`}
+                >
+                  +Gear
+                </button>
+              )}
+              {(!isBattle || (isBattle && !!char2?.prepBonus)) && (
+                <button 
+                  onClick={(e) => { e.stopPropagation(); setWithPrep2(!withPrep2); }}
+                  className={`text-[8px] md:text-[9px] px-2 py-0.5 rounded uppercase font-black border transition-colors shadow-sm ${withPrep2 ? 'bg-purple-500/20 text-purple-400 border-purple-500/50 shadow-[0_0_10px_rgba(168,85,247,0.2)]' : 'bg-zinc-900/50 text-zinc-500 border-zinc-800 hover:text-zinc-300'}`}
+                >
+                  +Prep
+                </button>
+              )}
             </div>
           )}
         </div>

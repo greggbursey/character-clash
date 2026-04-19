@@ -9,8 +9,6 @@ import { db } from "@/lib/firebase";
 
 // Components
 import Header from "@/components/layout/Header";
-import LoreModal from "@/components/ui/LoreModal";
-import ModifierModal from "@/components/ui/ModifierModal";
 import BackgroundLayers from "@/components/visuals/BackgroundLayers";
 import CharacterSelection from "@/components/selection/CharacterSelection";
 import UniverseSelection from "@/components/selection/UniverseSelection";
@@ -30,13 +28,6 @@ export default function Home() {
   const [battleState, setBattleState] = useState<BattleState>("idle");
   const [countdown, setCountdown] = useState(3);
   const [winner, setWinner] = useState<1 | 2 | null>(null);
-  const [selectedLoreChar, setSelectedLoreChar] = useState<Character | null>(
-    null,
-  );
-  const [selectedModifier, setSelectedModifier] = useState<{
-    char: Character;
-    type: "gear" | "prep";
-  } | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [activeUniverse, setActiveUniverse] = useState<string>("All");
@@ -221,8 +212,8 @@ export default function Home() {
             } else if (mode === "universe" && universe1 && universe2) {
               const stats1 = getUniverseStats(universe1);
               const stats2 = getUniverseStats(universe2);
-              const p1 = stats1.avgPower + (withGear1 ? (stats1.avgGear || 0) : 0) + (withPrep1 ? (stats1.avgPrep || 0) : 0);
-              const p2 = stats2.avgPower + (withGear2 ? (stats2.avgGear || 0) : 0) + (withPrep2 ? (stats2.avgPrep || 0) : 0);
+              const p1 = stats1.totalPower + (withGear1 ? (stats1.totalGear || 0) : 0) + (withPrep1 ? (stats1.totalPrep || 0) : 0);
+              const p2 = stats2.totalPower + (withGear2 ? (stats2.totalGear || 0) : 0) + (withPrep2 ? (stats2.totalPrep || 0) : 0);
               let win: 1 | 2;
               
               if (Math.abs(p1 - p2) >= 500) {
@@ -463,8 +454,6 @@ export default function Home() {
           if (mode === "single") setChar1(null);
           else setActiveDrawerSlot(null);
         }}
-        setSelectedLoreChar={setSelectedLoreChar}
-        setSelectedModifier={setSelectedModifier}
         withGear={drawerWithGear}
         setWithGear={drawerSetWithGear}
         withPrep={drawerWithPrep}
@@ -478,17 +467,6 @@ export default function Home() {
         activeUniverse={activeUniverse}
         setActiveUniverse={setActiveUniverse}
         groupedCharacters={groupedCharacters}
-      />
-
-      <LoreModal
-        character={selectedLoreChar}
-        onClose={() => setSelectedLoreChar(null)}
-      />
-
-      <ModifierModal
-        character={selectedModifier?.char || null}
-        type={selectedModifier?.type || null}
-        onClose={() => setSelectedModifier(null)}
       />
 
       <style jsx global>{`

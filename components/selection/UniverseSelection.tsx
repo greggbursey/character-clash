@@ -25,7 +25,7 @@ export default function UniverseSelection({
 }: UniverseSelectionProps) {
   return (
     <div className="pb-32 px-4 md:px-6">
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-10 gap-3 md:gap-4 pt-2">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-10 gap-4 md:gap-6 pt-8">
       {allUniverses
         .filter(u => u.toLowerCase().includes(searchQuery.toLowerCase()))
         .map((uni) => {

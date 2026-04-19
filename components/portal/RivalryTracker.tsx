@@ -176,6 +176,107 @@ export function RivalryTracker({ selectedUniverse }: RivalryTrackerProps) {
       p1: "Dumbledore", p2: "Grindelwald", p1Wins: 1, p2Wins: 0, p1Color: "#60a5fa", p2Color: "#dc2626",
       universe: "Harry Potter",
       description: "Tracing back to their youth, this rivalry concluded with the greatest magical duel in the history of wizardkind."
+    },
+
+    // Lord of the Rings
+    { 
+      p1: "Gandalf", p2: "Saruman", p1Wins: 5, p2Wins: 2, p1Color: "#f8fafc", p2Color: "#64748b",
+      universe: "Lord of the Rings",
+      description: "The Order of the Wizards split. Gandalf's humility and wisdom against Saruman's industrial greed and lust for the One Ring."
+    },
+    { 
+      p1: "Aragorn", p2: "Sauron", p1Wins: 1, p2Wins: 0, p1Color: "#475569", p2Color: "#18181b",
+      universe: "Lord of the Rings",
+      description: "The heir of Isildur vs the Dark Lord. A multi-generational struggle for the fate of Middle-earth and the crown of Gondor."
+    },
+    { 
+      p1: "Frodo", p2: "Gollum", p1Wins: 15, p2Wins: 18, p1Color: "#166534", p2Color: "#52525b",
+      universe: "Lord of the Rings",
+      description: "Two souls bound by the same burden. A tragic mirror of what the Ring does to its bearer, ending at the Crack of Doom."
+    },
+
+    // Transformers
+    { 
+      p1: "Optimus Prime", p2: "Megatron", p1Wins: 552, p2Wins: 548, p1Color: "#ef4444", p2Color: "#52525b",
+      universe: "Transformers",
+      description: "The eternal war for Cybertron. Optimus fights for freedom while Megatron seeks peace through absolute tyranny."
+    },
+    { 
+      p1: "Bumblebee", p2: "Lockdown", p1Wins: 28, p2Wins: 32, p1Color: "#eab308", p2Color: "#18181b",
+      universe: "Transformers",
+      description: "The scrappy scout vs the intergalactic hunter. A game of speed and stealth against superior technology and ruthless experience."
+    },
+    { 
+      p1: "Soundwave", p2: "Jazz", p1Wins: 45, p2Wins: 42, p1Color: "#2563eb", p2Color: "#94a3b8",
+      universe: "Transformers",
+      description: "Sonic warfare. The cold, logical data-mastery of Soundwave clashing with Jazz's rhythmic maneuvers and unpredictable flair."
+    },
+
+    // Power Rangers
+    { 
+      p1: "Red Ranger", p2: "Green Ranger", p1Wins: 15, p2Wins: 16, p1Color: "#ef4444", p2Color: "#22c55e",
+      universe: "Power Rangers",
+      description: "The classic clash of leadership and raw, corrupted talent before the Green Ranger joined the side of good."
+    },
+    { 
+      p1: "Zordon", p2: "Lord Zedd", p1Wins: 1, p2Wins: 1, p1Color: "#60a5fa", p2Color: "#450a0a",
+      universe: "Power Rangers",
+      description: "The ancient cosmic sage versus the self-proclaimed Emperor of Evil. A rivalry that spans ten thousand years."
+    },
+
+    // Pokemon
+    { 
+      p1: "Pikachu", p2: "Mewtwo", p1Wins: 5, p2Wins: 12, p1Color: "#facc15", p2Color: "#7c3aed",
+      universe: "Pokemon",
+      description: "The ultimate underdog vs the genetic masterpiece. Heart and determination against absolute psychic power."
+    },
+    { 
+      p1: "Charizard", p2: "Blastoise", p1Wins: 85, p2Wins: 82, p1Color: "#ea580c", p2Color: "#1d4ed8",
+      universe: "Pokemon",
+      description: "Fire vs Water. A high-stakes clash of elemental power and the most iconic starter rivalry in the series history."
+    },
+
+    // Dragon Ball Z
+    { 
+      p1: "Goku", p2: "Vegeta", p1Wins: 4, p2Wins: 3, p1Color: "#f97316", p2Color: "#2563eb",
+      universe: "Dragon Ball Z",
+      description: "The low-class Saiyan warrior vs the Prince of all Saiyans. An eternal race for power and the title of the strongest."
+    },
+    { 
+      p1: "Gohan", p2: "Cell", p1Wins: 1, p2Wins: 0, p1Color: "#a855f7", p2Color: "#166534",
+      universe: "Dragon Ball Z",
+      description: "Harnessing dormant potential. The final stand during the Cell Games to protect the Earth from perfection."
+    },
+
+    // Ancient Greek Monsters
+    { 
+      p1: "Zeus", p2: "Typhon", p1Wins: 1, p2Wins: 0, p1Color: "#facc15", p2Color: "#450a0a",
+      universe: "Ancient Greek Monsters",
+      description: "King of the Gods vs Father of Monsters. A reality-shaking duel for the sovereignty of the heavens and earth."
+    },
+    { 
+      p1: "Medusa", p2: "Perseus", p1Wins: 0, p2Wins: 1, p1Color: "#166534", p2Color: "#94a3b8",
+      universe: "Ancient Greek Monsters",
+      description: "The petrifying gaze vs the winged hero. A mythic hunt defining the boundaries between human skill and monstrous curse."
+    },
+
+    // How to Train Your Dragon
+    { 
+      p1: "Hiccup", p2: "Drago Bludvist", p1Wins: 2, p2Wins: 1, p1Color: "#7c2d12", p2Color: "#18181b",
+      universe: "How to Train Your Dragon",
+      description: "Bond versus Control. Hiccup's friendship with dragons vs Drago's ideology of enslavement and brute force dominance."
+    },
+
+    // Spongebob
+    { 
+      p1: "Spongebob", p2: "Squidward", p1Wins: 1200, p2Wins: 2, p1Color: "#facc15", p2Color: "#0ea5e9",
+      universe: "Spongebob",
+      description: "Eternal optimism vs chronic cynicism. Spongebob's idea of a perfect day is usually Squidward's worst nightmare."
+    },
+    { 
+      p1: "Mr. Krabs", p2: "Plankton", p1Wins: 850, p2Wins: 45, p1Color: "#ef4444", p2Color: "#166534",
+      universe: "Spongebob",
+      description: "The fast-food war. A never-ending business rivalry for the Secret Formula of the legendary Krabby Patty."
     }
   ];
 
