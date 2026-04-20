@@ -7,6 +7,8 @@ import { Mode, BattleState, Character } from "@/types";
 import { doc, setDoc, increment } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
+import { getAssetPath } from "@/lib/utils";
+
 // Components
 import Header from "@/components/layout/Header";
 import BackgroundLayers from "@/components/visuals/BackgroundLayers";
@@ -278,89 +280,165 @@ export default function Home() {
         {/* Result Overlays */}
         <div className="flex-shrink-0 z-20 relative pointer-events-none">
           {mode === "battle" && battleState === "result" && winner && (
-            <div className="absolute inset-0 z-50 overflow-y-auto overflow-x-hidden hide-scrollbar pointer-events-auto bg-black/60 backdrop-blur-sm h-[100dvh]">
-              <div className="min-h-full flex flex-col items-center justify-center p-4 py-12 md:py-24">
-                <div 
-                  className="flex flex-col items-center animate-in zoom-in spin-in-2 duration-700 pointer-events-none drop-shadow-2xl z-40"
-                >
-                  <div className="relative w-64 h-64 md:w-96 md:h-96">
-                      <Image 
-                        src={`/data/${winner === 1 ? char1?.universe.toLowerCase().replace(/\s+/g, '-') : char2?.universe.toLowerCase().replace(/\s+/g, '-')}/assets/${winner === 1 ? char1?.id : char2?.id}-preview.webp`}
-                        alt="Winner"
-                        fill
-                        priority
-                        sizes="(max-width: 768px) 256px, 384px"
-                        className="object-contain filter drop-shadow-[0_20px_50px_rgba(250,204,21,0.6)]"
-                      />
+            <div 
+              className="fixed inset-0 z-[100] overflow-hidden pointer-events-auto bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center cursor-pointer group"
+              onClick={() => {
+                stopBattleMusic(true);
+                setBattleState("idle");
+                setChar1(null);
+                setChar2(null);
+              }}
+            >
+              <div className="w-full max-w-2xl flex flex-col items-center justify-center px-4 mt-2 md:mt-8">
+                {/* Image Stage */}
+                <div className="relative w-full aspect-square md:aspect-video flex items-center justify-center">
+                  {/* Loser - Back, Small, Desaturated */}
+                  <div 
+                    className="absolute left-[5%] bottom-[5%] w-24 h-24 md:w-56 md:h-56 opacity-30 grayscale blur-[1px] z-30"
+                    style={{ 
+                      animation: "fadeInLeft 0.8s ease 0.3s both",
+                    }}
+                  >
+                    <Image 
+                      src={getAssetPath((winner === 1 ? char2 : char1)?.previewUrl || "")}
+                      alt="Loser"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  
+                  {/* Winner - Front, Large, Vibrant */}
+                  <div 
+                    className="relative w-56 h-56 md:w-[450px] md:h-[450px] z-40 flex flex-col items-center justify-end"
+                    style={{ 
+                      animation: "victoryEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both" 
+                    }}
+                  >
+                    <Image 
+                      src={getAssetPath((winner === 1 ? char1 : char2)?.previewUrl || "")}
+                      alt="Winner"
+                      fill
+                      priority
+                      className="object-contain filter drop-shadow-[0_20px_60px_rgba(250,204,21,0.8)]"
+                    />
+                    
+                    <div 
+                      className="absolute bottom-[-15%] md:bottom-4 z-50 pointer-events-none"
+                      style={{ animation: "fadeInUp 0.5s ease 1s both" }}
+                    >
+                      <div className="px-6 py-2 bg-black/60 backdrop-blur-md rounded-full border border-white/20 transition-opacity opacity-80 group-hover:opacity-100 shadow-xl" style={{ animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite" }}>
+                        <span className="text-white text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] whitespace-nowrap">Tap anywhere to play again</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+                {/* Text Content */}
                 <div
-                  className="z-50 flex flex-col items-center gap-4 mt-8"
+                  className="z-50 flex flex-col items-center px-4 w-full -mt-4 md:mt-8"
                   style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
                 >
-                  <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 drop-shadow-[0_10px_30px_rgba(220,38,38,0.8)] text-center leading-none" style={{ WebkitTextStroke: '2px #b91c1c' }}>
+                  <h2 className="text-4xl sm:text-5xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 drop-shadow-[0_10px_30px_rgba(220,38,38,0.8)] text-center leading-none" style={{ WebkitTextStroke: '1px #b91c1c' }}>
                     {winner === 1 ? char1?.name : char2?.name}
                   </h2>
-                  <h3 className="text-3xl md:text-5xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-[-10px] md:mt-[-15px]">
+                  <h3 className="text-2xl md:text-5xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-1 md:mt-2">
                      WINS
                   </h3>
-                  <p className="text-sm font-mono text-zinc-300 uppercase tracking-widest mt-2 bg-black/60 px-4 py-1.5 rounded-full border border-white/10 text-center">
-                    {winner === 1 ? char2?.name : char1?.name} &nbsp;·&nbsp; defeated
-                  </p>
-                  <button
-                    onClick={() => {
-                      stopBattleMusic(true);
-                      setBattleState("idle");
-                      setChar1(null);
-                      setChar2(null);
-                    }}
-                    className="mt-6 px-10 py-4 bg-white text-black font-black uppercase tracking-widest rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.4)] text-base md:text-lg pointer-events-auto"
-                  >
-                    Play Again
-                  </button>
                 </div>
               </div>
             </div>
           )}
 
-          {mode === "universe" && battleState === "result" && winner && (
-            <div className="absolute inset-0 z-50 overflow-y-auto overflow-x-hidden hide-scrollbar pointer-events-auto bg-black/60 backdrop-blur-sm h-[100dvh]">
-              <div className="min-h-full flex flex-col items-center justify-center p-4 py-12 md:py-24">
-                <div 
-                  className="flex flex-col items-center animate-in zoom-in spin-in-2 duration-700 pointer-events-none drop-shadow-2xl z-40 mb-4 md:mb-8"
-                >
-                  <span className="text-[6rem] md:text-[9rem] filter drop-shadow-[0_20px_50px_rgba(96,165,250,0.6)] leading-none text-center">
-                    {winner === 1 ? universeLoreData[universe1!]?.emoji : universeLoreData[universe2!]?.emoji}
-                  </span>
-                </div>
-                <div
-                  className="z-50 flex flex-col items-center gap-4 mt-2"
-                  style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
-                >
-                  <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-blue-300 to-blue-600 drop-shadow-[0_10px_30px_rgba(37,99,235,0.8)] text-center leading-none" style={{ WebkitTextStroke: '2px #1d4ed8' }}>
-                    {winner === 1 ? universe1 : universe2}
-                  </h2>
-                  <h3 className="text-3xl md:text-5xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-[-10px] md:mt-[-15px]">
-                     DOMINATES
-                  </h3>
-                  <p className="text-sm font-mono text-zinc-300 uppercase tracking-widest mt-2 bg-black/60 px-4 py-1.5 rounded-full border border-white/10 text-center">
-                    {winner === 1 ? universe2 : universe1} &nbsp;·&nbsp; defeated
-                  </p>
-                  <button
-                    onClick={() => {
-                      stopBattleMusic(true);
-                      setBattleState("idle");
-                      setUniverse1(null);
-                      setUniverse2(null);
-                    }}
-                    className="mt-6 px-10 py-4 bg-white text-black font-black uppercase tracking-widest rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.4)] text-base md:text-lg pointer-events-auto"
+          {mode === "universe" && battleState === "result" && winner && (() => {
+            const winningUniverse = winner === 1 ? universe1 : universe2;
+            const losingUniverse = winner === 1 ? universe2 : universe1;
+            const winningChars = characters.filter(c => c.universe === winningUniverse).sort((a,b) => b.powerScore - a.powerScore).slice(0, 7);
+            const losingChars = characters.filter(c => c.universe === losingUniverse).sort((a,b) => b.powerScore - a.powerScore).slice(0, 5);
+
+            return (
+              <div 
+                className="fixed inset-0 z-[100] overflow-hidden pointer-events-auto bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center cursor-pointer group"
+                onClick={() => {
+                  stopBattleMusic(true);
+                  setBattleState("idle");
+                  setUniverse1(null);
+                  setUniverse2(null);
+                }}
+              >
+                <div className="w-full flex flex-col items-center justify-center mt-2 md:mt-8 px-4">
+                  {/* Image Stage */}
+                  <div className="relative w-full aspect-video flex items-center justify-center max-w-4xl mx-auto">
+                    {/* Losers Collage */}
+                    <div 
+                      className="absolute left-1/2 -translate-x-1/2 top-[5%] md:top-[10%] flex justify-center items-end opacity-20 grayscale blur-[2px] z-30 w-[120%]"
+                      style={{ animation: "fadeInLeft 0.8s ease 0.3s both" }}
+                    >
+                      <div className="flex -space-x-4 md:-space-x-8 items-end justify-center w-full">
+                        {losingChars.map((char, i) => {
+                           const centerIndex = Math.floor(losingChars.length / 2);
+                           const dist = Math.abs(i - centerIndex);
+                           const scale = 1 - dist * 0.1;
+                           return (
+                             <div key={char.id} className="relative w-24 h-32 md:w-32 md:h-48 pointer-events-none" style={{ zIndex: 10 - dist, transform: `scale(${scale}) translateY(${dist * 5}%)` }}>
+                               <Image src={getAssetPath(char.previewUrl)} alt={char.name} fill className="object-contain filter brightness-50" />
+                             </div>
+                           );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Winners Collage */}
+                    <div 
+                      className="relative z-40 w-[120%] flex flex-col justify-end items-center mt-[25%]"
+                      style={{ animation: "victoryEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both" }}
+                    >
+                       <div className="flex -space-x-12 md:-space-x-20 items-end justify-center w-full">
+                         {winningChars.map((char, i) => {
+                           const centerIndex = Math.floor(winningChars.length / 2);
+                           const dist = Math.abs(i - centerIndex);
+                           const scale = 1 - dist * 0.1;
+                           return (
+                             <div 
+                               key={char.id} 
+                               className="relative w-32 h-44 md:w-56 md:h-80 pointer-events-none filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)]" 
+                               style={{ 
+                                  zIndex: 50 - dist,
+                                  transform: `scale(${scale}) translateY(${dist * 5}%)` 
+                               }}
+                             >
+                               <Image src={getAssetPath(char.previewUrl)} alt={char.name} fill className="object-contain filter drop-shadow-[0_0_15px_rgba(37,99,235,0.4)]" />
+                             </div>
+                           );
+                         })}
+                       </div>
+                       
+                       <div 
+                         className="absolute bottom-[-15%] md:-bottom-4 z-50 pointer-events-none"
+                         style={{ animation: "fadeInUp 0.5s ease 1s both" }}
+                       >
+                         <div className="px-6 py-2 bg-black/60 backdrop-blur-md rounded-full border border-white/20 transition-opacity opacity-80 group-hover:opacity-100 shadow-xl" style={{ animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite" }}>
+                           <span className="text-white text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] whitespace-nowrap">Tap anywhere to play again</span>
+                         </div>
+                       </div>
+                    </div>
+                  </div>
+
+                  {/* Text Content */}
+                  <div
+                    className="z-50 flex flex-col items-center px-4 w-full mt-4 md:mt-8"
+                    style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
                   >
-                    Play Again
-                  </button>
+                    <h2 className="text-4xl sm:text-5xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-blue-300 to-blue-600 drop-shadow-[0_10px_30px_rgba(37,99,235,0.8)] text-center leading-none" style={{ WebkitTextStroke: '1px #1d4ed8' }}>
+                      {winningUniverse}
+                    </h2>
+                    <h3 className="text-2xl md:text-5xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-1 md:mt-2">
+                       DOMINATES
+                    </h3>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
         </div>
 
         {/* Scrollable Selection Section */}
@@ -476,6 +554,15 @@ export default function Home() {
         .hide-scrollbar {
           -ms-overflow-style: none;
           scrollbar-width: none;
+        }
+        @keyframes victoryEntrance {
+          0% { transform: scale(0.5) rotate(-5deg); opacity: 0; }
+          70% { transform: scale(1.1) rotate(2deg); }
+          100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        @keyframes fadeInLeft {
+          from { transform: translateX(-50px); opacity: 0; }
+          to { transform: translateX(0); opacity: 0.3; }
         }
       `}</style>
     </main>

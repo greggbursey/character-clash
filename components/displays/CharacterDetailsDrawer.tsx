@@ -28,8 +28,8 @@ export default function CharacterDetailsDrawer({
   setWithPrep
 }: CharacterDetailsDrawerProps) {
   const [activeTab, setActiveTab] = useState<'lore' | 'modifiers'>('lore');
-  const [isGearOpen, setIsGearOpen] = useState(false);
-  const [isPrepOpen, setIsPrepOpen] = useState(false);
+  const [isGearOpen, setIsGearOpen] = useState(true);
+  const [isPrepOpen, setIsPrepOpen] = useState(true);
 
   return (
     <AnimatePresence>
