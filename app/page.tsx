@@ -19,6 +19,8 @@ import CombatActionBar from "@/components/ui/CombatActionBar";
 import CharacterDetailsDrawer from "@/components/displays/CharacterDetailsDrawer";
 import { useBattleMusic } from "@/hooks/use-battle-music";
 import { universeLoreData } from "@/data/universe-lore";
+import ComicStory from "@/components/visuals/ComicStory";
+import { generateStory, StoryPanel } from "@/lib/story-generator";
 
 export default function Home() {
   // State
@@ -30,6 +32,7 @@ export default function Home() {
   const [battleState, setBattleState] = useState<BattleState>("idle");
   const [countdown, setCountdown] = useState(3);
   const [winner, setWinner] = useState<1 | 2 | null>(null);
+  const [storyPanels, setStoryPanels] = useState<StoryPanel[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [activeUniverse, setActiveUniverse] = useState<string>("All");
@@ -39,6 +42,7 @@ export default function Home() {
   const [withPrep1, setWithPrep1] = useState(false);
   const [withGear2, setWithGear2] = useState(false);
   const [withPrep2, setWithPrep2] = useState(false);
+  const [showStories, setShowStories] = useState(true);
 
   // Audio hook
   const { start: startBattleMusic, stop: stopBattleMusic } = useBattleMusic();
@@ -137,6 +141,7 @@ export default function Home() {
     setUniverse2(null);
     setBattleState("idle");
     setWinner(null);
+    setStoryPanels([]);
     setWithGear1(false);
     setWithPrep1(false);
     setWithGear2(false);
@@ -180,7 +185,18 @@ export default function Home() {
                 win = Math.random() <= winProb1 ? 1 : 2;
               }
               setWinner(win);
-              setBattleState("result");
+              
+              const panels = generateStory(
+                "battle",
+                char1.name,
+                char2.name,
+                win,
+                p1, p2,
+                withGear1, withPrep1, withGear2, withPrep2,
+                [char1], [char2]
+              );
+              setStoryPanels(panels);
+              setBattleState(showStories ? "story" : "result");
 
               try {
                 const winnerChar = win === 1 ? char1 : char2;
@@ -225,7 +241,21 @@ export default function Home() {
                 win = Math.random() <= winProb1 ? 1 : 2;
               }
               setWinner(win);
-              setBattleState("result");
+              
+              const pool1 = characters.filter(c => c.universe === universe1).sort((a, b) => b.powerScore - a.powerScore);
+              const pool2 = characters.filter(c => c.universe === universe2).sort((a, b) => b.powerScore - a.powerScore);
+
+              const panels = generateStory(
+                "universe",
+                universe1,
+                universe2,
+                win,
+                p1, p2,
+                withGear1, withPrep1, withGear2, withPrep2,
+                pool1, pool2
+              );
+              setStoryPanels(panels);
+              setBattleState(showStories ? "story" : "result");
 
               try {
                 const globalRef = doc(db, 'globalStats', 'overview');
@@ -239,7 +269,7 @@ export default function Home() {
         return () => clearTimeout(timer);
       }
     }
-  }, [battleState, countdown, char1, char2, universe1, universe2, mode, withGear1, withGear2, withPrep1, withPrep2, getUniverseStats]);
+  }, [battleState, countdown, char1, char2, universe1, universe2, mode, withGear1, withGear2, withPrep1, withPrep2, getUniverseStats, showStories]);
 
   // Drawer Context Bindings
   const isSlot2 = mode !== 'single' && activeDrawerSlot === 2;
@@ -274,11 +304,27 @@ export default function Home() {
             activeUniverse={activeUniverse}
             isUniverseFilterOpen={isUniverseFilterOpen}
             setIsUniverseFilterOpen={setIsUniverseFilterOpen}
+            showStories={showStories}
+            setShowStories={setShowStories}
           />
         </div>
 
         {/* Result Overlays */}
         <div className="flex-shrink-0 z-20 relative pointer-events-none">
+          {battleState === "story" && winner !== null && (
+            <ComicStory
+              panels={storyPanels}
+              img1={mode === "battle" ? getAssetPath(char1?.previewUrl || "") : getAssetPath(characters.filter(c => c.universe === universe1).sort((a,b) => b.powerScore - a.powerScore)[0]?.previewUrl || "")}
+              img2={mode === "battle" ? getAssetPath(char2?.previewUrl || "") : getAssetPath(characters.filter(c => c.universe === universe2).sort((a,b) => b.powerScore - a.powerScore)[0]?.previewUrl || "")}
+              name1={mode === "battle" ? char1?.name || "" : universe1 || ""}
+              name2={mode === "battle" ? char2?.name || "" : universe2 || ""}
+              color1={mode === "battle" ? char1?.color || "#ffffff" : getUniverseStats(universe1 || "").color || "#ffffff"}
+              color2={mode === "battle" ? char2?.color || "#ffffff" : getUniverseStats(universe2 || "").color || "#ffffff"}
+              onStoryComplete={() => setBattleState("result")}
+              onSkip={() => setBattleState("result")}
+            />
+          )}
+
           {mode === "battle" && battleState === "result" && winner && (
             <div 
               className="fixed inset-0 z-[100] overflow-hidden pointer-events-auto bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center cursor-pointer group"

@@ -136,6 +136,15 @@ export default function BackgroundLayers({
           </motion.div>
         )}
 
+        {(mode === 'battle' || mode === 'universe') && (battleState === 'story' || battleState === 'countdown') && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 0.4, 0, 0.4, 0] }}
+            transition={{ duration: 4, repeat: Infinity }}
+            className="absolute inset-0 bg-red-500/10 mix-blend-overlay z-10 pointer-events-none"
+          />
+        )}
+
         {mode === 'battle' && (
           <motion.div
             key="battle-bg"
@@ -148,7 +157,7 @@ export default function BackgroundLayers({
             {/* Left Side */}
             <motion.div 
               className="relative h-full"
-              animate={{ width: battleState === 'result' ? (winner === 1 ? '75%' : '25%') : '50%' }}
+              animate={{ width: battleState === 'result' ? (winner === 1 ? '75%' : '25%') : (battleState === 'story' ? '50%' : '50%') }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
             >
               <AnimatePresence mode="wait">
@@ -158,7 +167,7 @@ export default function BackgroundLayers({
                     initial={{ opacity: 0 }}
                     animate={{ 
                       opacity: 1,
-                      filter: battleState === 'result' && winner === 2 ? 'grayscale(100%) brightness(0.2)' : 'grayscale(0%) brightness(1)'
+                      filter: (battleState === 'result' && winner === 2) ? 'grayscale(100%) brightness(0.2)' : (battleState === 'story' ? 'blur(8px) brightness(0.4)' : 'grayscale(0%) brightness(1)')
                     }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
@@ -212,7 +221,7 @@ export default function BackgroundLayers({
                     initial={{ opacity: 0 }}
                     animate={{ 
                       opacity: 1,
-                      filter: battleState === 'result' && winner === 1 ? 'grayscale(100%) brightness(0.2)' : 'grayscale(0%) brightness(1)'
+                      filter: (battleState === 'result' && winner === 1) ? 'grayscale(100%) brightness(0.2)' : (battleState === 'story' ? 'blur(8px) brightness(0.4)' : 'grayscale(0%) brightness(1)')
                     }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
@@ -287,7 +296,7 @@ export default function BackgroundLayers({
                     initial={{ opacity: 0 }}
                     animate={{ 
                       opacity: 1,
-                      filter: battleState === 'result' && winner === 2 ? 'grayscale(100%) brightness(0.2)' : 'grayscale(0%) brightness(1)'
+                      filter: (battleState === 'result' && winner === 2) ? 'grayscale(100%) brightness(0.2)' : (battleState === 'story' ? 'blur(8px) brightness(0.4)' : 'grayscale(0%) brightness(1)')
                     }}
                     exit={{ opacity: 0 }}
                     className="absolute inset-[-5%] overflow-hidden"
@@ -340,7 +349,7 @@ export default function BackgroundLayers({
                     initial={{ opacity: 0 }}
                     animate={{ 
                       opacity: 1,
-                      filter: battleState === 'result' && winner === 1 ? 'grayscale(100%) brightness(0.2)' : 'grayscale(0%) brightness(1)'
+                      filter: (battleState === 'result' && winner === 1) ? 'grayscale(100%) brightness(0.2)' : (battleState === 'story' ? 'blur(8px) brightness(0.4)' : 'grayscale(0%) brightness(1)')
                     }}
                     exit={{ opacity: 0 }}
                     className="absolute inset-[-5%] overflow-hidden"

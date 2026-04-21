@@ -1,6 +1,6 @@
 'use client';
 
-import { Search, X, User, Swords, Globe, BarChart3 } from 'lucide-react';
+import { Search, X, User, Swords, Globe, BarChart3, Film } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import { Mode } from '@/types';
@@ -15,6 +15,8 @@ interface HeaderProps {
   activeUniverse?: string;
   isUniverseFilterOpen?: boolean;
   setIsUniverseFilterOpen?: (open: boolean) => void;
+  showStories: boolean;
+  setShowStories: (show: boolean) => void;
 }
 
 export default function Header({
@@ -26,7 +28,9 @@ export default function Header({
   setSearchQuery,
   activeUniverse,
   isUniverseFilterOpen,
-  setIsUniverseFilterOpen
+  setIsUniverseFilterOpen,
+  showStories,
+  setShowStories
 }: HeaderProps) {
   return (
     <header className="flex flex-col sm:flex-row justify-between items-center gap-3 md:gap-6 mb-3 md:mb-8 flex-shrink-0">
@@ -127,6 +131,19 @@ export default function Header({
             Universe
           </button>
         </div>
+
+        <button
+          onClick={() => setShowStories(!showStories)}
+          title={showStories ? "Disable Cinematic Stories" : "Enable Cinematic Stories"}
+          className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap border ${
+            showStories 
+              ? 'bg-red-600/20 text-red-500 border-red-500/50 shadow-[0_0_15px_rgba(239,68,68,0.2)]' 
+              : 'bg-zinc-900/80 text-zinc-400 border-zinc-800 hover:text-white hover:border-zinc-500'
+          }`}
+        >
+          <Film size={14} className="sm:w-4 sm:h-4" />
+          <span className="hidden sm:inline">{showStories ? 'Cinematic: On' : 'Cinematic: Off'}</span>
+        </button>
 
         <Link
           href="/portal"

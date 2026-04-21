@@ -50,7 +50,7 @@ export default function CombatActionBar({
 }: CombatActionBarProps) {
 
   // Hidden in single mode or if battle has resolved
-  if (mode === 'single' || battleState === 'result') return null;
+  if (mode === 'single' || battleState === 'result' || battleState === 'story') return null;
 
   const isBattle = mode === 'battle';
   

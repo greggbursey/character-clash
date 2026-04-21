@@ -10,90 +10,91 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![Motion](https://img.shields.io/badge/Motion-12-ff0055?style=flat-square&logo=framer)](https://motion.dev/)
 
-[View App in AI Studio](https://ai.studio/apps/051a6abf-79c6-439e-9f87-7765198c20a8)
-
 </div>
 
 ---
 
 ## 🚀 About the Project
 
-**Character Clash** is a high-fidelity web application that brings together legendary heroes and villains from across popular culture—including **Marvel**, **DC**, **TMNT**, **X-Men**, **Mortal Kombat**, **Street Fighter**, **Star Wars**, and **Godzilla**.
+**Character Clash** is a premium, high-fidelity battle simulator that brings together a massive roster from over 18 iconic franchises. Designed for speed, beauty, and deep lore integration, the app provides a cinematic experience where users can simulate high-stakes encounters between legends across:
 
-Designed with a focus on cinematic aesthetics and fluid user experience, the app allows fans to explore character lore, compare stats, and simulate high-stakes battles between individual fighters or entire universes.
+| | | |
+|---|---|---|
+| 🧬 **Marvel** | 🦇 **DC** | 🐉 **Dragon Ball Z** |
+| ⚔️ **Star Wars** | 🤖 **Transformers** | ❌ **X-Men** |
+| 🐢 **TMNT** | 🐉 **Godzilla** | 🏛️ **Greek Monsters** |
+| 🪄 **Harry Potter** | 💍 **Lord of the Rings** | 🗡️ **Mortal Kombat** |
+| 🕹️ **Street Fighter** | ☁️ **Mario** | 🐲 **HTTYD** |
+| ⚡ **Power Rangers** | 🎒 **Pokemon** | 🧽 **Spongebob** |
 
 ## ✨ Key Features
 
-- **🎬 Cinematic Interface**: A premium, dark-mode design with dynamic backgrounds tailored to each character and universe.
-- **🥋 Diverse Roster**: Over 50 meticulously detailed characters across 8 iconic universes, each with unique stats, lore, and visual assets.
-- **🔥 Three Battle Modes**:
-  - **Single View**: Deep dive into character backgrounds, lore, and power scores.
-  - **Battle Mode**: Pit two legendary fighters against each other in a randomized, power-weighted clash.
-  - **Universe Mode**: Measure the combined strength of entire franchises to see which universe reigns supreme.
-- **🔍 Intelligent Selection**: Fast, searchable character picker organized by universe.
-- **🪄 Fluid Animations**: Powered by **Motion 12** for smooth state transitions and a "living" UI.
-- **⚡ AI Narratives**: Dynamic battle commentary powered by Google Gemini AI for immersive storytelling.
+- **🎬 Cinematic Story Engine**: Every battle generates a procedural, multi-panel comic book experience featuring:
+  - **Dynamic "Army View"**: Universe-scale wars showcase massive rosters in 4-character grid collages.
+  - **Visual Pacing**: Alternating perspective shifts between panoramic backgrounds and character portraits.
+  - **Special Effects**: Motion-integrated transitions including screen shakes, flashes, and pans.
+- **🎙️ Pro Narration**: Integrated Web Speech API provides a zero-latency, narrated storytelling experience that adapts to the battle outcome.
+- **🥋 Strategic Modifiers**: Beyond raw power scores, battles are influenced by:
+  - **Preparation Bonus**: Dedicated tactical descriptions for character contingencies.
+  - **Signature Gear**: Specialized equipment bonuses and dynamic lore-based entries.
+- **📊 The Portal Dashboard**: A deep-dive analytical suite for global cross-universe data:
+  - **Power Matrix**: High-level comparison across all franchises.
+  - **Hall of Fame**: Real-time tracking of battle-tested champions.
+  - **Global Stats**: Aggregated multiversal metrics powered by Firebase.
+- **⚡ Performance Optimized**: Zero-cost, high-speed image optimization pipeline using **Sharp** to convert and compress multiversal assets into optimized WebP formats.
 
 ## 🛠️ Tech Stack
 
 - **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
 - **Library**: [React 19](https://react.dev/)
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
-- **Animations**: [Motion 12](https://motion.dev/) (Framer Motion)
-- **Backend**: [Firebase](https://firebase.google.com/) (Real-time database & hosting)
-- **AI Integration**: [Google Gemini AI API](https://ai.google.dev/) (Dynamic battle narratives & character analysis)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Animations**: [Motion 12](https://motion.dev/)
+- **Backend**: [Firebase](https://firebase.google.com/) (Stats Tracking & Global Registry)
+- **Image Processing**: [Sharp](https://sharp.pixelplumbing.com/) (Performance Optimization Pipeline)
+- **Narrative Engine**: Custom Procedural Logic with native Web Speech API integration.
 
 ## 🏁 Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (Latest LTS recommended)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Node.js](https://nodejs.org/) (Latest LTS)
+- [npm](https://www.npmjs.com/)
 
 ### Installation
 
 1. **Clone the repository:**
-
    ```bash
    git clone https://github.com/your-username/character-clash.git
    cd character-clash
    ```
 
 2. **Install dependencies:**
-
    ```bash
    npm install
    ```
 
 3. **Configure Environment Variables:**
-   Create a `.env.local` file in the root directory with your API keys:
-
+   Create a `.env.local` file in the root directory for Firebase integration:
    ```env
-   NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
-   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_firebase_project_id
-   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
-   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
-   NEXT_PUBLIC_FIREBASE_APP_ID=your_firebase_app_id
-   GEMINI_API_KEY=your_gemini_api_key
+   NEXT_PUBLIC_FIREBASE_API_KEY=your_generic_api_key
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_id
+   # ... (Add other Firebase config keys)
    ```
 
 4. **Run the development server:**
-
    ```bash
    npm run dev
    ```
 
-5. **Open the app:**
-   Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
+## 🛡️ Security & Integrity
 
-## 📊 Data & Assets
-
-The character data residing in `data/characters.ts` is dynamically populated using a custom scraping engine (`scripts/scrape.ts`) that sources high-quality assets and portraits to ensure a premium visual experience.
+This repository adheres to strict security standards:
+- **Dependency Pinning**: All packages are version-locked to prevent supply chain vulnerabilities.
+- **Asset Localisation**: All character assets are managed locally to ensure privacy and zero-latency loading.
+- **Stat Sanitization**: Global statistics are sanitized before being committed to the shared registry.
 
 ---
 
 <div align="center">
-Built with ❤️ for fans of legendary characters everywhere.
+Built for the fans. Engineered for the future.
 </div>
