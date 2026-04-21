@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { StoryPanel } from '@/lib/story-generator';
 import { useNarration } from '@/hooks/use-narration';
 
+import { getAssetPath } from '@/lib/utils';
+
 interface ComicStoryProps {
   panels: StoryPanel[];
   img1: string; // Fallback
@@ -31,7 +33,7 @@ const ImageLayout = ({
     return (
       <div className={`w-full h-full relative ${effectClass}`}>
         <Image 
-          src={images[0].url} 
+          src={getAssetPath(images[0].url)} 
           alt={images[0].name} 
           fill 
           className={type === 'background' ? "object-cover" : "object-contain filter drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] md:p-8 p-4"} 
@@ -52,7 +54,7 @@ const ImageLayout = ({
           className="relative w-full h-full overflow-hidden border-2 border-black/50 shadow-lg rounded-sm bg-zinc-900/40 backdrop-blur-sm"
         >
            <Image 
-            src={img.url} 
+            src={getAssetPath(img.url)} 
             alt={img.name} 
             fill 
             className="object-contain p-2 hover:scale-110 transition-transform duration-500" 

@@ -16,7 +16,12 @@ export function getAssetPath(path: string) {
   }
   
   const basePath = process.env.NODE_ENV === 'production' ? '/character-clash' : '';
-  const cleanPath = finalPath.startsWith('/') ? finalPath : `/${finalPath}`;
   
+  // If the path already starts with the basePath, don't add it again
+  if (basePath && finalPath.startsWith(basePath)) {
+    return finalPath;
+  }
+  
+  const cleanPath = finalPath.startsWith('/') ? finalPath : `/${finalPath}`;
   return `${basePath}${cleanPath}`;
 }
