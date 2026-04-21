@@ -18,6 +18,7 @@ import UniverseFilterModal from "@/components/ui/UniverseFilterModal";
 import CombatActionBar from "@/components/ui/CombatActionBar";
 import CharacterDetailsDrawer from "@/components/displays/CharacterDetailsDrawer";
 import { useBattleMusic } from "@/hooks/use-battle-music";
+import { useNarration } from "@/hooks/use-narration";
 import { universeLoreData } from "@/data/universe-lore";
 import ComicStory from "@/components/visuals/ComicStory";
 import { generateStory, StoryPanel } from "@/lib/story-generator";
@@ -46,6 +47,7 @@ export default function Home() {
 
   // Audio hook
   const { start: startBattleMusic, stop: stopBattleMusic } = useBattleMusic();
+  const { speak: primeNarration } = useNarration();
 
   // Memoized Data
   const filteredCharacters = useMemo(() => {
@@ -155,6 +157,11 @@ export default function Home() {
     
     // Start music
     startBattleMusic();
+    
+    // Prime narration for mobile (user gesture)
+    try {
+      primeNarration('');
+    } catch (e) {}
 
     setCountdown(3);
     setBattleState("countdown");

@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { ChevronRight } from 'lucide-react';
 import { StoryPanel } from '@/lib/story-generator';
 import { useNarration } from '@/hooks/use-narration';
 
@@ -78,32 +79,57 @@ export default function ComicStory({
   onSkip,
 }: ComicStoryProps) {
   const [currentPanelIndex, setCurrentPanelIndex] = useState(0);
-  const { speak, stop, isReady, supported } = useNarration();
+  const { speak, stop } = useNarration();
   const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  useEffect(() => {
-    if (supported && !isReady && currentPanelIndex === 0) return;
+  const advancePanel = useCallback(() => {
+    if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
+    stop();
+    if (currentPanelIndex < panels.length - 1) {
+      setCurrentPanelIndex(prev => prev + 1);
+    } else {
+      onStoryComplete();
+    }
+  }, [currentPanelIndex, panels, stop, onStoryComplete]);
 
+  useEffect(() => {
     if (currentPanelIndex < panels.length) {
       const panel = panels[currentPanelIndex];
-      speak(panel.text, () => {
-        if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
-        
-        transitionTimeoutRef.current = setTimeout(() => {
-          if (currentPanelIndex < panels.length - 1) {
-            setCurrentPanelIndex(prev => prev + 1);
-          } else {
-            onStoryComplete();
-          }
-        }, 800); 
-      });
-    }
+      
+      // Calculate a minimum reading time as a fallback (approx 15 chars per second)
+      const readingTimeMs = Math.max(3000, (panel.text.length / 15) * 1000);
+      let narrationFinished = false;
+      let minTimeFinished = false;
 
-    return () => {
-      stop();
-      if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
-    };
-  }, [currentPanelIndex, panels, speak, stop, onStoryComplete, isReady, supported]);
+      const checkProgress = () => {
+        if (narrationFinished && minTimeFinished) {
+          if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
+          transitionTimeoutRef.current = setTimeout(() => {
+            advancePanel();
+          }, 600);
+        }
+      };
+
+      // Start narration
+      speak(panel.text, () => {
+        narrationFinished = true;
+        checkProgress();
+      });
+
+      // Minimum display time timer
+      const timer = setTimeout(() => {
+        minTimeFinished = true;
+        checkProgress();
+      }, readingTimeMs);
+
+      return () => {
+        clearTimeout(timer);
+        stop();
+        if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
+      };
+    }
+  }, [currentPanelIndex, panels, speak, stop, advancePanel]);
+
 
   useEffect(() => {
     return () => stop();
@@ -194,7 +220,7 @@ export default function ComicStory({
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, type: "spring", damping: 15 }}
-              className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8 z-30"
+              className="absolute bottom-4 left-4 right-20 md:bottom-8 md:left-8 md:right-40 z-30"
             >
               <div className="bg-yellow-400 border-4 border-black p-4 md:p-8 shadow-[8px_8px_0px_#000000] relative max-w-2xl transform -rotate-1 hover:rotate-0 transition-transform">
                 <div className="absolute -top-3 -left-3 w-6 h-6 bg-yellow-600 border-b-4 border-r-4 border-black" />
@@ -211,6 +237,16 @@ export default function ComicStory({
           </motion.div>
         </AnimatePresence>
       </div>
+
+      <button 
+        onClick={advancePanel}
+        className="absolute bottom-6 right-6 md:bottom-12 md:right-12 z-[110] flex items-center gap-2 px-6 py-3 bg-yellow-400 text-black font-black uppercase tracking-widest text-sm border-4 border-black shadow-[8px_8px_0px_#000000] hover:shadow-[4px_4px_0px_#000000] hover:translate-x-1 hover:translate-y-1 active:scale-95 transition-all group"
+      >
+        <span className="drop-shadow-sm">
+          {currentPanelIndex < panels.length - 1 ? 'Next' : 'Finish'}
+        </span>
+        <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform stroke-[3px]" />
+      </button>
 
       <style jsx global>{`
         .comic-caption::first-letter {
