@@ -200,7 +200,8 @@ export default function Home() {
                 win,
                 p1, p2,
                 withGear1, withPrep1, withGear2, withPrep2,
-                [char1], [char2]
+                [char1], [char2],
+                char1.universe, char2.universe
               );
               setStoryPanels(panels);
               setBattleState(showStories ? "story" : "result");
@@ -259,7 +260,8 @@ export default function Home() {
                 win,
                 p1, p2,
                 withGear1, withPrep1, withGear2, withPrep2,
-                pool1, pool2
+                pool1, pool2,
+                universe1, universe2
               );
               setStoryPanels(panels);
               setBattleState(showStories ? "story" : "result");
@@ -336,7 +338,7 @@ export default function Home() {
             <div 
               className="fixed inset-0 z-[100] overflow-hidden pointer-events-auto bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center cursor-pointer group"
               onClick={() => {
-                stopBattleMusic(true);
+                stopBattleMusic();
                 setBattleState("idle");
                 setChar1(null);
                 setChar2(null);
@@ -412,7 +414,7 @@ export default function Home() {
               <div 
                 className="fixed inset-0 z-[100] overflow-hidden pointer-events-auto bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center cursor-pointer group"
                 onClick={() => {
-                  stopBattleMusic(true);
+                  stopBattleMusic();
                   setBattleState("idle");
                   setUniverse1(null);
                   setUniverse2(null);

@@ -19,6 +19,14 @@ interface ComicStoryProps {
   onSkip: () => void;
 }
 
+/** Extract the first word and the rest of the text */
+function splitFirstWord(text: string): [string, string] {
+  const trimmed = text.trim();
+  const spaceIndex = trimmed.indexOf(' ');
+  if (spaceIndex === -1) return [trimmed, ''];
+  return [trimmed.slice(0, spaceIndex), trimmed.slice(spaceIndex)];
+}
+
 const ImageLayout = ({ 
   images, 
   type, 
@@ -95,35 +103,35 @@ export default function ComicStory({
   useEffect(() => {
     if (currentPanelIndex < panels.length) {
       const panel = panels[currentPanelIndex];
-      
-      // Calculate a minimum reading time as a fallback (approx 15 chars per second)
-      const readingTimeMs = Math.max(3000, (panel.text.length / 15) * 1000);
-      let narrationFinished = false;
-      let minTimeFinished = false;
+      let narrationStarted = false;
+      let cancelled = false;
 
-      const checkProgress = () => {
-        if (narrationFinished && minTimeFinished) {
-          if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
-          transitionTimeoutRef.current = setTimeout(() => {
-            advancePanel();
-          }, 600);
-        }
-      };
-
-      // Start narration
+      // Primary path: narration finishes → wait 1s → advance
       speak(panel.text, () => {
-        narrationFinished = true;
-        checkProgress();
+        narrationStarted = true;
+        if (cancelled) return;
+        if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
+        transitionTimeoutRef.current = setTimeout(() => {
+          if (!cancelled) advancePanel();
+        }, 1000);
       });
 
-      // Minimum display time timer
-      const timer = setTimeout(() => {
-        minTimeFinished = true;
-        checkProgress();
-      }, readingTimeMs);
+      // Safety fallback: if narration never started (no voice / unsupported),
+      // auto-advance after a generous reading time so the story doesn't get stuck.
+      // This only fires if narration hasn't already triggered advancement.
+      const fallbackMs = Math.max(5000, (panel.text.length / 10) * 1000);
+      const fallbackTimer = setTimeout(() => {
+        if (!narrationStarted && !cancelled) {
+          if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
+          transitionTimeoutRef.current = setTimeout(() => {
+            if (!cancelled) advancePanel();
+          }, 1000);
+        }
+      }, fallbackMs);
 
       return () => {
-        clearTimeout(timer);
+        cancelled = true;
+        clearTimeout(fallbackTimer);
         stop();
         if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
       };
@@ -152,6 +160,8 @@ export default function ComicStory({
     return { background: `linear-gradient(to right, ${color1}33, transparent, ${color2}33)` };
   };
 
+  const [firstWord, restText] = splitFirstWord(currentPanel.text);
+
   return (
     <div className="fixed inset-0 z-[100] bg-black pointer-events-auto flex flex-col">
       <button 
@@ -164,7 +174,8 @@ export default function ComicStory({
         Skip Story
       </button>
 
-      <div className="flex-1 relative overflow-hidden flex items-center justify-center p-4 md:p-12">
+      {/* Main Panel: split into image zone + caption zone */}
+      <div className="flex-1 relative overflow-hidden flex flex-col items-center justify-center p-2 md:p-8">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPanel.id}
@@ -172,64 +183,70 @@ export default function ComicStory({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 1.05, y: -20 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="w-full max-w-5xl aspect-video md:aspect-[21/9] border-4 border-zinc-900 bg-zinc-950 relative overflow-hidden group shadow-[0_0_50px_rgba(0,0,0,0.8)]"
+            className="w-full max-w-5xl flex flex-col border-4 border-zinc-900 bg-zinc-950 relative overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)]"
             style={getContainerStyle(currentPanel.focus)}
           >
-            <div className="absolute inset-0 z-20 pointer-events-none opacity-[0.08] mix-blend-overlay" 
-                 style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '4px 4px' }} />
-            <div className="absolute inset-0 z-20 pointer-events-none opacity-[0.03] animate-pulse" 
-                 style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/paper-fibers.png")' }} />
+            {/* ── Image Zone ── */}
+            <div className="relative w-full aspect-[21/9] md:aspect-[21/9] min-h-[120px] overflow-hidden">
+              {/* Halftone + paper texture overlays */}
+              <div className="absolute inset-0 z-20 pointer-events-none opacity-[0.08] mix-blend-overlay" 
+                   style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '4px 4px' }} />
+              <div className="absolute inset-0 z-20 pointer-events-none opacity-[0.03] animate-pulse" 
+                   style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/paper-fibers.png")' }} />
 
-            {currentPanel.focus === 'split' && (
-              <div className="absolute inset-0 z-10 w-full h-full flex justify-center pointer-events-none">
-                <div className="w-1 md:w-2 h-[150%] bg-zinc-900 shadow-[0_0_20px_rgba(0,0,0,0.5)] transform -rotate-12 translate-y-[-10%]" />
-              </div>
-            )}
+              {currentPanel.focus === 'split' && (
+                <div className="absolute inset-0 z-10 w-full h-full flex justify-center pointer-events-none">
+                  <div className="w-1 md:w-2 h-[150%] bg-zinc-900 shadow-[0_0_20px_rgba(0,0,0,0.5)] transform -rotate-12 translate-y-[-10%]" />
+                </div>
+              )}
 
-            {(currentPanel.focus === 1 || currentPanel.focus === 'split') && (
-              <div 
-                className={`absolute inset-0 z-0 ${currentPanel.focus === 'split' ? 'w-[55%] left-0' : 'w-full'}`}
-                style={{ 
-                  clipPath: currentPanel.focus === 'split' ? 'polygon(0 0, 100% 0, 85% 100%, 0 100%)' : 'none'
-                }}
-              >
-                <ImageLayout 
-                  images={currentPanel.images1 || [{ url: img1, name: name1 }]} 
-                  type={currentPanel.imageType1 || 'preview'}
-                  effectClass={effectClasses[currentPanel.effect]}
-                />
-              </div>
-            )}
+              {(currentPanel.focus === 1 || currentPanel.focus === 'split') && (
+                <div 
+                  className={`absolute inset-0 z-0 ${currentPanel.focus === 'split' ? 'w-[55%] left-0' : 'w-full'}`}
+                  style={{ 
+                    clipPath: currentPanel.focus === 'split' ? 'polygon(0 0, 100% 0, 85% 100%, 0 100%)' : 'none'
+                  }}
+                >
+                  <ImageLayout 
+                    images={currentPanel.images1 || [{ url: img1, name: name1 }]} 
+                    type={currentPanel.imageType1 || 'preview'}
+                    effectClass={effectClasses[currentPanel.effect]}
+                  />
+                </div>
+              )}
 
-            {(currentPanel.focus === 2 || currentPanel.focus === 'split') && (
-              <div 
-                className={`absolute inset-0 z-0 ${currentPanel.focus === 'split' ? 'w-[60%] right-0 left-auto' : 'w-full'}`}
-                style={{ 
-                  clipPath: currentPanel.focus === 'split' ? 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)' : 'none'
-                }}
-              >
-                <ImageLayout 
-                  images={currentPanel.images2 || [{ url: img2, name: name2 }]} 
-                  type={currentPanel.imageType2 || 'preview'}
-                  effectClass={effectClasses[currentPanel.effect]}
-                />
-              </div>
-            )}
+              {(currentPanel.focus === 2 || currentPanel.focus === 'split') && (
+                <div 
+                  className={`absolute inset-0 z-0 ${currentPanel.focus === 'split' ? 'w-[60%] right-0 left-auto' : 'w-full'}`}
+                  style={{ 
+                    clipPath: currentPanel.focus === 'split' ? 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)' : 'none'
+                  }}
+                >
+                  <ImageLayout 
+                    images={currentPanel.images2 || [{ url: img2, name: name2 }]} 
+                    type={currentPanel.imageType2 || 'preview'}
+                    effectClass={effectClasses[currentPanel.effect]}
+                  />
+                </div>
+              )}
+            </div>
 
+            {/* ── Caption Zone ── */}
             <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, type: "spring", damping: 15 }}
-              className="absolute bottom-4 left-4 right-20 md:bottom-8 md:left-8 md:right-40 z-30"
+              className="relative z-30 px-3 py-3 md:px-8 md:py-5"
             >
-              <div className="bg-yellow-400 border-4 border-black p-4 md:p-8 shadow-[8px_8px_0px_#000000] relative max-w-2xl transform -rotate-1 hover:rotate-0 transition-transform">
-                <div className="absolute -top-3 -left-3 w-6 h-6 bg-yellow-600 border-b-4 border-r-4 border-black" />
+              <div className="bg-yellow-400 border-4 border-black p-3 md:p-6 shadow-[6px_6px_0px_#000000] relative transform -rotate-[0.5deg] hover:rotate-0 transition-transform">
+                <div className="absolute -top-3 -left-3 w-5 h-5 md:w-6 md:h-6 bg-yellow-600 border-b-4 border-r-4 border-black" />
                 <div className="absolute top-2 right-2 flex gap-1">
                    <div className="w-1.5 h-1.5 rounded-full bg-black/20" />
                    <div className="w-1.5 h-1.5 rounded-full bg-black/20" />
                 </div>
-                <p className="font-sans text-sm md:text-2xl font-black text-black uppercase leading-tight tracking-tighter drop-shadow-sm comic-caption">
-                  {currentPanel.text}
+                <p className="font-sans text-sm md:text-xl lg:text-2xl font-black text-black uppercase leading-tight tracking-tighter drop-shadow-sm">
+                  <span className="comic-first-word">{firstWord}</span>
+                  {restText}
                 </p>
               </div>
             </motion.div>
@@ -238,28 +255,41 @@ export default function ComicStory({
         </AnimatePresence>
       </div>
 
-      <button 
-        onClick={advancePanel}
-        className="absolute bottom-6 right-6 md:bottom-12 md:right-12 z-[110] flex items-center gap-2 px-6 py-3 bg-yellow-400 text-black font-black uppercase tracking-widest text-sm border-4 border-black shadow-[8px_8px_0px_#000000] hover:shadow-[4px_4px_0px_#000000] hover:translate-x-1 hover:translate-y-1 active:scale-95 transition-all group"
-      >
-        <span className="drop-shadow-sm">
-          {currentPanelIndex < panels.length - 1 ? 'Next' : 'Finish'}
-        </span>
-        <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform stroke-[3px]" />
-      </button>
+      {/* Next/Finish button */}
+      <div className="flex-shrink-0 flex justify-end px-4 pb-4 md:px-12 md:pb-8">
+        <button 
+          onClick={advancePanel}
+          className="z-[110] flex items-center gap-2 px-6 py-3 bg-yellow-400 text-black font-black uppercase tracking-widest text-sm border-4 border-black shadow-[8px_8px_0px_#000000] hover:shadow-[4px_4px_0px_#000000] hover:translate-x-1 hover:translate-y-1 active:scale-95 transition-all group"
+        >
+          <span className="drop-shadow-sm">
+            {currentPanelIndex < panels.length - 1 ? 'Next' : 'Finish'}
+          </span>
+          <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform stroke-[3px]" />
+        </button>
+      </div>
 
       <style jsx global>{`
-        .comic-caption::first-letter {
-          font-size: 3.5rem;
-          line-height: 1;
+        .comic-first-word {
+          font-size: 1.75rem;
+          line-height: 1.1;
           float: left;
           margin-right: 0.5rem;
-          margin-top: 0.25rem;
+          margin-top: 0.1rem;
           background: #000;
           color: #facc15;
-          padding: 0 0.5rem;
+          padding: 0.1em 0.4em;
           border: 2px solid #000;
           box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+          text-transform: uppercase;
+          font-weight: 900;
+          letter-spacing: -0.03em;
+        }
+        @media (min-width: 768px) {
+          .comic-first-word {
+            font-size: 2.75rem;
+            padding: 0.05em 0.45em;
+            margin-right: 0.6rem;
+          }
         }
         @keyframes panImage {
           0% { transform: scale(1.1) translateX(0); }
@@ -284,4 +314,3 @@ export default function ComicStory({
     </div>
   );
 }
-
