@@ -65,7 +65,7 @@ export default function CharacterSelection({
                 </div>
                 
                 {/* Character Grid */}
-                <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 2xl:grid-cols-12 gap-3 md:gap-4 px-1">
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-10 gap-4 md:gap-6 px-1">
                   {groupedCharacters[universe]?.map(char => {
                     const isSelected = char.id === char1?.id || char.id === char2?.id;
                     const hasSelection = char1 !== null || (mode === 'battle' && char2 !== null);
@@ -77,8 +77,8 @@ export default function CharacterSelection({
                         key={char.id}
                         onClick={() => selectCharacter(char)}
                         className={`relative flex flex-col items-center group transition-all duration-500 w-full ${
-                          isSelected ? 'scale-110 z-20 -translate-y-2' : hasSelection ? 'opacity-30 scale-95 hover:opacity-80 hover:scale-100' : 'hover:scale-105 hover:z-10'
-                        }`}
+                          isSelected ? 'scale-110 z-20 -translate-y-2' : 'hover:z-10'
+                        } ${hasSelection && !isSelected ? 'opacity-60 grayscale-[30%]' : 'opacity-100'}`}
                       >
                         <motion.div 
                           className={`w-full aspect-square rounded-xl md:rounded-2xl overflow-hidden transition-all duration-500 relative ${

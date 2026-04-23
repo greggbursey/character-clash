@@ -336,7 +336,11 @@ export default function Home() {
 
           {mode === "battle" && battleState === "result" && winner && (
             <div 
-              className="fixed inset-0 z-[100] overflow-hidden pointer-events-auto bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center cursor-pointer group"
+              className="fixed inset-0 z-[100] overflow-hidden pointer-events-auto flex flex-col items-center justify-center cursor-pointer group"
+              style={{ 
+                background: `radial-gradient(circle at center, ${(winner === 1 ? char1 : char2)?.color}15 0%, #000000f0 70%)`,
+                backdropFilter: 'blur(16px)'
+              }}
               onClick={() => {
                 stopBattleMusic();
                 setBattleState("idle");
@@ -344,9 +348,9 @@ export default function Home() {
                 setChar2(null);
               }}
             >
-              <div className="w-full max-w-2xl flex flex-col items-center justify-center px-4 mt-2 md:mt-8">
+              <div className="w-full max-w-2xl flex flex-col items-center justify-center px-4 mt-2 md:mt-4">
                 {/* Image Stage */}
-                <div className="relative w-full aspect-square md:aspect-video flex items-center justify-center">
+                <div className="relative w-full h-[40vh] md:h-[50vh] flex items-center justify-center">
                   {/* Loser - Back, Small, Desaturated */}
                   <div 
                     className="absolute left-[5%] bottom-[5%] w-24 h-24 md:w-56 md:h-56 opacity-30 grayscale blur-[1px] z-30"
@@ -364,7 +368,7 @@ export default function Home() {
                   
                   {/* Winner - Front, Large, Vibrant */}
                   <div 
-                    className="relative w-56 h-56 md:w-[450px] md:h-[450px] z-40 flex flex-col items-center justify-end"
+                    className="relative w-48 h-48 md:w-[400px] md:h-[400px] z-40 flex flex-col items-center justify-end"
                     style={{ 
                       animation: "victoryEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both" 
                     }}
@@ -376,29 +380,30 @@ export default function Home() {
                       priority
                       className="object-contain filter drop-shadow-[0_20px_60px_rgba(250,204,21,0.8)]"
                     />
-                    
-                    <div 
-                      className="absolute bottom-[-15%] md:bottom-4 z-50 pointer-events-none"
-                      style={{ animation: "fadeInUp 0.5s ease 1s both" }}
-                    >
-                      <div className="px-6 py-2 bg-black/60 backdrop-blur-md rounded-full border border-white/20 transition-opacity opacity-80 group-hover:opacity-100 shadow-xl" style={{ animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite" }}>
-                        <span className="text-white text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] whitespace-nowrap">Tap anywhere to play again</span>
-                      </div>
                     </div>
                   </div>
-                </div>
 
                 {/* Text Content */}
                 <div
                   className="z-50 flex flex-col items-center px-4 w-full -mt-4 md:mt-8"
                   style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
                 >
-                  <h2 className="text-4xl sm:text-5xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 drop-shadow-[0_10px_30px_rgba(220,38,38,0.8)] text-center leading-none" style={{ WebkitTextStroke: '1px #b91c1c' }}>
+                  <h2 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600 drop-shadow-[0_10px_30px_rgba(220,38,38,0.8)] text-center leading-none" style={{ WebkitTextStroke: '1px #b91c1c' }}>
                     {winner === 1 ? char1?.name : char2?.name}
                   </h2>
-                  <h3 className="text-2xl md:text-5xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-1 md:mt-2">
+                  <h3 className="text-xl md:text-4xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-1">
                      WINS
                   </h3>
+                </div>
+
+                {/* Re-positioned Play Again Button */}
+                <div 
+                  className="mt-6 md:mt-10 z-[110] pointer-events-none"
+                  style={{ animation: "fadeInUp 0.5s ease 1s both" }}
+                >
+                  <div className="px-8 py-2.5 bg-red-600 rounded-full border-2 border-white shadow-[0_0_30px_rgba(220,38,38,0.6)] transition-all opacity-100 shadow-xl" style={{ animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite" }}>
+                    <span className="text-white text-xs md:text-sm font-black uppercase tracking-[0.15em] whitespace-nowrap drop-shadow-md">Tap anywhere to play again</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -412,7 +417,11 @@ export default function Home() {
 
             return (
               <div 
-                className="fixed inset-0 z-[100] overflow-hidden pointer-events-auto bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center cursor-pointer group"
+                className="fixed inset-0 z-[100] overflow-hidden pointer-events-auto flex flex-col items-center justify-center cursor-pointer group"
+                style={{ 
+                  background: `radial-gradient(circle at center, ${getUniverseStats(winningUniverse || '').color}15 0%, #000000f0 70%)`,
+                  backdropFilter: 'blur(16px)'
+                }}
                 onClick={() => {
                   stopBattleMusic();
                   setBattleState("idle");
@@ -420,9 +429,9 @@ export default function Home() {
                   setUniverse2(null);
                 }}
               >
-                <div className="w-full flex flex-col items-center justify-center mt-2 md:mt-8 px-4">
+                <div className="w-full flex flex-col items-center justify-center mt-2 md:mt-4 px-4 overflow-hidden">
                   {/* Image Stage */}
-                  <div className="relative w-full aspect-video flex items-center justify-center max-w-4xl mx-auto">
+                  <div className="relative w-full h-[45vh] md:h-[55vh] flex items-center justify-center max-w-5xl mx-auto">
                     {/* Losers Collage */}
                     <div 
                       className="absolute left-1/2 -translate-x-1/2 top-[5%] md:top-[10%] flex justify-center items-end opacity-20 grayscale blur-[2px] z-30 w-[120%]"
@@ -465,36 +474,37 @@ export default function Home() {
                              </div>
                            );
                          })}
-                       </div>
-                       
-                       <div 
-                         className="absolute bottom-[-15%] md:-bottom-4 z-50 pointer-events-none"
-                         style={{ animation: "fadeInUp 0.5s ease 1s both" }}
-                       >
-                         <div className="px-6 py-2 bg-black/60 backdrop-blur-md rounded-full border border-white/20 transition-opacity opacity-80 group-hover:opacity-100 shadow-xl" style={{ animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite" }}>
-                           <span className="text-white text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] whitespace-nowrap">Tap anywhere to play again</span>
-                         </div>
-                       </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Text Content */}
+                    <div
+                      className="z-50 flex flex-col items-center px-4 w-full mt-4 md:mt-8"
+                      style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
+                    >
+                      <h2 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-blue-300 to-blue-600 drop-shadow-[0_10px_30px_rgba(37,99,235,0.8)] text-center leading-none" style={{ WebkitTextStroke: '1px #1d4ed8' }}>
+                        {winningUniverse}
+                      </h2>
+                      <h3 className="text-xl md:text-4xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-1">
+                         DOMINATES
+                      </h3>
+                    </div>
+
+                    {/* Re-positioned Play Again Button */}
+                    <div 
+                      className="mt-6 md:mt-10 z-[110] pointer-events-none"
+                      style={{ animation: "fadeInUp 0.5s ease 1s both" }}
+                    >
+                      <div className="px-8 py-2.5 bg-red-600 rounded-full border-2 border-white shadow-[0_0_30px_rgba(220,38,38,0.6)] transition-all opacity-100 shadow-xl" style={{ animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite" }}>
+                        <span className="text-white text-xs md:text-sm font-black uppercase tracking-[0.15em] whitespace-nowrap drop-shadow-md">Tap anywhere to play again</span>
+                      </div>
                     </div>
                   </div>
-
-                  {/* Text Content */}
-                  <div
-                    className="z-50 flex flex-col items-center px-4 w-full mt-4 md:mt-8"
-                    style={{ animation: "fadeInUp 0.5s ease 0.5s both" }}
-                  >
-                    <h2 className="text-4xl sm:text-5xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-blue-300 to-blue-600 drop-shadow-[0_10px_30px_rgba(37,99,235,0.8)] text-center leading-none" style={{ WebkitTextStroke: '1px #1d4ed8' }}>
-                      {winningUniverse}
-                    </h2>
-                    <h3 className="text-2xl md:text-5xl font-black uppercase tracking-widest text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)] mt-1 md:mt-2">
-                       DOMINATES
-                    </h3>
-                  </div>
                 </div>
-              </div>
-            );
-          })()}
-        </div>
+              );
+            })()}
+          </div>
 
         {/* Scrollable Selection Section */}
         <div

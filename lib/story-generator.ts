@@ -49,20 +49,27 @@ export function generateStory(
   const u2 = universe2 || charPool2[0]?.universe || '';
   const { f1, f2, pick } = getBlendedFlavor(u1, u2);
 
-  // Helper to slice character pools for rotation
-  const getSlice = (pool: Character[], index: number, count: number) => {
+  // Helper to slice character pools for rotation with mixed image types
+  const getSlice = (pool: Character[], index: number, count: number, numBgs: number = 0) => {
     if (pool.length === 0) return [];
-    const start = (index * count) % pool.length;
-    let result = pool.slice(start, start + count);
-    if (result.length < count && pool.length > count) {
-      result = [...result, ...pool.slice(0, count - result.length)];
+    const start = (index * 2) % pool.length; // More aggressive rotation
+    let result = [];
+    for (let i = 0; i < count; i++) {
+      const char = pool[(start + i) % pool.length];
+      const useBg = i < numBgs;
+      result.push({ 
+        url: useBg ? char.backgroundUrl : char.previewUrl, 
+        name: char.name,
+        type: (useBg ? 'background' : 'preview') as 'preview' | 'background'
+      });
     }
-    return result.map(c => ({ url: c.previewUrl, name: c.name }));
+    return result;
   };
 
   const getBackground = (pool: Character[], index: number) => {
     if (pool.length === 0) return "";
-    return pool[index % pool.length].backgroundUrl;
+    const char = pool[index % pool.length];
+    return char.backgroundUrl;
   };
 
   // ═══════════════════════════════════════════════════════════
@@ -95,8 +102,8 @@ export function generateStory(
     layout: mode === 'universe' ? 'army' : 'standard',
     imageType1: 'background',
     imageType2: 'background',
-    images1: mode === 'universe' ? getSlice(charPool1, 0, 1).map(i => ({ ...i, url: getBackground(charPool1, 0) })) : [{ url: getBackground(charPool1, 0), name: name1 }],
-    images2: mode === 'universe' ? getSlice(charPool2, 0, 1).map(i => ({ ...i, url: getBackground(charPool2, 0) })) : [{ url: getBackground(charPool2, 0), name: name2 }]
+    images1: mode === 'universe' ? getSlice(charPool1, 0, 3, 1) : [{ url: getBackground(charPool1, 0), name: name1 }],
+    images2: mode === 'universe' ? getSlice(charPool2, 0, 3, 1) : [{ url: getBackground(charPool2, 0), name: name2 }]
   });
 
   // ═══════════════════════════════════════════════════════════
@@ -132,8 +139,8 @@ export function generateStory(
     layout: mode === 'universe' ? 'army' : 'standard',
     imageType1: 'preview',
     imageType2: 'preview',
-    images1: getSlice(charPool1, 1, mode === 'universe' ? 4 : 1),
-    images2: getSlice(charPool2, 1, mode === 'universe' ? 4 : 1)
+    images1: getSlice(charPool1, 1, mode === 'universe' ? 6 : 1, mode === 'universe' ? 2 : 0),
+    images2: getSlice(charPool2, 1, mode === 'universe' ? 6 : 1, mode === 'universe' ? 2 : 0)
   });
 
   // ═══════════════════════════════════════════════════════════
@@ -173,8 +180,8 @@ export function generateStory(
     layout: mode === 'universe' ? 'army' : 'standard',
     imageType1: 'background',
     imageType2: 'background',
-    images1: [{ url: getBackground(charPool1, 1), name: name1 }],
-    images2: [{ url: getBackground(charPool2, 1), name: name2 }]
+    images1: mode === 'universe' ? getSlice(charPool1, 2, 4, 1) : [{ url: getBackground(charPool1, 1), name: name1 }],
+    images2: mode === 'universe' ? getSlice(charPool2, 2, 4, 1) : [{ url: getBackground(charPool2, 1), name: name2 }]
   });
 
   // ═══════════════════════════════════════════════════════════
@@ -218,8 +225,8 @@ export function generateStory(
     layout: mode === 'universe' ? 'army' : 'standard',
     imageType1: 'preview',
     imageType2: 'preview',
-    images1: p1Wins ? getSlice(charPool1, 2, mode === 'universe' ? 4 : 1) : getSlice(charPool1, 3, mode === 'universe' ? 4 : 1),
-    images2: !p1Wins ? getSlice(charPool2, 2, mode === 'universe' ? 4 : 1) : getSlice(charPool2, 3, mode === 'universe' ? 4 : 1)
+    images1: p1Wins ? getSlice(charPool1, 3, mode === 'universe' ? 6 : 1, mode === 'universe' ? 2 : 0) : getSlice(charPool1, 4, mode === 'universe' ? 6 : 1, mode === 'universe' ? 2 : 0),
+    images2: !p1Wins ? getSlice(charPool2, 3, mode === 'universe' ? 6 : 1, mode === 'universe' ? 2 : 0) : getSlice(charPool2, 4, mode === 'universe' ? 6 : 1, mode === 'universe' ? 2 : 0)
   });
 
   // ═══════════════════════════════════════════════════════════

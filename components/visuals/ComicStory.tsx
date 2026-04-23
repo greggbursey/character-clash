@@ -32,7 +32,7 @@ const ImageLayout = ({
   type, 
   effectClass 
 }: { 
-  images: { url: string; name: string }[], 
+  images: { url: string; name: string; type?: 'preview' | 'background' }[], 
   type: 'preview' | 'background',
   effectClass: string
 }) => {
@@ -52,25 +52,121 @@ const ImageLayout = ({
     );
   }
 
+  // Dynamic Comic Panel Layout (Classic Spread Style)
+  const getPanelStyles = (index: number, total: number) => {
+    // Define some classic layout "slots" based on total image count
+    const layouts: Record<number, { w: string, h: string, t: string, l: string, rotate: number }[]> = {
+      1: [{ w: '100%', h: '100%', t: '0%', l: '0%', rotate: 0 }],
+      2: [
+        { w: '60%', h: '90%', t: '5%', l: '2%', rotate: -0.5 },
+        { w: '45%', h: '70%', t: '15%', l: '53%', rotate: 0.5 }
+      ],
+      3: [
+        { w: '96%', h: '55%', t: '2%', l: '2%', rotate: 0 },
+        { w: '46%', h: '38%', t: '60%', l: '2%', rotate: -1 },
+        { w: '48%', h: '38%', t: '60%', l: '50%', rotate: 1 }
+      ],
+      4: [
+        { w: '48%', h: '96%', t: '2%', l: '2%', rotate: -0.5 },
+        { w: '48%', h: '46%', t: '2%', l: '52%', rotate: 0.5 },
+        { w: '23%', h: '46%', t: '52%', l: '52%', rotate: 0 },
+        { w: '23%', h: '46%', t: '52%', l: '77%', rotate: 0 }
+      ],
+      5: [
+        { w: '38%', h: '60%', t: '2%', l: '2%', rotate: -0.5 },
+        { w: '58%', h: '30%', t: '2%', l: '42%', rotate: 0.5 },
+        { w: '58%', h: '30%', t: '34%', l: '42%', rotate: 0 },
+        { w: '48%', h: '30%', t: '68%', l: '2%', rotate: 0 },
+        { w: '48%', h: '30%', t: '68%', l: '52%', rotate: -0.5 }
+      ],
+      6: [
+        { w: '31%', h: '46%', t: '2%', l: '2%', rotate: -0.5 },
+        { w: '31%', h: '46%', t: '2%', l: '34.5%', rotate: 0 },
+        { w: '31%', h: '46%', t: '2%', l: '67%', rotate: 0.5 },
+        { w: '48%', h: '46%', t: '52%', l: '2%', rotate: 0.5 },
+        { w: '23%', h: '46%', t: '52%', l: '52%', rotate: -0.5 },
+        { w: '23%', h: '46%', t: '52%', l: '77%', rotate: 0 }
+      ]
+    };
+
+    const count = Math.min(total, 6);
+    const layout = layouts[count] || layouts[6];
+    return layout[index % layout.length];
+  };
+
   return (
-    <div className={`grid grid-cols-2 grid-rows-2 w-full h-full p-2 gap-2 ${effectClass}`}>
-      {images.slice(0, 4).map((img, i) => (
-        <motion.div 
-          key={i} 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.1 * i }}
-          className="relative w-full h-full overflow-hidden border-2 border-black/50 shadow-lg rounded-sm bg-zinc-900/40 backdrop-blur-sm"
-        >
-           <Image 
-            src={getAssetPath(img.url)} 
-            alt={img.name} 
-            fill 
-            className="object-contain p-2 hover:scale-110 transition-transform duration-500" 
-            priority
-          />
-        </motion.div>
-      ))}
+    <div className={`relative w-full h-full p-2 overflow-hidden bg-zinc-950 ${effectClass}`}>
+      {images.slice(0, 6).map((img, i) => {
+        const style = getPanelStyles(i, images.slice(0, 6).length);
+        const isBg = img.type === 'background' || type === 'background';
+
+        return (
+          <motion.div 
+            key={i} 
+            initial={{ opacity: 0, scale: 0.95, y: 10 }}
+            animate={{ 
+              opacity: 1, 
+              scale: 1, 
+              y: 0,
+              transition: { delay: 0.1 * i, duration: 0.5, ease: "easeOut" }
+            }}
+            whileHover={{ 
+              scale: 1.02, 
+              zIndex: 50,
+              transition: { duration: 0.2 }
+            }}
+            className="absolute border-[3px] border-zinc-900 shadow-[inset_0_0_20px_rgba(0,0,0,0.8),10px_10px_25px_rgba(0,0,0,0.5)] overflow-hidden bg-black"
+            style={{ 
+              zIndex: i + 10,
+              width: style.w,
+              height: style.h,
+              top: style.t,
+              left: style.l,
+              rotate: `${style.rotate}deg`,
+            }}
+          >
+             <motion.div 
+              className="relative w-full h-full"
+              animate={{ 
+                scale: [1, i % 2 === 0 ? 1.15 : 0.95, 1],
+                x: [0, i % 3 === 0 ? 5 : -5, 0],
+                y: [0, i % 2 === 0 ? -5 : 5, 0]
+              }}
+              transition={{ 
+                duration: 12 + i * 2, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
+            >
+              <Image 
+                src={getAssetPath(img.url)} 
+                alt={img.name} 
+                fill 
+                className={`${isBg ? "object-cover" : "object-contain p-4"} filter brightness-110 contrast-110 grayscale-[0.2] hover:grayscale-0 transition-all duration-500`} 
+                priority
+              />
+            </motion.div>
+            
+            {/* Authentic Comic Gutter Effect */}
+            <div className="absolute inset-0 pointer-events-none border-[1px] border-white/5" />
+            <div className="absolute inset-0 pointer-events-none opacity-[0.1] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:3px_3px]" />
+
+            {/* Subtle floating effect for the panel container itself */}
+            <motion.div 
+              className="absolute inset-0 pointer-events-none"
+              animate={{ 
+                x: [0, 1, 0],
+                y: [0, -1, 0]
+              }}
+              transition={{ 
+                duration: 5 + i, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
+            />
+          </motion.div>
+        );
+      })}
     </div>
   );
 };
@@ -187,11 +283,11 @@ export default function ComicStory({
             style={getContainerStyle(currentPanel.focus)}
           >
             {/* ── Image Zone ── */}
-            <div className="relative w-full aspect-[21/9] md:aspect-[21/9] min-h-[120px] overflow-hidden">
+            <div className="relative w-full aspect-video min-h-[180px] overflow-hidden bg-zinc-900">
               {/* Halftone + paper texture overlays */}
-              <div className="absolute inset-0 z-20 pointer-events-none opacity-[0.08] mix-blend-overlay" 
-                   style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '4px 4px' }} />
-              <div className="absolute inset-0 z-20 pointer-events-none opacity-[0.03] animate-pulse" 
+              <div className="absolute inset-0 z-20 pointer-events-none opacity-[0.12] mix-blend-overlay" 
+                   style={{ backgroundImage: 'radial-gradient(circle, #000 1.2px, transparent 1.2px)', backgroundSize: '6px 6px' }} />
+              <div className="absolute inset-0 z-20 pointer-events-none opacity-[0.05] animate-pulse" 
                    style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/paper-fibers.png")' }} />
 
               {currentPanel.focus === 'split' && (
