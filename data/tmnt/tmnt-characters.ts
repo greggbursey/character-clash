@@ -241,4 +241,53 @@ export const tmntCharacters: Character[] = [
       "In some versions, Rocksteady's rhino horn is sharp enough to gash through turtle shells."
     ],
   },
+  {
+    id: "tokka",
+    name: "Tokka",
+    universe: "TMNT",
+    description: "A massive, mutated snapping turtle with incredible strength and a razor-sharp beak.",
+    lore: "**Tokka** is a monstrous mutation of an Alligator Snapping Turtle, created by the **Shredder** and **Krang** using the stolen TCRI mutagen. Alongside his 'brother' Rahzar, he was intended to be the ultimate weapon against the Ninja Turtles. While he possesses the intelligence of a toddler, his raw physical power is staggering, allowing him to smash through brick walls and lift cars with ease.\n\nHis thick, prehistoric shell and bumpy skin provide natural armor that can withstand all but the most powerful attacks. Despite his destructive nature, Tokka is often confused and easily manipulated, driven by primal instincts and a desperate need for guidance from his 'momma' (initially the Shredder). However, when his rage is triggered, he becomes an unstoppable force of nature, snapping anything that gets in his way with his massive, bone-crushing beak.",
+    triviaInfo: "Origin: Mutated from a common snapping turtle in the TCRI labs using a concentrated batch of ooze. He was created specifically to outmatch the Turtles in strength.\n\nBattles: His most famous clash was the 'Scrap Yard Rampage' in New York City, where he and Rahzar nearly defeated all four Turtles simultaneously. He was eventually defeated when the Turtles used a chemical 'anti-mutagen' hidden in doughnuts.\n\nSpecial Abilities & Gear: He possesses superhuman strength, invulnerability to most melee attacks due to his shell, and a bite force capable of snapping steel. His spikes are also razor-sharp.\n\nSecret Trivia: Tokka was created for the 1991 film 'The Secret of the Ooze' because the filmmakers were unable to secure the rights to use the character Slash from the comics. He was voiced by Frank Welker.",
+    previewUrl: "/data/tmnt/assets/tokka-preview.webp",
+    backgroundUrl: "/data/tmnt/assets/tokka-background.webp",
+    color: "#166534",
+    powerScore: 175,
+    gearBonus: 10,
+    prepBonus: 5,
+    gearDescription: "### Natural Armor\n- **Spiked Shell**: An impenetrable defensive barrier that punishes attackers.\n- **Snap-Beak**: A biological weapon capable of crushing heavy machinery.",
+    prepDescription: "### Primal Rage\nTokka doesn't plan; he simply consumes everything in his path, building up a momentum that makes him nearly impossible to stop once he starts moving.",
+    triviaPool: [
+      "Tokka was created for the 1991 movie because the production couldn't use Slash.",
+      "He has the mental capacity of a human infant, making him highly unpredictable.",
+      "His name is a play on the sound of a snapping turtle's bite.",
+      "Tokka's favorite 'food' is anything he can fit in his mouth, including car parts.",
+      "He and Rahzar consider the Shredder to be their father (or mother, in some versions).",
+      "In the 2012 series, Tokka is a massive cosmic entity from the Dimension X."
+    ],
+  },
+  {
+    id: "rahzar",
+    name: "Rahzar",
+    universe: "TMNT",
+    description: "A mutated grey wolf with lethal claws and a predatory instinct for the hunt.",
+    lore: "**Rahzar** is the savage counterpart to Tokka, a mutated wolf whose predatory instincts have been amplified to a terrifying degree. Created by the Foot Clan to be the ultimate hunter, he possesses speed and agility that rival the Turtles, combined with the raw ferocity of a wild beast. His matted fur and glowing eyes strike fear into the hearts of any who find themselves in his sights during a rooftop pursuit.\n\nUnlike the slow and steady Tokka, Rahzar is a whirlwind of claws and teeth. He is the Foot Clan's 'pet' enforcer, often used to track down targets that have escaped into the city's labyrinthine shadows. While he shares Tokka's limited intellect, his hunting prowess is second to none, and he takes a feral joy in the chase. Whether leaping across the New York skyline or stalking through the sewers, Rahzar is a constant reminder of the Shredder's willingness to twist nature into a weapon.",
+    triviaInfo: "Origin: Mutated from a grey wolf at the same time as Tokka. The mutation focused on enhancing his natural predatory traits like smell, hearing, and claw sharpness.\n\nBattles: He is known for his 'Rooftop Pursuits', where he used his superior speed to corner the Turtles in high-altitude environments. He was famously outsmarted by the Turtles' use of sound-based distractions.\n\nSpecial Abilities & Gear: Superhuman agility, heightened senses (tracking), and razor-sharp claws that can slice through masonry. He is also capable of long-distance leaps.\n\nSecret Trivia: Rahzar's design was meant to be the 'anti-Splinter', a canine mutant to rival the rat sensei. Like Tokka, he was a replacement for a comic character (Bebop/Rocksteady were also considered but replaced by these two for the sequel).",
+    previewUrl: "/data/tmnt/assets/rahzar-preview.webp",
+    backgroundUrl: "/data/tmnt/assets/rahzar-background.webp",
+    color: "#475569",
+    powerScore: 170,
+    gearBonus: 15,
+    prepBonus: 10,
+    gearDescription: "### Feral Instincts\n- **Razor Claws**: Hardened biological weapons that never dull.\n- **Tracking Scent**: Allows him to find opponents regardless of stealth or cover.",
+    prepDescription: "### The Stalking Hunt\nRahzar marks his territory and catches the scent of his prey, ensuring that once the battle starts, the opponent has nowhere to hide.",
+    triviaPool: [
+      "Rahzar was originally intended to be a more intelligent character in early script drafts.",
+      "His name is a play on 'razor', referring to his sharp claws.",
+      "He has a unique ability to 'hear' the heartbeats of his enemies from a distance.",
+      "In the 2012 series, Rahzar is a multi-stage mutation of the character Dogpound.",
+      "Rahzar and Tokka were the main antagonists of the 1991 'Secret of the Ooze' film.",
+      "He is often depicted as the more tactical and observant of the 'baby' mutant duo."
+    ],
+  },
 ];
+

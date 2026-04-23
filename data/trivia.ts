@@ -375,7 +375,9 @@ export const trivia: Record<string, string[]> = {
     "The Turtles once had a crossover with Batman in both comic and animated movie form.",
     "Leatherhead is a mutant alligator who is sometimes an ally and sometimes an enemy.",
     "The 'Technodrome' is powered by a giant portal to Dimension X.",
-    "The original TMNT comic was funded by a $2,000 tax refund and a loan from an uncle."
+    "The original TMNT comic was funded by a $2,000 tax refund and a loan from an uncle.",
+    "Tokka and Rahzar were created for the 1991 movie 'The Secret of the Ooze' as replacements for the character Slash.",
+    "Rahzar's name is a pun on the word 'razor', referring to his lethal claws."
   ],
   "X-Men": [
     "The word 'Mutant' was used because Stan Lee was tired of creating new origin stories.",
